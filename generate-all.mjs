@@ -42,7 +42,9 @@ if (lines.length === 0) {
 const currentTopic = lines[0];
 console.log(`📌 오늘 처리할 주제 (4호기 AI Prompt Engineering): "${currentTopic}"`);
 
-// 30가지 고유 시각 스타일 및 글 구조 테마 프리셋
+// =========================================================================
+// 30가지 고유 시각 스타일 및 레이아웃 프리셋 (AI 프롬프트/자동화 최적화)
+// =========================================================================
 const THEME_PRESETS = [
   { id: 1, name: "Cyberpunk Terminal", primaryColor: "#00ffcc", bgColor: "#111827", layout: "CLI/터미널 스타일, 핵심 프롬프트 한 줄 최상단 배치" },
   { id: 2, name: "Modern Minimalist Slate", primaryColor: "#3b82f6", bgColor: "#f8fafc", layout: "미니멀 가이드 스타일, 여백 중심의 깔끔한 단계별 프롬프트 빌딩" },
@@ -76,7 +78,6 @@ const THEME_PRESETS = [
   { id: 30, name: "Pure Titanium Clean", primaryColor: "#334155", bgColor: "#ffffff", layout: "초고화질 매뉴얼 스타일, 볼드 타이포그래피 강조, 깔끔한 구분선" }
 ];
 
-// 글로벌 12개국 페르소나 및 실무 환경
 const TARGET_LANGS = [
   { code: 'ko', name: 'Korean', persona: '친절하고 실무 경험이 많은 AI 프롬프트 아키텍트 및 생산성 컨설턴트', osUi: 'ChatGPT, Claude, Gemini, 프롬프트 입력창, 시스템 프롬프트 설정', localeContext: '서울/판교 IT 오피스, 기획서 및 데이터 분석 자동화를 30분 만에 끝내야 하는 상황' },
   { code: 'en', name: 'English', persona: 'Senior AI prompt engineer and LLM automation specialist', osUi: 'ChatGPT, Claude, Gemini, System Instructions, Artifacts', localeContext: 'Silicon Valley tech startup / NYC marketing agency, automating executive briefings before morning sync' },
@@ -104,9 +105,8 @@ async function fetchWithRetry(prompt, maxRetries = 15, delayMs = 20000) {
       });
       return response.text;
     } catch (error) {
-      console.warn(`⚠️ [호출 지연/에러] 시도 ${attempt}/${maxRetries}: ${error.message}`);
+      console.warn(`⚠️ [호출 재시도] ${attempt}/${maxRetries}: ${error.message}`);
       if (attempt === maxRetries) throw error;
-      console.log(`⏳ ${delayMs / 1000}초 동안 대기 후 다시 시도합니다...`);
       await delay(delayMs);
     }
   }
@@ -183,13 +183,13 @@ Context: "${lang.localeContext}"
 - Other languages: 1,200 to 1,500 words of thorough practical explanation.
 
 [Strict Output Format]
-Return raw Markdown starting with frontmatter:
+Return ONLY raw Markdown starting directly with frontmatter:
 ---
 title: "Native Catchy Title in ${lang.name}"
 description: "Native concise description in ${lang.name} under 160 characters"
 publishDate: ${pubDateIso}
 image: "${coverUrl}"
-category: "prompt"
+category: "Prompt Engineering"
 tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "${selectedTheme.name}"
 ---
@@ -218,9 +218,9 @@ theme: "${selectedTheme.name}"
       let body = text.slice(frontmatter.length).trim();
       body = body.replace(/^#\s+[^\n]+\n+/, '');
 
-      // 4호기 영구 고정 규칙: category: 'prompt'
-      frontmatter = frontmatter.replace(/category:\s*["'][^"']*["']/i, "category: 'prompt'")
-                               .replace(/category:\s*[^\n\r]+/i, "category: 'prompt'");
+      // 4호기 영구 고정 단일 카테고리: Prompt Engineering
+      frontmatter = frontmatter.replace(/category:\s*["'][^"']*["']/i, "category: 'Prompt Engineering'")
+                               .replace(/category:\s*[^\n\r]+/i, "category: 'Prompt Engineering'");
 
       // Cloudflare 빌드 실패 방지: publishDate 따옴표 제거
       frontmatter = frontmatter.replace(/publishDate:\s*["']([^"']+)["']/i, "publishDate: $1");
@@ -254,36 +254,31 @@ theme: "${selectedTheme.name}"
 
     const filePath = path.join(targetDir, `${fileSlug}.md`);
     fs.writeFileSync(filePath, text, 'utf-8');
-    console.log(`✅ [성공] 4호기 저장 완료: src/data/post/${lang.code}/${fileSlug}.md (카테고리: prompt)`);
+    console.log(`✅ [저장 완료] 4호기: src/data/post/${lang.code}/${fileSlug}.md (Prompt Engineering / 테마: ${selectedTheme.name})`);
     return true;
   } catch (error) {
-    console.error(`❌ [최종 실패] ${lang.name} 생성 실패:`, error.message);
+    console.error(`❌ [생성 실패] ${lang.name}:`, error.message);
     return false;
   }
 }
 
 async function run() {
   console.log("==================================================");
-  console.log("⚡ 4호기 AI 프롬프트 12개국 초고속 자동 포스팅 파이프라인 시작");
+  console.log("⚡ 4호기 Prompt Engineering 12개국 30가지 테마 Picsum 자동 포스팅 파이프라인 시작");
   console.log("==================================================");
 
   let successCount = 0;
-
   for (let i = 0; i < TARGET_LANGS.length; i++) {
     const isSuccess = await generateSinglePost(TARGET_LANGS[i], i);
     if (isSuccess) successCount++;
-    if (i < TARGET_LANGS.length - 1) {
-      await delay(5000);
-    }
+    if (i < TARGET_LANGS.length - 1) await delay(5000);
   }
 
   if (successCount > 0) {
     lines.shift();
     fs.writeFileSync(TOPICS_FILE, lines.join('\n'), 'utf-8');
-    console.log(`\n🧹 총 ${successCount}개국 포스팅 완료. topics.txt에서 주제를 삭제했습니다.`);
-    console.log(`📊 남은 주제 수: ${lines.length}개`);
+    console.log(`\n🧹 총 ${successCount}개국 포스팅 완료. topics.txt 갱신.`);
   } else {
-    console.error("\n❌ 모든 언어 생성이 실패하여 topics.txt를 유지합니다.");
     process.exit(1);
   }
 }
