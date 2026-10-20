@@ -2,9 +2,9 @@ name: Auto Multi-Language Blog Publishing Pipeline
 
 on:
   schedule:
-    # 4호기 스케줄: 한국 시간(KST) 매일 오전 9시 정각 (09:00 KST) 1회 발행
-    # UTC 기준: 00:00 (원하시는 시간으로 변경 가능)
-    - cron: '0 0 * * *'
+    # 4호기 스케줄: 한국 시간(KST) 매일 오후 2시 30분 (14:30 KST) 1회 발행
+    # UTC 기준: 05:30 (1호기 14:45보다 15분 앞선 시간)
+    - cron: '30 5 * * *'
 
   workflow_dispatch:
 
