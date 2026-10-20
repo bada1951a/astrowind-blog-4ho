@@ -3,11 +3,11 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
-// 2호기 대문 이미지 불러오기
-import moonImg from '~/assets/images/moon.jpg';
+// 4호기 대문 이미지 불러오기 (galaxy.png 적용)
+import galaxyImg from '~/assets/images/galaxy.png';
 
 const metadata = {
-  title: 'Story Daily Tech — Practical Life & Tech Insights',
+  title: 'Daily Prompt Hack — Advanced AI & Prompt Engineering Insights',
   ignoreTitleTemplate: true,
 };
 ---
@@ -24,24 +24,24 @@ const metadata = {
       },
     ]}
     image={{
-      src: moonImg,
-      alt: 'Story Daily Tech - Troubleshooting Guides & Solutions',
+      src: galaxyImg,
+      alt: 'Daily Prompt Hack - AI Prompt Engineering Blueprints',
     }}
   >
     <Fragment slot="title">
-      Practical Life & Tech Insights,<br />
-      <span class="text-accent dark:text-white highlight">Story Daily Tech</span>
+      Advanced AI & Prompting Insights,<br />
+      <span class="text-accent dark:text-white highlight">Daily Prompt Hack</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Practical troubleshooting guides, mobile diagnostics, and actionable digital workflows for everyday tech.
+      Actionable prompt engineering blueprints, LLM optimization workflows, and practical generative AI frameworks for creators and developers.
     </Fragment>
   </Hero>
 
   <!-- Latest Posts Section -->
   <BlogLatestPosts
     title="Latest Articles"
-    information="Explore verified troubleshooting workflows and practical tech guides."
+    information="Explore battle-tested prompt architectures and generative AI workflows."
     count={6}
   />
 </Layout>
