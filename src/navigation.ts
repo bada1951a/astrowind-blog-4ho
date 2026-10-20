@@ -11,8 +11,8 @@ export const headerData = {
       href: getBlogPermalink(),
     },
     {
-      text: 'Life & Tech',
-      href: getPermalink('/category/life-tech'),
+      text: 'Prompt Engineering',
+      href: getPermalink('/category/prompt-engineering'),
     },
   ],
   actions: [{ text: 'Explore Articles', href: getBlogPermalink() }],
@@ -24,7 +24,7 @@ export const footerData = {
       title: 'Categories',
       links: [
         { text: 'All Articles', href: getBlogPermalink() },
-        { text: 'Life & Tech', href: getPermalink('/category/life-tech') },
+        { text: 'Prompt Engineering', href: getPermalink('/category/prompt-engineering') },
       ],
     },
     {
