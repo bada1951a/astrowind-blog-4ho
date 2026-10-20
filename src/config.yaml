@@ -6,26 +6,18 @@ site:
 
   googleSiteVerificationId: false
 
-# Default SEO metadata
+# Metadata
 metadata:
   title:
-    default: 'Daily Prompt Hack - AI Prompt Engineering & Automation'
+    default: 'Daily Prompt Hack'
     template: '%s — Daily Prompt Hack'
-  description: 'Practical AI prompt engineering guides, system instructions, and LLM automation workflows for ChatGPT, Claude, and Gemini.'
+  description: 'Practical AI Prompt Engineering Guides, LLM Automation Workflows, and Productivity Hacks.'
   robots:
     index: true
     follow: true
   openGraph:
     site_name: 'Daily Prompt Hack'
-    images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
     type: website
-  twitter:
-    handle: '@onwardquest'
-    site: '@onwardquest'
-    cardType: summary_large_image
 
 i18n:
   language: en
@@ -35,36 +27,33 @@ apps:
   blog:
     isEnabled: true
     postsPerPage: 6
-
     post:
       isEnabled: true
       permalink: '/%slug%'
       robots:
         index: true
-
     list:
       isEnabled: true
       pathname: 'blog'
       robots:
         index: true
-
     category:
       isEnabled: true
       pathname: 'category'
       robots:
         index: true
-
     tag:
       isEnabled: true
       pathname: 'tag'
       robots:
-        index: false
-
-    author:
-      isEnabled: false
-      pathname: 'author'
-      robots:
-        index: false
+        index: true
 
 ui:
   theme: 'system'
+announcement:
+  enabled: false
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: 'G-679M6Z66JP'
