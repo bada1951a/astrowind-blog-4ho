@@ -30,7 +30,7 @@ const { language, textDirection } = I18N;
 <!doctype html>
 <html lang={language} dir={textDirection} class="2xl:text-[20px]">
   <head>
-   <meta name="naver-site-verification" content="69ceca582295f60d79467fd37f95a39f6ef65266" />
+    <meta name="naver-site-verification" content="69ceca582295f60d79467fd37f95a39f6ef65266" />
 
     <!-- Google tag (gtag.js) - 4호기 전용 태그 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YT7ZQ98ZW"></script>
@@ -56,6 +56,10 @@ const { language, textDirection } = I18N;
     <Metadata {...metadata} />
     <SiteVerification />
     <Analytics />
+
+    <!-- Cloudflare Web Analytics -->
+    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "7b4323327ec141bf946e318a8d537f9a"}'></script>
+    <!-- End Cloudflare Web Analytics -->
 
     <link rel="preconnect" href="https://images.unsplash.com" />
 
