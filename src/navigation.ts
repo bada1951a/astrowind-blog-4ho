@@ -43,6 +43,6 @@ export const footerData = {
   ],
   socialLinks: [],
   footNote: `
-    © 2026 Story Daily Tech. All rights reserved.
+    © 2026 Daily Prompt Hack. All rights reserved.
   `,
 };
