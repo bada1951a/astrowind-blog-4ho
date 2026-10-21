@@ -1,7 +1,7 @@
 ---
 title: "Midjourney V6 Prompt Guide: Maintain Consistent Character Faces Across 20 Scenes"
 description: "Master Midjourney V6 face consistency for multi-scene storytelling. Learn exact prompt formulas to keep characters identical across 20 cuts."
-publishDate: 2026-10-21T09:45:00.000Z
+publishDate: 2026-10-22T03:00:00.000Z
 image: 'https://picsum.photos/seed/prompt-mvhpcgc6-1-c/1200/675.jpg'
 category: 'Prompt Engineering'
 tags: ["Midjourney V6", "Prompt Engineering", "Character Consistency", "AI Workflow"]
