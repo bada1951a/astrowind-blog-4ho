@@ -1,7 +1,7 @@
 ---
 title: "Guia Midjourney V6: Como Manter Rosto Consistente em 20 Cenas"
 description: "Aprenda a travar a identidade de personagens no Midjourney V6 para criar narrativas visuais consistentes em campanhas e apresentacoes corporativas."
-publishDate: 2026-10-21T17:15:00.000Z
+publishDate: 2026-10-22T03:00:00.000Z
 image: 'https://picsum.photos/seed/prompt-mvhpdx8w-7-c/1200/675.jpg'
 category: 'Prompt Engineering'
 tags: ["Midjourney V6", "Prompt Engineering", "IA Generativa", "Design", "Automacao"]
