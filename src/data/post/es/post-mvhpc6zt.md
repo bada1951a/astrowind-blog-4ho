@@ -1,7 +1,7 @@
 ---
 title: "Guia Definitiva de Prompts en Midjourney V6: Rostros Consistentes en 20 Escenas"
 description: "Aprende a mantener la consistencia de personajes en Midjourney V6 para tus proyectos de diseño y marketing sin perder la cabeza."
-publishDate: 2026-10-21T14:45:00.000Z
+publishDate: 2026-10-22T03:00:00.000Z
 image: 'https://picsum.photos/seed/prompt-mvhpdg2y-5-c/1200/675.jpg'
 category: 'Prompt Engineering'
 tags: ["Prompt Engineering", "Midjourney", "IA", "Diseno Creativo"]
