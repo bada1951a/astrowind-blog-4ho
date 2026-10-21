@@ -1,7 +1,7 @@
 ---
 title: "Midjourney V6: Identische Gesichter über 20 Szenen hinweg garantieren"
 description: "Wie wir im Frankfurter Consulting-Alltag fotorealistische Geschäftsberichte mit konsistenten Charakteren automatisieren."
-publishDate: 2026-10-21T12:15:00.000Z
+publishDate: 2026-10-22T03:00:00.000Z
 image: 'https://picsum.photos/seed/prompt-mvhpcyoe-3-c/1200/675.jpg'
 category: 'Prompt Engineering'
 tags: ["Midjourney V6", "Prompt Engineering", "Geschäftsberichte", "Consulting", "KI Automatisierung"]
