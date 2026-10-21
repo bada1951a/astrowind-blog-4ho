@@ -1,7 +1,7 @@
 ---
 title: "Midjourney V6 Prompt Gids: Consistent Karaktergezicht Behouden over 20 Scènes"
 description: "Ontdek hoe je met Midjourney V6 en slimme prompt-sjablonen exact hetzelfde gezicht behoudt over twintig verschillende scènes voor jouw corporate project."
-publishDate: 2026-10-21T18:30:00.000Z
+publishDate: 2026-10-22T03:00:00.000Z
 image: 'https://picsum.photos/seed/prompt-mvhpe6ny-8-c/1200/675.jpg'
 category: 'Prompt Engineering'
 tags: ["Midjourney V6", "Prompt Engineering", "Character Consistency", "AI Design", "Zuidas"]
