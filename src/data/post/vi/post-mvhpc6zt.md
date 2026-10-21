@@ -1,7 +1,7 @@
 ---
 title: "Bi quyết giữ nguyên khuôn mặt nhân vật qua 20 cảnh trong Midjourney V6"
 description: "Hướng dẫn chi tiết cách dùng Midjourney V6 kết hợp ChatGPT và Claude để cố định khuôn mặt nhân vật qua nhiều cảnh quay mà không bị lệch nét."
-publishDate: 2026-10-21T22:15:00.000Z
+publishDate: 2026-10-22T03:00:00.000Z
 image: 'https://picsum.photos/seed/prompt-mvhpex8k-11-c/1200/675.jpg'
 category: 'Prompt Engineering'
 tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
