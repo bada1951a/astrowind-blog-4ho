@@ -21,8 +21,8 @@ function getPostImages(topic, index) {
   const bodySeed = `prompt-${seedBase}-${index}-b`;
 
   return {
-    coverUrl: `[https://picsum.photos/seed/$](https://picsum.photos/seed/$){coverSeed}/1200/675.jpg`,
-    bodyUrl: `[https://picsum.photos/seed/$](https://picsum.photos/seed/$){bodySeed}/1000/550.jpg`
+    coverUrl: `https://picsum.photos/seed/${coverSeed}/1200/675.jpg`,
+    bodyUrl: `https://picsum.photos/seed/${bodySeed}/1000/550.jpg`
   };
 }
 
@@ -46,20 +46,14 @@ function getKstPublishDateIso(index) {
 function sanitizeMarkdownFormatting(content) {
   let cleaned = content;
 
-  // 1) 3개 이상 연달아 붙은 별표(***) 정제 -> **로 통일
   cleaned = cleaned.replace(/\*{3,}/g, '**');
-
-  // 2) 별표 안쪽에 특수기호나 따옴표가 어긋나게 갇힌 경우 정제
   cleaned = cleaned.replace(/\*\*\[([^\]]+)\]\*\*/g, '[**$1**]');
   cleaned = cleaned.replace(/\*\*"([^"]+)"\*\*/g, '"**$1**"');
   cleaned = cleaned.replace(/\*\*'([^']+)'\*\*/g, '\'**$1**\'');
-
-  // 3) 별표 시작 뒤 또는 끝 바로 앞에 공백이 있어 마크다운이 파싱되지 않는 경우 정제
   cleaned = cleaned.replace(/\*\*\s+([^\*\n]+?)\s+\*\*/g, '**$1**');
   cleaned = cleaned.replace(/\*\*\s+([^\*\n]+?)\*\*/g, '**$1**');
   cleaned = cleaned.replace(/\*\*([^\*\n]+?)\s+\*\*/g, '**$1**');
 
-  // 4) 짝이 맞지 않는 고립된 단일 ** 제거 (홀수 개수로 남는 경우 방지)
   const lines = cleaned.split('\n');
   const fixedLines = lines.map(line => {
     if (line.trim().startsWith('```') || line.trim().startsWith('`')) return line;
@@ -91,8 +85,49 @@ const currentTopic = lines[0];
 console.log(`📌 오늘 처리할 주제 (4호기 AI Prompt Engineering): "${currentTopic}"`);
 
 // =========================================================================
-// 30가지 고유 시각 스타일 및 레이아웃 프리셋 (AI 프롬프트/자동화 최적화)
+// [도입부 다양화] 4호기 AI 프롬프트 엔지니어링 현실 위기 시나리오 30개 풀
 // =========================================================================
+const PROMPT_CRISIS_SCENARIOS_30 = [
+  // [1~8: 기획서, 보고서 및 시간 압박 위기]
+  "급작스러운 부서장 호출로 30분 뒤 신사업 전략 초안을 들고 들어가야 하는데, 챗GPT가 뜬구름 잡는 원론적인 답변만 늘어놓을 때",
+  "경쟁사 시장 분석 보고서를 오늘 퇴근 전까지 제출해야 하는데, AI가 검색해도 안 나오는 가짜 수치(환각 현상)를 당당하게 지어낼 때",
+  "해외 바이어에게 보낼 영문 비즈니스 제안서를 다듬어야 하는데, 번역기 특유의 어색한 문체 때문에 신뢰도가 떨어져 보일 때",
+  "점심시간 직후 진행될 팀 브레인스토밍 회의를 위해 파격적인 마케팅 카피 20개가 급히 필요한 난감한 순간",
+  "새벽 2시 홀로 남아 스타트업 투자 유치용 IR 피치덱 발표 스크립트를 작성하던 중 창의력과 체력이 완전히 고갈되었을 때",
+  "분기 성과 발표를 위해 50페이지짜리 사내 설문조사 주관식 답변을 정량적으로 분류하고 요약해야 하는 막막한 상황",
+  "클라이언트가 제시한 까다로운 브랜드 가이드라인과 톤앤매너를 지키면서 블로그 콘텐츠 초안을 대량 생산해야 할 때",
+  "월요일 아침 전사 주간 회의 직전, 주말 사이 쏟아진 산업 동향 뉴스 30편을 3줄 핵심 브리핑으로 즉시 정리해야 할 때",
+
+  // [9~16: 개발, 데이터 분석 및 코드 생성 난관]
+  "간단한 파이썬 데이터 크롤링 스크립트를 짜달라고 했으나 폐기된 구버전 라이브러리 문법을 추천해 오류가 쏟아질 때",
+  "복잡한 SQL 쿼리 최적화를 위해 프롬프트를 넣었지만 테이블 조인(JOIN) 논리가 꼬인 엉터리 코드를 반환했을 때",
+  "웹 프론트엔드 인터랙티브 컴포넌트를 Claude Artifacts로 뽑아내려는데 스타일 시트가 깨져 화면이 뭉개지는 순간",
+  "정규표현식(Regex) 패턴 하나가 계속 매칭에 실패해 1시간째 프롬프트와 정규식을 번갈아 수정하며 헤매던 오후",
+  "API 호출 결과를 JSON 포맷으로 깔끔하게 받아내야 하는데 자꾸 마크다운 설명글을 덧붙여 파싱 에러를 유발할 때",
+  "사내 업무 자동화 봇을 구축하면서 사용자 입력의 다양한 예외 케이스를 처리할 강력한 퓨샷(Few-shot) 예시가 부족할 때",
+  "노코드 툴과 웹훅을 연결하는 과정에서 데이터 스키마 변환 규칙을 AI에게 정확히 인지시키지 못해 병목이 생겼을 때",
+  "대용량 CSV 텍스트 데이터를 분석 창에 업로드했으나 토큰 한도 초과(Context Window Limit)로 문맥이 잘려나갈 때",
+
+  // [17~24: 환각 방지, 역할 지정 및 튜닝 실패]
+  "법률 판례나 사내 취업규칙 관련 질문을 던졌더니 실제 법조문과 정반대되는 위험한 조언을 천연덕스럽게 생성할 때",
+  "AI에게 특정 전문가 페르소나를 부여했으나 몇 번 대화가 오가자마자 원래의 로봇 같은 중립적 어조로 되돌아갈 때",
+  "복잡한 5단계 업무 프로세스를 지시했으나 중간 3단계를 건너뛰고 결과물만 성의 없이 뱉어내는 멍청한 결과를 봤을 때",
+  "사내 보안 규정상 고객 실명을 넣지 못하는 상태에서 맥락을 잃지 않고 문서를 재구성하도록 프롬프트를 설계해야 할 때",
+  "의료/바이오 관련 전문 용어가 가득한 논문 초록을 일반인도 이해하기 쉬운 설명문으로 변환하는 데 실패했을 때",
+  "고객 응대(CS) 자동 챗봇의 시스템 프롬프트가 악의적인 탈옥(Jailbreak) 프롬프트에 뚫려 엉뚱한 답변을 내놓을 위험에 처했을 때",
+  "다국어 로컬라이징 번역을 맡겼는데 현지 문화적 맥락을 반영하지 못하고 단어를 직역해 브랜드 이미지를 깎아먹을 뻔했을 때",
+  "회의 녹음 텍스트에서 말하는 사람별 핵심 주장과 액션 플랜(To-Do)만 칼같이 추출하고 싶은데 온갖 잡담까지 다 긁어모아 줄 때",
+
+  // [25~30: 시스템 프롬프트, 템플릿 및 생산성 극대화]
+  "신규 입사자 교육용 방대한 매뉴얼을 10분 만에 퀴즈와 플래시 카드로 인터랙티브하게 재가공해야 하는 상황",
+  "반복되는 일일 업무 보고 작성을 위해 단 3개의 키워드만 넣으면 완벽한 양식으로 완성해 주는 전용 템플릿이 절실할 때",
+  "팀원마다 AI 결과물의 품질 편차가 너무 심해 부서 전체가 공통으로 쓸 표준 시스템 프롬프트 라이브러리가 필요할 때",
+  "소셜 미디어(인스타그램, 스레드, 링크드인) 채널별 성격에 맞게 1개의 원 소스를 3가지 다른 포맷으로 즉시 변환해야 할 때",
+  "길고 지루한 연구 리포트를 읽을 시간이 없어 저자의 핵심 논리와 한계점을 날카롭게 비판하는 반론 요약이 급할 때",
+  "AI 모델의 최신 업데이트 이후 기존에 잘 쓰던 프롬프트가 예전만큼 정교한 결과물을 내지 못해 전면 수정이 필요한 순간"
+];
+
+// 30가지 고유 시각 스타일 및 레이아웃 프리셋
 const THEME_PRESETS = [
   { id: 1, name: "Cyberpunk Terminal", primaryColor: "#00ffcc", bgColor: "#111827", layout: "CLI/터미널 스타일, 핵심 프롬프트 한 줄 최상단 배치" },
   { id: 2, name: "Modern Minimalist Slate", primaryColor: "#3b82f6", bgColor: "#f8fafc", layout: "미니멀 가이드 스타일, 여백 중심의 깔끔한 단계별 프롬프트 빌딩" },
@@ -127,18 +162,18 @@ const THEME_PRESETS = [
 ];
 
 const TARGET_LANGS = [
-  { code: 'ko', name: 'Korean', persona: '친절하고 실무 경험이 많은 AI 프롬프트 아키텍트 및 생산성 컨설턴트', osUi: 'ChatGPT, Claude, Gemini, 프롬프트 입력창, 시스템 프롬프트 설정', localeContext: '서울/판교 IT 오피스, 기획서 및 데이터 분석 자동화를 30분 만에 끝내야 하는 상황' },
-  { code: 'en', name: 'English', persona: 'Senior AI prompt engineer and LLM automation specialist', osUi: 'ChatGPT, Claude, Gemini, System Instructions, Artifacts', localeContext: 'Silicon Valley tech startup / NYC marketing agency, automating executive briefings before morning sync' },
-  { code: 'ja', name: 'Japanese', persona: 'プロンプトエンジニアリングと生成AI活用を分かりやすく教える現役AIアーキテクト', osUi: 'ChatGPT, Claude, Gemini, システムプロンプト, アーティファクト', localeContext: '東京・丸の内のオフィス, 企画書作成とリサーチ作業をAIで爆速化する緊急プロジェクト' },
-  { code: 'de', name: 'German', persona: 'Erfahrener Prompt-Architekt und Berater für generative KI-Systeme', osUi: 'ChatGPT, Claude, Gemini, Systemanweisungen, Einstellungen', localeContext: 'Frankfurter Banken- und Consultingbereich, Automatisierung von Geschäftsberichten' },
-  { code: 'fr', name: 'French', persona: 'Ingénieur en prompt design et spécialiste de la productivité par l\'IA', osUi: 'ChatGPT, Claude, Gemini, Instructions système, Paramètres', localeContext: 'Agence à Paris, création d\'un outil interactif avec Claude Artifacts en un temps record' },
-  { code: 'es', name: 'Spanish', persona: 'Especialista en ingeniería de prompts y optimización con modelos LLM', osUi: 'ChatGPT, Claude, Gemini, Instrucciones personalizadas, Artifacts', localeContext: 'Oficina en Madrid, generación de código y análisis de mercado con IA para cliente clave' },
-  { code: 'it', name: 'Italian', persona: 'Architetto di prompt esperto nell\'automazione aziendale con intelligenza artificiale', osUi: 'ChatGPT, Claude, Gemini, Istruzioni di sistema, Impostazioni', localeContext: 'Studio a Milano, sprint per sviluppare un prompt di copywriting e analisi dati' },
-  { code: 'pt', name: 'Portuguese', persona: 'Especialista em engenharia de prompts e automação prática com IA generativa', osUi: 'ChatGPT, Claude, Gemini, Instruções personalizadas, Configurações', localeContext: 'Empresa de tecnologia em São Paulo, construindo fluxos de trabalho rápidos com LLMs' },
-  { code: 'nl', name: 'Dutch', persona: 'Nederlandse prompt engineer en specialist in generatieve AI-tools', osUi: 'ChatGPT, Claude, Gemini, Systeeminstructies, Instellingen', localeContext: 'Zuidas Amsterdam, efficiëntie-verbetering met geavanceerde prompt-sjablonen' },
-  { code: 'pl', name: 'Polish', persona: 'Architekt promptów i praktyk narzędzi generatywnej sztucznej inteligencji', osUi: 'ChatGPT, Claude, Gemini, Instrukcje systemowe, Ustawienia', localeContext: 'Warszawski sektor IT, tworzenie gotowych szablonów zapytań dla zespołu projektowego' },
-  { code: 'id', name: 'Indonesian', persona: 'Praktisi AI prompt engineering dan otomatisasi workflow digital', osUi: 'ChatGPT, Claude, Gemini, Instruksi kustom, Pengaturan', localeContext: 'Kawasan bisnis Jakarta, percepatan pembuatan konten dan ringkasan data dengan AI' },
-  { code: 'vi', name: 'Vietnamese', persona: 'Chuyên gia thiết kế câu lệnh AI (Prompt Engineer) và tự động hóa công việc', osUi: 'ChatGPT, Claude, Gemini, Hướng dẫn hệ thống, Cài đặt', localeContext: 'Văn phòng tại TP.HCM, ứng dụng Claude và ChatGPT tối ưu hóa công việc hàng daily' }
+  { code: 'ko', name: 'Korean', persona: '친절하고 실무 경험이 많은 AI 프롬프트 아키텍트 및 생산성 컨설턴트', osUi: 'ChatGPT, Claude, Gemini, 프롬프트 입력창, 시스템 프롬프트 설정', localeContext: '서울/판교 IT 오피스 및 기업 전략 기획 부서' },
+  { code: 'en', name: 'English', persona: 'Senior AI prompt engineer and LLM automation specialist', osUi: 'ChatGPT, Claude, Gemini, System Instructions, Artifacts', localeContext: 'Silicon Valley tech startup / New York creative & marketing agency' },
+  { code: 'ja', name: 'Japanese', persona: 'プロンプトエンジニアリングと生成AI活用を分かりやすく教える現役AIアーキテクト', osUi: 'ChatGPT, Claude, Gemini, システムプロンプト, アーティファクト', localeContext: '東京・丸の内および渋谷のITビジネスオフィス' },
+  { code: 'de', name: 'German', persona: 'Erfahrener Prompt-Architekt und Berater für generative KI-Systeme', osUi: 'ChatGPT, Claude, Gemini, Systemanweisungen, Einstellungen', localeContext: 'Frankfurter Bankenviertel und Berliner Tech-Szene' },
+  { code: 'fr', name: 'French', persona: 'Ingénieur en prompt design et spécialiste de la productivité par l\'IA', osUi: 'ChatGPT, Claude, Gemini, Instructions système, Paramètres', localeContext: 'Agences de conseil et sièges d\'entreprise à Paris La Défense' },
+  { code: 'es', name: 'Spanish', persona: 'Especialista en ingeniería de prompts y optimización con modelos LLM', osUi: 'ChatGPT, Claude, Gemini, Instrucciones personalizadas, Artifacts', localeContext: 'Oficinas corporativas y consultoras en Madrid y Barcelona' },
+  { code: 'it', name: 'Italian', persona: 'Architetto di prompt esperto nell\'automazione aziendale con intelligenza artificiale', osUi: 'ChatGPT, Claude, Gemini, Istruzioni di sistema, Impostazioni', localeContext: 'Studi professionali e agenzie digitali a Milano' },
+  { code: 'pt', name: 'Portuguese', persona: 'Especialista em engenharia de prompts e automação prática com IA generativa', osUi: 'ChatGPT, Claude, Gemini, Instruções personalizadas, Configurações', localeContext: 'Polos de inovação e empresas na Avenida Paulista em São Paulo' },
+  { code: 'nl', name: 'Dutch', persona: 'Nederlandse prompt engineer en specialist in generatieve AI-tools', osUi: 'ChatGPT, Claude, Gemini, Systeeminstructies, Instellingen', localeContext: 'Zuidas en innovatiehubs in Amsterdam' },
+  { code: 'pl', name: 'Polish', persona: 'Architekt promptów i praktyk narzędzi generatywnej sztucznej inteligencji', osUi: 'ChatGPT, Claude, Gemini, Instrukcje systemowe, Ustawienia', localeContext: 'Warszawski sektor IT i nowoczesne centra biznesowe' },
+  { code: 'id', name: 'Indonesian', persona: 'Praktisi AI prompt engineering dan otomatisasi workflow digital', osUi: 'ChatGPT, Claude, Gemini, Instruksi kustom, Pengaturan', localeContext: 'Kawasan bisnis Sudirman Central Business District (SCBD) Jakarta' },
+  { code: 'vi', name: 'Vietnamese', persona: 'Chuyên gia thiết kế câu lệnh AI (Prompt Engineer) và tự động hóa công việc', osUi: 'ChatGPT, Claude, Gemini, Hướng dẫn hệ thống, Cài đặt', localeContext: 'Tòa nhà văn phòng công nghệ cao tại Quận 1, TP. Hồ Chí Minh' }
 ];
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
@@ -162,8 +197,10 @@ async function fetchWithRetry(prompt, maxRetries = 15, delayMs = 20000) {
 
 async function generateSinglePost(lang, index) {
   const selectedTheme = THEME_PRESETS[Math.floor(Math.random() * THEME_PRESETS.length)];
+  const selectedScenario = PROMPT_CRISIS_SCENARIOS_30[Math.floor(Math.random() * PROMPT_CRISIS_SCENARIOS_30.length)];
 
   console.log(`\n🚀 [${index + 1}/12]${lang.name} (${lang.code}) 4호기 프롬프트 포스팅 생성 중... (적용 테마: ${selectedTheme.name})`);
+  console.log(`   🎭 선택된 프롬프트 위기 시나리오: "${selectedScenario.slice(0, 30)}..."`);
 
   const { coverUrl, bodyUrl } = getPostImages(currentTopic, index);
   const pubDateIso = getKstPublishDateIso(index);
@@ -176,8 +213,9 @@ CRITICAL: DO NOT translate literally from Korean. Write completely from scratch 
 [Topic]
 ${currentTopic}
 
-[Workplace Scenario]
-Context: "${lang.localeContext}"
+[Workplace Incident Context]
+- Target City/Culture: "${lang.localeContext}"
+- Assigned Emergency Scenario: "${selectedScenario}"
 
 [CRITICAL OUTPUT LANGUAGE INTEGRITY - ZERO HANGUL IN GLOBAL POSTS]
 - If target language is NOT Korean (ko):
@@ -189,7 +227,11 @@ Context: "${lang.localeContext}"
     - Avoid overly academic mathematical theory.
     - Provide immediate copy-pasteable prompt templates and clear instructions matching: "${lang.osUi}".
 2. Laser-Focused Narrative:
-    - The opening emergency story MUST be 100% strictly about [Topic] (${currentTopic}).
+    - The opening emergency story MUST be 100% strictly about [Topic] (${currentTopic}) and reflect the given [Assigned Emergency Scenario].
+
+[MANDATORY OPENING VARIATION RULE - ZERO CLICHE REPETITION]
+- You MUST start the opening story based strictly on the assigned scenario: "${selectedScenario}".
+- ABSOLUTELY FORBIDDEN: Do NOT default to a generic "morning sync in 30 minutes" trope. Adapt the specific incident (e.g., hallucinated numbers, broken script syntax, token limits, parsing errors) naturally into the local daily workflow of ${lang.name}.
 
 [STRICT MARKDOWN & FORMATTING RULES - NO RENDERING GLITCHES]
 1. BOLD FORMATTING RULE:
@@ -213,16 +255,16 @@ Context: "${lang.localeContext}"
 [Tone & Writing Style Rules (STRICT - NO AI VIBE)]
 1. Mandatory Opening:
     - Absolutely FORBIDDEN: Boring textbook intros like "Hello", "In this post", "Today we will explore".
-    - Start immediately with an intense, relatable workplace emergency scenario strictly about [Topic].
+    - Start immediately with an intense, relatable workplace emergency scenario strictly about [Topic] based on the assigned incident.
 2. Tone & Voice:
     - Write like a real colleague sharing an honest, battle-tested prompt trick on a developer/creator community.
 3. Fast-Paced 3-Step Narrative:
-    - Step 1: Sudden workflow panic regarding [Topic] set in ${lang.localeContext}.
+    - Step 1: Sudden workflow panic regarding [Topic] set in the assigned incident.
     - Step 2: Vague prompts that failed and produced useless hallucinations.
     - Step 3: The breakthrough actionable prompt template & exact variables.
 
 [Content & Structure (AdSense E-E-A-T Compliant)]
-1. Opening Story: Intense real workplace incident strictly regarding this topic.
+1. Opening Story: Intense real workplace incident strictly regarding this topic based on the assigned scenario.
 2. Root Cause / Architecture: Why simple prompting fails and the logic behind this prompt structure.
 3. Master Prompt Template: Clear, copy-pasteable Markdown code block with placeholders (e.g., [Insert Data]).
 4. Practical Variations / Safety Tips: Hallucination prevention, token saving, or system instructions.
@@ -257,7 +299,6 @@ theme: "${selectedTheme.name}"
                .replace(/\\circ/g, '°')
                .replace(/\\approx/g, '≈');
 
-    // [취소선 버그 원천 차단 후처리]
     text = text.replace(/(\S)\s*~\s*(\S)/g, '$1 - $2');
     text = text.replace(/~/g, '-');
 
@@ -321,7 +362,7 @@ theme: "${selectedTheme.name}"
 
 async function run() {
   console.log("==================================================");
-  console.log("⚡ 4호기 Prompt Engineering 12개국 30가지 테마 Picsum 자동 포스팅 파이프라인 시작");
+  console.log("⚡ 4호기 Prompt Engineering 12개국 30개 위기 시나리오 자동 포스팅 시작");
   console.log("==================================================");
 
   let successCount = 0;
