@@ -1,7 +1,7 @@
 ---
 title: "미드저니 V6 얼굴 고정 프롬프트 가이드: 20개 장면에서 동일 인물 유지하기"
 description: "판교 IT 오피스 실무 현장 속 30분 만에 끝내는 미드저니 V6 캐릭터 일관성 유지 프롬프트 작성법과 복사해서 쓰는 마스터 템플릿."
-publishDate: 2026-10-21T08:30:00.000Z
+publishDate: 2026-10-22T03:00:00.000Z
 image: 'https://picsum.photos/seed/prompt-mvhpc6zt-0-c/1200/675.jpg'
 category: 'Prompt Engineering'
 tags: ["Prompt Engineering", "Midjourney V6", "AI Art", "Workflow Automation"]
