@@ -1,7 +1,7 @@
 ---
 title: "Midjourney V6: Come mantenere lo stesso volto in 20 scene diverse"
 description: "Guida pratica per mantenere la consistenza dei volti dei personaggi in Midjourney V6 per progetti aziendali e presentazioni."
-publishDate: 2026-10-21T16:00:00.000Z
+publishDate: 2026-10-22T03:00:00.000Z
 image: 'https://picsum.photos/seed/prompt-mvhpdobw-6-c/1200/675.jpg'
 category: 'Prompt Engineering'
 tags: ["Midjourney", "Prompt Engineering", "Consistenza Volti", "AI Generativa", "Design"]
