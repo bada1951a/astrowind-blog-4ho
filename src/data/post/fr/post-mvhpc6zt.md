@@ -1,7 +1,7 @@
 ---
 title: "Gardez le même visage sur 20 scènes Midjourney V6 sans perdre la boule"
 description: "Guide pratique d'ingénierie de prompt pour maintenir des visages de personnages cohérents dans Midjourney V6 pour vos projets d'agence."
-publishDate: 2026-10-21T13:30:00.000Z
+publishDate: 2026-10-22T03:00:00.000Z
 image: 'https://picsum.photos/seed/prompt-mvhpd71m-4-c/1200/675.jpg'
 category: 'Prompt Engineering'
 tags: ["Midjourney V6", "Prompt Engineering", "Claude Artifacts", "Design Workflow"]
