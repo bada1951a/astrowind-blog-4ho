@@ -1,7 +1,7 @@
 ---
 title: "Panduan Midjourney V6: Menjaga Konsistensi Wajah Karakter di 20 Adegan"
 description: "Strategi praktis prompt engineering Midjourney V6 untuk menjaga konsistensi wajah karakter dalam 20 adegan konten bisnis."
-publishDate: 2026-10-21T21:00:00.000Z
+publishDate: 2026-10-22T03:00:00.000Z
 image: 'https://picsum.photos/seed/prompt-mvhpeodr-10-c/1200/675.jpg'
 category: 'Prompt Engineering'
 tags: ["Midjourney V6", "Prompt Engineering", "Otomatisasi Konten", "AI Art"]
