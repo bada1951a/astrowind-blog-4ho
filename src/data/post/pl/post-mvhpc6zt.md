@@ -1,7 +1,7 @@
 ---
 title: "Midjourney V6: Jak utrzymać twarz tej samej postaci w 20 scenach"
 description: "Praktyczny przewodnik po inżynierii promptów w Midjourney V6 dla warszawskiego sektora IT. Sprawdzone szablony spójności postaci."
-publishDate: 2026-10-21T19:45:00.000Z
+publishDate: 2026-10-22T03:00:00.000Z
 image: 'https://picsum.photos/seed/prompt-mvhpeg21-9-c/1200/675.jpg'
 category: 'Prompt Engineering'
 tags: ["Prompt Engineering", "Midjourney", "Sztuczna Inteligencja", "IT"]
