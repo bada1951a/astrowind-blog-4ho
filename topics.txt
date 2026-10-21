@@ -1,4 +1,3 @@
-How to Use Claude 3.5 Sonnet Artifacts to Build Interactive Dashboard Prototypes
 Midjourney V6 Prompt Guide to Maintain Consistent Character Faces Across 20 Scenes
 How to Chain ChatGPT Prompts for 5000-Word In-Depth Industry Whitepapers
 Best System Prompts to Stop ChatGPT and Claude from Hallucinating Data
