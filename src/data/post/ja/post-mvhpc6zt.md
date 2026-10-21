@@ -1,7 +1,7 @@
 ---
 title: "Midjourney V6完全攻略：20シーンでも同一キャラクターの顔を完璧に固定するプロンプト設計術"
 description: "東京・丸の内のオフィスで勃発した企画書作成の危機。Midjourney V6でキャラクターの顔ブレを防ぎ、20シーンを一貫させる実践プロンプト術をAIアーキテクトが徹底解説。"
-publishDate: 2026-10-21T11:00:00.000Z
+publishDate: 2026-10-22T03:00:00.000Z
 image: 'https://picsum.photos/seed/prompt-mvhpcpgo-2-c/1200/675.jpg'
 category: 'Prompt Engineering'
 tags: ["Prompt Engineering", "Midjourney", "Claude", "AI Tips"]
