@@ -55,18 +55,18 @@ Structure ta réponse selon les sections suivantes :
 ### Bonnes pratiques et prévention des hallucinations
 
 Quand vous manipulez de longs scripts, l'IA a tendance à inventer des subtilités ou à lisser le ton original. Pour contrer cela :
-- **Fournissez le contexte de la niche :** Si le script traite de finance ou de tech, précisez-le dans les instructions système pour éviter des analyses trop généralistes.
-- **Limitez la taille du texte :** Si le script dépasse 5 000 mots, procédez par blocs (introduction/corps/conclusion) pour garder une précision chirurgicale.
+- Fournissez le contexte de la niche : Si le script traite de finance ou de tech, précisez-le dans les instructions système pour éviter des analyses trop généralistes.
+- Limitez la taille du texte : Si le script dépasse 5 000 mots, procédez par blocs (introduction/corps/conclusion) pour garder une précision chirurgicale.
 
 ---
 
 ### FAQ : Tout ce que vous devez savoir
 
-**Q1 : Puis-je utiliser ce prompt avec n'importe quel LLM ?**  
+Q1 : Puis-je utiliser ce prompt avec n'importe quel LLM ?  
 Oui, ce prompt fonctionne parfaitement sur ChatGPT (GPT-4o) et Claude 3.5 Sonnet. Toutefois, Claude excelle particulièrement si vous souhaitez transformer instantanément cette structure en application interactive via les Artifacts.
 
-**Q2 : Que faire si le script vidéo n'est disponible qu'au format URL ?**  
+Q2 : Que faire si le script vidéo n'est disponible qu'au format URL ?  
 Utilisez d'abord un outil de transcription pour récupérer le texte brut. Ne demandez jamais directement à l'IA d'aller chercher une vidéo YouTube par son URL si elle ne dispose pas d'un plugin de navigation actif et fiable, sous peine de générer de graves hallucinations.
 
-**Q3 : Comment adapter ce prompt pour des formats courts comme les Shorts ou TikTok ?**  
+Q3 : Comment adapter ce prompt pour des formats courts comme les Shorts ou TikTok ?  
 Modifiez simplement la section des règles en remplaçant "les 5 à 15 premières secondes" par "les 2 premières secondes" et exigez un découpage seconde par seconde axé sur la vitesse de défilement du feed.

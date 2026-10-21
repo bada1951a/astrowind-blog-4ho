@@ -32,10 +32,10 @@ Ecco la struttura esatta che ho testato e perfezionato nel nostro studio per blo
 ```
 
 ### Come configurare le variabili chiave:
-- **Identificatore Visivo Unico**: Usa un nome in codice o una combinazione di parole chiave uniche (es. *Marco milanese, 32 years old*).
-- **Tratti somatici**: Sii chirurgico. Specifica forma del viso, taglio di capelli, presenza di occhiali o barba (es. *short neat dark brown hair, thin black rimmed glasses, subtle stubble beard, focused expression*).
-- **Parametro --cref (Character Reference)**: Prendi l'URL della prima immagine venuta benissimo e incollala alla fine di ogni prompt successivo. È il vero motore della consistenza in V6.
-- **Parametro --cw (Character Weight)**: Impostalo su `80` (valore consigliato). Dice a Midjourney di copiare dal riferimento sia il viso che i capelli e i vestiti. Se vuoi mantenere solo la faccia e cambiare abiti tra una scena e l'altra, abbassalo a `0` o `20`.
+- Identificatore Visivo Unico: Usa un nome in codice o una combinazione di parole chiave uniche (es. *Marco milanese, 32 years old*).
+- Tratti somatici: Sii chirurgico. Specifica forma del viso, taglio di capelli, presenza di occhiali o barba (es. *short neat dark brown hair, thin black rimmed glasses, subtle stubble beard, focused expression*).
+- Parametro --cref (Character Reference): Prendi l'URL della prima immagine venuta benissimo e incollala alla fine di ogni prompt successivo. È il vero motore della consistenza in V6.
+- Parametro --cw (Character Weight): Impostalo su `80` (valore consigliato). Dice a Midjourney di copiare dal riferimento sia il viso che i capelli e i vestiti. Se vuoi mantenere solo la faccia e cambiare abiti tra una scena e l'altra, abbassalo a `0` o `20`.
 
 <div style="border-left: 4px solid #14b8a6; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Consiglio Pro:</strong> Quando usi <code>--cw 0</code> per cambiare i vestiti del personaggio nelle diverse scene, mantieni rigorosamente invariate le prime parole descrittive del volto nel testo del prompt per evitare derive stilistiche.
@@ -45,9 +45,9 @@ Ecco la struttura esatta che ho testato e perfezionato nel nostro studio per blo
 
 Per applicare questo metodo in modo efficiente durante uno sprint di lavoro, procedi seguendo questi tre passaggi operativi:
 
-1. **Generazione del Master (Scena 1):** Crea l'immagine di partenza perfetta del tuo personaggio con il prompt descrittivo completo. Salva l'URL di questa immagine generata.
-2. **Duplicazione e Variazione:** Per le scene successive, mantieni identica la stringa descrittiva del volto e il parametro `--cref [URL_Master] --cw 0`, cambiando unicamente l'azione e l'ambientazione finale (es. *working on a dual-monitor setup in a Milan design agency* vs *walking down via Torino under the rain holding an umbrella*).
-3. **Controllo Qualità Rapido:** Esporta le immagini in batch e verifica che i tratti biometrici chiave (forma degli occhi, naso, proporzioni) rimangano allineati.
+1. Generazione del Master (Scena 1): Crea l'immagine di partenza perfetta del tuo personaggio con il prompt descrittivo completo. Salva l'URL di questa immagine generata.
+2. Duplicazione e Variazione: Per le scene successive, mantieni identica la stringa descrittiva del volto e il parametro `--cref [URL_Master] --cw 0`, cambiando unicamente l'azione e l'ambientazione finale (es. *working on a dual-monitor setup in a Milan design agency* vs *walking down via Torino under the rain holding an umbrella*).
+3. Controllo Qualità Rapido: Esporta le immagini in batch e verifica che i tratti biometrici chiave (forma degli occhi, naso, proporzioni) rimangano allineati.
 
 ## Domande Frequenti (FAQ)
 

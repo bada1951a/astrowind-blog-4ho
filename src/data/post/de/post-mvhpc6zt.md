@@ -39,11 +39,11 @@ A professional 35-year-old German male consultant, sharp jawline, neat dark-brow
 
 ### Schritt-für-Schritt-Anleitung für alle 20 Szenen
 
-1. **Das Master-Bild definieren:** Generieren Sie zuerst *ein* perfektes Porträt Ihres Charakters und speichern Sie die URL dieses Bildes.
-2. **Den Parameter `--cref` einsetzen:** Fügen Sie am Ende jedes neuen Prompts die URL des Master-Bildes ein.
-3. **Gewichtung steuern (`--cw`):** 
+1. Das Master-Bild definieren: Generieren Sie zuerst *ein* perfektes Porträt Ihres Charakters und speichern Sie die URL dieses Bildes.
+2. Den Parameter `--cref` einsetzen: Fügen Sie am Ende jedes neuen Prompts die URL des Master-Bildes ein.
+3. Gewichtung steuern (`--cw`): 
    - `--cw 100` kopiert Gesicht, Haare und Kleidung.
-   - `--cw 0` kopiert **nur** das Gesicht und erlaubt Ihnen, in jeder Szene die Kleidung (z.B. Hemd ohne Sakko, Outdoor-Jacke) komplett zu verändern. Perfekt für narrative Geschäftsberichte!
+   - `--cw 0` kopiert nur das Gesicht und erlaubt Ihnen, in jeder Szene die Kleidung (z.B. Hemd ohne Sakko, Outdoor-Jacke) komplett zu verändern. Perfekt für narrative Geschäftsberichte!
 
 <div style="border-left: 4px solid #84cc16; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Häufige Fehlerquelle:</strong> Wenn Sie `--cw 100` verwenden, aber im Text eine andere Krawattenfarbe oder Jacke fordern, gerät Midjourney in einen Konflikt. Nutzen Sie `--cw 0` für maximale Flexibilität bei der Kleidung bei gleichbleibendem Gesicht.
@@ -51,11 +51,11 @@ A professional 35-year-old German male consultant, sharp jawline, neat dark-brow
 
 ### Häufig gestellte Fragen (FAQ)
 
-**Frage 1: Kann ich `--cref` auch für weibliche Charaktere und diverse Teams nutzen?**
+Frage 1: Kann ich `--cref` auch für weibliche Charaktere und diverse Teams nutzen?
 Ja, das Prinzip funktioniert universell. Wichtig ist lediglich, dass das zugrundeliegende Referenzbild (`--cref`) eine hohe Auflösung und eine klare frontale oder leicht gedrehte Ansicht des Gesichts zeigt.
 
-**Frage 2: Was tun, wenn Midjourney V6 das Gesicht trotz `--cref` leicht verfälscht?**
+Frage 2: Was tun, wenn Midjourney V6 das Gesicht trotz `--cref` leicht verfälscht?
 Erhöhen Sie die Prompt-Stabilität, indem Sie den Stil-Parameter anpassen oder das Referenzbild über `--iw` (Image Weight) in einem Multi-Image-Prompt verstärken. Nutzen Sie zudem exakte Ausdrücke wie "the same man from the reference image".
 
-**Frage 3: Wie automatisiere ich diesen Prozess für 20 Szenen am effizientesten?**
+Frage 3: Wie automatisiere ich diesen Prozess für 20 Szenen am effizientesten?
 Erstellen Sie sich in ChatGPT oder Claude eine Text-Matrix. Füttern Sie die KI mit den 20 gewünschten Report-Kapiteln und lassen Sie sich automatisiert die passenden Midjourney-Prompts inklusive der angepassten `--cref`-URL und veränderten `--cw`-Werten ausgeben.

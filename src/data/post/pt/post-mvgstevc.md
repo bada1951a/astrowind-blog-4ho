@@ -22,11 +22,11 @@ Se eu tentasse analisar manualmente os padrões de retenção, ganchos e transi�
 Minha primeira tentativa foi preguiçosa: joguei o link de um vídeo de tecnologia bombando no ChatGPT e mandei o comando clássico: *"Resuma este roteiro e me diga por que ele é bom"*. 
 
 O resultado foi uma tragédia de engenharia de prompts:
-* **Alucinação pura:** A IA inventou métricas de engajamento que não existiam no texto.
-* **Resumo superficial:** Entregou um parágrafo genérico digno de redação de ensino médio, sem utilidade prática para produção.
-* **Falta de estrutura:** Zero separação entre o gancho (hook), a retenção do primeiro minuto e o CTA (Call to Action) final.
+* Alucinação pura: A IA inventou métricas de engajamento que não existiam no texto.
+* Resumo superficial: Entregou um parágrafo genérico digno de redação de ensino médio, sem utilidade prática para produção.
+* Falta de estrutura: Zero separação entre o gancho (hook), a retenção do primeiro minuto e o CTA (Call to Action) final.
 
-Para extrair valor real de uma LLM, você não pede uma opinião; você impõe uma **persona analítica restrita** e exige uma **matriz estruturada de decomposição textual**.
+Para extrair valor real de uma LLM, você não pede uma opinião; você impõe uma persona analítica restrita e exige uma matriz estruturada de decomposição textual.
 
 ---
 
@@ -69,15 +69,15 @@ Para quem constrói automações em São Paulo integrando APIs da OpenAI ou Anth
 </div>
 
 ### Dicas de Otimização:
-* **Instruções Personalizadas (Custom Instructions):** Adicione no seu perfil do ChatGPT que você prefere respostas diretas, orientadas a dados e sem introduções corporativas cansativas ("Com certeza, aqui está...").
-* **Temperatura Baixa:** Configure a temperatura entre **0.2 e 0.4** ao executar via API. Isso evita que a IA invente ganchos criativos que nunca existiram no vídeo original.
+* Instruções Personalizadas (Custom Instructions): Adicione no seu perfil do ChatGPT que você prefere respostas diretas, orientadas a dados e sem introduções corporativas cansativas ("Com certeza, aqui está...").
+* Temperatura Baixa: Configure a temperatura entre 0.2 e 0.4 ao executar via API. Isso evita que a IA invente ganchos criativos que nunca existiram no vídeo original.
 
 ---
 
 ## Perguntas Frequentes (FAQ)
 
 ### 1. Posso usar este prompt com qualquer modelo de IA, como Claude 3.5 Sonnet ou GPT-4o?
-Sim, e na verdade o **Claude 3.5 Sonnet** costuma se sair ligeiramente melhor em tarefas de análise de textos longos e estruturação de tabelas complexas devido à sua janela de contexto refinada e precisão sintática.
+Sim, e na verdade o Claude 3.5 Sonnet costuma se sair ligeiramente melhor em tarefas de análise de textos longos e estruturação de tabelas complexas devido à sua janela de contexto refinada e precisão sintática.
 
 
 

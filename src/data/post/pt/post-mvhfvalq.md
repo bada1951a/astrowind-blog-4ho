@@ -50,19 +50,19 @@ Gere todo o codigo funcional em um unico bloco de codigo dentro do Artifact, pro
 
 Para garantir que o protótipo não quebre e atenda exatamente às expectativas do seu negócio, siga estas recomendações práticas de engenharia de prompt:
 
-- **Controle de Alucinação de Dados:** Se você tem dados reais de produção, substitua a seção de mock data por uma amostra JSON limpa. Isso impede que o Claude invente métricas irreais para preencher os gráficos.
-- **Iteração Incremental:** Não peça tudo de uma vez. Primeiro, gere a estrutura base do dashboard com os KPIs. No prompt seguinte, diga: *"Agora adicione um filtro avançado no topo e faça o gráfico de barras atualizar dinamicamente quando o filtro for alterado"*.
-- **Economia de Tokens:** Mantenha o escopo do componente focado. Dashboards monolíticos gigantescos podem fazer o modelo truncar o código no meio da geração.
+- Controle de Alucinação de Dados: Se você tem dados reais de produção, substitua a seção de mock data por uma amostra JSON limpa. Isso impede que o Claude invente métricas irreais para preencher os gráficos.
+- Iteração Incremental: Não peça tudo de uma vez. Primeiro, gere a estrutura base do dashboard com os KPIs. No prompt seguinte, diga: *"Agora adicione um filtro avançado no topo e faça o gráfico de barras atualizar dinamicamente quando o filtro for alterado"*.
+- Economia de Tokens: Mantenha o escopo do componente focado. Dashboards monolíticos gigantescos podem fazer o modelo truncar o código no meio da geração.
 
 ---
 
 ### Perguntas Frequentes (FAQ)
 
-**1. O código gerado nos Artifacts pode ser baixado e usado em produção?**
+1. O código gerado nos Artifacts pode ser baixado e usado em produção?
 Sim, você pode copiar o código HTML/JS gerado ou usar o botão de download do Artifact. Embora seja excelente para prototipagem rápida e validação de ideias com stakeholders, recomendamos que engenheiros revisem o código antes de subir para ambientes de produção críticos.
 
-**2. O que fazer se o Claude cortar o código pela metade durante a geração?**
+2. O que fazer se o Claude cortar o código pela metade durante a geração?
 Isso acontece quando o limite de tokens de saída é atingido. Basta digitar no chat: *"O código foi cortado na linha [X]. Continue exatamente de onde parou, mantendo a mesma estrutura e fechando todas as tags HTML/JS corretamente"*.
 
-**3. Posso conectar esse dashboard a uma API real em tempo real?**
+3. Posso conectar esse dashboard a uma API real em tempo real?
 Os Artifacts rodam em um ambiente sandbox estático no navegador. Para dados reais, você pode instruir o Claude a incluir blocos `fetch()` apontando para endpoints reais ou WebSockets, contanto que o CORS e as chaves de API estejam configuradas adequadamente no seu ambiente de testes.

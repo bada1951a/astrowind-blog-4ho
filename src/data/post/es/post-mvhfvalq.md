@@ -19,16 +19,16 @@ Eran las 18:30 en nuestra oficina en Madrid, con las tazas de café completament
 
 Cuando le dices a un LLM "hazme un dashboard de mercado bonito", el modelo adivina las librerías, los colores y la estructura de datos. Esto genera tres problemas críticos en entornos corporativos:
 
-- **Alucinaciones de librerías:** Mezcla sintaxis de React, Tailwind y componentes obsoletos de HTML que rompen el DOM al renderizar.
-- **Falta de interactividad real:** Devuelve maquetas estáticas que parecen bonitas pero cuyos botones no hacen nada al hacer clic.
-- **Fragmentación de código:** El modelo se queda sin tokens a mitad del archivo, obligándote a escribir "continúa" y rompiendo el hilo lógico de la aplicación.
+- Alucinaciones de librerías: Mezcla sintaxis de React, Tailwind y componentes obsoletos de HTML que rompen el DOM al renderizar.
+- Falta de interactividad real: Devuelve maquetas estáticas que parecen bonitas pero cuyos botones no hacen nada al hacer clic.
+- Fragmentación de código: El modelo se queda sin tokens a mitad del archivo, obligándote a escribir "continúa" y rompiendo el hilo lógico de la aplicación.
 
 Para solucionar esto, debemos estructurar nuestras peticiones usando un rol técnico específico, un framework visual predefinido y restricciones estrictas sobre el comportamiento del código interactivo.
 
 ---
 
 ### Banner de Prompt Clave
-> **Instrucción Maestra:** Actúa como Arquitecto Frontend Senior y utiliza obligatoriamente la función de Artifacts para renderizar una SPA autocontenida con React y Tailwind CSS.
+> Instrucción Maestra: Actúa como Arquitecto Frontend Senior y utiliza obligatoriamente la función de Artifacts para renderizar una SPA autocontenida con React y Tailwind CSS.
 
 ---
 
@@ -59,9 +59,9 @@ Por favor, genera el resultado directamente como un Artifact interactivo listo p
 
 Cuando trabajes con proyectos críticos para clientes, ten en cuenta estas recomendaciones operativas:
 
-- **Define los datos de prueba:** Si el cliente no te ha dado datos limpios, pídele explícitamente a Claude que genere un array JSON interno con datos simulados pero realistas para España (con formato de moneda en euros y fechas locales).
-- **Controla el alcance:** No pidas un sistema ERP completo en el primer prompt. Comienza pidiendo la estructura principal y las tarjetas de KPIs, y luego usa el chat lateral de Claude dentro del Artifact para pedir iteraciones ("Añade un gráfico de tarta en la sección inferior", "Cambia el color de los botones").
-- **Ahorro de tokens:** Al usar Artifacts, mantienes el código visual aislado del texto de la conversación, lo que reduce la fatiga de contexto del modelo en sesiones largas de desarrollo.
+- Define los datos de prueba: Si el cliente no te ha dado datos limpios, pídele explícitamente a Claude que genere un array JSON interno con datos simulados pero realistas para España (con formato de moneda en euros y fechas locales).
+- Controla el alcance: No pidas un sistema ERP completo en el primer prompt. Comienza pidiendo la estructura principal y las tarjetas de KPIs, y luego usa el chat lateral de Claude dentro del Artifact para pedir iteraciones ("Añade un gráfico de tarta en la sección inferior", "Cambia el color de los botones").
+- Ahorro de tokens: Al usar Artifacts, mantienes el código visual aislado del texto de la conversación, lo que reduce la fatiga de contexto del modelo en sesiones largas de desarrollo.
 
 <div style="border-left: 4px solid #a16207; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Aviso de Seguridad:</strong> Nunca pegues credenciales, claves de API de producción ni datos de clientes protegidos por GDPR dentro de los prompts de prueba. Utiliza siempre datos anonimizados o sintéticos para los prototipos visuales.

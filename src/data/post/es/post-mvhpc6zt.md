@@ -23,9 +23,9 @@ El error tipico de cualquier profesional es sobrecargar el texto descriptivo: *"
 
 Para solucionar esto de raiz en V6, no dependemos solo de la descripcion textual. Combinamos tres elementos criticos de ingenieria de prompts:
 
-1. **El parametro de referencia de personaje (--cref):** La herramienta nativa que ancla los rasgos faciales.
-2. **El peso del personaje (--cw):** Controla cuanta informacion de la imagen base se transfiere (ropa, cabello o solo el rostro).
-3. **Anclaje semantico estricto:** Una estructura de prompt modular que mantiene constantes las palabras clave del sujeto mientras varia la accion.
+1. El parametro de referencia de personaje (--cref): La herramienta nativa que ancla los rasgos faciales.
+2. El peso del personaje (--cw): Controla cuanta informacion de la imagen base se transfiere (ropa, cabello o solo el rostro).
+3. Anclaje semantico estricto: Una estructura de prompt modular que mantiene constantes las palabras clave del sujeto mientras varia la accion.
 
 ---
 
@@ -38,10 +38,10 @@ Copia esta estructura base en tu herramienta favorita (puedes usar ChatGPT o Cla
 ```
 
 ### Guia rapida de variables:
-- **[Accion o Escenario Especifico]:** Lo que esta haciendo el personaje y donde esta (ej: *writing clean Python code on a dual monitor setup in a modern Madrid office*).
-- **[Iluminacion y Estilo Visual]:** El tono fotografico (ej: *cinematic lighting, professional photography, shot on 35mm lens*).
-- **--cref [URL]:** La URL de la imagen original de tu personaje aprobado.
-- **--cw 0:** **Truco clave.** Al poner el peso del personaje en 0, Midjourney solo clona la cara y el rostro, ignorando la ropa y el peinado. Esto te permite cambiarle de atuendo (traje, sudadera, camisa) en cada una de las 20 escenas manteniendo exactamente la misma persona.
+- [Accion o Escenario Especifico]: Lo que esta haciendo el personaje y donde esta (ej: *writing clean Python code on a dual monitor setup in a modern Madrid office*).
+- [Iluminacion y Estilo Visual]: El tono fotografico (ej: *cinematic lighting, professional photography, shot on 35mm lens*).
+- --cref [URL]: La URL de la imagen original de tu personaje aprobado.
+- --cw 0: Truco clave. Al poner el peso del personaje en 0, Midjourney solo clona la cara y el rostro, ignorando la ropa y el peinado. Esto te permite cambiarle de atuendo (traje, sudadera, camisa) en cada una de las 20 escenas manteniendo exactamente la misma persona.
 
 ---
 

@@ -22,9 +22,9 @@ It was 8:45 PM on a Tuesday at our Manhattan marketing agency. Our morning sync 
 If you simply type "A 30-year-old female tech executive named Maya working at a desk" and then change the action to "Maya drinking coffee in a cafe," Midjourney V6 relies on probabilistic token distribution. The model re-rolls the latent space seed for the character's facial topology with every new action phrase. 
 
 To lock down facial consistency across 20 distinct scenes, we have to bypass generic descriptions and build a deterministic prompt architecture. This relies on three core components:
-1. **The Anchor Identity Token:** A hyper-specific, multi-word physical descriptor that remains 100% immutable across all 20 prompts.
-2. **The --cref Parameter:** Midjourney's character reference feature, which acts as a visual anchor by referencing the image URL of your baseline character design.
-3. **Environmental Isolation:** Separating the character description from the changing background action so the rendering engine doesn't bleed environmental traits into the face.
+1. The Anchor Identity Token: A hyper-specific, multi-word physical descriptor that remains 100% immutable across all 20 prompts.
+2. The --cref Parameter: Midjourney's character reference feature, which acts as a visual anchor by referencing the image URL of your baseline character design.
+3. Environmental Isolation: Separating the character description from the changing background action so the rendering engine doesn't bleed environmental traits into the face.
 
 ## The Master Prompt Template & Step-by-Step Workflow
 
@@ -42,17 +42,17 @@ To fix our executive presentation crisis, I built a structured prompt template i
 
 ### Executing the 20-Scene Pipeline
 
-1. **Generate the Master Reference:** Run your baseline prompt first without the `--cref` tag. Pick the absolute best output where the face is clear and high-resolution.
-2. **Grab the Image URL:** Right-click your chosen master image in Discord, copy the link, and save it to your scratchpad.
-3. **Populate the Variables:** Keep your `[Base Character Definition]` identical across all 20 scene prompts, append your `--cref [URL]` and `--cw 100` (or `--cw 0`), and only modify the `[Scene Action]` and lighting tags.
+1. Generate the Master Reference: Run your baseline prompt first without the `--cref` tag. Pick the absolute best output where the face is clear and high-resolution.
+2. Grab the Image URL: Right-click your chosen master image in Discord, copy the link, and save it to your scratchpad.
+3. Populate the Variables: Keep your `[Base Character Definition]` identical across all 20 scene prompts, append your `--cref [URL]` and `--cw 100` (or `--cw 0`), and only modify the `[Scene Action]` and lighting tags.
 
 ## Practical Variations and Failure Prevention
 
 When producing 20 or more sequential scenes, you will inevitably run into minor inconsistencies or style drift. Here is how to debug common Midjourney V6 issues:
 
-- **Wardrobe Bleed:** If Maya's charcoal blazer from the base definition persists even when she is supposed to be in casual weekend wear, use `--cw 0` and explicitly redefine her clothing in the scene action (e.g., "...wearing a casual beige cashmere sweater").
-- **Lighting Discrepancies:** Midjourney V6 can sometimes render harsh studio lighting even in outdoor scenes. Combat this by adding strict environmental lighting tags at the end of your prompts, such as `soft overcast morning window light` or `warm neon cyberpunk city glow`.
-- **Aspect Ratio Locking:** Always keep `--ar 16:9` or `--ar 9:16` consistent across all prompts in your storyboard. Changing aspect ratios mid-sequence forces the composition engine to recalculate facial geometry, which triggers noticeable face morphing.
+- Wardrobe Bleed: If Maya's charcoal blazer from the base definition persists even when she is supposed to be in casual weekend wear, use `--cw 0` and explicitly redefine her clothing in the scene action (e.g., "...wearing a casual beige cashmere sweater").
+- Lighting Discrepancies: Midjourney V6 can sometimes render harsh studio lighting even in outdoor scenes. Combat this by adding strict environmental lighting tags at the end of your prompts, such as `soft overcast morning window light` or `warm neon cyberpunk city glow`.
+- Aspect Ratio Locking: Always keep `--ar 16:9` or `--ar 9:16` consistent across all prompts in your storyboard. Changing aspect ratios mid-sequence forces the composition engine to recalculate facial geometry, which triggers noticeable face morphing.
 
 ## Frequently Asked Questions
 

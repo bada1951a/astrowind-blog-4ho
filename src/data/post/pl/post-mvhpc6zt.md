@@ -30,9 +30,9 @@ Aby rozwiązać ten problem raz na zawsze, przygotowałem dla naszego zespołu g
 ```
 
 #### Jak działa ten mechanizm w praktyce:
-- **Kotwica twarzy:** Zamiast imienia używamy stałego zestawu cech antropometrycznych (*sharp jawline, short messy dark brown hair, thin silver-rimmed glasses, subtle freckles*).
-- **Parametr `--cref` (Character Reference):** Wklejamy link do wygenerowanego w pierwszym kroku idealnego portretu bohatera. To najważniejsza funkcja w V6 wymuszająca spójność.
-- **Parametr `--cw 100` (Character Weight):** Ustawienie wartości 100 instruuje model, aby kopiował nie tylko twarz, ale również fryzurę i ubiór. Jeśli zmieniasz ubranie w kolejnych scenach, obniż tę wartość do 50 lub 0.
+- Kotwica twarzy: Zamiast imienia używamy stałego zestawu cech antropometrycznych (*sharp jawline, short messy dark brown hair, thin silver-rimmed glasses, subtle freckles*).
+- Parametr `--cref` (Character Reference): Wklejamy link do wygenerowanego w pierwszym kroku idealnego portretu bohatera. To najważniejsza funkcja w V6 wymuszająca spójność.
+- Parametr `--cw 100` (Character Weight): Ustawienie wartości 100 instruuje model, aby kopiował nie tylko twarz, ale również fryzurę i ubiór. Jeśli zmieniasz ubranie w kolejnych scenach, obniż tę wartość do 50 lub 0.
 
 ---
 
@@ -40,19 +40,19 @@ Aby rozwiązać ten problem raz na zawsze, przygotowałem dla naszego zespołu g
 
 W codziennej pracy w zespole projektowym liczy się czas i precyzja. Oto zestawienie sprawdzonych modyfikatoriów, które możesz wdrożyć do swoich instrukcji systemowych dla sztucznej inteligencji:
 
-- **Scena biurowa:** Używaj `--cw 80`, aby zachować twarz, ale pozwolić Midjourney na zmianę profesjonalnego stroju.
-- **Scena dynamiczna w ruchu:** Dodaj do promptu frazę `motion blur, action shot` i obniż `--cw` do 40, zapobiegając nienaturalnym deformacjom rysów podczas generowania szybkich akcji.
-- **Zbliżenia portretowe:** Zwiększ wagę cech twarzy w tekście, zachowując ten sam URL w `--cref` dla zachowania 95% tożsamości postaci.
+- Scena biurowa: Używaj `--cw 80`, aby zachować twarz, ale pozwolić Midjourney na zmianę profesjonalnego stroju.
+- Scena dynamiczna w ruchu: Dodaj do promptu frazę `motion blur, action shot` i obniż `--cw` do 40, zapobiegając nienaturalnym deformacjom rysów podczas generowania szybkich akcji.
+- Zbliżenia portretowe: Zwiększ wagę cech twarzy w tekście, zachowując ten sam URL w `--cref` dla zachowania 95% tożsamości postaci.
 
 ---
 
 ### Często Zadawane Pytania (FAQ)
 
-**1. Czy parametr `--cref` działa poprawnie, gdy zmieniam styl graficzny z fotografii na ilustrację 3D?**
+1. Czy parametr `--cref` działa poprawnie, gdy zmieniam styl graficzny z fotografii na ilustrację 3D?
 Nie zalecamy drastycznej zmiany stylu przy użyciu tego samego `--cref`. Parametr ten najlepiej sprawdza się w obrębie tej samej konwencji wizualnej. Jeśli zmieniasz styl z foto na kreskówkę, twarz ulegnie zniekształceniu.
 
-**2. Co zrobić, gdy Midjourney V6 ignoruje parametry i za każdym razem tworzy kogoś innego?**
+2. Co zrobić, gdy Midjourney V6 ignoruje parametry i za każdym razem tworzy kogoś innego?
 Upewnij się, że na końcu każdego promptu umieściłeś aktualną wersję silnika (`--v 6.0`). Starsze wersje nie obsługują poprawnie zaawansowanych referencji postaci i mogą traktować parametry jako zwykły tekst.
 
-**3. Jak zarządzać linkami do bazowych obrazów przy pracy w zespole?**
+3. Jak zarządzać linkami do bazowych obrazów przy pracy w zespole?
 Najlepiej stworzyć dedykowany kanał na Slacku lub dokument wewnątrz zespołu IT, gdzie przypinamy "Master Image" dla danej postaci. Wszyscy członkowie zespołu powinni kopiować ten sam URL do swoich promptów, co gwarantuje pełną spójność wizualną w całym projekcie.

@@ -54,9 +54,9 @@ Hay dam bao ung dung hoat diong muot ma, co du du lieu gia lap neu can thiet va 
 
 Khi Claude tra ve ket qua ban dau trong Artifacts, dung voi thoa man. Hay thuc hien tiep cac buoc Tinh chinh nhanh (Iterative Chaining) sau day de dashboard dat do hoan thien cao nhat:
 
-- **Buoc 1: Kiem tra tinh chinh xac cua du lieu.** Nhap vao khung chat: *"Hay kiem tra lai cac cong thuc tinh tong doanh thu o cac the card, dam bao khong bi lech so lieu so voi bang goc toi vua cung cap."*
-- **Buoc 2: Them tinh nang xuat du lieu.** Nhap tiep: *"Hay them mot nut 'Export to CSV' o goc phai man hinh de nguoi dung co the tai xuong du lieu sau khi da loc."*
-- **Buoc 3: Cai thien UX tren dien thoai.** Nhap: *"Hay dam bao giao dien nay hoan toan tuong thich va hien thi dep tren man hinh dien thoai di dong (Responsive Design)."*
+- Buoc 1: Kiem tra tinh chinh xac cua du lieu. Nhap vao khung chat: *"Hay kiem tra lai cac cong thuc tinh tong doanh thu o cac the card, dam bao khong bi lech so lieu so voi bang goc toi vua cung cap."*
+- Buoc 2: Them tinh nang xuat du lieu. Nhap tiep: *"Hay them mot nut 'Export to CSV' o goc phai man hinh de nguoi dung co the tai xuong du lieu sau khi da loc."*
+- Buoc 3: Cai thien UX tren dien thoai. Nhap: *"Hay dam bao giao dien nay hoan toan tuong thich va hien thi dep tren man hinh dien thoai di dong (Responsive Design)."*
 
 ---
 

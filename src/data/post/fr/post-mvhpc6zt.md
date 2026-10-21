@@ -23,10 +23,10 @@ La solution ne réside pas dans la complexité du texte, mais dans une architect
 
 Pour figer un personnage, il faut séparer l'identité visuelle du contexte de la scène. Voici la structure infaillible que nous utilisons désormais dans tous nos sprints créatifs :
 
-*   **Identité de base :** Nom de code du personnage + traits anthropométriques fixes.
-*   **Action et Contexte :** Ce que fait le personnage dans la scène spécifique.
-*   **Direction Artistique :** Style photographique, éclairage et ambiance colorimétrique.
-*   **Paramètres techniques :** `--cref [URL_IMAGE_BASE]` suivi du paramètre de poids `--cw`.
+*   Identité de base : Nom de code du personnage + traits anthropométriques fixes.
+*   Action et Contexte : Ce que fait le personnage dans la scène spécifique.
+*   Direction Artistique : Style photographique, éclairage et ambiance colorimétrique.
+*   Paramètres techniques : `--cref [URL_IMAGE_BASE]` suivi du paramètre de poids `--cw`.
 
 Voici le template maître prêt à l'emploi que vous pouvez copier-coller dans votre outil de centralisation (comme vos instructions système sur Claude ou vos blocs de notes) :
 
@@ -46,18 +46,18 @@ Voici le template maître prêt à l'emploi que vous pouvez copier-coller dans v
 
 Ne lancez jamais vos 20 prompts à l'aveugle. Suivez cette méthodologie en cascade pour garantir un résultat homogène :
 
-1.  **Générez la "Master Image" :** Créez une image de face de votre personnage sur fond neutre avec un éclairage parfait. C'est elle qui servira de référence universelle.
-2.  **Récupérez l'URL :** Copiez le lien permanent de cette image générée sur Discord.
-3.  **Appliquez le template :** Pour chaque scène de votre outil interactif, reprenez la même structure de prompt en modifiant uniquement l'action et le décor, tout en conservant le lien `--cref` et le même `--cw`.
-4.  **Ajustez par itération :** Si une variation dévie trop, augmentez légèrement le paramètre `--s` (Stylize) ou recadrez via l'outil Zoom/Pan de Midjourney.
+1.  Générez la "Master Image" : Créez une image de face de votre personnage sur fond neutre avec un éclairage parfait. C'est elle qui servira de référence universelle.
+2.  Récupérez l'URL : Copiez le lien permanent de cette image générée sur Discord.
+3.  Appliquez le template : Pour chaque scène de votre outil interactif, reprenez la même structure de prompt en modifiant uniquement l'action et le décor, tout en conservant le lien `--cref` et le même `--cw`.
+4.  Ajustez par itération : Si une variation dévie trop, augmentez légèrement le paramètre `--s` (Stylize) ou recadrez via l'outil Zoom/Pan de Midjourney.
 
 ## 3. Comparatif avant/après de la méthode
 
 | Critère | Approche classique (Vague) | Approche structurée (--cref + Template) |
 | :--- | :--- | :--- |
-| **Taux de constance faciale** | 10 à 20% de réussite sur 20 scènes | 90 à 95% de fidélité visuelle |
-| **Temps de production** | 4 heures de retouches et de régénérations | 30 minutes de prompts maîtrisés |
-| **Intégration UI/UX** | Impossible (visages incohérents dans l'app) | Parfaite pour les prototypes Claude Artifacts |
+| Taux de constance faciale | 10 à 20% de réussite sur 20 scènes | 90 à 95% de fidélité visuelle |
+| Temps de production | 4 heures de retouches et de régénérations | 30 minutes de prompts maîtrisés |
+| Intégration UI/UX | Impossible (visages incohérents dans l'app) | Parfaite pour les prototypes Claude Artifacts |
 
 ## Foire Aux Questions (FAQ)
 

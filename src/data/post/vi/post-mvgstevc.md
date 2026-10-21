@@ -21,10 +21,10 @@ Ban đầu, tôi hí hửng copy nguyên cái transcript dài ngoằn ngoèo c�
 
 ## Vì sao cách prompt thông thường lại thất bại thảm hại?
 
-Lý do đơn giản là các video triệu view không thu hút người xem bằng từ ngữ thông thường, mà chúng vận hành dựa trên các **khuôn mẫu tâm lý học hành vi** và **nhịp độ cấu trúc (pacing)** đã được tính toán kỹ lưỡng từng giây:
-- **Hook (Móc câu):** 5 giây đầu tiên giải quyết nỗi đau gì?
-- **Retention Loop (Vòng lặp giữ chân):** Cứ mỗi 45 giây có một thông tin gây sốc hoặc câu hỏi mở nào được tung ra?
-- **Climax (Cao trào):** Nút thắt được tháo gỡ ở phút thứ mấy để kích thích người xem bấm nút đăng ký (subscribe) hoặc bình luận?
+Lý do đơn giản là các video triệu view không thu hút người xem bằng từ ngữ thông thường, mà chúng vận hành dựa trên các khuôn mẫu tâm lý học hành vi và nhịp độ cấu trúc (pacing) đã được tính toán kỹ lưỡng từng giây:
+- Hook (Móc câu): 5 giây đầu tiên giải quyết nỗi đau gì?
+- Retention Loop (Vòng lặp giữ chân): Cứ mỗi 45 giây có một thông tin gây sốc hoặc câu hỏi mở nào được tung ra?
+- Climax (Cao trào): Nút thắt được tháo gỡ ở phút thứ mấy để kích thích người xem bấm nút đăng ký (subscribe) hoặc bình luận?
 
 Khi bạn chỉ đưa transcript và bảo AI viết lại, nó chỉ nhìn thấy chữ nghĩa mà bỏ qua hoàn toàn kiến trúc ngầm bên dưới. Đó là lúc chúng ta cần đến một hệ thống prompt chuyên sâu, đóng vai trò như một kỹ sư trưởng phân tích dữ liệu kịch bản.
 
@@ -71,8 +71,8 @@ Hãy bắt đầu bằng việc hiển thị kết quả phân tích Bước 1 v
 
 Để công việc hàng ngày tại văn phòng mượt mà hơn, bạn có thể biến hóa prompt trên tùy theo mục đích cụ thể:
 
-- **Biến thể dạng Video Ngắn (Shorts/Reels):** Thay vì phân tích video dài 15 phút, hãy điều chỉnh lại đoạn mô tả nhiệm vụ: *"Tập trung mổ xẻ tốc độ chuyển cảnh và cách tạo cú sốc nhận thức trong 3 giây đầu tiên của video ngắn dưới 60 giây"*.
-- **Chống lỗi ảo giác (Hallucination):** Đôi khi AI sẽ tự bịa ra những số liệu hoặc dẫn chứng không có thật để lấp đầy kịch bản. Hãy thêm câu lệnh phụ vào cuối prompt: *"Tuyệt đối không tự bịa đặt các số liệu thống kê hay case study. Nếu cần số liệu, hãy để trống chỗ dạng [Chờ điền số liệu thực tế] để tôi tự bổ sung"*.
+- Biến thể dạng Video Ngắn (Shorts/Reels): Thay vì phân tích video dài 15 phút, hãy điều chỉnh lại đoạn mô tả nhiệm vụ: *"Tập trung mổ xẻ tốc độ chuyển cảnh và cách tạo cú sốc nhận thức trong 3 giây đầu tiên của video ngắn dưới 60 giây"*.
+- Chống lỗi ảo giác (Hallucination): Đôi khi AI sẽ tự bịa ra những số liệu hoặc dẫn chứng không có thật để lấp đầy kịch bản. Hãy thêm câu lệnh phụ vào cuối prompt: *"Tuyệt đối không tự bịa đặt các số liệu thống kê hay case study. Nếu cần số liệu, hãy để trống chỗ dạng [Chờ điền số liệu thực tế] để tôi tự bổ sung"*.
 
 ---
 

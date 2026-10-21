@@ -25,7 +25,7 @@ La svolta è arrivata quando ho smesso di trattare ChatGPT come un assistente cr
 
 Quando chiedi a un LLM di analizzare un testo senza una struttura rigida, il modello attiva i suoi parametri di default focalizzandosi sul riassunto tematico anziché sulla meccanica persuasiva. Non vede il video come un funnel di conversione temporale; lo vede come un articolo da riassumere. 
 
-Per ottenere un'analisi chirurgica, dobbiamo fornire al prompt una **struttura di vincoli temporali e psicologici**. Dobbiamo dire all'AI *dove* guardare, *cosa* misurare in termini di ritmo e *come* decodificare il gancio emotivo che ha impedito agli utenti di chiudere la scheda del browser nei primi dieci secondi.
+Per ottenere un'analisi chirurgica, dobbiamo fornire al prompt una struttura di vincoli temporali e psicologici. Dobbiamo dire all'AI *dove* guardare, *cosa* misurare in termini di ritmo e *come* decodificare il gancio emotivo che ha impedito agli utenti di chiudere la scheda del browser nei primi dieci secondi.
 
 Ecco l'architettura logica del prompt maestro che utilizziamo nei nostri sprint di automazione.
 
@@ -64,9 +64,9 @@ Restituisci l'output in formato strutturato, pulito e privo di introduzioni o co
 
 ## Variabili, Sicurezza e Consigli Pratici
 
-1. **Gestione dei Token:** Se la trascrizione del video supera le parole consentite o la finestra di contesto rischia di diluire l'analisi, dividi lo script in due parti (prima metà e seconda metà) mantenendo lo stesso prompt di sistema.
-2. **Prevenzione delle Allucinazioni:** Specifica sempre nel prompt di non inventare dati o sezioni non presenti nella trascrizione. Se un passaggio è poco chiaro, l'AI deve segnalarlo esplicitamente invece di inventare motivazioni fantasiose.
-3. **Integrazione nei Flussi di Lavoro:** Puoi inserire questo prompt all'interno di una Custom GPT o di un agente su Make.com/Zapier per automatizzare l'analisi di intere playlist di competitor in pochi minuti.
+1. Gestione dei Token: Se la trascrizione del video supera le parole consentite o la finestra di contesto rischia di diluire l'analisi, dividi lo script in due parti (prima metà e seconda metà) mantenendo lo stesso prompt di sistema.
+2. Prevenzione delle Allucinazioni: Specifica sempre nel prompt di non inventare dati o sezioni non presenti nella trascrizione. Se un passaggio è poco chiaro, l'AI deve segnalarlo esplicitamente invece di inventare motivazioni fantasiose.
+3. Integrazione nei Flussi di Lavoro: Puoi inserire questo prompt all'interno di una Custom GPT o di un agente su Make.com/Zapier per automatizzare l'analisi di intere playlist di competitor in pochi minuti.
 
 ---
 

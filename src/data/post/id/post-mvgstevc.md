@@ -50,11 +50,11 @@ Batasan: Gunakan bahasa Indonesia yang profesional, tajam, dan langsung pada int
 
 ### Tanya Jawab Cepat (FAQ)
 
-**Q: Apakah saya harus memasukkan seluruh isi transkrip video secara utuh?**
+Q: Apakah saya harus memasukkan seluruh isi transkrip video secara utuh?
 A: Tidak harus semuanya. Untuk hasil terbaik dan hemat token, ambil bagian awal (0-3 menit pertama) tempat penentuan retensi, lalu bagian inti materi dan penutupnya. 
 
-**Q: Apakah prompt ini bisa dipakai di Gemini atau Claude selain ChatGPT?**
+Q: Apakah prompt ini bisa dipakai di Gemini atau Claude selain ChatGPT?
 A: Sangat bisa. Struktur prompt berbasis peran (*role-based*) dan instruksi bernomor di atas sangat kompatibel dengan berbagai LLM modern di pasaran saat ini.
 
-**Q: Bagaimana jika video target tidak punya teks transkrip tertulis?**
+Q: Bagaimana jika video target tidak punya teks transkrip tertulis?
 A: Anda bisa menggunakan ekstensi browser gratis untuk menyalin transkrip YouTube, atau mengunduh subtitle videonya terlebih dahulu sebelum memasukkannya ke dalam prompt.

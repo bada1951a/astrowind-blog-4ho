@@ -51,19 +51,19 @@ PRO-TIP ARCHITEKTA: Zamiast pisać całą specyfikację za każdym razem, zapisz
 </div>
 
 Aby uniknąć powszechnych hallukynacji modelu i błędów renderowania w Artifacts, stosuj poniższe zasady bezpieczeństwa:
-- **Kontrola bibliotek:** Zawsze explicitnie wskazuj modelowi, jakich bibliotek ma używać (np. `Recharts` dla wykresów), w przeciwnym razie spróbuje napisać niestandardowe wykresy SVG, które często się psują.
-- **Stan początkowy (State):** Wymuś na modelu zdefiniowanie domyślnych danych testowych (mock data). Pusta tablica danych to najczęstsza przyczyna "białego ekranu" w wygenerowanym prototypie.
-- **Iteracyjne poprawki:** Jeśli dashboard działa, ale brakuje jakiejś funkcji, nie pisz promptu od nowa. Odpowiedz w tym samym wątku: "Dodaj do obecnego komponentu filtrowanie tabeli po dacie w prawym górnym rogu".
+- Kontrola bibliotek: Zawsze explicitnie wskazuj modelowi, jakich bibliotek ma używać (np. `Recharts` dla wykresów), w przeciwnym razie spróbuje napisać niestandardowe wykresy SVG, które często się psują.
+- Stan początkowy (State): Wymuś na modelu zdefiniowanie domyślnych danych testowych (mock data). Pusta tablica danych to najczęstsza przyczyna "białego ekranu" w wygenerowanym prototypie.
+- Iteracyjne poprawki: Jeśli dashboard działa, ale brakuje jakiejś funkcji, nie pisz promptu od nowa. Odpowiedz w tym samym wątku: "Dodaj do obecnego komponentu filtrowanie tabeli po dacie w prawym górnym rogu".
 
 Oto najczęściej zadawane pytania przez inżynierów i menedżerów, z którymi pracuję:
 
 ### FAQ
 
-**1. Czy wygenerowany przez Claude Artifacts kod można łatwo wyeksportować do produkcyjnego repozytorium?**
+1. Czy wygenerowany przez Claude Artifacts kod można łatwo wyeksportować do produkcyjnego repozytorium?
 Tak. Claude 3.5 Sonnet generuje czysty kod w React i Tailwind CSS. Możesz kliknąć przycisk pobierania wewnątrz Artifacts lub skopiować kod bezpośrednio do swojego projektu, doinstalować brakujące paczki (np. `lucide-react`, `recharts`) i od razu wdrożyć go w środowisku deweloperskim.
 
-**2. Co zrobić, gdy wykresy w wygenerowanym dashboardzie się nie ładują?**
+2. Co zrobić, gdy wykresy w wygenerowanym dashboardzie się nie ładują?
 Najczęstszą przyczyną jest brak zaimportowania komponentów z biblioteki `recharts` w nagłówku pliku. Wystarczy poprosić model: "Popraw importy biblioteki Recharts w wygenerowanym kodzie, upewniając się, że ResponsiveContainer, LineChart i XAxis są poprawnie zaimportowane".
 
-**3. Czy mogę poprosić Claude o zmianę stylu wizualnego całego dashboardu jednym poleceniem?**
+3. Czy mogę poprosić Claude o zmianę stylu wizualnego całego dashboardu jednym poleceniem?
 Oczywiście. Ponieważ pracujemy w ekosystemie Tailwind CSS, wystarczy krótka komenda w tym samym wątku, na przykład: "Zmień paletę kolorów całego dashboardu na elegancki motyw ciemny w stylu cyberpunk z akcentami neonowego turkusu i głębokiej czerni", a Artifacts zaktualizuje widok w kilka sekund.

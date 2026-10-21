@@ -21,20 +21,20 @@ Erano le 19:30 in punto nel nostro studio a Milano, e avevamo un problema grosso
 
 Fino a poco tempo fa, se chiedevi a un LLM di "creare una dashboard di analisi dati", ottenevi una sfilza di codice disordinato, frammentato tra blocchi di markdown diversi, oppure descrizioni testuali piene di buone intenzioni ma totalmente inutili per una riunione con un cliente. Il problema di fondo è che la generazione di codice richiede un contesto strutturato: senza istruzioni precise sul framework visivo, sul design system e sul comportamento dei componenti, l'intelligenza artificiale va in confusione e sputa fuori codice non funzionante o interfacce esteticamente imbarazzanti.
 
-La svolta architetturale sta nel trattare Claude 3.5 Sonnet non come un semplice scrittore di testi, ma come un **Full-Stack Prototyping Engine**. Sfruttando la feature degli Artifacts, separiamo il codice sorgente dall'area di chat, dando vita a un ambiente di esecuzione isolato dove la UI prende forma visiva immediata.
+La svolta architetturale sta nel trattare Claude 3.5 Sonnet non come un semplice scrittore di testi, ma come un Full-Stack Prototyping Engine. Sfruttando la feature degli Artifacts, separiamo il codice sorgente dall'area di chat, dando vita a un ambiente di esecuzione isolato dove la UI prende forma visiva immediata.
 
 ### Schema di flusso: Dal CSV grezzo alla Dashboard Interattiva
 
-- **Input (Dati Grezzi):** Incolla o carica il tuo set di dati (CSV, JSON, metriche di copywriting).
-- **Prompt Strutturato:** Applica il nostro master prompt specificando layout, stile e librerie (es. Tailwind CSS, Lucide Icons).
-- **Artifact Engine (Claude 3.5 Sonnet):** Genera un'applicazione web autonoma e interattiva nel pannello laterale.
-- **Revisione Iterativa:** Chiedi modifiche in tempo reale ("Aggiungi un filtro per data", "Sposta il grafico delle vendite in alto").
+- Input (Dati Grezzi): Incolla o carica il tuo set di dati (CSV, JSON, metriche di copywriting).
+- Prompt Strutturato: Applica il nostro master prompt specificando layout, stile e librerie (es. Tailwind CSS, Lucide Icons).
+- Artifact Engine (Claude 3.5 Sonnet): Genera un'applicazione web autonoma e interattiva nel pannello laterale.
+- Revisione Iterativa: Chiedi modifiche in tempo reale ("Aggiungi un filtro per data", "Sposta il grafico delle vendite in alto").
 
 ---
 
 ## Il Master Prompt Template per Dashboard Artifacts
 
-Copia questo prompt testato sul campo. Inseriscilo in **Claude 3.5 Sonnet** (assicurati che gli Artifacts siano abilitati nelle impostazioni del tuo account).
+Copia questo prompt testato sul campo. Inseriscilo in Claude 3.5 Sonnet (assicurati che gli Artifacts siano abilitati nelle impostazioni del tuo account).
 
 ```markdown
 # Ruolo
@@ -63,19 +63,19 @@ Voglio visualizzare i dati forniti di seguito all'interno di una dashboard respo
 
 Quando usi gli Artifacts per sviluppare prototipi veloci, tieni a mente queste regolette per evitare grattacapi tecnici:
 
-1. **Gestione dei Token e dei Dati Lunghi:** Se il tuo file CSV supera le duemila righe, non incollarlo interamente nel prompt. Chiedi prima a Claude di fare un'analisi sommaria o passa solo un campione rappresentativo (prime 50 righe) chiedendogli di generare dati mock coerenti per il prototipo.
-2. **Librerie esterne:** Specifica sempre quali librerie CDN vuoi usare (es. Chart.js, Lucide Icons, Tailwind). Senza indicazioni, Claude potrebbe inventarsi dipendenze inesistenti.
-3. **Esportazione del codice:** Una volta che la dashboard è perfetta, puoi cliccare sul pulsante di download direttamente nell'Artifact di Claude per esportare il file `.html` e caricarlo su un server di staging o condividerlo con il team.
+1. Gestione dei Token e dei Dati Lunghi: Se il tuo file CSV supera le duemila righe, non incollarlo interamente nel prompt. Chiedi prima a Claude di fare un'analisi sommaria o passa solo un campione rappresentativo (prime 50 righe) chiedendogli di generare dati mock coerenti per il prototipo.
+2. Librerie esterne: Specifica sempre quali librerie CDN vuoi usare (es. Chart.js, Lucide Icons, Tailwind). Senza indicazioni, Claude potrebbe inventarsi dipendenze inesistenti.
+3. Esportazione del codice: Una volta che la dashboard è perfetta, puoi cliccare sul pulsante di download direttamente nell'Artifact di Claude per esportare il file `.html` e caricarlo su un server di staging o condividerlo con il team.
 
 ---
 
 ## Domande Frequenti (FAQ)
 
 ### Posso usare questa tecnica anche con ChatGPT o Gemini?
-ChatGPT (con Advanced Data Analysis) e Gemini offrono ottimi strumenti di analisi ed esecuzione di codice Python (tramite notebook), ma **solo Claude 3.5 Sonnet possiede la funzione Artifacts dedicata**, che apre un pannello visivo interattivo in tempo reale ideale per mockup HTML/React senza dover scaricare file o aprire ambienti di sviluppo locali.
+ChatGPT (con Advanced Data Analysis) e Gemini offrono ottimi strumenti di analisi ed esecuzione di codice Python (tramite notebook), ma solo Claude 3.5 Sonnet possiede la funzione Artifacts dedicata, che apre un pannello visivo interattivo in tempo reale ideale per mockup HTML/React senza dover scaricare file o aprire ambienti di sviluppo locali.
 
 ### Il codice generato negli Artifacts è pronto per la produzione?
-No. Gli Artifacts sono nati per il **prototipaggio rapido** e la validazione dei concetti (Proof of Concept). Il codice è eccellente per mostrare l'idea a un cliente o a un team di sviluppo, ma per un prodotto live andranno implementate best practice di sicurezza, autenticazione e gestione dei database.
+No. Gli Artifacts sono nati per il prototipaggio rapido e la validazione dei concetti (Proof of Concept). Il codice è eccellente per mostrare l'idea a un cliente o a un team di sviluppo, ma per un prodotto live andranno implementate best practice di sicurezza, autenticazione e gestione dei database.
 
 ### Come posso correggere un errore di visualizzazione nella dashboard?
 Basta dialogare con Claude direttamente nella chat associata all'Artifact. Ad esempio, scrivi: *"Il grafico a barre nella sezione inferiore si sovrappone ai KPI su schermo mobile. Correggi il layout Tailwind usando flex-col e riducendo il padding"*. Claude aggiornerà l'Artifact all'istante.

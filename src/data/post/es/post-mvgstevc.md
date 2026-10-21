@@ -15,7 +15,7 @@ Mi primer instinto fue tirar por el camino rápido. Abrí ChatGPT y le solté un
 
 ![ChatGPT Prompt to Reverse Engineer Any Viral YouTube Script Structure Prompt Guide](https://picsum.photos/seed/prompt-mvgsussg-5-b/1000/550.jpg)
 
-Ahí fue cuando me detuve, apliqué ingeniería de prompts real y diseñé un sistema estructurado de descomposición inversa. En lugar de pedirle una opinión subjetiva al LLM, lo transformé en un **analista forense de retención de audiencia y arquitecto de contenidos**. Le pasé la transcripción junto con un prompt de cadena de razonamiento multi-etapa (*multi-step reasoning chain*), y en menos de 45 segundos obtuve una radiografía milimétrica del guion: el desglose exacto del gancho (segundos 0 a 5), el bucle de apertura, los puntos de dolor y el patrón de retención cada 30 segundos.
+Ahí fue cuando me detuve, apliqué ingeniería de prompts real y diseñé un sistema estructurado de descomposición inversa. En lugar de pedirle una opinión subjetiva al LLM, lo transformé en un analista forense de retención de audiencia y arquitecto de contenidos. Le pasé la transcripción junto con un prompt de cadena de razonamiento multi-etapa (*multi-step reasoning chain*), y en menos de 45 segundos obtuve una radiografía milimétrica del guion: el desglose exacto del gancho (segundos 0 a 5), el bucle de apertura, los puntos de dolor y el patrón de retención cada 30 segundos.
 
 <div style="border-left: 4px solid #4338ca; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>El secreto de la ingeniería inversa con LLMs:</strong> Nunca le pidas a la IA que "sienta" o "juzgue" un texto. Oblígala a deconstruirlo mediante una taxonomía técnica de retención, separando el gancho, la tensión narrativa, la resolución y la llamada a la acción en bloques discretos.
@@ -25,11 +25,11 @@ Ahí fue cuando me detuve, apliqué ingeniería de prompts real y diseñé un si
 
 El error común al usar ChatGPT o Claude para analizar contenido es tratar al modelo como un espectador pasivo. Para extraer una estructura reutilizable, necesitamos que actúe como un ingeniero de datos textuales. 
 
-La arquitectura que diseñé utiliza un enfoque de **razonamiento encadenado** (*Chain-of-Thought*). En lugar de procesar todo de golpe, el prompt obliga al LLM a seguir estos pasos lógicos:
-1. **Identificación de la Estructura Macro:** Divisón del video en actos (Gancho, Problema, Agitación, Solución, Clímax, CTA).
-2. **Análisis Micro del Gancho:** Desglose palabra por palabra de los primeros 10 segundos para identificar el sesgo cognitivo utilizado (miedo, curiosidad, urgencia).
-3. **Mapeo de Transiciones:** Cómo el creador mantiene la retención evitando los valles de caída de audiencia.
-4. **Plantilla Reutilizable:** Conversión de la estructura analizada en un esquema con variables listas para rellenar con nuestro propio contenido corporativo o de marca.
+La arquitectura que diseñé utiliza un enfoque de razonamiento encadenado (*Chain-of-Thought*). En lugar de procesar todo de golpe, el prompt obliga al LLM a seguir estos pasos lógicos:
+1. Identificación de la Estructura Macro: Divisón del video en actos (Gancho, Problema, Agitación, Solución, Clímax, CTA).
+2. Análisis Micro del Gancho: Desglose palabra por palabra de los primeros 10 segundos para identificar el sesgo cognitivo utilizado (miedo, curiosidad, urgencia).
+3. Mapeo de Transiciones: Cómo el creador mantiene la retención evitando los valles de caída de audiencia.
+4. Plantilla Reutilizable: Conversión de la estructura analizada en un esquema con variables listas para rellenar con nuestro propio contenido corporativo o de marca.
 
 ## El Prompt Maestro para Ingeniar Guiones Virales
 
@@ -62,9 +62,9 @@ Aquí tienes la transcripción a analizar:
 
 Cuando trabajes con textos largos de YouTube, ten en cuenta estas recomendaciones técnicas para evitar alucinaciones en el modelo:
 
-* **Limpia el texto previo:** Elimina las marcas de tiempo automáticas (como `[00:12]`) y muletillas excesivas antes de pasar el texto al prompt, a menos que quieras que el LLM analice el ritmo temporal exacto.
-* **Usa Artifacts si estás en Claude:** Si utilizas Claude, aprovecha la interfaz de Artifacts para que la plantilla maestra se genere en un panel independiente, facilitando su copia y edición posterior sin ensuciar el chat.
-* **Ajusta el nicho:** Si la estructura analizada pertenece a un canal de entretenimiento pero trabajas para un cliente B2B, añade una línea al final del prompt diciendo: *"Adapta el tono de la plantilla resultante a un formato profesional corporativo pero altamente persuasivo"*.
+* Limpia el texto previo: Elimina las marcas de tiempo automáticas (como `[00:12]`) y muletillas excesivas antes de pasar el texto al prompt, a menos que quieras que el LLM analice el ritmo temporal exacto.
+* Usa Artifacts si estás en Claude: Si utilizas Claude, aprovecha la interfaz de Artifacts para que la plantilla maestra se genere en un panel independiente, facilitando su copia y edición posterior sin ensuciar el chat.
+* Ajusta el nicho: Si la estructura analizada pertenece a un canal de entretenimiento pero trabajas para un cliente B2B, añade una línea al final del prompt diciendo: *"Adapta el tono de la plantilla resultante a un formato profesional corporativo pero altamente persuasivo"*.
 
 <div style="border-left: 4px solid #4338ca; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Tip Pro para optimización:</strong> Si vas a analizar múltiples guiones en serie para un estudio de mercado, crea un GPT personalizado en ChatGPT con este prompt fijado en las "Instructions" (Instrucciones Personalizadas). Así solo tendrás que pegar la transcripción en cada mensaje sin reescribir toda la estructura.
@@ -73,7 +73,7 @@ Cuando trabajes con textos largos de YouTube, ten en cuenta estas recomendacione
 ## Preguntas Frecuentes (FAQ)
 
 ### ¿Funciona este prompt con cualquier modelo de lenguaje?
-Sí, pero rinde considerablemente mejor en modelos con alta ventana de contexto y razonamiento avanzado como **GPT-4o** o **Claude 3.5 Sonnet**. Los modelos más pequeños (como GPT-3.5) tienden a simplificar demasiado la Fase 4 y devuelven estructuras superficiales.
+Sí, pero rinde considerablemente mejor en modelos con alta ventana de contexto y razonamiento avanzado como GPT-4o o Claude 3.5 Sonnet. Los modelos más pequeños (como GPT-3.5) tienden a simplificar demasiado la Fase 4 y devuelven estructuras superficiales.
 
 ### ¿Qué hago si el guion viral es demasiado largo (más de 5,000 palabras)?
 Es recomendable dividir el texto en dos partes o pedirle primero al modelo un resumen ejecutivo de los bloques principales antes de solicitar la fase de ingeniería inversa profunda, evitando así saturar la ventana de salida (*output token limit*).

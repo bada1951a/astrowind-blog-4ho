@@ -25,8 +25,8 @@ Le problème réside dans le manque de structure technique et contextuelle. Clau
 
 ### Avant / Après : L'évolution de l'approche
 
-- **Avant (Prompt naïf) :** "Crée un tableau de bord pour mes données marketing." -> *Résultat :* Code incomplet, design moche, pas d'interactivité réelle.
-- **Après (Prompt d'ingénieur) :** "Agis en tant qu'expert Front-End. Utilise React, Tailwind CSS et Lucide pour générer un Artifact interactif complet..." -> *Résultat :* Application web fluide, design professionnel aux couleurs de la marque, filtres dynamiques opérationnels.
+- Avant (Prompt naïf) : "Crée un tableau de bord pour mes données marketing." -> *Résultat :* Code incomplet, design moche, pas d'interactivité réelle.
+- Après (Prompt d'ingénieur) : "Agis en tant qu'expert Front-End. Utilise React, Tailwind CSS et Lucide pour générer un Artifact interactif complet..." -> *Résultat :* Application web fluide, design professionnel aux couleurs de la marque, filtres dynamiques opérationnels.
 
 ---
 
@@ -63,9 +63,9 @@ Exécute maintenant et génère l'Artifact complet.
 
 Pour éviter les hallucinations de code et garantir que l'Artifact s'affiche correctement sans bugs de script, suivez ces règles d'or :
 
-1. **Exigez du code autonome :** Précisez toujours à Claude d'inclure toutes les dépendances nécessaires via des balises script CDN (comme Tailwind via Play CDN ou React) si vous travaillez en HTML/JS simple, ou demandez explicitement un composant React standard.
-2. **Limitez le volume de données dans le prompt :** Ne collez jamais 50 000 lignes de données brutes dans le chat. Donnez un échantillon représentatif de 5 à 10 lignes, et demandez à Claude de générer un jeu de données mocké (simulé) cohérent pour alimenter les graphiques.
-3. **Itérez par blocs :** Ne demandez pas tout en même temps. Générez d'abord la structure globale et les KPI principaux, puis dites dans le message suivant : *"Ajoute maintenant un graphique en cascade dans le bloc central et rends les filtres de date actifs"*.
+1. Exigez du code autonome : Précisez toujours à Claude d'inclure toutes les dépendances nécessaires via des balises script CDN (comme Tailwind via Play CDN ou React) si vous travaillez en HTML/JS simple, ou demandez explicitement un composant React standard.
+2. Limitez le volume de données dans le prompt : Ne collez jamais 50 000 lignes de données brutes dans le chat. Donnez un échantillon représentatif de 5 à 10 lignes, et demandez à Claude de générer un jeu de données mocké (simulé) cohérent pour alimenter les graphiques.
+3. Itérez par blocs : Ne demandez pas tout en même temps. Générez d'abord la structure globale et les KPI principaux, puis dites dans le message suivant : *"Ajoute maintenant un graphique en cascade dans le bloc central et rends les filtres de date actifs"*.
 
 <div style="border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Astuce de pro :</strong> Si un graphique ne s'affiche pas correctement dans l'Artifact, écrivez simplement : "Le graphique 2 ne réagit pas au clic sur le filtre. Corrige la logique d'état React (useState) correspondante dans l'Artifact." Claude corrigera instantanément le code en direct.
@@ -75,11 +75,11 @@ Pour éviter les hallucinations de code et garantir que l'Artifact s'affiche cor
 
 ## Foire Aux Questions (FAQ)
 
-**Q1 : Quelle est la différence entre un simple bloc de code et un Artifact Claude ?**
+Q1 : Quelle est la différence entre un simple bloc de code et un Artifact Claude ?
 R : Un bloc de code textuel nécessite de copier-coller le code dans un éditeur et de lancer un serveur local pour le tester. Un Artifact s'exécute directement dans un panneau visuel interactif intégré à droite de votre écran de chat, ce qui permet de tester l'application en conditions réelles en un clic.
 
-**Q2 : Puis-je exporter le dashboard généré dans Artifacts pour l'héberger ?**
+Q2 : Puis-je exporter le dashboard généré dans Artifacts pour l'héberger ?
 R : Oui. En haut à droite de l'Artifact, vous disposez d'un bouton de téléchargement (Download) qui vous permet de récupérer le fichier source complet (HTML, React ou autre) pour le déployer immédiatement sur Vercel, Netlify ou le confier à vos développeurs.
 
-**Q3 : Que faire si Claude s'arrête en plein milieu de la génération du code à cause d'une limite de tokens ?**
+Q3 : Que faire si Claude s'arrête en plein milieu de la génération du code à cause d'une limite de tokens ?
 R : C'est un classique sur les gros projets. Tape simplement : *"Tu t'es arrêté à la ligne X. Continue exactement là où tu t'es arrêté sans réécrire le code précédent, en veillant à bien fermer toutes les balises"*.

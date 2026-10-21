@@ -58,18 +58,18 @@ Analysiere das untenstehende Transkript exakt nach folgenden Kriterien und gib d
 
 Im Banken- und Consultingumfeld ist Datensicherheit entscheidend. Nutzen Sie niemals sensible Kundendaten oder interne Bilanzen in öffentlichen Prompts. Verwenden Sie diesen Prompt ausschließlich für die *Strukturanalyse* externer, öffentlich zugänglicher Medieninhalte. 
 
-* **Token-Spar-Tipp:** Wenn das Transkript sehr lang ist, fügen Sie am Anfang des Prompts die Instruktion ein: *„Ignoriere Füllwörter, Wiederholungen und Begrüßungen des Creators. Konzentriere dich ausschließlich auf den argumentativen Kern.“*
-* **Systemanweisungen (Custom Instructions):** Wenn Sie diesen Workflow regelmäßig für Geschäftsberichte nutzen, hinterlegen Sie in den ChatGPT-Einstellungen als Persona: *„Du bist ein präziser Corporate-Copywriter, der komplexe Finanzdaten in fesselnde, verständliche Narrative übersetzt.“*
+* Token-Spar-Tipp: Wenn das Transkript sehr lang ist, fügen Sie am Anfang des Prompts die Instruktion ein: *„Ignoriere Füllwörter, Wiederholungen und Begrüßungen des Creators. Konzentriere dich ausschließlich auf den argumentativen Kern.“*
+* Systemanweisungen (Custom Instructions): Wenn Sie diesen Workflow regelmäßig für Geschäftsberichte nutzen, hinterlegen Sie in den ChatGPT-Einstellungen als Persona: *„Du bist ein präziser Corporate-Copywriter, der komplexe Finanzdaten in fesselnde, verständliche Narrative übersetzt.“*
 
 ---
 
 ### Häufig gestellte Fragen (FAQ)
 
-**1. Funktioniert dieser Prompt auch bei Claude oder nur bei ChatGPT?**
+1. Funktioniert dieser Prompt auch bei Claude oder nur bei ChatGPT?
 Der Prompt ist modellagnostisch und funktioniert hervorragend auf beiden Plattformen. Claude 3.5 Sonnet neigt oft zu noch präziseren, analytischen Strukturierungen bei langen Texten, während ChatGPT extrem schnell beim Extrahieren von Marketing-Hooks ist.
 
-**2. Was mache ich, wenn das YouTube-Transkript keine Formatierung oder Zeitstempel hat?**
+2. Was mache ich, wenn das YouTube-Transkript keine Formatierung oder Zeitstempel hat?
 Das ist kein Problem. Das LLM ist intelligent genug, den zeitlichen Verlauf anhand der inhaltlichen Wendepunkte und Übergänge im Text logisch zu rekonstruieren. Sie können dem Prompt einfach den rohen Textblock übergeben.
 
-**3. Wie verhindere ich, dass das KI-Ergebnis zu reißerisch für den Bankensektor klingt?**
+3. Wie verhindere ich, dass das KI-Ergebnis zu reißerisch für den Bankensektor klingt?
 Fügen Sie in der Rolle (im Prompt) die Einschränkung hinzu: *„Behalte die psychologische Sogwirkung bei, formuliere den Tonfall jedoch seriös, faktenbasiert und konform mit den Standards einer gehobenen Unternehmensberatung.“* So bleibt die Struktur viral, aber der Wortschatz bleibt bankentauglich.

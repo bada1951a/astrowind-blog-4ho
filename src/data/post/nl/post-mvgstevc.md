@@ -50,8 +50,8 @@ Hier is het transcript:
 <strong>Pro-Tip voor Systeeminstellingen:</strong> Voeg de bovenstaande rolomschrijving toe aan je 'Custom Instructions' in ChatGPT of als vaste systeeminstructie in Claude. Dit bespaart je bij elke analysesessie kostbare minuten en zorgt voor een consistente outputkwaliteit.
 </div>
 
-* **Token-besparing:** Plak niet blind video's van een uur. Knip het transcript op in segmenten van de eerste 5 minuten (waar de retentie het hardst bevechten wordt) voor de diepste analyses.
-* **Platformkeuze:** Claude 3.5 Sonnet blinkt uit in het begrijpen van subtiele뉘ances in schrijfstijl en retorische opbouw vergeleken met oudere modellen.
+* Token-besparing: Plak niet blind video's van een uur. Knip het transcript op in segmenten van de eerste 5 minuten (waar de retentie het hardst bevechten wordt) voor de diepste analyses.
+* Platformkeuze: Claude 3.5 Sonnet blinkt uit in het begrijpen van subtiele뉘ances in schrijfstijl en retorische opbouw vergeleken met oudere modellen.
 
 ---
 

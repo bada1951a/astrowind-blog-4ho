@@ -23,10 +23,10 @@ Hieronder vind je de geteste, efficiënte methode om dit direct op te lossen. We
 
 Wanneer je in Midjourney V6 een scène genereert, berekent het model een willekeurige wiskundige ruismatrix op basis van jouw tekst. Zelfs als je exact dezelfde tekst herhaalt met een andere seed, verandert de gelaatsstructuur fundamenteel. Om dit op te lossen, splitsen we de prompt op in vier vaste componenten:
 
-1. **De Visuele Basis (Anchor):** Specifieke gelaatstrekken die niet veranderen (bijv. "angular jawline, subtle freckles on nose, tied-back dirty blonde hair").
-2. **De Omgeving & Actie (Context):** Wat doet het personage en waar is het (bijv. "working on a laptop in a glass-walled Zuidas office").
-3. **De Stijl & Belichting (Aesthetic):** Cinematografie, camera-instellingen en kleurenpalet (bijv. "shot on 35mm lens, moody overcast lighting, corporate editorial style").
-4. **De Parameters:** Technische instructies zoals `--cref [URL]` en `--ar 16:9`.
+1. De Visuele Basis (Anchor): Specifieke gelaatstrekken die niet veranderen (bijv. "angular jawline, subtle freckles on nose, tied-back dirty blonde hair").
+2. De Omgeving & Actie (Context): Wat doet het personage en waar is het (bijv. "working on a laptop in a glass-walled Zuidas office").
+3. De Stijl & Belichting (Aesthetic): Cinematografie, camera-instellingen en kleurenpalet (bijv. "shot on 35mm lens, moody overcast lighting, corporate editorial style").
+4. De Parameters: Technische instructies zoals `--cref [URL]` en `--ar 16:9`.
 
 ---
 
@@ -48,10 +48,10 @@ Om het proces van twintig scènes te versnellen, gebruik ik een LLM om de variat
 
 | Kenmerk | ChatGPT (GPT-4o) | Claude 3.5 Sonnet |
 | :--- | :--- | :--- |
-| **Snelheid** | Zeer snel voor directe iteraties | Uitstekend voor langere, verhalendecontinuity |
-| **Structuur** | Goed in het volgen van strakke tabellen | Superieur in het handhaven van consistente verhaallijnen over 20+ scènes |
-| **Formattering** | Handig voor snelle JSON-exports | Perfect voor rijke Markdown-uitvoer en gedetailleerde omgevingsbeschrijvingen |
-| **Aanbevolen gebruik** | Snelle variaties genereren op de werkvloer | Complexe storyboard-scenario's uitschrijven |
+| Snelheid | Zeer snel voor directe iteraties | Uitstekend voor langere, verhalendecontinuity |
+| Structuur | Goed in het volgen van strakke tabellen | Superieur in het handhaven van consistente verhaallijnen over 20+ scènes |
+| Formattering | Handig voor snelle JSON-exports | Perfect voor rijke Markdown-uitvoer en gedetailleerde omgevingsbeschrijvingen |
+| Aanbevolen gebruik | Snelle variaties genereren op de werkvloer | Complexe storyboard-scenario's uitschrijven |
 
 <div style="border-left: 4px solid #d97706; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Let op bij het gebruik van --cref:</strong> Zorg ervoor dat de referentie-afbeelding een helder portret is met neutrale belichting. Als je `--cw 0` gebruikt, kopieert Midjourney alleen de kleding en het haar, terwijl `--cw 100` (standaard) het hele gezicht, kapsel en kleding overneemt. Voor onze twintig scènes met wisselende kleding in een kantooromgeving werkt `--cw 50` vaak het beste.

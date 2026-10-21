@@ -26,9 +26,9 @@ Untuk keluar dari krisis ini, kita membutuhkan arsitektur *prompt* yang menggabu
 Mengapa *prompt* sederhana seperti "a business woman smiling in an office" selalu gagal menjaga konsistensi? Karena Midjourney memperlakukan setiap baris perintah baru sebagai probabilitas acak baru. Model V6 memiliki pemahaman bahasa yang jauh lebih tajam, namun tanpa jangkar visual yang konsisten, ia tetap akan berimprovisasi pada struktur wajah.
 
 Solusinya adalah pendekatan 3 lapis:
-1. **Jangkar Visual Primer:** Menggunakan tautan gambar referensi karakter utama (*Master Seed Image*).
-2. **Bobot Karakter Mutlak:** Mengatur parameter `--cw 100` agar mesin meniru seluruh elemen wajah, bukan hanya pakaian atau gaya rambutnya saja.
-3. **Deskripsi Token Konsisten:** Mempertahankan frasa kunci deskripsi fisik yang identik di setiap variasi adegan.
+1. Jangkar Visual Primer: Menggunakan tautan gambar referensi karakter utama (*Master Seed Image*).
+2. Bobot Karakter Mutlak: Mengatur parameter `--cw 100` agar mesin meniru seluruh elemen wajah, bukan hanya pakaian atau gaya rambutnya saja.
+3. Deskripsi Token Konsisten: Mempertahankan frasa kunci deskripsi fisik yang identik di setiap variasi adegan.
 
 ### Template Master Prompt V6
 
@@ -49,11 +49,11 @@ Salin templat di bawah ini dan sesuaikan variabel di dalam tanda kurung siku ses
 
 Dalam implementasinya di lapangan, Anda hanya perlu mengubah bagian awal *prompt* (deskripsi adegan) sementara bagian belakang yang memuat parameter konsistensi tetap sama persis. Berikut adalah perbandingan struktur untuk 3 skenario berbeda:
 
-* **Adegan Pagi (Briefing):**
+* Adegan Pagi (Briefing):
   `Morning briefing in a boardroom, a professional Indonesian woman in her late 20s... --cref [URL] --cw 100 --v 6.0`
-* **Adegan Siang (Analisis Data):**
+* Adegan Siang (Analisis Data):
   `Analyzing financial charts on dual monitors, a professional Indonesian woman in her late 20s... --cref [URL] --cw 100 --v 6.0`
-* **Adegan Sore (Presentasi Klien):**
+* Adegan Sore (Presentasi Klien):
   `Presenting marketing strategy on a large LED screen, a professional Indonesian woman in her late 20s... --cref [URL] --cw 100 --v 6.0`
 
 Dengan menjaga struktur ini tetap kaku pada bagian parameter dan fleksibel pada bagian aksi, karakter Anda akan terlihat seperti orang yang benar-benar sama sedang menjalani aktivitas harian di kantor.
@@ -62,11 +62,11 @@ Dengan menjaga struktur ini tetap kaku pada bagian parameter dan fleksibel pada 
 
 ### Tanya Jawab (FAQ)
 
-**1. Apakah parameter --cref bisa digunakan untuk menggabungkan dua karakter sekaligus dalam satu adegan?**
+1. Apakah parameter --cref bisa digunakan untuk menggabungkan dua karakter sekaligus dalam satu adegan?
 Hingga saat ini, parameter `--cref` di Midjourney V6 dirancang optimal untuk satu referensi karakter utama. Jika Anda membutuhkan dua karakter konsisten, disarankan untuk membuat komposisi secara terpisah atau menggunakan teknik *image blending* lanjutan di luar Midjourney.
 
-**2. Mengapa wajah karakter terkadang sedikit berubah meskipun saya sudah menggunakan --cw 100?**
+2. Mengapa wajah karakter terkadang sedikit berubah meskipun saya sudah menggunakan --cw 100?
 Perubahan kecil bisa terjadi jika latar belakang atau sudut pencahayaan (*lighting*) dalam *prompt* terlalu ekstrem dan kontras. Pastikan Anda mempertahankan kata kunci pencahayaan yang serupa di setiap adegan untuk membantu konsistensi model V6.
 
-**3. Bagaimana cara menghemat waktu saat harus menghasilkan 20 adegan sekaligus?**
+3. Bagaimana cara menghemat waktu saat harus menghasilkan 20 adegan sekaligus?
 Gunakan fitur *Variable Prompting* di Midjourney atau siapkan daftar *prompt* di dalam dokumen teks, lalu salin dan tempel secara berurutan menggunakan mode *Fast Hours* agar proses render berjalan tanpa jeda lama.
