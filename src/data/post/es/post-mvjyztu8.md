@@ -23,7 +23,7 @@ Para solucionar esto de forma definitiva en entornos de consultoría y estrategi
 <strong>Consejo del Arquitecto de IA:</strong> Nunca dejes que el modelo escriba el documento de corrido. Divide el whitepaper en 5 bloques lógicos de 1000 palabras y utiliza un archivo de metadatos o memoria de contexto en cada eslabón de la cadena para blindar el tono y los datos cuantitativos.
 </div>
 
-Aquí tienes la plantilla maestra que utilizamos para iniciar la cadena de prompts en ChatGPT o Claude (puedes adaptarla en las [**Instrucciones Personalizadas**] o usarla como bloque inicial):
+Aquí tienes la plantilla maestra que utilizamos para iniciar la cadena de prompts en ChatGPT o Claude (puedes adaptarla en las [Instrucciones Personalizadas] o usarla como bloque inicial):
 
 ```markdown
 Actúa como un Director de Práctica Senior especializado en estrategia industrial y transformación digital, con más de 20 años de experiencia en consultoría estratégica en Madrid y Londres. Tu estilo de comunicación es directo, analítico, basado en datos empíricos, y exento de entusiasmo artificial o relleno corporativo. 
@@ -40,7 +40,7 @@ Sigue estrictamente estas directrices estructurales y de tono:
 Confirma que has comprendido tu rol y las restricciones de tono antes de generar el primer bloque.
 ```
 
-Una vez que el modelo genera el primer bloque bajo el control estricto de este prompt, el secreto para mantener la cadena sin que pierda la personalidad radica en el **Prompt Puente**. Cada vez que pases al siguiente bloque, debes alimentar al LLM con un resumen del estado actual y recordarle explícitamente el perfil.
+Una vez que el modelo genera el primer bloque bajo el control estricto de este prompt, el secreto para mantener la cadena sin que pierda la personalidad radica en el Prompt Puente. Cada vez que pases al siguiente bloque, debes alimentar al LLM con un resumen del estado actual y recordarle explícitamente el perfil.
 
 Aquí tienes la estructura del prompt puente para el segundo bloque:
 

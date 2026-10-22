@@ -72,9 +72,9 @@ Tone: Tegas, berbasis data, profesional, dan siap dipresentasikan di depan C-lev
 ## Tips Keselamatan dan Pencegahan Halusinasi
 
 Saat bekerja dengan dokumen industri yang padat angka dan regulasi, risiko halusinasi AI meningkat drastis. Terapkan aturan ketat ini:
-1. **Gunakan Batasan Kontekstual:** Selalu tambahkan frasa *"Jika informasi tidak tersedia secara eksplisit di dalam dokumen, nyatakan secara jujur 'Data tidak ditemukan', jangan berspekulasi."* di setiap prompt Anda.
-2. **Manfaatkan Fitur Upload File:** Alih-alih melakukan *copy-paste* manual yang sering merusak format tabel, unggah dokumen PDF langsung ke sistem Claude atau ChatGPT Plus untuk memastikan pemindaian teks berjalan utuh.
-3. **Validasi Silang Angka:** Jika whitepaper memuat statistik pertumbuhan industri yang masif, minta AI memberikan nomor halaman referensi dari dokumen asli agar Anda bisa melakukan verifikasi kilat.
+1. Gunakan Batasan Kontekstual: Selalu tambahkan frasa *"Jika informasi tidak tersedia secara eksplisit di dalam dokumen, nyatakan secara jujur 'Data tidak ditemukan', jangan berspekulasi."* di setiap prompt Anda.
+2. Manfaatkan Fitur Upload File: Alih-alih melakukan *copy-paste* manual yang sering merusak format tabel, unggah dokumen PDF langsung ke sistem Claude atau ChatGPT Plus untuk memastikan pemindaian teks berjalan utuh.
+3. Validasi Silang Angka: Jika whitepaper memuat statistik pertumbuhan industri yang masif, minta AI memberikan nomor halaman referensi dari dokumen asli agar Anda bisa melakukan verifikasi kilat.
 
 <div style="border-left: 4px solid #be123c; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Peringatan Efisiensi:</strong> Jangan pernah menggunakan prompt tunggal untuk dokumen di atas 2.000 kata. Kualitas analisis berbanding terbalik dengan panjang instruksi yang dipaksakan dalam satu kali kirim. Rantai prompt 3 tahap terbukti menghemat waktu revisi hingga 70-80 persen.

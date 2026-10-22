@@ -63,9 +63,9 @@ Write Section [Insert Section Number] focusing strictly on the following sub-top
 
 When executing long-form prompt chains, you will inevitably run into edge cases like token truncation or stylistic drift. Here is how to bulletproof your workflow:
 
-- **The Bridge Summary Trick:** Never let the AI start a new prompt blind. Always paste a 3-bullet point recap of the exact ending note from the previous prompt. This tricks the attention mechanism into treating the new generation as an organic continuation rather than a fresh session.
-- **Tone Anchoring:** If you notice the vocabulary becoming too standard, add a negative constraint to your prompt: `[NEGATIVE CONSTRAINT: Ban words such as 'testament', 'delve', 'revolutionize', 'tapestry', and 'furthermore'].`
-- **Token Budgeting:** Break your output requests into 800-1,000 word chunks. Asking an LLM to output 2,500 words in a single response inevitably leads to quality degradation and abrupt cutoff mid-sentence.
+- The Bridge Summary Trick: Never let the AI start a new prompt blind. Always paste a 3-bullet point recap of the exact ending note from the previous prompt. This tricks the attention mechanism into treating the new generation as an organic continuation rather than a fresh session.
+- Tone Anchoring: If you notice the vocabulary becoming too standard, add a negative constraint to your prompt: `[NEGATIVE CONSTRAINT: Ban words such as 'testament', 'delve', 'revolutionize', 'tapestry', and 'furthermore'].`
+- Token Budgeting: Break your output requests into 800-1,000 word chunks. Asking an LLM to output 2,500 words in a single response inevitably leads to quality degradation and abrupt cutoff mid-sentence.
 
 ## Frequently Asked Questions
 

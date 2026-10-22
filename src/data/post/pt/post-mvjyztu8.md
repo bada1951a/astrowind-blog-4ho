@@ -21,11 +21,11 @@ Eram 19h em um escritório na Avenida Paulista, em São Paulo. O cliente, uma gi
 
 O erro clássico de quem está começando na engenharia de prompts é tratar o ChatGPT como uma máquina de escrever mágica. Você joga um tema complexo, aperta o enter e espera 5.000 palavras impecáveis. Na prática, isso gera:
 
-1. **Alucinações Críticas:** O modelo inventa estatísticas, cases e normativas para preencher o espaço exigido.
-2. **Deriva de Tom (Drift):** A introdução começa formal, o meio fica informal e a conclusão vira um resumo robótico.
-3. **Superficialidade:** Em vez de análises aprofundadas por setor, você recebe clichês corporativos vazios.
+1. Alucinações Críticas: O modelo inventa estatísticas, cases e normativas para preencher o espaço exigido.
+2. Deriva de Tom (Drift): A introdução começa formal, o meio fica informal e a conclusão vira um resumo robótico.
+3. Superficialidade: Em vez de análises aprofundadas por setor, você recebe clichês corporativos vazios.
 
-Para resolver isso, a arquitetura correta exige a **engenharia de encadeamento (Prompt Chaining)**. Dividimos o whitepaper em módulos estruturados, alimentando a IA com o contexto anterior de forma controlada.
+Para resolver isso, a arquitetura correta exige a engenharia de encadeamento (Prompt Chaining). Dividimos o whitepaper em módulos estruturados, alimentando a IA com o contexto anterior de forma controlada.
 
 ---
 
@@ -35,7 +35,7 @@ Abaixo está o fluxo prático que utilizamos em projetos de alta exigência na P
 
 ### Etapa 1: Definição da Arquitetura e Matriz de Tom
 
-Antes de escrever qualquer parágrafo, criamos o **System Prompt** base que será injetado em todas as etapas seguintes para travar o tom de voz, o público-alvo e o glossário técnico.
+Antes de escrever qualquer parágrafo, criamos o System Prompt base que será injetado em todas as etapas seguintes para travar o tom de voz, o público-alvo e o glossário técnico.
 
 ```markdown
 Role: Arquiteto Chefe de Conteúdo B2B e Especialista em Whitepapers Corporativos.
@@ -86,10 +86,10 @@ Texto para revisão:
 
 | Critério | Prompt Único (Abordagem Comum) | Cadeia de Prompts Modular (Método Profissional) |
 | :--- | :--- | :--- |
-| **Precisão Técnica** | Baixa (muitas alucinações de dados) | Alta (validação por blocos temáticos) |
-| **Consistência de Tom** | Varia drasticamente do início ao fim | Rigorosamente mantida via System Prompt fixo |
-| **Extensão Real** | Fica em torno de 600 a 800 palavras | Atinge facilmente as 5.000 palavras profundas |
-| **Tempo de Edição** | Horas corrigindo erros e inventados | Minutos apenas refinando a fluidez final |
+| Precisão Técnica | Baixa (muitas alucinações de dados) | Alta (validação por blocos temáticos) |
+| Consistência de Tom | Varia drasticamente do início ao fim | Rigorosamente mantida via System Prompt fixo |
+| Extensão Real | Fica em torno de 600 a 800 palavras | Atinge facilmente as 5.000 palavras profundas |
+| Tempo de Edição | Horas corrigindo erros e inventados | Minutos apenas refinando a fluidez final |
 
 ---
 

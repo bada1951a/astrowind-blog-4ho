@@ -17,7 +17,7 @@ Ieri pomeriggio, ore 17:30, nel nostro studio di consulenza a Milano. Mancavano 
 
 ![How to Chain ChatGPT Prompts for 5000-Word In-Depth Industry Whitepapers Prompt Guide](https://picsum.photos/seed/prompt-mvjz1ilb-6-b/1000/550.jpg)
 
-Il vero segreto per redigere whitepaper industriali di livello professionale non risiede in un prompt miracoloso, ma in una **catena di prompt modulari** (Prompt Chaining). Dobbiamo smettere di trattare ChatGPT come un autore tuttofare e iniziare a gestirlo come una catena di montaggio editoriale dove ogni anello ha un obiettivo chirurgico.
+Il vero segreto per redigere whitepaper industriali di livello professionale non risiede in un prompt miracoloso, ma in una catena di prompt modulari (Prompt Chaining). Dobbiamo smettere di trattare ChatGPT come un autore tuttofare e iniziare a gestirlo come una catena di montaggio editoriale dove ogni anello ha un obiettivo chirurgico.
 
 ---
 
@@ -26,10 +26,10 @@ Il vero segreto per redigere whitepaper industriali di livello professionale non
 Quando tentiamo di generare un documento corposo in un solo colpo, la densità informativa crolla drasticamente dopo le prime mille parole. L'AI inizia a ripetere concetti già espressi, inventa dati statistici per riempire lo spazio e perde il filo logico della tesi iniziale. 
 
 La soluzione adottata nella nostra agenzia per standardizzare il lavoro dell'intero dipartimento si basa su una pipeline a quattro fasi:
-1. **Fase di ricerca e strutturazione (Outline & Data Ingestion)**
-2. **Fase di espansione modulare per sezioni (Deep-Dive Generation)**
-3. **Fase di revisione critica e tone of voice (Styling & Critique Loop)**
-4. **Fase di assemblaggio e ottimizzazione finale (Synthesis)**
+1. Fase di ricerca e strutturazione (Outline & Data Ingestion)
+2. Fase di espansione modulare per sezioni (Deep-Dive Generation)
+3. Fase di revisione critica e tone of voice (Styling & Critique Loop)
+4. Fase di assemblaggio e ottimizzazione finale (Synthesis)
 
 Ecco il sistema di prompt standardizzato che abbiamo inserito nella libreria condivisa del nostro studio milanese.
 
@@ -87,9 +87,9 @@ Per eliminare definitivamente la variabilità qualitativa tra i diversi membri d
 Agisci come Editor Capo inflessibile e revisore tecnico di una testata economica milanese. 
 Analizza il testo del capitolo che ti fornisco di seguito e applica una revisione severa secondo questi criteri:
 
-1. **Rilevamento allucinazioni e luoghi comuni:** Rimuovi qualsiasi frase vuota, aggettivo superfluo o affermazione priva di fondamento logico.
-2. **Densezza informativa:** Assicurati che ogni paragrafo contenga un'informazione utile, un dato o un'argomentazione strategica.
-3. **Formattazione:** Verifica che l'uso del grassetto evidenzi solo i concetti chiave e che la struttura sia leggibile su schermo.
+1. Rilevamento allucinazioni e luoghi comuni: Rimuovi qualsiasi frase vuota, aggettivo superfluo o affermazione priva di fondamento logico.
+2. Densezza informativa: Assicurati che ogni paragrafo contenga un'informazione utile, un dato o un'argomentazione strategica.
+3. Formattazione: Verifica che l'uso del grassetto evidenzi solo i concetti chiave e che la struttura sia leggibile su schermo.
 
 Restituisci il testo corretto e ottimizzato, segnalando in un breve box finale a punti quali modifiche strutturali hai apportato per migliorare la qualità complessiva.
 

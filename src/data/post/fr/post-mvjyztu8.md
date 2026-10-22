@@ -22,9 +22,9 @@ En tant qu'ingénieur en prompt design, j'ai souvent vu des professionnels gaspi
 ## Pourquoi le prompt unique échoue sur les grands volumes
 
 Lorsque vous confiez l'intégralité d'un corpus lourd à ChatGPT ou Claude sans structure, le modèle subit une surcharge cognitive contextuelle. Les symptômes sont immédiats :
-- **Perte de précision statistique** : l'IA invente des pourcentages ou lisse les nuances des retours négatifs.
-- **Ton générique** : le texte adopte un style marketing creux au lieu d'utiliser le jargon sectoriel pointu exigé par votre direction.
-- **Biais de récence** : le modèle se concentre uniquement sur le début ou la fin de vos données source.
+- Perte de précision statistique : l'IA invente des pourcentages ou lisse les nuances des retours négatifs.
+- Ton générique : le texte adopte un style marketing creux au lieu d'utiliser le jargon sectoriel pointu exigé par votre direction.
+- Biais de récence : le modèle se concentre uniquement sur le début ou la fin de vos données source.
 
 Pour contourner ces limites, nous allons utiliser une architecture en trois phases : l'ingestion et la structuration thématique, la génération section par section, puis l'harmonisation finale.
 
@@ -39,7 +39,9 @@ Ce premier prompt sert à structurer les données brutes (vos 50 pages de verbat
 Tu agis en tant qu'analyste de données senior spécialisé dans le traitement des enquêtes d'entreprise et l'audit organisationnel. Ton rôle est d'analyser le corpus de texte fourni pour en extraire des tendances quantitatives et qualitatives rigoureuses.
 
 # Contexte du Projet
-- Sujet du livre blanc : Transformation des méthodes de travail et climat social au Q3.
+- Sujet du livre blanc : Transformation des méthodes de travail et climat social au
+
+Q3.
 - Format de sortie attendu : Un plan de classification structuré au format JSON avec métriques estimées.
 
 # Tâche

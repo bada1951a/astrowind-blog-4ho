@@ -15,7 +15,7 @@ Dit is het klassieke probleem waar iedere contentstrateeg tegenaan loopt bij lan
 
 ![How to Chain ChatGPT Prompts for 5000-Word In-Depth Industry Whitepapers Prompt Guide](https://picsum.photos/seed/prompt-mvjz21vy-8-b/1000/550.jpg)
 
-De oplossing? Stop met het voeren van één eindeloos gesprek. Je moet werken met een **prompt-keten** (prompt chaining) waarbij elke stap een eigen, strak afgekaderd document oplevert dat als basis dient voor de volgende fase.
+De oplossing? Stop met het voeren van één eindeloos gesprek. Je moet werken met een prompt-keten (prompt chaining) waarbij elke stap een eigen, strak afgekaderd document oplevert dat als basis dient voor de volgende fase.
 
 <div style="border-left: 4px solid #78350f; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>De Kernregel van AI-Whitepapers:</strong> Een monoliet-prompt van "Schrijf een whitepaper van 5000 woorden over X" faalt altijd door geheugenverlies en tokenlimieten. Hak de opdracht op in modulaire bouwstenen.
@@ -26,9 +26,9 @@ De oplossing? Stop met het voeren van één eindeloos gesprek. Je moet werken me
 Als je ChatGPT of Claude vraagt om in één keer een gigantisch document te produceren, treedt er informatiemoeheid op. Modellen optimaliseren voor het volgende meest waarschijnlijke woord, wat bij lange teksten leidt tot herhaling en oppervlakkigheid. Bovendien raken ze na een aantal interacties hun ingestelde persona kwijt.
 
 Om dit te omzeilen, bouwen we een keten van opeenvolgende instructies. Elke stap in de keten heeft een specifieke doelstelling:
-1. **Fase 1: De Structuur en Architectuur** (De inhoudsopgave en argumentatielijn vastleggen).
-2. **Fase 2: Sectiegewijze Diepgang** (Elk hoofdstuk apart genereren met hernieuwde persona-injectie).
-3. **Fase 3: Synthese en Eindredactie** (De puntjes op de i zetten en de toon uniformeren).
+1. Fase 1: De Structuur en Architectuur (De inhoudsopgave en argumentatielijn vastleggen).
+2. Fase 2: Sectiegewijze Diepgang (Elk hoofdstuk apart genereren met hernieuwde persona-injectie).
+3. Fase 3: Synthese en Eindredactie (De puntjes op de i zetten en de toon uniformeren).
 
 ## Het Master Prompt Template voor de Persona-Instandhouding
 
@@ -57,17 +57,26 @@ Genereer nu de tekst voor deze sectie.
 
 Wanneer je deze kettingmethode toepast, zijn er een aantal valkuilen die je direct moet vermijden om frustratie te voorkomen:
 
-* **Tokenlimieten bewaken:** Vraag nooit om meer dan 800 à 1000 woorden per keer. Als je om 2000 woorden vraagt, raffelt de AI de inhoud af.
-* **Contextbehoud via bestanden:** Upload gegenereerde hoofdstukken als PDF of TXT in je volgende chatvenster als referentiemateriaal (vooral handig in Claude met zijn grote geheugen), zodat de AI weet wat er in het vorige hoofdstuk is besproken.
-* **De 'Toetssteen'-truc:** Voeg aan het begin van elke nieuwe prompt een korte herinnering toe: *"Herinnering: Je bent nog steeds die kritische analist uit Frankfurt. Bouw voort op de stijl van hoofdstuk 1."*
+* Tokenlimieten bewaken: Vraag nooit om meer dan 800 à 1000 woorden per keer. Als je om 2000 woorden vraagt, raffelt de AI de inhoud af.
+* Contextbehoud via bestanden: Upload gegenereerde hoofdstukken als PDF of TXT in je volgende chatvenster als referentiemateriaal (vooral handig in Claude met zijn grote geheugen), zodat de AI weet wat er in het vorige hoofdstuk is besproken.
+* De 'Toetssteen'-truc: Voeg aan het begin van elke nieuwe prompt een korte herinnering toe: *"Herinnering: Je bent nog steeds die kritische analist uit Frankfurt. Bouw voort op de stijl van hoofdstuk 1."*
 
 ## Veelgestelde Vragen
 
-**Q1. Kan ik deze methode zowel in ChatGPT als in Claude gebruiken?**  
+
+
+Q1. Kan ik deze methode zowel in ChatGPT als in Claude gebruiken?
+
 A1. Jazeker. Claude (voornamelijk via Projects) blinkt uit in het vasthouden van grote hoeveelheden achtergrondinformatie over meerdere stappen heen, terwijl ChatGPT via Custom GPT's of strakke prompt-ketens uitstekend presteert voor de daadwerkelijke creatie van de inhoud.
 
-**Q2. Hoe voorkom ik dat de gegenereerde hoofdstukken onsamenhangend aanvoelen?**  
+
+
+Q2. Hoe voorkom ik dat de gegenereerde hoofdstukken onsamenhangend aanvoelen?
+
 A2. Zorg ervoor dat je in fase 1 een extreem gedetailleerde inhoudsopgave maakt waarin de rode draad per hoofdstuk is vastgelegd. Geef die inhoudsopgave bij elke volgende prompt opnieuw mee als context.
 
-**Q3. Wat doe ik als de AI alsnog uit zijn rol schiet en te enthousiast reageert?**  
+
+
+Q3. Wat doe ik als de AI alsnog uit zijn rol schiet en te enthousiast reageert?
+
 A3. Onderbreek direct de conversatie en stuur een correctie-prompt: *"Stop. Je valt terug in je standaard AI-toon. Verwijder de laatste alinea, neem je persona van senior analist weer aan en herschrijf vanuit een objectief, kritisch perspectief."*

@@ -21,7 +21,7 @@ Ngồi đực mặt ra ở phòng họp tầng 12 tòa nhà văn phòng công ng
 
 Khi bạn yêu cầu AI xử lý một khối lượng dữ liệu khổng lồ trong một câu lệnh duy nhất, mô hình ngôn ngữ lớn (LLM) sẽ bị quá tải ngữ cảnh (Context Window Overload). Sự chú ý của AI sẽ bị loãng, dẫn đến việc phần giữa của bài viết bị sơ sài, thiếu chiều sâu nghiên cứu ngành và cấu trúc văn bản rời rạc.
 
-Giải pháp tối ưu không phải là cố gắng viết một câu lệnh dài vô tận, mà là **Prompt Chaining** (Nối chuỗi câu lệnh). Chúng ta sẽ chia nhỏ quy trình thành các bước tuần tự: 
+Giải pháp tối ưu không phải là cố gắng viết một câu lệnh dài vô tận, mà là Prompt Chaining (Nối chuỗi câu lệnh). Chúng ta sẽ chia nhỏ quy trình thành các bước tuần tự: 
 1. Phân rã dữ liệu thô thành bản đồ ý tưởng (Outline Architecture).
 2. Viết từng chương chuyên sâu với từ khóa kỹ thuật (Deep-dive Chapter Generation).
 3. Tổng hợp và tối ưu giọng văn chuyên gia (Synthesizing & Polishing).

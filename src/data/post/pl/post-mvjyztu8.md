@@ -25,7 +25,7 @@ Kiedy wrzucasz do Chatu całą specyfikację technologiczną i krzyczysz: "Napis
 
 ### Architektura Master Prompta: Łańcuchowanie dla profesjonalistów
 
-Aby rozwiązać problem przepływu danych między narzędziami nocodowymi a strukturą whitepapera, wdrożyłem rygorystyczny system [**Chain-Promptingu**]. Poniższy szablon w stylu edytora kodu to sprawdzona sekwencja, którą wklejasz do ChatGPT lub Claude w kolejnych krokach, aby utrzymać absolutną precyzję merytoryczną i techniczną.
+Aby rozwiązać problem przepływu danych między narzędziami nocodowymi a strukturą whitepapera, wdrożyłem rygorystyczny system [Chain-Promptingu]. Poniższy szablon w stylu edytora kodu to sprawdzona sekwencja, którą wklejasz do ChatGPT lub Claude w kolejnych krokach, aby utrzymać absolutną precyzję merytoryczną i techniczną.
 
 ```markdown
 SYSTEM:
@@ -49,9 +49,9 @@ Wykorzystaj podejście problem-rozwiązanie-rezultat, poparte realnymi case stud
 
 Podczas pracy nad długimi dokumentami w środowiskach biznesowych musisz stosować konkretne techniki zapobiegające degradacji jakości tekstu:
 
-1. **Izolacja tokenów:** Podziel 5000 słów na 5 modułów po 1000 słów. Pozwala to uniknąć zjawiska "zapominania" instrukcji początkowych przez model, które występuje przy długich wątkach.
-2. **Walidacja schematów:** Jeśli w tekście pojawiają się fragmenty kodu, konfiguracje webhooków lub struktury baz danych, w każdym kolejnym prompcie wymuszaj walidację składniową za pomocą frazy: *"Sprawdź spójność typów danych z poprzednim modułem przed wygenerowaniem treści"*.
-3. **Strojenie temperatury:** Jeśli korzystasz z API lub ustawień zaawansowanych, ustaw temperaturę na poziomie [**0.2-0.4**] dla części technicznych oraz [**0.7**] dla wstępu i podsumowania, aby zachować balans między kreatywnością a ścisłym rygorem inżynieryjnym.
+1. Izolacja tokenów: Podziel 5000 słów na 5 modułów po 1000 słów. Pozwala to uniknąć zjawiska "zapominania" instrukcji początkowych przez model, które występuje przy długich wątkach.
+2. Walidacja schematów: Jeśli w tekście pojawiają się fragmenty kodu, konfiguracje webhooków lub struktury baz danych, w każdym kolejnym prompcie wymuszaj walidację składniową za pomocą frazy: *"Sprawdź spójność typów danych z poprzednim modułem przed wygenerowaniem treści"*.
+3. Strojenie temperatury: Jeśli korzystasz z API lub ustawień zaawansowanych, ustaw temperaturę na poziomie [0.2-0.4] dla części technicznych oraz [0.7] dla wstępu i podsumowania, aby zachować balans między kreatywnością a ścisłym rygorem inżynieryjnym.
 
 ### Często Zadawane Pytania (FAQ)
 
