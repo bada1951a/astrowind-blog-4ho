@@ -63,19 +63,13 @@ Wanneer je deze kettingmethode toepast, zijn er een aantal valkuilen die je dire
 
 ## Veelgestelde Vragen
 
-
-
 Q1. Kan ik deze methode zowel in ChatGPT als in Claude gebruiken?
 
 A1. Jazeker. Claude (voornamelijk via Projects) blinkt uit in het vasthouden van grote hoeveelheden achtergrondinformatie over meerdere stappen heen, terwijl ChatGPT via Custom GPT's of strakke prompt-ketens uitstekend presteert voor de daadwerkelijke creatie van de inhoud.
 
-
-
 Q2. Hoe voorkom ik dat de gegenereerde hoofdstukken onsamenhangend aanvoelen?
 
 A2. Zorg ervoor dat je in fase 1 een extreem gedetailleerde inhoudsopgave maakt waarin de rode draad per hoofdstuk is vastgelegd. Geef die inhoudsopgave bij elke volgende prompt opnieuw mee als context.
-
-
 
 Q3. Wat doe ik als de AI alsnog uit zijn rol schiet en te enthousiast reageert?
 
