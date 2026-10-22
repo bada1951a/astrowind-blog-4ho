@@ -41,31 +41,31 @@ function getKstPublishDateIso(index) {
 }
 
 // =========================================================================
-// 본문 마크다운 별표(**) 및 FAQ 붙어 깨짐 현상 원천 정제 함수 (완벽 강화 버전)
+// [최종 완벽 버전] 본문 마크다운 별표 및 FAQ 서식 파괴 원천 차단 정제 함수
 // =========================================================================
 function sanitizeMarkdownFormatting(content) {
   let cleaned = content;
 
+  // 1) 엉터리로 겹친 3개 이상의 별표를 표준 볼드(**)로 교정
   cleaned = cleaned.replace(/\*{3,}/g, '**');
+
+  // 2) 괄호나 따옴표 안의 별표 오타 교정
   cleaned = cleaned.replace(/\*\*\[([^\]]+)\]\*\*/g, '[**$1**]');
   cleaned = cleaned.replace(/\*\*"([^"]+)"\*\*/g, '"**$1**"');
   cleaned = cleaned.replace(/\*\*'([^']+)'\*\*/g, '\'**$1**\'');
-  cleaned = cleaned.replace(/\*\*\s+([^\*\n]+?)\s+\*\*/g, '**$1**');
-  cleaned = cleaned.replace(/\*\*\s+([^\*\n]+?)\*\*/g, '**$1**');
-  cleaned = cleaned.replace(/\*\*([^\*\n]+?)\s+\*\*/g, '**$1**');
 
-  // ⚡ FAQ 영역에서 Q와 A 사이에 공백이나 줄바꿈이 어떻게 꼬여 있든 완벽한 2줄 개행으로 강제 분리
+  // 3) FAQ 영역에서 Q와 A가 어떻게 꼬여 있든 무조건 완벽한 2줄 개행으로 강제 분리
   cleaned = cleaned.replace(/\*\*Q([0-9]+)\.\s*([\s\S]*?)\*\*A\1\./g, (match, qNum, qText) => {
     return `**Q${qNum}. ${qText.trim()}**\n\n**A${qNum}.**`;
   });
 
+  // 4) 본문 전체를 줄 단위로 검사하여 홀수로 튀어나온 깨진 별표(볼드 찌꺼기) 강제 제거
   const lines = cleaned.split('\n');
   const fixedLines = lines.map(line => {
     if (line.trim().startsWith('```') || line.trim().startsWith('`')) return line;
     const matches = line.match(/\*\*/g);
     if (matches && matches.length % 2 !== 0) {
-      const lastIdx = line.lastIndexOf('**');
-      return line.slice(0, lastIdx) + line.slice(lastIdx + 2);
+      return line.replace(/\*\*/g, '');
     }
     return line;
   });
@@ -310,20 +310,16 @@ theme: "${selectedTheme.name}"
       let body = text.slice(frontmatter.length).trim();
       body = body.replace(/^#\s+[^\n]+\n+/, '');
 
-      // 4호기 영구 고정 단일 카테고리: Prompt Engineering
       frontmatter = frontmatter.replace(/category:\s*["'][^"']*["']/i, "category: 'Prompt Engineering'")
                                .replace(/category:\s*[^\n\r]+/i, "category: 'Prompt Engineering'");
 
-      // Cloudflare 빌드 실패 및 날짜 밀림 방지: 정확한 KST 기반 ISO 날짜 강제 주입
       frontmatter = frontmatter.replace(/publishDate:\s*[^\n\r]+/i, `publishDate: ${pubDateIso}`);
 
-      // 대표 이미지 경로 강제 동기화
       frontmatter = frontmatter.replace(/image:\s*["'][^"']*["']/i, `image: '${coverUrl}'`);
 
-      // 본문 별표(**) 서식 오류 정제
+      // 본문 별표 및 FAQ 서식 최종 안전 정제 적용
       body = sanitizeMarkdownFormatting(body);
 
-      // 이미지 alt 텍스트 특수문자 제거 방어 로직 (마크다운 깨짐 방지)
       const safeAlt = currentTopic.replace(/[\[\]\(\)"']/g, '').trim();
       const middleImageMarkdown = `\n\n![${safeAlt} Prompt Guide](${bodyUrl})\n\n`;
 
