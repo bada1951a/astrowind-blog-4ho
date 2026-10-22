@@ -41,22 +41,21 @@ function getKstPublishDateIso(index) {
 }
 
 // =========================================================================
-// 본문 마크다운 볼드(**) 기호 완전 제거 및 FAQ 줄바꿈 정제 함수 (최종 수정본)
+// [초경량 고속 정제 함수] 볼드 제거 및 다국어 문장/번호 붙음 완전 방어
 // =========================================================================
 function sanitizeMarkdownFormatting(content) {
-  let cleaned = content;
+  // 1) Gukuraho ibimenyetso byose bya bold (**)
+  let cleaned = content.replace(/\*\*/g, '');
 
-  // 1) Q와 A 사이에 문장이 붙어 있는 경우 강제 두 줄 개행
-  cleaned = cleaned.replace(/([^\n])\s*(Q[1-9]\.)/g, '$1\n\n$2');
-  cleaned = cleaned.replace(/([^\n])\s*(A[1-9]\.)/g, '$1\n\n$2');
+  // 2) Gushyiramo umwanya nyuma y'ikimenyetso cy'ikibazo (?) niba inyuguti ikurikiyeho yegeranye
+  cleaned = cleaned.replace(/\?([A-Za-z\u00C0-\u024F\u1EA0-\u1EF9])/g, '? $1');
 
-  // 2) FAQ 영역에서 Q와 A 블록이 꼬인 경우 완벽한 2줄 개행으로 정제
-  cleaned = cleaned.replace(/\*\*Q([0-9]+)\.\s*([\s\S]*?)\*\*A\1\./g, (match, qNum, qText) => {
-    return `Q${qNum}. ${qText.trim()}\n\nA${qNum}.`;
-  });
+  // 3) Gutandukanya interuro n'umubare w'urutonde ukurikiyeho (urugero: "끝.2. 시작" -> "끝.\n\n2. 시작")
+  cleaned = cleaned.replace(/([.?!])\s*([0-9]+\.\s+)/g, '$1\n\n$2');
 
-  // 3) 골칫거리인 모든 마크다운 볼드(**) 기호를 완전히 제거 (대제목/소제목 #은 안전하게 유지됨)
-  cleaned = cleaned.replace(/\*\*/g, '');
+  // 4) Gutunganya Q na A hamwe n'imitwe y'ibibazo mu zindi ndimi (D:, R:, Domande)
+  cleaned = cleaned.replace(/([^\n])\s*(Q[1-9]\.|R[1-9]\.|A[1-9]\.|D[1-9]\.)/g, '$1\n\n$2');
+  cleaned = cleaned.replace(/([.?!])\s*(Q[0-9]*\.|D:|R:|Risposta|Domande)/gi, '$1\n\n$2');
 
   return cleaned;
 }
@@ -164,7 +163,8 @@ const TARGET_LANGS = [
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 const fileSlug = `post-${Date.now().toString(36)}`;
 
-async function fetchWithRetry(prompt, maxRetries = 15, delayMs = 20000) {
+// Igihe cyo gutegereza cyagabanijwe kugira ngo cyihutishe gahunda (5s aho kuba 20s, inshuro 5 aho kuba 15)
+async function fetchWithRetry(prompt, maxRetries = 5, delayMs = 5000) {
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
       const response = await ai.models.generateContent({
@@ -184,8 +184,7 @@ async function generateSinglePost(lang, index) {
   const selectedTheme = THEME_PRESETS[Math.floor(Math.random() * THEME_PRESETS.length)];
   const selectedScenario = PROMPT_CRISIS_SCENARIOS_30[Math.floor(Math.random() * PROMPT_CRISIS_SCENARIOS_30.length)];
 
-  console.log(`\n🚀 [${index + 1}/12]${lang.name} (${lang.code}) 4호기 프롬프트 포스팅 생성 중... (적용 테마: ${selectedTheme.name})`);
-  console.log(`   🎭 선택된 프롬프트 위기 시나리오: "${selectedScenario.slice(0, 30)}..."`);
+  console.log(`\n🚀 [${index + 1}/12] ${lang.name} (${lang.code}) 4호기 프롬프트 포스팅 생성 중... (적용 테마: ${selectedTheme.name})`);
 
   const { coverUrl, bodyUrl } = getPostImages(currentTopic, index);
   const pubDateIso = getKstPublishDateIso(index);
@@ -216,7 +215,7 @@ ${currentTopic}
 
 [MANDATORY OPENING VARIATION RULE - ZERO CLICHE REPETITION]
 - You MUST start the opening story based strictly on the assigned scenario: "${selectedScenario}".
-- ABSOLUTELY FORBIDDEN: Do NOT default to a generic "morning sync in 30 minutes" trope. Adapt the specific incident (e.g., hallucinated numbers, broken script syntax, token limits, parsing errors) naturally into the local daily workflow of ${lang.name}.
+- ABSOLUTELY FORBIDDEN: Do NOT default to a generic "morning sync in 30 minutes" trope. Adapt the specific incident naturally into the local daily workflow of ${lang.name}.
 
 [STRICT MARKDOWN & FORMATTING RULES - NO RENDERING GLITCHES]
 1. BOLD FORMATTING RULE:
@@ -225,7 +224,7 @@ ${currentTopic}
     - Always wrap copy-pasteable prompt templates, JSON schemas, or terminal commands in standard 3-backtick code blocks (\`\`\`markdown, \`\`\`json, or \`\`\`text) so they never overflow horizontally on mobile screens.
 3. NO LATEX & NO TILDE:
     - ABSOLUTELY FORBIDDEN: NEVER use LaTeX math delimiters ($ or $$).
-    - ABSOLUTELY FORBIDDEN: NEVER use tilde (~) for ranges (e.g., NEVER write "0~5s", "10~20%"). Always use a hyphen (e.g., "0-5s", "10-20%").
+    - ABSOLUTELY FORBIDDEN: NEVER use tilde (~) for ranges. Always use a hyphen (e.g., "0-5s", "10-20%").
 
 [Design Theme & Layout Dynamic Rules (MANDATORY)]
 - Assigned Theme: "${selectedTheme.name}"
@@ -237,7 +236,6 @@ ${currentTopic}
 
 [Tone & Writing Style Rules (STRICT - NO AI VIBE)]
 1. Mandatory Opening:
-    - Absolutely FORBIDDEN: Boring textbook intros like "Hello", "In this post", "Today we will explore".
     - Start immediately with an intense, relatable workplace emergency scenario strictly about [Topic] based on the assigned incident.
 2. Tone & Voice:
     - Write like a real colleague sharing an honest, battle-tested prompt trick on a developer/creator community.
@@ -300,10 +298,9 @@ theme: "${selectedTheme.name}"
                                .replace(/category:\s*[^\n\r]+/i, "category: 'Prompt Engineering'");
 
       frontmatter = frontmatter.replace(/publishDate:\s*[^\n\r]+/i, `publishDate: ${pubDateIso}`);
-
       frontmatter = frontmatter.replace(/image:\s*["'][^"']*["']/i, `image: '${coverUrl}'`);
 
-      // 본문 별표 및 FAQ 서식 최종 안전 정제 적용
+      // Gusukura inyandiko hakoreshejwe uburyo bwoherejwe vuba budateza lag
       body = sanitizeMarkdownFormatting(body);
 
       const safeAlt = currentTopic.replace(/[\[\]\(\)"']/g, '').trim();
@@ -341,14 +338,15 @@ theme: "${selectedTheme.name}"
 
 async function run() {
   console.log("==================================================");
-  console.log("⚡ 4호기 Prompt Engineering 12개국 30개 위기 시나리오 자동 포스팅 시작");
+  console.log("⚡ 4호기 Prompt Engineering 12개국 최적화 고속 자동 포스팅 시작");
   console.log("==================================================");
 
   let successCount = 0;
   for (let i = 0; i < TARGET_LANGS.length; i++) {
     const isSuccess = await generateSinglePost(TARGET_LANGS[i], i);
     if (isSuccess) successCount++;
-    if (i < TARGET_LANGS.length - 1) await delay(5000);
+    // Igihe cyo gutegereza hagati y'indimi cyagabanijwe kugera kuri 2s
+    if (i < TARGET_LANGS.length - 1) await delay(2000);
   }
 
   if (successCount > 0) {
