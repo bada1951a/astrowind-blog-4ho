@@ -41,36 +41,24 @@ function getKstPublishDateIso(index) {
 }
 
 // =========================================================================
-// [최종 완벽 버전] 본문 마크다운 별표 및 FAQ 서식 파괴 원천 차단 정제 함수
+// 본문 마크다운 볼드(**) 기호 완전 제거 및 FAQ 줄바꿈 정제 함수 (최종 수정본)
 // =========================================================================
 function sanitizeMarkdownFormatting(content) {
   let cleaned = content;
 
-  // 1) 엉터리로 겹친 3개 이상의 별표를 표준 볼드(**)로 교정
-  cleaned = cleaned.replace(/\*{3,}/g, '**');
+  // 1) Q와 A 사이에 문장이 붙어 있는 경우 강제 두 줄 개행
+  cleaned = cleaned.replace(/([^\n])\s*(Q[1-9]\.)/g, '$1\n\n$2');
+  cleaned = cleaned.replace(/([^\n])\s*(A[1-9]\.)/g, '$1\n\n$2');
 
-  // 2) 괄호나 따옴표 안의 별표 오타 교정
-  cleaned = cleaned.replace(/\*\*\[([^\]]+)\]\*\*/g, '[**$1**]');
-  cleaned = cleaned.replace(/\*\*"([^"]+)"\*\*/g, '"**$1**"');
-  cleaned = cleaned.replace(/\*\*'([^']+)'\*\*/g, '\'**$1**\'');
-
-  // 3) FAQ 영역에서 Q와 A가 어떻게 꼬여 있든 무조건 완벽한 2줄 개행으로 강제 분리
+  // 2) FAQ 영역에서 Q와 A 블록이 꼬인 경우 완벽한 2줄 개행으로 정제
   cleaned = cleaned.replace(/\*\*Q([0-9]+)\.\s*([\s\S]*?)\*\*A\1\./g, (match, qNum, qText) => {
-    return `**Q${qNum}. ${qText.trim()}**\n\n**A${qNum}.**`;
+    return `Q${qNum}. ${qText.trim()}\n\nA${qNum}.`;
   });
 
-  // 4) 본문 전체를 줄 단위로 검사하여 홀수로 튀어나온 깨진 별표(볼드 찌꺼기) 강제 제거
-  const lines = cleaned.split('\n');
-  const fixedLines = lines.map(line => {
-    if (line.trim().startsWith('```') || line.trim().startsWith('`')) return line;
-    const matches = line.match(/\*\*/g);
-    if (matches && matches.length % 2 !== 0) {
-      return line.replace(/\*\*/g, '');
-    }
-    return line;
-  });
+  // 3) 골칫거리인 모든 마크다운 볼드(**) 기호를 완전히 제거 (대제목/소제목 #은 안전하게 유지됨)
+  cleaned = cleaned.replace(/\*\*/g, '');
 
-  return fixedLines.join('\n');
+  return cleaned;
 }
 
 if (!fs.existsSync(TOPICS_FILE)) {
@@ -102,7 +90,7 @@ const PROMPT_CRISIS_SCENARIOS_30 = [
   "클라이언트가 제시한 까다로운 브랜드 가이드라인과 톤앤매너를 지키면서 블로그 콘텐츠 초안을 대량 생산해야 할 때",
   "월요일 아침 전사 주간 회의 직전, 주말 사이 쏟아진 산업 동향 뉴스 30편을 3줄 핵심 브리핑으로 즉시 정리해야 할 때",
   "간단한 파이썬 데이터 크롤링 스크립트를 짜달라고 했으나 폐기된 구버전 라이브러리 문법을 추천해 오류가 쏟아질 때",
-  "복잡한 SQL 쿼리 최적화를 위해 프롬프트를 넣었지만 테이블 조인(JOIN) 논리가 꼬인 엉터리 코드를 반환했을 때",
+  "복잡한 SQL 쿼리 최적화를 위해 프롬프트를 넣었으나 테이블 조인(JOIN) 논리가 꼬인 엉터리 코드를 반환했을 때",
   "웹 프론트엔드 인터랙티브 컴포넌트를 Claude Artifacts로 뽑아내려는데 스타일 시트가 깨져 화면이 뭉개지는 순간",
   "정규표현식(Regex) 패턴 하나가 계속 매칭에 실패해 1시간째 프롬프트와 정규식을 번갈아 수정하며 헤매던 오후",
   "API 호출 결과를 JSON 포맷으로 깔끔하게 받아내야 하는데 자꾸 마크다운 설명글을 덧붙여 파싱 에러를 유발할 때",
@@ -232,9 +220,7 @@ ${currentTopic}
 
 [STRICT MARKDOWN & FORMATTING RULES - NO RENDERING GLITCHES]
 1. BOLD FORMATTING RULE:
-    - Standard markdown bold is strictly: **Word**
-    - NEVER put brackets or quotes inside asterisks (FORBIDDEN: **[Word]**, **"Word"**). Instead write: [**Word**] or "**Word**".
-    - NEVER leave space inside asterisks (FORBIDDEN: ** Word **).
+    - Absolutely DO NOT use markdown bold asterisks anywhere in the body text or FAQ. Keep all text in plain standard format.
 2. COMMANDS & PROMPT TEMPLATES / CODE BLOCKS:
     - Always wrap copy-pasteable prompt templates, JSON schemas, or terminal commands in standard 3-backtick code blocks (\`\`\`markdown, \`\`\`json, or \`\`\`text) so they never overflow horizontally on mobile screens.
 3. NO LATEX & NO TILDE:
@@ -265,7 +251,7 @@ ${currentTopic}
 2. Root Cause / Architecture: Why simple prompting fails and the logic behind this prompt structure.
 3. Master Prompt Template: Clear, copy-pasteable Markdown code block with placeholders (e.g., [Insert Data]).
 4. Practical Variations / Safety Tips: Hallucination prevention, token saving, or system instructions.
-5. Frequently Asked Questions (FAQ): Exactly 3 realistic, high-value Q&As that everyday users would ask. (CRITICAL: Every Q and A must start on a fresh new line with proper markdown bolding like **Q1. ...** and **A1.**).
+5. Frequently Asked Questions (FAQ): Exactly 3 realistic, high-value Q&As that everyday users would ask. (CRITICAL: Every Q and A must start on a fresh new line without markdown bolding like Q1. ... and A1.).
 
 [Length & Richness Rules]
 - Korean (ko): Minimum 2,500 characters of rich, deep, non-repetitive text.
