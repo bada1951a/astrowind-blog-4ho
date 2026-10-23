@@ -33,7 +33,9 @@ Agis en tant qu'expert en Growth Marketing, scénariste senior YouTube et spéci
 
 # RÈGLES D'ANALYSE STRICTES
 1. Ne fais PAS de résumé littéraire. Concentre-toi uniquement sur les mécaniques d'engagement et de storytelling.
+
 2. Identifie précisément la structure du "Pattern Interrupt" (les 5 à 15 premières secondes).
+
 3. Repère les boucles de rétention (comment le créateur évite que l'audience ne décroche).
 
 # FORMAT DE RESTITUTION ATTENDU

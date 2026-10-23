@@ -34,8 +34,11 @@ Ik ga je een transcript of een gedetailleerde beschrijving van een virale YouTub
 
 Analyseer de input op basis van de volgende criteria:
 1. De Hook (0-30 seconden): Welk psychologisch probleem of pijnpunt wordt direct aangesneden? Welke visuele of tekstuele pattern interrupt wordt gebruikt?
+
 2. De Pacing & Opbouw: Hoe is de spanning verdeeld? Identificeer de transities tussen de intro, de kernpunten en de climax.
+
 3. Retorische Triggers: Welke overtuigingstechnieken (bijv. open loops, sociale bewijskracht, angst voor verlies) worden toegepast?
+
 4. Retention Hacks: Waar bouwt de spreker mini-cliffhangers in om te voorkomen dat de kijker wegklikt?
 
 Geef je antwoord in een gestructureerd format met concrete kopjes, inclusief een herbruikbaar skelettemplate dat ik direct kan invullen voor mijn eigen onderwerp: [Jouw Onderwerp/Niche Hier].

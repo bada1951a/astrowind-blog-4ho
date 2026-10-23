@@ -46,8 +46,11 @@ Faça a engenharia reversa completa do transcript/roteiro do vídeo fornecido ab
 
 # Diretrizes de Análise (Siga estritamente esta ordem)
 1. O Gancho (0 a 30 segundos): Identifique a técnica exata usada para prender a atenção (ex: curiosidade, dor imediata, quebra de padrão). Qual foi a frase exata ou o gatilho visual/auditivo?
+
 2. A Arquitetura de Retenção (Meio do vídeo): Como o autor evita o "drop-off" (queda de audiência)? Mapeie a frequência de loops abertos, reviravoltas ou introdução de novos problemas a cada bloco de tempo.
+
 3. O Ritmo (Pacing) e Tom: Analise o tamanho das frases, o uso de pausas implícitas e o nível de jargão técnico versus acessibilidade.
+
 4. O Clímax e o CTA: Como a tensão é resolvida e para onde a audiência é direcionada no final?
 
 # Formato de Saída Obrigatório

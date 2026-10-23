@@ -65,7 +65,9 @@ Restituisci l'output in formato strutturato, pulito e privo di introduzioni o co
 ## Variabili, Sicurezza e Consigli Pratici
 
 1. Gestione dei Token: Se la trascrizione del video supera le parole consentite o la finestra di contesto rischia di diluire l'analisi, dividi lo script in due parti (prima metà e seconda metà) mantenendo lo stesso prompt di sistema.
+
 2. Prevenzione delle Allucinazioni: Specifica sempre nel prompt di non inventare dati o sezioni non presenti nella trascrizione. Se un passaggio è poco chiaro, l'AI deve segnalarlo esplicitamente invece di inventare motivazioni fantasiose.
+
 3. Integrazione nei Flussi di Lavoro: Puoi inserire questo prompt all'interno di una Custom GPT o di un agente su Make.com/Zapier per automatizzare l'analisi di intere playlist di competitor in pochi minuti.
 
 ---

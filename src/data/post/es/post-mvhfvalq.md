@@ -48,8 +48,11 @@ Necesito que desarrolles un prototipo de dashboard interactivo completo utilizan
 
 [REQUISITOS FUNCIONALES]
 1. Diseña una interfaz limpia, moderna y profesional utilizando una paleta de colores corporativa (tonos neutros con acentos en #a16207).
+
 2. Incluye al menos 3 pestañas o vistas interactivas: Resumen Ejecutivo, Análisis de Mercado y Proyecciones.
+
 3. Añade elementos interactivos reales (filtros por fecha, botones para cambiar métricas, gráficos simulados con barras dinámicas y tooltips).
+
 4. El código debe ser 100% funcional, sin dependencias externas complejas más allá de React, Tailwind y librerías estándar por CDN (como Recharts o Chart.js si se requiere).
 
 Por favor, genera el resultado directamente como un Artifact interactivo listo para probarse.

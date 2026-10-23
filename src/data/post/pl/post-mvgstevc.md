@@ -23,7 +23,9 @@ Wpisałem wtedy w ChatGPT klasyczne: *"Przeanalizuj ten film i napisz mi podobny
 
 Większość użytkowników traktuje ChatGPT jak wyszukiwarkę Google. Wklejają link lub transkrypcję i oczekują cudu. Tymczasem kluczem do inżynierii odwrotnej (reverse engineering) jest rozbicie tekstu na warstwy:
 1. Warstwa emocjonalna: W którym momencie widzik odczuwa strach, ciekawość lub ulgę?
+
 2. Warstwa strukturalna: Jak zbudowany jest wstęp (pierwsze 30 sekund)? Gdzie następuje punkt zwrotny?
+
 3. Warstwa retoryczna: Jakie techniki argumentacji zastosowano, by utrzymać retencję?
 
 Zamiast pisać poematy do AI, stworzyłem systemowy prompt szablonowy, który traktuje skrypt jak kod źródłowy aplikacji. Poniżej znajdziesz gotowy arkusz zapytań, który wdrożyłem w naszym zespole projektowym w Warszawie.

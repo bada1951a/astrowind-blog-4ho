@@ -88,7 +88,9 @@ Agisci come Editor Capo inflessibile e revisore tecnico di una testata economica
 Analizza il testo del capitolo che ti fornisco di seguito e applica una revisione severa secondo questi criteri:
 
 1. Rilevamento allucinazioni e luoghi comuni: Rimuovi qualsiasi frase vuota, aggettivo superfluo o affermazione priva di fondamento logico.
+
 2. Densezza informativa: Assicurati che ogni paragrafo contenga un'informazione utile, un dato o un'argomentazione strategica.
+
 3. Formattazione: Verifica che l'uso del grassetto evidenzi solo i concetti chiave e che la struttura sia leggibile su schermo.
 
 Restituisci il testo corretto e ottimizzato, segnalando in un breve box finale a punti quali modifiche strutturali hai apportato per migliorare la qualità complessiva.

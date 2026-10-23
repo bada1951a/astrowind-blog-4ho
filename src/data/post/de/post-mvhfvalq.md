@@ -29,7 +29,9 @@ Das Kernproblem liegt in der fehlenden technischen Architekturvorgabe. Claude 3.
 
 Um im Frankfurter Banken- und Consultingbereich zu bestehen, müssen unsere Prompts drei Bedingungen erfüllen:
 1. Strikte Datenintegrität: Keine Fantasiezahlen, sondern exakte Strukturierung nach vorgegebenen KPIs (z. B. CET1-Quote, Liquiditätspuffer, NPL-Raten).
+
 2. Klares UI/UX-Design: Minimalistisches, professionelles Corporate Design (Nordic Clean Ice Stil, hohe Lesbarkeit, keine verspielten Farben).
+
 3. Echte Interaktivität: Filter, Dropdowns und dynamische Charts, die auf Benutzereingaben reagieren.
 
 ---
@@ -56,9 +58,11 @@ Nutze folgende Basis-Daten für das Dashboard:
 
 [Funktionale Anforderungen an das Artifact]
 1. Layout: Ein modernes, sauberes Grid-Layout mit Sidebar für Filter und Hauptbereich für KPI-Karten und interaktive Charts (nutze SVG oder simple CSS-Balken für Visualisierungen).
+
 2. Interaktivität: 
    - Ein Dropdown-Filter für Regionen (Deutschland, Luxemburg, Schweiz).
    - Ein Regler (Slider) zur Simulation von Zinsänderungen (+/- 100 Basispunkte), der die prognostizierten Auswirkungen auf den Zinsüberschuss in Echtzeit neu berechnet.
+
 3. Design-Vorgabe (Nordic Clean Ice):
    - Primärfarbe: #0284c7 (Klares Banken-Blau)
    - Hintergrund: Sehr helle, kühle Grautöne (#f8fafc)

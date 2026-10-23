@@ -36,9 +36,13 @@ Input Transkrip:
 
 Analisis berdasarkan kerangka berikut dan berikan output dalam format poin-poin yang terstruktur:
 1. HOOK (0-30 detik): Kalimat apa yang dipakai untuk menghentikan penonton melakukan scroll? Apa teknik psikologisnya (fear, curiosity, arousing)?
+
 2. PACING & STRUKTUR NARASI: Bagaimana transisi dari masalah ke solusi? Berapa segmen utama yang digunakan?
+
 3. OPEN LOOPS & RETENTION TRICKS: Di bagian mana narator menahan informasi agar penonton terus menonton sampai habis?
+
 4. CALL TO ACTION (CTA): Bagaimana cara mereka mengarah ke engagement atau konversi tanpa terdengar jualan kaku?
+
 5. BLUEPRINT REPRODUKSI: Buat kerangka (outline) 5 poin praktis yang bisa saya pakai ulang untuk topik produk saya sendiri.
 
 Batasan: Gunakan bahasa Indonesia yang profesional, tajam, dan langsung pada inti poin tanpa basa-basi pengantar yang panjang.

@@ -46,7 +46,9 @@ Ecco la struttura esatta che ho testato e perfezionato nel nostro studio per blo
 Per applicare questo metodo in modo efficiente durante uno sprint di lavoro, procedi seguendo questi tre passaggi operativi:
 
 1. Generazione del Master (Scena 1): Crea l'immagine di partenza perfetta del tuo personaggio con il prompt descrittivo completo. Salva l'URL di questa immagine generata.
+
 2. Duplicazione e Variazione: Per le scene successive, mantieni identica la stringa descrittiva del volto e il parametro `--cref [URL_Master] --cw 0`, cambiando unicamente l'azione e l'ambientazione finale (es. *working on a dual-monitor setup in a Milan design agency* vs *walking down via Torino under the rain holding an umbrella*).
+
 3. Controllo Qualità Rapido: Esporta le immagini in batch e verifica che i tratti biometrici chiave (forma degli occhi, naso, proporzioni) rimangano allineati.
 
 ## Domande Frequenti (FAQ)

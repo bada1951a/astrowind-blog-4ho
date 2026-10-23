@@ -40,8 +40,11 @@ Sua tarefa e criar um dashboard interativo completo utilizando o recurso de Arti
 
 # Funcionalidades Interativas Obrigatorias
 1. Filtros por periodo de tempo (Ultimas 24h, ultimos 7 dias, mes atual).
+
 2. Graficos dinamicos que respondem a cliques ou mudancas de estado.
+
 3. Botao de exportacao simulada de relatorio ou atualizacao de dados em tempo real (efeito visual de loading de 1-2s).
+
 4. Cards de metricas principais (KPIs) com indicadores de tendencia (positivo/negativo).
 
 # Formato de Saida

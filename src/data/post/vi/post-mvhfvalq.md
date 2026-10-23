@@ -34,10 +34,13 @@ Vai tro cua ban la Senior Frontend Developer va UI/UX Expert. Toi co mot tap du 
 
 [DANH SACH YEU CAU GIAO DIEN]
 1. Tong quan (Summary Cards): Hien thi 4 chi so quan trong nhat gom Tong Doanh Thu, Tong Don Hang, Gia Tri Trung Binh Don, va Ty Le Tang Truong so voi thang truoc.
+
 2. Bo loc (Filters): Cho phep loc du lieu theo Khu Vuc (North, Central, South) va Thang (Thang 1 den Thang 12).
+
 3. Bieu do truc quan (Charts): 
    - Bieu do cot (Bar Chart) the hien doanh thu theo tung khu vuc.
    - Bieu do duong (Line Chart) the hien xu huong tang truong doanh thu theo thoi gian.
+
 4. Giao dien (UI Style): Phong cach Dark/Light mode hien dai, mau sac chu dao la Midnight Navy (#1d4ed8), bo goc mem mai, hieu ung hover muot ma.
 
 [DU LIEU THO DE LAM MAU]

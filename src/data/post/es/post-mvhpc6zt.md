@@ -24,7 +24,9 @@ El error tipico de cualquier profesional es sobrecargar el texto descriptivo: *"
 Para solucionar esto de raiz en V6, no dependemos solo de la descripcion textual. Combinamos tres elementos criticos de ingenieria de prompts:
 
 1. El parametro de referencia de personaje (--cref): La herramienta nativa que ancla los rasgos faciales.
+
 2. El peso del personaje (--cw): Controla cuanta informacion de la imagen base se transfiere (ropa, cabello o solo el rostro).
+
 3. Anclaje semantico estricto: Una estructura de prompt modular que mantiene constantes las palabras clave del sujeto mientras varia la accion.
 
 ---

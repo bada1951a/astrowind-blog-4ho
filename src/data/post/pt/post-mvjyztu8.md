@@ -22,7 +22,9 @@ Eram 19h em um escritório na Avenida Paulista, em São Paulo. O cliente, uma gi
 O erro clássico de quem está começando na engenharia de prompts é tratar o ChatGPT como uma máquina de escrever mágica. Você joga um tema complexo, aperta o enter e espera 5.000 palavras impecáveis. Na prática, isso gera:
 
 1. Alucinações Críticas: O modelo inventa estatísticas, cases e normativas para preencher o espaço exigido.
+
 2. Deriva de Tom (Drift): A introdução começa formal, o meio fica informal e a conclusão vira um resumo robótico.
+
 3. Superficialidade: Em vez de análises aprofundadas por setor, você recebe clichês corporativos vazios.
 
 Para resolver isso, a arquitetura correta exige a engenharia de encadeamento (Prompt Chaining). Dividimos o whitepaper em módulos estruturados, alimentando a IA com o contexto anterior de forma controlada.
@@ -74,7 +76,9 @@ Role: Revisor Técnico Sênior e Especialista em Compliance Editorial.
 Tarefa: Analise o texto consolidado abaixo gerado pelas etapas anteriores.
 Critérios de Revisão:
 1. Verifique se há termos repetidos excessivamente.
+
 2. Valide se a transição entre os módulos está fluida.
+
 3. Elimine qualquer frase genérica ou "efeito robótico". Reescreva mantendo o tom corporativo brasileiro natural.
 Texto para revisão:
 [Inserir texto concatenado dos 5 módulos]

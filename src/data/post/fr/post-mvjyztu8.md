@@ -47,7 +47,9 @@ Q3.
 # Tâche
 Analyse les verbatims ci-dessous. Isole les 5 thématiques majeures récurrentes. Pour chaque thématique, attribue :
 1. Un intitulé clair.
+
 2. Le pourcentage estimé d'occurrences dans le texte.
+
 3. Deux citations anonymisées et percutantes.
 
 # Données Source
@@ -90,7 +92,9 @@ Tu es un directeur artistique éditorial et correcteur professionnel.
 # Tâche
 Revois le texte brut assemblé ci-dessous pour le livre blanc. Ton travail consiste à :
 1. Harmoniser le ton et la transition entre les sections 1, 2, 3 et 4.
+
 2. Supprimer les redondances textuelles.
+
 3. Assurer une fluidité de lecture irréprochable digne d'un cabinet de conseil parisien.
 
 # Texte à harmoniser

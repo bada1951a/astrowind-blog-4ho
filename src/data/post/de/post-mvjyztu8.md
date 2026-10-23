@@ -32,8 +32,11 @@ Kern-Hypothese: [Hypothese hier einfügen]
 
 # Ausführungsregeln
 1. Strukturiere das Whitepaper in exakt 5 Hauptkapitel.
+
 2. Jedes Hauptkapitel muss 3 Unterkapitel enthalten.
+
 3. Vermeide generische Floskeln; fordere konkrete Fallstudien und Metriken ein.
+
 4. Gib das Ergebnis ausschließlich im validen JSON-Format aus, damit es für den nächsten Chain-Schritt maschinenlesbar ist.
 
 # JSON-Schema der Ausgabe

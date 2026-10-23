@@ -47,8 +47,11 @@ Voici le template maître prêt à l'emploi que vous pouvez copier-coller dans v
 Ne lancez jamais vos 20 prompts à l'aveugle. Suivez cette méthodologie en cascade pour garantir un résultat homogène :
 
 1.  Générez la "Master Image" : Créez une image de face de votre personnage sur fond neutre avec un éclairage parfait. C'est elle qui servira de référence universelle.
+
 2.  Récupérez l'URL : Copiez le lien permanent de cette image générée sur Discord.
+
 3.  Appliquez le template : Pour chaque scène de votre outil interactif, reprenez la même structure de prompt en modifiant uniquement l'action et le décor, tout en conservant le lien `--cref` et le même `--cw`.
+
 4.  Ajustez par itération : Si une variation dévie trop, augmentez légèrement le paramètre `--s` (Stylize) ou recadrez via l'outil Zoom/Pan de Midjourney.
 
 ## 3. Comparatif avant/après de la méthode

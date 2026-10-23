@@ -24,8 +24,11 @@ Hieronder vind je de geteste, efficiënte methode om dit direct op te lossen. We
 Wanneer je in Midjourney V6 een scène genereert, berekent het model een willekeurige wiskundige ruismatrix op basis van jouw tekst. Zelfs als je exact dezelfde tekst herhaalt met een andere seed, verandert de gelaatsstructuur fundamenteel. Om dit op te lossen, splitsen we de prompt op in vier vaste componenten:
 
 1. De Visuele Basis (Anchor): Specifieke gelaatstrekken die niet veranderen (bijv. "angular jawline, subtle freckles on nose, tied-back dirty blonde hair").
+
 2. De Omgeving & Actie (Context): Wat doet het personage en waar is het (bijv. "working on a laptop in a glass-walled Zuidas office").
+
 3. De Stijl & Belichting (Aesthetic): Cinematografie, camera-instellingen en kleurenpalet (bijv. "shot on 35mm lens, moody overcast lighting, corporate editorial style").
+
 4. De Parameters: Technische instructies zoals `--cref [URL]` en `--ar 16:9`.
 
 ---

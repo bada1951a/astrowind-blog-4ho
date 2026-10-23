@@ -33,8 +33,11 @@ Jesteś starszym architektem front-end i ekspertem UI/UX. Twoim zadaniem jest st
 
 [WYMAGANE KOMPONENTY I FUNKCJONALNOŚĆ]
 1. Górny pasek nawigacyjny (Navbar): Logo, przełącznik motywu (ciemny/jasny), powiadomienia oraz profil użytkownika.
+
 2. Panel statystyk (KPI Cards): Minimum 4 karty z kluczowymi wskaźnikami (np. Przychód, Aktywni użytkownicy, Wskaźnik konwersji, Błędy systemowe) wraz ze wskaźnikami wzrostu/spadku (procenty i zielone/czerwone strzałki).
+
 3. Główny obszar wykresów: Interaktywny wykres liniowy pokazujący trend w czasie oraz wykres słupkowy lub kołowy podziału danych.
+
 4. Tabela danych operacyjnych: Ostatnie transakcje lub zdarzenia z funkcją wyszukiwania tekstowego w czasie rzeczywistym oraz prostym filtrowaniem po statusie (Sukces, Ostrzeżenie, Błąd).
 
 [ZASADY IMPLEMENTACJI TECHNICZNEJ]

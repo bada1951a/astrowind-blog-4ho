@@ -34,7 +34,9 @@ Para este primer eslabón (Módulo 1 de 5), debes generar exclusivamente la Intr
 
 Sigue estrictamente estas directrices estructurales y de tono:
 1. No utilices frases de cortesía iniciales ni conclusiones genéricas. Comienza directamente con una tesis fuerte sobre el sector.
+
 2. Utiliza terminología técnica precisa (ej. marcos regulatorios europeos, fricción operativa, coste de oportunidad).
+
 3. Integra 2 datos cuantitativos hipotéticos pero realistas basados en el mercado europeo (utiliza rangos de 10-20%, nunca uses tildes onduladas).
 
 Confirma que has comprendido tu rol y las restricciones de tono antes de generar el primer bloque.

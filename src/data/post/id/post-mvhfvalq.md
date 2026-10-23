@@ -43,9 +43,13 @@ Data Sumber:
 
 Persyaratan Tampilan & Fungsionalitas (Pure Titanium Clean Theme):
 1. Gunakan skema warna profesional dengan dominasi warna slate (#334155) dan aksen putih/abu-abu bersih.
+
 2. Layout harus responsif (optimal di layar laptop direksi).
+
 3. Sertakan minimal 3 kartu metrik utama (KPI Cards) di bagian atas (Total, Pertumbuhan, Rata-rata).
+
 4. Buat setidaknya 2 grafik visual interaktif (Gunakan Chart.js via CDN untuk visualisasi tren atau pie chart).
+
 5. Tambahkan fitur filter sederhana (misalnya berdasarkan kategori atau rentang waktu) yang membuat elemen UI bergerak dinamis.
 
 Output: 

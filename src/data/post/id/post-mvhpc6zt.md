@@ -27,7 +27,9 @@ Mengapa *prompt* sederhana seperti "a business woman smiling in an office" selal
 
 Solusinya adalah pendekatan 3 lapis:
 1. Jangkar Visual Primer: Menggunakan tautan gambar referensi karakter utama (*Master Seed Image*).
+
 2. Bobot Karakter Mutlak: Mengatur parameter `--cw 100` agar mesin meniru seluruh elemen wajah, bukan hanya pakaian atau gaya rambutnya saja.
+
 3. Deskripsi Token Konsisten: Mempertahankan frasa kunci deskripsi fisik yang identik di setiap variasi adegan.
 
 ### Template Master Prompt V6

@@ -40,8 +40,11 @@ Context & Data Source:
 
 Design & Functional Requirements:
 1. Layout: Clean, modern card-based layout with a sidebar navigation, dark mode toggle support, and a prominent top-level summary banner for high-level takeaways.
+
 2. Interactivity: Include working tabs or filter dropdowns (e.g., date range selectors, regional filters) that dynamically update the summary metrics and chart states.
+
 3. Visualizations: Use clean SVG-based charts or progress bars to represent trends without relying on broken external charting libraries.
+
 4. Code Quality: Write clean, modular, production-grade React code using functional components and hooks (useState, useEffect). Ensure zero missing imports or syntax errors.
 
 Output format: Return the complete, runnable code solely inside a Claude Artifact container.
@@ -50,7 +53,9 @@ Output format: Return the complete, runnable code solely inside a Claude Artifac
 ### Step-by-Step Execution Workflow
 
 1. Feed the Raw Data: Paste your messy CSV or performance summary directly into the prompt alongside the template above.
+
 2. Trigger the Artifact: Let Claude generate the standalone web app. Within 15-30 seconds, a fully functional interactive UI will appear on the right side of your screen.
+
 3. Iterate Rapidly: Use short conversational follow-ups to refine the prototype. For example: *"Add a toggle to switch between weekly and monthly views,"* or *"Highlight the churn spike in red."*
 4. Deploy or Present: Hit the publish button on the Artifact or copy the code to CodePen/StackBlitz to share the live link directly in your Slack channel before the meeting starts.
 

@@ -48,8 +48,11 @@ Voglio visualizzare i dati forniti di seguito all'interno di una dashboard respo
 
 # Specifiche Tecniche e di Design
 1. Utilizza Tailwind CSS per lo styling con un design minimal e professionale (ispirato al tema Industrial Blueprint, colori primari scuri con accenti ambra/arancioni).
+
 2. L'interfaccia deve essere 100% responsive (desktop e mobile).
+
 3. Includi componenti interattivi reali: pulsanti cliccabili, menu a tendina filtrabili e tooltip sui grafici.
+
 4. Genera l'intero codice racchiuso in un unico blocco di Artifact (tipo application/vnd.ant.code) in modo che sia immediatamente eseguibile.
 
 # Restrizioni
@@ -64,7 +67,9 @@ Voglio visualizzare i dati forniti di seguito all'interno di una dashboard respo
 Quando usi gli Artifacts per sviluppare prototipi veloci, tieni a mente queste regolette per evitare grattacapi tecnici:
 
 1. Gestione dei Token e dei Dati Lunghi: Se il tuo file CSV supera le duemila righe, non incollarlo interamente nel prompt. Chiedi prima a Claude di fare un'analisi sommaria o passa solo un campione rappresentativo (prime 50 righe) chiedendogli di generare dati mock coerenti per il prototipo.
+
 2. Librerie esterne: Specifica sempre quali librerie CDN vuoi usare (es. Chart.js, Lucide Icons, Tailwind). Senza indicazioni, Claude potrebbe inventarsi dipendenze inesistenti.
+
 3. Esportazione del codice: Una volta che la dashboard è perfetta, puoi cliccare sul pulsante di download direttamente nell'Artifact di Claude per esportare il file `.html` e caricarlo su un server di staging o condividerlo con il team.
 
 ---

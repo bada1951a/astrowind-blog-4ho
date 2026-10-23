@@ -35,8 +35,11 @@ Bouw een volledig interactief, responsief dashboard prototype in een enkel HTML-
 
 [Functionaliteiten & Componenten]
 1. Een strakke header met een vernieuw-knop en export-optie.
+
 2. Drie KPI-summary cards bovenaan (omzet, kosten, marge) met trendindicatoren.
+
 3. Een interactieve grafieksectie (gebruik Chart.js via CDN) met filters voor maandelijks vs. wekelijks overzicht.
+
 4. Een zoeker en sorteerbare tabel met recente transacties of projecten.
 
 [Stijl & Vibe]

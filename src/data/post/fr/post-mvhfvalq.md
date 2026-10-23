@@ -46,12 +46,15 @@ Objectif: Créer un dashboard interactif complet basé sur les spécifications c
 
 [Spécifications Techniques et UI]
 1. Framework & Style: Utilise React (via JSX/Babel dans un Artifact), Tailwind CSS pour le design, et des icônes SVG épurées.
+
 2. Palette de couleurs: Style "Industrial Blueprint" (#f59e0b pour l'accent principal, fonds sombres ou gris très clair contrastés, typographie épurée).
+
 3. Composants interactifs obligatoires:
    - Un panneau de filtres dynamiques (par date, par région, par catégorie).
    - Au moins 3 graphiques interactifs (barres, courbes, camembert) construits en SVG natif ou avec des composants légers intégrés.
    - Un tableau de données avec tri par colonne et pagination fonctionnelle.
    - Un bouton d'export ou de simulation de données en temps réel.
+
 4. Comportement: L'interface doit être entièrement réactive (responsive), fluide, sans aucun code manquant (pas de commentaires du type "// ajouter le reste ici"). Tout le code doit être fonctionnel du premier coup dans l'Artifact.
 
 Exécute maintenant et génère l'Artifact complet.
@@ -64,7 +67,9 @@ Exécute maintenant et génère l'Artifact complet.
 Pour éviter les hallucinations de code et garantir que l'Artifact s'affiche correctement sans bugs de script, suivez ces règles d'or :
 
 1. Exigez du code autonome : Précisez toujours à Claude d'inclure toutes les dépendances nécessaires via des balises script CDN (comme Tailwind via Play CDN ou React) si vous travaillez en HTML/JS simple, ou demandez explicitement un composant React standard.
+
 2. Limitez le volume de données dans le prompt : Ne collez jamais 50 000 lignes de données brutes dans le chat. Donnez un échantillon représentatif de 5 à 10 lignes, et demandez à Claude de générer un jeu de données mocké (simulé) cohérent pour alimenter les graphiques.
+
 3. Itérez par blocs : Ne demandez pas tout en même temps. Générez d'abord la structure globale et les KPI principaux, puis dites dans le message suivant : *"Ajoute maintenant un graphique en cascade dans le bloc central et rends les filtres de date actifs"*.
 
 <div style="border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">

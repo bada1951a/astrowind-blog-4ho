@@ -9,7 +9,9 @@ theme: "Rosewood Hardware Guide"
 ---
 
 
-Jam menunjukkan pukul 08.15 pagi di salah satu gedung pencakar langit kawasan bisnis Sudirman Central Business District (SCBD) Jakarta. Meeting eksekutif dengan Managing Director dijadwalkan tepat pukul 09.00. Masalahnya, meja saya sudah dipenuhi dokumen PDF whitepaper industri setebal 5.000 kata mengenai tren ekonomi makro digital yang baru dirilis semalam. Membaca setiap barisnya secara manual sebelum rapat adalah misi bunuh diri. Waktu saya tidak sampai 45 menit untuk memahami seluruh isi dokumen, menemukan celah logika sang penulis, dan merumuskan argumen tandingan yang tajam agar tidak terlihat kosong di depan direksi.
+Jam menunjukkan pukul 08.15 pagi di salah satu gedung pencakar langit kawasan bisnis Sudirman Central Business District (SCBD) Jakarta. Meeting eksekutif dengan Managing Director dijadwalkan tepat pukul 09.
+
+00. Masalahnya, meja saya sudah dipenuhi dokumen PDF whitepaper industri setebal 5.000 kata mengenai tren ekonomi makro digital yang baru dirilis semalam. Membaca setiap barisnya secara manual sebelum rapat adalah misi bunuh diri. Waktu saya tidak sampai 45 menit untuk memahami seluruh isi dokumen, menemukan celah logika sang penulis, dan merumuskan argumen tandingan yang tajam agar tidak terlihat kosong di depan direksi.
 
 Panik melanda saat saya mencoba shortcut malas: langsung menyalin seluruh teks dokumen ke ChatGPT versi gratis dengan perintah instan, *"Tolong rangkum whitepaper ini sekarang."* Hasilnya? Bencana. ChatGPT memberikan ringkasan generik yang membosankan, penuh dengan kalimat klise, dan sama sekali melewatkan asumsi tersembunyi serta bias metodologi yang justru menjadi titik krusial untuk mendebat laporan tersebut di ruang rapat. Batas token terlampaui separuh jalan, dan analisisnya terasa dangkal karena tidak dipecah secara sistematis.
 
@@ -35,7 +37,9 @@ Salin prompt pertama ini ke dalam ChatGPT atau Claude untuk memaksa AI memetakan
 Role: Anda adalah seorang Chief Economist dan Senior Strategy Auditor yang sangat kritis.
 Task: Analisis dokumen whitepaper terlampir [Sisipkan Teks Dokumen atau Unggah File]. Abaikan pengantar yang bersifat basa-basi pemasaran. Ekstrak inti argumen penulis dalam format berikut:
 1. Core Thesis (Pernyataan klaim utama penulis dalam 1 kalimat tajam).
+
 2. Key Pillars (3-5 pilar argumen pendukung utama beserta data pendukungnya).
+
 3. Underlying Assumptions (Asumsi-asumsi tersembunyi yang diambil penulis sebagai kebenaran mutlak).
 
 Constraints: Gunakan bahasa Indonesia profesional tingkat korporat SCBD. Jangan berasumsi di luar teks yang diberikan.
@@ -49,7 +53,9 @@ Setelah mendapatkan hasil dari Tahap 1, lanjutkan rantai prompt dengan memasukka
 Context: Berdasarkan kerangka logika whitepaper yang telah Anda ekstrak sebelumnya:
 Task: Lakukan stress-test dan audit kritis terhadap argumen penulis. Cari celah, bias, dan kelemahan metodologi dengan menjawab pertanyaan berikut:
 1. Logical Fallacies (Di bagian mana argumen penulis mengalami lompatan logika atau bias konfirmasi?).
+
 2. Blind Spots (Variabel makro atau tren industri apa yang dengan sengaja atau tidak sengaja diabaikan oleh penulis?).
+
 3. Risk Factors (Apa risiko terbesar jika perusahaan kami mengikuti rekomendasi strategis dari whitepaper ini?).
 
 Output Format: Sajikan dalam bentuk poin-poin analitis yang tajam, langsung pada sasaran, tanpa kalimat berbunga-bunga.
@@ -73,7 +79,9 @@ Tone: Tegas, berbasis data, profesional, dan siap dipresentasikan di depan C-lev
 
 Saat bekerja dengan dokumen industri yang padat angka dan regulasi, risiko halusinasi AI meningkat drastis. Terapkan aturan ketat ini:
 1. Gunakan Batasan Kontekstual: Selalu tambahkan frasa *"Jika informasi tidak tersedia secara eksplisit di dalam dokumen, nyatakan secara jujur 'Data tidak ditemukan', jangan berspekulasi."* di setiap prompt Anda.
+
 2. Manfaatkan Fitur Upload File: Alih-alih melakukan *copy-paste* manual yang sering merusak format tabel, unggah dokumen PDF langsung ke sistem Claude atau ChatGPT Plus untuk memastikan pemindaian teks berjalan utuh.
+
 3. Validasi Silang Angka: Jika whitepaper memuat statistik pertumbuhan industri yang masif, minta AI memberikan nomor halaman referensi dari dokumen asli agar Anda bisa melakukan verifikasi kilat.
 
 <div style="border-left: 4px solid #be123c; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">

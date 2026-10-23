@@ -42,8 +42,11 @@ Dưới đây là cấu trúc Prompt chuẩn xác nhất được thiết kế r
 
 ### Quy trình thực hiện tự động hóa hàng ngày qua Claude và ChatGPT:
 1. Bước 1 (Lên kịch bản): Đưa toàn bộ kịch bản 20 cảnh vào Claude để phân tích hành động và bối cảnh từng phân đoạn.
+
 2. Bước 2 (Tạo Master Prompt): Yêu cầu ChatGPT viết prompt cho bức ảnh gốc (Master Image) với mô tả khuôn mặt cực kỳ chi tiết.
+
 3. Bước 3 (Render & Lấy Link): Chạy prompt gốc trên Midjourney V6, chọn bức hình đẹp nhất và copy Image Address.
+
 4. Bước 4 (Nhân bản 20 cảnh): Ghép link vừa copy vào cú pháp `--cref [URL]` đi kèm với các bối cảnh khác nhau từ kịch bản của Claude.
 
 ---
@@ -51,10 +54,13 @@ Dưới đây là cấu trúc Prompt chuẩn xác nhất được thiết kế r
 ### Các câu hỏi thường gặp (FAQ)
 
 Q1: Tại sao tôi dùng --cref nhưng mặt nhân vật vẫn bị thay đổi nhẹ ở các góc chụp nghiêng?
+
 A1: Midjourney V6 đôi khi gặp khó khăn khi chuyển từ góc chính diện sang góc nghiêng hoàn toàn (profile view). Để khắc phục, hãy tạo thêm 2 ảnh tham chiếu phụ (một góc nghiêng 45 độ và một góc nghiêng 90 độ) rồi đưa cả 3 URL vào tham số `--cref URL1 URL2 URL3` để AI có dữ liệu không gian 3 chiều tốt hơn.
 
 Q2: Tôi có thể áp dụng cách này cho phong cách hoạt hình (Anime/3D) không hay chỉ hợp với tả thực (Photorealistic)?
+
 A2: Hoàn toàn áp dụng được cho mọi phong cách. Với phong cách hoạt hình, bạn chỉ cần thay đổi từ khóa ở phần [Camera Specs] thành các thuật ngữ phong cách như `studio ghibli style, 3d Pixar style, octane render` và giữ nguyên cấu trúc mô tả khuôn mặt chi tiết.
 
 Q3: Tôi nên làm gì khi tham số --cw 100 làm cho nhân vật ở các cảnh sau trông quá cứng nhắc, giống hệt nhau một cách máy móc?
+
 A3: Đây là hiện tượng "over-fitting" của tham số trọng lượng. Hãy hạ giá trị `--cw` xuống mức 75 hoặc 80. Mức này vừa đủ để giữ lại thần thái và cấu trúc xương mặt đặc trưng, vừa cho phép Midjourney V6 tự do điều chỉnh biểu cảm cơ mặt theo từng ngữ cảnh vui, buồn, ngạc nhiên của kịch bản.

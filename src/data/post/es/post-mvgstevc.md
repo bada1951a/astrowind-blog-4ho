@@ -27,8 +27,11 @@ El error común al usar ChatGPT o Claude para analizar contenido es tratar al mo
 
 La arquitectura que diseñé utiliza un enfoque de razonamiento encadenado (*Chain-of-Thought*). En lugar de procesar todo de golpe, el prompt obliga al LLM a seguir estos pasos lógicos:
 1. Identificación de la Estructura Macro: Divisón del video en actos (Gancho, Problema, Agitación, Solución, Clímax, CTA).
+
 2. Análisis Micro del Gancho: Desglose palabra por palabra de los primeros 10 segundos para identificar el sesgo cognitivo utilizado (miedo, curiosidad, urgencia).
+
 3. Mapeo de Transiciones: Cómo el creador mantiene la retención evitando los valles de caída de audiencia.
+
 4. Plantilla Reutilizable: Conversión de la estructura analizada en un esquema con variables listas para rellenar con nuestro propio contenido corporativo o de marca.
 
 ## El Prompt Maestro para Ingeniar Guiones Virales

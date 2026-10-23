@@ -23,7 +23,9 @@ If you simply type "A 30-year-old female tech executive named Maya working at a 
 
 To lock down facial consistency across 20 distinct scenes, we have to bypass generic descriptions and build a deterministic prompt architecture. This relies on three core components:
 1. The Anchor Identity Token: A hyper-specific, multi-word physical descriptor that remains 100% immutable across all 20 prompts.
+
 2. The --cref Parameter: Midjourney's character reference feature, which acts as a visual anchor by referencing the image URL of your baseline character design.
+
 3. Environmental Isolation: Separating the character description from the changing background action so the rendering engine doesn't bleed environmental traits into the face.
 
 ## The Master Prompt Template & Step-by-Step Workflow
@@ -43,7 +45,9 @@ To fix our executive presentation crisis, I built a structured prompt template i
 ### Executing the 20-Scene Pipeline
 
 1. Generate the Master Reference: Run your baseline prompt first without the `--cref` tag. Pick the absolute best output where the face is clear and high-resolution.
+
 2. Grab the Image URL: Right-click your chosen master image in Discord, copy the link, and save it to your scratchpad.
+
 3. Populate the Variables: Keep your `[Base Character Definition]` identical across all 20 scene prompts, append your `--cref [URL]` and `--cw 100` (or `--cw 0`), and only modify the `[Scene Action]` and lighting tags.
 
 ## Practical Variations and Failure Prevention

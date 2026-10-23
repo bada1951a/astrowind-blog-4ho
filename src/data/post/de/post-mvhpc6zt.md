@@ -40,7 +40,9 @@ A professional 35-year-old German male consultant, sharp jawline, neat dark-brow
 ### Schritt-für-Schritt-Anleitung für alle 20 Szenen
 
 1. Das Master-Bild definieren: Generieren Sie zuerst *ein* perfektes Porträt Ihres Charakters und speichern Sie die URL dieses Bildes.
+
 2. Den Parameter `--cref` einsetzen: Fügen Sie am Ende jedes neuen Prompts die URL des Master-Bildes ein.
+
 3. Gewichtung steuern (`--cw`): 
    - `--cw 100` kopiert Gesicht, Haare und Kleidung.
    - `--cw 0` kopiert nur das Gesicht und erlaubt Ihnen, in jeder Szene die Kleidung (z.B. Hemd ohne Sakko, Outdoor-Jacke) komplett zu verändern. Perfekt für narrative Geschäftsberichte!

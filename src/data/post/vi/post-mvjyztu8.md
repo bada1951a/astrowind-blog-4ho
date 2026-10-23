@@ -23,8 +23,11 @@ Khi bạn yêu cầu AI xử lý một khối lượng dữ liệu khổng lồ 
 
 Giải pháp tối ưu không phải là cố gắng viết một câu lệnh dài vô tận, mà là Prompt Chaining (Nối chuỗi câu lệnh). Chúng ta sẽ chia nhỏ quy trình thành các bước tuần tự: 
 1. Phân rã dữ liệu thô thành bản đồ ý tưởng (Outline Architecture).
+
 2. Viết từng chương chuyên sâu với từ khóa kỹ thuật (Deep-dive Chapter Generation).
+
 3. Tổng hợp và tối ưu giọng văn chuyên gia (Synthesizing & Polishing).
+
 4. Chuyển đổi định dạng sang Quiz và Flashcard tương tác.
 
 ---
@@ -42,7 +45,9 @@ Task: Phân tích tài liệu đầu vào và thiết lập khung sườn chi ti
 Context: Tài liệu thô đính kèm/dưới đây.
 Requirements:
 1. Chia whitepaper thành đúng 5 chương chính.
+
 2. Mỗi chương phải có tối thiểu 4 tiểu mục (Sub-sections) với định hướng phân tích số liệu cụ thể.
+
 3. Trả về kết quả hoàn toàn bằng tiếng Việt chuyên ngành, không dùng từ ngữ dịch máy thô thiển.
 
 Input Data: [Dán nội dung tài liệu onboarding hoặc ghi chú thô của bạn vào đây]
@@ -58,7 +63,9 @@ Word Count Target: Khoảng 1000 đến 1200 chữ cho chương này.
 Tone of Voice: Khách quan, phân tích sắc sảo, văn phong B2B chuyên nghiệp, không sáo rỗng.
 Requirements:
 1. Phải sử dụng định dạng Markdown rõ ràng (Tiêu đề H2, H3, bảng biểu so sánh nếu cần).
+
 2. Lồng ghép các kịch bản thực tế tại thị trường Việt Nam để tăng tính ứng dụng.
+
 3. Không tóm tắt qua loa, phải đi sâu vào chi tiết kỹ thuật và quy trình vận hành.
 
 Context from Previous Step: [Dán tiêu đề và tóm tắt ngắn gọn của Chương trước để duy trì tính liên tục ngữ cảnh]
@@ -72,7 +79,9 @@ Role: Giám đốc Nội dung (Content Director).
 Task: Tổng hợp 5 chương của Whitepaper thành một thể thống nhất, kiểm tra mạch văn, loại bỏ các ý trùng lặp và đảm bảo tổng dung lượng đạt chuẩn 5000 chữ.
 Requirements:
 1. Viết lại phần Lời mở đầu (Executive Summary) và Lời kết (Conclusion) sao cho đắt giá, truyền cảm hứng.
+
 2. Đảm bảo thuật ngữ xuyên suốt toàn bài.
+
 3. Định dạng lại toàn bộ bài viết bằng Markdown chuẩn chỉnh, sẵn sàng xuất bản hoặc in ấn.
 ```
 
@@ -83,6 +92,7 @@ Giải quyết triệt để yêu cầu oái oăm ban đầu của sếp trong v
 Role: Chuyên gia Thiết kế Instructional Design (Thiết kế Giáo dục doanh nghiệp).
 Task: Dựa vào nội dung Whitepaper vừa hoàn thành, hãy tạo ra:
 1. 10 câu hỏi Trắc nghiệm (Quiz) kèm đáp án giải thích chi tiết để kiểm tra mức độ hiểu bài của nhân sự mới.
+
 2. 15 thẻ Flashcard (Mặt trước: Khái niệm/Thuật ngữ cốt lõi - Mặt sau: Định nghĩa ngắn gọn dưới 30 từ).
 Format Output: JSON thuần túy hoặc Markdown table rõ ràng để có thể copy thẳng vào các công cụ LMS nội bộ.
 ```

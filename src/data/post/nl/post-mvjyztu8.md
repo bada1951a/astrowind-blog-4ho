@@ -27,7 +27,9 @@ Als je ChatGPT of Claude vraagt om in één keer een gigantisch document te prod
 
 Om dit te omzeilen, bouwen we een keten van opeenvolgende instructies. Elke stap in de keten heeft een specifieke doelstelling:
 1. Fase 1: De Structuur en Architectuur (De inhoudsopgave en argumentatielijn vastleggen).
+
 2. Fase 2: Sectiegewijze Diepgang (Elk hoofdstuk apart genereren met hernieuwde persona-injectie).
+
 3. Fase 3: Synthese en Eindredactie (De puntjes op de i zetten en de toon uniformeren).
 
 ## Het Master Prompt Template voor de Persona-Instandhouding
@@ -41,8 +43,11 @@ Je werkt aan een whitepaper van in totaal 5000 woorden. Dit is stap [Voer Stapnu
 
 REGELS VOOR JE ANTWOORD:
 1. Behoud ten allen tijde je persona als senior analist. Val nooit terug in een generieke 'AI-assistent' modus.
+
 2. Schrijf uitsluitend in het [Voer Taal in, bijv. Nederlands].
+
 3. Gebruik concrete data-indicatoren, feitelijke onderbouwing en vermijd vage superlatieven.
+
 4. Output uitsluitend de gevraagde sectie op basis van onderstaande parameters.
 
 INVOER VOOR DEZE STAP:

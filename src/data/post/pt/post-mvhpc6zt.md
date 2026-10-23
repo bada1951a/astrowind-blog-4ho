@@ -23,7 +23,9 @@ Quando criamos uma imagem usando apenas descricoes como "jovem executivo sorrind
 
 A solucao nao esta em tentar adivinhar palavras magicas, mas em seguir um fluxo de engenharia de prompts dividido em tres pilares:
 1. O Ancorador de Referencia (--cref): Usar o link da imagem original do personagem como chave de identidade.
+
 2. O Modificador de Peso (--cw): Controlar o quanto o Midjourney pode alterar o cabelo e as roupas versus o formato do rosto.
+
 3. A Estrutura Modular: Manter o mesmo esqueleto de prompt alterando apenas a acao, o cenario e a iluminacao.
 
 ## O Master Prompt Template para Consistencia de Rosto
