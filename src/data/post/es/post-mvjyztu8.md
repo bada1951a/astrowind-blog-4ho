@@ -65,20 +65,14 @@ Mantén exactamente el mismo tono de Director de Práctica Senior analítico y c
 
 ### Preguntas Frecuentes (FAQ)
 
-Q1.
-
-¿Qué hago si el modelo empieza a inventar datos o métricas financieras en medio del whitepaper?
+Q1. ¿Qué hago si el modelo empieza a inventar datos o métricas financieras en medio del whitepaper?
 
 A1. Esto ocurre por la falta de un anclaje de datos en los prompts intermedios. Para solucionarlo, debes incluir un bloque de restricciones en cada prompt puente que obligue al modelo a referenciar únicamente bases de datos corporativas previas o a señalar explícitamente [DATO PENDIENTE DE VALIDACIÓN] cuando no disponga de una cifra exacta, evitando así las alucinaciones numéricas.
 
-Q2.
-
-¿Es mejor utilizar ChatGPT Plus o Claude 3.5 Sonnet para encadenar documentos de 5000 palabras?
+Q2. ¿Es mejor utilizar ChatGPT Plus o Claude 3.5 Sonnet para encadenar documentos de 5000 palabras?
 
 A2. Para documentos técnicos extensos y whitepapers corporativos, Claude 3.5 Sonnet con su interfaz de Artifacts suele ofrecer un rendimiento superior debido a su capacidad para retener estructuras complejas de prosa formal y su menor tendencia a deslizarse hacia tonos conversacionales informales en comparación con ChatGPT.
 
-Q3.
-
-¿Cómo puedo evitar que el whitepaper final suene como si hubiera sido escrito por cinco personas diferentes debido al encadenamiento?
+Q3. ¿Cómo puedo evitar que el whitepaper final suene como si hubiera sido escrito por cinco personas diferentes debido al encadenamiento?
 
 A3. El secreto es crear un documento maestro de estilo (un mini-estilo de 200 palabras) que contenga reglas estrictas de vocabulario, palabras prohibidas (como "revolucionario", "sinergia", "aprovechar") y la estructura sintáctica preferida. Debes inyectar este mini-estilo obligatoriamente en el encabezado de cada uno de los prompts de la cadena. 

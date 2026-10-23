@@ -80,23 +80,17 @@ a: Si el cliente no te ha dado datos limpios, pídele explícitamente a Claude q
 
 ## Preguntas Frecuentes (FAQ)
 
-### 1.
-
-¿Puedo usar esta misma técnica en ChatGPT o Gemini?
+### 1. ¿Puedo usar esta misma técnica en ChatGPT o Gemini?
 ChatGPT y Gemini tienen capacidades de análisis de código avanzadas (como Advanced Data Analysis o ejecución de Python), pero Claude 3.5 Sonnet destaca específicamente por su motor de Artifacts, que renderiza componentes web interactivos de forma nativa en una pestaña lateral sin necesidad de configurar un entorno de desarrollo local.
 
 
 
 ![How to Use Claude 3.5 Sonnet Artifacts to Build Interactive Dashboard Prototypes Prompt Guide](https://picsum.photos/seed/prompt-mvhfwla3-5-b/1000/550.jpg)
 
-### 2.
-
-¿Qué hago si el código del Artifact da un error en pantalla?
+### 2. ¿Qué hago si el código del Artifact da un error en pantalla?
 No edites el código manualmente. Simplemente copia el mensaje exacto de error que aparece en el Artifact de Claude y respóndele en el chat: *"El componente genera este error al hacer clic en el filtro de fech
 
 a: [pegar error]. Corrígelo manteniendo la estructura visual"*. Claude lo solucionará en segundos.
 
-### 3.
-
-¿Cómo exporto el prototipo para enseñárselo al cliente?
+### 3. ¿Cómo exporto el prototipo para enseñárselo al cliente?
 Una vez que el Artifact esté funcionando perfectamente, haz clic en el botón de descarga o copia el código fuente HTML resultante. Puedes alojarlo temporalmente en servicios como CodePen o desplegarlo en un entorno estático para que el cliente pueda interactuar directamente desde su propio navegador web.

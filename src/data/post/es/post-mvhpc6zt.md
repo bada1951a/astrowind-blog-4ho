@@ -62,19 +62,13 @@ a: Metodo Tradicional vs. Metodo Prompt Engineering V6
 
 ## Preguntas Frecuentes (FAQ)
 
-### 1.
-
-¿Puedo usar una imagen generada por IA como base para el parametro --cref?
+### 1. ¿Puedo usar una imagen generada por IA como base para el parametro --cref?
 Si, totalmente. De hecho, es el flujo recomendado. Generas tu personaje ideal en la primera escena, copias el enlace de esa imagen en Discord y lo usas como `--cref` para las siguientes 19 escenas de tu storyboard.
 
 
 
 ![Midjourney V6 Prompt Guide to Maintain Consistent Character Faces Across 20 Scenes Prompt Guide](https://picsum.photos/seed/prompt-mvhpdg2y-5-b/1000/550.jpg)
 
-### 2.
-
-¿Que diferencia hay entre usar --cw 100 y --cw 0?
-Si usas `--cw 100`, Midjourney intentara copiar la cara, el peinado y la ropa exacta de la imagen original en todas las escenas. Si usas `--cw 0`, el sistema se centra exclusivamente en las facciones de la cara, dandote la libertad creativa de cambiarle la ropa y el peinado segun lo requiera la narrativa de cada escena. ### 3.
-
-¿Funciona este metodo para personajes ilustrados o solo para fotografia realista?
+### 2. ¿Que diferencia hay entre usar --cw 100 y --cw 0?
+Si usas `--cw 100`, Midjourney intentara copiar la cara, el peinado y la ropa exacta de la imagen original en todas las escenas. Si usas `--cw 0`, el sistema se centra exclusivamente en las facciones de la cara, dandote la libertad creativa de cambiarle la ropa y el peinado segun lo requiera la narrativa de cada escena. ### 3. ¿Funciona este metodo para personajes ilustrados o solo para fotografia realista?
 Funciona para ambos estilos. Si trabajas en formato 3D o estilo anime, simplemente debes anadir el descriptor de estilo al final de tu prompt (ej: `--style raw` o especificando el estilo de ilustracion) junto con tu enlace de referencia `--cref`.
