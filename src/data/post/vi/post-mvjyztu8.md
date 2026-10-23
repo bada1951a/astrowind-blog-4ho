@@ -50,7 +50,9 @@ Requirements:
 
 3. Trả về kết quả hoàn toàn bằng tiếng Việt chuyên ngành, không dùng từ ngữ dịch máy thô thiển.
 
-Input Data: [Dán nội dung tài liệu onboarding hoặc ghi chú thô của bạn vào đây]
+Input Dat
+
+a: [Dán nội dung tài liệu onboarding hoặc ghi chú thô của bạn vào đây]
 ```
 
 ### Bước 2: Viết chuyên sâu từng chương (Iterative Chapter Generation)
@@ -90,7 +92,9 @@ Giải quyết triệt để yêu cầu oái oăm ban đầu của sếp trong v
 
 ```markdown
 Role: Chuyên gia Thiết kế Instructional Design (Thiết kế Giáo dục doanh nghiệp).
-Task: Dựa vào nội dung Whitepaper vừa hoàn thành, hãy tạo ra:
+Task: Dựa vào nội dung Whitepaper vừa hoàn thành, hãy tạo r
+
+a:
 1. 10 câu hỏi Trắc nghiệm (Quiz) kèm đáp án giải thích chi tiết để kiểm tra mức độ hiểu bài của nhân sự mới.
 
 2. 15 thẻ Flashcard (Mặt trước: Khái niệm/Thuật ngữ cốt lõi - Mặt sau: Định nghĩa ngắn gọn dưới 30 từ).
@@ -102,7 +106,9 @@ Format Output: JSON thuần túy hoặc Markdown table rõ ràng để có thể
 ## Mẹo vận hành nâng cao & Phòng chống Hallucination
 
 <div style="border-left: 4px solid #8b5cf6; padding: 12px 16px; margin: 20px 0; background-color: rgba(139, 92, 246, 0.05); border-radius: 4px; color: #111827;">
-<strong>Kinh nghiệm thực chiến từ chuyên gia:</strong> Khi làm việc với các tài liệu dài, hãy sử dụng <strong>Claude 3.5 Sonnet</strong> cho các bước viết sâu (Bước 2) vì khả năng giữ mạch văn dài cực tốt, và dùng <strong>ChatGPT (GPT-4o)</strong> cho bước lập cấu trúc logic ban đầu. Luôn đính kèm ràng buộc: <em>"Nếu thông tin không có trong tài liệu nguồn, hãy ghi chú rõ [Cần bổ sung thực tế doanh nghiệp] thay vì tự bịa số liệu"</em> để giữ tính chính xác tuyệt đối cho whitepaper.
+<strong>Kinh nghiệm thực chiến từ chuyên gi
+
+a:</strong> Khi làm việc với các tài liệu dài, hãy sử dụng <strong>Claude 3.5 Sonnet</strong> cho các bước viết sâu (Bước 2) vì khả năng giữ mạch văn dài cực tốt, và dùng <strong>ChatGPT (GPT-4o)</strong> cho bước lập cấu trúc logic ban đầu. Luôn đính kèm ràng buộc: <em>"Nếu thông tin không có trong tài liệu nguồn, hãy ghi chú rõ [Cần bổ sung thực tế doanh nghiệp] thay vì tự bịa số liệu"</em> để giữ tính chính xác tuyệt đối cho whitepaper.
 </div>
 
 ---

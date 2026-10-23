@@ -19,7 +19,9 @@ May man thay, toi nho ra vu khi bi mat dang nam trong tay: Claude 3.5 Sonnet va 
 
 ## Tai sao cach prompt thong thuong luon that bai voi Dashboard?
 
-Truoc day, khi moi dung ChatGPT hay Claude cho cac tac vu lap trinh giao dien, toi hay mac sai lam la viet nhung cau lenh kieu: *"Hay viet cho toi code HTML de lam bieu do ban hang"*. Ket qua nhan lai la gi? Mot file code dai ngoang, chua du cac loi syntax, thieu thu vien Chart.js, va khi copy ve may chay thi loi lum la, man hinh trang xoa. 
+Truoc day, khi moi dung ChatGPT hay Claude cho cac tac vu lap trinh giao dien, toi hay mac sai lam la viet nhung cau lenh kieu: *"Hay viet cho toi code HTML de lam bieu do ban hang"*. Ket qua nhan lai la gi? Mot file code dai ngoang, chua du cac loi syntax, thieu thu vien Chart.js, va khi copy ve may chay thi loi lum la, man hinh trang xo
+
+a. 
 
 Nguyen nhan la vi mo hinh ngon ngu lon (LLM) thuong bi ao giac (hallucination) khi phai viet code nguyen man ma khong co mot khung hoat dong on dinh. 
 
@@ -41,7 +43,9 @@ Vai tro cua ban la Senior Frontend Developer va UI/UX Expert. Toi co mot tap du 
    - Bieu do cot (Bar Chart) the hien doanh thu theo tung khu vuc.
    - Bieu do duong (Line Chart) the hien xu huong tang truong doanh thu theo thoi gian.
 
-4. Giao dien (UI Style): Phong cach Dark/Light mode hien dai, mau sac chu dao la Midnight Navy (#1d4ed8), bo goc mem mai, hieu ung hover muot ma.
+4. Giao dien (UI Style): Phong cach Dark/Light mode hien dai, mau sac chu dao la Midnight Navy (#1d4ed8), bo goc mem mai, hieu ung hover muot m
+
+a.
 
 [DU LIEU THO DE LAM MAU]
 [Dan du lieu CSV hoac bang cua ban vao day - Vi du: Ngay, KhuVuc, SanPham, DoanhThu, SoLuong]

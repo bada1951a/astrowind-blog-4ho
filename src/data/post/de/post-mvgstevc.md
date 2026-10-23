@@ -59,7 +59,9 @@ Analysiere das untenstehende Transkript exakt nach folgenden Kriterien und gib d
 Im Banken- und Consultingumfeld ist Datensicherheit entscheidend. Nutzen Sie niemals sensible Kundendaten oder interne Bilanzen in öffentlichen Prompts. Verwenden Sie diesen Prompt ausschließlich für die *Strukturanalyse* externer, öffentlich zugänglicher Medieninhalte. 
 
 * Token-Spar-Tipp: Wenn das Transkript sehr lang ist, fügen Sie am Anfang des Prompts die Instruktion ein: *„Ignoriere Füllwörter, Wiederholungen und Begrüßungen des Creators. Konzentriere dich ausschließlich auf den argumentativen Kern.“*
-* Systemanweisungen (Custom Instructions): Wenn Sie diesen Workflow regelmäßig für Geschäftsberichte nutzen, hinterlegen Sie in den ChatGPT-Einstellungen als Persona: *„Du bist ein präziser Corporate-Copywriter, der komplexe Finanzdaten in fesselnde, verständliche Narrative übersetzt.“*
+* Systemanweisungen (Custom Instructions): Wenn Sie diesen Workflow regelmäßig für Geschäftsberichte nutzen, hinterlegen Sie in den ChatGPT-Einstellungen als Person
+
+a: *„Du bist ein präziser Corporate-Copywriter, der komplexe Finanzdaten in fesselnde, verständliche Narrative übersetzt.“*
 
 ---
 

@@ -52,7 +52,9 @@ Output format: Return the complete, runnable code solely inside a Claude Artifac
 
 ### Step-by-Step Execution Workflow
 
-1. Feed the Raw Data: Paste your messy CSV or performance summary directly into the prompt alongside the template above.
+1. Feed the Raw Dat
+
+a: Paste your messy CSV or performance summary directly into the prompt alongside the template above.
 
 2. Trigger the Artifact: Let Claude generate the standalone web app. Within 15-30 seconds, a fully functional interactive UI will appear on the right side of your screen.
 
@@ -66,10 +68,13 @@ Output format: Return the complete, runnable code solely inside a Claude Artifac
 ### Frequently Asked Questions
 
 Q: Can I connect these dashboard prototypes to a live database?
+
 A: Artifacts run client-side inside the browser sandbox, so they cannot securely connect to production databases out of the box. However, you can mock API endpoints inside the React code or feed JSON data structures to simulate real-time data flows for stakeholder presentations.
 
 Q: What should I do if the React code throws a rendering error in the Artifact?
+
 A: Simply reply to Claude with the exact error message or state: *"The component failed to render with error [Insert Error]. Fix the missing state dependency and regenerate the Artifact."* Claude will self-correct in its next response.
 
 Q: Does this work with models other than Claude 3.5 Sonnet?
+
 A: While other models can write frontend code, Claude 3.5 Sonnet has superior spatial reasoning, code generation accuracy, and native Artifacts UI integration, making it the undisputed gold standard for rapid prototyping.

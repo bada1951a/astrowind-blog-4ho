@@ -62,7 +62,9 @@ Hãy bắt đầu bằng việc hiển thị kết quả phân tích Bước 1 v
 ```
 
 <div style="border-left: 4px solid #1d4ed8; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
-<strong>Mẹo tối ưu từ chuyên gia:</strong> Nếu transcript quá dài (trên 5.000 từ), hãy dùng Claude thay vì ChatGPT vì dung lượng cửa sổ ngữ cảnh (context window) của Claude lớn hơn, giúp nó đọc trọn vẹn toàn bộ ý nghĩa mạch lạc của bài mà không bị cắt cụt giữa chừng.
+<strong>Mẹo tối ưu từ chuyên gi
+
+a:</strong> Nếu transcript quá dài (trên 5.000 từ), hãy dùng Claude thay vì ChatGPT vì dung lượng cửa sổ ngữ cảnh (context window) của Claude lớn hơn, giúp nó đọc trọn vẹn toàn bộ ý nghĩa mạch lạc của bài mà không bị cắt cụt giữa chừng.
 </div>
 
 ---

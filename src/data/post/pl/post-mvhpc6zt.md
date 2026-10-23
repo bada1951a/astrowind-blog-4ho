@@ -31,16 +31,22 @@ Aby rozwiązać ten problem raz na zawsze, przygotowałem dla naszego zespołu g
 
 #### Jak działa ten mechanizm w praktyce:
 - Kotwica twarzy: Zamiast imienia używamy stałego zestawu cech antropometrycznych (*sharp jawline, short messy dark brown hair, thin silver-rimmed glasses, subtle freckles*).
-- Parametr `--cref` (Character Reference): Wklejamy link do wygenerowanego w pierwszym kroku idealnego portretu bohatera. To najważniejsza funkcja w V6 wymuszająca spójność.
+- Parametr `--cref` (Character Reference): Wklejamy link do wygenerowanego w pierwszym kroku idealnego portretu bohater
+
+a. To najważniejsza funkcja w V6 wymuszająca spójność.
 - Parametr `--cw 100` (Character Weight): Ustawienie wartości 100 instruuje model, aby kopiował nie tylko twarz, ale również fryzurę i ubiór. Jeśli zmieniasz ubranie w kolejnych scenach, obniż tę wartość do 50 lub 0.
 
 ---
 
 ### Praktyczne Warianty i Optymalizacja Kosztów Tokenów
 
-W codziennej pracy w zespole projektowym liczy się czas i precyzja. Oto zestawienie sprawdzonych modyfikatoriów, które możesz wdrożyć do swoich instrukcji systemowych dla sztucznej inteligencji:
+W codziennej pracy w zespole projektowym liczy się czas i precyzj
 
-- Scena biurowa: Używaj `--cw 80`, aby zachować twarz, ale pozwolić Midjourney na zmianę profesjonalnego stroju.
+a. Oto zestawienie sprawdzonych modyfikatoriów, które możesz wdrożyć do swoich instrukcji systemowych dla sztucznej inteligencji:
+
+- Scena biurow
+
+a: Używaj `--cw 80`, aby zachować twarz, ale pozwolić Midjourney na zmianę profesjonalnego stroju.
 - Scena dynamiczna w ruchu: Dodaj do promptu frazę `motion blur, action shot` i obniż `--cw` do 40, zapobiegając nienaturalnym deformacjom rysów podczas generowania szybkich akcji.
 - Zbliżenia portretowe: Zwiększ wagę cech twarzy w tekście, zachowując ten sam URL w `--cref` dla zachowania 95% tożsamości postaci.
 

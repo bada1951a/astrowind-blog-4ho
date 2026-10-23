@@ -9,9 +9,13 @@ theme: "Pure Titanium Clean"
 ---
 
 
-Jam 4 sore di SCBD Jakarta. Direktur operasional mendadak kirim pesan WhatsApp: "Tolong buatkan ringkasan performa penjualan kuartal ini dalam bentuk dashboard visual yang interaktif untuk meeting direksi jam 5 sore nanti. Datanya ada di CSV mentah 5.000 baris ini." Jantung langsung berdegup kencang. Kalau saya pakai cara konvensional, buka Excel, bikin pivot table, atur grafik satu-satu, butuh waktu minimal 3 jam. Belum tentu tampilannya enak dilihat untuk level eksekutif.
+Jam 4 sore di SCBD Jakart
 
-Panik melanda karena tenggat waktu mepet dan bos tidak mau terima alasan. Awalnya saya coba prompt asal-asalan ke AI: *"Tolong buatkan dashboard dari data ini ya."* Hasilnya? AI cuma ngasih blok kode HTML berantakan atau teks panjang lebar yang tidak interaktif. Percuma, tidak bisa langsung diklik atau dipakai presentasi. 
+a. Direktur operasional mendadak kirim pesan WhatsApp: "Tolong buatkan ringkasan performa penjualan kuartal ini dalam bentuk dashboard visual yang interaktif untuk meeting direksi jam 5 sore nanti. Datanya ada di CSV mentah 5.000 baris ini." Jantung langsung berdegup kencang. Kalau saya pakai cara konvensional, buka Excel, bikin pivot table, atur grafik satu-satu, butuh waktu minimal 3 jam. Belum tentu tampilannya enak dilihat untuk level eksekutif.
+
+Panik melanda karena tenggat waktu mepet dan bos tidak mau terima alasan. Awalnya saya coba prompt asal-asalan ke AI: *"Tolong buatkan dashboard dari data ini y
+
+a."* Hasilnya? AI cuma ngasih blok kode HTML berantakan atau teks panjang lebar yang tidak interaktif. Percuma, tidak bisa langsung diklik atau dipakai presentasi. 
 
 ![How to Use Claude 3.5 Sonnet Artifacts to Build Interactive Dashboard Prototypes Prompt Guide](https://picsum.photos/seed/prompt-mvhfxtei-10-b/1000/550.jpg)
 
@@ -23,7 +27,11 @@ Setelah trial-error beberapa kali, saya menemukan pola prompt engineering yang t
 
 ## Kenapa Prompt Biasa Gagal Total?
 
-Kesalahan terbesar profesional saat menggunakan AI untuk membuat visualisasi data adalah memberikan instruksi yang terlalu pasif. Contohnya: *"Analisis data ini dan buat ringkasannya."* 
+Kesalahan terbesar profesional saat menggunakan AI untuk membuat visualisasi data adalah memberikan instruksi yang terlalu pasif. Contohny
+
+a: *"Analisis data ini dan buat ringkasanny
+
+a."* 
 
 AI tidak tahu format visual apa yang Anda inginkan, siapa target pembacanya, dan apakah dashboard itu harus interaktif (bisa filter tanggal, klik tombol, atau sorting tabel). Akibatnya, Anda mendapat teks monoton yang membosankan. 
 
@@ -61,8 +69,14 @@ Langsung render kode lengkap yang siap dijalankan di dalam Artifacts tanpa penje
 Untuk memaksimalkan hasil kerja di lingkungan korporat Indonesia yang mengutamakan kecepatan dan keamanan informasi, perhatikan beberapa aturan praktis ini:
 
 * Anonimisasi Data Sensitif: Jangan pernah memasukkan data mentah yang berisi nama lengkap klien, nomor rekening, atau NIK ke dalam AI publik. Ganti kolom sensitif dengan kode anonim seperti `Klien-001`, `Klien-002`.
-* Iterasi Cepat: Jika grafik pertama kurang pas, jangan buat prompt baru dari awal. Cukup balas di chat yang sama: *"Tolong ubah grafik batang di bawah menjadi grafik garis, dan ubah warna aksen utamanya menjadi biru gelap."* Claude akan memperbarui Artifacts seketika.
-* Ekspor Hasil: Begitu Artifacts terbuka di sisi kanan layar, Anda bisa langsung melihat pratinjau, menguji tombol filternya, lalu mengklik tombol "Publish" atau menyalin kodenya untuk disimpan sebagai file `.html` mandiri yang bisa dibuka di browser apa saja.
+* Iterasi Cepat: Jika grafik pertama kurang pas, jangan buat prompt baru dari awal. Cukup balas di chat yang sam
+
+a: *"Tolong ubah grafik batang di bawah menjadi grafik garis, dan ubah warna aksen utamanya menjadi biru gelap."* Claude akan memperbarui Artifacts seketik
+
+a.
+* Ekspor Hasil: Begitu Artifacts terbuka di sisi kanan layar, Anda bisa langsung melihat pratinjau, menguji tombol filternya, lalu mengklik tombol "Publish" atau menyalin kodenya untuk disimpan sebagai file `.html` mandiri yang bisa dibuka di browser apa saj
+
+a.
 
 ## Pertanyaan yang Sering Diajukan (FAQ)
 
@@ -73,4 +87,6 @@ Sama sekali tidak. Claude 3.5 Sonnet akan menulis seluruh kode di belakang layar
 Pastikan Anda menggunakan model Claude 3.5 Sonnet (bukan versi lain yang lebih lama) dan pastikan fitur Artifacts di pengaturan akun Claude Anda sudah diaktifkan.
 
 3. Apakah data saya aman saat diunggah ke Claude untuk pembuatan dashboard?
-Claude memiliki kebijakan privasi ketat di mana data pengguna gratis maupun berbayar tidak digunakan untuk melatih model publik. Namun, untuk standar perusahaan perbankan atau telekomunikasi di Jakarta, tetap disarankan melakukan *masking* atau menyamarkan angka nominal besar dan identitas personal sebelum memprosesnya.
+Claude memiliki kebijakan privasi ketat di mana data pengguna gratis maupun berbayar tidak digunakan untuk melatih model publik. Namun, untuk standar perusahaan perbankan atau telekomunikasi di Jakarta, tetap disarankan melakukan *masking* atau menyamarkan angka nominal besar dan identitas personal sebelum memprosesny
+
+a.

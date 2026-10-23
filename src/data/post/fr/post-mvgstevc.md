@@ -43,7 +43,9 @@ Structure ta réponse selon les sections suivantes :
 - [01] LA HOOK & LE PATTERN INTERRUPT (0-15s) : Analyse psychologique de l'accroche, promesse faite au spectateur.
 - [02] LE DÉVELOPPEMENT & LES BOUCLES DE RÉTENTION : Découpage par blocs, techniques de relance de l'attention toutes les minutes.
 - [03] LE PAYOFF & LA MONTÉE EN TENSION : Comment le problème trouve sa résolution ou comment le pic d'intérêt est atteint.
-- [04] LE TUNNEL DE CONVERSION / CTA : Analyse de l'appel à l'action final.
+- [04] LE TUNNEL DE CONVERSION / CT
+
+A : Analyse de l'appel à l'action final.
 - [05] LE BLUEPRINT RÉUTILISABLE : Un squelette de template vide, prêt à l'emploi, basé sur cette structure exacte pour de futures vidéos.
 
 # SCRIPT À ANALYSER :
@@ -56,13 +58,17 @@ Structure ta réponse selon les sections suivantes :
 
 ### Bonnes pratiques et prévention des hallucinations
 
-Quand vous manipulez de longs scripts, l'IA a tendance à inventer des subtilités ou à lisser le ton original. Pour contrer cela :
+Quand vous manipulez de longs scripts, l'IA a tendance à inventer des subtilités ou à lisser le ton original. Pour contrer cel
+
+a :
 - Fournissez le contexte de la niche : Si le script traite de finance ou de tech, précisez-le dans les instructions système pour éviter des analyses trop généralistes.
 - Limitez la taille du texte : Si le script dépasse 5 000 mots, procédez par blocs (introduction/corps/conclusion) pour garder une précision chirurgicale.
 
 ---
 
-### FAQ : Tout ce que vous devez savoir
+### FA
+
+Q : Tout ce que vous devez savoir
 
 Q1 : Puis-je utiliser ce prompt avec n'importe quel LLM ?  
 Oui, ce prompt fonctionne parfaitement sur ChatGPT (GPT-4o) et Claude 3.5 Sonnet. Toutefois, Claude excelle particulièrement si vous souhaitez transformer instantanément cette structure en application interactive via les Artifacts.

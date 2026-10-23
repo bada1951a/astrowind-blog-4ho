@@ -9,7 +9,9 @@ theme: "Industrial Blueprint"
 ---
 
 
-Erano le 19:30 in punto nel nostro studio a Milano, e avevamo un problema grosso quanto una casa: il cliente ci aveva appena mandato un export CSV di tre anni con le metriche di conversione del suo e-commerce, chiedendoci per la mattina dopo non solo un'analisi testuale dei dati, ma una preview visiva e interattiva per il board. Il grafico statico generato da Excel sembrava uscito dagli anni Novanta e il nostro sviluppatore front-end era irraggiungibile. Mi sono ricordato di una funzione di Claude 3.5 Sonnet che non avevo ancora spremuto a dovere: gli Artifacts. Invece di farmi scrivere codice da zero o accontentarmi di tabelle noiose, ho deciso di usare l'intelligenza artificiale per costruire un prototipo di dashboard HTML, CSS e JavaScript interattivo in tempo reale.
+Erano le 19:30 in punto nel nostro studio a Milano, e avevamo un problema grosso quanto una cas
+
+a: il cliente ci aveva appena mandato un export CSV di tre anni con le metriche di conversione del suo e-commerce, chiedendoci per la mattina dopo non solo un'analisi testuale dei dati, ma una preview visiva e interattiva per il board. Il grafico statico generato da Excel sembrava uscito dagli anni Novanta e il nostro sviluppatore front-end era irraggiungibile. Mi sono ricordato di una funzione di Claude 3.5 Sonnet che non avevo ancora spremuto a dovere: gli Artifacts. Invece di farmi scrivere codice da zero o accontentarmi di tabelle noiose, ho deciso di usare l'intelligenza artificiale per costruire un prototipo di dashboard HTML, CSS e JavaScript interattivo in tempo reale.
 
 <div style="border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 20px 0; background-color: rgba(245, 158, 11, 0.08); border-radius: 4px; color: #111827;">
 <strong>Il principio chiave:</strong> Non chiedere a Claude di descrivere una dashboard a parole. Usando gli Artifacts, Claude compila codice eseguibile (React o HTML standalone) che si apre direttamente in un pannello laterale interattivo, permettendoti di testare filtri, grafici e KPI live mentre parli con il modello.
@@ -21,14 +23,18 @@ Erano le 19:30 in punto nel nostro studio a Milano, e avevamo un problema grosso
 
 Fino a poco tempo fa, se chiedevi a un LLM di "creare una dashboard di analisi dati", ottenevi una sfilza di codice disordinato, frammentato tra blocchi di markdown diversi, oppure descrizioni testuali piene di buone intenzioni ma totalmente inutili per una riunione con un cliente. Il problema di fondo è che la generazione di codice richiede un contesto strutturato: senza istruzioni precise sul framework visivo, sul design system e sul comportamento dei componenti, l'intelligenza artificiale va in confusione e sputa fuori codice non funzionante o interfacce esteticamente imbarazzanti.
 
-La svolta architetturale sta nel trattare Claude 3.5 Sonnet non come un semplice scrittore di testi, ma come un Full-Stack Prototyping Engine. Sfruttando la feature degli Artifacts, separiamo il codice sorgente dall'area di chat, dando vita a un ambiente di esecuzione isolato dove la UI prende forma visiva immediata.
+La svolta architetturale sta nel trattare Claude 3.5 Sonnet non come un semplice scrittore di testi, ma come un Full-Stack Prototyping Engine. Sfruttando la feature degli Artifacts, separiamo il codice sorgente dall'area di chat, dando vita a un ambiente di esecuzione isolato dove la UI prende forma visiva immediat
+
+a.
 
 ### Schema di flusso: Dal CSV grezzo alla Dashboard Interattiva
 
 - Input (Dati Grezzi): Incolla o carica il tuo set di dati (CSV, JSON, metriche di copywriting).
 - Prompt Strutturato: Applica il nostro master prompt specificando layout, stile e librerie (es. Tailwind CSS, Lucide Icons).
 - Artifact Engine (Claude 3.5 Sonnet): Genera un'applicazione web autonoma e interattiva nel pannello laterale.
-- Revisione Iterativa: Chiedi modifiche in tempo reale ("Aggiungi un filtro per data", "Sposta il grafico delle vendite in alto").
+- Revisione Iterativ
+
+a: Chiedi modifiche in tempo reale ("Aggiungi un filtro per data", "Sposta il grafico delle vendite in alto").
 
 ---
 

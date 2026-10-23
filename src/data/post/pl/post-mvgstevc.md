@@ -13,7 +13,9 @@ Wtorek, 8:30 rano, biuro na warszawskiej Woli. Klient z branży fintech wrzuca n
 
 Znamy to wszyscy. Próba ręcznego spisania skryptu, analizowania psychologii widza, tempa cięć i momentów zwrotnych zajmuje co najmniej trzy godziny żmudnej roboty. A przecież nie o to chodzi, żeby przepisywać tekst kropka w kropkę, tylko żeby zrozumieć *szkielet*, który przyciąga uwagę.
 
-Wpisałem wtedy w ChatGPT klasyczne: *"Przeanalizuj ten film i napisz mi podobny skrypt"*. Efekt? Bezużyteczna ściana tekstu, która brzmiała jak wypracowanie gimnazjalisty z historii. Model całkowicie pominął timing, psychologiczne haki retoryczne (tzw. hooks) oraz architekturę zaangażowania. 
+Wpisałem wtedy w ChatGPT klasyczne: *"Przeanalizuj ten film i napisz mi podobny skrypt"*. Efekt? Bezużyteczna ściana tekstu, która brzmiała jak wypracowanie gimnazjalisty z historii. Model całkowicie pominął timing, psychologiczne haki retoryczne (tzw. hooks) oraz architekturę zaangażowani
+
+a. 
 
 <div style="border-left: 4px solid #3b82f6; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Lekcja z poligonu:</strong> Modele językowe nie potrafią czytać intencji wprost. Jeśli pytasz ogólnie, dostajesz ogólne, generyczne odpowiedzi. Aby wyciągnąć ze skryptu czystą inżynierię odwrotną, musisz narzucić sztucznej inteligencji rygorystyczną rolę analityka mediów społecznościowych.
@@ -22,11 +24,17 @@ Wpisałem wtedy w ChatGPT klasyczne: *"Przeanalizuj ten film i napisz mi podobny
 ## Dlaczego zwykłe promptowanie zawodzi?
 
 Większość użytkowników traktuje ChatGPT jak wyszukiwarkę Google. Wklejają link lub transkrypcję i oczekują cudu. Tymczasem kluczem do inżynierii odwrotnej (reverse engineering) jest rozbicie tekstu na warstwy:
-1. Warstwa emocjonalna: W którym momencie widzik odczuwa strach, ciekawość lub ulgę?
+1. Warstwa emocjonaln
 
-2. Warstwa strukturalna: Jak zbudowany jest wstęp (pierwsze 30 sekund)? Gdzie następuje punkt zwrotny?
+a: W którym momencie widzik odczuwa strach, ciekawość lub ulgę?
 
-3. Warstwa retoryczna: Jakie techniki argumentacji zastosowano, by utrzymać retencję?
+2. Warstwa strukturaln
+
+a: Jak zbudowany jest wstęp (pierwsze 30 sekund)? Gdzie następuje punkt zwrotny?
+
+3. Warstwa retoryczn
+
+a: Jakie techniki argumentacji zastosowano, by utrzymać retencję?
 
 Zamiast pisać poematy do AI, stworzyłem systemowy prompt szablonowy, który traktuje skrypt jak kod źródłowy aplikacji. Poniżej znajdziesz gotowy arkusz zapytań, który wdrożyłem w naszym zespole projektowym w Warszawie.
 
@@ -44,7 +52,9 @@ Przeanalizuj powyższy materiał i przygotuj raport w formacie strukturalnym, uw
 
 1. ARCHITEKTURA HAKA (0-30 sekunda):
 - Jaki mechanizm psychologiczny zastosowano na samym początku? (np. otwarta pętla informacyjna, szokująca statystyka, kontrintuicyjna teza).
-- Dokładna treść lub mechanika pierwszego zdania.
+- Dokładna treść lub mechanika pierwszego zdani
+
+a.
 
 2. SZKIELET NARRACYJNY (Timeline):
 - Podziel materiał na bloki czasowe/tematyczne.
@@ -69,7 +79,9 @@ Aby ten system działał bezbłędnie w codziennej pracy projektowej, trzymaj si
 * Format wyjściowy: Wymóg formatowania w punktach (bullet points) drastycznie skraca czas przetwarzania przez model i sprawia, że gotowy szablon od razu nadaje się do przekazania copywriterowi.
 
 <div style="border-left: 4px solid #3b82f6; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
-<strong>Wskazówka architekta:</strong> Zapisz powyższy szablon w swojej firmowej bazie promptów (np. w Notion lub w systemie wewnętrznym). Zamiast pisać za każdym razem od nowa, zmieniaj jedynie zmienną tematyczną na końcu. Zaoszczędzisz średnio 45 minut pracy na każdym nowym projekcie wideo.
+<strong>Wskazówka architekt
+
+a:</strong> Zapisz powyższy szablon w swojej firmowej bazie promptów (np. w Notion lub w systemie wewnętrznym). Zamiast pisać za każdym razem od nowa, zmieniaj jedynie zmienną tematyczną na końcu. Zaoszczędzisz średnio 45 minut pracy na każdym nowym projekcie wideo.
 </div>
 
 ## Często Zadawane Pytania (FAQ)

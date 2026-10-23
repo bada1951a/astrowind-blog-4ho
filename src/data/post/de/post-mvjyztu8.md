@@ -26,7 +26,9 @@ Hier ist das praxiserprobte Master-Prompt-Template für den ersten Schritt unser
 Du bist ein erfahrener Chefredakteur und Branchenanalyst im Frankfurter Finanz- und Tech-Sektor. Deine Aufgabe ist es, eine detaillierte, akademisch fundierte und marktreife Kapitelstruktur für ein 5000-Wörter-Branchenwhitepaper zu erstellen.
 
 # Input-Daten
-Thema: [Thema hier einfügen, z.B. Tokenisierung von illiquiden Assets]
+Them
+
+a: [Thema hier einfügen, z.B. Tokenisierung von illiquiden Assets]
 Zielgruppe: [Zielgruppe hier einfügen, z.B. C-Level-Entscheider in Banken]
 Kern-Hypothese: [Hypothese hier einfügen]
 
