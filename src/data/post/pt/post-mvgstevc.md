@@ -13,15 +13,10 @@ Eram 21h30 em uma terça-feira caótica na nossa software house aqui na Vila Mad
 
 a: "Precisamos lançar um canal de vídeo corporativo amanhã cedo, mas os roteiros precisam ter o mesmo ritmo magnético dos maiores canais de tecnologia do mundo, senão ninguém vai assistir". O problema? Meu time de conteúdo estava esgotado, e eu precisava estruturar um framework de engenharia reversa de roteiros virais em menos de 10 minutos para alimentar nossos fluxos de automação com LLMs. 
 
-Se eu tentasse analisar manualmente os padrões de retenção, ganchos e transições de dez vídeos com mais de um milhão de visualizações, passaríamos a madrugada inteira codificando isso na unh
-
-a. Precisava da IA para decodificar o DNA desses roteiros imediatamente.
+Se eu tentasse analisar manualmente os padrões de retenção, ganchos e transições de dez vídeos com mais de um milhão de visualizações, passaríamos a madrugada inteira codificando isso na unha. Precisava da IA para decodificar o DNA desses roteiros imediatamente.
 
 <div style="border-left: 4px solid #00ffcc; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,255,204,0.08); border-radius: 4px; color: #111827;">
-<strong>[TERMINAL_STATUS]</strong> Carregando protocolo de engenharia reversa v4.2... Foco total em eficiência de tokens e extração de padrões comportamentais de audiênci
-
-a.
-</div>
+<strong>[TERMINAL_STATUS]</strong> Carregando protocolo de engenharia reversa v4.2... Foco total em eficiência de tokens e extração de padrões comportamentais de audiência. </div>
 
 ## O Erro Crítico: Por que os Prompts Genéricos Falham
 
@@ -51,11 +46,7 @@ Copie este template abaixo, cole no seu ChatGPT, Claude ou Gemini preferido, e s
 Atue como um Especialista Sênior em Retenção de Audiência do YouTube e Estrategista de Conteúdo com 10 anos de experiência em análise de dados comportamentais.
 
 # Tarefa
-Faça a engenharia reversa completa do transcript/roteiro do vídeo fornecido abaixo. Desmonte a estrutura narrativa em blocos atômicos para que eu possa replicar o padrão de sucesso em nossos próprios roteiros de tecnologi
-
-a.
-
-# Dados de Entrada
+Faça a engenharia reversa completa do transcript/roteiro do vídeo fornecido abaixo. Desmonte a estrutura narrativa em blocos atômicos para que eu possa replicar o padrão de sucesso em nossos próprios roteiros de tecnologia. # Dados de Entrada
 [Cole aqui a transcrição bruta do vídeo ou o link/texto principal]
 
 # Diretrizes de Análise (Siga estritamente esta ordem)
@@ -98,13 +89,7 @@ a: Configure a temperatura entre 0.2 e 0.4 ao executar via API. Isso evita que a
 ## Perguntas Frequentes (FAQ)
 
 ### 1. Posso usar este prompt com qualquer modelo de IA, como Claude 3.5 Sonnet ou GPT-4o?
-Sim, e na verdade o Claude 3.5 Sonnet costuma se sair ligeiramente melhor em tarefas de análise de textos longos e estruturação de tabelas complexas devido à sua janela de contexto refinada e precisão sintátic
-
-a.
-
-
-
-![ChatGPT Prompt to Reverse Engineer Any Viral YouTube Script Structure Prompt Guide](https://picsum.photos/seed/prompt-mvgsvdhc-7-b/1000/550.jpg)
+Sim, e na verdade o Claude 3.5 Sonnet costuma se sair ligeiramente melhor em tarefas de análise de textos longos e estruturação de tabelas complexas devido à sua janela de contexto refinada e precisão sintática. ![ChatGPT Prompt to Reverse Engineer Any Viral YouTube Script Structure Prompt Guide](https://picsum.photos/seed/prompt-mvgsvdhc-7-b/1000/550.jpg)
 
 ### 2. O que fazer se o vídeo do YouTube não tiver transcrição pública?
 Você precisará usar uma ferramenta de terceiros ou extensão para extrair o arquivo de legenda (formato SRT ou TXT) do vídeo e colar o conteúdo manualmente no prompt. Nunca confie apenas em links externos sem fornecer o texto, pois os navegadores internos das LLMs podem falhar ao raspar páginas do YouTube.

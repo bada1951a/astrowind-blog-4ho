@@ -23,11 +23,7 @@ a: il cliente ci aveva appena mandato un export CSV di tre anni con le metriche 
 
 Fino a poco tempo fa, se chiedevi a un LLM di "creare una dashboard di analisi dati", ottenevi una sfilza di codice disordinato, frammentato tra blocchi di markdown diversi, oppure descrizioni testuali piene di buone intenzioni ma totalmente inutili per una riunione con un cliente. Il problema di fondo è che la generazione di codice richiede un contesto strutturato: senza istruzioni precise sul framework visivo, sul design system e sul comportamento dei componenti, l'intelligenza artificiale va in confusione e sputa fuori codice non funzionante o interfacce esteticamente imbarazzanti.
 
-La svolta architetturale sta nel trattare Claude 3.5 Sonnet non come un semplice scrittore di testi, ma come un Full-Stack Prototyping Engine. Sfruttando la feature degli Artifacts, separiamo il codice sorgente dall'area di chat, dando vita a un ambiente di esecuzione isolato dove la UI prende forma visiva immediat
-
-a.
-
-### Schema di flusso: Dal CSV grezzo alla Dashboard Interattiva
+La svolta architetturale sta nel trattare Claude 3.5 Sonnet non come un semplice scrittore di testi, ma come un Full-Stack Prototyping Engine. Sfruttando la feature degli Artifacts, separiamo il codice sorgente dall'area di chat, dando vita a un ambiente di esecuzione isolato dove la UI prende forma visiva immediata. ### Schema di flusso: Dal CSV grezzo alla Dashboard Interattiva
 
 - Input (Dati Grezzi): Incolla o carica il tuo set di dati (CSV, JSON, metriche di copywriting).
 - Prompt Strutturato: Applica il nostro master prompt specificando layout, stile e librerie (es. Tailwind CSS, Lucide Icons).

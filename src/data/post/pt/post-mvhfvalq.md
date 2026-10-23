@@ -13,11 +13,7 @@ Eram 18:45 de uma sexta-feira em nossa empresa de tecnologia em Sao Paulo, const
 
 a: "Preciso de um painel interativo para visualizar o volume de chamadas da nossa API, a latência média e os custos de tokens das últimas 24 horas. A reunião com o cliente estratégico é segunda-feira às 9h". Olhei para o backlog, para a equipe exausta e percebi que montar isso do zero em React com Tailwind e gráficos em D3 ou Chart.js levaria pelo menos dois dias inteiros de código manual. 
 
-Foi nesse momento de pânico que decidi testar o limite do Claude 3.5 Sonnet e seus Artifacts para prototipagem rápid
-
-a. 
-
-![How to Use Claude 3.5 Sonnet Artifacts to Build Interactive Dashboard Prototypes Prompt Guide](https://picsum.photos/seed/prompt-mvhfx3l8-7-b/1000/550.jpg)
+Foi nesse momento de pânico que decidi testar o limite do Claude 3.5 Sonnet e seus Artifacts para prototipagem rápida. ![How to Use Claude 3.5 Sonnet Artifacts to Build Interactive Dashboard Prototypes Prompt Guide](https://picsum.photos/seed/prompt-mvhfx3l8-7-b/1000/550.jpg)
 
 O erro clássico que todo mundo comete no começo é mandar um prompt preguiçoso como: *"Crie um dashboard bonito para monitorar dados de API"*. O resultado disso é sempre uma frustração garantid
 
@@ -56,16 +52,12 @@ a: "Retro Monokai" ou Dark Mode moderno com contraste impecavel (fundo escuro #1
 4. Cards de metricas principais (KPIs) com indicadores de tendencia (positivo/negativo).
 
 # Formato de Saida
-Gere todo o codigo funcional em um unico bloco de codigo dentro do Artifact, pronto para execucao imediat
-
-a. Nao omita partes do codigo com comentarios do tipo "// adicione o resto aqui".
+Gere todo o codigo funcional em um unico bloco de codigo dentro do Artifact, pronto para execucao imediata. Nao omita partes do codigo com comentarios do tipo "// adicione o resto aqui".
 ```
 
 Para garantir que o protótipo não quebre e atenda exatamente às expectativas do seu negócio, siga estas recomendações práticas de engenharia de prompt:
 
-- Controle de Alucinação de Dados: Se você tem dados reais de produção, substitua a seção de mock data por uma amostra JSON limp
-
-a. Isso impede que o Claude invente métricas irreais para preencher os gráficos.
+- Controle de Alucinação de Dados: Se você tem dados reais de produção, substitua a seção de mock data por uma amostra JSON limpa. Isso impede que o Claude invente métricas irreais para preencher os gráficos.
 - Iteração Incremental: Não peça tudo de uma vez. Primeiro, gere a estrutura base do dashboard com os KPIs. No prompt seguinte, dig
 
 a: *"Agora adicione um filtro avançado no topo e faça o gráfico de barras atualizar dinamicamente quando o filtro for alterado"*.

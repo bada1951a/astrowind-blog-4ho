@@ -17,9 +17,7 @@ Godzina 16:45 w biurze na warszawskiej Woli. Klient z branży fintech wrzuca na 
 
 ![How to Use Claude 3.5 Sonnet Artifacts to Build Interactive Dashboard Prototypes Prompt Guide](https://picsum.photos/seed/prompt-mvhfxjxx-9-b/1000/550.jpg)
 
-Przez pierwsze dziesięć minut borykałem się z klasycznym problemem amatorów. Wpisałem prosty prompt: "Zrób mi ładny dashboard analityczny w HTML i React". Efekt? Katastrof
-
-a. Claude wypluł statyczny, płaski kod, który nie reagował na kliknięcia, wykresy były brzydkie, a całość sypała się w konsoli przeglądarki z powodu brakujących bibliotek i nieobsłużonych stanów komponentów. Model błądził, bo nie dostarczył mu architektury danych, wymagań dotyczących bibliotek UI (takich jak Tailwind CSS czy Lucide Icons) ani jasnych instrukcji interaktywności. 
+Przez pierwsze dziesięć minut borykałem się z klasycznym problemem amatorów. Wpisałem prosty prompt: "Zrób mi ładny dashboard analityczny w HTML i React". Efekt? Katastrofa. Claude wypluł statyczny, płaski kod, który nie reagował na kliknięcia, wykresy były brzydkie, a całość sypała się w konsoli przeglądarki z powodu brakujących bibliotek i nieobsłużonych stanów komponentów. Model błądził, bo nie dostarczył mu architektury danych, wymagań dotyczących bibliotek UI (takich jak Tailwind CSS czy Lucide Icons) ani jasnych instrukcji interaktywności. 
 
 Przełom nastąpił, gdy podszedłem do tematu jak architekt systemów AI. Zrozumiałem, że Claude 3.5 Sonnet w trybie Artifacts potrafi renderować aplikacje webowe w locie, o ile zdefiniujemy dla niego ścisłe ramy technologiczne i strukturę komponentów. Kluczem okazało się stworzenie uniwersalnego szablonu promptu, który wymusza na modelu użycie nowoczesnego stacku (React, Tailwind CSS, Recharts) oraz zaimplementowanie autentycznej interaktywności: filtrowania danych w czasie rzeczywistym, przełączania zakładek i dynamicznych wykresów.
 
@@ -36,9 +34,7 @@ a: [Wpisz odbiorców, np. Analitycy finansowi i zarząd spółki]
 - Wymagany stack technologiczny: React (z użyciem Tailwind CSS do stylizacji, Lucide React do ikonek oraz Recharts do wykresów). Kod musi być samowystarczalny i działać bezpośrednio w przeglądarce wewnątrz Artifacts.
 
 [WYMAGANE KOMPONENTY I FUNKCJONALNOŚĆ]
-1. Górny pasek nawigacyjny (Navbar): Logo, przełącznik motywu (ciemny/jasny), powiadomienia oraz profil użytkownik
-
-a.
+1. Górny pasek nawigacyjny (Navbar): Logo, przełącznik motywu (ciemny/jasny), powiadomienia oraz profil użytkownika.
 
 2. Panel statystyk (KPI Cards): Minimum 4 karty z kluczowymi wskaźnikami (np. Przychód, Aktywni użytkownicy, Wskaźnik konwersji, Błędy systemowe) wraz ze wskaźnikami wzrostu/spadku (procenty i zielone/czerwone strzałki).
 
@@ -49,10 +45,7 @@ a.
 [ZASADY IMPLEMENTACJI TECHNICZNEJ]
 - Użyj czystego kodu w jednym pliku (lub wyraźnie podzielonych komponentach wewnątrz tego samego bloku kodu), aby uniknąć błędów importu.
 - Zapewnij pełną responsywność (układ musi dobrze wyglądać na tabletach i dużych monitorach).
-- Dodaj przykładowe dane (mock data) o wysokiej jakości, które sprawią, że dashboard od razu będzie wyglądał realistycznie, a nie jak pusta makiet
-
-a.
-- Zadbaj o płynne przejścia i stany hover na przyciskach oraz elementach interaktywnych.
+- Dodaj przykładowe dane (mock data) o wysokiej jakości, które sprawią, że dashboard od razu będzie wyglądał realistycznie, a nie jak pusta makieta. - Zadbaj o płynne przejścia i stany hover na przyciskach oraz elementach interaktywnych.
 
 Wygeneruj kompletny kod w panelu Artifacts.
 ```
@@ -68,9 +61,7 @@ Aby uniknąć powszechnych hallukynacji modelu i błędów renderowania w Artifa
 a:
 - Kontrola bibliotek: Zawsze explicitnie wskazuj modelowi, jakich bibliotek ma używać (np. `Recharts` dla wykresów), w przeciwnym razie spróbuje napisać niestandardowe wykresy SVG, które często się psują.
 - Stan początkowy (State): Wymuś na modelu zdefiniowanie domyślnych danych testowych (mock data). Pusta tablica danych to najczęstsza przyczyna "białego ekranu" w wygenerowanym prototypie.
-- Iteracyjne poprawki: Jeśli dashboard działa, ale brakuje jakiejś funkcji, nie pisz promptu od now
-
-a. Odpowiedz w tym samym wątku: "Dodaj do obecnego komponentu filtrowanie tabeli po dacie w prawym górnym rogu".
+- Iteracyjne poprawki: Jeśli dashboard działa, ale brakuje jakiejś funkcji, nie pisz promptu od nowa. Odpowiedz w tym samym wątku: "Dodaj do obecnego komponentu filtrowanie tabeli po dacie w prawym górnym rogu".
 
 Oto najczęściej zadawane pytania przez inżynierów i menedżerów, z którymi pracuję:
 

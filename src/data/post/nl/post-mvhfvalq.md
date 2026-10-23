@@ -51,9 +51,7 @@ Lever de code direct op in een Claude Artifact zodat ik het meteen kan testen.
 ```
 
 <div style="border-left: 4px solid #06b6d4; padding: 12px 16px; margin: 20px 0; background-color: rgba(6,182,212,0.06); border-radius: 4px; color: #111827;">
-<strong>Pro-Tip voor Snelheid:</strong> Vervang de variabelen tussen de haken direct met jouw specifieke dat
-
-a. Je kunt zelfs een CSV-export van je data plakken onderaan de prompt met de instructie: "Verwerk deze exacte data in de tabellen en grafieken van het dashboard."
+<strong>Pro-Tip voor Snelheid:</strong> Vervang de variabelen tussen de haken direct met jouw specifieke data. Je kunt zelfs een CSV-export van je data plakken onderaan de prompt met de instructie: "Verwerk deze exacte data in de tabellen en grafieken van het dashboard."
 </div>
 
 ## Veelgestelde Vragen (FAQ)
@@ -66,9 +64,7 @@ Plak simpelweg je ruwe data (JSON of CSV) onderaan de master prompt. Voeg de ins
 ![How to Use Claude 3.5 Sonnet Artifacts to Build Interactive Dashboard Prototypes Prompt Guide](https://picsum.photos/seed/prompt-mvhfxbwd-8-b/1000/550.jpg)
 
 ### 2. Kan ik het gegenereerde dashboard exporteren en delen met collega's?
-J
-
-a. Rechtsonder in het Artifact-venster van Claude vind je een downloadknop. Hiermee sla je het dashboard op als een los `.html`-bestand. Je kunt dit bestand direct dubbelklikken om het lokaal in elke browser te openen, of mailen naar je team zonder dat er een server voor nodig is.
+Ja. Rechtsonder in het Artifact-venster van Claude vind je een downloadknop. Hiermee sla je het dashboard op als een los `.html`-bestand. Je kunt dit bestand direct dubbelklikken om het lokaal in elke browser te openen, of mailen naar je team zonder dat er een server voor nodig is.
 
 ### 3. Wat moet ik doen als de grafieken of knopinteracties niet direct werken?
 Geef Claude direct een gerichte correctieopdracht in dezelfde chat, zoals: "De filterknop voor de maandelijkse data reageert niet. Pas de event listener in de JavaScript code aan zodat deze de Chart.js dataset correct update." Claude past het Artifact direct voor je aan binnen 5 tot 10 seconden.

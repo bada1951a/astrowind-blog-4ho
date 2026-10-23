@@ -31,18 +31,14 @@ Aby rozwiązać ten problem raz na zawsze, przygotowałem dla naszego zespołu g
 
 #### Jak działa ten mechanizm w praktyce:
 - Kotwica twarzy: Zamiast imienia używamy stałego zestawu cech antropometrycznych (*sharp jawline, short messy dark brown hair, thin silver-rimmed glasses, subtle freckles*).
-- Parametr `--cref` (Character Reference): Wklejamy link do wygenerowanego w pierwszym kroku idealnego portretu bohater
-
-a. To najważniejsza funkcja w V6 wymuszająca spójność.
+- Parametr `--cref` (Character Reference): Wklejamy link do wygenerowanego w pierwszym kroku idealnego portretu bohatera. To najważniejsza funkcja w V6 wymuszająca spójność.
 - Parametr `--cw 100` (Character Weight): Ustawienie wartości 100 instruuje model, aby kopiował nie tylko twarz, ale również fryzurę i ubiór. Jeśli zmieniasz ubranie w kolejnych scenach, obniż tę wartość do 50 lub 0.
 
 ---
 
 ### Praktyczne Warianty i Optymalizacja Kosztów Tokenów
 
-W codziennej pracy w zespole projektowym liczy się czas i precyzj
-
-a. Oto zestawienie sprawdzonych modyfikatoriów, które możesz wdrożyć do swoich instrukcji systemowych dla sztucznej inteligencji:
+W codziennej pracy w zespole projektowym liczy się czas i precyzja. Oto zestawienie sprawdzonych modyfikatoriów, które możesz wdrożyć do swoich instrukcji systemowych dla sztucznej inteligencji:
 
 - Scena biurow
 

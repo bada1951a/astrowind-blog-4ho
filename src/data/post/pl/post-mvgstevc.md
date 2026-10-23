@@ -13,11 +13,7 @@ Wtorek, 8:30 rano, biuro na warszawskiej Woli. Klient z branży fintech wrzuca n
 
 Znamy to wszyscy. Próba ręcznego spisania skryptu, analizowania psychologii widza, tempa cięć i momentów zwrotnych zajmuje co najmniej trzy godziny żmudnej roboty. A przecież nie o to chodzi, żeby przepisywać tekst kropka w kropkę, tylko żeby zrozumieć *szkielet*, który przyciąga uwagę.
 
-Wpisałem wtedy w ChatGPT klasyczne: *"Przeanalizuj ten film i napisz mi podobny skrypt"*. Efekt? Bezużyteczna ściana tekstu, która brzmiała jak wypracowanie gimnazjalisty z historii. Model całkowicie pominął timing, psychologiczne haki retoryczne (tzw. hooks) oraz architekturę zaangażowani
-
-a. 
-
-<div style="border-left: 4px solid #3b82f6; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
+Wpisałem wtedy w ChatGPT klasyczne: *"Przeanalizuj ten film i napisz mi podobny skrypt"*. Efekt? Bezużyteczna ściana tekstu, która brzmiała jak wypracowanie gimnazjalisty z historii. Model całkowicie pominął timing, psychologiczne haki retoryczne (tzw. hooks) oraz architekturę zaangażowania. <div style="border-left: 4px solid #3b82f6; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Lekcja z poligonu:</strong> Modele językowe nie potrafią czytać intencji wprost. Jeśli pytasz ogólnie, dostajesz ogólne, generyczne odpowiedzi. Aby wyciągnąć ze skryptu czystą inżynierię odwrotną, musisz narzucić sztucznej inteligencji rygorystyczną rolę analityka mediów społecznościowych.
 </div>
 
@@ -52,9 +48,7 @@ Przeanalizuj powyższy materiał i przygotuj raport w formacie strukturalnym, uw
 
 1. ARCHITEKTURA HAKA (0-30 sekunda):
 - Jaki mechanizm psychologiczny zastosowano na samym początku? (np. otwarta pętla informacyjna, szokująca statystyka, kontrintuicyjna teza).
-- Dokładna treść lub mechanika pierwszego zdani
-
-a.
+- Dokładna treść lub mechanika pierwszego zdania.
 
 2. SZKIELET NARRACYJNY (Timeline):
 - Podziel materiał na bloki czasowe/tematyczne.

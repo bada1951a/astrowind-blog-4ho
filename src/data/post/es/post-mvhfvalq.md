@@ -9,9 +9,7 @@ theme: "Sandstone Desert Minimal"
 ---
 
 
-Eran las 18:30 en nuestra oficina en Madrid, con las tazas de café completamente vacías y el director de cuentas de nuestro cliente clave llamando por Teams. Necesitábamos presentar a la mañana siguiente un prototipo funcional de un dashboard de análisis de mercado que integrara datos de ventas, sentimiento de marca y métricas de conversión en tiempo real. Sin tiempo para levantar una arquitectura compleja desde cero, mi primera reacción fue pedirle a ChatGPT y a Claude un código general en Python con Streamlit. El resultado fue un desastre: bloques de código cortados a la mitad, errores de sintaxis en los imports de Pandas, y un diseño visual que parecía sacado de los años novent
-
-a. El cliente iba a destrozarnos en la reunión.
+Eran las 18:30 en nuestra oficina en Madrid, con las tazas de café completamente vacías y el director de cuentas de nuestro cliente clave llamando por Teams. Necesitábamos presentar a la mañana siguiente un prototipo funcional de un dashboard de análisis de mercado que integrara datos de ventas, sentimiento de marca y métricas de conversión en tiempo real. Sin tiempo para levantar una arquitectura compleja desde cero, mi primera reacción fue pedirle a ChatGPT y a Claude un código general en Python con Streamlit. El resultado fue un desastre: bloques de código cortados a la mitad, errores de sintaxis en los imports de Pandas, y un diseño visual que parecía sacado de los años noventa. El cliente iba a destrozarnos en la reunión.
 
 <div style="border-left: 4px solid #a16207; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Consejo de Arquitectur
@@ -77,24 +75,28 @@ a: Si el cliente no te ha dado datos limpios, pídele explícitamente a Claude q
 - Ahorro de tokens: Al usar Artifacts, mantienes el código visual aislado del texto de la conversación, lo que reduce la fatiga de contexto del modelo en sesiones largas de desarrollo.
 
 <div style="border-left: 4px solid #a16207; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
-<strong>Aviso de Seguridad:</strong> Nunca pegues credenciales, claves de API de producción ni datos de clientes protegidos por GDPR dentro de los prompts de prueb
-
-a. Utiliza siempre datos anonimizados o sintéticos para los prototipos visuales.
+<strong>Aviso de Seguridad:</strong> Nunca pegues credenciales, claves de API de producción ni datos de clientes protegidos por GDPR dentro de los prompts de prueba. Utiliza siempre datos anonimizados o sintéticos para los prototipos visuales.
 </div>
 
 ## Preguntas Frecuentes (FAQ)
 
-### 1. ¿Puedo usar esta misma técnica en ChatGPT o Gemini?
+### 1.
+
+¿Puedo usar esta misma técnica en ChatGPT o Gemini?
 ChatGPT y Gemini tienen capacidades de análisis de código avanzadas (como Advanced Data Analysis o ejecución de Python), pero Claude 3.5 Sonnet destaca específicamente por su motor de Artifacts, que renderiza componentes web interactivos de forma nativa en una pestaña lateral sin necesidad de configurar un entorno de desarrollo local.
 
 
 
 ![How to Use Claude 3.5 Sonnet Artifacts to Build Interactive Dashboard Prototypes Prompt Guide](https://picsum.photos/seed/prompt-mvhfwla3-5-b/1000/550.jpg)
 
-### 2. ¿Qué hago si el código del Artifact da un error en pantalla?
+### 2.
+
+¿Qué hago si el código del Artifact da un error en pantalla?
 No edites el código manualmente. Simplemente copia el mensaje exacto de error que aparece en el Artifact de Claude y respóndele en el chat: *"El componente genera este error al hacer clic en el filtro de fech
 
 a: [pegar error]. Corrígelo manteniendo la estructura visual"*. Claude lo solucionará en segundos.
 
-### 3. ¿Cómo exporto el prototipo para enseñárselo al cliente?
+### 3.
+
+¿Cómo exporto el prototipo para enseñárselo al cliente?
 Una vez que el Artifact esté funcionando perfectamente, haz clic en el botón de descarga o copia el código fuente HTML resultante. Puedes alojarlo temporalmente en servicios como CodePen o desplegarlo en un entorno estático para que el cliente pueda interactuar directamente desde su propio navegador web.

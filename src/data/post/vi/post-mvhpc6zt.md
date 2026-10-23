@@ -9,9 +9,7 @@ theme: "Matte Black stealth"
 ---
 
 
-Đồng hồ trên tường văn phòng ở Quận 1 điểm 11 giờ đêm, sếp đứng sau lưng thở dài giục dự án storyboard quảng cáo 20 cảnh. Mọi thứ đã chuẩn bị xong, nhưng khi ném đống prompt vào Midjourney V6 để tạo hình nhân vật chính cho chuỗi video, thảm họa xảy r
-
-a. Cảnh 1 là một cô gái tóc ngắn cá tính, sang cảnh 2 bỗng biến thành một bà cô trung niên, sang cảnh 3 lại hóa thành hot girl Hàn Quốc mắt một mí. Gương mặt nhân vật nhảy múa loạn xạ qua từng khung hình, hoàn toàn không thể dùng được cho một chiến dịch thương mại nghiêm túc.
+Đồng hồ trên tường văn phòng ở Quận 1 điểm 11 giờ đêm, sếp đứng sau lưng thở dài giục dự án storyboard quảng cáo 20 cảnh. Mọi thứ đã chuẩn bị xong, nhưng khi ném đống prompt vào Midjourney V6 để tạo hình nhân vật chính cho chuỗi video, thảm họa xảy ra. Cảnh 1 là một cô gái tóc ngắn cá tính, sang cảnh 2 bỗng biến thành một bà cô trung niên, sang cảnh 3 lại hóa thành hot girl Hàn Quốc mắt một mí. Gương mặt nhân vật nhảy múa loạn xạ qua từng khung hình, hoàn toàn không thể dùng được cho một chiến dịch thương mại nghiêm túc.
 
 Thực tế, nguyên nhân thất bại rất rõ ràng: Vòng đời của một prompt thông thường trong Midjourney thiếu đi sự neo giữ cấu trúc sinh học của nhân vật. Khi bạn chỉ mô tả chung chung như "a young Vietnamese woman", thuật toán Diffusion của Midjourney sẽ tự do sáng tạo lại khuôn mặt ở mỗi lần render mới (seed khác nhau), dẫn đến hiện tượng hallucination hình ảnh trầm trọng. 
 

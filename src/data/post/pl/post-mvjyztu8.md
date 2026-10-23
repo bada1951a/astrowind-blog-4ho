@@ -15,9 +15,7 @@ Siedziałem w przeszklonej sali konferencyjnej na warszawskiej Woli, patrząc na
 
 ![How to Chain ChatGPT Prompts for 5000-Word In-Depth Industry Whitepapers Prompt Guide](https://picsum.photos/seed/prompt-mvjz2blo-9-b/1000/550.jpg)
 
-Problem polega na tym, że nawet najbardziej zaawansowane modele językowe cierpią na syndrom zaniku pamięci operacyjnej oraz dryf kontekstu, gdy próbujemy wygenerować dokument o objętości 5000 słów za pomocą jednego, gigantycznego poleceni
-
-a. W warszawskich realiach biznesowych, gdzie precyzja dokumentacji technicznej decyduje o milionowych kontraktach, nie możemy pozwolić sobie na halucynacje AI.
+Problem polega na tym, że nawet najbardziej zaawansowane modele językowe cierpią na syndrom zaniku pamięci operacyjnej oraz dryf kontekstu, gdy próbujemy wygenerować dokument o objętości 5000 słów za pomocą jednego, gigantycznego polecenia. W warszawskich realiach biznesowych, gdzie precyzja dokumentacji technicznej decyduje o milionowych kontraktach, nie możemy pozwolić sobie na halucynacje AI.
 
 Kiedy wrzucasz do Chatu całą specyfikację technologiczną i krzyczysz: "Napisz mi pełny whitepaper na 5000 słów", model próbuje skrócić proces inferencji. W efekcie spłaszcza strukturę, pomija kluczowe niuanse architektoniczne i generuje powtarzalne akapity. Brakowało nam twardej struktury łańcuchowej (Chain of Thought), która wymusza na sztucznej inteligencji sekwencyjne przetwarzanie danych i rygorystyczne trzymanie się zdefiniowanego schematu konwersji danych wejściowych.
 
@@ -63,15 +61,11 @@ Podczas pracy nad długimi dokumentami w środowiskach biznesowych musisz stosow
 
 Q1. Dlaczego podział na 5 modułów jest lepszy niż wygenerowanie całości jednym poleceniem?
 
-A1. Modele językowe mają ograniczoną efektywną okno kontekstowe oraz tendencję do upraszczania treści przy próbie wygenerowania bardzo długich struktur na raz. Dzieląc tekst na moduły, zmuszasz AI do zachowania głębi analitycznej, bogatego słownictwa i ścisłej kontroli nad każdą sekcją z osobn
-
-a.
+A1. Modele językowe mają ograniczoną efektywną okno kontekstowe oraz tendencję do upraszczania treści przy próbie wygenerowania bardzo długich struktur na raz. Dzieląc tekst na moduły, zmuszasz AI do zachowania głębi analitycznej, bogatego słownictwa i ścisłej kontroli nad każdą sekcją z osobna.
 
 Q2. Jak radzić sobie z sytuacją, gdy AI w trzecim kroku zapomina o konwencji nazewnictwa z pierwszego kroku?
 
-A2. Musisz stosować mechanizm tzw. anchor promptingu (kotwiczenia). W każdym kolejnym module wklejasz na początku skrócony słownik pojęć oraz wyjściowy JSON Schema, traktując go jako nienaruszalny kontekst systemowy dla bieżącego zadani
-
-a.
+A2. Musisz stosować mechanizm tzw. anchor promptingu (kotwiczenia). W każdym kolejnym module wklejasz na początku skrócony słownik pojęć oraz wyjściowy JSON Schema, traktując go jako nienaruszalny kontekst systemowy dla bieżącego zadania.
 
 Q3. Czy ta metoda łańcuchowania działa równie dobrze w Claude oraz ChatGPT?
 

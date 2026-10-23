@@ -9,9 +9,7 @@ theme: "Forest Emerald Bio"
 ---
 
 
-Jam 8 malam di sebuah gedung perkantoran di kawasan bisnis Jakart
-
-a. Klien utama kami baru saja menelepon dengan nada mendesak: *“Besok pagi kita harus meeting pitching konten, saya mau script video yang polanya mirip sama channel YouTube kompetitor yang lagi trending itu, tapi buat produk kita!”* Masalahnya, durasi video kompetitor tersebut ada 15 menit, dan saya sendirian harus merangkum hook, pacing, hingga psikologi audiensnya sebelum tengah malam. Kalau dikerjakan manual? Bisa subuh baru selesai.
+Jam 8 malam di sebuah gedung perkantoran di kawasan bisnis Jakarta. Klien utama kami baru saja menelepon dengan nada mendesak: *“Besok pagi kita harus meeting pitching konten, saya mau script video yang polanya mirip sama channel YouTube kompetitor yang lagi trending itu, tapi buat produk kita!”* Masalahnya, durasi video kompetitor tersebut ada 15 menit, dan saya sendirian harus merangkum hook, pacing, hingga psikologi audiensnya sebelum tengah malam. Kalau dikerjakan manual? Bisa subuh baru selesai.
 
 <div style="border-left: 4px solid #10b981; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Catatan Kilat Produktivitas:</strong> Di era percepatan pembuatan konten dan ringkasan data dengan AI saat ini, mengandalkan kerja manual untuk bedah konten adalah cara tercepat untuk burnout. Kita butuh pendekatan <em>reverse engineering</em> yang sistematis.
@@ -19,9 +17,7 @@ a. Klien utama kami baru saja menelepon dengan nada mendesak: *“Besok pagi kit
 
 ![ChatGPT Prompt to Reverse Engineer Any Viral YouTube Script Structure Prompt Guide](https://picsum.photos/seed/prompt-mvgsw5ru-10-b/1000/550.jpg)
 
-Awalnya, saya coba jalan pintas paling malas. Saya buka ChatGPT lalu mengetik prompt asal-asalan: *"Tolong buatkan ringkasan dari script YouTube ini."* Hasilnya? Hancur lebur. AI cuma memberikan ringkasan generik berbentuk paragraf biasa yang sama sekali tidak bisa dipakai untuk membedah formula retensi penonton, gaya bahasa, atau struktur *call-to-action* (CTA) merek
-
-a. Jelas itu cara yang salah.
+Awalnya, saya coba jalan pintas paling malas. Saya buka ChatGPT lalu mengetik prompt asal-asalan: *"Tolong buatkan ringkasan dari script YouTube ini."* Hasilnya? Hancur lebur. AI cuma memberikan ringkasan generik berbentuk paragraf biasa yang sama sekali tidak bisa dipakai untuk membedah formula retensi penonton, gaya bahasa, atau struktur *call-to-action* (CTA) mereka. Jelas itu cara yang salah.
 
 Setelah eksperimen berdarah-darah, saya sadar kuncinya ada pada teknik *reverse engineering prompt structure*. AI butuh instruksi peran (role), batasan analisis, dan format output yang tegas agar bisa membedah anatomi sebuah video sukses tanpa halusinasi.
 
@@ -33,11 +29,7 @@ Salin teks di dalam kotak kode di bawah ini, lalu ganti bagian di dalam kurung s
 
 ```markdown
 Role: Anda adalah seorang YouTube Growth Strategist dan Master Copywriter yang ahli dalam membedah psikologi penonton dan struktur retensi video.
-Task: Lakukan reverse engineering secara mendalam terhadap transkrip script YouTube di bawah ini untuk menemukan formula viralny
-
-a.
-
-Input Transkrip:
+Task: Lakukan reverse engineering secara mendalam terhadap transkrip script YouTube di bawah ini untuk menemukan formula viralnya. Input Transkrip:
 "[Tempel transkrip atau teks script YouTube target di sini]"
 
 Analisis berdasarkan kerangka berikut dan berikan output dalam format poin-poin yang terstruktur:
@@ -62,17 +54,11 @@ Batasan: Gunakan bahasa Indonesia yang profesional, tajam, dan langsung pada int
 
 Q: Apakah saya harus memasukkan seluruh isi transkrip video secara utuh?
 
-A: Tidak harus semuany
-
-a. Untuk hasil terbaik dan hemat token, ambil bagian awal (0-3 menit pertama) tempat penentuan retensi, lalu bagian inti materi dan penutupny
-
-a.
+A: Tidak harus semuanya. Untuk hasil terbaik dan hemat token, ambil bagian awal (0-3 menit pertama) tempat penentuan retensi, lalu bagian inti materi dan penutupnya.
 
 Q: Apakah prompt ini bisa dipakai di Gemini atau Claude selain ChatGPT?
 
-A: Sangat bis
-
-a. Struktur prompt berbasis peran (*role-based*) dan instruksi bernomor di atas sangat kompatibel dengan berbagai LLM modern di pasaran saat ini.
+A: Sangat bisa. Struktur prompt berbasis peran (*role-based*) dan instruksi bernomor di atas sangat kompatibel dengan berbagai LLM modern di pasaran saat ini.
 
 Q: Bagaimana jika video target tidak punya teks transkrip tertulis?
 

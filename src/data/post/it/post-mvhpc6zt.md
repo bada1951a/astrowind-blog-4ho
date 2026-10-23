@@ -9,9 +9,7 @@ theme: "Teal Matrix Digital"
 ---
 
 
-Mancavano esattamente quattro ore alla presentazione del nuovo progetto per un cliente internazionale nel nostro studio a Milano, e il panico aveva appena raggiunto i livelli di guardi
-
-a. Stavamo chiudendo uno sprint intensivo per sviluppare un prompt di copywriting e analisi dati, accompagnato da una storyboard visiva di venti scene. Il problema? Ogni volta che generavo un'immagine con Midjourney V6, il volto del nostro protagonista, un giovane data analyst milanese di nome Marco, cambiava completamente connotati. Nella scena uno era un trentenne barbuto con gli occhiali tartarugati; nella scena due si trasformava in un ventenne sbarbato dai capelli biondi. Impossibile presentare una sequenza narrativa coerente al board aziendale con un personaggio che cambia faccia a ogni slide.
+Mancavano esattamente quattro ore alla presentazione del nuovo progetto per un cliente internazionale nel nostro studio a Milano, e il panico aveva appena raggiunto i livelli di guardia. Stavamo chiudendo uno sprint intensivo per sviluppare un prompt di copywriting e analisi dati, accompagnato da una storyboard visiva di venti scene. Il problema? Ogni volta che generavo un'immagine con Midjourney V6, il volto del nostro protagonista, un giovane data analyst milanese di nome Marco, cambiava completamente connotati. Nella scena uno era un trentenne barbuto con gli occhiali tartarugati; nella scena due si trasformava in un ventenne sbarbato dai capelli biondi. Impossibile presentare una sequenza narrativa coerente al board aziendale con un personaggio che cambia faccia a ogni slide.
 
 <div style="border-left: 4px solid #14b8a6; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Nota dall'Architetto:</strong> Smetti di perdere ore a rigenerare immagini a caso. La consistenza dei volti in Midjourney V6 non si ottiene per magia o per sfortuna, ma sfruttando parametri specifici come <code>--cref</code> e descrizioni anatomiche fisse.
@@ -49,9 +47,7 @@ a: Dalla Scena 1 alla Scena 20
 
 Per applicare questo metodo in modo efficiente durante uno sprint di lavoro, procedi seguendo questi tre passaggi operativi:
 
-1. Generazione del Master (Scena 1): Crea l'immagine di partenza perfetta del tuo personaggio con il prompt descrittivo completo. Salva l'URL di questa immagine generat
-
-a.
+1. Generazione del Master (Scena 1): Crea l'immagine di partenza perfetta del tuo personaggio con il prompt descrittivo completo. Salva l'URL di questa immagine generata.
 
 2. Duplicazione e Variazione: Per le scene successive, mantieni identica la stringa descrittiva del volto e il parametro `--cref [URL_Master] --cw 0`, cambiando unicamente l'azione e l'ambientazione finale (es. *working on a dual-monitor setup in a Milan design agency* vs *walking down via Torino under the rain holding an umbrella*).
 
@@ -60,11 +56,7 @@ a.
 ## Domande Frequenti (FAQ)
 
 ### Posso usare --cref con immagini generate in versioni precedenti di Midjourney come la V5.2?
-No, il parametro `--cref` è stato introdotto specificamente per la V6 ed è ottimizzato per funzionare al meglio con lo stile e la nitidezza di questa versione. Ti consiglio di generare un nuovo master direttamente in V6 per iniziare la tua sequenz
-
-a.
-
-### Come faccio a mantenere anche lo stesso stile grafico (es. 3D corporate render o fotografia editoriale) oltre al volto?
+No, il parametro `--cref` è stato introdotto specificamente per la V6 ed è ottimizzato per funzionare al meglio con lo stile e la nitidezza di questa versione. Ti consiglio di generare un nuovo master direttamente in V6 per iniziare la tua sequenza. ### Come faccio a mantenere anche lo stesso stile grafico (es. 3D corporate render o fotografia editoriale) oltre al volto?
 Puoi combinare il parametro `--cref` con il parametro `--sref` (Style Reference). Aggiungendo `--sref [URL_Immagine_Stile]` alla fine del prompt, costringerai Midjourney a mantenere coerente non solo la faccia del personaggio, ma anche la palette cromatica e l'estetica visiva di tutte le venti scene.
 
 ### Cosa succede se il personaggio deve indossare abiti completamente diversi nelle varie scene?

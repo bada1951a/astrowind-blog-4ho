@@ -11,9 +11,7 @@ theme: "Warm Coffee Latte"
 
 Het was dinsdagochtend ergens rond half tien in een glazen vergaderruimte op de Zuidas in Amsterdam. Mijn scherm toonde het zoveelste mislukte experiment: ik probeerde een ambitieuze whitepaper van 5000 woorden over de toekomst van fintech te genereren. Na de derde prompt verslapte de aandacht van ChatGPT volledig. Ik had de AI expliciet de rol gegeven van een doorgewinterde risk-analist uit Frankfurt, maar na twee alinea's klonk de tekst ineens weer als een enthousiaste, overdreven beleefde klantenservicemedewerker vol met clichés en robotachtige overgangen. Weg autoriteit, weg nuance.
 
-Dit is het klassieke probleem waar iedere contentstrateeg tegenaan loopt bij langlopende AI-projecten. Zodra je de contextwindow vult met duizenden woorden aan input en vervolgvragen, vergeet het model zijn person
-
-a. Het valt terug op zijn standaard fabrieksinstellingen: neutraal, vlak en voorspelbaar. En als je een whitepaper wilt die indruk maakt op C-level executives, kun je dat soort generieke flauwekul simpelweg niet gebruiken.
+Dit is het klassieke probleem waar iedere contentstrateeg tegenaan loopt bij langlopende AI-projecten. Zodra je de contextwindow vult met duizenden woorden aan input en vervolgvragen, vergeet het model zijn persona. Het valt terug op zijn standaard fabrieksinstellingen: neutraal, vlak en voorspelbaar. En als je een whitepaper wilt die indruk maakt op C-level executives, kun je dat soort generieke flauwekul simpelweg niet gebruiken.
 
 ![How to Chain ChatGPT Prompts for 5000-Word In-Depth Industry Whitepapers Prompt Guide](https://picsum.photos/seed/prompt-mvjz21vy-8-b/1000/550.jpg)
 
@@ -36,11 +34,7 @@ Om dit te omzeilen, bouwen we een keten van opeenvolgende instructies. Elke stap
 
 ## Het Master Prompt Template voor de Persona-Instandhouding
 
-Om te voorkomen dat de AI na twee berichten weer verandert in een onbeholpen robot, gebruik je de volgende geavanceerde systeeminstructie of begin-prompt in ChatGPT of Claude. Hiermee dwing je het model om zijn rol vast te houden via een vaste state-machine-logic
-
-a.
-
-```markdown
+Om te voorkomen dat de AI na twee berichten weer verandert in een onbeholpen robot, gebruik je de volgende geavanceerde systeeminstructie of begin-prompt in ChatGPT of Claude. Hiermee dwing je het model om zijn rol vast te houden via een vaste state-machine-logica. ```markdown
 Je bent een senior industrie-analist en hoofdauteur gespecialiseerd in [Voer Industrie in, bijv. Fintech en regelgeving]. Je hanteert een scherpe, pragmatische en analytische toon zonder holle marketingpraat of clichématige metaforen.
 
 Je werkt aan een whitepaper van in totaal 5000 woorden. Dit is stap [Voer Stapnummer in] van een serie van 5 stappen. 

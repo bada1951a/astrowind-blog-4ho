@@ -73,11 +73,7 @@ Ecco le linee guida obbligatorie per mantenere la qualità costante:
 - Includi almeno un caso studio ipotetico o un'analisi di scenario basata su dati di mercato realistici.
 - Usa sottotitoli in markdown (h2 e h3) per suddividere i blocchi di testo.
 - Evita assolutamente le introduzioni generiche e i cappotti introduttivi retorici ("Nel mondo moderno in continua evoluzione..."). Inizia direttamente analizzando il problema economico o strutturale.
-- Mantieni la coerenza stilistica con i dati strutturati forniti in precedenz
-
-a.
-
-Contenuti specifici da sviluppare in questo capitolo:
+- Mantieni la coerenza stilistica con i dati strutturati forniti in precedenza. Contenuti specifici da sviluppare in questo capitolo:
 [Inserire Concetti Chiave del Capitolo]
 ```
 
@@ -95,17 +91,11 @@ Analizza il testo del capitolo che ti fornisco di seguito e applica una revision
 
 2. Densezza informativ
 
-a: Assicurati che ogni paragrafo contenga un'informazione utile, un dato o un'argomentazione strategic
-
-a.
+a: Assicurati che ogni paragrafo contenga un'informazione utile, un dato o un'argomentazione strategica.
 
 3. Formattazione: Verifica che l'uso del grassetto evidenzi solo i concetti chiave e che la struttura sia leggibile su schermo.
 
-Restituisci il testo corretto e ottimizzato, segnalando in un breve box finale a punti quali modifiche strutturali hai apportato per migliorare la qualità complessiv
-
-a.
-
-Testo da revisionare:
+Restituisci il testo corretto e ottimizzato, segnalando in un breve box finale a punti quali modifiche strutturali hai apportato per migliorare la qualità complessiva. Testo da revisionare:
 [Incollare il testo generato nello Step 2]
 ```
 
