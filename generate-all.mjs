@@ -41,28 +41,28 @@ function getKstPublishDateIso(index) {
 }
 
 // =========================================================================
-// [Uburyo bugezweho bwo gukosora imyandikire] 단어 쪼개짐 방지 및 개행 확보
+// [최종 안정형 마크다운 정제 함수] 볼드 보존 + Q&A 개행 완벽 방어
 // =========================================================================
 function sanitizeMarkdownFormatting(content) {
   let cleaned = content;
 
-  // 1) Gukuraho ibimenyetso byose bya bold (**)
-  cleaned = cleaned.replace(/\*\*/g, '');
+  // 1) Gukuraho ibimenyetso by'umubyimba biri ku mitwe y'inyandiko (#)
+  cleaned = cleaned.replace(/^(#{1,6}\s*)\*\*(.*?)\*\*/gm, '$1$2');
 
-  // 2) Gutandukanya ibimenyetso by'Icyesipanyoli (¿, ¡) hatarebwe ku mibare y'urutonde (1., 2.)
-  cleaned = cleaned.replace(/([^0-9][.?!])\s*([¿¡])/g, '$1\n\n$2');
+  // 2) Kurinda ko imitwe ya Q&A ifatana: **Q1:**, **A1:** n'ibindi bibone imirongo ibiri
+  cleaned = cleaned.replace(/([^\n])\s*(\*\*?[QA][0-9]*\s*[:.]\*\*?)/gi, '$1\n\n$2');
 
-  // 3) Gushyiramo umwanya nyuma y'ikibazo (?) niba kigiye ku magambo
+  // 3) Gutandukanya imitwe ya Q&A isanzwe itari mu mubyimba
+  cleaned = cleaned.replace(/([^\n])\s+([QA][0-9]*\s*[:.])/g, '$1\n\n$2');
+
+  // 4) Gutandukanya ibimenyetso byo gusoza interuro (.!?) n'ibibazo cyangwa urutonde (1., 2.)
+  cleaned = cleaned.replace(/([.!?])\s*(\*\*?[QA][0-9]*\s*[:.]\*\*?|[0-9]+\.\s+)/gi, '$1\n\n$2');
+
+  // 5) Gushyiramo umwanya nyuma y'ikibazo (?) niba kigiye ku magambo
   cleaned = cleaned.replace(/\?([A-Za-z\u00C0-\u024F\u1EA0-\u1EF9가-힣])/g, '? $1');
 
-  // 4) Gukata imirongo ibiri gusa ku nyuguti nkuru Q/A (ntikore ku nyuguti nto a.)
-  cleaned = cleaned.replace(/\?\s*([QA][0-9]*\s*[:.])/g, '?\n\n$1');
-
-  // 5) Gukata imirongo ibiri nyuma y'utudomo n'urutonde rw'imibare (1., 2.)
-  cleaned = cleaned.replace(/([.!])\s*([QA][0-9]*\s*[:.]|[0-9]+\.\s+)/g, '$1\n\n$2');
-
-  // 6) Gutunganya imitwe y'ibibazo n'ibisubizo mu buryo butekanye
-  cleaned = cleaned.replace(/([^\n])\s+([QA][0-9]*\s*[:.])/g, '$1\n\n$2');
+  // 6) Gutandukanya ibimenyetso by'indimi z'amahanga nka Spanish
+  cleaned = cleaned.replace(/([^0-9][.?!])\s*([¿¡])/g, '$1\n\n$2');
   cleaned = cleaned.replace(/([.!])\s*(D:|R:|Risposta|Domande)/gi, '$1\n\n$2');
 
   return cleaned;
@@ -225,11 +225,20 @@ ${currentTopic}
 - ABSOLUTELY FORBIDDEN: Do NOT default to a generic "morning sync in 30 minutes" trope. Adapt the specific incident naturally into the local daily workflow of ${lang.name}.
 
 [STRICT MARKDOWN & FORMATTING RULES - NO RENDERING GLITCHES]
-1. BOLD FORMATTING RULE:
-    - Absolutely DO NOT use markdown bold asterisks anywhere in the body text or FAQ. Keep all text in plain standard format.
-2. COMMANDS & PROMPT TEMPLATES / CODE BLOCKS:
+1. HEADINGS & STRUCTURE (MANDATORY):
+    - You MUST use clear markdown headings (## for major sections, ### for subsections) for every section:
+      * ## 1. [Opening Story/Problem]
+      * ## 2. [Root Cause / Architecture]
+      * ## 3. [Master Prompt Template]
+      * ## 4. [Practical Variations / Safety Tips]
+      * ## 5. Frequently Asked Questions
+    - NEVER put markdown asterisks inside headings. Keep clean headings like "## 2. Root Cause Breakdown".
+2. BOLD FORMATTING RULE:
+    - Use markdown bold (**) naturally and moderately ONLY for key action words, prompt parameters, UI buttons, or core technical terms.
+    - NEVER bold an entire sentence or overuse bold on every phrase.
+3. COMMANDS & PROMPT TEMPLATES / CODE BLOCKS:
     - Always wrap copy-pasteable prompt templates, JSON schemas, or terminal commands in standard 3-backtick code blocks (\`\`\`markdown, \`\`\`json, or \`\`\`text) so they never overflow horizontally on mobile screens.
-3. NO LATEX & NO TILDE:
+4. NO LATEX & NO TILDE:
     - ABSOLUTELY FORBIDDEN: NEVER use LaTeX math delimiters ($ or $$).
     - ABSOLUTELY FORBIDDEN: NEVER use tilde (~) for ranges. Always use a hyphen (e.g., "0-5s", "10-20%").
 
@@ -256,7 +265,8 @@ ${currentTopic}
 2. Root Cause / Architecture: Why simple prompting fails and the logic behind this prompt structure.
 3. Master Prompt Template: Clear, copy-pasteable Markdown code block with placeholders (e.g., [Insert Data]).
 4. Practical Variations / Safety Tips: Hallucination prevention, token saving, or system instructions.
-5. Frequently Asked Questions (FAQ): Exactly 3 realistic, high-value Q&As that everyday users would ask. (CRITICAL: Every Q and A must start on a fresh new line without markdown bolding like Q1. ... and A1.).
+5. Frequently Asked Questions (FAQ): Exactly 3 realistic, high-value Q&As that everyday users would ask.
+   * CRITICAL: Every single Question (Q) and Answer (A) MUST start on its own separate new line, separated by an empty blank line. Never run Q and A together.
 
 [Length & Richness Rules]
 - Korean (ko): Minimum 2,500 characters of rich, deep, non-repetitive text.
@@ -307,7 +317,7 @@ theme: "${selectedTheme.name}"
       frontmatter = frontmatter.replace(/publishDate:\s*[^\n\r]+/i, `publishDate: ${pubDateIso}`);
       frontmatter = frontmatter.replace(/image:\s*["'][^"']*["']/i, `image: '${coverUrl}'`);
 
-      // Gusukura inyandiko hakoreshejwe uburyo buvuguruye
+      // Gusukura inyandiko hakoreshejwe uburyo buvuguruye (Gukomeza umubyimba no kurinda Q&A)
       body = sanitizeMarkdownFormatting(body);
 
       const safeAlt = currentTopic.replace(/[\[\]\(\)"']/g, '').trim();
