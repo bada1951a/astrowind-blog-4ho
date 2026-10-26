@@ -20,7 +20,7 @@ My initial reaction was pure panic. Building an interactive web app from scratch
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvovbkk8-1-b/1000/550.jpg)
 
-## 2. Root Cause Breakdown of Prompt Failures and Logic Flaws
+## 2. Root Cause Breakdown of Prompt Failures and Logic Flaws of Prompt Failures and Logic Flaws
 
 Why do standard prompts fail when you try to generate interactive training materials? The root cause comes down to context fragmentation and poor output constraints. 
 
@@ -72,7 +72,7 @@ When working with large text inputs and complex code generation, you may occasio
 <strong>Safety Reminder:</strong> Always test the generated Artifact directly in your browser preview before sharing the live link with your team to ensure all JavaScript event listeners bind correctly.
 </div>
 
-## 5. Frequently Asked Questions (FAQ)
+## 5. Frequently Asked Questions (FAQ) (FAQ)
 
 Q: Can I use this prompt with ChatGPT or Gemini instead of Claude?
 

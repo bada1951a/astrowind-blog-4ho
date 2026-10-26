@@ -66,7 +66,7 @@ a: Paste your messy CSV or performance summary directly into the prompt alongsid
 <strong>Pro Tip:</strong> If you need your team to interact with the dashboard independently, click the publish icon inside the Artifact window to generate a public preview link in seconds. No GitHub repository required.
 </div>
 
-## 5. Frequently Asked Questions (FAQ)
+## 5. Frequently Asked Questions (FAQ) (FAQ)
 
 Q: Can I connect these dashboard prototypes to a live database?
 

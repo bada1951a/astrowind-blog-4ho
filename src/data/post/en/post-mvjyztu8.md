@@ -68,7 +68,7 @@ When executing long-form prompt chains, you will inevitably run into edge cases 
 - Tone Anchoring: If you notice the vocabulary becoming too standard, add a negative constraint to your prompt: `[NEGATIVE CONSTRAINT: Ban words such as 'testament', 'delve', 'revolutionize', 'tapestry', and 'furthermore'].`
 - Token Budgeting: Break your output requests into 800-1,000 word chunks. Asking an LLM to output 2,500 words in a single response inevitably leads to quality degradation and abrupt cutoff mid-sentence.
 
-## 5. Frequently Asked Questions (FAQ)
+## 5. Frequently Asked Questions (FAQ) (FAQ)
 
 Q1. What should I do if the AI completely ignores the persona instructions by step three?
 

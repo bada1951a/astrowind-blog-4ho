@@ -22,7 +22,7 @@ To fix this once and for all, we need a bulletproof framework using Claude Artif
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvnfn2bg-1-b/1000/550.jpg)
 
-## 2. Root Cause Breakdown of Prompt Failures and Logic Flaws
+## 2. Root Cause Breakdown of Prompt Failures and Logic Flaws of Prompt Failures and Logic Flaws
 
 Why do standard, casual prompts fail to generate usable SVG graphics? 
 
@@ -72,7 +72,7 @@ When scaling your asset generation pipeline, keep these optimization and safety 
 <strong>Pro Tip:</strong> Always ask Claude to include a subtle CSS drop-shadow filter or linear gradient definition within a <code>&lt;defs&gt;</code> block to instantly elevate flat vector icons into modern, professional UI components.
 </div>
 
-## 5. Frequently Asked Questions (FAQ)
+## 5. Frequently Asked Questions (FAQ) (FAQ)
 
 Q: Can I export these Claude Artifact SVGs directly into Figma or React components?
 
