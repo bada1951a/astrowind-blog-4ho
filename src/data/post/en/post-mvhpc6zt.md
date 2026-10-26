@@ -18,7 +18,7 @@ It was 8:45 PM on a Tuesday at our Manhattan marketing agency. Our morning sync 
 
 ![Midjourney V6 Prompt Guide to Maintain Consistent Character Faces Across 20 Scenes Prompt Guide](https://picsum.photos/seed/prompt-mvhpcgc6-1-b/1000/550.jpg)
 
-## 2. Root Cause Breakdown of Prompt Failures and Logic Flaws of Prompt Failures and Logic Flaws Why Standard Prompts Fail at Character Continuity
+## 2. Root Cause Breakdown of Prompt Failures and Logic Flaws of Prompt Failures and Logic Flaws of Prompt Failures and Logic Flaws Why Standard Prompts Fail at Character Continuity
 
 If you simply type "A 30-year-old female tech executive named Maya working at a desk" and then change the action to "Maya drinking coffee in a cafe," Midjourney V6 relies on probabilistic token distribution. The model re-rolls the latent space seed for the character's facial topology with every new action phrase. 
 
@@ -59,7 +59,7 @@ When producing 20 or more sequential scenes, you will inevitably run into minor 
 - Lighting Discrepancies: Midjourney V6 can sometimes render harsh studio lighting even in outdoor scenes. Combat this by adding strict environmental lighting tags at the end of your prompts, such as `soft overcast morning window light` or `warm neon cyberpunk city glow`.
 - Aspect Ratio Locking: Always keep `--ar 16:9` or `--ar 9:16` consistent across all prompts in your storyboard. Changing aspect ratios mid-sequence forces the composition engine to recalculate facial geometry, which triggers noticeable face morphing.
 
-## 5. Frequently Asked Questions (FAQ) (FAQ)
+## 5. Frequently Asked Questions (FAQ) (FAQ) (FAQ)
 
 ### Can I use character reference (--cref) with multiple characters in one scene?
 No. Midjourney V6's `--cref` parameter is currently designed to track a single dominant character reference URL. If your scene requires two consistent characters, you will need to generate them separately using image-to-image workflows or composite them in post-production.

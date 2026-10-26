@@ -16,7 +16,7 @@ theme: "Cobalt Enterprise Lab"
 
 ---
 
-## 1. AI 답변 퀄리티 붕괴와 업무 멘붕의 순간로는 얼굴 고정이 안 될까?
+## 2. 프롬프트 실패와 AI 환각(Hallucination)의 핵심 원인로는 얼굴 고정이 안 될까?
 
 미드저니 V6는 이전 버전보다 텍스트 이해도와 실사 렌더링 능력이 극적으로 향상되었습니다. 하지만 바로 이 점 때문에 문제가 발생합니다. "커피를 마시는 여성", "회의실에서 발표하는 여성"이라고 각각 프롬프트를 입력하면, V6는 매번 새로운 문맥에 맞춰 완전히 새로운 인물을 창조해 냅니다. 
 
@@ -30,7 +30,7 @@ theme: "Cobalt Enterprise Lab"
 
 ![Midjourney V6 Prompt Guide to Maintain Consistent Character Faces Across 20 Scenes Prompt Guide](https://picsum.photos/seed/prompt-mvhpc6zt-0-b/1000/550.jpg)
 
-## 2. 30분 만에 끝내는 마스터 프롬프트 템플릿
+## 3. 바로 복사해 쓰는 실전 마스터 프롬프트 템플릿 프롬프트 템플릿
 
 아래의 마스터 프롬프트를 복사하여 ChatGPT나 Claude 입력창에 넣고 본인의 기획서 주제에 맞게 변수([Insert...])만 수정해 보세요. 미드저니 V6에서 즉시 활용할 수 있는 구조화된 프롬프트 세트를 만들어 줍니다.
 
@@ -63,7 +63,7 @@ A professional Korean woman, 28 years old, sharp jawline, natural bob haircut, t
 
 ---
 
-## 3. 현업 적용을 위한 핵심 파라미터 가이드
+## 4. 현직 프롬프트 엔지니어가 전하는 실무 팁 및 주의사항 가이드
 
 성공적인 20개 씬 제작을 위해 반드시 알아야 할 미드저니 V6 파라미터 설정값입니다.
 
@@ -76,7 +76,7 @@ A professional Korean woman, 28 years old, sharp jawline, natural bob haircut, t
 
 ---
 
-## 4. 자주 묻는 질문 (FAQ)
+## 5. 자주 묻는 질문 (FAQ) (FAQ)
 
 ###
 

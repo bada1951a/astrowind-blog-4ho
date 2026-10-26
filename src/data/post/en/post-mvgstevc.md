@@ -83,7 +83,7 @@ To make this truly enterprise-ready for morning briefings or agency client pitch
 
 ---
 
-## 5. Frequently Asked Questions (FAQ) (FAQ)
+## 5. Frequently Asked Questions (FAQ) (FAQ) (FAQ)
 
 ####
 

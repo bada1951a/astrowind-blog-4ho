@@ -24,7 +24,7 @@ I was staring down the barrel of a humiliating meeting with empty slides and zer
 
 ![How to Write Few-Shot Prompts to Extract Tabular Data from Unstructured Text Prompt Guide](https://picsum.photos/seed/prompt-mvmqpdb5-1-b/1000/550.jpg)
 
-## 2. Root Cause Breakdown of Prompt Failures and Logic Flaws of Prompt Failures and Logic Flaws
+## 2. Root Cause Breakdown of Prompt Failures and Logic Flaws of Prompt Failures and Logic Flaws of Prompt Failures and Logic Flaws
 
 Why do models like ChatGPT, Claude, and Gemini fail so miserably when you ask them to extract tables from unstructured text? 
 
@@ -92,7 +92,7 @@ When working with large document sets or complex extraction tasks, standard prom
 
 ---
 
-## 5. Frequently Asked Questions (FAQ) (FAQ)
+## 5. Frequently Asked Questions (FAQ) (FAQ) (FAQ)
 
 Q: What should I do if the AI leaves out columns or invents fake data points for missing text?
 
