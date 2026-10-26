@@ -41,27 +41,147 @@ function getKstPublishDateIso(index) {
 }
 
 // =========================================================================
-// [최종 안정형 마크다운 정제 함수] 볼드 보존 + Q&A 개행 완벽 방어
+// [4호기 전용] 12개국 100% 현지어 섹션 제목 및 치환 딕셔너리
 // =========================================================================
-function sanitizeMarkdownFormatting(content) {
-  let cleaned = content;
+const I18N_SECTIONS = {
+  ko: {
+    s1: "1. AI 답변 퀄리티 붕괴와 업무 멘붕의 순간",
+    s2: "2. 프롬프트 실패와 AI 환각(Hallucination)의 핵심 원인",
+    s3: "3. 바로 복사해 쓰는 실전 마스터 프롬프트 템플릿",
+    s4: "4. 현직 프롬프트 엔지니어가 전하는 실무 팁 및 주의사항",
+    s5: "5. 자주 묻는 질문 (FAQ)",
+    tags: ["프롬프트엔지니어링", "ChatGPT", "Claude", "생성형AI"]
+  },
+  en: {
+    s1: "1. Critical AI Hallucination & Output Collapse Crisis",
+    s2: "2. Root Cause Breakdown of Prompt Failures and Logic Flaws",
+    s3: "3. Copy-and-Paste Master Prompt Engineering Template",
+    s4: "4. Professional Prompt Architect Precautions & Tips",
+    s5: "5. Frequently Asked Questions (FAQ)",
+    tags: ["Prompt Engineering", "ChatGPT", "Claude", "Generative AI"]
+  },
+  ja: {
+    s1: "1. AIの回答精度崩壊と業務停滞の緊急事態",
+    s2: "2. プロンプト失敗とハルシネーションの根本原因",
+    s3: "3. すぐに使える実践マスタープロンプトテンプレート",
+    s4: "4. 現役AIプロンプト専門家が教える注意点とコツ",
+    s5: "5. よくある質問 (FAQ)",
+    tags: ["プロンプトエンジニアリング", "ChatGPT", "Claude", "生成AI"]
+  },
+  de: {
+    s1: "1. Kritischer KI-Halluzinations- und Qualitätsnotfall",
+    s2: "2. Detaillierte Ursachenanalyse von Prompt- und Logikfehlern",
+    s3: "3. Sofort einsetzbare Master-Prompt-Vorlage",
+    s4: "4. Praxistipps und Warnungen vom Prompt-Architekten",
+    s5: "5. Häufig gestellte Fragen (FAQ)",
+    tags: ["Prompt-Engineering", "ChatGPT", "Claude", "Generative KI"]
+  },
+  fr: {
+    s1: "1. Crise d'hallucination de l'IA et panne de productivité",
+    s2: "2. Analyse approfondie des échecs de prompt et failles logiques",
+    s3: "3. Modèle de prompt maître pratique prêt à l'emploi",
+    s4: "4. Conseils et précautions d'un ingénieur de prompt",
+    s5: "5. Foire Aux Questions (FAQ)",
+    tags: ["Prompt Engineering", "ChatGPT", "Claude", "IA Générative"]
+  },
+  es: {
+    s1: "1. Crisis crítica de alucinación de la IA y bloqueo de tareas",
+    s2: "2. Análisis de causas raíz de errores de prompt y lógica",
+    s3: "3. Plantilla maestra de prompt lista para copiar y usar",
+    s4: "4. Consejos y advertencias de un arquitecto de prompts",
+    s5: "5. Preguntas Frecuentes (FAQ)",
+    tags: ["Ingeniería de Prompts", "ChatGPT", "Claude", "IA Generativa"]
+  },
+  it: {
+    s1: "1. Emergenza improvvisa per allucinazioni dell'IA e risposte errate",
+    s2: "2. Analisi approfondita dei fallimenti di prompt e logica",
+    s3: "3. Template master di prompt pratico pronto all'uso",
+    s4: "4. Avvertenze e suggerimenti dell'architetto di prompt",
+    s5: "5. Domande Frequenti (FAQ)",
+    tags: ["Ingegneria dei Prompt", "ChatGPT", "Claude", "IA Generativa"]
+  },
+  pt: {
+    s1: "1. Situação de emergência com alucinações e erros da IA",
+    s2: "2. Análise da causa raiz de falhas em prompts e raciocínio",
+    s3: "3. Template mestre de prompt pronto para copiar e colar",
+    s4: "4. Recomendações e alertas de especialistas em prompt",
+    s5: "5. Perguntas Frequentes (FAQ)",
+    tags: ["Engenharia de Prompt", "ChatGPT", "Claude", "IA Generativa"]
+  },
+  nl: {
+    s1: "1. Noodsituatie door AI-hallucinaties en onbruikbare output",
+    s2: "2. Grondige analyse van mislukte prompts en denkfouten van het model",
+    s3: "3. Direct bruikbare master prompt template",
+    s4: "4. Belangrijke adviezen van professionele prompt engineers",
+    s5: "5. Veelgestelde Vragen (FAQ)",
+    tags: ["Prompt Engineering", "ChatGPT", "Claude", "Generatieve AI"]
+  },
+  pl: {
+    s1: "1. Awaryjna sytuacja związana z halucynacjami i błędami AI",
+    s2: "2. Szczegółowa analiza przyczyn nieudanych promptów i luk w logice",
+    s3: "3. Gotowy szablon master promptu do natychmiastowego użycia",
+    s4: "4. Wskazówki i ostrzeżenia profesjonalnego inżyniera promptów",
+    s5: "5. Najczęściej zadawane pytania (FAQ)",
+    tags: ["Inżynieria Promptów", "ChatGPT", "Claude", "Generatywna AI"]
+  },
+  id: {
+    s1: "1. Situasi Kritis Akibat Halusinasi AI dan Output Menyesatkan",
+    s2: "2. Analisis Mendalam Kegagalan Prompt dan Kerusakan Logika",
+    s3: "3. Templat Master Prompt Siap Pakai yang Sangat Efektif",
+    s4: "4. Tips & Peringatan Penting Pakar Prompt Engineering",
+    s5: "5. Pertanyaan yang Sering Diajukan (FAQ)",
+    tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Generatif"]
+  },
+  vi: {
+    s1: "1. Tình huống khẩn cấp do AI trả lời ảo giác và sai lệch",
+    s2: "2. Phân tích nguyên nhân gốc rễ lỗi câu lệnh và logic AI",
+    s3: "3. Mẫu câu lệnh Master Prompt thực chiến sao chép dùng ngay",
+    s4: "4. Lời khuyên và lưu ý quan trọng từ kỹ sư thiết kế câu lệnh",
+    s5: "5. Các câu hỏi thường gặp (FAQ)",
+    tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tạo Sinh"]
+  }
+};
 
-  // 1) Gukuraho ibimenyetso by'umubyimba biri ku mitwe y'inyandiko (#)
+// =========================================================================
+// [최종 안정형 마크다운 정제 함수] 볼드 복구 + 영문 템플릿 강제 박멸
+// =========================================================================
+function sanitizeMarkdownFormatting(content, langCode) {
+  let cleaned = content;
+  const i18n = I18N_SECTIONS[langCode] || I18N_SECTIONS.ko;
+
+  // 1) AI가 출력한 영문 대괄호 템플릿 및 기본 헤더를 12개국 현지 언어로 100% 강제 치환
+  cleaned = cleaned.replace(/^#{1,3}\s*1\.?\s*(\[Opening Story.*?\]|Opening Story.*?)/gmi, `## ${i18n.s1}`);
+  cleaned = cleaned.replace(/^#{1,3}\s*2\.?\s*(\[Root Cause.*?\]|Root Cause.*?)/gmi, `## ${i18n.s2}`);
+  cleaned = cleaned.replace(/^#{1,3}\s*3\.?\s*(\[Master Prompt.*?\]|Master Prompt.*?|\[Step-by-Step.*?\]|Step-by-Step.*?)/gmi, `## ${i18n.s3}`);
+  cleaned = cleaned.replace(/^#{1,3}\s*4\.?\s*(\[Practical Variations.*?\]|Practical Variations.*?|\[Expert.*?\]|Expert.*?)/gmi, `## ${i18n.s4}`);
+  cleaned = cleaned.replace(/^#{1,3}\s*5\.?\s*(\[Frequently Asked Questions.*?\]|Frequently Asked Questions.*?|FAQ)/gmi, `## ${i18n.s5}`);
+
+  // 헤딩(#) 없이 텍스트 번호로 박힌 영문 템플릿도 헤딩 포함 현지어로 강제 변환
+  cleaned = cleaned.replace(/^1\.\s*\[Opening Story.*?\]/gmi, `## ${i18n.s1}`);
+  cleaned = cleaned.replace(/^2\.\s*\[Root Cause.*?\]/gmi, `## ${i18n.s2}`);
+  cleaned = cleaned.replace(/^3\.\s*\[Master Prompt.*?\]/gmi, `## ${i18n.s3}`);
+  cleaned = cleaned.replace(/^4\.\s*\[Practical Variations.*?\]/gmi, `## ${i18n.s4}`);
+  cleaned = cleaned.replace(/^5\.\s*(Frequently Asked Questions|\[Frequently Asked Questions\])/gmi, `## ${i18n.s5}`);
+
+  // 잔여 영문 태그 찌꺼기 완벽 제거
+  cleaned = cleaned.replace(/\[(Opening Story\/Problem|Root Cause \/ Architecture|Master Prompt Template|Practical Variations \/ Safety Tips)\]/gi, '');
+
+  // 2) 소제목 헤딩(#)에 묻은 불필요한 볼드 기호 정제 (### **제목** -> ### 제목)
   cleaned = cleaned.replace(/^(#{1,6}\s*)\*\*(.*?)\*\*/gm, '$1$2');
 
-  // 2) Kurinda ko imitwe ya Q&A ifatana: **Q1:**, **A1:** n'ibindi bibone imirongo ibiri
+  // 3) 볼드(**) 기호 깨짐 교정: 단어와 ** 사이에 붙은 공백 및 인접 문자 표준화
+  cleaned = cleaned.replace(/\*\*\s+([^\*]+?)\s+\*\*/g, '**$1**');
+  cleaned = cleaned.replace(/([가-힣a-zA-Z0-9])\*\*([가-힣a-zA-Z0-9])/g, '$1 **$2');
+
+  // 4) Q&A 줄바꿈 및 볼드 보호: Q와 A는 무조건 빈 줄 2개로 분리
   cleaned = cleaned.replace(/([^\n])\s*(\*\*?[QA][0-9]*\s*[:.]\*\*?)/gi, '$1\n\n$2');
-
-  // 3) Gutandukanya imitwe ya Q&A isanzwe itari mu mubyimba
   cleaned = cleaned.replace(/([^\n])\s+([QA][0-9]*\s*[:.])/g, '$1\n\n$2');
+  cleaned = cleaned.replace(/([.!?])\s*(\*\*?[QA][0-9]*\s*[:.]\*\*?)/gi, '$1\n\n$2');
 
-  // 4) Gutandukanya ibimenyetso byo gusoza interuro (.!?) n'ibibazo cyangwa urutonde (1., 2.)
-  cleaned = cleaned.replace(/([.!?])\s*(\*\*?[QA][0-9]*\s*[:.]\*\*?|[0-9]+\.\s+)/gi, '$1\n\n$2');
-
-  // 5) Gushyiramo umwanya nyuma y'ikibazo (?) niba kigiye ku magambo
+  // 5) 물음표 뒤 띄어쓰기 누락 보정
   cleaned = cleaned.replace(/\?([A-Za-z\u00C0-\u024F\u1EA0-\u1EF9가-힣])/g, '? $1');
 
-  // 6) Gutandukanya ibimenyetso by'indimi z'amahanga nka Spanish
+  // 6) 다국어 특수기호 분리
   cleaned = cleaned.replace(/([^0-9][.?!])\s*([¿¡])/g, '$1\n\n$2');
   cleaned = cleaned.replace(/([.!])\s*(D:|R:|Risposta|Domande)/gi, '$1\n\n$2');
 
@@ -171,16 +291,23 @@ const TARGET_LANGS = [
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 const fileSlug = `post-${Date.now().toString(36)}`;
 
+// =========================================================================
+// [영구 고정] gemini-3.5-flash-lite + maxOutputTokens: 8192 상한 잠금
+// =========================================================================
 async function fetchWithRetry(prompt, maxRetries = 5, delayMs = 5000) {
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
       const response = await ai.models.generateContent({
         model: 'gemini-3.5-flash-lite',
         contents: prompt,
+        config: {
+          maxOutputTokens: 8192,
+          temperature: 0.7,
+        }
       });
       return response.text;
     } catch (error) {
-      console.warn(`⚠️ [호출 재시도] ${attempt}/${maxRetries}:${error.message}`);
+      console.warn(`⚠️ [호출 재시도] ${attempt}/${maxRetries}: ${error.message}`);
       if (attempt === maxRetries) throw error;
       await delay(delayMs);
     }
@@ -190,6 +317,7 @@ async function fetchWithRetry(prompt, maxRetries = 5, delayMs = 5000) {
 async function generateSinglePost(lang, index) {
   const selectedTheme = THEME_PRESETS[Math.floor(Math.random() * THEME_PRESETS.length)];
   const selectedScenario = PROMPT_CRISIS_SCENARIOS_30[Math.floor(Math.random() * PROMPT_CRISIS_SCENARIOS_30.length)];
+  const i18n = I18N_SECTIONS[lang.code] || I18N_SECTIONS.ko;
 
   console.log(`\n🚀 [${index + 1}/12] ${lang.name} (${lang.code}) 4호기 프롬프트 포스팅 생성 중... (적용 테마: ${selectedTheme.name})`);
 
@@ -198,8 +326,8 @@ async function generateSinglePost(lang, index) {
 
   const prompt = `
 You are a ${lang.persona}.
-Write a highly practical, conversational, 1st-person AI prompt engineering guide natively in ${lang.name}.
-CRITICAL: DO NOT translate literally from Korean. Write completely from scratch as an authentic native AI architect working in THAT specific country/culture.
+Write a definitive, exhaustive, highly practical AI prompt engineering guide natively in ${lang.name}.
+CRITICAL REQUIREMENT: Write 100% natively in ${lang.name}. NEVER mix English template headings or bracketed words unless writing the English post.
 
 [Topic]
 ${currentTopic}
@@ -208,69 +336,56 @@ ${currentTopic}
 - Target City/Culture: "${lang.localeContext}"
 - Assigned Emergency Scenario: "${selectedScenario}"
 
-[CRITICAL OUTPUT LANGUAGE INTEGRITY - ZERO HANGUL IN GLOBAL POSTS]
-- If target language is NOT Korean (ko):
-  * Absolutely NEVER include any Korean Hangul characters (가-힣) anywhere in the title, description, tags, or body.
-  * Every single character in the title and description MUST strictly be in native ${lang.name}.
+[MANDATORY TOTAL LENGTH ENFORCEMENT - ZERO CONDENSATION]
+- For Korean (ko): Total body MUST be AT LEAST 2,500 characters (공백 제외 최소 2,000자 이상). Summarizing or brief outputs are strictly prohibited.
+- For other languages: Total body MUST be AT LEAST 1,400 - 1,800 words of rich technical substance.
 
-[WRITING STYLE: PLAIN & PRACTICAL FOR EVERYDAY PROFESSIONALS]
-1. Plain & Actionable:
-    - Avoid overly academic mathematical theory.
-    - Provide immediate copy-pasteable prompt templates and clear instructions matching: "${lang.osUi}".
-2. Laser-Focused Narrative:
-    - The opening emergency story MUST be 100% strictly about [Topic] (${currentTopic}) and reflect the given [Assigned Emergency Scenario].
+[EXHAUSTIVE 5-SECTION STRUCTURE REQUIREMENTS]
+You MUST strictly follow these 5 sections using clean H2 markdown headings (## ):
 
-[MANDATORY OPENING VARIATION RULE - ZERO CLICHE REPETITION]
-- You MUST start the opening story based strictly on the assigned scenario: "${selectedScenario}".
-- ABSOLUTELY FORBIDDEN: Do NOT default to a generic "morning sync in 30 minutes" trope. Adapt the specific incident naturally into the local daily workflow of ${lang.name}.
+## ${i18n.s1}
+- Do NOT summarize. Write at least 4 long, vivid paragraphs describing:
+  1) The intense workplace emergency strictly based on: "${selectedScenario}".
+  2) The naive, vague prompt attempts that produced hallucinated or robotic garbage.
+  3) The sudden panic of wasted time and impending meeting deadlines.
+  4) The realization of what is at stake (lost client pitch, executive embarrassment).
 
-[STRICT MARKDOWN & FORMATTING RULES - NO RENDERING GLITCHES]
-1. HEADINGS & STRUCTURE (MANDATORY):
-    - You MUST use clear markdown headings (## for major sections, ### for subsections) for every section:
-      * ## 1. [Opening Story/Problem]
-      * ## 2. [Root Cause / Architecture]
-      * ## 3. [Master Prompt Template]
-      * ## 4. [Practical Variations / Safety Tips]
-      * ## 5. Frequently Asked Questions
-    - NEVER put markdown asterisks inside headings. Keep clean headings like "## 2. Root Cause Breakdown".
-2. BOLD FORMATTING RULE:
-    - Use markdown bold (**) naturally and moderately ONLY for key action words, prompt parameters, UI buttons, or core technical terms.
-    - NEVER bold an entire sentence or overuse bold on every phrase.
-3. COMMANDS & PROMPT TEMPLATES / CODE BLOCKS:
-    - Always wrap copy-pasteable prompt templates, JSON schemas, or terminal commands in standard 3-backtick code blocks (\`\`\`markdown, \`\`\`json, or \`\`\`text) so they never overflow horizontally on mobile screens.
-4. NO LATEX & NO TILDE:
-    - ABSOLUTELY FORBIDDEN: NEVER use LaTeX math delimiters ($ or $$).
-    - ABSOLUTELY FORBIDDEN: NEVER use tilde (~) for ranges. Always use a hyphen (e.g., "0-5s", "10-20%").
+## ${i18n.s2}
+- Do NOT just write 3 quick bullets. Write an exhaustive technical analysis across at least 4 detailed paragraphs explaining:
+  1) Token probability distribution, temperature impact, and attention mechanism limits.
+  2) Why generic instructions cause LLMs to default to bland textbook responses.
+  3) The architectural role of system instructions, constraints, and delimiter formatting.
 
-[Design Theme & Layout Dynamic Rules (MANDATORY)]
+## ${i18n.s3}
+- Provide complete, production-ready Master Prompt Templates matching "${lang.osUi}":
+  * Provide a comprehensive, structured Master Prompt Template wrapped in a 3-backtick markdown code block.
+  * Include clear placeholders like [Context], [Role], [Objective], [Constraints], [Output Format].
+  * Explain step-by-step how to fill each parameter for maximum reasoning depth.
+
+## ${i18n.s4}
+- Write at least 2 in-depth paragraphs of professional prompt architect wisdom:
+  1) Anti-hallucination guardrails: Verification loops, citing ground truth, negative prompting.
+  2) Advanced chaining techniques: Few-shot examples, dynamic persona injection, token optimization.
+
+## ${i18n.s5}
+- Provide exactly 3 realistic, highly specific Q&A items:
+  * Each question must be bold (**Q1.**, **Q2.**, **Q3.**) followed by the question text.
+  * Each answer (**A1.**, **A2.**, **A3.**) MUST be a detailed, multi-sentence technical explanation (at least 3-4 sentences per answer).
+  * Put an empty blank line between every Question and Answer.
+
+[STRICT MARKDOWN & FORMATTING RULES]
+1. HEADINGS: Keep clean markdown headings (e.g. "## ${i18n.s2}"). NEVER put bold asterisks (**) inside headings.
+2. BOLD FORMATTING: Use bold (**) ONLY for key button clicks, prompt parameters, or essential UI terms. Always put a space before and after the bold markup if surrounded by words.
+3. COMMANDS & PROMPT BLOCKS: Always wrap prompt templates in standard 3-backtick code blocks (\`\`\`markdown or \`\`\`text).
+4. NO LATEX & NO TILDE: NEVER use LaTeX ($ or $$). NEVER use tilde (~) for ranges; use hyphen (-).
+${lang.code !== 'ko' ? `- Absolutely NEVER include any Korean characters (가-힣) anywhere in non-Korean posts.` : ''}
+
+[Design Theme & Layout Dynamic Rules]
 - Assigned Theme: "${selectedTheme.name}"
 - Primary Accent Color: ${selectedTheme.primaryColor}
 - Layout Characteristic: ${selectedTheme.layout}
-- You MUST incorporate native Markdown and inline styled HTML callouts tailored to this theme.
-- Use custom styled tip/warning boxes (e.g., <div style="border-left: 4px solid ${selectedTheme.primaryColor}; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">...</div>).
-  * CRITICAL: All text inside callout/tip/warning boxes MUST be crisp dark charcoal/black (color: #111827) so it is 100% legible against any background.
-
-[Tone & Writing Style Rules (STRICT - NO AI VIBE)]
-1. Mandatory Opening:
-    - Start immediately with an intense, relatable workplace emergency scenario strictly about [Topic] based on the assigned incident.
-2. Tone & Voice:
-    - Write like a real colleague sharing an honest, battle-tested prompt trick on a developer/creator community.
-3. Fast-Paced 3-Step Narrative:
-    - Step 1: Sudden workflow panic regarding [Topic] set in the assigned incident.
-    - Step 2: Vague prompts that failed and produced useless hallucinations.
-    - Step 3: The breakthrough actionable prompt template & exact variables.
-
-[Content & Structure (AdSense E-E-A-T Compliant)]
-1. Opening Story: Intense real workplace incident strictly regarding this topic based on the assigned scenario.
-2. Root Cause / Architecture: Why simple prompting fails and the logic behind this prompt structure.
-3. Master Prompt Template: Clear, copy-pasteable Markdown code block with placeholders (e.g., [Insert Data]).
-4. Practical Variations / Safety Tips: Hallucination prevention, token saving, or system instructions.
-5. Frequently Asked Questions (FAQ): Exactly 3 realistic, high-value Q&As that everyday users would ask.
-   * CRITICAL: Every single Question (Q) and Answer (A) MUST start on its own separate new line, separated by an empty blank line. Never run Q and A together.
-
-[Length & Richness Rules]
-- Korean (ko): Minimum 2,500 characters of rich, deep, non-repetitive text.
-- Other languages: 1,200 to 1,500 words of thorough practical explanation.
+- Incorporate inline styled HTML callout boxes tailored to this theme:
+  <div style="border-left: 4px solid ${selectedTheme.primaryColor}; padding: 14px 18px; margin: 24px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">...</div>
 
 [Strict Output Format]
 Return ONLY raw Markdown starting directly with frontmatter:
@@ -280,7 +395,7 @@ description: "Native concise description in ${lang.name} under 160 characters"
 publishDate: ${pubDateIso}
 image: "${coverUrl}"
 category: "Prompt Engineering"
-tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
+tags: ${JSON.stringify(i18n.tags)}
 theme: "${selectedTheme.name}"
 ---
 (Body starts directly here without H1 header)
@@ -317,8 +432,32 @@ theme: "${selectedTheme.name}"
       frontmatter = frontmatter.replace(/publishDate:\s*[^\n\r]+/i, `publishDate: ${pubDateIso}`);
       frontmatter = frontmatter.replace(/image:\s*["'][^"']*["']/i, `image: '${coverUrl}'`);
 
-      // Gusukura inyandiko hakoreshejwe uburyo buvuguruye (Gukomeza umubyimba no kurinda Q&A)
-      body = sanitizeMarkdownFormatting(body);
+      // 🛡️ [이중 방어] 12개국 고유 언어로 강제 치환 및 볼드 서식 완벽 정제
+      body = sanitizeMarkdownFormatting(body, lang.code);
+
+      // 🛡️ [글자 수 물리적 강제 루프: 2,200자 미만 시 즉시 재작성]
+      let retryCount = 0;
+      while (lang.code === 'ko' && body.length < 2200 && retryCount < 2) {
+        console.warn(`⚠️ [4호기 분량 부족] 현재 ${body.length}자 -> 목표 2,500자 충족을 위해 재작성 시도 (${retryCount + 1}/2)...`);
+        const retryPrompt = prompt + "\n\nCRITICAL ENFORCEMENT: The previous generated post was strictly too short. You MUST write at least 4 very long, deeply detailed paragraphs for EACH section. Elaborate on every prompt variable, LLM logic breakdown, and system instruction exhaustively to exceed 2,500 Korean characters.";
+
+        let retryRawText = await fetchWithRetry(retryPrompt);
+        let retryText = retryRawText.trim();
+        if (retryText.startsWith('```markdown')) retryText = retryText.replace(/^```markdown\n/, '').replace(/\n```$/, '');
+        if (retryText.startsWith('```')) retryText = retryText.replace(/^```\n/, '').replace(/\n```$/, '');
+
+        const newFmMatch = retryText.match(/^---[\s\S]*?---\n*/);
+        if (newFmMatch) {
+          let newBody = retryText.slice(newFmMatch[0].length).trim();
+          newBody = newBody.replace(/^#\s+[^\n]+\n+/, '');
+          body = sanitizeMarkdownFormatting(newBody, lang.code);
+        }
+        retryCount++;
+      }
+
+      if (lang.code === 'ko') {
+        console.log(`📏 [4호기 한국어 본문 최종 글자 수] ${body.length}자 (목표: 2,500자 이상)`);
+      }
 
       const safeAlt = currentTopic.replace(/[\[\]\(\)"']/g, '').trim();
       const middleImageMarkdown = `\n\n![${safeAlt} Prompt Guide](${bodyUrl})\n\n`;
