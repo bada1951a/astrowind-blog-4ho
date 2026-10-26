@@ -105,7 +105,7 @@ const I18N_SECTIONS = {
     s2: "2. Análise da causa raiz de falhas em prompts e raciocínio",
     s3: "3. Template mestre de prompt pronto para copiar e colar",
     s4: "4. Recomendações e alertas de especialistas em prompt",
-    s5: "5. Perguntas Frequentes (FAQ)",
+    s5: "5. Perguntas Frecuentes (FAQ)",
     tags: ["Engenharia de Prompt", "ChatGPT", "Claude", "IA Generativa"]
   },
   nl: {
@@ -143,7 +143,7 @@ const I18N_SECTIONS = {
 };
 
 // =========================================================================
-// [최종 안정형 마크다운 정제 함수] 상단 공백 압축 + 핀셋 중복제거 + 달러 백틱화 + 소제목 강제
+// [최종 안정형 마크다운 정제 함수] 캡처 확인 변칙 헤더 및 박스 시인성 방어 완비
 // =========================================================================
 function sanitizeMarkdownFormatting(content, langCode) {
   let cleaned = content;
@@ -171,19 +171,23 @@ function sanitizeMarkdownFormatting(content, langCode) {
   cleaned = cleaned.replace(/^4\.\s*\[Practical Variations.*?\]/gmi, `## ${i18n.s4}`);
   cleaned = cleaned.replace(/^5\.\s*(Frequently Asked Questions|\[Frequently Asked Questions\])/gmi, `## ${i18n.s5}`);
 
-  // 헤딩 기호 누락 시 자동 승격 보정 (4호기 AI/프롬프트 엔지니어링 테마 키워드)
-  cleaned = cleaned.replace(/^(프롬프트\s*(실패|환각|오류|원인|분석).*?)/gm, `## ${i18n.s2}\n\n$1`);
-  cleaned = cleaned.replace(/^(실전\s*마스터\s*프롬프트.*?)/gm, `## ${i18n.s3}\n\n$1`);
-  cleaned = cleaned.replace(/^(현직\s*프롬프트\s*엔지니어.*?)/gm, `## ${i18n.s4}\n\n$1`);
+  // 🛡️ [캡처 사진 분석 기반] 번호 없이 줄글로 튀어나온 4호기 고유 변칙 헤더 자동 승격 치환
+  // 1번 헤더 변칙
+  cleaned = cleaned.replace(/^#{0,3}\s*1\.?\s*(왜\s*단순한\s*프롬프트.*?)/gmi, `## ${i18n.s1}`);
+  
+  // 2번 원인 분석 승격 (The Root Cause: Why..., Warum herkömmliches..., なぜ従来の...)
+  cleaned = cleaned.replace(/^#{0,3}\s*(The Root Cause:.*?|Warum herkömmliches Prompting.*?|なぜ(従来|単純)のプロンプト.*?|왜 단순 프롬프트는 실패하고.*?)/gmi, `## ${i18n.s2}`);
+  
+  // 3번 실전 마스터 프롬프트 승격 (The Master Prompt Template..., 実践投入！..., 30분 만에 끝내는...)
+  cleaned = cleaned.replace(/^#{0,3}\s*(The Master Prompt Template.*?|Master Prompt-Vorlage|実践投入.*?|30분 만에 끝내는 마스터.*?|실전 마스터 프롬프트.*?)/gmi, `## ${i18n.s3}`);
+  
+  // 4번 실무 응용/주의사항 승격 (Practical Variations and Failure Prevention, 実務応用..., 倫理的破綻とハルシネーション...)
+  cleaned = cleaned.replace(/^#{0,3}\s*(Practical Variations and Failure Prevention|Praktische Variationen.*?|倫理的破綻とハルシネーション.*?|실무 응용 및 트러블슈팅.*?|현업 적용을 위한 핵심.*?)/gmi, `## ${i18n.s4}`);
+  
+  // 5번 FAQ 승격
   cleaned = cleaned.replace(/^#{0,3}\s*(\d\.\s*)?(자주 묻는 질문|Häufig gestellte Fragen|Frequently Asked Questions|よくある(ご)?質問|Questions Fréquemment Posées|Foire [Aa]ux Questions|Preguntas [Ff]recuentes).*?$/gmi, `## ${i18n.s5}`);
 
-  // 번호 없이 단독으로 나온 영문 변칙 헤더 치환
-  cleaned = cleaned.replace(/^#{0,3}\s*Root Cause Breakdown.*$/gmi, `## ${i18n.s2}`);
-  cleaned = cleaned.replace(/^#{0,3}\s*(Master Prompt Template|Step-by-Step Resolution).*$/gmi, `## ${i18n.s3}`);
-  cleaned = cleaned.replace(/^#{0,3}\s*(Practical Variations|Expert Advice|Expert Warning).*$/gmi, `## ${i18n.s4}`);
-  cleaned = cleaned.replace(/^#{0,3}\s*Frequently Asked Questions.*$/gmi, `## ${i18n.s5}`);
-
-  // 대괄호 영문 태그 찌꺼기 완전 제거
+  // 잔여 태그 도려내기
   cleaned = cleaned.replace(/\[(Opening Story\/Problem|Root Cause \/ Architecture|Master Prompt Template|Practical Variations \/ Safety Tips)\]/gi, '');
 
   // 4) 1번 헤더 누락 시 주입 및 직후 중복 1줄 정밀 제거
@@ -192,19 +196,27 @@ function sanitizeMarkdownFormatting(content, langCode) {
   }
   cleaned = cleaned.replace(/^(## 1\.[^\n]+)\n+(\s*1\.\s+[^\n]+)\n+/m, '$1\n\n');
 
-  // 5) 소제목 헤딩(#)에 묻은 볼드 기호 정제 (### **제목** -> ### 제목)
+  // 5) [시인성 해결] HTML 인라인 박스에 글자색(#111827) 강제 주입
+  cleaned = cleaned.replace(/(<div style="[^"]*background-color:[^"]*)"/gi, (match, p1) => {
+    if (!p1.includes('color:')) {
+      return `${p1}; color: #111827;"`;
+    }
+    return match;
+  });
+
+  // 6) 소제목 헤딩(#)에 묻은 볼드 기호 정제 (### **제목** -> ### 제목)
   cleaned = cleaned.replace(/^(#{1,6}\s*)\*\*(.*?)\*\*/gm, '$1$2');
 
-  // 6) 볼드(**) 기호 깨짐 교정
+  // 7) 볼드(**) 기호 깨짐 교정
   cleaned = cleaned.replace(/\*\*\s+([^\*]+?)\s+\*\*/g, '**$1**');
   cleaned = cleaned.replace(/([가-힣a-zA-Z0-9])\*\*([가-힣a-zA-Z0-9])/g, '$1 **$2');
 
-  // 7) Q&A 줄바꿈 및 볼드 보호: Q와 A는 무조건 빈 줄 2개로 분리
+  // 8) Q&A 줄바꿈 및 볼드 보호: Q와 A는 무조건 빈 줄 2개로 분리
   cleaned = cleaned.replace(/([^\n])\s*(\*\*?[QA][0-9]*\s*[:.]\*\*?)/gi, '$1\n\n$2');
   cleaned = cleaned.replace(/([^\n])\s+([QA][0-9]*\s*[:.])/g, '$1\n\n$2');
   cleaned = cleaned.replace(/([.!?])\s*(\*\*?[QA][0-9]*\s*[:.]\*\*?)/gi, '$1\n\n$2');
 
-  // 8) 물음표 뒤 띄어쓰기 및 과도한 개행 압축
+  // 9) 물음표 뒤 띄어쓰기 및 과도한 개행 압축
   cleaned = cleaned.replace(/\?([A-Za-z\u00C0-\u024F\u1EA0-\u1EF9가-힣])/g, '? $1');
   cleaned = cleaned.replace(/\n{3,}/g, '\n\n');
 
@@ -409,7 +421,7 @@ ${lang.code !== 'ko' ? `- Absolutely NEVER include any Korean characters (가-�
 - Assigned Theme: "${selectedTheme.name}"
 - Primary Accent Color: ${selectedTheme.primaryColor}
 - Layout Characteristic: ${selectedTheme.layout}
-- Incorporate inline styled HTML callout boxes tailored to this theme:
+- Incorporate inline styled HTML callout boxes tailored to this theme (Ensure font color is dark and readable):
   <div style="border-left: 4px solid ${selectedTheme.primaryColor}; padding: 14px 18px; margin: 24px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">...</div>
 
 [Strict Output Format]
@@ -456,7 +468,7 @@ theme: "${selectedTheme.name}"
       frontmatter = frontmatter.replace(/publishDate:\s*[^\n\r]+/i, `publishDate: ${pubDateIso}`);
       frontmatter = frontmatter.replace(/image:\s*["'][^"']*["']/i, `image: '${coverUrl}'`);
 
-      // 🛡️ [이중 방어] 12개국 고유 언어로 강제 치환 및 볼드 서식 완벽 정제
+      // 🛡️ [이중 방어] 12개국 고유 언어로 강제 치환 및 볼드 서식 완벽 정제 (사진 속 결함 반영 완료)
       body = sanitizeMarkdownFormatting(body, lang.code);
 
       // 🛡️ [글자 수 물리적 강제 루프: 2,200자 미만 시 즉시 재작성]
@@ -498,7 +510,7 @@ theme: "${selectedTheme.name}"
         }
       }
 
-      // 프론트매터와 본문 사이 개행을 딱 2개로 고정하여 21줄 공백 버그 원천 차단
+      // 프론트매터와 본문 사이 개행을 딱 2개로 고정하여 상단 공백 원천 차단
       text = `${frontmatter}\n\n${body}\n`;
     }
 
