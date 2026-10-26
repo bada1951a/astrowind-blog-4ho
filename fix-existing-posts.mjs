@@ -3,7 +3,6 @@ import path from 'path';
 
 const POSTS_BASE_DIR = path.resolve('src/data/post');
 
-// 4호기 전용 12개국 표준 소제목 딕셔너리
 const I18N_SECTIONS = {
   ko: {
     s1: "1. AI 답변 퀄리티 붕괴와 업무 멘붕의 순간",
@@ -123,45 +122,50 @@ function cleanPost(filePath) {
   // 1. 최상단 H1 삭제
   body = body.replace(/^#\s+[^\n]+\n+/, '');
 
-  // 2. [4호기 핵심] 대괄호 영문 태그 및 표준 헤더 치환
+  // 2. [기형 1번 헤더 중복 박멸] 본문 첫머리가 아닌 위치에 박힌 '왜 단순한...'을 2번 원인 헤더로 정확히 교정
+  body = body.replace(/^#{0,3}\s*1\.?\s*(왜\s*단순한\s*프롬프트.*?|AI 답변 퀄리티 붕괴와 업무 멘붕의 순간으로는.*?)/gmi, `## ${i18n.s2}`);
+  body = body.replace(/^#{0,3}\s*2\.?\s*(30분\s*만에\s*끝내는\s*마스터.*?)/gmi, `## ${i18n.s3}`);
+  body = body.replace(/^#{0,3}\s*3\.?\s*(현업\s*적용을\s*위한\s*핵심\s*파라미터.*?)/gmi, `## ${i18n.s4}`);
+  body = body.replace(/^#{0,3}\s*4\.?\s*(자주\s*묻는\s*질문.*?)/gmi, `## ${i18n.s5}`);
+
+  // 3. 영문 태그 및 일반 변칙 헤더 규격 치환
   body = body.replace(/^#{0,3}\s*1\.?\s*(\[Opening Story.*?\]|Opening Story.*?)/gmi, `## ${i18n.s1}`);
   body = body.replace(/^#{0,3}\s*2\.?\s*(\[Root Cause.*?\]|Root Cause Breakdown.*?|Root Cause.*?)/gmi, `## ${i18n.s2}`);
   body = body.replace(/^#{0,3}\s*3\.?\s*(\[Master Prompt.*?\]|Master Prompt.*?|\[Step-by-Step.*?\]|Step-by-Step Resolution.*?|Step-by-Step.*?)/gmi, `## ${i18n.s3}`);
   body = body.replace(/^#{0,3}\s*4\.?\s*(\[Practical Variations.*?\]|Practical Variations.*?|\[Expert.*?\]|Expert Advice.*?|Expert.*?)/gmi, `## ${i18n.s4}`);
   body = body.replace(/^#{0,3}\s*5\.?\s*(\[Frequently Asked Questions.*?\]|Frequently Asked Questions.*?|FAQ)/gmi, `## ${i18n.s5}`);
 
-  // 3. [캡처 기반 변칙 헤더 자동 승격]
-  // 1번 헤더 변칙
-  body = body.replace(/^#{0,3}\s*1\.?\s*(왜\s*단순한\s*프롬프트.*?)/gmi, `## ${i18n.s1}`);
-  
-  // 2번 원인 분석 승격 (The Root Cause: Why..., Warum herkömmliches..., なぜ従来の...)
-  body = body.replace(/^#{0,3}\s*(The Root Cause:.*?|Warum herkömmliches Prompting.*?|なぜ従来のプロンプト.*?|왜 단순 프롬프트는 실패하고.*?)/gmi, `## ${i18n.s2}`);
-  
-  // 3번 실전 마스터 프롬프트 승격 (The Master Prompt Template..., 実践投入！..., 30분 만에 끝내는...)
-  body = body.replace(/^#{0,3}\s*(The Master Prompt Template.*?|Master Prompt-Vorlage|実践投入.*?|30분 만에 끝내는 마스터.*?|실전 마스터 프롬프트.*?)/gmi, `## ${i18n.s3}`);
-  
-  // 4번 실무 응용/주의사항 승격 (Practical Variations and Failure Prevention, 実務応用..., 倫理的破綻とハルシネーション...)
-  body = body.replace(/^#{0,3}\s*(Practical Variations and Failure Prevention|Praktische Variationen.*?|倫理的破綻とハルシネーション.*?|실무 응용 및 트러블슈팅.*?|현업 적용을 위한 핵심.*?)/gmi, `## ${i18n.s4}`);
-  
-  // 5번 FAQ 승격
+  // 줄글 형태의 변칙 헤더 승격
+  body = body.replace(/^#{0,3}\s*(The Root Cause:.*?|Warum herkömmliches Prompting.*?|なぜ(従来|単純)のプロンプト.*?|왜 단순 프롬프트는 실패하고.*?)/gmi, `## ${i18n.s2}`);
+  body = body.replace(/^#{0,3}\s*(The Master Prompt Template.*?|Master Prompt-Vorlage|実践投入.*?|실전 마스터 프롬프트.*?)/gmi, `## ${i18n.s3}`);
+  body = body.replace(/^#{0,3}\s*(Practical Variations and Failure Prevention|Praktische Variationen.*?|倫理的破綻とハルシネーション.*?|실무 응용 및 트러블슈팅.*?)/gmi, `## ${i18n.s4}`);
   body = body.replace(/^#{0,3}\s*(Frequently Asked Questions|Preguntas Frecuentes|よくある質問).*?$/gmi, `## ${i18n.s5}`);
 
-  // 잔여 태그 도려내기
+  // 잔여 찌꺼기 제거
   body = body.replace(/\[(Opening Story\/Problem|Root Cause \/ Architecture|Master Prompt Template|Practical Variations \/ Safety Tips)\]/gi, '');
 
-  // 4. 1번 헤더 누락 시 주입 및 직후 중복 1줄 정밀 제거
+  // 4. 최상단 1번 헤더 보장 및 바로 뒤 중복 라인 정리
   if (!body.startsWith('## 1.')) {
     body = `## ${i18n.s1}\n\n` + body;
   }
   body = body.replace(/^(## 1\.[^\n]+)\n+(\s*1\.\s+[^\n]+)\n+/m, '$1\n\n');
 
-  // 5. 프롬프트 변수($PROMPT$) 및 단축키 주변 달러($) 기호 인라인 백틱화
+  // 본문 중간에 남아있는 중복된 ## 1. 라인은 ## 2.로 교정
+  const firstH1Idx = body.indexOf(`## ${i18n.s1}`);
+  if (firstH1Idx !== -1) {
+    const afterFirst = body.slice(firstH1Idx + `## ${i18n.s1}`.length);
+    if (afterFirst.includes(`## ${i18n.s1}`)) {
+      body = body.slice(0, firstH1Idx + `## ${i18n.s1}`.length) + afterFirst.replace(`## ${i18n.s1}`, `## ${i18n.s2}`);
+    }
+  }
+
+  // 5. 달러($) 기호 인라인 백틱화
   body = body.replace(/\$(?:Strg|Ctrl|Win|Shift|Alt|Esc)\s*[^$\n]*\$/gi, (match) => {
     return `\`${match.replace(/\$/g, '').trim()}\``;
   });
   body = body.replace(/\$([A-Za-z0-9_-]+)\$/g, '`$1`');
 
-  // 6. [박스 안 글씨 시인성 보장] HTML 인라인 박스 스타일 글자색을 명확한 어두운 색(#111827)으로 강제
+  // 6. 박스 안 글자색 강제 적용 (#111827)
   body = body.replace(/(<div style="[^"]*background-color:[^"]*)"/gi, (match, p1) => {
     if (!p1.includes('color:')) {
       return `${p1}; color: #111827;"`;
@@ -169,17 +173,14 @@ function cleanPost(filePath) {
     return match;
   });
 
-  // 7. 볼드 및 Q&A 정렬
+  // 7. 서식 정렬 (볼드, 개행)
   body = body.replace(/^(#{1,6}\s*)\*\*(.*?)\*\*/gm, '$1$2');
   body = body.replace(/([^\n])\s*(\*\*?[QA][0-9]*\s*[:.]\*\*?)/gi, '$1\n\n$2');
   body = body.replace(/([^\n])\s+([QA][0-9]*\s*[:.])/g, '$1\n\n$2');
   body = body.replace(/([.!?])\s*(\*\*?[QA][0-9]*\s*[:.]\*\*?)/gi, '$1\n\n$2');
-
-  // 8. 물음표 뒤 띄어쓰기 및 과도한 개행 압축
   body = body.replace(/\?([A-Za-z\u00C0-\u024F\u1EA0-\u1EF9가-힣])/g, '? $1');
   body = body.replace(/\n{3,}/g, '\n\n');
 
-  // 9. 상단 21줄 공백 원천 차단
   const finalContent = `${frontmatter}\n\n${body.trim()}\n`;
 
   if (content !== finalContent) {
@@ -191,7 +192,7 @@ function cleanPost(filePath) {
 
 function run() {
   console.log("==================================================");
-  console.log("🛠️ 4호기 마크다운 기존 글 일괄 정밀 복구 스크립트 가동");
+  console.log("🛠️ 4호기 마크다운 2차 정밀 복구 스크립트 가동 (헤더 1번 중복 박멸)");
   console.log("==================================================");
 
   const files = getAllMarkdownFiles(POSTS_BASE_DIR);
@@ -209,7 +210,7 @@ function run() {
     }
   }
 
-  console.log(`\n🎉 4호기 작업 완료: 총 ${files.length}개 중 ${modifiedCount}개 파일 복구 완료.`);
+  console.log(`\n🎉 4호기 2차 작업 완료: 총 ${files.length}개 중 ${modifiedCount}개 파일 복구 완료.`);
 }
 
 run();
