@@ -8,8 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips", "Data Extraction"]
 theme: "High-Contrast Charcoal"
 ---
 
-
-## 1. [Opening Story/Problem]
+## 1. AIの回答精度崩壊と業務停滞の緊急事態
 
 渋谷のITベンチャー企業の会議室で、午後から始まる重要クライアント向けの競合リサーチ資料を急ぎ作成していた時のことだ。開発チームから上がってきた膨大な非構造化テキスト（箇条書きの雑多なメモ、PDFからのコピペ、バラバラなフォーマットの仕様書など）を、今すぐきれいなMarkdownの表やCSV形式に整理する必要があった。
 
@@ -20,11 +19,9 @@ theme: "High-Contrast Charcoal"
 業務上の非構造化データを外部の生成AIに入力する際は、必ず社内セキュリティポリシーおよび利用規約（API利用によるオプトアウト設定など）を確認し、機密情報の漏洩を防ぐためのデータマスキングを徹底してください。
 </div>
 
-
-
 ![How to Write Few-Shot Prompts to Extract Tabular Data from Unstructured Text Prompt Guide](https://picsum.photos/seed/prompt-mvmqpjpr-2-b/1000/550.jpg)
 
-## 2. [Root Cause / Architecture]
+## 2. プロンプト失敗とハルシネーションの根本原因
 
 なぜ単純な指示（Zero-Shot）では、非構造化テキストから正確なテーブルデータを抽出できないのだろうか。その根底にあるのは、AIが「文脈の揺れ」や「暗黙のフォーマット」を正確に予測しきれないという限界だ。
 
@@ -33,7 +30,7 @@ theme: "High-Contrast Charcoal"
 - **Zero-Shotの限界:** 「表にして」という曖昧な指示では、出力されるカラム名やデータ型が実行のたびに変わり、自動化パイプラインに組み込めない。
 - **Few-Shotの仕組み:** 「入力データの例」と「期待される正しい出力例」をプロンプト内に1件から数件あらかじめ提示（例示）することで、AIが出力の構造（Schema）を強力に学習し、揺るぎない精度でデータを抽出できるようになる。
 
-## 3. [Master Prompt Template]
+## 3. すぐに使える実践マスタープロンプトテンプレート
 
 実務でそのままコピー＆ペーストして使える、非構造化テキストからのデータ抽出用マスタープロンプトテンプレートを公開する。ChatGPTやClaude、Geminiの**システムプロンプト**またはユーザー入力の冒頭に設定して使用してほしい。
 
@@ -66,7 +63,7 @@ theme: "High-Contrast Charcoal"
 [Insert Unstructured Text Here]
 ```
 
-## 4. [Practical Variations / Safety Tips]
+## 4. 現役AIプロンプト専門家が教える注意点とコツ
 
 実務の現場でこのプロンプトをさらに強靭にするための応用テクニックと安全運用のコツを紹介する。
 
@@ -74,7 +71,7 @@ theme: "High-Contrast Charcoal"
 - **JSONスキーマの併用:** テーブルだけでなく、後続のPythonスクリプトで自動処理したい場合は、出力フォーマットをMarkdownからJSONに変更し、````json`ブロックで囲むよう指示するとエラー率が激減する。
 - **トークン節約のコツ:** 入力テキストが数万文字に及ぶ場合は、テキストをチャンク（分割）し、プロンプトのコンテキストウィンドウを圧迫しないように前処理を行うこと。
 
-## 5. Frequently Asked Questions
+## 5. よくある質問 (FAQ)
 
 Q: Few-Shotの例（サンプル）はいくつ提示するのが最も効果的ですか？
 

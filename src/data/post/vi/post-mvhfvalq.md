@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Midnight Navy Royal"
 ---
 
+## 1. Tình huống khẩn cấp do AI trả lời ảo giác và sai lệch
 
 Sang thu hai dau tuan tai van phong o Quan 1, TP.HCM, sep lon nem vao mat toi mot tap file CSV chua du lieu ban hang cua ca quy vua qua kem theo cau noi xanh ron: "Chieu nay hop voi doi tac nuoc ngoai, em lam cho anh mot cai dashboard tuong tac, keo tha loc du lieu giong may phan mem xin xo xem nao". Dong ho diem 9 gio sang, deadline la 2 gio chieu, ma toi thi khong co thoi gian ngoi code React hay PowerBI tu dau. Neu cu ngoi cat dan bieu do bang tay hay loay hoay viet code tu dau thi chac chan toi se an "gai" vao mat.
 
@@ -63,8 +64,6 @@ Khi Claude tra ve ket qua ban dau trong Artifacts, dung voi thoa man. Hay thuc h
 
 ### 1. Toi co the dung ChatGPT thay cho Claude de tao Artifacts nay khong?
 Hien tai, tinh nang Artifacts tao va chay ung dung truc tiep la dac san cua rieng Claude 3.5 Sonnet. ChatGPT co Advanced Data Analysis nhung no thien ve xu ly file Python hon la render mot giao dien web tuong tac truc quan ngay lap tuc nhu Artifacts.
-
-
 
 ![How to Use Claude 3.5 Sonnet Artifacts to Build Interactive Dashboard Prototypes Prompt Guide](https://picsum.photos/seed/prompt-mvhfy22c-11-b/1000/550.jpg)
 

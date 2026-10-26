@@ -8,7 +8,6 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "High-Contrast Charcoal"
 ---
 
-
 ## 1. De chaos aan de Zuidas: Waarom iedereen andere resultaten krijgt
 
 Gisteren om 16:30 uur hadden we een crisis op kantoor in Amsterdam-Zuid. Voor een grote fusie-analyse moesten we vijftig juridische PDF-documenten en rommelige e-mails omzetten naar een gestructureerde Excel-tabel. Ik gaf al mijn teamleden dezelfde simpele opdracht: *"Haal de contractvoorwaarden en bedragen uit deze documenten."* 
@@ -19,8 +18,6 @@ Het resultaat? Pure chaos. De een leverde een Markdown-tabel aan met vreemde val
 <strong>Beveiligingswaarschuwing:</strong> Let op bij het verwerken van vertrouwelijke bedrijfsdata of persoonsgegevens via publieke AI-tools. Zorg ervoor dat je altijd conformeert aan de AVG-richtlijnen en gebruik bij voorkeur enterprise-omgevingen met databeschermingsgaranties.
 </div>
 
-
-
 ![How to Write Few-Shot Prompts to Extract Tabular Data from Unstructured Text Prompt Guide](https://picsum.photos/seed/prompt-mvmqqmvv-8-b/1000/550.jpg)
 
 ## 2. Waarom simpele prompts falen en de kracht van Few-Shot Learning
@@ -29,7 +26,7 @@ Als je een AI alleen een instructie geeft ("Maak hier een tabel van"), geef je t
 
 De oplossing hiervoor is **Few-Shot Prompting**. In plaats van te leunen op een kale instructie, geef je het model direct in de prompt een concreet voorbeeld van de input én de gewenste output (een zogenaamde *shot*). Door het model te tonen wat goed gedrag is, dwing je een voorspelbaar patroon af. Het model hoeft niet meer te raden hoe jij je tabel wilt; het kopieert simpelweg de aangeboden structuur.
 
-## 3. Master Prompt Template voor Data-extractie
+## 3. Direct bruikbare master prompt template Template voor Data-extractie
 
 Hier is de gestandaardiseerde systeemprompt die we inmiddels binnen onze hele organisatie gebruiken. Kopieer deze template naar je **ChatGPT Custom Instructions**, **Claude Project Instructions** of zet hem direct bovenaan je venster.
 

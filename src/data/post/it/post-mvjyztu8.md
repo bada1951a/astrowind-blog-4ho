@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips", "Whitepaper"]
 theme: "Nordic Clean Ice"
 ---
 
+## 1. Emergenza improvvisa per allucinazioni dell'IA e risposte errate
 
 Ieri pomeriggio, ore 17:30, nel nostro studio di consulenza a Milano. Mancavano quarantotto ore alla consegna di un whitepaper strategico da 5000 parole sulla transizione energetica per un cliente fintech, e la situazione era letteralmente nel caos. Ho aperto la cartella condivisa del team per assemblare i pezzi scritti dai vari reparti e mi sono trovato davanti a un disastro: il capitolo del copywriter junior sembrava un post di Instagram allungato con la colla, l'analisi dei dati del senior strategist era un blocco illeggibile di formule e gergo tecnico senza respiro, e il sommario generale non corrispondeva ai capitoli interni. Ogni membro del team aveva usato ChatGPT a modo suo, con uno stile e un livello di profondità completamente scollegati. La qualità era così disallineata che sembrava un collage di testi scritti da cinque intelligenza artificiali diverse.
 

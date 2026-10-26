@@ -8,6 +8,7 @@ tags: ["Midjourney V6", "Prompt Engineering", "Claude Artifacts", "Design Workfl
 theme: "Sunset Horizon Coral"
 ---
 
+## 1. Crise d'hallucination de l'IA et panne de productivité
 
 Il est 22h dans notre agence à Paris, et la pression est à son comble. Nous devons boucler la création d'un outil interactif avec Claude Artifacts en un temps record pour un client majeur du secteur du luxe. Le prototype fonctionne à merveille, le code est propre, mais un problème critique bloque la validation finale : sur les 20 scènes générées pour illustrer le parcours utilisateur, notre héroïne principale change de visage à chaque image. Un coup elle est blonde aux yeux clairs, l'instant d'après brune aux traits anguleux. Impossible de livrer un storytelling visuel aussi décousu.
 
@@ -37,8 +38,6 @@ Voici le template maître prêt à l'emploi que vous pouvez copier-coller dans v
 <div style="border-left: 4px solid #f97316; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Astuce de pro :</strong> Le paramètre de poids de cohérence `--cw` varie de 0 à 100. Utilisez `--cw 100` pour copier le visage ET les cheveux/vêtements, et `--cw 0` si vous voulez garder uniquement le visage tout en changeant la tenue et la coiffure de votre personnage selon les scènes.
 </div>
-
-
 
 ![Midjourney V6 Prompt Guide to Maintain Consistent Character Faces Across 20 Scenes Prompt Guide](https://picsum.photos/seed/prompt-mvhpd71m-4-b/1000/550.jpg)
 

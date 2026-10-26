@@ -8,7 +8,6 @@ tags: ["Claude Artifacts", "SVG Icons", "Prompt Engineering", "Web Design"]
 theme: "Modern Minimalist Slate"
 ---
 
-
 ## 1. O Desespero do Proposta Comercial e os Ícones Quebrados
 
 Eram exatamente 17:45 de uma terça-feira em um escritório na Avenida Paulista, em São Paulo. O prazo final para enviar uma proposta comercial robusta para um cliente internacional importante vencia em quarenta minutos. O documento técnico estava impecável, traduzido e revisado, mas havia um problema visual grave: os diagramas conceituais e os ícones de arquitetura em formato PNG enviados pela equipe de design pareciam pixelados, pesados e totalmente amadores quando inseridos no PDF corporativo. O tradutor automático e as ferramentas genéricas de IA que usamos anteriormente geravam apenas códigos estáticos cheios de erros ou imagens rasterizadas de baixa resolução que destruíam a credibilidade da nossa proposta técnica.
@@ -18,8 +17,6 @@ Foi nesse momento de pressão que decidi abrir o **Claude 3.5 Sonnet** e usar o 
 <div style="border-left: 4px solid #3b82f6; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Dica do Arquiteto de IA:</strong> Nunca peça apenas "desenhe um ícone". O segredo para dominar o Claude Artifacts na criação de SVGs está em forçar o modelo a estruturar o código com viewBox adequado, tags semânticas limpas e paletas de cores padronizadas.
 </div>
-
-
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvovcpye-7-b/1000/550.jpg)
 

@@ -8,7 +8,6 @@ tags: ["Prompt Engineering", "Claude", "SVG Icons", "Web Design"]
 theme: "Forest Emerald Bio"
 ---
 
-
 ## 1. The Day Our Legal HR Chatbot Went Rogue
 
 Picture this: It is late afternoon in our New York creative agency, and we are hours away from presenting a high-stakes pitch for a major fintech client. Our lead frontend developer pulls up our internal custom-built workspace assistant—powered by an LLM trained on our operational repository—to double-check a compliance clause regarding employee remote-work stipends across state lines. Instead of pulling the correct regulatory baseline, the AI hallucinated with utter confidence. It boldly generated a completely fictitious legal precedent and gave advice that directly contradicted our actual corporate handbook and standard labor laws, presenting it as airtight policy. 
@@ -21,11 +20,9 @@ To fix this once and for all, we need a bulletproof framework using Claude Artif
 <strong>Productivity Benchmark:</strong> Using structured prompt frameworks with Claude Artifacts reduces asset creation and debugging cycles from 30 minutes down to under 45 seconds per icon.
 </div>
 
-
-
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvnfn2bg-1-b/1000/550.jpg)
 
-## 2. Root Cause Breakdown
+## 2. Root Cause Breakdown of Prompt Failures and Logic Flaws
 
 Why do standard, casual prompts fail to generate usable SVG graphics? 
 
@@ -37,7 +34,7 @@ By leveraging **Claude Artifacts**, we isolate the output into an interactive, s
 - **Design System Alignment:** Enforced color variables, stroke widths, and aesthetic styles (e.g., Duotone, Minimalist, Neumorphic).
 - **Accessibility:** Built-in `<title>` and `aria-hidden` attributes for screen readers.
 
-## 3. Master Prompt Template
+## 3. Copy-and-Paste Master Prompt Engineering Template Template
 
 Here is the exact, battle-tested prompt template I use across all our web projects when generating custom SVG assets via Claude Artifacts. Copy, paste, and adapt the bracketed variables to fit your brand.
 
@@ -63,7 +60,7 @@ You are an expert Senior UI/UX Illustrator and SVG Architecture Specialist. Your
 Create a custom icon representing [Insert Specific Concept, e.g., real-time AI synchronization] matching our Forest Emerald Bio design theme.
 ```
 
-## 4. Practical Variations and Safety Tips
+## 4. Professional Prompt Architect Precautions & Tips and Safety Tips
 
 When scaling your asset generation pipeline, keep these optimization and safety tips in mind:
 
@@ -75,7 +72,7 @@ When scaling your asset generation pipeline, keep these optimization and safety 
 <strong>Pro Tip:</strong> Always ask Claude to include a subtle CSS drop-shadow filter or linear gradient definition within a <code>&lt;defs&gt;</code> block to instantly elevate flat vector icons into modern, professional UI components.
 </div>
 
-## 5. Frequently Asked Questions
+## 5. Frequently Asked Questions (FAQ)
 
 Q: Can I export these Claude Artifact SVGs directly into Figma or React components?
 

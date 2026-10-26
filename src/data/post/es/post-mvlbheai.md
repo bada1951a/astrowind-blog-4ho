@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Sandstone Desert Minimal"
 ---
 
+## 1. Crisis crítica de alucinación de la IA y bloqueo de tareas
 
 Eran las seis y media de la tarde en la oficina del Paseo de la Castellana. Llevaba una hora entera atascado intentando que un patron de expresion regular procesara unos logs de servidores corporativos, alternando desesperadamente entre la consola de VS Code y la ventana de ChatGPT. Lo peor no era que la expresion regular fallara una y otra vez, sino que el modelo, en su afan por ayudarme, habia empezado a inventarse codigos de error que ni siquiera existian en la documentacion oficial. Me aseguro con total seguridad que un parametro obsoleto funcionaba perfectamente, haciendome perder otros veinte minutos persiguiendo un fantasma sintactico. En ese momento de frustracion pura frente al monitor, entendi que el verdadero cuello de botella de la inteligencia artificial no es su falta de conocimiento, sino su patologica necesidad de dar una respuesta afirmativa aunque no tenga los datos reales.
 
@@ -43,8 +44,7 @@ Pregunta o tarea:
 Implementar esta estructura en las instrucciones personalizadas de ChatGPT o en los Projects de Claude cambia radicalmente la dinamica de trabajo. Cuando el modelo se enfrenta a una pregunta trampa o a un dato ausente, deja de inventar historias convincentes y activa inmediatamente la clausula de escape. Esto nos ahorra horas de depuracion ciega y nos garantiza que estamos tomando decisiones basadas en datos reales y auditables.
 
 Para refinar aun the este enfoque en tu dia a dia, te recomiendo aplicar variaciones segun el caso de uso. Si trabajas con datos numericos o financieros, anade una regla adicional que exija calculos paso a paso antes de dar la cifra final. Si trabajas con desarrollo de software, pidele que valide la sintaxis contra una version especifica del lenguaje. Estas pequenas restricciones adicionales actuan como barreras de contencion que mantienen al LLM dentro de la realidad operativa de tu empresa.
-
-Frequently Asked Questions
+## 5. Preguntas Frecuentes (FAQ)
 
 Q1. Funciona esta misma estrategia de prompts tanto en ChatGPT como en Claude por igual?
 

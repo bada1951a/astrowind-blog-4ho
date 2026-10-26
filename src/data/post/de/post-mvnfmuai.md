@@ -8,6 +8,7 @@ tags: ["Claude Artifacts", "SVG Icons", "Prompt Engineering", "Web Design", "Des
 theme: "Bronze Artisan Workshop"
 ---
 
+## 1. Kritischer KI-Halluzinations- und Qualitätsnotfall
 
 <div style="border-left: 4px solid #b45309; padding: 12px 16px; margin: 20px 0; background-color: rgba(180, 83, 9, 0.05); border-radius: 4px; color: #111827;">
 <strong>Tipp aus der Praxis:</strong> Wenn der Corporate Identity Leitfaden von Fintech-Kunden kompromisslos verlangt, dass jedes Icon pixelgenau im Grid sitzt, retten strukturierte Claude Artifacts und exakte SVG-Parameter den Tag.
@@ -20,8 +21,6 @@ Es ist kurz vor zehn Uhr morgens in einem Agenturbüro zwischen dem Frankfurter 
 Der erste Reflex vieler Prompt-Engineers führt in die Sackgasse. Ein einfacher Befehl wie *"Erstelle mir zwanzig wunderschöne Finanz-Icons als SVG"* liefert unbrauchbaren Code: Unvollständige XML-Strukturen, unskalierbare Rastergrafiken als Data-URIs getarnt und Farbwerte, die meilenweit von der CI entfernt sind. Das Korrigieren per Hand dauert länger als das Zeichnen von Null an.
 
 Hier springt Claude mit der Artifacts-Funktion ein. Statt flüchtiger Chat-Antworten generiert Claude isolierte, interaktive Code-Container, die wir direkt testen, visuell betrachten und verlustfrei exportieren können.
-
-
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvnfngyu-3-b/1000/550.jpg)
 
@@ -37,7 +36,7 @@ Um das zu verhindern, nutzen wir eine dreistufige Prompt-Architektur, die Claude
 
 3. **Artifacts-Ausgabe:** Trennung von Erklärung und ausführbarem Code, damit die Vorschau direkt im Browser lädt.
 
-## 3. Master Prompt Template
+## 3. Sofort einsetzbare Master-Prompt-Vorlage Template
 
 Kopieren Sie dieses Template direkt in Ihre **Claude Systemanweisungen** oder in den Chat-Eingabebereich, wenn Sie mit Claude Artifacts arbeiten. Passen Sie die Platzhalter in den Klammern an Ihr aktuelles Projekt an.
 
@@ -80,7 +79,7 @@ Wenn Sie die Massenproduktion von Blog-Inhalten hochfahren, lauern einige klassi
 * **Token-Sparsamkeit:** Bei komplexen Illustrationen neigt das Modell dazu, unendlich viele kleine `<path>`-Punkte zu erzeugen. Begrenzen Sie die Komplexität im Prompt durch die Anweisung: *"Halte den SVG-Pfad-Code sauber und minimalistisch (unter 150 Zeilen Code)."*
 * **Barrierefreiheit (A11y):** Ergänzen Sie für produktive Webseiten immer den Befehl: *"Füge dem SVG-Tag ein passendes `role="img"` und ein aussagekräftiges `<title>`-Element für Screenreader hinzu."*
 
-## 5. Frequently Asked Questions
+## 5. Häufig gestellte Fragen (FAQ)
 
 Q: Warum bricht Claude manchmal Mitten im SVG-Code ab und wie verhindere ich das?
 

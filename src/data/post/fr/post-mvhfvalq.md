@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "Claude", "Artifacts", "Dashboard", "Productivite"]
 theme: "Industrial Blueprint"
 ---
 
+## 1. Crise d'hallucination de l'IA et panne de productivité
 
 Il était 17h30 dans notre agence à Paris, et le client venait de valider le brief de dernière minute pour la refonte complète de son outil de suivi de campagne. Réunion de présentation prévue le lendemain à 10h00. Pas une seule ligne de code front-end écrite, pas de maquette Figma interactive prête. Juste un fichier CSV brut de 50 000 lignes et une pression monumentale. C'est exactement là que j'ai ouvert Claude 3.5 Sonnet, activé la fonction Artifacts, et transformé un chaos de données en un tableau de bord interactif fonctionnel en moins de vingt minutes.
 

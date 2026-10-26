@@ -8,8 +8,7 @@ tags: ["Prompt Engineering", "Claude", "SVG", "Web Design", "Automazione"]
 theme: "Warm Coffee Latte"
 ---
 
-
-## 1. [Opening Story/Problem]
+## 1. Emergenza improvvisa per allucinazioni dell'IA e risposte errate
 
 Erano le 17:30 di un giovedì pomeriggio piovoso in uno studio di comunicazione a Brera, Milano. Il cliente ci aveva appena bocciato l'intera palette di icone per il nuovo portale e-commerce, pretendendo uno stile isometrico e minimalista entro la mattina seguente. Nel tentativo di accelerare i tempi, avevo configurato rapidamente un bot di automazione aziendale interno per generare i file grafici al volo. Tuttavia, bastava che un utente inserisse una richiesta leggermente fuori standard — come "voglio un'icona per il carrello ma in stile cyberpunk e con sfumature complesse" — perché il sistema andasse in tilt, restituendo tag SVG corrotti, chiusure di path mancanti o, peggio, codice HTML confuso pieno di div inutili. Mancavano totalmente esempi di istruzioni mirate e casi limite strutturati per guidare il modello verso un output vettoriale pulito e scalabile.
 
@@ -17,11 +16,9 @@ Erano le 17:30 di un giovedì pomeriggio piovoso in uno studio di comunicazione 
 <strong>Nota dell'Architetto:</strong> Senza una forte iniezione di esempi concreti nel prompt (Few-shot prompting), i modelli linguistici tendono a improvvisare la sintassi vettoriale mescolandola con frammenti di testo discorsivo.
 </div>
 
-
-
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvnfo2op-6-b/1000/550.jpg)
 
-## 2. [Root Cause / Architecture]
+## 2. Analisi approfondita dei fallimenti di prompt e logica
 
 Il motivo principale per cui i prompt generici falliscono quando si richiede grafica vettoriale risiede nella natura stessa dei Large Language Models. Chiedere semplicemente "creami un'icona SVG" lascia troppi spazi vuoti: coordinate viewBox, ottimizzazione dei tag `<path>`, gestione dei livelli e compatibilità con i diversi browser. 
 
@@ -31,7 +28,7 @@ Per risolvere questo problema, dobbiamo strutturare il prompt secondo un'archite
 - **Few-shot Examples (Casi limite):** Fornire esempi precisi di input utente insoliti e il relativo output SVG corretto.
 - **Artifact Wrapper:** Sfruttare la funzione **Artifacts** di Claude per isolare il codice in un pannello di anteprima interattivo.
 
-## 3. [Master Prompt Template]
+## 3. Template master di prompt pratico pronto all'uso
 
 Ecco il template definitivo da copiare e incollare direttamente nelle tue **Istruzioni di sistema** o nella chat di Claude per gestire la generazione di icone e illustrazioni web senza errori.
 
@@ -64,7 +61,7 @@ Output atteso (struttura SVG corretta):
 Utente: [Inserisci qui la richiesta specifica dell'utente o l'input del bot aziendale]
 ```
 
-## 4. [Practical Variations / Safety Tips]
+## 4. Avvertenze e suggerimenti dell'architetto di prompt
 
 Per evitare che il sistema generi codice non valido o si rifiuti di rispondere di fronte a richieste ambigue, tieni a mente questi consigli operativi:
 
@@ -76,7 +73,7 @@ Per evitare che il sistema generi codice non valido o si rifiuti di rispondere d
 <strong>Consiglio Pro:</strong> Nelle impostazioni di sistema di Claude, attiva sempre la modalità di sviluppo per fare in modo che l'output restituisca direttamente il blocco di codice eseguibile nell'Artifacts.
 </div>
 
-## 5. Frequently Asked Questions
+## 5. Domande Frequenti (FAQ)
 
 Q: Posso usare questo prompt anche su ChatGPT o solo su Claude?
 

@@ -8,6 +8,7 @@ tags: ["Claude Sonnet", "Artifacts", "Dashboard", "Finanzen", "Prompt Engineerin
 theme: "Nordic Clean Ice"
 ---
 
+## 1. Kritischer KI-Halluzinations- und Qualitätsnotfall
 
 Es ist Freitag, kurz vor 18:00 Uhr im Bankenviertel Frankfurt. Auf meinem Tisch liegt ein unvollständiger 80seitiger PDF-Geschäftsbericht voller trockenem Text, KPI-Tabellen und unübersichtlicher Quartalszahlen. Der Vorstand will am Montagmorgen um 9:00 Uhr kein statisches Dokument mehr sehen, sondern ein voll funktionsfähiges, interaktives Dashboard, bei dem man Risikokennzahlen per Klick filtern und Szenarien durchrechnen kann. Eine klassische Web-Entwicklung dauert Wochen. Ich hatte genau 45 Minuten, bevor das Licht im Büro ausging.
 

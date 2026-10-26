@@ -8,8 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Sunset Horizon Coral"
 ---
 
-
-## 1. [Opening Story/Problem]
+## 1. Emergenza improvvisa per allucinazioni dell'IA e risposte errate
 
 Sono le 2 del mattino. L'ufficio del nostro studio a Milano è buio, illuminato solo dalla luce fredda del monitor. Domani alle 9 abbiamo il pitch definitivo per un round di investimento seed per una startup tecnologica cliente, e lo script della presentazione è un disastro di blocchi di testo disordinati, trascrizioni di riunioni al cardiopalma, note sparse e proiezioni finanziarie buttate giù in fretta. Devo assolutamente trasformare questo caos testuale in una tabella pulita e strutturata con metriche, KPI, percentuali di crescita e milestone temporali da inserire nelle slide, ma la mia creatività e le mie energie sono completamente esaurite. 
 
@@ -19,11 +18,9 @@ I primi tentativi fatti con prompt banali come *"Estrai i dati da questo testo i
 <strong>La svolta della notte:</strong> Quando il testo non strutturato è un guazzabuglio di informazioni miste, un prompt generico fallisce miseramente. La soluzione non è scrivere un testo più lungo, ma fornire esempi concreti attraverso la tecnica del <strong>Few-Shot Prompting</strong>.
 </div>
 
-
-
 ![How to Write Few-Shot Prompts to Extract Tabular Data from Unstructured Text Prompt Guide](https://picsum.photos/seed/prompt-mvmqq9oi-6-b/1000/550.jpg)
 
-## 2. [Root Cause / Architecture]
+## 2. Analisi approfondita dei fallimenti di prompt e logica
 
 Perché i modelli linguistici falliscono quando chiediamo loro di estrarre tabelle da testi confusi? La risposta risiede nella natura stessa dei Large Language Models: tendono a interpretare le richieste in modo probabilistico. Se dai un testo complesso e chiedi una tabella senza mostrare esattamente quale formato ti aspetti, l'AI improvviserà la struttura delle colonne, inventerà intestazioni e si perderà nei dettagli finanziari o descrittivi.
 
@@ -35,7 +32,7 @@ L'architettura di questo prompt si compone di quattro blocchi fondamentali:
 - **Esempi (Few-Shot):** Una coppia di Input fittizio e Output tabulare ideale.
 - **Dato Reale:** Il testo non strutturato su cui applicare l'estrazione.
 
-## 3. [Master Prompt Template]
+## 3. Template master di prompt pratico pronto all'uso
 
 Ecco il template master pronto all'uso, testato sul campo nelle agenzie digitali e negli studi professionali milanesi per gestire report e dati di bilancio in extremis. Copia questo blocco e incollalo nelle impostazioni di sistema o direttamente nella chat di ChatGPT o Claude.
 
@@ -70,7 +67,7 @@ REGOLE CRITICALI:
 [TABELLA OUTPUT]:
 ```
 
-## 4. [Practical Variations / Safety Tips]
+## 4. Avvertenze e suggerimenti dell'architetto di prompt
 
 Quando lavori sotto pressione a progetti critici, bastano piccoli dettagli per compromettere la qualità del risultato. Ecco alcune linee guida avanzate per ottimizzare il processo:
 
@@ -82,7 +79,7 @@ Quando lavori sotto pressione a progetti critici, bastano piccoli dettagli per c
 <strong>Consiglio Pro per Claude e ChatGPT:</strong> Se usi Claude 3.5 Sonnet, puoi sfruttare la sua incredibile precisione strutturale inserendo l'esempio direttamente nei <em>System Instructions</em> del progetto, lasciando nel prompt principale solo il blocco di testo grezzo da analizzare.
 </div>
 
-## 5. Frequently Asked Questions
+## 5. Domande Frequenti (FAQ)
 
 Q: Posso usare questo prompt anche con documenti lunghi come PDF o bilanci aziendali completi?
 

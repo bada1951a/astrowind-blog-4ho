@@ -8,7 +8,6 @@ tags: ["Prompt Engineering", "Ekstraksi Data", "ChatGPT", "Claude", "Otomatisasi
 theme: "Forest Emerald Bio"
 ---
 
-
 ## 1. Ancaman Nyata Chatbot CS dan Krisis Jailbreak di SCBD
 
 Pukul 14.15 di kawasan bisnis Sudirman Central Business District (SCBD) Jakarta, ruang server kantor kami mendadak ricuh. Chatbot layanan pelanggan (CS) otomatis berbasis LLM yang baru saja kami rilis untuk klien perbankan mengalami insiden serius. Sekelompok pengguna iseng melancarkan serangan *jailbreak* tingkat lanjut, memanipulasi celah dalam *system prompt* chatbot agar memberikan diskon fiktif dan membocorkan data internal. Alih-alih merespons standar, chatbot tersebut malah memberikan jawaban ngawur dan melenceng jauh dari prosedur operasional.
@@ -19,8 +18,6 @@ Panik melanda tim karena transkrip keluhan pelanggan dan laporan klaim asuransi 
 <strong>Metrik Efisiensi Waktu:</strong> Menggunakan teknik Few-Shot Prompting yang tepat menurunkan tingkat kesalahan ekstraksi data dari 45% menjadi kurang dari 2%, sekaligus memotong waktu rekap manual dari 3 jam menjadi hanya 15 detik per batch dokumen.
 </div>
 
-
-
 ![How to Write Few-Shot Prompts to Extract Tabular Data from Unstructured Text Prompt Guide](https://picsum.photos/seed/prompt-mvmqqyq9-10-b/1000/550.jpg)
 
 ## 2. Akar Masalah dan Arsitektur Few-Shot Prompting
@@ -29,7 +26,7 @@ Mengapa zero-shot prompt (instruksi tanpa contoh) gagal total dalam mengekstrak 
 
 Arsitektur **Few-Shot Prompting** bekerja dengan cara memberikan 2 sampai 3 contoh pasangan data masukan (*input*) dan keluaran (*output*) yang ideal sebelum meminta AI memproses data baru. Dengan pendekatan ini, kita mengunci perilaku model (*behavioral anchoring*). AI tidak lagi mengandalkan asumsi liar, melainkan langsung meniru pola format tabel Markdown atau JSON yang kita tentukan, sekaligus mengabaikan instruksi asing yang mencoba melakukan *jailbreak*.
 
-## 3. Master Prompt Template
+## 3. Templat Master Prompt Siap Pakai yang Sangat Efektif Template
 
 Berikut adalah templat *master prompt* siap pakai yang telah diuji di ChatGPT (GPT-4o) dan Claude 3.5 Sonnet untuk mengekstrak teks tidak berstruktur menjadi tabel yang bersih dan aman dari injeksi perintah.
 
@@ -73,7 +70,7 @@ Untuk memaksimalkan hasil ekstraksi di lingkungan kerja harian Anda, perhatikan 
 * **Gunakan Delimiter Ketat:** Bungkus teks masukan menggunakan tanda pagar ganda (`###`) atau tag XML (`<text_input>...</text_input>`) untuk memisahkan instruksi utama dari teks kotor yang akan diekstrak.
 * **Pengaturan Suhu (Temperature):** Atur *temperature* ke angka `0` atau `0.1` pada pengaturan API atau *Custom Instructions* agar model AI tetap konsisten dan tidak berimajinasi menciptakan data fiktif.
 
-## 5. Frequently Asked Questions
+## 5. Pertanyaan yang Sering Diajukan (FAQ)
 
 Q: Mengapa hasil tabel dari Claude sering lebih rapi dibanding ChatGPT untuk teks berbahasa Indonesia?
 

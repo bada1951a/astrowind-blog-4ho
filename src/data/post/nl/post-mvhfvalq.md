@@ -8,6 +8,7 @@ tags: ["Claude Sonnet", "Artifacts", "Dashboards", "Prompt Engineering", "AI Tip
 theme: "Electric Cyan Speed"
 ---
 
+## 1. Noodsituatie door AI-hallucinaties en onbruikbare output
 
 Het is kwart voor negen 's ochtends op de Zuidas in Amsterdam. Om tien uur moet ik een ad-hoc Q3-financiële rapportage presenteren aan de directie, maar het legacy BI-systeem ligt eruit en Excel draait volledig vast op een dataset van honderdduizend rijen. Mijn junior analist kijkt me paniekerig aan: "Hoe gaan we dit in vredesnaam nog op tijd visualiseren?" Geen tijd voor langzame IT-tickets of complexe Python-scripts. Ik open direct Claude 3.5 Sonnet, schakel Artifacts in en besluit het zelf te fixen met één ijzersterke prompt.
 
@@ -58,8 +59,6 @@ Lever de code direct op in een Claude Artifact zodat ik het meteen kan testen.
 
 ### 1. Hoe zorg ik ervoor dat het dashboard echte data gebruikt in plaats van dummy-data?
 Plak simpelweg je ruwe data (JSON of CSV) onderaan de master prompt. Voeg de instructie toe: "Gebruik uitsluitend onderstaande dataset voor de berekeningen en visualisaties in het dashboard." Claude verwerkt dit direct in de JavaScript-logica van de Artifact.
-
-
 
 ![How to Use Claude 3.5 Sonnet Artifacts to Build Interactive Dashboard Prototypes Prompt Guide](https://picsum.photos/seed/prompt-mvhfxbwd-8-b/1000/550.jpg)
 

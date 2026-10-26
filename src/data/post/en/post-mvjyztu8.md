@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "High-Contrast Charcoal"
 ---
 
+## 1. Critical AI Hallucination & Output Collapse Crisis
 
 The clock hit 11:45 PM, and my dual monitors glowed with the cold, unforgiving light of a half-baked 5,000-word fintech whitepaper. I had given ChatGPT an elite persona—a cynical, data-obsessed Silicon Valley VC partner with a penchant for sharp prose. For the first two sections, the output was magic. But right as it hit section three, the AI suffered a complete structural meltdown. It dropped the edgy tone, wiped its memory of the previous context, and defaulted to a sanitized, robotic corporate boilerplate: "Furthermore, it is essential to consider the multifaceted implications of financial technology..." Total persona drift. The conversational memory window had choked on its own token volume, resetting my expert back to a soulless documentation bot right before an executive review.
 
@@ -67,7 +68,7 @@ When executing long-form prompt chains, you will inevitably run into edge cases 
 - Tone Anchoring: If you notice the vocabulary becoming too standard, add a negative constraint to your prompt: `[NEGATIVE CONSTRAINT: Ban words such as 'testament', 'delve', 'revolutionize', 'tapestry', and 'furthermore'].`
 - Token Budgeting: Break your output requests into 800-1,000 word chunks. Asking an LLM to output 2,500 words in a single response inevitably leads to quality degradation and abrupt cutoff mid-sentence.
 
-## Frequently Asked Questions
+## 5. Frequently Asked Questions (FAQ)
 
 Q1. What should I do if the AI completely ignores the persona instructions by step three?
 

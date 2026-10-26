@@ -8,7 +8,6 @@ tags: ["Prompt Engineering", "Claude", "SVG", "Web Design", "Artifacts"]
 theme: "Retro Monokai"
 ---
 
-
 ## 1. Het Moment van Paniek op de Zuidas
 
 Gisteren om 14:00 uur stond ik midden in een sprintreview bij een fintech-startup aan de Amsterdamse Zuidas. We moesten binnen een uur een compleet nieuwe set custom SVG-iconen presenteren voor onze vernieuwde dashboardinterface. Mijn vertrouwde, tot in de puntjes geoptimaliseerde Claude-prompt die de afgelopen maanden feilloos werkte voor web-illustraties, gaf opeens totaal niet thuis. 
@@ -18,8 +17,6 @@ Na de recente achterliggende modelupdates spuugde Claude ineens slordige, incomp
 <div style="border-left: 4px solid #a6e22e; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Spoedrevisie Nodig:</strong> Moderne AI-modellen hebben striurdere contextbeperkingen en strengere output-parsers gekregen. Als je prompts geen expliciete technische parameters en strakke markup-grenzen bevatten, mislukt de generatie van complexe Claude Artifacts direct.
 </div>
-
-
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvovcw9c-8-b/1000/550.jpg)
 
@@ -33,7 +30,7 @@ Simpele prompts zoals *"Maak een mooi SVG-icoon van een slotje"* werken niet mee
 
 Onze nieuwe strategie draait om **stricte deterministische prompt-structuren**. We geven Claude geen vrije hand meer, maar behandelen het model als een junior frontend developer die een heel specifiek technisch contract moet naleven.
 
-## 3. Master Prompt Template
+## 3. Direct bruikbare master prompt template Template
 
 Kopieer en plak deze masterprompt in **Claude** om direct foutloze, schaalbare SVG-iconen en web-illustraties te genereren via Artifacts. Pas de variabelen tussen de rechte haken aan naar jouw projectbehoefte.
 

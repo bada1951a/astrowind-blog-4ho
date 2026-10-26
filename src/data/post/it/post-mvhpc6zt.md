@@ -8,6 +8,7 @@ tags: ["Midjourney", "Prompt Engineering", "Consistenza Volti", "AI Generativa",
 theme: "Teal Matrix Digital"
 ---
 
+## 1. Emergenza improvvisa per allucinazioni dell'IA e risposte errate
 
 Mancavano esattamente quattro ore alla presentazione del nuovo progetto per un cliente internazionale nel nostro studio a Milano, e il panico aveva appena raggiunto i livelli di guardia. Stavamo chiudendo uno sprint intensivo per sviluppare un prompt di copywriting e analisi dati, accompagnato da una storyboard visiva di venti scene. Il problema? Ogni volta che generavo un'immagine con Midjourney V6, il volto del nostro protagonista, un giovane data analyst milanese di nome Marco, cambiava completamente connotati. Nella scena uno era un trentenne barbuto con gli occhiali tartarugati; nella scena due si trasformava in un ventenne sbarbato dai capelli biondi. Impossibile presentare una sequenza narrativa coerente al board aziendale con un personaggio che cambia faccia a ogni slide.
 

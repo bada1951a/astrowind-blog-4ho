@@ -8,6 +8,7 @@ tags: ["Midjourney V6", "Prompt Engineering", "Geschäftsberichte", "Consulting"
 theme: "Acid Lime Hacker Space"
 ---
 
+## 1. Kritischer KI-Halluzinations- und Qualitätsnotfall
 
 Es ist Dienstag, exakt 21:45 Uhr im Konferenzraum eines Frankfurter Consulting-Hauses. Morgen Früh um 9:00 Uhr muss der finale Pitch-Deck-Entwurf für einen neuen Mandanten aus dem Bankensektor stehen: 20 verschiedene Szenarien, die denselben Projektleiter in unterschiedlichen Arbeitsumgebungen zeigen. Das Problem? Jedes Mal, wenn ich in Midjourney V6 einen neuen Prompt abschicke, generiert die KI eine völlig andere Person. Mal hat der Mann Vollbart und blonde Haare, im nächsten Bild trägt er Brille und hat dunkles, kurzes Haar. Für einen professionellen Geschäftsbericht ist das ein absolutes KO-Kriterium. Die Zeit sitzt mir im Nacken, und die traditionellen Ansätze wie einfaches Text-Prompting greifen hier schlichtweg zu kurz.
 

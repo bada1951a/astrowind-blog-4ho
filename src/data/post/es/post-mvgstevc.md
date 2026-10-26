@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips", "YouTube Analytics"
 theme: "Deep Indigo System"
 ---
 
+## 1. Crisis crítica de alucinación de la IA y bloqueo de tareas
 
 Eran las 7:30 de la tarde en la oficina de Madrid. El café ya estaba frío, la pantalla brillaba con demasiada intensidad y el cliente clave del proyecto de análisis de mercado y generación de contenidos basada en IA acababa de mandarnos un mensaje por Slack que nos dejó helados: "Necesitamos replicar el gancho y el ritmo narrativo de los 10 videos más virales del sector en las próximas 4 horas para la campaña de mañana". Teníamos los enlaces, las transcripciones en bruto y cero tiempo para ver horas de contenido y analizar qué diablos hacía que esos guiones enganchasen a millones de personas.
 
@@ -70,7 +71,7 @@ Cuando trabajes con textos largos de YouTube, ten en cuenta estas recomendacione
 <div style="border-left: 4px solid #4338ca; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Tip Pro para optimización:</strong> Si vas a analizar múltiples guiones en serie para un estudio de mercado, crea un GPT personalizado en ChatGPT con este prompt fijado en las "Instructions" (Instrucciones Personalizadas). Así solo tendrás que pegar la transcripción en cada mensaje sin reescribir toda la estructura. </div>
 
-## Preguntas Frecuentes (FAQ)
+## 5. Preguntas Frecuentes (FAQ)
 
 ### ¿Funciona este prompt con cualquier modelo de lenguaje?
 Sí, pero rinde considerablemente mejor en modelos con alta ventana de contexto y razonamiento avanzado como GPT-4o o Claude 3.5 Sonnet. Los modelos más pequeños (como GPT-3.5) tienden a simplificar demasiado la Fase 4 y devuelven estructuras superficiales.

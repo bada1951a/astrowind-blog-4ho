@@ -8,7 +8,6 @@ tags: ["Prompt Engineering", "Claude", "SVG", "AI Automation", "Productivity"]
 theme: "Matte Black stealth"
 ---
 
-
 ## 1. The Onboarding Emergency
 
 It was 8:50 AM on a Monday in our Brooklyn office, and our VP of Operations dropped a massive bombshell right before the all-hands sync. Twenty new hires were arriving at 9:30 AM for their orientation, and the standard 200-page engineering and culture manual was an unreadable, text-heavy nightmare. Handing them a dense PDF was a guaranteed way to kill engagement on day one. We needed an interactive training module complete with quizzes, flashcards, and custom vector illustrations—and we needed it in ten minutes. 
@@ -19,11 +18,9 @@ My initial reaction was pure panic. Building an interactive web app from scratch
 <strong>Pro Tip:</strong> When time is critical, never ask an LLM to generate multiple disconnected files. Use Claude Artifacts to output a single, self-contained HTML file featuring embedded Tailwind CSS, interactive JavaScript, and clean SVG illustrations.
 </div>
 
-
-
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvovbkk8-1-b/1000/550.jpg)
 
-## 2. Root Cause Breakdown
+## 2. Root Cause Breakdown of Prompt Failures and Logic Flaws
 
 Why do standard prompts fail when you try to generate interactive training materials? The root cause comes down to context fragmentation and poor output constraints. 
 
@@ -35,7 +32,7 @@ When you give an LLM a vague instruction like "make this manual fun," it tries t
 
 3. **Structured State Machine:** Define clear states for flashcards (front, back, flipped) and quizzes (question, selected answer, score tally) so the interactive elements actually work on the first try.
 
-## 3. Master Prompt Template
+## 3. Copy-and-Paste Master Prompt Engineering Template Template
 
 Here is the exact, battle-tested prompt template I use to convert dense text manuals into interactive, beautifully illustrated web applications using Claude Artifacts. Copy this directly into your workflow and replace the placeholder text with your source material.
 
@@ -63,7 +60,7 @@ You are an expert Frontend Engineer and UI/UX Designer specializing in interacti
 - Execute immediately with clean, production-ready code.
 ```
 
-## 4. Practical Variations and Safety Tips
+## 4. Professional Prompt Architect Precautions & Tips and Safety Tips
 
 When working with large text inputs and complex code generation, you may occasionally run into token limits or rendering quirks. Keep these strategies in mind to maintain smooth operations:
 
@@ -75,7 +72,7 @@ When working with large text inputs and complex code generation, you may occasio
 <strong>Safety Reminder:</strong> Always test the generated Artifact directly in your browser preview before sharing the live link with your team to ensure all JavaScript event listeners bind correctly.
 </div>
 
-## 5. Frequently Asked Questions
+## 5. Frequently Asked Questions (FAQ)
 
 Q: Can I use this prompt with ChatGPT or Gemini instead of Claude?
 

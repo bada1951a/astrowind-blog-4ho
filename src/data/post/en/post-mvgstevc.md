@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Pure Titanium Clean"
 ---
 
+## 1. Critical AI Hallucination & Output Collapse Crisis
 
 It is 8:45 AM on a Tuesday inside our NYC marketing agency. The executive briefing sync starts in precisely fifteen minutes, and our CMO just dropped a bombshell slack message: *"Our retention rate on mid-funnel YouTube content is tanking. Look at MrBeast, Alex Hormozi, and this random creator who just hit 2M views in 48 hours. I need a breakdown of their exact hook-to-cta script anatomy by our morning sync, or we're pausing the Q3 campaign."* 
 
@@ -29,7 +30,7 @@ What do you get back? A generic, fluffy wall of text: *"The creator uses an enga
 
 ---
 
-### The Master Prompt Template
+## 3. Copy-and-Paste Master Prompt Engineering Template
 
 Here is the exact production-grade prompt I use across ChatGPT and Claude to reverse-engineer any viral YouTube script. Copy this, paste it into your LLM of choice, and drop your transcript at the bottom.
 
@@ -82,7 +83,7 @@ To make this truly enterprise-ready for morning briefings or agency client pitch
 
 ---
 
-### Frequently Asked Questions
+## 5. Frequently Asked Questions (FAQ)
 
 ####
 

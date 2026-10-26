@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "Claude", "Dashboard", "UI Prototyping"]
 theme: "Cyberpunk Terminal"
 ---
 
+## 1. Awaryjna sytuacja związana z halucynacjami i błędami AI
 
 <div style="border-left: 4px solid #00ffcc; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,255,204,0.08); border-radius: 4px; color: #111827; font-family: monospace;">
 SYSTEM STATUS: READY // TARGET: Claude 3.5 Sonnet Artifacts // MODE: Interactive Dashboard Prototype

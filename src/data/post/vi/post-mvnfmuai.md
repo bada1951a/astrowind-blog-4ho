@@ -8,18 +8,15 @@ tags: ["Prompt Engineering", "Claude", "SVG Icons", "Web Illustrations", "Automa
 theme: "Electric Cyan Speed"
 ---
 
-
-## 1. [Opening Story/Problem]
+## 1. Tình huống khẩn cấp do AI trả lời ảo giác và sai lệch
 
 Ngồi cà phê bệt trước tòa nhà văn phòng công nghệ cao tại Quận 1, TP. Hồ Chí Minh, màn hình laptop của tôi hiển thị một màu đỏ rực của lỗi hệ thống. Hôm nay là hạn chót để bàn giao dự án xây dựng bot tự động hóa quy trình nội bộ cho phòng Nhân sự. Mọi thứ từ luồng dữ liệu, API, đến giao diện chatbot đều đã hoàn tất, ngoại trừ một chi tiết nhỏ nhưng chí mạng: thiếu hụt trầm trọng các ví dụ mẫu (few-shot examples) và icon trực quan để xử lý các ngoại lệ khi người dùng nhập sai dữ liệu. 
 
 Bot cứ liên tục trả về các thông báo lỗi dạng văn bản thô khan, khiến giao diện trông rất nghèo nàn và thiếu chuyên nghiệp. Tôi cần ngay lập tức một bộ icon SVG tùy chỉnh và các hình minh họa web sinh động để nhúng trực tiếp vào giao diện Claude Artifacts, nhưng đội ngũ thiết kế thì đang bận kẹt họp chiến lược quý. Không còn cách nào khác, tôi phải tự tay "phù phép" ra một câu lệnh AI siêu việt để Claude tự sinh ra toàn bộ hệ thống đồ họa vector chuẩn xác chỉ trong vài giây.
 
-
-
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvnfozkm-11-b/1000/550.jpg)
 
-## 2. [Root Cause / Architecture]
+## 2. Phân tích nguyên nhân gốc rễ lỗi câu lệnh và logic AI
 
 Tại sao các câu lệnh thông thường lại thất bại trong việc tạo ra đồ họa web chất lượng cao? Nguyên nhân cốt lõi nằm ở cách chúng ta ra lệnh cho AI:
 
@@ -31,7 +28,7 @@ Tại sao các câu lệnh thông thường lại thất bại trong việc tạ
 <strong>Mẹo từ chuyên gia:</strong> Để khai thác tối đa sức mạnh của Claude Artifacts, hãy yêu cầu AI trả về mã SVG thuần túy đóng gói trong thẻ HTML tương tác thay vì chỉ hiển thị dưới dạng mã nguồn thô. Điều này giúp bạn xem trước trực quan và chỉnh sửa ngay lập tức.
 </div>
 
-## 3. [Master Prompt Template]
+## 3. Mẫu câu lệnh Master Prompt thực chiến sao chép dùng ngay
 
 Dưới đây là khung câu lệnh tối ưu theo phong cách **Electric Cyan Speed**, được thiết kế riêng để tạo icon SVG và hình minh họa web qua Claude Artifacts. Hãy sao chép, điền thông tin và dán thẳng vào Claude.
 
@@ -54,7 +51,7 @@ Constraints & Guidelines:
 [Insert Additional Requirements Here, e.g., Thêm hiệu ứng hover nhẹ nhàng bằng CSS]
 ```
 
-## 4. [Practical Variations / Safety Tips]
+## 4. Lời khuyên và lưu ý quan trọng từ kỹ sư thiết kế câu lệnh
 
 Để tùy biến câu lệnh trên cho các dự án thực tế khác nhau tại văn phòng, hãy ghi nhớ những lưu ý kỹ thuật sau:
 
@@ -62,7 +59,7 @@ Constraints & Guidelines:
 * **Phòng chống Hallucination (Ảo giác AI):** Đôi khi AI tự ý sáng tạo ra các thẻ SVG không hợp lệ. Hãy luôn thêm ràng buộc `Strictly use standard SVG elements (<path>, <circle>, <rect>, <polyline>)` để giữ cho mã nguồn luôn gọn nhẹ và an toàn khi đưa vào mã nguồn lập trình.
 * **Tích hợp hệ thống:** Sử dụng Claude Artifacts để tạo một bảng tra cứu (Cheatsheet) trực quan ngay trên trình duyệt, giúp các thành viên khác trong team có thể bấm vào để sao chép mã SVG bất cứ lúc nào mà không cần nhờ đến lập trình viên.
 
-## 5. Frequently Asked Questions
+## 5. Các câu hỏi thường gặp (FAQ)
 
 Q: Tôi có thể sử dụng câu lệnh này trên ChatGPT hoặc Gemini thay vì Claude không?
 

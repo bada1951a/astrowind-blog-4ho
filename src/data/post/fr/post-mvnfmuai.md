@@ -8,7 +8,6 @@ tags: ["Prompt Engineering", "Claude", "SVG", "Design Web"]
 theme: "Sandstone Desert Minimal"
 ---
 
-
 ## 1. [Ouverture] La panique juridique au cœur de La Défense
 
 Il est 17h00 dans une tour de verre à Paris La Défense, et la pression monte d'un cran pour notre équipe de conseil en stratégie d'entreprise. Pour illustrer notre dernier livrable client concernant la conformité des contrats de travail, nous avions demandé à l'IA de nous générer rapidement un visuel explicatif ainsi qu'un résumé des règles du code du travail. Résultat des courses : l'outil a généré des graphiques incohérents et, pire encore, a affiché des conseils juridiques calqués sur des jurisprudences obsolètes, inventant purement et simplement des articles de loi inexistants pour justifier un design. En voulant aller vite, nous avions failli intégrer des données réglementaires erronées dans un rapport officiel destiné au comité de direction.
@@ -18,8 +17,6 @@ La leçon a été immédiate : confier la création d'éléments visuels et text
 <div style="border-left: 4px solid #a16207; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Alerte Métier :</strong> Ne demandez jamais à une IA de générer du contenu technique ou juridique critique sans lui imposer une structure de sortie isolée. Utilisez toujours un espace de rendu dédié comme Claude Artifacts pour inspecter chaque ligne de code avant validation.
 </div>
-
-
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvnfno7s-4-b/1000/550.jpg)
 
@@ -75,7 +72,7 @@ Pour maximiser la productivité de votre équipe tout en évitant les déconvenu
 * **Sécurité des données sensibles :** Ne transmettez jamais de données personnelles nominatives (nom de salariés, salaires réels) dans le prompt. Anonymisez systématiquement les données avant de lancer la génération.
 * **Itération ciblée :** Si le rendu ne vous plaît pas, ne redemandez pas tout le prompt. Utilisez une commande courte en réponse à l'Artifacts existant, par exemple : *"Modifie uniquement la couleur de fond de l'Artifacts actuel pour utiliser la nuance #f5f5f4 et ajoute un cercle d'accentuation en haut à droite"*.
 
-## 5. FAQ
+## 5. Foire Aux Questions (FAQ)
 
 Q: Pourquoi utiliser Claude Artifacts plutôt qu'un générateur d'images classique comme Midjourney pour créer des illustrations web ?
 

@@ -8,7 +8,6 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Acid Lime Hacker Space"
 ---
 
-
 ## 1. 突如訪れたCSチャットボットの危機とビジュアル対応の裏側
 
 丸の内のITオフィスで迎えた金曜日の午後、私たちのチームが開発した顧客対応（CS）自動チャットボットが、悪意ある脱獄（Jailbreak）プロンプトの攻撃を受け、システムが一時的に不安定になるという緊急事態が発生しました。ユーザーからの質問を装った不正な入力を防ぐため、セキュリティの再構築と同時に、UI上の緊急メンテナンス告知や、ユーザーを安心させるための視覚的なカスタムSVGアイコンを即座に刷新する必要に迫られたのです。
@@ -18,8 +17,6 @@ theme: "Acid Lime Hacker Space"
 <div style="border-left: 4px solid #84cc16; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>現場の知見:</strong> 単に「アイコンを描いて」と頼むと、用途に合わないPNG画像や汚いコードが出力されます。ClaudeのArtifactsに直接ベクターデータを描画させ、その場でプレビューしながら修正させるのが、現代のフロントエンド開発における最短ルートです。
 </div>
-
-
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvovbr2f-2-b/1000/550.jpg)
 
@@ -69,7 +66,7 @@ theme: "Acid Lime Hacker Space"
 <strong>プロの技:</strong> ClaudeのArtifacts画面右側に表示されるプレビューを確認しながら、「線の太さを2pxに変更して」と対話的に調整することで、デザインツールを開くことなく数分でプロダクションレベルのSVGが完成します。
 </div>
 
-## 5. Frequently Asked Questions
+## 5. よくある質問 (FAQ)
 
 Q: ChatGPTの画像生成機能とClaudeのArtifactsによるSVG生成の最大の違いは何ですか？
 

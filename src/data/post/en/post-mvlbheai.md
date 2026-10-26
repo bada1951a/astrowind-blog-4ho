@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Forest Emerald Bio"
 ---
 
+## 1. Critical AI Hallucination & Output Collapse Crisis
 
 Picture this: You are sitting in the bullpen of our San Francisco startup at 4:30 PM, staring at a flashing cursor in Claude. You just spent twenty minutes carefully typing out a massive, detailed request for a comprehensive go-to-market report. You explicitly outlined a strict 5-stage workflow: data ingestion, audience segmentation, competitor analysis, channel strategy, and final financial modeling. You hit enter, ready to wrap up your day. 
 

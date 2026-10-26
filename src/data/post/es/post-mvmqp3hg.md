@@ -8,7 +8,6 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Steel Silver Metallic"
 ---
 
-
 ## 1. El Caos del Webhook y el Esquematico Roto
 
 Eran las cinco de la tarde en nuestras oficinas del distrito 22@ en Barcelona, y el nuevo flujo de automatización en Make (el antiguo Integromat) acababa de colapsar por tercera vez consecutiva. Estábamos conectando los formularios de contacto y correos de propuestas comerciales con un CRM corporativo a través de un webhook. El problema crítico no era la herramienta no-code en sí, sino el paso intermedio: el modelo de lenguaje fallaba constantemente al interpretar las reglas de conversión de esquemas de datos. El texto del correo venía desestructurado, y al intentar mapearlo a formato JSON para enviarlo por la API, la IA inventaba campos, rompía el orden de las columnas o devolvía un formato markdown inválido que bloqueaba el parseador automático. El cliente esperaba el reporte consolidado en diez minutos, y el sistema acumulaba errores de sintaxis en cada ejecución.
@@ -16,8 +15,6 @@ Eran las cinco de la tarde en nuestras oficinas del distrito 22@ en Barcelona, y
 <div style="border-left: 4px solid #64748b; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Emergencia Operativa:</strong> Cuando un webhook recibe texto libre y debe transformarlo a una estructura tabular estricta, un prompt genérico basado solo en descripción verbal fracasará el 80% de las veces debido a la ambigüedad del lenguaje natural.
 </div>
-
-
 
 ![How to Write Few-Shot Prompts to Extract Tabular Data from Unstructured Text Prompt Guide](https://picsum.photos/seed/prompt-mvmqq3ns-5-b/1000/550.jpg)
 
@@ -27,7 +24,7 @@ Eran las cinco de la tarde en nuestras oficinas del distrito 22@ en Barcelona, y
 
 Para solucionar este cuello de botella en nuestro flujo en Madrid y Barcelona, rediseñamos la arquitectura del prompt utilizando el enfoque de **esquema de datos guiado por ejemplos**. En lugar de explicarle las reglas abstractas de negocio, le mostramos exactamente un caso de éxito y un caso borde dentro del mismo prompt. Esto reduce la deriva del modelo y garantiza que las claves del JSON o las columnas de la tabla markdown mantengan una paridad del 100% con el esquema requerido por nuestro webhook.
 
-## 3. Master Prompt Template
+## 3. Plantilla maestra de prompt lista para copiar y usar Template
 
 Aquí tienes la plantilla maestra probada en producción para copiar y pegar directamente en tus **Instrucciones Personalizadas** de ChatGPT, Claude Artifacts o llamadas API.
 
@@ -92,7 +89,7 @@ Para entornos de consultoría y corporativos donde el manejo de datos es crític
 <strong>Consejo de Arquitectura:</strong> Incluir al menos dos ejemplos contrastados (uno completo y otro con datos faltantes) dentro de la sección de Few-Shot reduce los errores de esquema en un 90%.
 </div>
 
-## 5. Frequently Asked Questions
+## 5. Preguntas Frecuentes (FAQ)
 
 Q: ¿Por qué es mejor usar Few-Shot en lugar de describir el esquema con texto largo?
 

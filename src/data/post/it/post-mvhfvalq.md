@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "Claude", "Dashboard", "AI Tips"]
 theme: "Industrial Blueprint"
 ---
 
+## 1. Emergenza improvvisa per allucinazioni dell'IA e risposte errate
 
 Erano le 19:30 in punto nel nostro studio a Milano, e avevamo un problema grosso quanto una cas
 

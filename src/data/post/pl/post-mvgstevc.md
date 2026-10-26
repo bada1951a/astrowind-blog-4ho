@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Modern Minimalist Slate"
 ---
 
+## 1. Awaryjna sytuacja związana z halucynacjami i błędami AI
 
 Wtorek, 8:30 rano, biuro na warszawskiej Woli. Klient z branży fintech wrzuca na nasz kanał Slack link do zagranicznego wideo, które w trzy dni zrobiło milion wyświetleń. Rzuca krótkie: „Potrzebujemy dokładnie takiej dynamiki narracji w naszej nowej serii materiałów edukacyjnych o kryptowalutach. Zróbcie mi strukturę tego skryptu na wczoraj, bo o 11:00 mamy spotkanie z zarządem”. 
 
@@ -82,8 +83,6 @@ a:</strong> Zapisz powyższy szablon w swojej firmowej bazie promptów (np. w No
 
 ### 1. Czy ten prompt zadziała w darmowej wersji ChatGPT?
 Tak, prompt zadziała zarówno w darmowej wersji (np. z modelem GPT-4o mini), jak i w wersjach płatnych czy u konkurencyjnych dostawców, takich jak Claude. Pamiętaj jednak, że zaawansowane modele LLM znacznie lepiej radzą sobie z wyłapywaniem subtelnych niuansów psychologicznych i konstrukcji retorycznych w tekście.
-
-
 
 ![ChatGPT Prompt to Reverse Engineer Any Viral YouTube Script Structure Prompt Guide](https://picsum.photos/seed/prompt-mvgsvvc6-9-b/1000/550.jpg)
 

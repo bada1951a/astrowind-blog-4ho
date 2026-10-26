@@ -8,7 +8,6 @@ tags: ["Claude Artifacts", "SVG Icons", "Web UI", "Prompt Engineering", "Fronten
 theme: "Rosewood Hardware Guide"
 ---
 
-
 ## 1. El Caos del Estilo Roto en Claude Artifacts
 
 Eran las 17:30 de un viernes gris en la oficina de nuestra consultora en el Paseo de la Castellana. Teníamos una demo con un cliente clave de banca en Barcelona para mostrar un dashboard interactivo de última generación. Todo pintaba bien hasta que le pedí a Claude que generara el componente principal con **Claude Artifacts**. El resultado fue una pesadilla visual: el contenedor principal escupía un HTML plano sin clases de Tailwind, el SVG del icono corporativo aparecía gigante desbordando el viewport, y los estilos incrustados chocaban con el sistema de diseño heredado del cliente. La pantalla se había convertido en un collage abstracto de errores visuales a quince minutos de la reunión.
@@ -18,8 +17,6 @@ El problema principal no era la capacidad del modelo, sino mi pésima estrategia
 <div style="border-left: 4px solid #be123c; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Emergencia en Produccion:</strong> Cuando un componente interactivo rompe el diseño dentro de Artifacts, nunca intentes corregirlo con parches de texto superficiales. Debes reestructurar el prompt base exigiendo estilos inline seguros o clases utilitarias puras de Tailwind sin dependencias externas ocultas.
 </div>
-
-
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvnfnvoa-5-b/1000/550.jpg)
 
@@ -35,7 +32,7 @@ Mientras que GPT Canvas se enfoca en la escritura colaborativa de bloques de tex
 
 Si no especificas un bloque de estilos autocontenido, Claude intentará adivinar las clases CSS, mezclando selectores globales que destruyen la consistencia visual de tu aplicación web.
 
-## 3. Master Prompt Template para Iconos SVG e Interfaz Web
+## 3. Plantilla maestra de prompt lista para copiar y usar Template para Iconos SVG e Interfaz Web
 
 Tras varias iteraciones de prueba y error en proyectos reales, diseñé una plantilla de prompt altamente estructurada que garantiza componentes limpios, escalables y visualmente impecables en **Claude Artifacts**.
 
@@ -72,7 +69,7 @@ Para sacar el máximo provecho a esta técnica en tu flujo de trabajo diario, te
 <strong>Consejo de Optimizacion:</strong> Utiliza siempre la version mas reciente de Claude 3.5 Sonnet para tareas de Artifacts complejos. Su capacidad para manejar logica frontend y diseño visual en paralelo supera con creces a modelos anteriores.
 </div>
 
-## 5. Frequently Asked Questions
+## 5. Preguntas Frecuentes (FAQ)
 
 Q: Por que los iconos SVG generados por Claude a veces aparecen con dimensiones gigantescas en la pantalla?
 

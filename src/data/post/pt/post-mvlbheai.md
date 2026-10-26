@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Mint Fresh Engineering"
 ---
 
+## 1. Situação de emergência com alucinações e erros da IA
 
 Eram exatamente 16h40 de uma terca-feira abafada em um escritório na Avenida Paulista. Um padrão de Expressão Regular que eu precisava extrair de uma base de logs volumosa teimava em falhar, e eu passara a última hora alternando freneticamente entre o editor de código e a interface do ChatGPT para tentar consertar a lógica. Pedi para o modelo gerar a regex corrigida, ele me devolveu um código com uma sintaxe bonita, testei no terminal e o resultado foi um erro estrondoso. Pedi explicações, e a IA inventou uma flag inexistente na documentação oficial, jurando de pés juntos que funcionava. Aquele momento de frustração resume bem o calcanhar de Aquiles das IAs generativas: a alucinação de dados. Quando confiamos cegamente em respostas que parecem corretas mas são pura ficção estatística, perdemos horas preciosas de trabalho produtivo.
 

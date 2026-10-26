@@ -8,8 +8,7 @@ tags: ["Claude AI", "SVG Icons", "Web Illustrations", "Prompt Engineering", "Des
 theme: "Warm Coffee Latte"
 ---
 
-
-## 1. [Opening Story/Problem]
+## 1. Situasi Kritis Akibat Halusinasi AI dan Output Menyesatkan
 
 Pukul 08.45 WIB di SCBD Jakarta. Senin pagi yang sibuk, kurang dari 15 menit sebelum *all-hands meeting* atau rapat pleno mingguan dimulai. Tiba-tiba bos mengirim pesan di grup WhatsApp kantor: "Tolong rangkumkan 30 laporan tren industri yang masuk akhir pekan lalu ke dalam 3 poin ringkas untuk slide presentasi sekarang juga, lengkap dengan ikon visual pendukung tiap poin!" Jantung langsung berdegup kencang. Mengandalkan desainer grafis kantor tentu tidak mungkin karena mereka sedang mengejar deadline lain. Membuka software desain vektor dari nol? Waktu tidak akan sempat. Di saat genting seperti ini, membuat ilustrasi web dan ikon kustom secara manual adalah jalan pintas menuju kepanikan total.
 
@@ -17,17 +16,15 @@ Pukul 08.45 WIB di SCBD Jakarta. Senin pagi yang sibuk, kurang dari 15 menit seb
 <strong>Catatan Lapangan:</strong> Masalah klasik pekerja digital di kawasan bisnis modern adalah tuntutan visual berkualitas tinggi dalam waktu yang sangat instan. Menggunakan prompt generik seperti "buatkan gambar ikon bisnis" biasanya berujung pada hasil raster beresolusi rendah yang pecah saat dimasukkan ke slide presentasi atau website perusahaan.
 </div>
 
-
-
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvovd9v2-10-b/1000/550.jpg)
 
-## 2. [Root Cause / Architecture]
+## 2. Analisis Mendalam Kegagalan Prompt dan Kerusakan Logika
 
 Mengapa perintah sederhana sering gagal total? Kebanyakan profesional mengetik instruksi yang terlalu umum ke dalam AI tanpa batasan teknis. Hasilnya, AI menebak-nebak ukuran, skema warna, dan format file yang berujung pada file PNG berlatar belakang putih yang kaku atau kode SVG yang berantakan (*broken vector path*). 
 
 Sebagai praktisi otomatisasi, kuncinya terletak pada pemanfaatan fitur **Claude Artifacts**. Fitur ini tidak hanya menghasilkan teks percakapan, tetapi membuka panel kerja terpisah di sisi kanan layar di mana kode program atau elemen visual dapat dirender secara *live*. Dengan menggabungkan instruksi spesifik berbasis parameter desain (`viewBox`, *stroke-width*, dan *color palette*), Claude dapat merancang aset vektor yang bersih, responsif, dan siap diunduh dalam format `.svg` murni hanya dengan satu kali eksekusi prompt.
 
-## 3. [Master Prompt Template]
+## 3. Templat Master Prompt Siap Pakai yang Sangat Efektif
 
 Berikut adalah templat master prompt siap pakai yang telah dioptimalkan khusus untuk Claude Artifacts agar menghasilkan ikon atau ilustrasi web kustom yang estetis dan siap pakai. Salin teks di bawah ini, sesuaikan bagian di dalam tanda kurung siku, lalu masukkan ke kolom percakapan Claude.
 
@@ -50,7 +47,7 @@ Technical Requirements:
 Deliverable: Render visual interaktif langsung di dalam panel Artifacts beserta tombol kecil untuk menyalin kode SVG mentah.
 ```
 
-## 4. [Practical Variations / Safety Tips]
+## 4. Tips & Peringatan Penting Pakar Prompt Engineering
 
 Untuk mendapatkan hasil visual yang konsisten dan menghindari halusinasi estetika dari AI, terapkan beberapa tips praktis berikut dalam pekerjaan harian Anda:
 
@@ -62,7 +59,7 @@ Untuk mendapatkan hasil visual yang konsisten dan menghindari halusinasi estetik
 <strong>Tips Keamanan Token:</strong> Simpan templat master di dalam snippet pengelola teks lokal Anda. Ini akan menghemat waktu pengetikan saat menghadapi situasi darurat di kantor dan menjaga konsistensi gaya visual dari waktu ke waktu.
 </div>
 
-## 5. Frequently Asked Questions
+## 5. Pertanyaan yang Sering Diajukan (FAQ)
 
 Q: Apakah saya memerlukan akun Claude Pro berbayar untuk bisa menggunakan fitur Artifacts?
 

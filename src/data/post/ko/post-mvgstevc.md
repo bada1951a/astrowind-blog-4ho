@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Mint Fresh Engineering"
 ---
 
+## 1. AI 답변 퀄리티 붕괴와 업무 멘붕의 순간
 
 오후 4시, 판교의 한 IT 회사 회의실. 팀장님이 갑자기 다가와 스마트폰 화면을 들이밀며 말했습니다. "이 영상 봐봐. 조회수가 일주일 만에 200만이 넘었어. 우리도 다음 주 마케팅 캠페인에 이 구조 그대로 써서 기획서 올려봐. 발표는 30분 뒤야." 
 

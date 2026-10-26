@@ -8,6 +8,7 @@ tags: ["Claude Artifacts", "SVG", "Prompt Engineering", "Design UI"]
 theme: "Sandstone Desert Minimal"
 ---
 
+## 1. Awaryjna sytuacja związana z halucynacjami i błędami AI
 
 <div style="border-left: 4px solid #a16207; padding: 12px 16px; margin: 20px 0; background-color: rgba(161,98,7,0.05); border-radius: 4px; color: #111827;">
 <strong>Cel operacyjny:</strong> Tworzenie spójnych, responsywnych i gotowych do wdrożenia grafik SVG za pomocą Claude Artifacts z pominięciem chaotycznego kodowania ręcznego.
@@ -20,8 +21,6 @@ W zeszłym tygodniu w jednym z warszawskich software house'ów przeżyliśmy chw
 Projekt wisiał na włosku, a do prezentacji przed zarządem zostały niecałe dwie godziny. Zamiast panicznie poprawiać każdą ścieżkę w Illustratorze, postanowiłem wykorzystać **Claude Artifacts** i precyzyjnie skonstruowany prompt systemowy, który wymusi na modelu wygenerowanie czystego, semantycznego kodu SVG z zachowaniem nowoczesnego, minimalistycznego stylu *Sandstone Desert Minimal*.
 
 ---
-
-
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvovd300-9-b/1000/550.jpg)
 

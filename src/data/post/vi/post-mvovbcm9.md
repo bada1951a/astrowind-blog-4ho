@@ -8,7 +8,6 @@ tags: ["Prompt Engineering", "Claude", "SVG Icons", "Web Design", "AI Automation
 theme: "Electric Cyan Speed"
 ---
 
-
 ## 1. Sự Cố Tại Văn Phòng Tech Hub Quận 1
 
 Sáng thứ Hai đầu tuần tại tòa nhà công nghệ cao ở Quận 1, đội ngũ phát triển sản phẩm của chúng tôi đang đối mặt với một ca khó đỡ. Hệ thống CS tự động vừa gặp sự cố nghiêm trọng do lỗ hổng bảo mật, khiến chatbot trả về những nội dung vô lý và đứng trước nguy cơ bị chiếm quyền hệ thống. Ban giám đốc yêu cầu ngay lập tức phải thay đổi toàn bộ giao diện trang thông báo bảo trì, đồng thời bổ sung các icon SVG và hình minh họa web trực quan để trấn an khách hàng, làm sao vừa chuyên nghiệp vừa thể hiện được tính năng bảo mật cấp cao.
@@ -20,8 +19,6 @@ May mắn thay, tôi đã thử nghiệm kết hợp Claude Artifacts với mộ
 <div style="border-left: 4px solid #06b6d4; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Mẹo thực chiến:</strong> Khi cần xử lý các tình huống khẩn cấp liên quan đến giao diện web hoặc biểu tượng hệ thống, đừng mất thời gian loay hoay với các phần mềm đồ họa nặng. Hãy tận dụng sức mạnh render trực tiếp của Claude Artifacts để tạo và xem trước vector ngay lập tức.
 </div>
-
-
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvovdghc-11-b/1000/550.jpg)
 

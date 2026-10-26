@@ -8,6 +8,7 @@ tags: ["Midjourney V6", "Prompt Engineering", "Character Consistency", "AI Workf
 theme: "Retro Monokai"
 ---
 
+## 1. Critical AI Hallucination & Output Collapse Crisis
 
 It was 8:45 PM on a Tuesday at our Manhattan marketing agency. Our morning sync with the executive board was scheduled for 9:00 AM sharp, and the pitch deck for our major rebranding campaign was completely missing its visual storyboard. My director walked over to my desk with a caffeine-fueled panic in his eyes: "We need 20 distinct storyboard scenes of our lead persona, Maya, going through her daily routine. But every time I run Midjourney V6, Maya turns into a completely different person in every frame. The client will tear us apart!" He was right. In scene one, she was a brunette with sharp cheekbones; in scene two, she had blonde hair and a round face. Traditional prompt stitching and vague descriptions like "same woman" were failing completely, threatening to derail a six-figure enterprise presentation.
 
@@ -17,7 +18,7 @@ It was 8:45 PM on a Tuesday at our Manhattan marketing agency. Our morning sync 
 
 ![Midjourney V6 Prompt Guide to Maintain Consistent Character Faces Across 20 Scenes Prompt Guide](https://picsum.photos/seed/prompt-mvhpcgc6-1-b/1000/550.jpg)
 
-## The Root Cause: Why Standard Prompts Fail at Character Continuity
+## 2. Root Cause Breakdown of Prompt Failures and Logic Flaws Why Standard Prompts Fail at Character Continuity
 
 If you simply type "A 30-year-old female tech executive named Maya working at a desk" and then change the action to "Maya drinking coffee in a cafe," Midjourney V6 relies on probabilistic token distribution. The model re-rolls the latent space seed for the character's facial topology with every new action phrase. 
 
@@ -28,7 +29,7 @@ To lock down facial consistency across 20 distinct scenes, we have to bypass gen
 
 3. Environmental Isolation: Separating the character description from the changing background action so the rendering engine doesn't bleed environmental traits into the face.
 
-## The Master Prompt Template & Step-by-Step Workflow
+## 3. Copy-and-Paste Master Prompt Engineering Template & Step-by-Step Workflow
 
 To fix our executive presentation crisis, I built a structured prompt template in Claude, then deployed it directly into our Midjourney batch workflow. Here is the exact template you can copy, paste, and adapt for your own multi-scene projects.
 
@@ -50,7 +51,7 @@ To fix our executive presentation crisis, I built a structured prompt template i
 
 3. Populate the Variables: Keep your `[Base Character Definition]` identical across all 20 scene prompts, append your `--cref [URL]` and `--cw 100` (or `--cw 0`), and only modify the `[Scene Action]` and lighting tags.
 
-## Practical Variations and Failure Prevention
+## 4. Professional Prompt Architect Precautions & Tips
 
 When producing 20 or more sequential scenes, you will inevitably run into minor inconsistencies or style drift. Here is how to debug common Midjourney V6 issues:
 
@@ -58,7 +59,7 @@ When producing 20 or more sequential scenes, you will inevitably run into minor 
 - Lighting Discrepancies: Midjourney V6 can sometimes render harsh studio lighting even in outdoor scenes. Combat this by adding strict environmental lighting tags at the end of your prompts, such as `soft overcast morning window light` or `warm neon cyberpunk city glow`.
 - Aspect Ratio Locking: Always keep `--ar 16:9` or `--ar 9:16` consistent across all prompts in your storyboard. Changing aspect ratios mid-sequence forces the composition engine to recalculate facial geometry, which triggers noticeable face morphing.
 
-## Frequently Asked Questions
+## 5. Frequently Asked Questions (FAQ)
 
 ### Can I use character reference (--cref) with multiple characters in one scene?
 No. Midjourney V6's `--cref` parameter is currently designed to track a single dominant character reference URL. If your scene requires two consistent characters, you will need to generate them separately using image-to-image workflows or composite them in post-production.

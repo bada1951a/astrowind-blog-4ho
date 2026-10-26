@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Matte Black stealth"
 ---
 
+## 1. Emergenza improvvisa per allucinazioni dell'IA e risposte errate
 
 Erano le 19:30 di martedì nel nostro studio a Milano, e la tensione si poteva tagliare con il coltello. Eravamo nel bel mezzo dello sprint per sviluppare un prompt di copywriting e analisi dati per il lancio della nuova campagna video di un cliente chiave. Il brief era spietato: analizzare i trenta video con le migliori performance nel settore fintech, estrarre il pattern strutturale esatto che generava tassi di retention superiori all'ottanta percento, e tradurlo in un framework di scrittura riutilizzabile. Il problema? Avevamo le trascrizioni grezze di trenta video da quindici minuti l'uno. Dieci ore di parlato puro, e il team di content strategist rischiava il burnout totale prima ancora di iniziare a scrivere la prima riga di copione.
 
@@ -83,4 +84,4 @@ Assolutamente sì. Anzi, per compiti di analisi testuale complessa e strutturazi
 Esistono estensioni browser e tool di trascrizione basati su API che estraggono il file SRT o TXT pulito dai video di YouTube in pochi secondi. Assicurati di rimuovere i timestamp numerici prima di incollare il testo nel prompt per evitare di sprecare token preziosi.
 
 ### Il template generato può essere utilizzato per qualsiasi nicchia di mercato?
-Sì. Il valore del reverse engineering strutturale risiede nel fatto che estrae la *scheletrica psicologica* del video (ritmo, open loop, transizioni di valore). Che tu stia parlando di finanza, fitness o tecnologia, la struttura di retention dello spettatore rimane fondamentalmente la stessa. 
+Sì. Il valore del reverse engineering strutturale risiede nel fatto che estrae la *scheletrica psicologica* del video (ritmo, open loop, transizioni di valore). Che tu stia parlando di finanza, fitness o tecnologia, la struttura di retention dello spettatore rimane fondamentalmente la stessa.

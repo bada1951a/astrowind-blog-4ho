@@ -8,8 +8,7 @@ tags: ["Prompt Engineering", "Claude", "SVG", "UI Design", "Productivité"]
 theme: "Mint Fresh Engineering"
 ---
 
-
-## 1. [Opening Story/Problem]
+## 1. Crise d'hallucination de l'IA et panne de productivité
 
 Il est 17h45 dans une tour de verre à Paris La Défense. Demain matin, notre agence de conseil doit soumettre une offre commerciale critique à un consortium d'investisseurs internationaux. Le contenu stratégique est irréprochable, mais la traduction automatique du dossier a laissé des traces : des tournures maladroites, des phrases froides et un style globalement rigide qui trahit instantanément le manque de naturel. Pis encore, la direction artistique visuelle fournie par l'équipe de design ne correspond pas du tout au ton moderne et épuré attendu par ces acheteurs anglo-saxons. Nous avons besoin de graphismes percutants et d'icônes SVG sur mesure pour illustrer nos propositions de valeur, mais aucun graphiste n'est disponible à cette heure tardive.
 
@@ -21,11 +20,9 @@ Heureusement, en tant qu'ingénieur en prompt design, je sais que le problème n
 <strong>Alerte Produit :</strong> Oubliez les requêtes vagues. Pour obtenir du code SVG exploitable sans bugs de rendu, l'utilisation de Claude Artifacts est indispensable car elle isole le code dans un panneau interactif exécutable en temps réel.
 </div>
 
-
-
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvovc4w0-4-b/1000/550.jpg)
 
-## 2. [Root Cause / Architecture]
+## 2. Analyse approfondie des échecs de prompt et failles logiques
 
 Pourquoi un prompt simple échoue-t-il systématiquement lorsqu'on demande du code SVG à une IA ? 
 Premièrement, les modèles de langage génèrent du texte brut. Sans contrainte structurelle explicite, ils mélangent explications textuelles et balises XML/SVG, ce qui corrompt le code lors de la copie. 
@@ -40,7 +37,7 @@ Pour corriger cela, nous appliquons une architecture de prompt en 4 couches dist
 
 4. **Format de Sortie (Output Format) :** Exiger un affichage via **Claude Artifacts** avec un aperçu interactif immédiat et un bloc de code propre.
 
-## 3. [Master Prompt Template]
+## 3. Modèle de prompt maître pratique prêt à l'emploi
 
 Voici le prompt maître testé et validé pour générer des illustrations vectorielles et des icônes sur mesure sans aucune erreur de syntaxe. Copiez-collez ce template dans Claude en adaptant les variables entre crochets.
 
@@ -70,7 +67,7 @@ Génère un ensemble de [Nombre] icônes SVG sur mesure représentant les concep
 Affiche le résultat directement dans un conteneur Claude Artifacts interactif pour que je puisse visualiser le rendu visuel en temps réel, tout en fournissant le code source complet et propre dans un bloc de code séparé.
 ```
 
-## 4. [Practical Variations / Safety Tips]
+## 4. Conseils et précautions d'un ingénieur de prompt
 
 Pour aller plus loin et optimiser votre productivité au quotidien, voici quelques astuces de pro pour affiner vos générations graphiques :
 
@@ -82,7 +79,7 @@ Pour aller plus loin et optimiser votre productivité au quotidien, voici quelqu
 <strong>Astuce Pro :</strong> Utilisez le mode Artifacts de Claude pour tester des variations de couleurs à la volée en écrivant simplement dans le chat : <em>"Modifie la couleur principale #059669 en bleu marine #1E3A8A sur l'ensemble des icônes"</em>.
 </div>
 
-## 5. Frequently Asked Questions
+## 5. Foire Aux Questions (FAQ)
 
 Q: Comment intégrer directement le code SVG généré par Claude Artifacts dans un document Word ou PowerPoint pour une proposition commerciale ?
 

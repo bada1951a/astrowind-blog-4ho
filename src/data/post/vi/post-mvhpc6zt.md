@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Matte Black stealth"
 ---
 
+## 1. Tình huống khẩn cấp do AI trả lời ảo giác và sai lệch
 
 Đồng hồ trên tường văn phòng ở Quận 1 điểm 11 giờ đêm, sếp đứng sau lưng thở dài giục dự án storyboard quảng cáo 20 cảnh. Mọi thứ đã chuẩn bị xong, nhưng khi ném đống prompt vào Midjourney V6 để tạo hình nhân vật chính cho chuỗi video, thảm họa xảy ra. Cảnh 1 là một cô gái tóc ngắn cá tính, sang cảnh 2 bỗng biến thành một bà cô trung niên, sang cảnh 3 lại hóa thành hot girl Hàn Quốc mắt một mí. Gương mặt nhân vật nhảy múa loạn xạ qua từng khung hình, hoàn toàn không thể dùng được cho một chiến dịch thương mại nghiêm túc.
 

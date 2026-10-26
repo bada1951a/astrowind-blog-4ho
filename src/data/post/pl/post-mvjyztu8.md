@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips", "Whitepaper"]
 theme: "Retro Monokai"
 ---
 
+## 1. Awaryjna sytuacja związana z halucynacjami i błędami AI
 
 Siedziałem w przeszklonej sali konferencyjnej na warszawskiej Woli, patrząc na zegarek, gdy zbliżał się ostateczny termin oddania kompleksowej białej księgi dla klienta z branży fintech. Mieliśmy przygotować 5000-słowowy, dogłębny raport techniczny na temat architektury mikroserwisów opartych na zdarzeniach. W ferkucie walki próbowaliśmy połączyć zaawansowane narzędzia nocodowe z zewnętrznym webhookiem, generując sekcje raportu bezpośrednio ze zmiennych konfiguracyjnych. Katastrofa nadeszła, gdy AI kompletnie zgubiło kontekst schematów danych. Zamiast spójnego, głębokiego tekstu analitycznego, ChatGPT wypluwał genetyczny bełkot, myląc formaty JSON z polami relacyjnej bazy danych i tracąc wątek merytoryczny już w trzeciej sekcji. Limit tokenów został przekroczony, spójność argumentacji legła w gruzach, a zespół stał pod ścianą.
 

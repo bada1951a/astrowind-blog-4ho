@@ -8,8 +8,7 @@ tags: ["Prompt Engineering", "Claude", "SVG Icons", "Web Design", "AI Automation
 theme: "Mint Fresh Engineering"
 ---
 
-
-## 1. [Opening Story/Problem]
+## 1. Emergenza improvvisa per allucinazioni dell'IA e risposte errate
 
 Erano le 17:30 in uno studio di design in zona Brera a Milano. Avevamo una scadenza critica: il cliente ci aveva appena chiesto di inserire nel nuovo portale e-commerce una serie di icone personalizzate e un'illustrazione hero in stile flat design, coerenti con la nostra palette aziendale color menta. Peccato che il nostro illustratore fosse in malattia e i classici siti di stock offrissero solo grafica trita e ritrutta che stonava con il nostro layout. Cercando una soluzione rapida, ho aperto Claude e ho chiesto un generico "disegna un'icona SVG per la spedizione". Il risultato? Un codice sporco, tag troncati a metà, e una grafica che sembrava uscita da un clipart degli anni '90. Il cliente aspettava il prototipo interattivo per la mattina dopo, e noi eravamo bloccati a debuggare codice SVG illeggibile generato a casaccio dall'intelligenza artificiale.
 
@@ -17,11 +16,9 @@ Erano le 17:30 in uno studio di design in zona Brera a Milano. Avevamo una scade
 <strong>La svolta operativa:</strong> Smettere di trattare l'IA come un semplice motore di ricerca e iniziare a sfruttare <strong>Claude Artifacts</strong> insieme a un prompt strutturato per il codice vettoriale. Invece di chiedere un disegno astratto, ho impostato una struttura basata su coordinate viewBox precise, tag semantici e proprietà CSS inline, ottenendo file SVG scalabili, puliti e pronti per il web in meno di sessanta secondi.
 </div>
 
-
-
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvovcj1g-6-b/1000/550.jpg)
 
-## 2. [Root Cause / Architecture]
+## 2. Analisi approfondita dei fallimenti di prompt e logica
 
 Il motivo principale per cui i prompt tradizionali falliscono quando si richiede grafica vettoriale risiede nella natura stessa dei Large Language Models. Chiedere a Claude di "disegnare" o "creare un'immagine" senza specificare il formato di output spinge il modello a generare descrizioni testuali o codice HTML/CSS confuso. 
 
@@ -33,7 +30,7 @@ Per ottenere risultati professionali in ambito web design, dobbiamo sfruttare l'
 
 3. **Controllo dello stile visivo:** Specificare con precisione la palette di colori (es. codici esadecimali mirati), lo spessore dei tratti (`stroke-width`) e la presenza o meno di sfondi trasparenti.
 
-## 3. [Master Prompt Template]
+## 3. Template master di prompt pratico pronto all'uso
 
 Ecco il prompt definitivo testato sul campo nello studio di Milano, pronto da copiare e incollare in **Claude** attivando la funzionalità Artifacts.
 
@@ -61,7 +58,7 @@ Sei un Senior UI/UX Designer ed esperto di grafica vettoriale SVG. Il tuo compit
 3. Assicurati che tutti i tracciati siano chiusi correttamente e scalabili su qualsiasi schermo Retina.
 ```
 
-## 4. [Practical Variations / Safety Tips]
+## 4. Avvertenze e suggerimenti dell'architetto di prompt
 
 Quando lavori con i vettori generati dall'intelligenza artificiale, tieni a mente queste brevi linee guida per evitare errori comuni:
 
@@ -73,7 +70,7 @@ Quando lavori con i vettori generati dall'intelligenza artificiale, tieni a ment
 <strong>Consiglio Pro:</strong> Se noti che Claude taglia il codice a metà perché ha raggiunto il limite di token in output, scrivi semplicemente nel messaggio successivo: <em>"Riprendi esattamente dall'ultimo tag chiuso senza ripetere il codice precedente"</em>.
 </div>
 
-## 5. Frequently Asked Questions
+## 5. Domande Frequenti (FAQ)
 
 Q: Posso usare questo prompt anche su ChatGPT o Gemini?
 

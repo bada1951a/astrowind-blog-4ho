@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips", "Automation"]
 theme: "Tokyo Neon Violet"
 ---
 
+## 1. Tình huống khẩn cấp do AI trả lời ảo giác và sai lệch
 
 Ngồi đực mặt ra ở phòng họp tầng 12 tòa nhà văn phòng công nghệ cao tại Quận 1, TP. Hồ Chí Minh, mồ hôi tôi vã ra như tắm khi sếp tổng vừa ném lên bàn một thử thách oái oăm: bộ tài liệu onboarding dày 500 phút đọc cho lứa nhân sự mới vừa gia nhập tuần này phải được rút gọn, biên tập thành whitepaper chiến lược 5000 chữ, đồng thời phải tách ra thành các bộ câu hỏi quiz và flashcard tương tác ngay trong vòng 10 phút tới để kịp buổi chiều orientation.
 

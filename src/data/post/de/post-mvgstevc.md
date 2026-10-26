@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Tokyo Neon Violet"
 ---
 
+## 1. Kritischer KI-Halluzinations- und Qualitätsnotfall
 
 Es ist Dienstag, kurz vor 21:00 Uhr im Frankfurter Banken- und Consultingbereich. Draußen regnet es auf die Hochhäuser, drinnen brennt noch Licht. Auf meinem Schreibtisch stapeln sich die Anforderungen zur Automatisierung von Geschäftsberichten. Mein Chef kommt gestresst in mein Büro: „Die Vorstandspräsentation morgen Früh braucht einen komplett neuen Aufhänger. Die Leute schlafen bei unseren Zahlen ein. Schau dir mal an, wie die Top-Finanzkanäle auf YouTube komplexe Bilanzen in packende 10-Minuten-Storys verpacken. Brich mir diese Skripte sofort in eine wiederverwendbare Struktur herunter, damit wir das auf unsere Finanzdaten anwenden können!“ Kein „Guten Abend“, keine Vorwarnung. Nur die nackte Panik vor trockenen Folien.
 
@@ -54,7 +55,7 @@ Analysiere das untenstehende Transkript exakt nach folgenden Kriterien und gib d
 [HIER DAS YOUTUBE-TRANSKRIPT EINFÜGEN]
 ```
 
-### Praktische Variationen und Sicherheits-Tipps
+## 4. Praxistipps und Warnungen vom Prompt-Architekten und Sicherheits-Tipps
 
 Im Banken- und Consultingumfeld ist Datensicherheit entscheidend. Nutzen Sie niemals sensible Kundendaten oder interne Bilanzen in öffentlichen Prompts. Verwenden Sie diesen Prompt ausschließlich für die *Strukturanalyse* externer, öffentlich zugänglicher Medieninhalte. 
 

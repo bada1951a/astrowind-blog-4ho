@@ -8,8 +8,7 @@ tags: ["Prompt Engineering", "Claude Artifacts", "SVG Icons", "Web Design", "Dat
 theme: "Warm Coffee Latte"
 ---
 
-
-## 1. [Opening Story/Problem]
+## 1. Kritischer KI-Halluzinations- und Qualitätsnotfall
 
 Es war kurz vor dem Quartalsbericht im Frankfurter Bankenviertel, als unser Team vor einer typischen Compliance-Hürde stand: Für eine wichtige Präsentation sollten maßgeschneiderte SVG-Icons und Web-Illustrationen erstellt werden, die reale Geschäftsszenarien widerspiegeln. Das Problem dabei war, dass aufgrund strenger interner Sicherheitsrichtlinien absolut keine echten Kundennamen oder sensiblen Portfolio-Daten in die Prompt-Eingaben für generative KI-Systeme fließen durften. 
 
@@ -19,11 +18,9 @@ Ein einfacher Prompt wie "Erstelle ein Icon für die Kundenberatung von Müller 
 <strong>Tipp aus der Praxis:</strong> Statt sensibler Realnamen nutzen wir semantische Rollen-Metaphern (z. B. "Mandant Alpha" oder "Segment Beta"). So bleibt die semantische Logik der Illustration erhalten, während die Compliance-Vorgaben zu 100 Prozent erfüllt werden.
 </div>
 
-
-
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvovbxz1-3-b/1000/550.jpg)
 
-## 2. [Root Cause / Architecture]
+## 2. Detaillierte Ursachenanalyse von Prompt- und Logikfehlern
 
 Warum scheitern herkömmliche Prompts bei der Erstellung von SVG-Illustrationen über Claude Artifacts? Der Hauptgrund liegt in der unzureichenden Trennung von semantischem Kontext und visueller Syntax. Wenn man der KI einfach nur sagt "Mache ein cooles Icon", raten Modelle im Bereich von Farbpaletten, Linienstärken und viewBox-Dimensionen. Das Resultat sind unstrukturierte SVG-Strings, die im Webbrowser fehlerhaft gerendert werden oder nicht zum Corporate Design passen.
 
@@ -34,7 +31,7 @@ Die Lösung ist eine modulare Prompt-Architektur, die speziell auf die **Claude 
 
 3. **Artifact Isolation:** Ausgabe des reinen SVG-Codes im isolierten Artifacts-Fenster zur direkten Vorschau und zum Export.
 
-## 3. [Master Prompt Template]
+## 3. Sofort einsetzbare Master-Prompt-Vorlage
 
 Der folgende praxiserprobte Master-Prompt wurde genau für dieses Szenario entwickelt. Kopieren Sie ihn in Ihre **Claude** Sitzung, passen Sie die eckigen Klammern an Ihre Bedürfnisse an und nutzen Sie die Artifacts-Funktion.
 
@@ -58,7 +55,7 @@ Du bist ein erfahrener UI/UX-Designer und SVG-Architekt. Erstelle eine skalierba
 [Fügen Sie hier Ihren anonymisierten Geschäftskontext ein, z.B.: "Ein Dashboard-Icon, das die sichere Verschlüsselung von Dokumenten zwischen zwei geschützten Servern darstellt."]
 ```
 
-## 4. [Practical Variations / Safety Tips]
+## 4. Praxistipps und Warnungen vom Prompt-Architekten
 
 Um die Qualität der generierten SVGs weiter zu maximieren und typische Fehlerquellen auszuschließen, sollten Sie folgende Best Practices beachten:
 
@@ -70,7 +67,7 @@ Um die Qualität der generierten SVGs weiter zu maximieren und typische Fehlerqu
 <strong>Sicherheitshinweis:</strong> Nutzen Sie vor dem Deployment in der Produktion immer einen SVG-Sanitizer (wie DOMPurify), um sicherzustellen, dass keine unerwünschten Skripte oder Event-Handler in den generierten Code gerutscht sind.
 </div>
 
-## 5. Frequently Asked Questions
+## 5. Häufig gestellte Fragen (FAQ)
 
 Q: Warum nutze ich für SVG-Generierung ausgerechnet Claude Artifacts anstelle von Standard-Chat-Antworten?
 

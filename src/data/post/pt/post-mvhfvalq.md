@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "Claude 3.5 Sonnet", "Artifacts", "Dashboards", "IA
 theme: "Retro Monokai"
 ---
 
+## 1. Situação de emergência com alucinações e erros da IA
 
 Eram 18:45 de uma sexta-feira em nossa empresa de tecnologia em Sao Paulo, construindo fluxos de trabalho rápidos com LLMs, quando o diretor de operações entrou na minha sala com uma urgência absurd
 

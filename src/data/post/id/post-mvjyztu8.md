@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips", "Otomatisasi"]
 theme: "Rosewood Hardware Guide"
 ---
 
+## 1. Situasi Kritis Akibat Halusinasi AI dan Output Menyesatkan
 
 Jam menunjukkan pukul 08.15 pagi di salah satu gedung pencakar langit kawasan bisnis Sudirman Central Business District (SCBD) Jakarta. Meeting eksekutif dengan Managing Director dijadwalkan tepat pukul 09.
 

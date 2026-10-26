@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Midnight Navy Royal"
 ---
 
+## 1. Tình huống khẩn cấp do AI trả lời ảo giác và sai lệch
 
 Ngồi đi, để tôi kể nghe vụ hú vía chiều thứ Sáu tuần rồi tại văn phòng ở TP.HCM. Sếp sầm sập bước vào bàn,ném một đường link video YouTube đang đạt mốc 2 triệu view về ngách tài chính cá nhân và phán một câu xanh rờn: "Sáng thứ Hai tuần sau, đội mình phải ra một video cấu trúc y chang vậy nhưng đổi sang chủ đề đầu tư bất động sản, phải thật cuốn hút và giữ chân người xem từ giây đầu tiên". 
 
@@ -82,8 +83,6 @@ a:</strong> Nếu transcript quá dài (trên 5.000 từ), hãy dùng Claude tha
 
 ### 1. Tôi nên lấy transcript của video YouTube bằng cách nào nhanh nhất?
 Bạn có thể sử dụng các tiện ích mở rộng (extensions) trên trình duyệt Chrome chuyên trích xuất phụ đề YouTube, hoặc copy trực tiếp phần "Show transcript" ngay dưới video trên máy tính, sau đó xóa các mốc thời gian thừa trước khi ném vào AI.
-
-
 
 ![ChatGPT Prompt to Reverse Engineer Any Viral YouTube Script Structure Prompt Guide](https://picsum.photos/seed/prompt-mvgswe5g-11-b/1000/550.jpg)
 

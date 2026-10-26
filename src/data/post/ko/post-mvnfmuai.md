@@ -8,7 +8,6 @@ tags: ["Claude", "Artifacts", "SVG", "프롬프트엔지니어링", "UIUX"]
 theme: "Pure Titanium Clean"
 ---
 
-
 ## 1. 월요일 아침, 전사 주간 회의 직전의 아수라장
 
 월요일 오전 8시 45분, 판교 테크노밸리의 한 IT 기업 회의실 앞. 9시 정각에 시작되는 전사 주간 회의를 불과 15분 앞두고 마케팅 전략 기획팀 매니저인 나의 스마트폰과 슬랙(Slack)은 이미 폭발 직전이었다. 주말 사이 글로벌 테크 시장과 경쟁사 동향을 담은 핵심 뉴스 및 리포트가 무려 30편이나 쏟아졌고, 임원진은 방대한 이 자료들을 직관적으로 시각화한 커스텀 SVG 아이콘 세트와 웹 일러스트 대시보드를 회의 자료에 즉시 반영하라는 긴급 지시를 내렸다.
@@ -20,8 +19,6 @@ theme: "Pure Titanium Clean"
 <div style="border-left: 4px solid #334155; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>실무자 노트:</strong> 단순 이미지 생성 AI는 웹 개발에 필요한 벡터 코드를 제공하지 못합니다. Claude Artifacts를 활용하면 화면 우측에 독립된 패널을 띄워놓고 순수 코드로 작성된 확장 가능한 SVG 일러스트와 아이콘을 실시간으로 렌더링하고 수정할 수 있습니다.
 </div>
-
-
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvnfmuaj-0-b/1000/550.jpg)
 
@@ -75,7 +72,7 @@ You are an expert Senior UI/UX Illustrator and Frontend Developer specializing i
 - **토큰 절약 및 속도 최적화**: 30편의 뉴스를 한 번에 넣기 버거울 때는 핵심 키워드 5개와 각 키워드별 한 줄 요약만 요약해서 텍스트로 전달하는 것이 훨씬 정교한 결과물을 낳는다.
 - **시스템 프롬프트 설정 연동**: 팀 단위로 이 작업을 자주 반복한다면, Claude의 Project 기능에 위 디자인 시스템 가이드라인을 사전 지식(Project Knowledge)으로 업로드해 두어라. 매번 긴 프롬프트를 쓸 필요 없이 "오늘 뉴스 기반으로 아이콘 세트 짜줘" 한마디면 끝난다.
 
-## 5. Frequently Asked Questions
+## 5. 자주 묻는 질문 (FAQ)
 
 Q: Claude Artifacts로 생성된 SVG 파일을 웹 개발자에게 바로 전달해도 되나요?
 

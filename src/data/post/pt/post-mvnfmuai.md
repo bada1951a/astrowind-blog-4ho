@@ -8,7 +8,6 @@ tags: ["Claude Artifacts", "SVG Icons", "Web Design", "Prompt Engineering", "IA 
 theme: "Forest Emerald Bio"
 ---
 
-
 ## 1. O Pânico da Tradução Visual na Paulista
 
 Estava eu em um escritório comercial na Avenida Paulista, finalizando a documentação de lançamento de uma nova plataforma multirregional. O plano parecia simples: terceirizamos a criação de ícones e ilustrações da interface para uma ferramenta de IA genérica, confiando em prompts rápidos. O desastre aconteceu quando o cliente abriu o protótipo e percebeu que a IA havia gerado ícones com conceitos totalmente desconectados da nossa cultura e termos traduzidos de forma puramente literal de outras línguas — como um ícone de "nuvem de dados" representado por um cumulus chuvoso literal em cima de uma base de dados física, ou elementos visuais focados em mercados externos que não faziam o menor sentido para o usuário brasileiro. Quase manchamos a identidade visual da marca por falta de contexto cultural e precisão vetorial nos elementos gráficos.
@@ -16,8 +15,6 @@ Estava eu em um escritório comercial na Avenida Paulista, finalizando a documen
 <div style="border-left: 4px solid #10b981; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Alerta de Produtividade:</strong> Ferramentas visuais baseadas em rasterização (como PNG ou JPG) geram arquivos pesados e perdem nitidez em telas Retina. O uso correto do <strong>Claude Artifacts</strong> para gerar código SVG puro resolve o problema de escala, mantendo o design leve e totalmente editável diretamente no navegador.
 </div>
-
-
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvnfo9dk-7-b/1000/550.jpg)
 
@@ -27,7 +24,7 @@ Quando você pede apenas "desenhe um ícone de segurança em SVG" para uma intel
 
 O segredo para dominar o <strong>Claude Artifacts</strong> na criação de ilustrações e ícones web reside na estrutura de contexto restrito. Em vez de pedir um desenho livre, exigimos que o modelo atue como um engenheiro de design gráfico frontend, aplicando parâmetros estritos de paleta de cores (como o nosso tema Forest Emerald), viewBox responsivo e tags semânticas corretas.
 
-## 3. Master Prompt Template
+## 3. Template mestre de prompt pronto para copiar e colar Template
 
 Copie o modelo abaixo, ajuste as variáveis de acordo com a sua demanda e cole diretamente no <strong>Claude</strong> para gerar o seu artefato visual interativo.
 
@@ -63,7 +60,7 @@ Para extrair o máximo de eficiência do seu fluxo de trabalho diário com IA, s
 <strong>Dica de Ouro:</strong> Utilize o painel lateral do Claude Artifacts para inspecionar o código em tempo real. Você pode copiar o componente SVG gerado e colá-lo diretamente no seu arquivo Figma ou editor de código favorito sem perda de qualidade.
 </div>
 
-## 5. Frequently Asked Questions
+## 5. Perguntas Frecuentes (FAQ)
 
 Q: Posso usar o Claude Artifacts para gerar ilustrações complexas para landing pages?
 

@@ -8,7 +8,6 @@ tags: ["Claude Artifacts", "SVG Illustraties", "Prompt Engineering", "Web Design
 theme: "Matte Black stealth"
 ---
 
-
 ## 1. Het Incident op de Zuidas
 
 Gisteren om kwart voor vijf zaten we met het volledige team in een strak glazen vergaderruimte op de Zuidas in Amsterdam. We stonden op het punt om een nieuwe interne workflow-chatbot te lanceren voor onze fintech-klanten. Alles stond klaar, behလ dat de tool abrupt faalde zodra gebruikers onverwachte invoer gaven. We misten een robuuste set visuele elementen en duidelijke iconografie in de interface om uitzonderingen en foutmeldingen begrijpelijk te maken voor de eindgebruiker. 
@@ -19,8 +18,6 @@ De ontwerpers waren al naar huis en we hadden geen tijd meer om handmatig comple
 <strong>Praktische Notitie:</strong> Zonder een gestructureerde prompt mist Claude de context van jouw visuele identiteit, waardoor je vastzit aan generieke plaatjes die niet functioneel zijn in een productieomgeving.
 </div>
 
-
-
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvnfofqj-8-b/1000/550.jpg)
 
 ## 2. Waarom Standaard Prompts Falen
@@ -29,7 +26,7 @@ Wanneer je aan Claude vraagt om *“maak een icoon voor een foutmelding”*, kri
 
 Voor een professionele toepassing op de Zuidas of binnen een agile innovatiehub heb je schone, responsieve en toegankelijke code nodig. De oplossing ligt in het definiëren van een **Master Prompt** die Claude dwingt om te werken binnen een geïsoleerde Artifacts-omgeving, met specifieke instructies over lagen, stijlen, kleurenschema's en responsiviteit.
 
-## 3. Master Prompt Template
+## 3. Direct bruikbare master prompt template Template
 
 Kopieer onderstaande prompt en pas de variabelen tussen de haken aan naar jouw projectbehoefte. Voer dit direct in bij **Claude** met Artifacts ingeschakeld.
 

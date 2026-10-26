@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "IA", "Productivite"]
 theme: "Electric Cyan Speed"
 ---
 
+## 1. Crise d'hallucination de l'IA et panne de productivité
 
 Il est 18h30 au 24e étage d'une tour de La Défense, et c'est la panique. Demain matin à 9h, le comité de direction attend le rapport trimestriel incluant l'analyse quantitative et qualitative de 50 pages de verbatims issus d'une enquête interne. Face à cette montagne de commentaires bruts, les outils classiques s'essoufflent, et les simples requêtes génèrent des résumés superficiels truffés d'hallucinations. C'est précisément le genre de blocage où un prompt unique ne suffit plus : il faut déployer une stratégie d'ingénierie par chaînage de prompts.
 

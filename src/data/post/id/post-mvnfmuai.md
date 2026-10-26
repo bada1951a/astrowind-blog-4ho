@@ -8,7 +8,6 @@ tags: ["Prompt Engineering", "Claude AI", "SVG Icons", "Web Illustrations", "Des
 theme: "Bronze Artisan Workshop"
 ---
 
-
 ## 1. Panik di SCBD: Saat Update AI Bikin Prompt Andalan Berubah Jadi Sampah
 
 Jam sembilan malam di salah satu kantor konsultan digital di kawasan SCBD Jakarta, suasana mendadak tegang. Besok pagi, tim kami harus mempresentasikan *pitch deck* platform SaaS baru ke klien besar. Semuanya sudah siap, mulai dari *copywriting* sampai arsitektur database, kecuali satu hal krusial: *custom SVG icons* dan ilustrasi web bertema *fintech* yang estetik untuk landing page utama.
@@ -18,8 +17,6 @@ Biasanya, saya tinggal memasukkan satu paragraf *master prompt* lama ke Claude, 
 <div style="border-left: 4px solid #b45309; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Catatan Lapangan SCBD:</strong> Ketika model AI mengalami pembaruan sistemik, parameter interpretasi visualnya sering kali ikut bergeser. Prompt deskriptif generik tidak lagi cukup; kita butuh arsitektur instruksi berbasis *constraints* yang ketat khusus untuk fitur <strong>Claude Artifacts</strong>.
 </div>
-
-
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvnfosok-10-b/1000/550.jpg)
 
@@ -32,7 +29,7 @@ Solusinya adalah memanfaatkan fitur **Claude Artifacts** yang memisahkan panel k
 - Menerapkan sistem palet warna terpusat menggunakan variabel CSS atau properti SVG native.
 - Menghindari tag usang dan memastikan atribut `viewBox` terpasang sempurna agar responsif di berbagai ukuran layar.
 
-## 3. Master Prompt Template: Claude Artifacts untuk SVG & Ilustrasi Web
+## 3. Templat Master Prompt Siap Pakai yang Sangat Efektif Template: Claude Artifacts untuk SVG & Ilustrasi Web
 
 Salin templat di bawah ini dan tempel langsung ke dalam jendela chat Claude. Pastikan Anda mengaktifkan fitur **Artifacts** di pengaturan akun Claude Anda sebelum mengirimkan perintah ini.
 
@@ -68,7 +65,7 @@ Agar hasil render SVG tidak melenceng dari ekspektasi, terapkan beberapa penyesu
 - **Batasi Kompleksitas per Sesi:** Jangan meminta sepuluh ilustrasi sekaligus dalam satu perintah. Pecah menjadi batch kecil (misal: 3 icon per *prompt*) untuk mencegah Claude mengalami kelelahan konteks (*context fatigue*) yang berujung pada kode terpotong.
 - **Validasi Cepat via Browser:** Begitu Artifact muncul di sisi kanan layar Claude, langsung klik tombol *Preview* atau salin kodenya ke editor lokal untuk memastikan tidak ada *tag* penutup yang hilang.
 
-## 5. Frequently Asked Questions
+## 5. Pertanyaan yang Sering Diajukan (FAQ)
 
 Q: Kenapa kode SVG yang dihasilkan Claude sering kali terpotong di tengah jalan?
 

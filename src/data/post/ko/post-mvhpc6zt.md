@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "Midjourney V6", "AI Art", "Workflow Automation"]
 theme: "Cobalt Enterprise Lab"
 ---
 
+## 1. AI 답변 퀄리티 붕괴와 업무 멘붕의 순간
 
 판교의 한 IT 기업, 시각 15시 45분. 내일 아침 임원진 보고에 들어갈 브랜드 기획서 시안 20장을 완성해야 하는데, 미드저니로 생성한 주인공 얼굴이 장면마다 완전히 다른 사람으로 바뀌는 대참사가 벌어졌습니다. 1번 장면에선 세련된 단발머리 기획자였던 캐릭터가 2번 장면에선 흑발의 중년 남성으로 변하고, 3번 장면에선 애니메이션 캐릭터처럼 렌더링되는 상황. 마감까지 남은 시간은 단 30분. 이 난감한 야근 위기를 어떻게 돌파해야 할까요?
 
@@ -15,7 +16,7 @@ theme: "Cobalt Enterprise Lab"
 
 ---
 
-## 1. 왜 단순한 프롬프트로는 얼굴 고정이 안 될까?
+## 1. AI 답변 퀄리티 붕괴와 업무 멘붕의 순간로는 얼굴 고정이 안 될까?
 
 미드저니 V6는 이전 버전보다 텍스트 이해도와 실사 렌더링 능력이 극적으로 향상되었습니다. 하지만 바로 이 점 때문에 문제가 발생합니다. "커피를 마시는 여성", "회의실에서 발표하는 여성"이라고 각각 프롬프트를 입력하면, V6는 매번 새로운 문맥에 맞춰 완전히 새로운 인물을 창조해 냅니다. 
 
@@ -26,8 +27,6 @@ theme: "Cobalt Enterprise Lab"
 </div>
 
 ---
-
-
 
 ![Midjourney V6 Prompt Guide to Maintain Consistent Character Faces Across 20 Scenes Prompt Guide](https://picsum.photos/seed/prompt-mvhpc6zt-0-b/1000/550.jpg)
 

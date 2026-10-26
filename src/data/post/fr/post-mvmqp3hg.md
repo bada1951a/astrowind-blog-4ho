@@ -8,7 +8,6 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Modern Minimalist Slate"
 ---
 
-
 ## 1. [Ouverture] L'angoisse du rapport de marché à La Défense
 
 Il est 16h50, et la pression monte au 28e étage d'une tour de La Défense. Je dois boucler le rapport d'analyse de la concurrence pour le comex prévu à 18h00. J'ai sous les yeux un PDF brut de 60 pages rempli de communiqués de presse, de retranscriptions de conférences téléphoniques et de notes d'analystes non structurées. Je veux transformer ce chaos textuel en un tableau comparatif net (Parts de marché, Chiffre d'affaires 2025, Croissance YoY, Stratégie IA). 
@@ -20,8 +19,6 @@ Le résultat ? Un désastre absolu. L'IA me sort un tableau avec un air parfaite
 <div style="border-left: 4px solid #3b82f6; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Le saviez-vous ?</strong> En environnement corporate, une IA n'a pas le droit à l'erreur sur les chiffres. Le Zero-Shot (demander sans exemple) échoue 70 pourcent du temps sur de l'extraction tabulaire complexe. Le secret réside dans le Few-Shot Prompting.
 </div>
-
-
 
 ![How to Write Few-Shot Prompts to Extract Tabular Data from Unstructured Text Prompt Guide](https://picsum.photos/seed/prompt-mvmqpwnv-4-b/1000/550.jpg)
 
@@ -83,7 +80,7 @@ Pour pousser l'exercice encore plus loin selon l'outil que vous utilisez au bure
 <strong>Astuce produit :</strong> Si votre texte fait plus de 20 pages, découpez-le en sections logiques (par exemple, section par concurrent) plutôt que de tout envoyer d'un coup. Vous obtiendrez un taux de précision proche de 100 pourcent.
 </div>
 
-## 5. Frequently Asked Questions
+## 5. Foire Aux Questions (FAQ)
 
 Q : Que faire si l'IA oublie une colonne entière dans le tableau final malgré mes instructions ?
 

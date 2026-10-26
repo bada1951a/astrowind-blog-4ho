@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Forest Emerald Bio"
 ---
 
+## 1. Situasi Kritis Akibat Halusinasi AI dan Output Menyesatkan
 
 Jam menunjukkan pukul 08.45 WIB di salah satu menara perkantoran kawasan SCBD Jakarta. Lima belas menit lagi, saya harus masuk ke ruang rapat direksi untuk mempresentasikan tinjauan kritis atas sebuah dokumen riset industri setebal 80 halaman. Masalahnya, dokumen tersebut baru mendarat di meja digital saya semalam, dan sejujurnya, saya tidak punya waktu cukup untuk membaca setiap paragraf dengan teliti. Saya butuh AI untuk merangkum inti argumen, menemukan celah logika, dan menyusun poin-poin sanggahan yang tajam secara instan.
 

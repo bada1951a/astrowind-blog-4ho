@@ -8,7 +8,6 @@ tags: ["Prompt Engineering", "Claude", "Artifacts", "SVG", "Madrid", "Barcelona"
 theme: "Dark Velvet Obsidian"
 ---
 
-
 ## 1. El Incidente en la Consultora de Paseo de la Castellana
 
 Eran las siete de la tarde en nuestras oficinas corporativas en Madrid. Teníamos sobre la mesa una presentación crítica para un cliente del sector bancario y debíamos incluir diagramas de arquitectura y mockups de iconos personalizados para ilustrar los flujos de datos. El problema crítico: las estrictas normativas de seguridad y cumplimiento normativo nos prohibían tajantemente introducir nombres reales de clientes, entidades o credenciales en cualquier plataforma LLM basada en la nube. 
@@ -18,8 +17,6 @@ Intenté redactar un prompt rápido en Claude pidiéndole que diseñara un conju
 <div style="border-left: 4px solid #a855f7; padding: 12px 16px; margin: 20px 0; background-color: rgba(168,85,247,0.05); border-radius: 4px; color: #111827;">
 <strong>Lección clave del incidente:</strong> Cuando la política de seguridad te obliga a anonimizar datos, un prompt ambiguo genera gráficos inservibles. Necesitas una estructura de enmascaramiento contextual en el system prompt para que el modelo entienda la topología técnica sin ver los nombres reales.
 </div>
-
-
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvovccij-5-b/1000/550.jpg)
 
@@ -36,7 +33,7 @@ Para solucionar esto sin vulnerar la política de privacidad, implementamos una 
 <br>3. <strong>Fase 5-10s:</strong> Ajuste fino de paleta de colores corporativa y viewBox directamente en la interfaz.
 </div>
 
-## 3. Master Prompt Template
+## 3. Plantilla maestra de prompt lista para copiar y usar Template
 
 Copia y pega la siguiente plantilla en Claude, asegurándote de rellenar las variables anonimizadas según los requerimientos de tu proyecto técnico en Madrid o Barcelona.
 
@@ -75,7 +72,7 @@ Cuando trabajes con equipos distribuidos entre oficinas o en remoto, ten en cuen
 - **Optimización de Tokens:** Mantén las descripciones de los flujos anonimizados concisas. Cuanto más directa sea la correlación entre la variable y su función técnica, más preciso será el resultado gráfico de Claude.
 - **Consistencia de Marca:** Añade los códigos HEX exactos de tu manual de marca en la sección de **Constraints** para evitar variaciones de tono indeseadas en las presentaciones corporativas.
 
-## 5. Frequently Asked Questions
+## 5. Preguntas Frecuentes (FAQ)
 
 Q: ¿Puedo utilizar este prompt maestro en ChatGPT o Gemini además de en Claude?
 

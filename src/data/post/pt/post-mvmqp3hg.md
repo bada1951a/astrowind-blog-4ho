@@ -8,14 +8,11 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "Automacao"]
 theme: "Dracula Purple Dev"
 ---
 
-
 ## 1. O Desespero do Update na Paulista
 
 Eram exatamente 14h30 em um escritório movimentado na Avenida Paulista, em São Paulo. O ar-condicionado zumbia baixo enquanto eu olhava para a tela do meu monitor com uma sensação familiar de pânico gelado. Na semana anterior, nossa automação de processamento de faturas e relatórios jurídicos não estruturados rodava como um relógio suiço. Mas, após a última atualização silenciosa do modelo de IA que usamos no backend, o castelo de cartas desabou. 
 
 O prompt que funcionava perfeitamente com zero-shot — aquele clássico "leia este texto e monte uma tabela Markdown" — submeteu-se a uma amnésia funcional. O modelo começou a alucinar colunas, quebrar quebras de linha em JSONs internos e ignorar completamente campos monetários complexos. Nossos relatórios para os clientes estavam saindo corrompidos, e a diretoria exigia uma solução antes da reunião de fechamento de sprint. O prompt antigo precisava de uma reestruturação cirúrgica. A única saída viável para estabilizar o comportamento do modelo diante de atualizações imprevisíveis era migrar para uma arquitetura robusta de **Few-Shot Prompts** com delimitadores rígidos.
-
-
 
 ![How to Write Few-Shot Prompts to Extract Tabular Data from Unstructured Text Prompt Guide](https://picsum.photos/seed/prompt-mvmqqgm6-7-b/1000/550.jpg)
 

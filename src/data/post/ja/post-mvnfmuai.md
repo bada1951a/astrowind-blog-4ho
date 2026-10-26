@@ -8,7 +8,6 @@ tags: ["Prompt Engineering", "Claude", "SVG", "Artifacts", "AI Tips"]
 theme: "Steel Silver Metallic"
 ---
 
-
 ## 1. 競合調査の報告書提出直前、AIが「存在しないデータ」を語り出した瞬間
 
 時計の針は夕方5時を回ったところ。丸の内のオフィスで、私は冷や汗をかいていました。今日の夕会で提出しなければならない「主要SaaS競合のシェア比較および機能マップ」の最終仕上げの真っ最中だったのです。
@@ -24,8 +23,6 @@ theme: "Steel Silver Metallic"
 </div>
 
 ---
-
-
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvnfn8d9-2-b/1000/550.jpg)
 

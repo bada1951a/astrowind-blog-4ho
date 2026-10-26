@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Warm Coffee Latte"
 ---
 
+## 1. Noodsituatie door AI-hallucinaties en onbruikbare output
 
 Het was dinsdagochtend ergens rond half tien in een glazen vergaderruimte op de Zuidas in Amsterdam. Mijn scherm toonde het zoveelste mislukte experiment: ik probeerde een ambitieuze whitepaper van 5000 woorden over de toekomst van fintech te genereren. Na de derde prompt verslapte de aandacht van ChatGPT volledig. Ik had de AI expliciet de rol gegeven van een doorgewinterde risk-analist uit Frankfurt, maar na twee alinea's klonk de tekst ineens weer als een enthousiaste, overdreven beleefde klantenservicemedewerker vol met clichés en robotachtige overgangen. Weg autoriteit, weg nuance.
 

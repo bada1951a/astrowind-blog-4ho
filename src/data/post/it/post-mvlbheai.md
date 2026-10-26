@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Crimson Emergency Field"
 ---
 
+## 1. Emergenza improvvisa per allucinazioni dell'IA e risposte errate
 
 Sono le 17:30 di un giovedì pomeriggio piovoso in uno studio di consulenza strategica in zona Porta Nuova a Milano. Il socio senior mi passa d'urgenza l'incombenza: "Ci serve un'analisi di mercato dettagliata sui nostri tre principali concorrenti entro le 19:00 per la riunione con il cliente tedesco". Apro la chat di Claude, inserisco la richiesta di estrarre quote di mercato, fatturati e strategie di pricing recenti dei competitor. L'intelligenza artificiale risponde in pochi secondi con tabelle perfette, grafici descritti testualmente e cifre al millesimo. Sembrava tutto fantastico, finché non ho iniziato a verificare i dati chiave. Nomi di prodotti mai esistiti, margini di profitto inventati di sana pianta e fatturati moltiplicati per dieci. Se avessi inoltrato quel report al cliente, la reputazione dello studio sarebbe andata in fumo nel giro di cinque minuti.
 

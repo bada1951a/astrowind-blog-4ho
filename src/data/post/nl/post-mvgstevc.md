@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Pure Titanium Clean"
 ---
 
+## 1. Noodsituatie door AI-hallucinaties en onbruikbare output
 
 Gisteren om kwart voor vijf op kantoor aan de Zuidas in Amsterdam stond de spanning op ontploffing: de CMO kwam binnenlopen met de mededeling dat onze nieuwe corporate YouTube-campagne binnen 48 uur live moest, maar dat de scriptstructuur van onze concurrent – die vorige week nog een miljoen views pakte – gekopieerd en verbeterd moest worden. Gewoon handmatig de video uittypen en analyseren ging hem niet meer worden. Mijn eerste instinctieve poging in ChatGPT was een luie vraag: *"Analyseer dit YouTube-script en vertel me waarom het viraal ging."* Het resultaat? Een ellenlange, nietszeggende samenvatting vol open deuren en AI-clichés waar je als marketeer helemaal niets aan hebt.
 

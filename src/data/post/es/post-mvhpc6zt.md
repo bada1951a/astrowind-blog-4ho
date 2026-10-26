@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "Midjourney", "IA", "Diseno Creativo"]
 theme: "Sunset Horizon Coral"
 ---
 
+## 1. Crisis crítica de alucinación de la IA y bloqueo de tareas
 
 Eran las siete de la tarde en nuestra oficina en Madrid. El café de la maquina ya no hacia efecto y el cliente clave para el que estabamos preparando la campaña de generacion de codigo y analisis de mercado con IA nos acaba de mandar un mensaje por Slack que nos dejo helados: "Las 20 escenas del storyboard estan bien, pero en cada imagen sale una persona totalmente distinta. Necesitamos que sea el mismo protagonista en todas, o el contrato se cae".
 
@@ -60,12 +61,10 @@ a: Metodo Tradicional vs. Metodo Prompt Engineering V6
 
 ---
 
-## Preguntas Frecuentes (FAQ)
+## 5. Preguntas Frecuentes (FAQ)
 
 ### 1. ¿Puedo usar una imagen generada por IA como base para el parametro --cref?
 Si, totalmente. De hecho, es el flujo recomendado. Generas tu personaje ideal en la primera escena, copias el enlace de esa imagen en Discord y lo usas como `--cref` para las siguientes 19 escenas de tu storyboard.
-
-
 
 ![Midjourney V6 Prompt Guide to Maintain Consistent Character Faces Across 20 Scenes Prompt Guide](https://picsum.photos/seed/prompt-mvhpdg2y-5-b/1000/550.jpg)
 

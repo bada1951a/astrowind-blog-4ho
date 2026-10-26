@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips", "Nederland"]
 theme: "Solarized Amber Warm"
 ---
 
+## 1. Noodsituatie door AI-hallucinaties en onbruikbare output
 
 Het is dinsdagochtend op de Zuidas in Amsterdam. Om tien uur hebben we een cruciale strategische bespreking gehad met een groot internationaal fintech-consortium. De hele sessie is opgenomen en uitgetyped naar een ruw transcript van achtendertig pagina's vol spreektaal, Engelse vakjargontermen en oeverloos geklets over iemands weekend en de koffieautomaat. Mijn manager stapt mijn kantoor binnen met de vraag of ik even snel per spreker de kernstandpunten en actiepunten kan aanleveren. Ik gooi het transcript in ChatGPT, druk op enter en wacht vol verwachting op een strak overzicht. Wat krijg ik terug? Een prachtig vormgegeven lijst vol verzonnen stellingen, namen van mensen die niet eens bij de meeting waren, en actiepunten die helemaal nooit zijn uitgesproken. Klassieke hallucinaties. De AI probeert te behulpzaam te zijn en vult de gaten op met fantasie.
 

@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Cyberpunk Terminal"
 ---
 
+## 1. Situação de emergência com alucinações e erros da IA
 
 Eram 21h30 em uma terça-feira caótica na nossa software house aqui na Vila Madalena, em São Paulo. O cliente principal da agência havia mudado de ideia pela terceira vez no di
 

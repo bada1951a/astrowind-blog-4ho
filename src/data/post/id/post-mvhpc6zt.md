@@ -8,6 +8,7 @@ tags: ["Midjourney V6", "Prompt Engineering", "Otomatisasi Konten", "AI Art"]
 theme: "Cobalt Enterprise Lab"
 ---
 
+## 1. Situasi Kritis Akibat Halusinasi AI dan Output Menyesatkan
 
 Jam 8 malam di kawasan bisnis Jakarta, klien besar dari sektor perbankan menolak mentah-mentah seluruh storyboard visual kampanye pemasaran kami. Masalahnya klise namun fatal: karakter utama wanita berhijab yang menjadi ikon produk terlihat seperti orang yang berbeda di setiap adegan. Pada adegan pertama dia berwajah tirus, di adegan kelima matanya berubah warna, dan di adegan kesepuluh gaya rambut serta struktur tulangnya sama sekali tidak dikenali. Tenggat waktu presentasi tinggal 12 jam lagi, dan tim desain kami sudah kehabisan waktu untuk melakukan *inpainting* manual satu per satu pada 20 aset gambar yang dibutuhkan.
 
@@ -68,4 +69,4 @@ Hingga saat ini, parameter `--cref` di Midjourney V6 dirancang optimal untuk sat
 Perubahan kecil bisa terjadi jika latar belakang atau sudut pencahayaan (*lighting*) dalam *prompt* terlalu ekstrem dan kontras. Pastikan Anda mempertahankan kata kunci pencahayaan yang serupa di setiap adegan untuk membantu konsistensi model V6.
 
 3. Bagaimana cara menghemat waktu saat harus menghasilkan 20 adegan sekaligus?
-Gunakan fitur *Variable Prompting* di Midjourney atau siapkan daftar *prompt* di dalam dokumen teks, lalu salin dan tempel secara berurutan menggunakan mode *Fast Hours* agar proses render berjalan tanpa jeda lama. 
+Gunakan fitur *Variable Prompting* di Midjourney atau siapkan daftar *prompt* di dalam dokumen teks, lalu salin dan tempel secara berurutan menggunakan mode *Fast Hours* agar proses render berjalan tanpa jeda lama.

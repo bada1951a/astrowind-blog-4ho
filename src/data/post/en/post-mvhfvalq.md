@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "Claude", "Artifacts", "Dashboards", "Automation"]
 theme: "Deep Ocean Cobalt"
 ---
 
+## 1. Critical AI Hallucination & Output Collapse Crisis
 
 It is 8:42 AM. Our morning executive sync starts in exactly eighteen minutes, and our VP of Product just Slacked me a brutal demand: "I need a live, interactive breakdown of our user acquisition metrics, churn spikes, and campaign ROI by 9:00 AM. Make it clean." 
 
@@ -25,7 +26,7 @@ To make Claude act like a senior frontend engineer, you need to enforce strict c
 <strong>Architect's Note:</strong> Claude 3.5 Sonnet's Artifacts feature runs code in an isolated sandbox environment. Always explicitly instruct Claude to use Tailwind CSS via CDN and Lucide icons so your prototype looks like a venture-backed SaaS product rather than a 1990s assignment.
 </div>
 
-### The Master Prompt Template
+## 3. Copy-and-Paste Master Prompt Engineering Template
 
 Copy, paste, and adapt this production-ready prompt template into Claude 3.5 Sonnet. Fill in the bracketed variables with your specific context.
 
@@ -65,7 +66,7 @@ a: Paste your messy CSV or performance summary directly into the prompt alongsid
 <strong>Pro Tip:</strong> If you need your team to interact with the dashboard independently, click the publish icon inside the Artifact window to generate a public preview link in seconds. No GitHub repository required.
 </div>
 
-### Frequently Asked Questions
+## 5. Frequently Asked Questions (FAQ)
 
 Q: Can I connect these dashboard prototypes to a live database?
 

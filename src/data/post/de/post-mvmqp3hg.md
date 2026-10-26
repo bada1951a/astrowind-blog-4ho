@@ -8,7 +8,6 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "Tabellendaten", "Few-Shot"]
 theme: "Deep Ocean Cobalt"
 ---
 
-
 ## 1. Das Chaos vor dem Meeting: Ein Handbuch muss in Tabellenform
 
 Letzten Donnerstag, exakt 20 Minuten vor dem Kick-off im Frankfurter Bankenviertel: Unser Senior-Projektmanager knallte mir ein 80-seitenlanges, unstrukturiertes Compliance-Handbuch auf den Tisch. Die Ansage war unbarmherzig: „Wir brauchen bis zum Meeting eine übersichtliche Risiko-Tabelle, aufgeschlüsselt nach Abteilung, Verstoß-Szenario und Strafmaß. Und wehe, da fehlen Details.“
@@ -20,8 +19,6 @@ Das Ergebnis war eine Katastrophe. Die KI hallucinatorische Daten erfand, wichti
 <div style="border-left: 4px solid #2563eb; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Architekten-Tipp:</strong> Unstrukturierter Text ist für Sprachmodelle wie ein unaufgeräumtes Lager. Ohne strukturierende Beispiele raten sie, statt zu arbeiten. Geben Sie ihnen mit Few-Shot-Prompting immer ein präzises Muster vor.
 </div>
-
-
 
 ![How to Write Few-Shot Prompts to Extract Tabular Data from Unstructured Text Prompt Guide](https://picsum.photos/seed/prompt-mvmqpps3-3-b/1000/550.jpg)
 

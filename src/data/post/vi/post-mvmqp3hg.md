@@ -8,8 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Forest Emerald Bio"
 ---
 
-
-## 1. [Opening Story/Problem]
+## 1. Tình huống khẩn cấp do AI trả lời ảo giác và sai lệch
 
 Sáng nay tại tòa nhà văn phòng công nghệ cao ở Quận 1, TP. Hồ Chí Minh, đồng nghiệp của tôi đang ôm đầu than vãn vì hạn chót báo cáo kinh doanh chỉ còn đúng một tiếng nữa. Anh ấy vừa nhờ AI viết một đoạn mã Python đơn giản để cào và bóc tách dữ liệu từ file văn bản thô, nhưng kết quả nhận lại là một đống mã lỗi đỏ lòm. Nguyên nhân là vì con AI đã lấy nhầm tài liệu từ các thư viện cũ đã bị khai tử từ nhiều năm trước, cấu trúc hàm thì sai bét nhè.
 
@@ -19,11 +18,9 @@ Thay vì ngồi sửa từng dòng code cào dữ liệu thủ công mất thờ
 <strong>Cảnh báo thực tế:</strong> Zero-shot prompting (chỉ ra lệnh suông mà không cho ví dụ mẫu) đối với dữ liệu phi cấu trúc phức tạp có tỷ lệ sai sót lên tới 70%. Kỹ thuật Few-Shot Learning là cứu cánh duy nhất để ép AI tuân thủ cấu trúc định dạng chuẩn xác.
 </div>
 
-
-
 ![How to Write Few-Shot Prompts to Extract Tabular Data from Unstructured Text Prompt Guide](https://picsum.photos/seed/prompt-mvmqr54s-11-b/1000/550.jpg)
 
-## 2. [Root Cause / Architecture]
+## 2. Phân tích nguyên nhân gốc rễ lỗi câu lệnh và logic AI
 
 Tại sao các mô hình ngôn ngữ lớn (LLM) thường thất bại khi trích xuất bảng dữ liệu từ văn bản thô? Lý do cốt lõi là các mô hình này dự đoán từ tiếp theo dựa trên xác suất thống kê. Khi gặp một định dạng văn bản không có cấu trúc rõ ràng (như biên bản họp, email hỗn hợp, báo cáo khảo sát dạng đoạn văn), AI không biết đâu là tiêu đề cột, đâu là giá trị hàng.
 
@@ -34,7 +31,7 @@ Kỹ thuật **Few-Shot Prompting** giải quyết bài toán này bằng cách 
 - **Ví dụ mẫu (Few-Shot Examples):** Cặp dữ liệu mẫu đầu vào (Input) và kết quả bảng mẫu (Output).
 - **Dữ liệu đích (Target Data):** Phần văn bản thực tế cần xử lý.
 
-## 3. [Master Prompt Template]
+## 3. Mẫu câu lệnh Master Prompt thực chiến sao chép dùng ngay
 
 Dưới đây là khung prompt chuẩn mà tôi đang áp dụng hằng ngày tại văn phòng để ép Claude và ChatGPT trả về định dạng bảng Markdown hoặc JSON không bao giờ sai sót. Bạn chỉ cần sao chép và thay thế phần nội dung của mình.
 
@@ -70,7 +67,7 @@ Target Data:
 Output Format: Chỉ trả về bảng Markdown, không kèm theo bất kỳ lời chào hay giải thích nào khác.
 ```
 
-## 4. [Practical Variations / Safety Tips]
+## 4. Lời khuyên và lưu ý quan trọng từ kỹ sư thiết kế câu lệnh
 
 Để tối ưu hóa hiệu suất khi xử lý khối lượng dữ liệu lớn tại nơi làm việc, bạn hãy ghi nhớ các mẹo thực chiến sau:
 
@@ -82,7 +79,7 @@ Output Format: Chỉ trả về bảng Markdown, không kèm theo bất kỳ l�
 <strong>Mẹo tiết kiệm thời gian:</strong> Lưu mẫu prompt này vào phím tắt của trình duyệt hoặc phần mềm quản lý văn bản (như TextExpander). Khi cần, bạn chỉ mất 3 giây để gọi ra thay vì ngồi viết lại từ đầu.
 </div>
 
-## 5. Frequently Asked Questions
+## 5. Các câu hỏi thường gặp (FAQ)
 
 Q: Tôi phải làm sao nếu văn bản đầu vào có quá nhiều lỗi chính tả tiếng Việt?
 

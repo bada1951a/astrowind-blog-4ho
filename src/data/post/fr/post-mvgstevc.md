@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Crimson Emergency Field"
 ---
 
+## 1. Crise d'hallucination de l'IA et panne de productivité
 
 Il est 19h45 dans notre agence à Paris. Notre client star exige une refonte totale de sa stratégie vidéo pour le lendemain matin, et le temps presse. L'objectif était clair : concevoir un outil interactif puissant grâce à Claude Artifacts en un temps record pour analyser des scripts YouTube à succès. Sauf que face à la page blanche, copier-coller bêtement le texte des vidéos phares dans ChatGPT ne nous renvoyait que des résumés bateaux et inutiles. Pas de structure exploitable, pas de psychologie de rétention, juste du bruit textuel. C'était l'impasse totale.
 

@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "Whitepapers", "IA Corporativa
 theme: "Dark Velvet Obsidian"
 ---
 
+## 1. Crisis crítica de alucinación de la IA y bloqueo de tareas
 
 Eran las siete de la tarde en nuestras oficinas del Paseo de la Castellana en Madrid. Teníamos sobre la mesa el borrador preliminar de un whitepaper sobre transformación digital en el sector bancario europeo, un documento estratégico de 5000 palabras destinado a un cliente del IBEX 35. Le había asignado al modelo un rol ultraespecífico: un socio senior de una consultora Big Four, con un tono analítico, cínico frente a las modas tecnológicas y extremadamente preciso con la jerga regulatoria de la UE. Todo iba perfecto durante los primeros dos bloques. Pero al llegar a la tercera sección, el modelo sufrió una amnesia total de personalidad. De repente, abandonó el tono incisivo y empezó a responder con el clásico entusiasmo robótico de atención al cliente: ¡Claro que sí! Aquí tienes un resumen alegre sobre cómo la nube puede ayudar a tu empresa. El socio senior había muerto, reemplazado por un asistente genérico de OpenAI.
 
@@ -63,7 +64,7 @@ Mantén exactamente el mismo tono de Director de Práctica Senior analítico y c
 <strong>Advertencia de Seguridad:</strong> Si utilizas herramientas como Claude Artifacts, asegúrate de mantener cada sección dentro de su propio contenedor visual para evitar que el historial de chat contamine las directrices maestras con lenguaje coloquial acumulado.
 </div>
 
-### Preguntas Frecuentes (FAQ)
+## 5. Preguntas Frecuentes (FAQ)
 
 Q1. ¿Qué hago si el modelo empieza a inventar datos o métricas financieras en medio del whitepaper?
 
@@ -75,4 +76,4 @@ A2. Para documentos técnicos extensos y whitepapers corporativos, Claude 3.5 So
 
 Q3. ¿Cómo puedo evitar que el whitepaper final suene como si hubiera sido escrito por cinco personas diferentes debido al encadenamiento?
 
-A3. El secreto es crear un documento maestro de estilo (un mini-estilo de 200 palabras) que contenga reglas estrictas de vocabulario, palabras prohibidas (como "revolucionario", "sinergia", "aprovechar") y la estructura sintáctica preferida. Debes inyectar este mini-estilo obligatoriamente en el encabezado de cada uno de los prompts de la cadena. 
+A3. El secreto es crear un documento maestro de estilo (un mini-estilo de 200 palabras) que contenga reglas estrictas de vocabulario, palabras prohibidas (como "revolucionario", "sinergia", "aprovechar") y la estructura sintáctica preferida. Debes inyectar este mini-estilo obligatoriamente en el encabezado de cada uno de los prompts de la cadena.

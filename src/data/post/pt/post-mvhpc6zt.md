@@ -8,6 +8,7 @@ tags: ["Midjourney V6", "Prompt Engineering", "IA Generativa", "Design", "Automa
 theme: "Matte Black stealth"
 ---
 
+## 1. Situação de emergência com alucinações e erros da IA
 
 Eram 19h de uma terca-feira na nossa software house aqui em Sao Paulo, e o cliente simplesmente virou a mesa na reuniao de alinhamento: o pitch deck com 20 cenas estava pronto, mas o protagonista tinha um rosto diferente em absolutamente todas as imagens. A cada geracao no Midjourney, a inteligencia artificial decidia inventar um boneco novo. O prazo para entrega do material comercial era a manha seguinte, e recomeçar do zero significaria perder horas preciosas de renderizacao e estourar o nosso limite de GPU.
 
@@ -56,8 +57,6 @@ A.
 
 ### 1. O parametro --cref funciona com qualquer versao do Midjourney?
 Nao. O parametro de referencia de personagem (--cref) e uma exclusividade nativa e altamente otimizada do Midjourney V6. Certifique-se de incluir `--v 6.0` no final dos seus prompts ou configurar sua versao padrao no `/settings`.
-
-
 
 ![Midjourney V6 Prompt Guide to Maintain Consistent Character Faces Across 20 Scenes Prompt Guide](https://picsum.photos/seed/prompt-mvhpdx8w-7-b/1000/550.jpg)
 

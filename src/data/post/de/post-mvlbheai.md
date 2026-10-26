@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Retro Monokai"
 ---
 
+## 1. Kritischer KI-Halluzinations- und Qualitätsnotfall
 
 Es ist Dienstagvormittag in einem Fintech-Büro nahe dem Frankfurter Hauptbahnhof. Auf dem Monitor blinkt die Fehlermeldung rot auf: AttributeError: module pandas has no attribute 'read_excel_cached'. Vor zwanzig Minuten hatte ich ChatGPT und Claude gebeten, einen schnellen Python-Daten-Scraper und Analyseskript zu schreiben, um Live-Marktdaten für unser Reporting zu ziehen. Das Ergebnis sah auf den ersten Blick sauber aus, lief aber absolut gar nicht. Die Modelle hatten Syntax und Methoden aus längst veralteten Versionen von Pandas und Requests erfunden, die vor drei Jahren deprecated wurden, und mir diesen Schrott als hochmoderne Lösung verkauft. Der Kaffee auf dem Schreibtisch war noch heiß, aber der Frust über frei erfundene Funktionsaufrufe war bereits maximal.
 

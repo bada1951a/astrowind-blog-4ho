@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips", "Whitepaper"]
 theme: "Mint Fresh Engineering"
 ---
 
+## 1. Kritischer KI-Halluzinations- und Qualitätsnotfall
 
 Es war kurz vor zehn Uhr morgens im Frankfurter Bankenviertel, als unser Senior-Partner mit hochrotem Kopf in mein Büro stürmte. Auf seinem Tablet: der Entwurf für ein 5000-wörterlanges Branchenwhitepaper über digitale Vermögenswerte, das am Nachmittag an einen Großkunden gehen sollte. Das Problem? Die ersten zwei Kapitel klangen wie aus einem US-Marketing-Blog, das mittlere Kapitel driftete in kryptische Programmier-Jargon-Fantasien ab, und die Schlussfolgerung schien von einer völlig anderen KI geschrieben worden zu sein. Der Grund für dieses Desaster war schnell gefunden: Fünf verschiedene Analysten hatten in den letzten Tagen fünf völlig unterschiedliche, vage "Schreib mir mal was über..."-Prompts in ChatGPT und Claude gehämmert. Die Ergebnisse waren ein unbrauchbares Flickwerk aus Halluzinationen und Stilbrüchen. Genau in diesem Moment wurde mir klar, dass wir im Team keine vagen Kreativ-Prompts mehr brauchten, sondern ein rigoroses, modulares Prompt-Chaining-System, das jeden Redakteur zu absolut konsistenten Höchstleistungen zwingt.
 

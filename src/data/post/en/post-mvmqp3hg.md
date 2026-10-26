@@ -8,7 +8,6 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Dark Velvet Obsidian"
 ---
 
-
 ## 1. The 30-Minute Panic Before the Department Head Meeting
 
 My Slack notification went off with a sharp ping that instantly spiked my cortisol levels. It was a direct message from my department head: *"Hey, can you slide into Conference Room B in 30 minutes? I need a clean competitive landscape breakdown and feature matrix from that 80-page market research PDF you dropped into the drive yesterday. The executive team wants a quick look."*
@@ -23,11 +22,9 @@ I was staring down the barrel of a humiliating meeting with empty slides and zer
 
 ---
 
-
-
 ![How to Write Few-Shot Prompts to Extract Tabular Data from Unstructured Text Prompt Guide](https://picsum.photos/seed/prompt-mvmqpdb5-1-b/1000/550.jpg)
 
-## 2. Root Cause Breakdown
+## 2. Root Cause Breakdown of Prompt Failures and Logic Flaws
 
 Why do models like ChatGPT, Claude, and Gemini fail so miserably when you ask them to extract tables from unstructured text? 
 
@@ -43,7 +40,7 @@ By establishing a strict schema constraint and providing two distinct training e
 
 ---
 
-## 3. Master Prompt Template
+## 3. Copy-and-Paste Master Prompt Engineering Template Template
 
 Here is the exact, battle-tested prompt template I used to save my skin that afternoon. You can copy and paste this directly into ChatGPT, Claude, or your LLM system instructions. Just swap out the placeholder text with your own unstructured data.
 
@@ -85,7 +82,7 @@ Once I pasted my messy research notes into the `[Insert Unstructured Text Here]`
 
 ---
 
-## 4. Practical Variations and Safety Tips
+## 4. Professional Prompt Architect Precautions & Tips and Safety Tips
 
 When working with large document sets or complex extraction tasks, standard prompting sometimes hits token limits or formatting snags. Here are three pro-tips to keep your data pipelines bulletproof:
 
@@ -95,7 +92,7 @@ When working with large document sets or complex extraction tasks, standard prom
 
 ---
 
-## 5. Frequently Asked Questions
+## 5. Frequently Asked Questions (FAQ)
 
 Q: What should I do if the AI leaves out columns or invents fake data points for missing text?
 

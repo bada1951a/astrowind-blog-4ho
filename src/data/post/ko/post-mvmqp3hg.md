@@ -8,7 +8,6 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Bronze Artisan Workshop"
 ---
 
-
 ## 1. 점심시간 직후 닥쳐온 마케팅 카피 대란
 
 시계 바늘이 정확히 오후 1시 5분을 가리키고 있었습니다. 판교 테크노밸리의 한 IT 기업 전략기획부서 사무실. 점심 식사의 여유를 즐기기도 전에 슬랙 채널에 마케팅팀 리더의 다급한 메시지가 울렸습니다.
@@ -24,8 +23,6 @@ theme: "Bronze Artisan Workshop"
 <div style="border-left: 4px solid #b45309; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>실무자의 뼈저린 교훈:</strong> 비정형 텍스트를 다룰 때 단순히 "표로 만들어 줘"라고 요구하는 것은 AI에게 길을 알려주지 않고 달리기를 시키는 것과 같습니다. AI에게 정확한 모범 답안(Few-Shot)을 눈앞에 보여주어야 비로소 우리가 원하는 칼각의 테이블 데이터를 얻을 수 있습니다.
 </div>
-
-
 
 ![How to Write Few-Shot Prompts to Extract Tabular Data from Unstructured Text Prompt Guide](https://picsum.photos/seed/prompt-mvmqp3hg-0-b/1000/550.jpg)
 
@@ -100,7 +97,7 @@ theme: "Bronze Artisan Workshop"
   만약 AI가 원본에 없는 내용을 지어낸다면, 프롬프트 내 Instructions 부분에 다음과 같은 제약 조건을 추가하세요. 
   `"추출하는 모든 소구 포인트와 키워드는 반드시 제공된 원본 텍스트 속 단어와 문맥에 100% 기반해야 하며, 추측성 내용을 포함할 경우 해당 행은 제외할 것."`
 
-## 5. Frequently Asked Questions
+## 5. 자주 묻는 질문 (FAQ)
 
 Q. 챗GPT와 클로드 중 어떤 모델을 사용할 때 테이블 추출 결과가 더 깔끔한가요?
 

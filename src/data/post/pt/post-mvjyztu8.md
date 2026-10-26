@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "IA Generativa", "Whitepaper"]
 theme: "Sunset Horizon Coral"
 ---
 
+## 1. Situação de emergência com alucinações e erros da IA
 
 Eram 19h em um escritório na Avenida Paulista, em São Paulo. O cliente, uma gigante do setor financeiro, exigia a entrega de um whitepaper técnico de 5.000 palavras para o dia seguinte, mantendo um rigor absoluto nas diretrizes de marca e na consistência da tônica institucional. Ao tentar gerar o conteúdo de uma só vez no ChatGPT, o desastre: o modelo sofreu exaustão de contexto na metade do texto, inventou dados de mercado e entregou um tom completamente genérico que parecia qualquer coisa, menos a voz da empresa. <div style="border-left: 4px solid #f97316; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Alerta de Realidade:</strong> Pedir para uma IA escrever um documento técnico longo em um único comando é o caminho mais rápido para o fracasso. Modelos de linguagem grandes (LLMs) perdem precisão e coerência quando operam além de seus limites de janela de atenção ativa para geração contínua. </div>

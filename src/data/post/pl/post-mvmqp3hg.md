@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Sandstone Desert Minimal"
 ---
 
+## 1. Awaryjna sytuacja związana z halucynacjami i błędami AI
 
 <div style="border-left: 4px solid #a16207; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Cel praktyczny:</strong> Opanowanie techniki Few-Shot Prompting w celu bezbłędnej konwersji chaotycznych raportów tekstowych do formatu tabelarycznego (Markdown/JSON) w warszawskich realiach biznesowych.
@@ -18,8 +19,6 @@ theme: "Sandstone Desert Minimal"
 Była dokładnie 16:15, a o 17:00 miałem wysłać do zarządu kompletny raport z analizy konkurencyjnej na polskim rynku SaaS. Na biurku leżały trzy gigantyczne, niesformatowane pliki PDF z konferencji branżowych, pełne opinii, luźnych zdań i szczątkowych danych finansowych. Wrzuciłem pierwszy z nich do chatu i rzuciłem na szybko: **"Wyciągnij mi udziały rynkowe konkurencji do tabeli"**. 
 
 Odpowiedź nadeszła błyskawicznie. Tabela wyglądała profesjonalnie, kolumny się zgadzały, a nazwy firm brzmiały znajomo. Problem polegał na tym, że gdy zacząłem weryfikować udziały rynkowe lidera branży, okazało się, że sztuczna inteligencja po prostu... zmyśliła te liczby, żeby zapełnić puste komórki. Wygenerowała ładnie wyglądającą fikcję literacką, która w starciu z realnymi danymi finansowymi mogła mnie kosztować utratę wiarygodności przed zarządem. Zero-shot prompt zawiódł na całej linii, a do deadline'u zostało 40 minut.
-
-
 
 ![How to Write Few-Shot Prompts to Extract Tabular Data from Unstructured Text Prompt Guide](https://picsum.photos/seed/prompt-mvmqqsva-9-b/1000/550.jpg)
 

@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Dracula Purple Dev"
 ---
 
+## 1. Awaryjna sytuacja związana z halucynacjami i błędami AI
 
 Siedziałem w biurowcu przy Rondzie Daszyńskiego w Warszawie, próbując szybko zamknąć zadanie przed popołudniowym demo. Potrzebowałem prostego skryptu w Pythonie do pobrania danych ze strony za pomocą biblioteki BeautifulSoup. Wpisałem do Chata GPT szybkie polecenie z prośbą o kod, a model bez mrugnięcia okiem wyrzucił piękną, błyszczącą strukturę. Kopiuję kod do edytora, odpalam w terminalu, a tam sypie się ściana błędów. Okazało się, że model połączył nieaktualne metody z wersji z przed pięciu lat z całkowicie zmyślonymi parametrami nieistniejących funkcji. Straciłem pół godziny na szukanie błędu w czymś, co miało zająć 3 minuty.
 

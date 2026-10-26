@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "YouTube Script", "AI Content"
 theme: "Forest Emerald Bio"
 ---
 
+## 1. Situasi Kritis Akibat Halusinasi AI dan Output Menyesatkan
 
 Jam 8 malam di sebuah gedung perkantoran di kawasan bisnis Jakarta. Klien utama kami baru saja menelepon dengan nada mendesak: *“Besok pagi kita harus meeting pitching konten, saya mau script video yang polanya mirip sama channel YouTube kompetitor yang lagi trending itu, tapi buat produk kita!”* Masalahnya, durasi video kompetitor tersebut ada 15 menit, dan saya sendirian harus merangkum hook, pacing, hingga psikologi audiensnya sebelum tengah malam. Kalau dikerjakan manual? Bisa subuh baru selesai.
 

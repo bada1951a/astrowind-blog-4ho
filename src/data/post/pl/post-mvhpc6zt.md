@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "Midjourney", "Sztuczna Inteligencja", "IT"]
 theme: "Mint Fresh Engineering"
 ---
 
+## 1. Awaryjna sytuacja związana z halucynacjami i błędami AI
 
 Godzina 21:40, biuro w Warszawie. Klient z sektora fintech właśnie napisał na Slacku, że koncepcja wizualna naszej nowej aplikacji mobilnej jest świetna, ale... w każdej z 20 zaprezentowanych scen główny bohater wygląda zupełnie inaczej. Na pierwszym slajdzie to 30-letni wąsaty blondyn w garniturze, na drugim 22-letni student w bluzie z kapturem, a na dziesiątym kobieta w średnim wieku. Prezentacja dla zarządu jest jutro o 9:00 rano, a nasz zespół projektowy utknął w martwym punkcie, tracąc godziny na losowe generowanie obrazów w Midjourney V6, które za każdym razem tworzyły zupełnie nową osobę.
 

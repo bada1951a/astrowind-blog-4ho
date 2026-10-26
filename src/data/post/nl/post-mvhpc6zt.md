@@ -8,6 +8,7 @@ tags: ["Midjourney V6", "Prompt Engineering", "Character Consistency", "AI Desig
 theme: "Solarized Amber Warm"
 ---
 
+## 1. Noodsituatie door AI-hallucinaties en onbruikbare output
 
 Het is kwart over acht op een regenachtige dinsdagmorgen op de Zuidas in Amsterdam. Om tien uur moet ik een volledige pitchpresentatie opleveren voor een nieuwe fintech-campagne, bestaande uit twintig unieke scènes met dezelfde hoofdpersoon: een Nederlandse financial professional genaamd Sophie. Het probleem? Bij elke nieuwe generatie in Midjourney V6 verandert Sophie in een totaal iemand anders. De ene keer heeft ze steil blond haar en blauwe ogen, de volgende keer verschijnt ze als een brunette met een bril. Mijn deadline hijgt in mijn nek, de stakeholder wacht op de visuals, en mijn oude prompts leveren alleen maar frustratie en visuele inconsistentie op.
 
@@ -66,8 +67,6 @@ Om het proces van twintig scènes te versnellen, gebruik ik een LLM om de variat
 
 ### 1. Hoe zorg ik ervoor dat de kleding van mijn karakter verandert per scène, maar het gezicht hetzelfde blijft?
 In Midjourney V6 pas je de `--cw` (Character Weight) parameter aan naar `--cw 30` of `--cw 50`. Hiermee zeg je tegen het model dat het alleen de gezichtskenmerken van de referentie-afbeelding (`--cref`) moet overnemen, terwijl je in de tekst-prompt nieuwe kleding beschrijft (bijvoorbeeld "wearing a dark blue tailored suit" in plaats van de eerdere outfit).
-
-
 
 ![Midjourney V6 Prompt Guide to Maintain Consistent Character Faces Across 20 Scenes Prompt Guide](https://picsum.photos/seed/prompt-mvhpe6ny-8-b/1000/550.jpg)
 

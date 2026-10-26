@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Dracula Purple Dev"
 ---
 
+## 1. Crise d'hallucination de l'IA et panne de productivité
 
 Il etait 16h45 dans nos bureaux de La Defense a Paris, et la pression montait d'un cran. Notre equipe data devait absolument extraire rapidement des KPI sur le dernier rapport trimestriel d'un concurrent via un script Python simple. J'ai demande a ChatGPT de me pondre un script de web scraping rapide en utilisant BeautifulSoup. L'IA m'a crache un code en trente secondes chrono, confiant et propre en apparence. Sauf qu'en l'integrant dans notre pipeline de staging, c'etait la douche froide : erreurs sur erreurs, methodes depreciees, arguments inexistants. Le modele venait d'inventer de toutes pieces une syntaxe melant des fonctions supprimees il y a trois ans et des methodes sorties de son imagination. Resultat : une heure de perdues a debugger du code fantome. Ce genre de situation arrive tous les jours quand on se fie aveuglement aux reponses par defaut des grands modeles de langage.
 
@@ -38,8 +39,7 @@ Regles imperatives :
 Pour tirer le maximum de ce system prompt au quotidien, voici quelques bonnes pratiques a adopter dans vos echanges. D'abord, specifiez toujours la version exacte des outils que vous utilisez, par exemple Python 3.11 ou React 19. Plus le perimetre est serre, moins l'IA a d'espace pour divaguer. Ensuite, utilisez la technique du chainage de pensees en lui demandant d'expliquer sa logique et de citer la source ou la convention standard avant de rediger le code final. Enfin, n'hesitez pas a integrer un test de verification dans vos consignes en lui demandant : "Quels sont les risques d'erreur ou les methodes obsoletes evitees dans ce code ?".
 
 En appliquant cette methode dans nos equipes de conseil a Paris, nous avons divise par quatre le temps passe a corriger du code genere par IA. La productivitée ne vient pas de la vitesse a laquelle l'IA tape du texte, mais de la fiabilite du resultat des la premiere execution.
-
-Frequently Asked Questions
+## 5. Foire Aux Questions (FAQ)
 
 Q1. Est-ce que ce system prompt fonctionne aussi bien avec Claude qu'avec ChatGPT ?
 

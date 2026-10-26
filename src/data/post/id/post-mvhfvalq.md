@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "Claude Sonnet", "AI Dashboard", "Otomatisasi Workf
 theme: "Pure Titanium Clean"
 ---
 
+## 1. Situasi Kritis Akibat Halusinasi AI dan Output Menyesatkan
 
 Jam 4 sore di SCBD Jakarta. Direktur operasional mendadak kirim pesan WhatsApp: "Tolong buatkan ringkasan performa penjualan kuartal ini dalam bentuk dashboard visual yang interaktif untuk meeting direksi jam 5 sore nanti. Datanya ada di CSV mentah 5.000 baris ini." Jantung langsung berdegup kencang. Kalau saya pakai cara konvensional, buka Excel, bikin pivot table, atur grafik satu-satu, butuh waktu minimal 3 jam. Belum tentu tampilannya enak dilihat untuk level eksekutif.
 
@@ -74,4 +75,4 @@ Sama sekali tidak. Claude 3.5 Sonnet akan menulis seluruh kode di belakang layar
 Pastikan Anda menggunakan model Claude 3.5 Sonnet (bukan versi lain yang lebih lama) dan pastikan fitur Artifacts di pengaturan akun Claude Anda sudah diaktifkan.
 
 3. Apakah data saya aman saat diunggah ke Claude untuk pembuatan dashboard?
-Claude memiliki kebijakan privasi ketat di mana data pengguna gratis maupun berbayar tidak digunakan untuk melatih model publik. Namun, untuk standar perusahaan perbankan atau telekomunikasi di Jakarta, tetap disarankan melakukan *masking* atau menyamarkan angka nominal besar dan identitas personal sebelum memprosesnya. 
+Claude memiliki kebijakan privasi ketat di mana data pengguna gratis maupun berbayar tidak digunakan untuk melatih model publik. Namun, untuk standar perusahaan perbankan atau telekomunikasi di Jakarta, tetap disarankan melakukan *masking* atau menyamarkan angka nominal besar dan identitas personal sebelum memprosesnya.

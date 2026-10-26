@@ -8,7 +8,6 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips", "SVG Icons"]
 theme: "Graphite Technical Paper"
 ---
 
-
 ## 1. 프레젠테이션 1시간 전, 깨져버린 SVG 벡터 그래픽의 재앙
 
 어제 오후 3시, 판교 테크노밸리의 한 전략 기획 회의실. 사내 신사업 브랜딩 발표를 불과 1시간 앞두고 기획서에 들어갈 핵심 웹 일러스트와 서비스 아이콘 세트를 점검하던 중 아찔한 상황이 벌어졌다. AI 모델의 최근 메이저 업데이트 이후, 그동안 자잘하게 수정해가며 잘 쓰던 SVG 생성 프롬프트가 더 이상 제대로 작동하지 않는 것이었다.
@@ -18,8 +17,6 @@ theme: "Graphite Technical Paper"
 <div style="border-left: 4px solid #475569; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>실무 현장 노트:</strong> 최신 LLM들은 출력을 생성할 때 XML 태그 구조와 CSS 스코프(Scope)를 훨씬 엄격하게 검증합니다. 따라서 과거의 감성적인 묘사 위주 프롬프트는 즉시 폐기하고, 뷰박스(ViewBox) 규격과 레이어 구조가 명시된 <strong>시스템 레벨의 제어 프롬프트</strong>로 교체해야 합니다.
 </div>
-
-
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvovbcma-0-b/1000/550.jpg)
 
@@ -74,7 +71,7 @@ Generate the production-ready SVG code now, ensuring zero syntax errors and imme
 - **토큰 절약 및 속도 최적화:** 복잡한 일러스트를 요구할 때 AI가 중간에 코드를 끊어먹는(Truncation) 현상이 발생한다면, "Use simple geometric primitives and minimal bezier curves"라는 제약 조건을 추가하여 토큰 소모를 줄여야 한다.
 - **수정 요청 패턴:** 결과물이 나온 뒤 전체를 다시 그리게 하지 말고, 특정 레이어만 타겟팅하여 수정하자. 예컨대 "Keep everything the same, but change the fill color of `<g id="background">` to `#F1F5F9`"와 같이 구체적으로 지시하는 것이 현명하다.
 
-## 5. Frequently Asked Questions
+## 5. 자주 묻는 질문 (FAQ)
 
 Q: Claude Artifacts 창에서 SVG가 깨지거나 아예 빈 화면으로 나오는 이유는 무엇인가요?
 

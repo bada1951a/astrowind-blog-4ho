@@ -8,6 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Electric Cyan Speed"
 ---
 
+## 1. Tình huống khẩn cấp do AI trả lời ảo giác và sai lệch
 
 Buổi họp sáng thứ Hai tại tòa nhà văn phòng công nghệ cao ở Quận 1, TP. Hồ Chí Minh diễn ra trong bầu không khí khá căng thẳng. Trưởng phòng chiến lược vừa đặt xấp tài liệu lên bàn với vẻ mặt không mấy vui vẻ. Sắp tới giờ chót nộp báo cáo phân tích thị trường cho đối tác chiến lược, nhưng khi gom kết quả từ các thành viên trong team lại, sự chênh lệch chất lượng dữ liệu thực sự làm người ta hoảng hốt. Người thì dùng ChatGPT ra số liệu quá đẹp nhưng hoàn toàn không có thật, người thì dùng Claude viết văn phong quá bay bổng, không khớp với số liệu thực tế của công ty. Tình trạng này kéo dài khiến cả bộ phận mất rất nhiều thời gian kiểm tra lại từng con số, thậm chí suýt ký hợp đồng dựa trên những số liệu bị AIa tự bịa ra. Lúc này, cả phòng nhận ra việc mỗi người tự gõ một kiểu prompt ngẫu nhiên đã đẩy đội ngũ vào thế tiến thoái lưỡng nan, và chúng ta cần ngay một bộ khung system prompt chuẩn hóa toàn cục để ép các mô hình AI này phải bám sát dữ liệu thật.
 
