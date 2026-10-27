@@ -105,7 +105,7 @@ const I18N_SECTIONS = {
     s2: "2. Análise da causa raiz de falhas em prompts e raciocínio",
     s3: "3. Template mestre de prompt pronto para copiar e colar",
     s4: "4. Recomendações e alertas de especialistas em prompt",
-    s5: "5. Perguntas Frecuentes (FAQ)",
+    s5: "5. Perguntas Frequentes (FAQ)",
     tags: ["Engenharia de Prompt", "ChatGPT", "Claude", "IA Generativa"]
   },
   nl: {
@@ -143,22 +143,26 @@ const I18N_SECTIONS = {
 };
 
 // =========================================================================
-// [완전 무결 마크다운 정제 함수]
+// [Uburinzi Bukomeye bwa Markdown ku Gice cya 4]
 // =========================================================================
 function sanitizeMarkdownFormatting(content, langCode) {
   let cleaned = content;
   const i18n = I18N_SECTIONS[langCode] || I18N_SECTIONS.ko;
 
-  // 1) 상단 빈 줄 압축
+  // 1) Gukuraho imirongo y'ubusa hejuru
   cleaned = cleaned.replace(/^\n+/, '');
 
-  // 2) 프롬프트 변수($variable) 및 특수키 주변 달러($) 기호 인라인 백틱화
+  // 2) Gukuraho ibimenyetso by'amadolari ($) no kubishyira mu dukweto (`)
   cleaned = cleaned.replace(/\$(?:Strg|Ctrl|Win|Shift|Alt|Esc)\s*[^$\n]*\$/gi, (match) => {
     return `\`${match.replace(/\$/g, '').trim()}\``;
   });
   cleaned = cleaned.replace(/\$([A-Za-z0-9_-]+)\$/g, '`$1`');
 
-  // 3) AI가 출력한 영문 대괄호 템플릿 및 기본 헤더를 현지 언어로 100% 강제 치환
+  // 3) 🛡️ [UBURINZI BWA FAQ] Gutandukanya umutwe wa FAQ na Q1 mbere y'ibindi byose
+  cleaned = cleaned.replace(/([#]+[^\n]*?FAQ[^\n]*?)\s*(Q[1-9]\.|\*\*Q[1-9]\.\*\*)/gi, '$1\n\n$2');
+  cleaned = cleaned.replace(/(FAQ\)?)\s*(Q[1-9]\.|\*\*Q[1-9]\.\*\*)/gi, '$1\n\n$2');
+
+  // 4) Guhindura imitwe n'ibimenyetso mu rurimi rwemewe
   cleaned = cleaned.replace(/^#{1,3}\s*1\.?\s*(\[Opening Story.*?\]|Opening Story.*?)/gmi, `## ${i18n.s1}`);
   cleaned = cleaned.replace(/^#{1,3}\s*2\.?\s*(\[Root Cause.*?\]|Root Cause Breakdown.*?|Root Cause.*?)/gmi, `## ${i18n.s2}`);
   cleaned = cleaned.replace(/^#{1,3}\s*3\.?\s*(\[Master Prompt.*?\]|Master Prompt.*?|\[Step-by-Step.*?\]|Step-by-Step.*?)/gmi, `## ${i18n.s3}`);
@@ -171,23 +175,22 @@ function sanitizeMarkdownFormatting(content, langCode) {
   cleaned = cleaned.replace(/^4\.\s*\[Practical Variations.*?\]/gmi, `## ${i18n.s4}`);
   cleaned = cleaned.replace(/^5\.\s*(Frequently Asked Questions|\[Frequently Asked Questions\])/gmi, `## ${i18n.s5}`);
 
-  // 변칙 헤더 자동 승격 치환
+  // Guhindura imitwe niba AI itarashyizemo '#'
   cleaned = cleaned.replace(/^#{0,3}\s*1\.?\s*(왜\s*단순한\s*프롬프트.*?)/gmi, `## ${i18n.s1}`);
   cleaned = cleaned.replace(/^#{0,3}\s*(The Root Cause:.*?|Warum herkömmliches Prompting.*?|なぜ(従来|単純)のプロンプト.*?|왜 단순 프롬프트는 실패하고.*?)/gmi, `## ${i18n.s2}`);
   cleaned = cleaned.replace(/^#{0,3}\s*(The Master Prompt Template.*?|Master Prompt-Vorlage|実践投入.*?|30분 만에 끝내는 마스터.*?|실전 마스터 프롬프트.*?)/gmi, `## ${i18n.s3}`);
   cleaned = cleaned.replace(/^#{0,3}\s*(Practical Variations and Failure Prevention|Praktische Variationen.*?|倫理的破綻とハルシネーション.*?|실무 응용 및 트러블슈팅.*?|현업 적용을 위한 핵심.*?)/gmi, `## ${i18n.s4}`);
   cleaned = cleaned.replace(/^#{0,3}\s*(\d\.\s*)?(자주 묻는 질문|Häufig gestellte Fragen|Frequently Asked Questions|よくある(ご)?質問|Questions Fréquemment Posées|Foire [Aa]ux Questions|Preguntas [Ff]recuentes).*?$/gmi, `## ${i18n.s5}`);
 
-  // 잔여 태그 도려내기
   cleaned = cleaned.replace(/\[(Opening Story\/Problem|Root Cause \/ Architecture|Master Prompt Template|Practical Variations \/ Safety Tips)\]/gi, '');
 
-  // 4) 1번 헤더 누락 시 주입 및 직후 중복 1줄 정밀 제거
+  // Gushyiraho umutwe wa 1 no gukuraho umurongo usubiyemo munsi yawo
   if (!cleaned.startsWith('## 1.')) {
     cleaned = `## ${i18n.s1}\n\n` + cleaned;
   }
   cleaned = cleaned.replace(/^(## 1\.[^\n]+)\n+(\s*1\.\s+[^\n]+)\n+/m, '$1\n\n');
 
-  // 5) HTML 인라인 박스에 글자색(#111827) 강제 주입
+  // Gushyiraho ibara ry'inyandiko mu dusanduku twa HTML
   cleaned = cleaned.replace(/(<div style="[^"]*background-color:[^"]*)"/gi, (match, p1) => {
     if (!p1.includes('color:')) {
       return `${p1}; color: #111827;"`;
@@ -195,42 +198,68 @@ function sanitizeMarkdownFormatting(content, langCode) {
     return match;
   });
 
-  // =========================================================================
-  // 🛡️ [핵심 보정 1] 헤딩(#) 줄 내부의 모든 ** 제거 (제목 깨짐 방지)
-  // =========================================================================
+  // Gukuraho ** zose ziri mu mirongo y'imitwe (H1~H6)
   cleaned = cleaned.replace(/^(#{1,6}\s+[^\n]+)$/gm, (match) => {
     return match.replace(/\*\*/g, '');
   });
 
-  // =========================================================================
-  // 🛡️ [핵심 보정 2] 볼드(**) 기호 안쪽 공백 압축 (별표 노출 버그 방지)
-  // =========================================================================
+  // Gukuraho imyanya y'ubusa muri ** ituma markdown ipfa
   cleaned = cleaned.replace(/\*\*\s+([^*]+?)\s+\*\*/g, '**$1**');
   cleaned = cleaned.replace(/\*\*\s+([^*]+?)\*\*/g, '**$1**');
   cleaned = cleaned.replace(/\*\*([^*]+?)\s+\*\*/g, '**$1**');
 
   // =========================================================================
-  // 🛡️ [Q&A 전면 재정비] FAQ 영역 접두사 표준화 및 볼드 깨짐 원천 차단
+  // 🛡️ [GUKOSORA FAQ] Gutandukanya neza Q na A
   // =========================================================================
-  // 1) Q na A zose zikurweho inyenyeri kugira ngo zibe inyandiko isanzwe
   cleaned = cleaned.replace(/\*{1,4}\s*([QA][0-9]*)\s*[:.]\s*\*{1,4}/gi, '$1.');
   cleaned = cleaned.replace(/([QA][0-9]*)\s*[:.]/gi, (match, p1) => `${p1.toUpperCase()}.`);
 
-  // 2) Gusiga imirongo ibiri y'ubusa mbere ya buri Q na A
+  // Gushyira imirongo ibiri y'ubusa mbere ya Q na A
   cleaned = cleaned.replace(/([^\n])\s*\n*\s*(Q[0-9]*\.)/gi, '$1\n\n$2');
   cleaned = cleaned.replace(/([^\n])\s*\n*\s*(A[0-9]*\.)/gi, '$1\n\n$2');
+  cleaned = cleaned.replace(/([.!?])\s*(Q[1-9]\.|\*\*Q[1-9]\.\*\*)/g, '$1\n\n$2');
+  cleaned = cleaned.replace(/([.!?])\s*(A[1-9]\.|\*\*A[1-9]\.\*\*)/g, '$1\n\n$2');
 
-  // 3) Gushyiraho bold nyayo ikwiye (**Q1.**, **A1.**)
+  // Gushyiraho bold nyayo kuri Q na A
   cleaned = cleaned.replace(/^(Q[0-9]*\.)\s*(.*)$/gm, '**$1** $2');
   cleaned = cleaned.replace(/^(A[0-9]*\.)\s*(.*)$/gm, '**$1** $2');
 
-  // 4) Gukuraho inyenyeri zisigaye z'ubusa
+  cleaned = cleaned.replace(/([A-Za-z0-9가-힣]+)\.\*\*/g, '$1.');
   cleaned = cleaned.replace(/\*\*\s*\*\*/g, '');
-
-  // 8) 물음표 뒤 띄어쓰기 및 과도한 개행 압축
   cleaned = cleaned.replace(/\?([A-Za-z\u00C0-\u024F\u1EA0-\u1EF9가-힣])/g, '? $1');
-  cleaned = cleaned.replace(/\n{3,}/g, '\n\n');
 
+  // =========================================================================
+  // 🛡️ [UBURINZI BUKOMEYE: Gukuraho imitwe yisubiramo yikurikiranya]
+  // =========================================================================
+  const lines = cleaned.split('\n');
+  const filteredLines = [];
+  let lastHeadingText = '';
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const trimmed = line.trim();
+
+    if (/^#{1,6}\s+/.test(trimmed)) {
+      const cleanH = trimmed.replace(/^#{1,6}\s+/, '').replace(/\*\*/g, '').trim();
+      if (cleanH.length > 0 && cleanH === lastHeadingText) {
+        continue; // Gukuraho umutwe usubiyemo
+      }
+      lastHeadingText = cleanH;
+    } else if (trimmed.length > 0) {
+      lastHeadingText = '';
+    }
+    filteredLines.push(line);
+  }
+  cleaned = filteredLines.join('\n');
+
+  // =========================================================================
+  // 🛡️ [UBURINZI BUKOMEYE: Gukuraho bold yafashe interuro ndende cyane nabi]
+  // =========================================================================
+  cleaned = cleaned.replace(/\*\*([^\*]*?\n[^\*]*?){150,}\*\*/g, (match) => {
+    return match.replace(/^\*\*/, '').replace(/\*\*$/, '');
+  });
+
+  cleaned = cleaned.replace(/\n{3,}/g, '\n\n');
   return cleaned.trim();
 }
 
@@ -473,6 +502,7 @@ theme: "${selectedTheme.name}"
       frontmatter = frontmatter.replace(/publishDate:\s*[^\n\r]+/i, `publishDate: ${pubDateIso}`);
       frontmatter = frontmatter.replace(/image:\s*["'][^"']*["']/i, `image: '${coverUrl}'`);
 
+      // 🛡️ Uburinzi bwa mbere bwo gutunganya imyandikire
       body = sanitizeMarkdownFormatting(body, lang.code);
 
       let retryCount = 0;
@@ -501,17 +531,22 @@ theme: "${selectedTheme.name}"
       const safeAlt = currentTopic.replace(/[\[\]\(\)"']/g, '').trim();
       const middleImageMarkdown = `\n\n![${safeAlt} Prompt Guide](${bodyUrl})\n\n`;
 
-      if (body.includes('## 2.') || body.includes('### 2.')) {
-        body = body.replace(/(#{2,3}\s*2\.[^\n]+)/, `${middleImageMarkdown}$1`);
-      } else {
-        const paragraphs = body.split('\n\n');
-        if (paragraphs.length >= 3) {
-          paragraphs.splice(2, 0, middleImageMarkdown.trim());
-          body = paragraphs.join('\n\n');
+      if (!body.includes(middleImageMarkdown.trim())) {
+        if (body.includes('## 2.')) {
+          body = body.replace(/(##\s*2\.[^\n]+)/, `${middleImageMarkdown}$1`);
         } else {
-          body = `${middleImageMarkdown}${body}`;
+          const paragraphs = body.split('\n\n');
+          if (paragraphs.length >= 3) {
+            paragraphs.splice(2, 0, middleImageMarkdown.trim());
+            body = paragraphs.join('\n\n');
+          } else {
+            body = `${middleImageMarkdown}${body}`;
+          }
         }
       }
+
+      // 🛡️ Uburinzi bwa kabiri: Kumenya neza ko nta mitwe isubiramo nyuma yo gushyiramo ifoto
+      body = sanitizeMarkdownFormatting(body, lang.code);
 
       text = `${frontmatter}\n\n${body}\n`;
     }
@@ -533,7 +568,7 @@ theme: "${selectedTheme.name}"
 
 async function run() {
   console.log("==================================================");
-  console.log("⚡ 4호기 Prompt Engineering 12개국 최적화 고속 자동 포스팅 시작");
+  console.log("⚡ 4호기 Prompt Engineering 12개국 최적화 고속 자동 포스팅 시작 (방패 가동)");
   console.log("==================================================");
 
   let successCount = 0;
