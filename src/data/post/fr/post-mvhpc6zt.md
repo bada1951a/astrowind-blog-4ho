@@ -61,7 +61,7 @@ Ne lancez jamais vos 20 prompts à l'aveugle. Suivez cette méthodologie en casc
 | Temps de production | 4 heures de retouches et de régénérations | 30 minutes de prompts maîtrisés |
 | Intégration UI/UX | Impossible (visages incohérents dans l'app) | Parfaite pour les prototypes Claude Artifacts |
 
-## Foire Aux Questions (FAQ)
+## 5. Foire Aux Questions (FAQ)
 
 ### Pourquoi mon personnage change-t-il de vêtements malgré le paramètre `--cref` ?
 Par défaut, le paramètre `--cref` avec un poids `--cw 100` tente de conserver la tenue de l'image de référence. Si vous décrivez de nouveaux vêtements dans votre prompt textuel (par exemple, "wearing a red dress" alors que l'image de base portait un manteau), Midjourney va souvent fusionner les deux ou donner la priorité au texte pour les vêtements tout en essayant de garder le visage. Pour un contrôle total, utilisez `--cw 0` pour figer uniquement les traits du visage.

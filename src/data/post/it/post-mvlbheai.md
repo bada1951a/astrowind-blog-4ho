@@ -48,15 +48,15 @@ Per ottenere i massimi risultati operativi in azienda, ci sono alcune buone prat
 
 FAQ
 
-Q1. Perché ChatGPT e Claude continuano a inventare dati anche quando chiedo di essere precisi?
+**Q1.** Perché ChatGPT e Claude continuano a inventare dati anche quando chiedo di essere precisi?
 
-A1. I modelli linguistici di grandi dimensioni sono addestrati per prevedere la parola successiva più probabile e mantenere una conversazione fluida. Quando non possiedono un dato specifico, la loro architettura tende a riempire il vuoto generando una risposta plausibile dal punto di vista sintattico ma completamente falsa nei contenuti, un fenomeno noto come allucinazione.
+**A1.** I modelli linguistici di grandi dimensioni sono addestrati per prevedere la parola successiva più probabile e mantenere una conversazione fluida. Quando non possiedono un dato specifico, la loro architettura tende a riempire il vuoto generando una risposta plausibile dal punto di vista sintattico ma completamente falsa nei contenuti, un fenomeno noto come allucinazione.
 
-Q2. Posso usare questo prompt di sistema sia su ChatGPT che su Claude con gli stessi risultati?
+**Q2.** Posso usare questo prompt di sistema sia su ChatGPT che su Claude con gli stessi risultati?
 
-A2. Sì, il prompt funziona in modo eccellente su entrambi i sistemi. Claude di Anthropic tende naturalmente a essere più prudente e ad ammettere i propri limiti rispetto a ChatGPT, ma l'aggiunta di vincoli espliciti di verità negativa e l'obbligo di dichiarare i dati mancanti garantiscono un livello di affidabilità professionale su entrambe le piattaforme.
+**A2.** Sì, il prompt funziona in modo eccellente su entrambi i sistemi. Claude di Anthropic tende naturalmente a essere più prudente e ad ammettere i propri limiti rispetto a ChatGPT, ma l'aggiunta di vincoli espliciti di verità negativa e l'obbligo di dichiarare i dati mancanti garantiscono un livello di affidabilità professionale su entrambe le piattaforme.
 
-Q3. Cosa devo fare se l'AI continua a rispondere con "Dato non disponibile" per ogni richiesta?
+**Q3.** Cosa devo fare se l'AI continua a rispondere con "Dato non disponibile" per ogni richiesta?
 
-A3. Significa che il perimetro dei vincoli è troppo stretto rispetto alla complessità della richiesta o che i dati cercati sono troppo recenti per la base di addestramento del modello. In questo caso, puoi allegare file di ricerca aggiornati, report di settore in formato PDF o articoli recenti, chiedendo all'AI di estrarre le informazioni esclusivamente da quei materiali specifici.
+**A3.** Significa che il perimetro dei vincoli è troppo stretto rispetto alla complessità della richiesta o che i dati cercati sono troppo recenti per la base di addestramento del modello. In questo caso, puoi allegare file di ricerca aggiornati, report di settore in formato PDF o articoli recenti, chiedendo all'AI di estrarre le informazioni esclusivamente da quei materiali specifici.
 ---

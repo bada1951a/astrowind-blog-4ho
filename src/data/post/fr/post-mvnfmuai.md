@@ -8,7 +8,7 @@ tags: ["Prompt Engineering", "Claude", "SVG", "Design Web"]
 theme: "Sandstone Desert Minimal"
 ---
 
-## 1. [Ouverture] La panique juridique au cœur de La Défense
+## 1. Situation d'urgence critique au bureau La panique juridique au cœur de La Défense
 
 Il est 17h00 dans une tour de verre à Paris La Défense, et la pression monte d'un cran pour notre équipe de conseil en stratégie d'entreprise. Pour illustrer notre dernier livrable client concernant la conformité des contrats de travail, nous avions demandé à l'IA de nous générer rapidement un visuel explicatif ainsi qu'un résumé des règles du code du travail. Résultat des courses : l'outil a généré des graphiques incohérents et, pire encore, a affiché des conseils juridiques calqués sur des jurisprudences obsolètes, inventant purement et simplement des articles de loi inexistants pour justifier un design. En voulant aller vite, nous avions failli intégrer des données réglementaires erronées dans un rapport officiel destiné au comité de direction.
 
@@ -26,9 +26,9 @@ Le problème fondamental réside dans la nature du modèle de langage. Lorsqu'on
 
 * **La troncature du code :** Le modèle coupe souvent le code SVG au milieu d'une balise en raison des limites de tokens par message.
 * **L'hallucination contextuelle :** Le texte intégré dans l'illustration ou le résumé textuel adjacent invente des normes ou des lois qui n'existent pas.
-* **L'absence de design system :** Les couleurs et les proportions sont aléatoires, ce qui donne un rendu amateur inutilisable en entreprise.
+* **L'absence de design system :**Les couleurs et les proportions sont aléatoires, ce qui donne un rendu amateur inutilisable en entreprise.
 
-Pour y remédier, nous allons utiliser une approche d'ingénierie par contraintes strictes. En combinant la fonctionnalité **Artifacts** de Claude avec un prompt de cadrage, nous forçons l'IA à agir comme un développeur front-end senior et un juriste méthodique, en séparant proprement le code exécutable du discours.
+Pour y remédier, nous allons utiliser une approche d'ingénierie par contraintes strictes. En combinant la fonctionnalité**Artifacts** de Claude avec un prompt de cadrage, nous forçons l'IA à agir comme un développeur front-end senior et un juriste méthodique, en séparant proprement le code exécutable du discours.
 
 ## 3. [Template] Le Master Prompt Maître du SVG
 
@@ -74,15 +74,15 @@ Pour maximiser la productivité de votre équipe tout en évitant les déconvenu
 
 ## 5. Foire Aux Questions (FAQ)
 
-Q: Pourquoi utiliser Claude Artifacts plutôt qu'un générateur d'images classique comme Midjourney pour créer des illustrations web ?
+**Q:** Pourquoi utiliser Claude Artifacts plutôt qu'un générateur d'images classique comme Midjourney pour créer des illustrations web ?
 
-A: Midjourney génère des images matricielles (PNG/JPG) non modifiables, impossibles à intégrer proprement dans du code HTML, et souvent truffées de texte illisible. Claude Artifacts génère du code SVG pur, ce qui vous permet de modifier les couleurs, de redimensionner l'image à l'infini sans perte de qualité et d'intégrer des animations CSS.
+**A:** Midjourney génère des images matricielles (PNG/JPG) non modifiables, impossibles à intégrer proprement dans du code HTML, et souvent truffées de texte illisible. Claude Artifacts génère du code SVG pur, ce qui vous permet de modifier les couleurs, de redimensionner l'image à l'infini sans perte de qualité et d'intégrer des animations CSS.
 
-Q: Comment m'assurer que le texte généré à l'intérieur du SVG ne comporte pas de fautes d'orthographe ?
+**Q:** Comment m'assurer que le texte généré à l'intérieur du SVG ne comporte pas de fautes d'orthographe ?
 
-A: Le moyen le plus sûr est d'interdire le texte complexe à l'intérieur du SVG dans votre prompt en précisant : *"N'intègre aucun texte textuel complexe dans le SVG, utilise uniquement des pictogrammes et des formes géométriques. Place tout le contenu textuel explicatif dans la section Markdown sous l'Artifacts"*.
+**A:** Le moyen le plus sûr est d'interdire le texte complexe à l'intérieur du SVG dans votre prompt en précisant : *"N'intègre aucun texte textuel complexe dans le SVG, utilise uniquement des pictogrammes et des formes géométriques. Place tout le contenu textuel explicatif dans la section Markdown sous l'Artifacts"*.
 
-Q: Quelle est la limite de taille pour les illustrations SVG générées par Claude ?
+**Q:** Quelle est la limite de taille pour les illustrations SVG générées par Claude ?
 
-A: Claude gère très bien les fichiers SVG de taille moyenne (jusqu'à environ 100 à 150 lignes de code XML). Si vous demandez des illustrations extrêmement complexes avec des centaines de chemins vectoriels (paths), le modèle risque de couper sa génération. Il est préférable de procéder par composants modulaires (par exemple : une icône, puis un conteneur, puis un schéma de flux).
+**A:** Claude gère très bien les fichiers SVG de taille moyenne (jusqu'à environ 100 à 150 lignes de code XML). Si vous demandez des illustrations extrêmement complexes avec des centaines de chemins vectoriels (paths), le modèle risque de couper sa génération. Il est préférable de procéder par composants modulaires (par exemple : une icône, puis un conteneur, puis un schéma de flux).
 ---

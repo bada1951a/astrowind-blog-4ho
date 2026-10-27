@@ -22,8 +22,6 @@ Ciò che è in gioco va ben oltre il semplice ritardo sulla tabella di marcia: u
 Nota critica dell'architetto: Quando si gestiscono brand complessi, un prompt privo di parametri dimensionali e vincoli semantici scatena inevitabilmente la tendenza del modello a colmare i vuoti con cliché generici. La struttura del prompt deve agire come un binario inflessibile.
 </div>
 
-
-
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvplh98z-6-b/1000/550.jpg)
 
 ## 2. Analisi approfondita dei fallimenti di prompt e logica
@@ -84,12 +82,12 @@ Consiglio strategico: Ottimizza l'uso dei token memorizzando le preferenze di st
 
 **Q1.**Come posso evitare che Claude generi codice SVG troncato o incompleto all'interno degli Artifacts?
 
-A1. Il troncamento del codice si verifica solitamente quando il limite massimo di token in output viene raggiunto prima che il modello completi la scrittura dei tag vettoriali complessi. Per risolvere questo problema, è necessario richiedere esplicitamente al prompt di suddividere le illustrazioni in blocchi più semplici o di generare un singolo elemento alla volta, specificando nel comando che il codice deve essere completo e chiuso correttamente prima di terminare la risposta.
+**A1.** Il troncamento del codice si verifica solitamente quando il limite massimo di token in output viene raggiunto prima che il modello completi la scrittura dei tag vettoriali complessi. Per risolvere questo problema, è necessario richiedere esplicitamente al prompt di suddividere le illustrazioni in blocchi più semplici o di generare un singolo elemento alla volta, specificando nel comando che il codice deve essere completo e chiuso correttamente prima di terminare la risposta.
 
 **Q2.**È possibile fare in modo che Claude adatti automaticamente le dimensioni delle icone SVG per diversi dispositivi?
 
-A2. Certamente, basta impostare nel blocco dei vincoli tecnici l'utilizzo di attributi percentuali o di viewBox scalabili insieme a unità relative, vietando l'uso di larghezze e altezze fisse in pixel all'interno del tag principale del vettore. In questo modo, l'illustrazione generata in Artifacts risulterà perfettamente fluida e adattabile a qualsiasi layout web responsive.
+**A2.** Certamente, basta impostare nel blocco dei vincoli tecnici l'utilizzo di attributi percentuali o di viewBox scalabili insieme a unità relative, vietando l'uso di larghezze e altezze fisse in pixel all'interno del tag principale del vettore. In questo modo, l'illustrazione generata in Artifacts risulterà perfettamente fluida e adattabile a qualsiasi layout web responsive.
 
 **Q3.** Qual è il metodo migliore per mantenere la coerenza stilistica tra più articoli e illustrazioni prodotte in giorni differenti?
 
-A3. Il metodo più efficace consiste nel creare un prompt di sistema standardizzato che includa sempre lo stesso blocco di design system, la palette cromatica ufficiale del brand e un esempio di riferimento testato in precedenza (few-shot). Mantenere inalterata la struttura di base e variare unicamente il tema centrale del contenuto garantisce una continuità visiva e stilistica impeccabile in tutta la produzione editoriale.
+**A3.** Il metodo più efficace consiste nel creare un prompt di sistema standardizzato che includa sempre lo stesso blocco di design system, la palette cromatica ufficiale del brand e un esempio di riferimento testato in precedenza (few-shot). Mantenere inalterata la struttura di base e variare unicamente il tema centrale del contenuto garantisce una continuità visiva e stilistica impeccabile in tutta la produzione editoriale.

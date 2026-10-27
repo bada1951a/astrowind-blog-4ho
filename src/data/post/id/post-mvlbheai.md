@@ -60,14 +60,14 @@ Ketiga, selalu lakukan validasi silang (cross-check) mandiri pada poin-poin krus
 
 FAQ:
 
-Q1. Apakah prompt ini berfungsi sama baiknya di ChatGPT versi gratis dan Claude versi berbayar?
+**Q1.** Apakah prompt ini berfungsi sama baiknya di ChatGPT versi gratis dan Claude versi berbayar?
 
-A1. Ya, struktur perintah dasar ini kompatibel dengan model LLM modern apa pun. Namun, Claude memiliki keunggulan konteks dokumen yang lebih panjang sehingga lebih stabil untuk membaca laporan riset utuh tanpa terpotong.
+**A1.** Ya, struktur perintah dasar ini kompatibel dengan model LLM modern apa pun. Namun, Claude memiliki keunggulan konteks dokumen yang lebih panjang sehingga lebih stabil untuk membaca laporan riset utuh tanpa terpotong.
 
-Q2. Bagaimana jika dokumen riset yang saya miliki berbentuk file PDF berukuran besar?
+**Q2.** Bagaimana jika dokumen riset yang saya miliki berbentuk file PDF berukuran besar?
 
-A2. Anda disarankan mengunggah dokumen tersebut langsung ke fitur analisis file (Advanced Data Analysis atau Claude Projects), lalu letakkan teks prompt di atas sebagai pengantar instruksi sistem sebelum AI membaca file tersebut.
+**A2.** Anda disarankan mengunggah dokumen tersebut langsung ke fitur analisis file (Advanced Data Analysis atau Claude Projects), lalu letakkan teks prompt di atas sebagai pengantar instruksi sistem sebelum AI membaca file tersebut.
 
-Q3. Apakah aturan Zero Hallucination ini akan membuat AI menolak menjawab sama sekali?
+**Q3.** Apakah aturan Zero Hallucination ini akan membuat AI menolak menjawab sama sekali?
 
-A3. Tidak akan, selama dokumen yang Anda berikan memiliki substansi teks yang cukup. AI hanya akan menandai bagian yang tidak jelas dengan label khusus alih-alih mencoba menebak-nebak informasi palsu.
+**A3.** Tidak akan, selama dokumen yang Anda berikan memiliki substansi teks yang cukup. AI hanya akan menandai bagian yang tidak jelas dengan label khusus alih-alih mencoba menebak-nebak informasi palsu.

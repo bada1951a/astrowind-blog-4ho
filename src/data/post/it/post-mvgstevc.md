@@ -51,7 +51,7 @@ Esegui l'analisi seguendo rigorosamente questa struttura in 4 sezioni:
 2. ARCO NARRATIVO E CURVA DEL VALORE:
 - Dividi lo script in blocchi da 3 minuti. Per ogni blocco indic
 
-a:
+**a:**
   * Obiettivo psicologico sullo spettatore.
   * Cambiamento di tono o introduzione di un nuovo open loop (tensione irrisolta).
 

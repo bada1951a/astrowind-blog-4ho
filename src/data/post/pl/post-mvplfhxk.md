@@ -22,8 +22,6 @@ Stawką w tej dramatycznej potyczce z technologią nie jest jedynie estetyka poj
 <strong>Notatka operacyjna inżyniera:</strong> Nagła utrata persony przez model w trakcie długiej sesji to bezpośredni skutek wyczerpania okna uwagi oraz silnego przyciągania tokenowego przez domyślne wagi treningowe bota. Aby utrzymać unikalny głos i styl graficzny, konieczne jest zastosowanie ciągłego kotwiczenia kontekstu w każdej wiadomości.
 </div>
 
-
-
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvpli5bz-9-b/1000/550.jpg)
 
 ## 2. Szczegółowa analiza przyczyn nieudanych promptów i luk w logice
@@ -72,12 +70,12 @@ Zaawansowane łańcuchy myślowe oraz dynamiczna iniekcja persony pozwalają na 
 
 **Q1.**Dlaczego Claude potrafi nagle porzucić nadaną mu ekspercką personę po kilku turach rozmowy i jak temu zapobiec?
 
-A1. Nagła utrata persony wynika z mechanizmu uwagi oraz dominacji ogólnych wag treningowych nad początkowymi instrukcjami w miarę wydłużania się kontekstu konwersacji. Aby temu skutecznie zapobiec, należy wdrożyć powtarzalne kotwice systemowe w każdej nowej wiadomości oraz stosować twarde ograniczenia strukturalne. Dzięki temu model stale operuje na tym samym zbiorze reguł i nie ulega rozproszeniu.
+**A1.** Nagła utrata persony wynika z mechanizmu uwagi oraz dominacji ogólnych wag treningowych nad początkowymi instrukcjami w miarę wydłużania się kontekstu konwersacji. Aby temu skutecznie zapobiec, należy wdrożyć powtarzalne kotwice systemowe w każdej nowej wiadomości oraz stosować twarde ograniczenia strukturalne. Dzięki temu model stale operuje na tym samym zbiorze reguł i nie ulega rozproszeniu.
 
 **Q2.**Jakie są główne zalety używania środowiska Claude Artifacts do generowania kodu SVG w porównaniu do standardowego czatu?
 
-A2. Środowisko Artifacts izoluje wygenerowany kod w dedykowanym, interaktywnym oknie podglądu, co natychmiastowo ukazuje efekty wizualne bez zasmiecania głównego nurtu konwersacji. Pozwala to na precyzyjną edycję wektorów w czasie rzeczywistym oraz sprawne wdrażanie poprawek bez utraty spójności całego projektu graficznego. Jest to absolutnie kluczowe narzędzie w profesjonalnej pracy nowoczesnych studiów projektowych.
+**A2.** Środowisko Artifacts izoluje wygenerowany kod w dedykowanym, interaktywnym oknie podglądu, co natychmiastowo ukazuje efekty wizualne bez zasmiecania głównego nurtu konwersacji. Pozwala to na precyzyjną edycję wektorów w czasie rzeczywistym oraz sprawne wdrażanie poprawek bez utraty spójności całego projektu graficznego. Jest to absolutnie kluczowe narzędzie w profesjonalnej pracy nowoczesnych studiów projektowych.
 
 **Q3.** W jaki sposób skutecznie wymusić na modelu przestrzeganie rygorystycznych standardów dostępności (WCAG) podczas tworzenia ikon?
 
-A3. Wymuszenie standardów dostępności wymaga jawnego zdefiniowania atrybutów semantycznych, takich jak aria-label oraz odpowiednich kontrastów kolorystycznych bezpośrednio w sekcji ograniczeń promptu. Dodatkowo warto umieścić w instrukcji polecenie weryfikacyjne, które zobowiązuje model do sprawdzenia poprawności strukturalnej kodu przed jego ostatecznym sfinalizowaniem w bloku Artifact.
+**A3.** Wymuszenie standardów dostępności wymaga jawnego zdefiniowania atrybutów semantycznych, takich jak aria-label oraz odpowiednich kontrastów kolorystycznych bezpośrednio w sekcji ograniczeń promptu. Dodatkowo warto umieścić w instrukcji polecenie weryfikacyjne, które zobowiązuje model do sprawdzenia poprawności strukturalnej kodu przed jego ostatecznym sfinalizowaniem w bloku Artifact.

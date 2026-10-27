@@ -42,7 +42,7 @@ Tu agis en tant qu'analyste de données senior spécialisé dans le traitement d
 # Contexte du Projet
 - Sujet du livre blanc : Transformation des méthodes de travail et climat social au
 
-Q3.
+**Q3.**
 - Format de sortie attendu : Un plan de classification structuré au format JSON avec métriques estimées.
 
 # Tâche
@@ -108,16 +108,16 @@ Revois le texte brut assemblé ci-dessous pour le livre blanc. Ton travail consi
 
 ---
 
-## Foire Aux Questions (FAQ)
+## 5. Foire Aux Questions (FAQ)
 
-Q1. Comment éviter que l'IA ne s'arrête en plein milieu de la rédaction d'un long chapitre ?
+**Q1.** Comment éviter que l'IA ne s'arrête en plein milieu de la rédaction d'un long chapitre ?
 
-A1. Utilisez systématiquement la commande de continuation explicite. Si la génération s'interrompt, envoyez simplement ce prompt : *"Continue exactement là où tu t'es arrêté dans le paragraphe précédent, en conservant le même niveau de détail et le même style, sans répéter ce qui a déjà été écrit."*
+**A1.** Utilisez systématiquement la commande de continuation explicite. Si la génération s'interrompt, envoyez simplement ce prompt : *"Continue exactement là où tu t'es arrêté dans le paragraphe précédent, en conservant le même niveau de détail et le même style, sans répéter ce qui a déjà été écrit."*
 
-Q2. Quelle est la limite de taille pour les documents source que l'on souhaite analyser en une seule fois ?
+**Q2.** Quelle est la limite de taille pour les documents source que l'on souhaite analyser en une seule fois ?
 
-A2. Avec les modèles dotés d'une grande fenêtre de contexte (comme Claude et ses 200k tokens), vous pouvez charger l'équivalent de 100 à 150 pages de texte. Cependant, pour des performances optimales et une attention accrue aux détails, il est recommandé de segmenter les documents par lots de 20 à 30 pages.
+**A2.** Avec les modèles dotés d'une grande fenêtre de contexte (comme Claude et ses 200k tokens), vous pouvez charger l'équivalent de 100 à 150 pages de texte. Cependant, pour des performances optimales et une attention accrue aux détails, il est recommandé de segmenter les documents par lots de 20 à 30 pages.
 
-Q3. Comment garantir que les chiffres générés par l'IA ne sont pas des hallucinations ?
+**Q3.** Comment garantir que les chiffres générés par l'IA ne sont pas des hallucinations ?
 
-A3. Intégrez toujours une règle stricte dans vos instructions système : *"Si une information chiffrée ne figure pas explicitement dans le texte source fourni, écris [Donnée non vérifiable] au lieu de l'inventer."* Vous éliminez ainsi tout risque d'approximation statistique dans vos rapports officiels.
+**A3.** Intégrez toujours une règle stricte dans vos instructions système : *"Si une information chiffrée ne figure pas explicitement dans le texte source fourni, écris [Donnée non vérifiable] au lieu de l'inventer."* Vous éliminez ainsi tout risque d'approximation statistique dans vos rapports officiels.

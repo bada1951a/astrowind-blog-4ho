@@ -26,7 +26,7 @@ Setelah trial-error beberapa kali, saya menemukan pola prompt engineering yang t
 
 Kesalahan terbesar profesional saat menggunakan AI untuk membuat visualisasi data adalah memberikan instruksi yang terlalu pasif. Contohny
 
-a: *"Analisis data ini dan buat ringkasannya. "* 
+**a:** *"Analisis data ini dan buat ringkasannya. "* 
 
 AI tidak tahu format visual apa yang Anda inginkan, siapa target pembacanya, dan apakah dashboard itu harus interaktif (bisa filter tanggal, klik tombol, atau sorting tabel). Akibatnya, Anda mendapat teks monoton yang membosankan. 
 
@@ -66,7 +66,7 @@ Untuk memaksimalkan hasil kerja di lingkungan korporat Indonesia yang mengutamak
 * Anonimisasi Data Sensitif: Jangan pernah memasukkan data mentah yang berisi nama lengkap klien, nomor rekening, atau NIK ke dalam AI publik. Ganti kolom sensitif dengan kode anonim seperti `Klien-001`, `Klien-002`.
 * Iterasi Cepat: Jika grafik pertama kurang pas, jangan buat prompt baru dari awal. Cukup balas di chat yang sam
 
-a: *"Tolong ubah grafik batang di bawah menjadi grafik garis, dan ubah warna aksen utamanya menjadi biru gelap."* Claude akan memperbarui Artifacts seketika. * Ekspor Hasil: Begitu Artifacts terbuka di sisi kanan layar, Anda bisa langsung melihat pratinjau, menguji tombol filternya, lalu mengklik tombol "Publish" atau menyalin kodenya untuk disimpan sebagai file `.html` mandiri yang bisa dibuka di browser apa saja. ## Pertanyaan yang Sering Diajukan (FAQ)
+**a:** *"Tolong ubah grafik batang di bawah menjadi grafik garis, dan ubah warna aksen utamanya menjadi biru gelap."* Claude akan memperbarui Artifacts seketika. * Ekspor Hasil: Begitu Artifacts terbuka di sisi kanan layar, Anda bisa langsung melihat pratinjau, menguji tombol filternya, lalu mengklik tombol "Publish" atau menyalin kodenya untuk disimpan sebagai file `.html` mandiri yang bisa dibuka di browser apa saja. ## Pertanyaan yang Sering Diajukan (FAQ)
 
 1. Apakah saya memerlukan keahlian koding (HTML/CSS) untuk menggunakan prompt ini?
 Sama sekali tidak. Claude 3.5 Sonnet akan menulis seluruh kode di belakang layar. Tugas Anda hanyalah memberikan instruksi bisnis yang jelas dan melihat hasilnya jadi secara visual di panel Artifacts.

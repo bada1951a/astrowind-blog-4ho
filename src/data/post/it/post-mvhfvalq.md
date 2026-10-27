@@ -12,7 +12,7 @@ theme: "Industrial Blueprint"
 
 Erano le 19:30 in punto nel nostro studio a Milano, e avevamo un problema grosso quanto una cas
 
-a: il cliente ci aveva appena mandato un export CSV di tre anni con le metriche di conversione del suo e-commerce, chiedendoci per la mattina dopo non solo un'analisi testuale dei dati, ma una preview visiva e interattiva per il board. Il grafico statico generato da Excel sembrava uscito dagli anni Novanta e il nostro sviluppatore front-end era irraggiungibile. Mi sono ricordato di una funzione di Claude 3.5 Sonnet che non avevo ancora spremuto a dovere: gli Artifacts. Invece di farmi scrivere codice da zero o accontentarmi di tabelle noiose, ho deciso di usare l'intelligenza artificiale per costruire un prototipo di dashboard HTML, CSS e JavaScript interattivo in tempo reale.
+**a:** il cliente ci aveva appena mandato un export CSV di tre anni con le metriche di conversione del suo e-commerce, chiedendoci per la mattina dopo non solo un'analisi testuale dei dati, ma una preview visiva e interattiva per il board. Il grafico statico generato da Excel sembrava uscito dagli anni Novanta e il nostro sviluppatore front-end era irraggiungibile. Mi sono ricordato di una funzione di Claude 3.5 Sonnet che non avevo ancora spremuto a dovere: gli Artifacts. Invece di farmi scrivere codice da zero o accontentarmi di tabelle noiose, ho deciso di usare l'intelligenza artificiale per costruire un prototipo di dashboard HTML, CSS e JavaScript interattivo in tempo reale.
 
 <div style="border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 20px 0; background-color: rgba(245, 158, 11, 0.08); border-radius: 4px; color: #111827;">
 <strong>Il principio chiave:</strong> Non chiedere a Claude di descrivere una dashboard a parole. Usando gli Artifacts, Claude compila codice eseguibile (React o HTML standalone) che si apre direttamente in un pannello laterale interattivo, permettendoti di testare filtri, grafici e KPI live mentre parli con il modello.
@@ -31,7 +31,7 @@ La svolta architetturale sta nel trattare Claude 3.5 Sonnet non come un semplice
 - Artifact Engine (Claude 3.5 Sonnet): Genera un'applicazione web autonoma e interattiva nel pannello laterale.
 - Revisione Iterativ
 
-a: Chiedi modifiche in tempo reale ("Aggiungi un filtro per data", "Sposta il grafico delle vendite in alto").
+**a:** Chiedi modifiche in tempo reale ("Aggiungi un filtro per data", "Sposta il grafico delle vendite in alto").
 
 ---
 

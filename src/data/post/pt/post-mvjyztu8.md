@@ -19,7 +19,7 @@ Eram 19h em um escritório na Avenida Paulista, em São Paulo. O cliente, uma gi
 
 O erro clássico de quem está começando na engenharia de prompts é tratar o ChatGPT como uma máquina de escrever mágica. Você joga um tema complexo, aperta o enter e espera 5.000 palavras impecáveis. Na prática, isso ger
 
-a:
+**a:**
 
 1. Alucinações Críticas: O modelo inventa estatísticas, cases e normativas para preencher o espaço exigido.
 
@@ -58,10 +58,10 @@ Utilize o perfil de tom definido anteriormente.
 [FORMATO DE SAÍDA EXigido]
 - Extensão mínim
 
-a: 1000 palavras.
+**a:** 1000 palavras.
 - Estrutur
 
-a: 1 introdução conceitual, 3 subseções com subtítulos em Markdown (H3), e 1 box de destaque com insights acionáveis.
+**a:** 1 introdução conceitual, 3 subseções com subtítulos em Markdown (H3), e 1 box de destaque com insights acionáveis.
 - Garantir tom analítico, sem repetições.
 ```
 
@@ -73,7 +73,7 @@ O último prompt da cadeia serve como um "editor-chefe" automatizado que valida 
 Role: Revisor Técnico Sênior e Especialista em Compliance Editorial.
 Taref
 
-a: Analise o texto consolidado abaixo gerado pelas etapas anteriores.
+**a:** Analise o texto consolidado abaixo gerado pelas etapas anteriores.
 Critérios de Revisão:
 1. Verifique se há termos repetidos excessivamente.
 
@@ -99,14 +99,14 @@ Texto para revisão:
 
 ## Perguntas Frequentes (FAQ)
 
-Q1. Posso usar essa técnica de encadeamento em qualquer ferramenta de IA ou apenas no ChatGPT?
+**Q1.** Posso usar essa técnica de encadeamento em qualquer ferramenta de IA ou apenas no ChatGPT?
 
-A1. O método funciona perfeitamente em qualquer LLM avançado, como Claude da Anthropic ou Gemini do Google. Inclusive, o Claude 3.5 Sonnet costuma lidar com janelas de contexto longas mantendo excelente coerência de tom e estilo.
+**A1.** O método funciona perfeitamente em qualquer LLM avançado, como Claude da Anthropic ou Gemini do Google. Inclusive, o Claude 3.5 Sonnet costuma lidar com janelas de contexto longas mantendo excelente coerência de tom e estilo.
 
-Q2. Como evitar que a IA esqueça as diretrizes de marca nos blocos finais de um documento longo?
+**Q2.** Como evitar que a IA esqueça as diretrizes de marca nos blocos finais de um documento longo?
 
-A2. A melhor prática é duplicar as regras fundamentais de tom e voz no início de cada novo prompt da cadeia, ou utilizar o recurso de *Instructions* / *Custom Instructions* da plataforma para fixar o perfil em todas as interações da sessão.
+**A2.** A melhor prática é duplicar as regras fundamentais de tom e voz no início de cada novo prompt da cadeia, ou utilizar o recurso de *Instructions* / *Custom Instructions* da plataforma para fixar o perfil em todas as interações da sessão.
 
-Q3. O que fazer se a IA gerar um texto muito repetitivo mesmo dividindo em módulos?
+**Q3.** O que fazer se a IA gerar um texto muito repetitivo mesmo dividindo em módulos?
 
-A3. Adicione explicitamente uma restrição negativa no prompt de cada módulo, como: "Proibido repetir conceitos já explicados nos módulos anteriores. Avance diretamente para novas camadas de profundidade analítica".
+**A3.** Adicione explicitamente uma restrição negativa no prompt de cada módulo, como: "Proibido repetir conceitos já explicados nos módulos anteriores. Avance diretamente para novas camadas de profundidade analítica".

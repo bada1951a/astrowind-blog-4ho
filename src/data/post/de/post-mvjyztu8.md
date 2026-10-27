@@ -29,7 +29,7 @@ Du bist ein erfahrener Chefredakteur und Branchenanalyst im Frankfurter Finanz- 
 # Input-Daten
 Them
 
-a: [Thema hier einfügen, z.B. Tokenisierung von illiquiden Assets]
+**a:** [Thema hier einfügen, z.B. Tokenisierung von illiquiden Assets]
 Zielgruppe: [Zielgruppe hier einfügen, z.B. C-Level-Entscheider in Banken]
 Kern-Hypothese: [Hypothese hier einfügen]
 
@@ -62,16 +62,16 @@ Nachdem die Struktur über den obigen Master-Prompt fixiert ist, leiten Sie das 
 <strong>Sicherheits- und Token-Hinweis:</strong> Füttern Sie das LLM pro Kapitel mit den bisher generierten Zusammenfassungen als Kontext (Memory-Injection), damit der rote Faden über alle 5000 Wörter hinweg absolut nahtlos erhalten bleibt.
 </div>
 
-### Häufig gestellte Fragen
+## 5. Häufig gestellte Fragen (FAQ)
 
-Q1. Wie verhindere ich, dass ChatGPT oder Claude bei Kapiteln nach der Hälfte abbricht?
+**Q1.** Wie verhindere ich, dass ChatGPT oder Claude bei Kapiteln nach der Hälfte abbricht?
 
-A1. LLMs haben oft ein hartes Limit für die Token-Ausgabe pro einzelner Antwort (meist um die 2000 bis 4000 Tokens). Wenn Sie ein 1000-Wörter-Kapitel anfordern, stoppt das Modell manchmal vorzeitig. Fügen Sie in Ihre Systemanweisung den Befehl ein: "Falls du das Kapitel innerhalb einer Antwort nicht vollständig abschließen kannst, beende den Text mit dem Marker [FORTSETZUNG FOLGT] und warte auf meinen Befehl 'Weiter'." So können Sie den Text nahtlos per Prompt-Chain zusammensetzen.
+**A1.** LLMs haben oft ein hartes Limit für die Token-Ausgabe pro einzelner Antwort (meist um die 2000 bis 4000 Tokens). Wenn Sie ein 1000-Wörter-Kapitel anfordern, stoppt das Modell manchmal vorzeitig. Fügen Sie in Ihre Systemanweisung den Befehl ein: "Falls du das Kapitel innerhalb einer Antwort nicht vollständig abschließen kannst, beende den Text mit dem Marker [FORTSETZUNG FOLGT] und warte auf meinen Befehl 'Weiter'." So können Sie den Text nahtlos per Prompt-Chain zusammensetzen.
 
-Q2. Welches Modell eignet sich am besten für solche langen Whitepaper-Chains?
+**Q2.** Welches Modell eignet sich am besten für solche langen Whitepaper-Chains?
 
-A2. Für die strukturierte Planung und stringente Tonalität hat sich Claude 3.5 Sonnet aufgrund seiner präzisen Befehlsbefolgung und des exzellenten Sprachverständnisses im europäischen Kontext bewährt. Für datenintensive Analysen innerhalb der Kapitel ist ChatGPT mit aktiviertem Code Interpreter ebenfalls hervorragend geeignet.
+**A2.** Für die strukturierte Planung und stringente Tonalität hat sich Claude 3.5 Sonnet aufgrund seiner präzisen Befehlsbefolgung und des exzellenten Sprachverständnisses im europäischen Kontext bewährt. Für datenintensive Analysen innerhalb der Kapitel ist ChatGPT mit aktiviertem Code Interpreter ebenfalls hervorragend geeignet.
 
-Q3. Wie halte ich das Team dazu an, dieses System einheitlich zu nutzen?
+**Q3.** Wie halte ich das Team dazu an, dieses System einheitlich zu nutzen?
 
-A3. Speichern Sie die Prompts als standardisierte Markdown-Vorlagen in einem zentralen internen Repository (z.B. GitHub oder Notion). Jedes Teammitglied muss exakt dieselben Variablen ausfüllen. Dadurch eliminieren Sie die persönliche Prompt-Varianz und garantieren, dass die Qualität der Whitepapers unabhängig vom Verfasser stets auf höchstem Niveau bleibt.
+**A3.** Speichern Sie die Prompts als standardisierte Markdown-Vorlagen in einem zentralen internen Repository (z.B. GitHub oder Notion). Jedes Teammitglied muss exakt dieselben Variablen ausfüllen. Dadurch eliminieren Sie die persönliche Prompt-Varianz und garantieren, dass die Qualität der Whitepapers unabhängig vom Verfasser stets auf höchstem Niveau bleibt.

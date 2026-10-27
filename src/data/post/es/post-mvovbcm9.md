@@ -68,20 +68,20 @@ Constraints & Styling:
 
 Cuando trabajes con equipos distribuidos entre oficinas o en remoto, ten en cuenta las siguientes recomendaciones para maximizar la eficiencia y proteger la información:
 
-- **Validación de Código:** Utiliza siempre la ventana de **Artifacts** de Claude para visualizar el código en tiempo real antes de exportarlo a formato .svg. Esto te permite iterar cambios visuales sin alterar la estructura interna.
-- **Optimización de Tokens:** Mantén las descripciones de los flujos anonimizados concisas. Cuanto más directa sea la correlación entre la variable y su función técnica, más preciso será el resultado gráfico de Claude.
-- **Consistencia de Marca:** Añade los códigos HEX exactos de tu manual de marca en la sección de **Constraints** para evitar variaciones de tono indeseadas en las presentaciones corporativas.
+-**Validación de Código:**Utiliza siempre la ventana de**Artifacts**de Claude para visualizar el código en tiempo real antes de exportarlo a formato .svg. Esto te permite iterar cambios visuales sin alterar la estructura interna.
+-**Optimización de Tokens:**Mantén las descripciones de los flujos anonimizados concisas. Cuanto más directa sea la correlación entre la variable y su función técnica, más preciso será el resultado gráfico de Claude.
+-**Consistencia de Marca:**Añade los códigos HEX exactos de tu manual de marca en la sección de**Constraints**para evitar variaciones de tono indeseadas en las presentaciones corporativas.
 
 ## 5. Preguntas Frecuentes (FAQ)
 
-Q: ¿Puedo utilizar este prompt maestro en ChatGPT o Gemini además de en Claude?
+**Q:** ¿Puedo utilizar este prompt maestro en ChatGPT o Gemini además de en Claude?
 
-A: Sí, puedes adaptarlo fácilmente, pero ten en cuenta que Claude cuenta con la ventaja nativa de los **Artifacts**, lo que permite renderizar y visualizar el código SVG de manera interactiva sin necesidad de abrir editores externos como Illustrator o VS Code.
+**A:** Sí, puedes adaptarlo fácilmente, pero ten en cuenta que Claude cuenta con la ventaja nativa de los**Artifacts**, lo que permite renderizar y visualizar el código SVG de manera interactiva sin necesidad de abrir editores externos como Illustrator o VS Code.
 
-Q: ¿Qué hago si el icono SVG generado sale cortado o desalineado en la pantalla?
+**Q:** ¿Qué hago si el icono SVG generado sale cortado o desalineado en la pantalla?
 
-A: Simplemente responde al chat indicando: *"Ajusta el atributo viewBox y añade un padding interno del 10% alrededor de los trazos principales para evitar recortes en los bordes"*.
+**A:** Simplemente responde al chat indicando: *"Ajusta el atributo viewBox y añade un padding interno del 10% alrededor de los trazos principales para evitar recortes en los bordes"*.
 
-Q: ¿Cómo garantizo que no se filtre información confidencial al usar modelos de lenguaje?
+**Q:** ¿Cómo garantizo que no se filtre información confidencial al usar modelos de lenguaje?
 
-A: Utiliza siempre la técnica de enmascaramiento con variables genéricas (como se muestra en la plantilla) y asegúrate de utilizar entornos corporativos con políticas de retención de datos desactivadas para entrenamiento público.
+**A:** Utiliza siempre la técnica de enmascaramiento con variables genéricas (como se muestra en la plantilla) y asegúrate de utilizar entornos corporativos con políticas de retención de datos desactivadas para entrenamiento público.

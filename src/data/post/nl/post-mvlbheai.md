@@ -57,14 +57,14 @@ Om te zorgen dat je nooit meer tegen vage samenvattingen aanloopt, zijn er nog e
 
 Hieronder volgen de antwoorden op de meest gestelde vragen over het tegengaan van AI-hallucinaties bij data-extractie.
 
-Q1. Waarom blijft ChatGPT ondanks deze strenge regels soms toch kleine details verzinnen?
+**Q1.** Waarom blijft ChatGPT ondanks deze strenge regels soms toch kleine details verzinnen?
 
-A1. Dat komt door de probabilistische aard van Large Language Models. Als het transcript erg vaag is of ontbreekt aan duidelijke informatie, probeert het model toch een compleet antwoord te geven om de gebruiker te behagen. Door in je prompt op te nemen dat het model expliciet mag melden als informatie ontbreekt, neem je die druk weg.
+**A1.** Dat komt door de probabilistische aard van Large Language Models. Als het transcript erg vaag is of ontbreekt aan duidelijke informatie, probeert het model toch een compleet antwoord te geven om de gebruiker te behagen. Door in je prompt op te nemen dat het model expliciet mag melden als informatie ontbreekt, neem je die druk weg.
 
-Q2. Moet ik deze prompt elke keer opnieuw invoeren of kan ik dit opslaan?
+**Q2.** Moet ik deze prompt elke keer opnieuw invoeren of kan ik dit opslaan?
 
-A2. Het is het handigst om deze prompt op te slaan in je persoonlijke promptbibliotheek of te verwerken in de Custom Instructions van ChatGPT of Projects-functie van Claude. Zo hoef je alleen nog maar je transcript eronder te plakken en direct op verzenden te klikken.
+**A2.** Het is het handigst om deze prompt op te slaan in je persoonlijke promptbibliotheek of te verwerken in de Custom Instructions van ChatGPT of Projects-functie van Claude. Zo hoef je alleen nog maar je transcript eronder te plakken en direct op verzenden te klikken.
 
-Q3. Werkt deze methode ook voor Nederlandstalige zakelijke teksten met veel Engels jargon?
+**Q3.** Werkt deze methode ook voor Nederlandstalige zakelijke teksten met veel Engels jargon?
 
-A3. Zeker weten. Moderne modellen zoals GPT-4o en Claude 3.5 Sonnet begrijpen Nederlands en Engels door elkaar uitstekend. De instructies in de prompt zorgen ervoor dat de AI niet in de war raakt van vakterminologie en puur filtert op de feitelijke inhoud per spreker.
+**A3.** Zeker weten. Moderne modellen zoals GPT-4o en Claude 3.5 Sonnet begrijpen Nederlands en Engels door elkaar uitstekend. De instructies in de prompt zorgen ervoor dat de AI niet in de war raakt van vakterminologie en puur filtert op de feitelijke inhoud per spreker.

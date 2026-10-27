@@ -56,14 +56,14 @@ To get the absolute best results out of this architecture, keep a few practical 
 
 Let us look at some common questions regarding this approach.
 
-Q1. Why does ChatGPT still sometimes skip steps even when using a strict multi-step prompt?
+**Q1.** Why does ChatGPT still sometimes skip steps even when using a strict multi-step prompt?
 
-A1. This usually happens because the prompt is too long and the model's attention is diluted. Try breaking the execution into distinct API calls or separate chat prompts where the model only focuses on one step at a time, feeding the output of the previous step into the next.
+**A1.** This usually happens because the prompt is too long and the model's attention is diluted. Try breaking the execution into distinct API calls or separate chat prompts where the model only focuses on one step at a time, feeding the output of the previous step into the next.
 
-Q2. Can I use this anti-hallucination prompt template for creative writing or brainstorming tasks?
+**Q2.** Can I use this anti-hallucination prompt template for creative writing or brainstorming tasks?
 
-A2. This specific template is optimized for analytical, data-driven, and operational workflows where factual accuracy is critical. For creative writing, you should tone down the strict data validation constraints so you do not stifle the model's creative output.
+**A2.** This specific template is optimized for analytical, data-driven, and operational workflows where factual accuracy is critical. For creative writing, you should tone down the strict data validation constraints so you do not stifle the model's creative output.
 
-Q3. Does this prompt architecture increase token usage and latency?
+**Q3.** Does this prompt architecture increase token usage and latency?
 
-A3. Yes, because the model is forced to pause, output status checks, and process instructions more deliberately, token consumption and response times will increase. However, the time saved by eliminating hours of debugging and correcting hallucinated data makes the minor token overhead well worth it.
+**A3.** Yes, because the model is forced to pause, output status checks, and process instructions more deliberately, token consumption and response times will increase. However, the time saved by eliminating hours of debugging and correcting hallucinated data makes the minor token overhead well worth it.

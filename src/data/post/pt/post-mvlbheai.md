@@ -48,14 +48,14 @@ Para extrair o máximo de eficiência desse modelo de prompt sem desperdiçar to
 Dica Prática: Sempre inclua a instrução explícita de recusa ("DADOS INSUFICIENTES"). Liberdade para dizer "eu nao sei" e o antídoto mais eficaz contra alucinações em modelos generativos.
 </div>
 
-Q1. Por que o ChatGPT continua inventando bibliotecas mesmo com instruções restritivas?
+**Q1.** Por que o ChatGPT continua inventando bibliotecas mesmo com instruções restritivas?
 
-A1. Modelos de linguagem possuem fortes vieses de completude herdados do treinamento. Se a instrução negativa for fraca ou ambígua, o peso estatístico de completar a frase fala mais alto. Reforce a penalidade para invenções e use delimitadores claros como tags XML no Claude ou blocos de código markdown para isolar os dados reais.
+**A1.** Modelos de linguagem possuem fortes vieses de completude herdados do treinamento. Se a instrução negativa for fraca ou ambígua, o peso estatístico de completar a frase fala mais alto. Reforce a penalidade para invenções e use delimitadores claros como tags XML no Claude ou blocos de código markdown para isolar os dados reais.
 
-Q2. Posso usar esse mesmo prompt de sistema no Claude e no Gemini?
+**Q2.** Posso usar esse mesmo prompt de sistema no Claude e no Gemini?
 
-A2. Sim. Embora o Claude reaja excepcionalmente bem a instruções estruturadas em XML e o ChatGPT prefira blocos markdown tradicionais, a lógica de impor regras restritivas e uma resposta padrão para falhas funciona perfeitamente em qualquer LLM moderno de mercado.
+**A2.** Sim. Embora o Claude reaja excepcionalmente bem a instruções estruturadas em XML e o ChatGPT prefira blocos markdown tradicionais, a lógica de impor regras restritivas e uma resposta padrão para falhas funciona perfeitamente em qualquer LLM moderno de mercado.
 
-Q3. Como evitar que o prompt fique excessivamente longo e gaste muitos tokens?
+**Q3.** Como evitar que o prompt fique excessivamente longo e gaste muitos tokens?
 
-A3. Você pode salvar as regras antifalsificação dentro das Configurações Personalizadas da sua conta ou criar um snippet reutilizável no seu editor. Assim, o prompt principal de trabalho continua curto, enquanto as diretrizes de segurança de dados são carregadas de forma invisível no system prompt.
+**A3.** Você pode salvar as regras antifalsificação dentro das Configurações Personalizadas da sua conta ou criar um snippet reutilizável no seu editor. Assim, o prompt principal de trabalho continua curto, enquanto as diretrizes de segurança de dados são carregadas de forma invisível no system prompt.

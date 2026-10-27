@@ -29,10 +29,10 @@ Why do standard, casual prompts fail to generate usable SVG graphics?
 When you prompt an LLM without strict structural boundaries, it relies on probabilistic completion rather than geometric logic. It frequently outputs raw code snippets wrapped in messy markdown, forgets crucial viewBox attributes, uses non-standard CSS properties, or mixes up presentation attributes with inline styles. 
 
 By leveraging **Claude Artifacts**, we isolate the output into an interactive, side-by-side rendering environment. This allows Claude to instantly compile, test, and display the visual vector graphic while letting us inspect the clean code simultaneously. To make this work seamlessly, our prompt architecture must enforce four non-negotiable pillars:
-- **Semantic Structure:** Proper nesting of groups (`<g>`), paths (`<path>`), and definitions (`<defs>`).
-- **Scalability:** Explicit use of `viewBox="0 0 24 24"` or similar proportional grids without hardcoded pixel constraints.
-- **Design System Alignment:** Enforced color variables, stroke widths, and aesthetic styles (e.g., Duotone, Minimalist, Neumorphic).
-- **Accessibility:** Built-in `<title>` and `aria-hidden` attributes for screen readers.
+-**Semantic Structure:**Proper nesting of groups (`<g>`), paths (`<path>`), and definitions (`<defs>`).
+-**Scalability:**Explicit use of `viewBox="0 0 24 24"` or similar proportional grids without hardcoded pixel constraints.
+-**Design System Alignment:**Enforced color variables, stroke widths, and aesthetic styles (e.g., Duotone, Minimalist, Neumorphic).
+-**Accessibility:**Built-in `<title>` and `aria-hidden` attributes for screen readers.
 
 ## 3. Copy-and-Paste Master Prompt Engineering Template Template
 
@@ -64,24 +64,24 @@ Create a custom icon representing [Insert Specific Concept, e.g., real-time AI s
 
 When scaling your asset generation pipeline, keep these optimization and safety tips in mind:
 
-- **Iterative Tweaks:** Instead of regenerating the entire asset when a color or stroke is off, reply directly inside the Artifact session with targeted commands: *"Make the primary stroke color #059669 and increase padding inside the viewBox by 10%."*
-- **Token Efficiency:** Keep your style guidelines saved in a system prompt or project knowledge base in Claude. This saves you from pasting lengthy design manuals into every single prompt.
-- **Hallucination Prevention:** If Claude tries to invent non-existent SVG tags or attributes, explicitly remind it in your constraints: *"Stick strictly to standard SVG 1.1 specifications supported by modern browsers."*
+-**Iterative Tweaks:** Instead of regenerating the entire asset when a color or stroke is off, reply directly inside the Artifact session with targeted commands: *"Make the primary stroke color #059669 and increase padding inside the viewBox by 10%."*
+- **Token Efficiency:**Keep your style guidelines saved in a system prompt or project knowledge base in Claude. This saves you from pasting lengthy design manuals into every single prompt.
+-**Hallucination Prevention:** If Claude tries to invent non-existent SVG tags or attributes, explicitly remind it in your constraints: *"Stick strictly to standard SVG 1.1 specifications supported by modern browsers."*
 
 <div style="border-left: 4px solid #10b981; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Pro Tip:</strong> Always ask Claude to include a subtle CSS drop-shadow filter or linear gradient definition within a <code>&lt;defs&gt;</code> block to instantly elevate flat vector icons into modern, professional UI components.
 </div>
 
-## 5. Frequently Asked Questions (FAQ) (FAQ) (FAQ)
+## 5. Frequently Asked Questions (FAQ)
 
-Q: Can I export these Claude Artifact SVGs directly into Figma or React components?
+**Q:** Can I export these Claude Artifact SVGs directly into Figma or React components?
 
-A: Yes. Because Claude Artifacts render the code in an isolated pane, you can simply click the copy button on the raw code, paste it into an `.svg` file, drag it straight into Figma, or pipe it through an SVGR tool to generate clean React components.
+**A:** Yes. Because Claude Artifacts render the code in an isolated pane, you can simply click the copy button on the raw code, paste it into an `.svg` file, drag it straight into Figma, or pipe it through an SVGR tool to generate clean React components.
 
-Q: Why use Claude Artifacts instead of ChatGPT or Gemini for SVG generation?
+**Q:** Why use Claude Artifacts instead of ChatGPT or Gemini for SVG generation?
 
-A: Claude Artifacts provide a dedicated, persistent visual preview window right next to the chat stream. This lets you immediately inspect the rendered visual output without needing to manually paste code into an external HTML file or code editor to see if it rendered correctly.
+**A:** Claude Artifacts provide a dedicated, persistent visual preview window right next to the chat stream. This lets you immediately inspect the rendered visual output without needing to manually paste code into an external HTML file or code editor to see if it rendered correctly.
 
-Q: How do I maintain consistent stroke weights across a set of fifty different icons?
+**Q:** How do I maintain consistent stroke weights across a set of fifty different icons?
 
-A: Define your global styling rules—such as `stroke-width="1.5"`, `stroke-linecap="round"`, and specific hex color codes—directly in the system instructions of your Claude Project, then reference that project in every chat session.
+**A:** Define your global styling rules—such as `stroke-width="1.5"`, `stroke-linecap="round"`, and specific hex color codes—directly in the system instructions of your Claude Project, then reference that project in every chat session.

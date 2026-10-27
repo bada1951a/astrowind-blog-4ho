@@ -24,12 +24,12 @@ Thay vì ngồi sửa từng dòng code cào dữ liệu thủ công mất thờ
 
 Tại sao các mô hình ngôn ngữ lớn (LLM) thường thất bại khi trích xuất bảng dữ liệu từ văn bản thô? Lý do cốt lõi là các mô hình này dự đoán từ tiếp theo dựa trên xác suất thống kê. Khi gặp một định dạng văn bản không có cấu trúc rõ ràng (như biên bản họp, email hỗn hợp, báo cáo khảo sát dạng đoạn văn), AI không biết đâu là tiêu đề cột, đâu là giá trị hàng.
 
-Kỹ thuật **Few-Shot Prompting** giải quyết bài toán này bằng cách cung cấp cho AI một vài mẫu ví dụ (Input và Output mong muốn) ngay trước khi đưa dữ liệu thực tế vào. Cấu trúc của một Few-Shot Prompt chuyên nghiệp bao gồm:
+Kỹ thuật **Few-Shot Prompting**giải quyết bài toán này bằng cách cung cấp cho AI một vài mẫu ví dụ (Input và Output mong muốn) ngay trước khi đưa dữ liệu thực tế vào. Cấu trúc của một Few-Shot Prompt chuyên nghiệp bao gồm:
 
-- **Vai trò (System Role):** Định nghĩa chuyên môn của AI (ví dụ: Chuyên gia phân tích dữ liệu).
-- **Quy tắc trích xuất (Instructions):** Các ràng buộc nghiêm ngặt về định dạng, cách xử lý dữ liệu thiếu.
-- **Ví dụ mẫu (Few-Shot Examples):** Cặp dữ liệu mẫu đầu vào (Input) và kết quả bảng mẫu (Output).
-- **Dữ liệu đích (Target Data):** Phần văn bản thực tế cần xử lý.
+-**Vai trò (System Role):**Định nghĩa chuyên môn của AI (ví dụ: Chuyên gia phân tích dữ liệu).
+-**Quy tắc trích xuất (Instructions):**Các ràng buộc nghiêm ngặt về định dạng, cách xử lý dữ liệu thiếu.
+-**Ví dụ mẫu (Few-Shot Examples):**Cặp dữ liệu mẫu đầu vào (Input) và kết quả bảng mẫu (Output).
+-**Dữ liệu đích (Target Data):**Phần văn bản thực tế cần xử lý.
 
 ## 3. Mẫu câu lệnh Master Prompt thực chiến sao chép dùng ngay
 
@@ -71,9 +71,9 @@ Output Format: Chỉ trả về bảng Markdown, không kèm theo bất kỳ l�
 
 Để tối ưu hóa hiệu suất khi xử lý khối lượng dữ liệu lớn tại nơi làm việc, bạn hãy ghi nhớ các mẹo thực chiến sau:
 
-- **Xử lý văn bản quá dài:** Nếu văn bản vượt quá giới hạn cửa sổ ngữ cảnh, hãy chia nhỏ thành từng đoạn khoảng 1.000 từ và dùng cùng một khung prompt mẫu.
-- **Ép kiểu dữ liệu xuất ra:** Nếu bạn cần đưa dữ liệu thẳng vào cơ sở dữ liệu hoặc Excel, hãy thay đổi phần `Output Format` thành định dạng JSON Array thay vì bảng Markdown.
-- **Kiểm soát tính sáng tạo:** Luôn đặt thông số `Temperature` về mức thấp nhất (0.0 hoặc 0.1) nếu giao diện AI của bạn cho phép chỉnh sửa thông số này, giúp AI tập trung vào logic thay vì sáng tạo nội dung.
+-**Xử lý văn bản quá dài:**Nếu văn bản vượt quá giới hạn cửa sổ ngữ cảnh, hãy chia nhỏ thành từng đoạn khoảng 1.000 từ và dùng cùng một khung prompt mẫu.
+-**Ép kiểu dữ liệu xuất ra:**Nếu bạn cần đưa dữ liệu thẳng vào cơ sở dữ liệu hoặc Excel, hãy thay đổi phần `Output Format` thành định dạng JSON Array thay vì bảng Markdown.
+-**Kiểm soát tính sáng tạo:** Luôn đặt thông số `Temperature` về mức thấp nhất (0.0 hoặc 0.1) nếu giao diện AI của bạn cho phép chỉnh sửa thông số này, giúp AI tập trung vào logic thay vì sáng tạo nội dung.
 
 <div style="border-left: 4px solid #10b981; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Mẹo tiết kiệm thời gian:</strong> Lưu mẫu prompt này vào phím tắt của trình duyệt hoặc phần mềm quản lý văn bản (như TextExpander). Khi cần, bạn chỉ mất 3 giây để gọi ra thay vì ngồi viết lại từ đầu.
@@ -81,14 +81,14 @@ Output Format: Chỉ trả về bảng Markdown, không kèm theo bất kỳ l�
 
 ## 5. Các câu hỏi thường gặp (FAQ)
 
-Q: Tôi phải làm sao nếu văn bản đầu vào có quá nhiều lỗi chính tả tiếng Việt?
+**Q:** Tôi phải làm sao nếu văn bản đầu vào có quá nhiều lỗi chính tả tiếng Việt?
 
-A: Các mô hình AI hiện đại như GPT-4o hay Claude 3.5 Sonnet có khả năng tự động sửa lỗi chính tả ngữ cảnh rất tốt. Tuy nhiên, bạn nên bổ sung thêm một dòng vào phần Rules trong prompt: "Tự động chuẩn hóa lỗi chính tả tiếng Việt của tên riêng và sản phẩm trước khi đưa vào bảng".
+**A:** Các mô hình AI hiện đại như GPT-4o hay Claude 3.5 Sonnet có khả năng tự động sửa lỗi chính tả ngữ cảnh rất tốt. Tuy nhiên, bạn nên bổ sung thêm một dòng vào phần Rules trong prompt: "Tự động chuẩn hóa lỗi chính tả tiếng Việt của tên riêng và sản phẩm trước khi đưa vào bảng".
 
-Q: Khi nào nên dùng bảng Markdown và khi nào nên dùng định dạng CSV/JSON?
+**Q:** Khi nào nên dùng bảng Markdown và khi nào nên dùng định dạng CSV/JSON?
 
-A: Hãy dùng bảng Markdown nếu bạn cần copy nhanh kết quả dán trực tiếp vào Notion, Confluence hoặc Google Docs. Hãy dùng định dạng JSON hoặc CSV nếu bạn có ý định viết một đoạn script nhỏ để tự động hóa việc đẩy dữ liệu vào database.
+**A:** Hãy dùng bảng Markdown nếu bạn cần copy nhanh kết quả dán trực tiếp vào Notion, Confluence hoặc Google Docs. Hãy dùng định dạng JSON hoặc CSV nếu bạn có ý định viết một đoạn script nhỏ để tự động hóa việc đẩy dữ liệu vào database.
 
-Q: Tại sao AI vẫn thỉnh thoảng bỏ sót một vài dòng dữ liệu trong văn bản dài?
+**Q:** Tại sao AI vẫn thỉnh thoảng bỏ sót một vài dòng dữ liệu trong văn bản dài?
 
-A: Đó là do hiện tượng "Lost in the Middle" của các mô hình ngôn ngữ khi xử lý văn bản dài. Giải pháp tốt nhất là cung cấp từ 2 đến 3 ví dụ mẫu rõ ràng ở phần Few-Shot Examples và yêu cầu AI rà soát lại toàn bộ văn bản theo từng đoạn nhỏ trước khi xuất bảng cuối cùng.
+**A:** Đó là do hiện tượng "Lost in the Middle" của các mô hình ngôn ngữ khi xử lý văn bản dài. Giải pháp tốt nhất là cung cấp từ 2 đến 3 ví dụ mẫu rõ ràng ở phần Few-Shot Examples và yêu cầu AI rà soát lại toàn bộ văn bản theo từng đoạn nhỏ trước khi xuất bảng cuối cùng.

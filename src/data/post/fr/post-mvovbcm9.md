@@ -29,13 +29,13 @@ Premièrement, les modèles de langage génèrent du texte brut. Sans contrainte
 Deuxièmement, les LLM manquent de contexte visuel précis si on ne leur impose pas de normes de design (système de grille, palette de couleurs hexadécimales, viewBox normalisée, sémantique des balises).
 
 Pour corriger cela, nous appliquons une architecture de prompt en 4 couches distinctes :
-1. **Rôle et Contexte (System Instruction) :** Définir l'IA comme un expert en design system et en graphisme vectoriel.
+1.**Rôle et Contexte (System Instruction) :**Définir l'IA comme un expert en design system et en graphisme vectoriel.
 
-2. **Contraintes Techniques (Technical Constraints) :** Imposer des règles strictes sur le code (pas de balises HTML superflues, utilisation exclusive de balises SVG pures, attributs `viewBox` obligatoires, accessibilité de base).
+2.**Contraintes Techniques (Technical Constraints) :**Imposer des règles strictes sur le code (pas de balises HTML superflues, utilisation exclusive de balises SVG pures, attributs `viewBox` obligatoires, accessibilité de base).
 
-3. **Spécification Visuelle (Art Direction) :** Fixer la palette de couleurs, l'épaisseur des traits (`stroke-width`), le style des coins (`stroke-linejoin`) et le style général (minimaliste, isométrique, plat).
+3.**Spécification Visuelle (Art Direction) :**Fixer la palette de couleurs, l'épaisseur des traits (`stroke-width`), le style des coins (`stroke-linejoin`) et le style général (minimaliste, isométrique, plat).
 
-4. **Format de Sortie (Output Format) :** Exiger un affichage via **Claude Artifacts** avec un aperçu interactif immédiat et un bloc de code propre.
+4.**Format de Sortie (Output Format) :**Exiger un affichage via**Claude Artifacts** avec un aperçu interactif immédiat et un bloc de code propre.
 
 ## 3. Modèle de prompt maître pratique prêt à l'emploi
 
@@ -81,14 +81,14 @@ Pour aller plus loin et optimiser votre productivité au quotidien, voici quelqu
 
 ## 5. Foire Aux Questions (FAQ)
 
-Q: Comment intégrer directement le code SVG généré par Claude Artifacts dans un document Word ou PowerPoint pour une proposition commerciale ?
+**Q:** Comment intégrer directement le code SVG généré par Claude Artifacts dans un document Word ou PowerPoint pour une proposition commerciale ?
 
-A: Le format SVG natif n'est pas toujours parfaitement supporté par les anciennes versions de Microsoft Office. Le moyen le plus simple est de copier le code SVG dans un fichier texte, de l'enregistrer avec l'extension `.svg`, puis de l'ouvrir dans un navigateur ou un outil comme Inkscape pour l'exporter en PNG haute résolution ou le convertir directement au format EMF/WMF compatible Office.
+**A:** Le format SVG natif n'est pas toujours parfaitement supporté par les anciennes versions de Microsoft Office. Le moyen le plus simple est de copier le code SVG dans un fichier texte, de l'enregistrer avec l'extension `.svg`, puis de l'ouvrir dans un navigateur ou un outil comme Inkscape pour l'exporter en PNG haute résolution ou le convertir directement au format EMF/WMF compatible Office.
 
-Q: Pourquoi mes icônes générées apparaissent-elles parfois rognées ou déformées sur l'écran ?
+**Q:** Pourquoi mes icônes générées apparaissent-elles parfois rognées ou déformées sur l'écran ?
 
-A: Ce problème survient généralement lorsque l'attribut `viewBox` est absent ou mal défini dans la balise racine `<svg>`. Veillez à toujours inclure explicitement `viewBox="0 0 64 64"` dans vos contraintes techniques pour garantir une mise à l'échelle fluide et responsive.
+**A:** Ce problème survient généralement lorsque l'attribut `viewBox` est absent ou mal défini dans la balise racine `<svg>`. Veillez à toujours inclure explicitement `viewBox="0 0 64 64"` dans vos contraintes techniques pour garantir une mise à l'échelle fluide et responsive.
 
-Q: Puis-je utiliser ce même prompt pour générer des illustrations web complexes de type Hero Section ?
+**Q:** Puis-je utiliser ce même prompt pour générer des illustrations web complexes de type Hero Section ?
 
-A: Absolument, il suffit d'ajuster l'attribut `viewBox` à une taille plus grande (par exemple `viewBox="0 0 800 600"`) dans les contraintes techniques du prompt et de demander explicitement une composition paysagère comprenant plusieurs éléments interconnectés.
+**A:** Absolument, il suffit d'ajuster l'attribut `viewBox` à une taille plus grande (par exemple `viewBox="0 0 800 600"`) dans les contraintes techniques du prompt et de demander explicitement une composition paysagère comprenant plusieurs éléments interconnectés.

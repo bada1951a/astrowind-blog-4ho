@@ -92,16 +92,16 @@ When working with large document sets or complex extraction tasks, standard prom
 
 ---
 
-## 5. Frequently Asked Questions (FAQ) (FAQ) (FAQ)
+## 5. Frequently Asked Questions (FAQ)
 
-Q: What should I do if the AI leaves out columns or invents fake data points for missing text?
+**Q:** What should I do if the AI leaves out columns or invents fake data points for missing text?
 
-A: You need to strengthen your negative constraints in the prompt rules. Explicitly add a rule stating: *"If data for a column is absent from the text, you must output 'N/A' rather than guessing or inferring."* Additionally, adding a strict third example where one of the fields is missing teaches the model how to handle empty data gracefully.
+**A:** You need to strengthen your negative constraints in the prompt rules. Explicitly add a rule stating: *"If data for a column is absent from the text, you must output 'N/A' rather than guessing or inferring."* Additionally, adding a strict third example where one of the fields is missing teaches the model how to handle empty data gracefully.
 
-Q: Can I use this same few-shot technique inside custom GPTs or API system prompts?
+**Q:** Can I use this same few-shot technique inside custom GPTs or API system prompts?
 
-A: Absolutely. In fact, placing this exact few-shot structure inside the System Instructions or Developer Message of an OpenAI or Anthropic API call yields much higher consistency than putting it in the user message. It primes the model behavior across all subsequent user API calls.
+**A:** Absolutely. In fact, placing this exact few-shot structure inside the System Instructions or Developer Message of an OpenAI or Anthropic API call yields much higher consistency than putting it in the user message. It primes the model behavior across all subsequent user API calls.
 
-Q: How many examples (shots) do I need to include for optimal data extraction?
+**Q:** How many examples (shots) do I need to include for optimal data extraction?
 
-A: For most business text extraction tasks, two to three diverse examples are the sweet spot. One example is often too weak to establish a pattern, while more than four examples consume valuable context tokens without providing significant accuracy gains.
+**A:** For most business text extraction tasks, two to three diverse examples are the sweet spot. One example is often too weak to establish a pattern, while more than four examples consume valuable context tokens without providing significant accuracy gains.

@@ -24,7 +24,7 @@ Odpowiedź nadeszła błyskawicznie. Tabela wyglądała profesjonalnie, kolumny 
 
 ## 2. Dlaczego zwykłe polecenia zawodzą przy danych tabelarycznych
 
-Kiedy prosisz model językowy o przetworzenie nieustrukturyzowanego tekstu na tabelę bez podania kontekstu i wzorca, włączasz mechanizm **domyślnego dopełnienia**. AI działa jak pisarz, a nie jak księgowy – jeśli brakuje jakiejś wartości w tekście źródłowym, model próbuje ją "wymyślić", bo uważa, że pusta komórka to błąd w zadaniu.
+Kiedy prosisz model językowy o przetworzenie nieustrukturyzowanego tekstu na tabelę bez podania kontekstu i wzorca, włączasz mechanizm**domyślnego dopełnienia**. AI działa jak pisarz, a nie jak księgowy – jeśli brakuje jakiejś wartości w tekście źródłowym, model próbuje ją "wymyślić", bo uważa, że pusta komórka to błąd w zadaniu.
 
 <div style="border-left: 4px solid #a16207; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Architektura Few-Shot:</strong> Zamiast tłumaczyć AI słownie, czego oczekujesz, dajesz jej 1 lub 2 przykłady poprawnej struktury wejścia i wyjścia. Model natychmiast wychwytuje schemat i traktuje go jako sztywne ograniczenie, co drastycznie redukuje halucynacje.
@@ -63,14 +63,14 @@ Aby wycisnąć z tej metody maksimum w codziennej pracy korporacyjnej, trzymaj s
 
 ## 5. Często zadawane pytania (FAQ)
 
-Q: Czy muszę podawać więcej niż jeden przykład w Few-Shot Prompt?
+**Q:** Czy muszę podawać więcej niż jeden przykład w Few-Shot Prompt?
 
-A: Zazwyczaj jeden lub dwa dobrze dobrane przykłady w zupełności wystarczą, aby model zrozumiał oczekiwaną strukturę kolumn i sposób obsługi brakujących danych.
+**A:** Zazwyczaj jeden lub dwa dobrze dobrane przykłady w zupełności wystarczą, aby model zrozumiał oczekiwaną strukturę kolumn i sposób obsługi brakujących danych.
 
-Q: Co zrobić, gdy model nadal ignoruje zasady i dopisuje własne cyfry?
+**Q:** Co zrobić, gdy model nadal ignoruje zasady i dopisuje własne cyfry?
 
-A: Wzmocnij instrukcję negatywną, dodając w nagłówku promptu caps lockiem ostrzeżenie: "HALUCYNACJA LUB ZMYŚLANIE DANYCH JEST KATEGORYCZNIE ZABRONIONE. UŻYWAJ WYŁĄCZNIE FAKTÓW Z TEKSTU".
+**A:** Wzmocnij instrukcję negatywną, dodając w nagłówku promptu caps lockiem ostrzeżenie: "HALUCYNACJA LUB ZMYŚLANIE DANYCH JEST KATEGORYCZNIE ZABRONIONE. UŻYWAJ WYŁĄCZNIE FAKTÓW Z TEKSTU".
 
-Q: Czy ta metoda działa równie dobrze w Claude i w ChatGPT?
+**Q:** Czy ta metoda działa równie dobrze w Claude i w ChatGPT?
 
-A: Tak, zarówno modele z rodziny Claude (szczególnie wersje 3.5 Sonnet), jak i OpenAI GPT-4o radzą sobie z Few-Shot Promptingiem znakomicie, przy czym Claude rzadziej łamie rygorystyczne reguły formatowania tabelarycznego.
+**A:** Tak, zarówno modele z rodziny Claude (szczególnie wersje 3.5 Sonnet), jak i OpenAI GPT-4o radzą sobie z Few-Shot Promptingiem znakomicie, przy czym Claude rzadziej łamie rygorystyczne reguły formatowania tabelarycznego.

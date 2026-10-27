@@ -28,7 +28,7 @@ De oplossing hiervoor is **Few-Shot Prompting**. In plaats van te leunen op een 
 
 ## 3. Direct bruikbare master prompt template Template voor Data-extractie
 
-Hier is de gestandaardiseerde systeemprompt die we inmiddels binnen onze hele organisatie gebruiken. Kopieer deze template naar je **ChatGPT Custom Instructions**, **Claude Project Instructions** of zet hem direct bovenaan je venster.
+Hier is de gestandaardiseerde systeemprompt die we inmiddels binnen onze hele organisatie gebruiken. Kopieer deze template naar je **ChatGPT Custom Instructions**,**Claude Project Instructions** of zet hem direct bovenaan je venster.
 
 ```markdown
 ### Rol & Doel
@@ -56,18 +56,18 @@ Om deze prompt optimaal te laten functioneren binnen jouw dagelijkse workflow, z
 
 * **Strikte JSON-output:** Heb je de data nodig voor een database of API? Vervang het Markdown-tabelformaat in de prompt eenvoudig door een strikt JSON-array schema. Modellen zoals Claude 3.5 Sonnet en GPT-4o blinken uit in JSON-validatie.
 * **Token-beheer:** Plak geen complete boeken in één keer. Deel grote documenten op in brokken van 2.000 tot 3.000 woorden. Dit voorkomt dat het model aan het einde van de tekst concentratie verliest (het zogenaamde *lost-in-the-middle* fenomeen).
-* **Temperatuurinstelling:** Zet de **Temperature** (indien beschikbaar in de API of instellingen) op `0` of maximaal `0.2`. Dit minimaliseert creativiteit en maximaliseert feitelijke nauwkeurigheid.
+* **Temperatuurinstelling:**Zet de**Temperature**(indien beschikbaar in de API of instellingen) op `0` of maximaal `0.2`. Dit minimaliseert creativiteit en maximaliseert feitelijke nauwkeurigheid.
 
 ## 5. Veelgestelde Vragen
 
-Q: Wat moet ik doen als de ongestructureerde tekst spelfouten of afkortingen bevat?
+**Q:** Wat moet ik doen als de ongestructureerde tekst spelfouten of afkortingen bevat?
 
-A: Je kunt in de systeeminstructie een extra regel toevoegen: "Corrigeer kleine spelfouten in bedrijfsnamen en datums automatisch naar een gestandaardiseerd formaat (DD-MM-YYYY), maar verander nooit de feitelijke inhoud."
+**A:** Je kunt in de systeeminstructie een extra regel toevoegen: "Corrigeer kleine spelfouten in bedrijfsnamen en datums automatisch naar een gestandaardiseerd formaat (DD-MM-YYYY), maar verander nooit de feitelijke inhoud."
 
-Q: Hoe zorg ik ervoor dat het team exact dezelfde prompt blijft gebruiken?
+**Q:** Hoe zorg ik ervoor dat het team exact dezelfde prompt blijft gebruiken?
 
-A: Sla deze prompt op in een centrale documentatieomgeving of stel hem in als vaste **System Instructions** binnen de teamomgeving van jullie enterprise AI-abonnement. Zo kan niemand afwijken van de standaard.
+**A:** Sla deze prompt op in een centrale documentatieomgeving of stel hem in als vaste**System Instructions** binnen de teamomgeving van jullie enterprise AI-abonnement. Zo kan niemand afwijken van de standaard.
 
-Q: Kan ik deze prompt ook gebruiken voor het extraheren van facturen en bonnen?
+**Q:** Kan ik deze prompt ook gebruiken voor het extraheren van facturen en bonnen?
 
-A: Zeker. Pas simpelweg de kolomnamen in de prompt aan naar bijvoorbeeld `Factuurnummer`, `BTW_Bedrag`, `Totaal_Inclusief` en voeg een specifiek voorbeeld toe van een factuurregel.
+**A:** Zeker. Pas simpelweg de kolomnamen in de prompt aan naar bijvoorbeeld `Factuurnummer`, `BTW_Bedrag`, `Totaal_Inclusief` en voeg een specifiek voorbeeld toe van een factuurregel.

@@ -25,14 +25,14 @@ Na de recente achterliggende modelupdates spuugde Claude ineens slordige, incomp
 Simpele prompts zoals *"Maak een mooi SVG-icoon van een slotje"* werken niet meer betrouwbaar in de nieuwste generatie LLM's. Dit komt door drie hoofdoorzaken:
 
 * **Contextuele Drift:** Het model raakt de draad kwijt tussen tekstuele uitleg en de eigenlijke code-output wanneer de instructies te vaag zijn.
-* **Ontbrekende Structuur:** Zonder expliciete eisen voor de `<svg>` tag, `viewBox`, en **CSS-variabelen** vervalt het model naar standaard, generieke styling.
-* **Artifacts Isolatie:** Claude gebruikt **Artifacts** om code af te schermen, maar als de output niet als volledig, zelfstandig bestand wordt gedefinieerd, snijdt het model de code voortijdig af.
+* **Ontbrekende Structuur:**Zonder expliciete eisen voor de `<svg>` tag, `viewBox`, en**CSS-variabelen** vervalt het model naar standaard, generieke styling.
+* **Artifacts Isolatie:**Claude gebruikt**Artifacts**om code af te schermen, maar als de output niet als volledig, zelfstandig bestand wordt gedefinieerd, snijdt het model de code voortijdig af.
 
-Onze nieuwe strategie draait om **stricte deterministische prompt-structuren**. We geven Claude geen vrije hand meer, maar behandelen het model als een junior frontend developer die een heel specifiek technisch contract moet naleven.
+Onze nieuwe strategie draait om**stricte deterministische prompt-structuren**. We geven Claude geen vrije hand meer, maar behandelen het model als een junior frontend developer die een heel specifiek technisch contract moet naleven.
 
 ## 3. Direct bruikbare master prompt template Template
 
-Kopieer en plak deze masterprompt in **Claude** om direct foutloze, schaalbare SVG-iconen en web-illustraties te genereren via Artifacts. Pas de variabelen tussen de rechte haken aan naar jouw projectbehoefte.
+Kopieer en plak deze masterprompt in**Claude** om direct foutloze, schaalbare SVG-iconen en web-illustraties te genereren via Artifacts. Pas de variabelen tussen de rechte haken aan naar jouw projectbehoefte.
 
 ```markdown
 # Role & Context
@@ -66,14 +66,14 @@ Om te zorgen dat je prompts onder alle omstandigheden robuust blijven, kun je on
 
 ## 5. Veelgestelde Vragen
 
-Q: Waarom breekt Claude de SVG-code soms midden in een pad af?
+**Q:** Waarom breekt Claude de SVG-code soms midden in een pad af?
 
-A: Dit gebeurt wanneer de output-tokenlimiet van het model wordt overschreden door te complexe instructies. Vraag in dat geval in je prompt om minder gedetailleerde paden of splits de illustratie op in meerdere componenten.
+**A:** Dit gebeurt wanneer de output-tokenlimiet van het model wordt overschreden door te complexe instructies. Vraag in dat geval in je prompt om minder gedetailleerde paden of splits de illustratie op in meerdere componenten.
 
-Q: Kan ik deze prompt ook gebruiken in ChatGPT of Gemini?
+**Q:** Kan ik deze prompt ook gebruiken in ChatGPT of Gemini?
 
-A: Ja, hoewel Claude speciaal geoptimaliseerd is voor Artifacts, kun je in ChatGPT en Gemini simpelweg vragen om de output in een standaard ```xml of ```html codeblok te plaatsen.
+**A:** Ja, hoewel Claude speciaal geoptimaliseerd is voor Artifacts, kun je in ChatGPT en Gemini simpelweg vragen om de output in een standaard ```xml of ```html codeblok te plaatsen.
 
-Q: Hoe zorg ik ervoor dat de SVG direct responsive is op mobiele schermen?
+**Q:** Hoe zorg ik ervoor dat de SVG direct responsive is op mobiele schermen?
 
-A: Zorg ervoor dat de prompt expliciet vraagt om `width="100%"` en `height="100%"` in combinatie met een vaste `viewBox`, zodat de browser de schaalbaarheid automatisch afhandelt.
+**A:** Zorg ervoor dat de prompt expliciet vraagt om `width="100%"` en `height="100%"` in combinatie met een vaste `viewBox`, zodat de browser de schaalbaarheid automatisch afhandelt.

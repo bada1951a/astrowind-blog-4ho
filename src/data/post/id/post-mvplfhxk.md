@@ -22,8 +22,6 @@ Kepanikan pun mencapai puncaknya ketika jarum jam menunjukkan waktu presentasi y
 
 Menyadari besarnya taruhan yang sedang dipertaruhkan—mulai dari kegagalan mendapatkan pendanaan investasi hingga rasa malu di depan para pemegang saham—tim menyadari bahwa penambalan kecil tidak akan pernah cukup. Seluruh fondasi komunikasi dengan AI harus dirombak total melalui pendekatan arsitektur prompt yang sistematis, terkontrol, dan berbasis batasan teknis yang ketat untuk mengembalikan presisi pembuatan aset visual vektor.
 
-
-
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvplig7s-10-b/1000/550.jpg)
 
 ## 2. Analisis Mendalam Kegagalan Prompt dan Kerusakan Logika

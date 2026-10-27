@@ -27,10 +27,10 @@ Perché i modelli linguistici falliscono quando chiediamo loro di estrarre tabel
 La tecnica del **Few-Shot Prompting** risolve questo problema alla radice applicando il principio dell'apprendimento basato su esempi. Invece di limitarci a descrivere il compito (*zero-shot*), forniamo all'AI uno o due esempi completi di input disordinato e il relativo output tabulare desiderato. 
 
 L'architettura di questo prompt si compone di quattro blocchi fondamentali:
-- **Ruolo e Obiettivo:** Definire chiaramente cosa l'AI deve fare (es. data extractor per pitch deck).
-- **Regole Rigide:** Specificare i vincoli (es. non inventare dati, usare solo valori presenti nel testo).
-- **Esempi (Few-Shot):** Una coppia di Input fittizio e Output tabulare ideale.
-- **Dato Reale:** Il testo non strutturato su cui applicare l'estrazione.
+- **Ruolo e Obiettivo:**Definire chiaramente cosa l'AI deve fare (es. data extractor per pitch deck).
+-**Regole Rigide:**Specificare i vincoli (es. non inventare dati, usare solo valori presenti nel testo).
+-**Esempi (Few-Shot):**Una coppia di Input fittizio e Output tabulare ideale.
+-**Dato Reale:**Il testo non strutturato su cui applicare l'estrazione.
 
 ## 3. Template master di prompt pratico pronto all'uso
 
@@ -71,8 +71,8 @@ REGOLE CRITICALI:
 
 Quando lavori sotto pressione a progetti critici, bastano piccoli dettagli per compromettere la qualità del risultato. Ecco alcune linee guida avanzate per ottimizzare il processo:
 
-- **Gestione dei token:** Se il testo non strutturato supera le duemila parole, suddividilo in paragrafi logici prima di passarlo al prompt. Ridurrai drasticamente il rischio di omissioni da parte dell'AI.
-- **Formato di output alternativo:** Se non ti serve una tabella Markdown ma un file pronto per Excel, puoi modificare l'istruzione finale chiedendo: *"Fornisci l'output in formato CSV delimitato da virgole pronto per essere copiato in un foglio di calcolo"*.
+-**Gestione dei token:**Se il testo non strutturato supera le duemila parole, suddividilo in paragrafi logici prima di passarlo al prompt. Ridurrai drasticamente il rischio di omissioni da parte dell'AI.
+-**Formato di output alternativo:** Se non ti serve una tabella Markdown ma un file pronto per Excel, puoi modificare l'istruzione finale chiedendo: *"Fornisci l'output in formato CSV delimitato da virgole pronto per essere copiato in un foglio di calcolo"*.
 - **Controllo incrociato delle allucinazioni:** Inserisci sempre la regola esplicita: *"Se un dato finanziario o numerico è ambiguo, segnalalo con un asterisco e spiega il dubbio nell'ultima colonna"*.
 
 <div style="border-left: 4px solid #f97316; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
@@ -81,14 +81,14 @@ Quando lavori sotto pressione a progetti critici, bastano piccoli dettagli per c
 
 ## 5. Domande Frequenti (FAQ)
 
-Q: Posso usare questo prompt anche con documenti lunghi come PDF o bilanci aziendali completi?
+**Q:** Posso usare questo prompt anche con documenti lunghi come PDF o bilanci aziendali completi?
 
-A: Sì, ma ti consigliamo di caricare il documento direttamente nell'interfaccia di Claude o ChatGPT Plus e di usare il prompt master chiedendo di estrarre tabelle specifiche per ogni sezione del documento per evitare troncamenti.
+**A:** Sì, ma ti consigliamo di caricare il documento direttamente nell'interfaccia di Claude o ChatGPT Plus e di usare il prompt master chiedendo di estrarre tabelle specifiche per ogni sezione del documento per evitare troncamenti.
 
-Q: Cosa faccio se l'AI continua a inventare numeri o stime che non sono nel testo originale?
+**Q:** Cosa faccio se l'AI continua a inventare numeri o stime che non sono nel testo originale?
 
-A: Rafforza il blocco delle regole aggiungendo una penalizzazione esplicita: *"Se inserisci anche un solo dato non presente nel testo d'origine, l'intera risposta sarà considerata errata"*. I modelli rispondono molto bene a direttive di vincolo così rigide.
+**A:** Rafforza il blocco delle regole aggiungendo una penalizzazione esplicita: *"Se inserisci anche un solo dato non presente nel testo d'origine, l'intera risposta sarà considerata errata"*. I modelli rispondono molto bene a direttive di vincolo così rigide.
 
-Q: È possibile convertire direttamente la tabella Markdown in un file Excel o Notion senza passaggi manuali?
+**Q:** È possibile convertire direttamente la tabella Markdown in un file Excel o Notion senza passaggi manuali?
 
-A: Certamente. Puoi copiare la tabella Markdown generata e incollar direttamente su Notion (che la trasformerà istantaneamente in un database o tabella nativa) oppure incollarle su editor online di conversione Markdown-to-CSV per scaricare il file .xlsx.
+**A:** Certamente. Puoi copiare la tabella Markdown generata e incollar direttamente su Notion (che la trasformerà istantaneamente in un database o tabella nativa) oppure incollarle su editor online di conversione Markdown-to-CSV per scaricare il file .xlsx.

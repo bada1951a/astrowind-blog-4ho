@@ -22,11 +22,11 @@ Eran las cinco de la tarde en nuestras oficinas del distrito 22@ en Barcelona, y
 
 ¿Por qué fallaba nuestra automatización? Simplemente porque le pedíamos al LLM que "convirtiera el texto en una tabla JSON" sin darle ejemplos previos exactos. Los modelos como GPT-4 o Claude 3.5 Sonnet son excelentes siguiendo patrones, pero operan bajo probabilidad pura si no se les proporcionan ejemplos de entrada y salida (**Few-Shot Prompting**). 
 
-Para solucionar este cuello de botella en nuestro flujo en Madrid y Barcelona, rediseñamos la arquitectura del prompt utilizando el enfoque de **esquema de datos guiado por ejemplos**. En lugar de explicarle las reglas abstractas de negocio, le mostramos exactamente un caso de éxito y un caso borde dentro del mismo prompt. Esto reduce la deriva del modelo y garantiza que las claves del JSON o las columnas de la tabla markdown mantengan una paridad del 100% con el esquema requerido por nuestro webhook.
+Para solucionar este cuello de botella en nuestro flujo en Madrid y Barcelona, rediseñamos la arquitectura del prompt utilizando el enfoque de**esquema de datos guiado por ejemplos**. En lugar de explicarle las reglas abstractas de negocio, le mostramos exactamente un caso de éxito y un caso borde dentro del mismo prompt. Esto reduce la deriva del modelo y garantiza que las claves del JSON o las columnas de la tabla markdown mantengan una paridad del 100% con el esquema requerido por nuestro webhook.
 
 ## 3. Plantilla maestra de prompt lista para copiar y usar Template
 
-Aquí tienes la plantilla maestra probada en producción para copiar y pegar directamente en tus **Instrucciones Personalizadas** de ChatGPT, Claude Artifacts o llamadas API.
+Aquí tienes la plantilla maestra probada en producción para copiar y pegar directamente en tus**Instrucciones Personalizadas**de ChatGPT, Claude Artifacts o llamadas API.
 
 ```markdown
 ### Rol
@@ -81,9 +81,9 @@ Eres un motor de procesamiento de datos de alta precisión especializado en tran
 
 Para entornos de consultoría y corporativos donde el manejo de datos es crítico, te recomiendo aplicar las siguientes estrategias avanzadas:
 
-- **Control de Temperatura:** Configura la temperatura del modelo en **0.0** o **0.1**. Necesitamos determinismo absoluto, no creatividad literaria.
-- **Validación Doble:** Si usas herramientas no-code como Make o Zapier, coloca siempre un módulo de validación JSON inmediatamente después de la respuesta de la IA para capturar cualquier anomalía antes de golpear la base de datos o el CRM.
-- **Protección de Tokens:** Si procesas cientos de correos diarios, recorta la longitud del texto de entrada eliminando firmas corporativas y avisos legales antes de enviarlo al prompt.
+-**Control de Temperatura:**Configura la temperatura del modelo en**0.0**o**0.1**. Necesitamos determinismo absoluto, no creatividad literaria.
+-**Validación Doble:**Si usas herramientas no-code como Make o Zapier, coloca siempre un módulo de validación JSON inmediatamente después de la respuesta de la IA para capturar cualquier anomalía antes de golpear la base de datos o el CRM.
+-**Protección de Tokens:**Si procesas cientos de correos diarios, recorta la longitud del texto de entrada eliminando firmas corporativas y avisos legales antes de enviarlo al prompt.
 
 <div style="border-left: 4px solid #64748b; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Consejo de Arquitectura:</strong> Incluir al menos dos ejemplos contrastados (uno completo y otro con datos faltantes) dentro de la sección de Few-Shot reduce los errores de esquema en un 90%.
@@ -91,14 +91,14 @@ Para entornos de consultoría y corporativos donde el manejo de datos es crític
 
 ## 5. Preguntas Frecuentes (FAQ)
 
-Q: ¿Por qué es mejor usar Few-Shot en lugar de describir el esquema con texto largo?
+**Q:** ¿Por qué es mejor usar Few-Shot en lugar de describir el esquema con texto largo?
 
-A: Los modelos de lenguaje procesan los patrones visuales y estructurados de los ejemplos mucho más rápido y con menor tasa de error que las explicaciones abstractas en prosa.
+**A:** Los modelos de lenguaje procesan los patrones visuales y estructurados de los ejemplos mucho más rápido y con menor tasa de error que las explicaciones abstractas en prosa.
 
-Q: ¿Qué hago si el LLM incluye texto conversacional como "Aqui tienes tu JSON" antes del bloque de código?
+**Q:** ¿Qué hago si el LLM incluye texto conversacional como "Aqui tienes tu JSON" antes del bloque de código?
 
-A: Añade la regla estricta en el System Prompt: "Devuelve exclusivamente el objeto JSON y ningun caracter adicional". Adicionalmente, puedes usar la modalidad de **JSON Mode** si utilizas la API directa de OpenAI o Anthropic.
+**A:** Añade la regla estricta en el System Prompt: "Devuelve exclusivamente el objeto JSON y ningun caracter adicional". Adicionalmente, puedes usar la modalidad de**JSON Mode** si utilizas la API directa de OpenAI o Anthropic.
 
-Q: ¿Cuántos ejemplos debo incluir en mi prompt para que sea efectivo?
+**Q:** ¿Cuántos ejemplos debo incluir en mi prompt para que sea efectivo?
 
-A: Entre dos y tres ejemplos bien seleccionados son suficientes. Demasiados ejemplos consumen ventana de contexto innecesariamente sin aportar mejoras significativas en la precisión.
+**A:** Entre dos y tres ejemplos bien seleccionados son suficientes. Demasiados ejemplos consumen ventana de contexto innecesariamente sin aportar mejoras significativas en la precisión.

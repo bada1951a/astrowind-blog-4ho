@@ -17,7 +17,7 @@ El problema era evidente. Midjourney V6 es una bestia creando imagenes hiperreal
 <div style="border-left: 4px solid #f97316; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Alerta de Emergencia Creativ
 
-a:</strong> Olvidate de confiar al azar la identidad de tu personaje. Sin la tecnica de parametros cruzados que veremos a continuacion, quemaras tus horas de GPU intentando replicar un rostro mediante pura suerte.
+**a:**</strong> Olvidate de confiar al azar la identidad de tu personaje. Sin la tecnica de parametros cruzados que veremos a continuacion, quemaras tus horas de GPU intentando replicar un rostro mediante pura suerte.
 </div>
 
 ## ¿Por que fallan los prompts simples al buscar consistencia?
@@ -50,7 +50,7 @@ Copia esta estructura base en tu herramienta favorita (puedes usar ChatGPT o Cla
 
 ## Comparativ
 
-a: Metodo Tradicional vs. Metodo Prompt Engineering V6
+**a:** Metodo Tradicional vs. Metodo Prompt Engineering V6
 
 <div style="border-left: 4px solid #f97316; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <ul>

@@ -20,8 +20,6 @@ Panic quickly set in across the war room as minutes ticked away toward the 9:00 
 <strong>Incident Post-Mortem Note:</strong> Relying on conversational politeness or weak stylistic hints when requesting programmatic data structures from large language models is an anti-pattern. Without absolute negative constraints, structural demarcation tokens, and explicit parsing rules, LLMs will invariably default to their pre-trained conversational bias.
 </div>
 
-
-
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvplfsgm-1-b/1000/550.jpg)
 
 ## 2. Root Cause Breakdown of Prompt Failures and Logic Flaws of Prompt Failures and Logic Flaws

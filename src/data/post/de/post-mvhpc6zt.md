@@ -52,7 +52,7 @@ A professional 35-year-old German male consultant, sharp jawline, neat dark-brow
 <strong>Häufige Fehlerquelle:</strong> Wenn Sie `--cw 100` verwenden, aber im Text eine andere Krawattenfarbe oder Jacke fordern, gerät Midjourney in einen Konflikt. Nutzen Sie `--cw 0` für maximale Flexibilität bei der Kleidung bei gleichbleibendem Gesicht.
 </div>
 
-### Häufig gestellte Fragen (FAQ)
+## 5. Häufig gestellte Fragen (FAQ)
 
 Frage 1: Kann ich `--cref` auch für weibliche Charaktere und diverse Teams nutzen?
 Ja, das Prinzip funktioniert universell. Wichtig ist lediglich, dass das zugrundeliegende Referenzbild (`--cref`) eine hohe Auflösung und eine klare frontale oder leicht gedrehte Ansicht des Gesichts zeigt.

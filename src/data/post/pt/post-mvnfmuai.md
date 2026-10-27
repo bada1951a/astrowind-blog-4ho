@@ -62,14 +62,14 @@ Para extrair o máximo de eficiência do seu fluxo de trabalho diário com IA, s
 
 ## 5. Perguntas Frecuentes (FAQ)
 
-Q: Posso usar o Claude Artifacts para gerar ilustrações complexas para landing pages?
+**Q:** Posso usar o Claude Artifacts para gerar ilustrações complexas para landing pages?
 
-A: Sim, desde que você defina dimensões maiores no viewBox (ex: 1200x800) e especifique camadas bem definidas para que a IA estruture o código de forma organizada em grupos (<g>).
+**A:** Sim, desde que você defina dimensões maiores no viewBox (ex: 1200x800) e especifique camadas bem definidas para que a IA estruture o código de forma organizada em grupos (<g>).
 
-Q: O código SVG gerado pelo Claude é compatível com frameworks como React e Tailwind CSS?
+**Q:** O código SVG gerado pelo Claude é compatível com frameworks como React e Tailwind CSS?
 
-A: Perfeitamente. Como o output é um código SVG limpo e semântico, você pode transformá-lo facilmente em um componente React personalizado ou importar os paths diretamente para classes do Tailwind.
+**A:** Perfeitamente. Como o output é um código SVG limpo e semântico, você pode transformá-lo facilmente em um componente React personalizado ou importar os paths diretamente para classes do Tailwind.
 
-Q: Como evito que a IA altere o estilo visual entre um ícone e outro em um mesmo conjunto?
+**Q:** Como evito que a IA altere o estilo visual entre um ícone e outro em um mesmo conjunto?
 
-A: A melhor prática é traçar um guia de estilo rígido na primeira linha do seu prompt, especificando o excreto peso de linha (stroke-width), o preenchimento (fill) e a paleta de cores hexadecimal exata para todos os itens da série.
+**A:** A melhor prática é traçar um guia de estilo rígido na primeira linha do seu prompt, especificando o excreto peso de linha (stroke-width), o preenchimento (fill) e a paleta de cores hexadecimal exata para todos os itens da série.

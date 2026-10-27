@@ -12,7 +12,7 @@ theme: "Cyberpunk Terminal"
 
 Eram 21h30 em uma terça-feira caótica na nossa software house aqui na Vila Madalena, em São Paulo. O cliente principal da agência havia mudado de ideia pela terceira vez no di
 
-a: "Precisamos lançar um canal de vídeo corporativo amanhã cedo, mas os roteiros precisam ter o mesmo ritmo magnético dos maiores canais de tecnologia do mundo, senão ninguém vai assistir". O problema? Meu time de conteúdo estava esgotado, e eu precisava estruturar um framework de engenharia reversa de roteiros virais em menos de 10 minutos para alimentar nossos fluxos de automação com LLMs. 
+**a:** "Precisamos lançar um canal de vídeo corporativo amanhã cedo, mas os roteiros precisam ter o mesmo ritmo magnético dos maiores canais de tecnologia do mundo, senão ninguém vai assistir". O problema? Meu time de conteúdo estava esgotado, e eu precisava estruturar um framework de engenharia reversa de roteiros virais em menos de 10 minutos para alimentar nossos fluxos de automação com LLMs. 
 
 Se eu tentasse analisar manualmente os padrões de retenção, ganchos e transições de dez vídeos com mais de um milhão de visualizações, passaríamos a madrugada inteira codificando isso na unha. Precisava da IA para decodificar o DNA desses roteiros imediatamente.
 
@@ -23,16 +23,16 @@ Se eu tentasse analisar manualmente os padrões de retenção, ganchos e transi�
 
 Minha primeira tentativa foi preguiços
 
-a: joguei o link de um vídeo de tecnologia bombando no ChatGPT e mandei o comando clássico: *"Resuma este roteiro e me diga por que ele é bom"*. 
+**a:** joguei o link de um vídeo de tecnologia bombando no ChatGPT e mandei o comando clássico: *"Resuma este roteiro e me diga por que ele é bom"*. 
 
 O resultado foi uma tragédia de engenharia de prompts:
 * Alucinação pur
 
-a: A IA inventou métricas de engajamento que não existiam no texto.
+**a:** A IA inventou métricas de engajamento que não existiam no texto.
 * Resumo superficial: Entregou um parágrafo genérico digno de redação de ensino médio, sem utilidade prática para produção.
 * Falta de estrutur
 
-a: Zero separação entre o gancho (hook), a retenção do primeiro minuto e o CTA (Call to Action) final.
+**a:** Zero separação entre o gancho (hook), a retenção do primeiro minuto e o CTA (Call to Action) final.
 
 Para extrair valor real de uma LLM, você não pede uma opinião; você impõe uma persona analítica restrita e exige uma matriz estruturada de decomposição textual.
 
@@ -59,7 +59,7 @@ Faça a engenharia reversa completa do transcript/roteiro do vídeo fornecido ab
 
 4. O Clímax e o CT
 
-A: Como a tensão é resolvida e para onde a audiência é direcionada no final?
+**A:** Como a tensão é resolvida e para onde a audiência é direcionada no final?
 
 # Formato de Saída Obrigatório
 Apresente a resposta em uma tabela limpa e estruturada contendo: 
@@ -83,7 +83,7 @@ Para quem constrói automações em São Paulo integrando APIs da OpenAI ou Anth
 * Instruções Personalizadas (Custom Instructions): Adicione no seu perfil do ChatGPT que você prefere respostas diretas, orientadas a dados e sem introduções corporativas cansativas ("Com certeza, aqui está...").
 * Temperatura Baix
 
-a: Configure a temperatura entre 0.2 e 0.4 ao executar via API. Isso evita que a IA invente ganchos criativos que nunca existiram no vídeo original.
+**a:** Configure a temperatura entre 0.2 e 0.4 ao executar via API. Isso evita que a IA invente ganchos criativos que nunca existiram no vídeo original.
 
 ---
 

@@ -22,8 +22,6 @@ La panique s'est rapidement installée à l'approche de la soutenance d'un appel
 
 C'est précisément à cet instant critique qu'est apparue la nécessité vitale d'une refonte méthodologique globale. La crise a agi comme un révélateur brutal : les méthodes empiriques de prompting ne suffisent plus face à des modèles de plus en plus stricts et littéraux. Ce qui était en jeu dépassait largement la simple production d'une icône vectorielle ; il s'agissait de la crédibilité de l'agence tout entière face à ses clients institutionnels. Sauver la mission exigeait de remplacer les vieux réflexes par une ingénierie de prompt rigoureuse, capable de contraindre l'IA à exploiter pleinement la puissance de rendu des environnements de type Claude Artifacts sans dévier du cahier des charges.
 
-
-
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvplgoej-4-b/1000/550.jpg)
 
 ## 2. Analyse approfondie des échecs de prompt et failles logiques

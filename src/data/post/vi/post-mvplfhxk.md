@@ -20,8 +20,6 @@ Trong cơn hoảng loạn, người quản lý đã đưa ra một quyết đị
 <strong>Cảnh báo khẩn cấp:</strong> Việc sử dụng câu lệnh chung chung khi xử lý tài liệu tài chính và kinh doanh quốc tế dễ dẫn đến lỗi ảo giác từ vựng của AI, gây mất uy tín thương hiệu trầm trọng trước các đối tác lớn.
 </div>
 
-
-
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvplipin-11-b/1000/550.jpg)
 
 ## 2. Phân tích nguyên nhân gốc rễ lỗi câu lệnh và logic AI
@@ -76,4 +74,4 @@ Khi triển khai các tác vụ xử lý ngôn ngữ tự nhiên đòi hỏi đ�
 
 **Q1. Tại sao các công cụ AI thông thường lại dịch sai ngữ cảnh kinh doanh dù từ vựng đơn lẻ hoàn toàn chính xác?**A1. Nguyên nhân chính là do mô hình huấn luyện tổng quát của AI dựa trên dữ liệu văn bản phổ thông thay vì chuyên ngành hẹp. Khi dịch các tài liệu đề xuất kinh doanh, AI thiếu đi khả năng thấu hiểu ngầm về văn hóa đàm phán thương mại quốc tế, dẫn đến việc lựa chọn các từ đồng nghĩa kém trang trọng. Việc áp dụng Master Prompt chuyên biệt với vai trò định hình rõ ràng sẽ khắc phục triệt để hạn chế này.**Q2. Làm thế nào để đảm bảo AI không tự ý thêm các tính năng công nghệ không có thực vào hồ sơ dự thầu?**A2. Bạn bắt buộc phải thiết lập các ràng buộc nghiêm ngặt trong phần quy tắc của câu lệnh, ví dụ như yêu cầu tuyệt đối tuân thủ dữ liệu nguồn. Thêm vào đó, việc sử dụng các ký tự phân tách rõ ràng và yêu cầu AI xuất ra bảng giải trình thay đổi giúp người quản lý dễ dàng kiểm tra soát lỗi trước khi chính thức gửi đi.**Q3. Tôi nên làm gì khi gặp thông báo lỗi giới hạn token (token limit) khi xử lý tài liệu đề xuất quá dài?**
 
-A3. Khi gặp giới hạn này, tuyệt đối không cắt ngắn văn bản một cách tùy tiện vì sẽ làm mất tính mạch lạc của ngữ cảnh. Giải pháp kỹ thuật tối ưu là chia tài liệu thành các phân đoạn nhỏ từ năm trăm đến một nghìn từ, sau đó thực hiện xử lý tuần tự từng phần bằng cùng một mẫu câu lệnh Master Prompt đã được thiết lập sẵn.
+**A3.** Khi gặp giới hạn này, tuyệt đối không cắt ngắn văn bản một cách tùy tiện vì sẽ làm mất tính mạch lạc của ngữ cảnh. Giải pháp kỹ thuật tối ưu là chia tài liệu thành các phân đoạn nhỏ từ năm trăm đến một nghìn từ, sau đó thực hiện xử lý tuần tự từng phần bằng cùng một mẫu câu lệnh Master Prompt đã được thiết lập sẵn.

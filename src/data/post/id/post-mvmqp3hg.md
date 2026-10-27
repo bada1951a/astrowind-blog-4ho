@@ -72,14 +72,14 @@ Untuk memaksimalkan hasil ekstraksi di lingkungan kerja harian Anda, perhatikan 
 
 ## 5. Pertanyaan yang Sering Diajukan (FAQ)
 
-Q: Mengapa hasil tabel dari Claude sering lebih rapi dibanding ChatGPT untuk teks berbahasa Indonesia?
+**Q:** Mengapa hasil tabel dari Claude sering lebih rapi dibanding ChatGPT untuk teks berbahasa Indonesia?
 
-A: Claude 3.5 Sonnet memiliki pemahaman konteks token multibahasa yang sangat teliti dalam mendeteksi batas antar-kalimat, sehingga struktur baris Markdown jarang melompat atau rusak.
+**A:** Claude 3.5 Sonnet memiliki pemahaman konteks token multibahasa yang sangat teliti dalam mendeteksi batas antar-kalimat, sehingga struktur baris Markdown jarang melompat atau rusak.
 
-Q: Bagaimana jika teks masukan mengandung perintah jailbreak yang menyamar sebagai data pelanggan?
+**Q:** Bagaimana jika teks masukan mengandung perintah jailbreak yang menyamar sebagai data pelanggan?
 
-A: Gunakan teknik pemisahan peran (*delimiter isolation*) di dalam prompt, serta tambahkan aturan tegas bahwa teks di dalam blok masukan harus diperlakukan murni sebagai data statis, bukan instruksi eksekusi.
+**A:** Gunakan teknik pemisahan peran (*delimiter isolation*) di dalam prompt, serta tambahkan aturan tegas bahwa teks di dalam blok masukan harus diperlakukan murni sebagai data statis, bukan instruksi eksekusi.
 
-Q: Apakah metode ini bisa langsung diekspor ke file CSV atau Excel?
+**Q:** Apakah metode ini bisa langsung diekspor ke file CSV atau Excel?
 
-A: Ya. Anda cukup meminta AI untuk menghasilkan keluaran dalam format blok kode CSV, atau langsung menyalin tabel Markdown tersebut dan menempelkannya langsung ke lembar kerja Excel atau Google Sheets.
+**A:** Ya. Anda cukup meminta AI untuk menghasilkan keluaran dalam format blok kode CSV, atau langsung menyalin tabel Markdown tersebut dan menempelkannya langsung ke lembar kerja Excel atau Google Sheets.

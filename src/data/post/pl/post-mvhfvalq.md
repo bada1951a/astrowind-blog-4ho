@@ -31,7 +31,7 @@ Jesteś starszym architektem front-end i ekspertem UI/UX. Twoim zadaniem jest st
 - Cel biznesowy: [Wpisz cel, np. Dashboard monitorujący transakcje fintech w czasie rzeczywistym]
 - Grupa docelow
 
-a: [Wpisz odbiorców, np. Analitycy finansowi i zarząd spółki]
+**a:** [Wpisz odbiorców, np. Analitycy finansowi i zarząd spółki]
 - Wymagany stack technologiczny: React (z użyciem Tailwind CSS do stylizacji, Lucide React do ikonek oraz Recharts do wykresów). Kod musi być samowystarczalny i działać bezpośrednio w przeglądarce wewnątrz Artifacts.
 
 [WYMAGANE KOMPONENTY I FUNKCJONALNOŚĆ]
@@ -54,12 +54,12 @@ Wygeneruj kompletny kod w panelu Artifacts.
 <div style="border-left: 4px solid #00ffcc; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,255,204,0.08); border-radius: 4px; color: #111827; font-family: monospace;">
 PRO-TIP ARCHITEKT
 
-A: Zamiast pisać całą specyfikację za każdym razem, zapisz powyższy blok w repozytorium zespołu jako bazowy szablon (.md) i zmieniaj jedynie sekcję [KONTEKST PROJEKTU]. Oszczędza to średnio 40 minut pracy nad jednym prototypem.
+**A:** Zamiast pisać całą specyfikację za każdym razem, zapisz powyższy blok w repozytorium zespołu jako bazowy szablon (.md) i zmieniaj jedynie sekcję [KONTEKST PROJEKTU]. Oszczędza to średnio 40 minut pracy nad jednym prototypem.
 </div>
 
 Aby uniknąć powszechnych hallukynacji modelu i błędów renderowania w Artifacts, stosuj poniższe zasady bezpieczeństw
 
-a:
+**a:**
 - Kontrola bibliotek: Zawsze explicitnie wskazuj modelowi, jakich bibliotek ma używać (np. `Recharts` dla wykresów), w przeciwnym razie spróbuje napisać niestandardowe wykresy SVG, które często się psują.
 - Stan początkowy (State): Wymuś na modelu zdefiniowanie domyślnych danych testowych (mock data). Pusta tablica danych to najczęstsza przyczyna "białego ekranu" w wygenerowanym prototypie.
 - Iteracyjne poprawki: Jeśli dashboard działa, ale brakuje jakiejś funkcji, nie pisz promptu od nowa. Odpowiedz w tym samym wątku: "Dodaj do obecnego komponentu filtrowanie tabeli po dacie w prawym górnym rogu".

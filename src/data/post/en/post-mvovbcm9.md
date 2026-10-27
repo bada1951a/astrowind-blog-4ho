@@ -12,7 +12,7 @@ theme: "Matte Black stealth"
 
 It was 8:50 AM on a Monday in our Brooklyn office, and our VP of Operations dropped a massive bombshell right before the all-hands sync. Twenty new hires were arriving at 9:30 AM for their orientation, and the standard 200-page engineering and culture manual was an unreadable, text-heavy nightmare. Handing them a dense PDF was a guaranteed way to kill engagement on day one. We needed an interactive training module complete with quizzes, flashcards, and custom vector illustrations—and we needed it in ten minutes. 
 
-My initial reaction was pure panic. Building an interactive web app from scratch usually takes days of frontend coding and vector design work. Simply asking Claude to "write a quiz" gave me a plain text list of questions that looked boring and lacked any visual polish. I needed something production-ready, highly visual, and instantly deployable inside the browser using **Claude Artifacts**. That was the exact moment I stopped treating LLMs like a basic search engine and started architecting a precise prompt framework to generate clean, self-contained interactive web components using modern **SVG** graphics.
+My initial reaction was pure panic. Building an interactive web app from scratch usually takes days of frontend coding and vector design work. Simply asking Claude to "write a quiz" gave me a plain text list of questions that looked boring and lacked any visual polish. I needed something production-ready, highly visual, and instantly deployable inside the browser using **Claude Artifacts**. That was the exact moment I stopped treating LLMs like a basic search engine and started architecting a precise prompt framework to generate clean, self-contained interactive web components using modern**SVG**graphics.
 
 <div style="border-left: 4px solid #ffffff; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Pro Tip:</strong> When time is critical, never ask an LLM to generate multiple disconnected files. Use Claude Artifacts to output a single, self-contained HTML file featuring embedded Tailwind CSS, interactive JavaScript, and clean SVG illustrations.
@@ -26,11 +26,11 @@ Why do standard prompts fail when you try to generate interactive training mater
 
 When you give an LLM a vague instruction like "make this manual fun," it tries to guess your design system, color palette, and technical stack. The result is usually broken layout code, generic placeholder text, and missing interactivity. To fix this, your prompt engineering architecture must enforce three strict rules:
 
-1. **Self-Contained Execution:** The output must run entirely inside a single HTML block using CDNs for styling (like Tailwind CSS) and vanilla JavaScript for state management.
+1.**Self-Contained Execution:**The output must run entirely inside a single HTML block using CDNs for styling (like Tailwind CSS) and vanilla JavaScript for state management.
 
-2. **Deterministic SVG Generation:** Instead of linking to external broken image URLs, force the model to write inline, scalable SVG code optimized for clean web illustrations.
+2.**Deterministic SVG Generation:**Instead of linking to external broken image URLs, force the model to write inline, scalable SVG code optimized for clean web illustrations.
 
-3. **Structured State Machine:** Define clear states for flashcards (front, back, flipped) and quizzes (question, selected answer, score tally) so the interactive elements actually work on the first try.
+3.**Structured State Machine:** Define clear states for flashcards (front, back, flipped) and quizzes (question, selected answer, score tally) so the interactive elements actually work on the first try.
 
 ## 3. Copy-and-Paste Master Prompt Engineering Template Template
 
@@ -72,16 +72,16 @@ When working with large text inputs and complex code generation, you may occasio
 <strong>Safety Reminder:</strong> Always test the generated Artifact directly in your browser preview before sharing the live link with your team to ensure all JavaScript event listeners bind correctly.
 </div>
 
-## 5. Frequently Asked Questions (FAQ) (FAQ) (FAQ)
+## 5. Frequently Asked Questions (FAQ)
 
-Q: Can I use this prompt with ChatGPT or Gemini instead of Claude?
+**Q:** Can I use this prompt with ChatGPT or Gemini instead of Claude?
 
-A: While ChatGPT and Gemini are exceptional reasoning engines, Claude Artifacts provides a dedicated, sandboxed UI preview window that renders HTML, CSS, and SVG instantly without requiring external code-hosting tools. If you use other models, you will need to copy the code into an HTML file or a live code sandbox like CodePen.
+**A:** While ChatGPT and Gemini are exceptional reasoning engines, Claude Artifacts provides a dedicated, sandboxed UI preview window that renders HTML, CSS, and SVG instantly without requiring external code-hosting tools. If you use other models, you will need to copy the code into an HTML file or a live code sandbox like CodePen.
 
-Q: How do I customize the color palette of the generated SVG illustrations?
+**Q:** How do I customize the color palette of the generated SVG illustrations?
 
-A: You can easily modify the design theme in the prompt instructions by swapping out the color hex codes. For instance, replace the Matte Black theme instructions with your brand colors, such as deep navy backgrounds with electric blue and white accents.
+**A:** You can easily modify the design theme in the prompt instructions by swapping out the color hex codes. For instance, replace the Matte Black theme instructions with your brand colors, such as deep navy backgrounds with electric blue and white accents.
 
-Q: What should I do if the AI cuts off the code before finishing the application?
+**Q:** What should I do if the AI cuts off the code before finishing the application?
 
-A: This usually happens due to token output limits on long scripts. Simply reply to the model with the exact phrase: "Continue seamlessly from exactly where you left off, ensuring valid syntax completion," and Claude will pick up right where it stopped.
+**A:** This usually happens due to token output limits on long scripts. Simply reply to the model with the exact phrase: "Continue seamlessly from exactly where you left off, ensuring valid syntax completion," and Claude will pick up right where it stopped.

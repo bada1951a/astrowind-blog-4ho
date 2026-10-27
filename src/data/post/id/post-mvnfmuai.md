@@ -24,7 +24,7 @@ Biasanya, saya tinggal memasukkan satu paragraf *master prompt* lama ke Claude, 
 
 Kegagalan ini terjadi karena model AI terbaru memiliki pembatasan *output token* per *response chunk* yang lebih ketat jika tidak diarahkan menggunakan wadah penampil interaktif. Ketika kita meminta kode SVG yang kompleks tanpa batasan struktur, AI cenderung merangkai kode secara serampangan yang berujung pada *syntax error* atau visual yang cacat.
 
-Solusinya adalah memanfaatkan fitur **Claude Artifacts** yang memisahkan panel kerja kode dari jendela obrolan utama. Dengan memadukan peran **Claude Artifacts** dan teknik *system role prompting*, kita bisa memaksa AI untuk:
+Solusinya adalah memanfaatkan fitur **Claude Artifacts**yang memisahkan panel kerja kode dari jendela obrolan utama. Dengan memadukan peran**Claude Artifacts** dan teknik *system role prompting*, kita bisa memaksa AI untuk:
 - Menghasilkan kode SVG yang *valid*, *scalable*, dan ramah *framework* web (React/Vue).
 - Menerapkan sistem palet warna terpusat menggunakan variabel CSS atau properti SVG native.
 - Menghindari tag usang dan memastikan atribut `viewBox` terpasang sempurna agar responsif di berbagai ukuran layar.
@@ -67,14 +67,14 @@ Agar hasil render SVG tidak melenceng dari ekspektasi, terapkan beberapa penyesu
 
 ## 5. Pertanyaan yang Sering Diajukan (FAQ)
 
-Q: Kenapa kode SVG yang dihasilkan Claude sering kali terpotong di tengah jalan?
+**Q:** Kenapa kode SVG yang dihasilkan Claude sering kali terpotong di tengah jalan?
 
-A: Hal ini biasanya terjadi karena batasan panjang teks maksimum pada sekali *output*. Solusinya, tambahkan instruksi di akhir prompt seperti "Jika kode terlalu panjang, selesaikan secara bertahap dengan konfirmasi lanjutan" atau gunakan fitur *continuation prompt* dengan mengetik "Lanjutkan dari baris terakhir kode sebelumnya".
+**A:** Hal ini biasanya terjadi karena batasan panjang teks maksimum pada sekali *output*. Solusinya, tambahkan instruksi di akhir prompt seperti "Jika kode terlalu panjang, selesaikan secara bertahap dengan konfirmasi lanjutan" atau gunakan fitur *continuation prompt* dengan mengetik "Lanjutkan dari baris terakhir kode sebelumnya".
 
-Q: Apakah SVG dari Claude Artifacts aman langsung dipasang ke dalam framework React?
+**Q:** Apakah SVG dari Claude Artifacts aman langsung dipasang ke dalam framework React?
 
-A: Sangat aman, asalkan Anda memastikan atribut seperti `class` diubah menjadi `className` dan properti gaya inline ditulis dalam format objek JavaScript jika diperlukan. Claude juga bisa diminta langsung menyesuaikan kodenya menjadi komponen React JSX.
+**A:** Sangat aman, asalkan Anda memastikan atribut seperti `class` diubah menjadi `className` dan properti gaya inline ditulis dalam format objek JavaScript jika diperlukan. Claude juga bisa diminta langsung menyesuaikan kodenya menjadi komponen React JSX.
 
-Q: Bagaimana cara mengubah palet warna bawaan AI agar sesuai dengan *brand guidelines* perusahaan saya?
+**Q:** Bagaimana cara mengubah palet warna bawaan AI agar sesuai dengan *brand guidelines* perusahaan saya?
 
-A: Cukup tentukan kode Hex warna secara spesifik di dalam bagian *Color Palette* pada master prompt template di atas. Anda bisa memasukkan hingga lima kode warna utama dan meminta AI untuk mendistribusikannya secara konsisten ke seluruh elemen ilustrasi.
+**A:** Cukup tentukan kode Hex warna secara spesifik di dalam bagian *Color Palette* pada master prompt template di atas. Anda bisa memasukkan hingga lima kode warna utama dan meminta AI untuk mendistribusikannya secara konsisten ke seluruh elemen ilustrasi.

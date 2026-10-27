@@ -43,7 +43,7 @@ W codziennej pracy w zespole projektowym liczy się czas i precyzja. Oto zestawi
 
 - Scena biurow
 
-a: Używaj `--cw 80`, aby zachować twarz, ale pozwolić Midjourney na zmianę profesjonalnego stroju.
+**a:** Używaj `--cw 80`, aby zachować twarz, ale pozwolić Midjourney na zmianę profesjonalnego stroju.
 - Scena dynamiczna w ruchu: Dodaj do promptu frazę `motion blur, action shot` i obniż `--cw` do 40, zapobiegając nienaturalnym deformacjom rysów podczas generowania szybkich akcji.
 - Zbliżenia portretowe: Zwiększ wagę cech twarzy w tekście, zachowując ten sam URL w `--cref` dla zachowania 95% tożsamości postaci.
 

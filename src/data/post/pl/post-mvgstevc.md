@@ -23,15 +23,15 @@ Wpisałem wtedy w ChatGPT klasyczne: *"Przeanalizuj ten film i napisz mi podobny
 Większość użytkowników traktuje ChatGPT jak wyszukiwarkę Google. Wklejają link lub transkrypcję i oczekują cudu. Tymczasem kluczem do inżynierii odwrotnej (reverse engineering) jest rozbicie tekstu na warstwy:
 1. Warstwa emocjonaln
 
-a: W którym momencie widzik odczuwa strach, ciekawość lub ulgę?
+**a:** W którym momencie widzik odczuwa strach, ciekawość lub ulgę?
 
 2. Warstwa strukturaln
 
-a: Jak zbudowany jest wstęp (pierwsze 30 sekund)? Gdzie następuje punkt zwrotny?
+**a:** Jak zbudowany jest wstęp (pierwsze 30 sekund)? Gdzie następuje punkt zwrotny?
 
 3. Warstwa retoryczn
 
-a: Jakie techniki argumentacji zastosowano, by utrzymać retencję?
+**a:** Jakie techniki argumentacji zastosowano, by utrzymać retencję?
 
 Zamiast pisać poematy do AI, stworzyłem systemowy prompt szablonowy, który traktuje skrypt jak kod źródłowy aplikacji. Poniżej znajdziesz gotowy arkusz zapytań, który wdrożyłem w naszym zespole projektowym w Warszawie.
 
@@ -76,7 +76,7 @@ Aby ten system działał bezbłędnie w codziennej pracy projektowej, trzymaj si
 <div style="border-left: 4px solid #3b82f6; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Wskazówka architekt
 
-a:</strong> Zapisz powyższy szablon w swojej firmowej bazie promptów (np. w Notion lub w systemie wewnętrznym). Zamiast pisać za każdym razem od nowa, zmieniaj jedynie zmienną tematyczną na końcu. Zaoszczędzisz średnio 45 minut pracy na każdym nowym projekcie wideo.
+**a:**</strong> Zapisz powyższy szablon w swojej firmowej bazie promptów (np. w Notion lub w systemie wewnętrznym). Zamiast pisać za każdym razem od nowa, zmieniaj jedynie zmienną tematyczną na końcu. Zaoszczędzisz średnio 45 minut pracy na każdym nowym projekcie wideo.
 </div>
 
 ## Często Zadawane Pytania (FAQ)

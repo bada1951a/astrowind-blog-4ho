@@ -46,14 +46,14 @@ Implementar esta estructura en las instrucciones personalizadas de ChatGPT o en 
 Para refinar aun the este enfoque en tu dia a dia, te recomiendo aplicar variaciones segun el caso de uso. Si trabajas con datos numericos o financieros, anade una regla adicional que exija calculos paso a paso antes de dar la cifra final. Si trabajas con desarrollo de software, pidele que valide la sintaxis contra una version especifica del lenguaje. Estas pequenas restricciones adicionales actuan como barreras de contencion que mantienen al LLM dentro de la realidad operativa de tu empresa.
 ## 5. Preguntas Frecuentes (FAQ)
 
-Q1. Funciona esta misma estrategia de prompts tanto en ChatGPT como en Claude por igual?
+**Q1.** Funciona esta misma estrategia de prompts tanto en ChatGPT como en Claude por igual?
 
-A1. Si, aunque Claude suele respetar con mayor rigor las instrucciones negativas complejas gracias a su ventana de contexto mas limpia y su entrenamiento en constituciones de IA. En ChatGPT es recomendable reforzar estas reglas en la seccion de Instrucciones Personalizadas.
+**A1.** Si, aunque Claude suele respetar con mayor rigor las instrucciones negativas complejas gracias a su ventana de contexto mas limpia y su entrenamiento en constituciones de IA. En ChatGPT es recomendable reforzar estas reglas en la seccion de Instrucciones Personalizadas.
 
-Q2. Que hago si el modelo sigue insistiendo en inventar datos a pesar de usar la plantilla maestra?
+**Q2.** Que hago si el modelo sigue insistiendo en inventar datos a pesar de usar la plantilla maestra?
 
-A2. Significa que la temperatura del modelo esta demasiado alta o que el prompt es ambiguo. Baja la temperatura a 0 si usas la API, o anade una penalizacion explicita indicando que cualquier invento sera considerado un fallo critico de sistema.
+**A2.** Significa que la temperatura del modelo esta demasiado alta o que el prompt es ambiguo. Baja la temperatura a 0 si usas la API, o anade una penalizacion explicita indicando que cualquier invento sera considerado un fallo critico de sistema.
 
-Q3. Como puedo automatizar este prompt para no tener que escribirlo cada vez que abro una sesion?
+**Q3.** Como puedo automatizar este prompt para no tener que escribirlo cada vez que abro una sesion?
 
-A3. En ChatGPT puedes guardarlo permanentemente en las Custom Instructions dentro del campo sobre como quieres que responda. En Claude, creas un Project nuevo y anades esta estructura como las instrucciones base del proyecto para que aplique a todos los chats internos.
+**A3.** En ChatGPT puedes guardarlo permanentemente en las Custom Instructions dentro del campo sobre como quieres que responda. En Claude, creas un Project nuevo y anades esta estructura como las instrucciones base del proyecto para que aplique a todos los chats internos.

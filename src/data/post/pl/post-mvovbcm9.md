@@ -29,9 +29,9 @@ Projekt wisiał na włosku, a do prezentacji przed zarządem zostały niecałe d
 Kiedy prosisz sztuczną inteligencję o stworzenie ikony lub ilustracji słowami typu *"zrób mi ładną ikonę chmurki w SVG"*, otrzymujesz kod pełen zbędnych znaczników, zagnieżdżonych stylów inline oraz brakującej responsywności (`viewBox`). Model zgaduje współrzędne, co prowadzi do błędów renderowania w przeglądarkach.
 
 Aby to naprawić, architektura promptu musi wymusić:
-- **Czystą semantykę SVG:** Użycie standardowych tagów (`<path>`, `<rect>`, `<circle>`) bez zbędnych śmieci z zewnętrznych edytorów.
-- **Skalowalność i dostępność:** Automatyczne dodawanie atrybutów `viewBox`, `width="100%"`, `height="100%"` oraz odpowiednich tagów `<title>` i `<desc>`.
-- **Ścisłe ramy stylistyczne:** Zdefiniowanie palety kolorów, grubości linii (`stroke-width`) oraz geometrii dopasowanej do nowoczesnych interfejsów webowych.
+- **Czystą semantykę SVG:**Użycie standardowych tagów (`<path>`, `<rect>`, `<circle>`) bez zbędnych śmieci z zewnętrznych edytorów.
+-**Skalowalność i dostępność:**Automatyczne dodawanie atrybutów `viewBox`, `width="100%"`, `height="100%"` oraz odpowiednich tagów `<title>` i `<desc>`.
+-**Ścisłe ramy stylistyczne:**Zdefiniowanie palety kolorów, grubości linii (`stroke-width`) oraz geometrii dopasowanej do nowoczesnych interfejsów webowych.
 
 ---
 
@@ -45,15 +45,15 @@ Aby to naprawić, architektura promptu musi wymusić:
 Jesteś ekspertem w dziedzinie projektowania interfejsów użytkownika (UI/UX) oraz inżynierem grafiki wektorowej. Twoim zadaniem jest stworzenie czystego, semantycznego i w pełni responsywnego kodu SVG dla następującego elementu: [Wprowadź opis ikony lub ilustracji, np. minimalistyczna ikona bezpiecznego serwera z motywem tarczy].
 
 ### Wymagania techniczne i wizualne:
-1. **Format wyjściowy:** Zwróć wyłącznie kod SVG zamknięty w dedykowanym okienku Artifacts, bez dodatkowego tekstu wyjaśniającego na zewnątrz.
+1.**Format wyjściowy:**Zwróć wyłącznie kod SVG zamknięty w dedykowanym okienku Artifacts, bez dodatkowego tekstu wyjaśniającego na zewnątrz.
 
-2. **Skalowalność:** Użyj atrybutów `xmlns="http://www.w3.org/2000/svg"`, `viewBox="0 0 24 24"` (lub 0 0 512 512 dla złożonych ilustracji) oraz ustaw `width="100%"` i `height="100%"`.
+2.**Skalowalność:**Użyj atrybutów `xmlns="http://www.w3.org/2000/svg"`, `viewBox="0 0 24 24"` (lub 0 0 512 512 dla złożonych ilustracji) oraz ustaw `width="100%"` i `height="100%"`.
 
-3. **Stylistyka:** Styl "Sandstone Desert Minimal". Użyj stonowanej palety kolorów z akcentami piaskowymi, ciepłymi brązami i głębokim grafitem (#111827). Główny kolor akcentowy to #a16207.
+3.**Stylistyka:**Styl "Sandstone Desert Minimal". Użyj stonowanej palety kolorów z akcentami piaskowymi, ciepłymi brązami i głębokim grafitem (#111827). Główny kolor akcentowy to #a16207.
 
-4. **Czystość kodu:** Używaj ścieżek (`<path>`) zamiast złożonych złożeń kształtów, jeśli to możliwe. Unikaj zagnieżdżonych stylów inline tam, gdzie można użyć właściwości prezentacyjnych.
+4.**Czystość kodu:**Używaj ścieżek (`<path>`) zamiast złożonych złożeń kształtów, jeśli to możliwe. Unikaj zagnieżdżonych stylów inline tam, gdzie można użyć właściwości prezentacyjnych.
 
-5. **Dostępność (A11y):** Dodaj odpowiednie znaczniki `<title>` oraz `<desc>` wewnątrz kodu SVG opisujące grafikę dla czytników ekranowych.
+5.**Dostępność (A11y):**Dodaj odpowiednie znaczniki `<title>` oraz `<desc>` wewnątrz kodu SVG opisujące grafikę dla czytników ekranowych.
 
 Opis szczegółowy elementu:
 [Wprowadź tutaj szczegółowe wytyczne biznesowe lub kontekst kulturowy]
@@ -65,22 +65,22 @@ Opis szczegółowy elementu:
 
 Podczas pracy z grafiką wektorową generowaną przez AI warto pamiętać o kilku zasadach optymalizacyjnych, które oszczędzają czas i tokeny:
 
-- **Iteracyjne poprawki:** Zamiast generować cały zestaw od nowa, poproś Claude o modyfikację konkretnego elementu wewnątrz istniejącego Artifactu (np. *"Zmień kolor tła w obecnym artifakcie na odcień piaskowy i pogrub główną linię o 1px"*).
-- **Kontrola tokenów:** Złożone ilustracje mogą generować długie ścieżki tekstowe. Podzielenie projektu na mniejsze komponenty (np. osobno ikona, osobno tło) drastycznie obniża ryzyko halucynacji modelu.
-- **Bezpieczeństwo semantyczne:** Zawsze weryfikuj, czy wygenerowany kod SVG nie zawiera złośliwych skryptów (`<script>`) lub zewnętrznych odnośników, co jest kluczowe przy wdrażaniu zasobów bezpośrednio do aplikacji produkcyjnych.
+-**Iteracyjne poprawki:** Zamiast generować cały zestaw od nowa, poproś Claude o modyfikację konkretnego elementu wewnątrz istniejącego Artifactu (np. *"Zmień kolor tła w obecnym artifakcie na odcień piaskowy i pogrub główną linię o 1px"*).
+- **Kontrola tokenów:**Złożone ilustracje mogą generować długie ścieżki tekstowe. Podzielenie projektu na mniejsze komponenty (np. osobno ikona, osobno tło) drastycznie obniża ryzyko halucynacji modelu.
+-**Bezpieczeństwo semantyczne:** Zawsze weryfikuj, czy wygenerowany kod SVG nie zawiera złośliwych skryptów (`<script>`) lub zewnętrznych odnośników, co jest kluczowe przy wdrażaniu zasobów bezpośrednio do aplikacji produkcyjnych.
 
 ---
 
 ## 5. Często zadawane pytania (FAQ)
 
-Q: Dlaczego do generowania grafik SVG używam Claude Artifacts zamiast tradycyjnych generatorów obrazów rastrowych?
+**Q:** Dlaczego do generowania grafik SVG używam Claude Artifacts zamiast tradycyjnych generatorów obrazów rastrowych?
 
-A: Tradycyjne generatory tworzą pliki PNG lub JPG, których nie można łatwo skalować, modyfikować kodu ani dostosowywać kolorów za pomocą CSS. Claude Artifacts generuje kod źródłowy SVG, który jest lekki, w pełni responsywny i gotowy do bezpośredniej edycji w kodzie aplikacji.
+**A:** Tradycyjne generatory tworzą pliki PNG lub JPG, których nie można łatwo skalować, modyfikować kodu ani dostosowywać kolorów za pomocą CSS. Claude Artifacts generuje kod źródłowy SVG, który jest lekki, w pełni responsywny i gotowy do bezpośredniej edycji w kodzie aplikacji.
 
-Q: Co zrobić, jeśli wygenerowany kod SVG nie mieści się w wyznaczonym kontenerze na stronie internetowej?
+**Q:** Co zrobić, jeśli wygenerowany kod SVG nie mieści się w wyznaczonym kontenerze na stronie internetowej?
 
-A: Upewnij się, że w promptcie lub w późniejszym poleceniu wymusiłeś obecność właściwych atrybutów `viewBox` oraz usunąłeś sztywno zdefiniowane atrybuty `width` i `height` w pikselach, zastępując je wartościami procentowymi.
+**A:** Upewnij się, że w promptcie lub w późniejszym poleceniu wymusiłeś obecność właściwych atrybutów `viewBox` oraz usunąłeś sztywno zdefiniowane atrybuty `width` i `height` w pikselach, zastępując je wartościami procentowymi.
 
-Q: Czy mogę wdrożyć wygenerowaną grafikę SVG bezpośrednio do systemu produkcyjnego?
+**Q:** Czy mogę wdrożyć wygenerowaną grafikę SVG bezpośrednio do systemu produkcyjnego?
 
-A: Tak, pod warunkiem przeprowadzenia szybkiej walidacji kodu pod kątem optymalizacji ścieżek (np. za pomocą narzędzi typu SVGO) oraz upewnienia się, że znaczniki dostępności spełniają wymagania Twojego projektu.
+**A:** Tak, pod warunkiem przeprowadzenia szybkiej walidacji kodu pod kątem optymalizacji ścieżek (np. za pomocą narzędzi typu SVGO) oraz upewnienia się, że znaczniki dostępności spełniają wymagania Twojego projektu.

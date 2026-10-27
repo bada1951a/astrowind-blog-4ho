@@ -85,7 +85,7 @@ Generiere nun das komplette, fehlerfreie Artifact mit lauffähigem Code.
 
 ---
 
-### Häufig gestellte Fragen (FAQ)
+## 5. Häufig gestellte Fragen (FAQ)
 
 1. Kann ich die Daten aus dem Claude Artifact exportieren?
 Ja. Da der Code als saubere HTML/React-Struktur vorliegt, können Sie das Artifact herunterladen, auf einem lokalen Server hosten oder den Code direkt in Ihr unternehmensinternes Repository einspielen.

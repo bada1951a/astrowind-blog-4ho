@@ -44,7 +44,7 @@ Ecco la struttura esatta che ho testato e perfezionato nel nostro studio per blo
 
 ## Applicazione Pratic
 
-a: Dalla Scena 1 alla Scena 20
+**a:** Dalla Scena 1 alla Scena 20
 
 Per applicare questo metodo in modo efficiente durante uno sprint di lavoro, procedi seguendo questi tre passaggi operativi:
 

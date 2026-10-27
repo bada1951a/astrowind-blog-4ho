@@ -32,17 +32,16 @@ Poniższy prompt to sprawdzony, produkcyjny szablon stworzony specjalnie pod śr
 Jesteś starszym grafikiem wektorowym i front-end developerem specjalizującym się w systemach projektowych UI/UX. Twoim zadaniem jest zaprojektowanie spójnej, minimalistycznej ikony SVG / ilustracji webowej przy użyciu funkcji Claude Artifacts.
 
 ### Wymagania techniczne:
-1. **Format:** Czysty kod SVG, gotowy do wdrożenia produkcyjnego (bez znaczników HTML wokół kodu, wyłącznie tag <svg>...</svg>).
+1. **Format:**Czysty kod SVG, gotowy do wdrożenia produkcyjnego (bez znaczników HTML wokół kodu, wyłącznie tag <svg>...</svg>).
 
-2. **Skala i siatka:** Użyj viewBox="0 0 24 24" (dla ikon) lub viewBox="0 0 800 600" (dla ilustracji).
+2.**Skala i siatka:**Użyj viewBox="0 0 24 24" (dla ikon) lub viewBox="0 0 800 600" (dla ilustracji).
 
-3. **Stylistyka:** Styl "Steel Silver Metallic", nowoczesna geometria liniowa (stroke-width: 1.5px do 2px), zaokrąglone rogi (stroke-linecap="round", stroke-linejoin="round").
+3.**Stylistyka:**Styl "Steel Silver Metallic", nowoczesna geometria liniowa (stroke-width: 1.5px do 2px), zaokrąglone rogi (stroke-linecap="round", stroke-linejoin="round").
 
-4. **Paleta kolorów:** 
-   - Główny akcent: #64748b (Slate Gray)
+4.**Paleta kolorów:**- Główny akcent: #64748b (Slate Gray)
    - Tło / Kontrast: #0f172a (Dark Charcoal) oraz czyste przestrzenie transparentne.
 
-5. **Semantyka:** Użyj grup (<g>), logicznych identyfikatorów oraz zmiennych CSS, aby ikona była w pełni responsywna.
+5.**Semantyka:**Użyj grup (<g>), logicznych identyfikatorów oraz zmiennych CSS, aby ikona była w pełni responsywna.
 
 ### Kontekst projektu:
 [Wpisz tutaj dokładny opis obiektu, np.: Ikona reprezentująca bezpieczny tunel VPN łączący mikroserwisy w chmurze AWS]
@@ -54,20 +53,20 @@ Wygeneruj kompletny kod w panelu Artifacts oraz krótko wyjaśnij decyzje projek
 
 Aby uniknąć typowych błędów generatywnych (takich jak niedomknięte ścieżki czy nakładające się warstwy), w codziennej pracy w polskim sektorze IT stosuję następujące zasady bezpieczeństwa promptów:
 
-- **Wymuszenie czystości kodu:** Dodaj w sekcji systemowej klauzulę: *„Zabrania się używania zagnieżdżonych bitmap wewnątrz tagu image. Wszystko musi być oparte na czystych krzywych (path, rect, circle)”*.
-- **Kontrola wersji w Artifacts:** Jeśli pierwsza iteracja ikony jest zbyt skomplikowana, nie pisz nowego czatu od zera. Użyj przycisku **Version History** w panelu Claude Artifacts i wydaj krótką komendę korekcyjną: *„Uprość ścieżki w wersji 2, usuwając zewnętrzne cienie i zachowując wyłącznie kontur”*.
-- **Optymalizacja tokenów:** Zamiast ładować do kontekstu całe pliki specyfikacji brandu, wklejaj jedynie krótkie kody hex oraz nazwy 3 głównych zasad wizualnych.
+-**Wymuszenie czystości kodu:** Dodaj w sekcji systemowej klauzulę: *„Zabrania się używania zagnieżdżonych bitmap wewnątrz tagu image. Wszystko musi być oparte na czystych krzywych (path, rect, circle)”*.
+- **Kontrola wersji w Artifacts:**Jeśli pierwsza iteracja ikony jest zbyt skomplikowana, nie pisz nowego czatu od zera. Użyj przycisku**Version History** w panelu Claude Artifacts i wydaj krótką komendę korekcyjną: *„Uprość ścieżki w wersji 2, usuwając zewnętrzne cienie i zachowując wyłącznie kontur”*.
+- **Optymalizacja tokenów:**Zamiast ładować do kontekstu całe pliki specyfikacji brandu, wklejaj jedynie krótkie kody hex oraz nazwy 3 głównych zasad wizualnych.
 
 ## 5. Najczęściej zadawane pytania (FAQ)
 
-Q: Czy ten prompt zadziała w darmowej wersji ChatGPT, czy muszę korzystać wyłącznie z Claude?
+**Q:** Czy ten prompt zadziała w darmowej wersji ChatGPT, czy muszę korzystać wyłącznie z Claude?
 
-A: Szablon został zaprojektowany i zoptymalizowany pod kątem **Claude Artifacts**, ponieważ model ten potrafi bezpośrednio renderować i wyświetlać podgląd wizualny kodu SVG w bocznym oknie. W ChatGPT możesz uzyskać sam kod tekstowy SVG, jednak stracisz wygodę natychmiastowego podglądu graficznego.
+**A:** Szablon został zaprojektowany i zoptymalizowany pod kątem**Claude Artifacts**, ponieważ model ten potrafi bezpośrednio renderować i wyświetlać podgląd wizualny kodu SVG w bocznym oknie. W ChatGPT możesz uzyskać sam kod tekstowy SVG, jednak stracisz wygodę natychmiastowego podglądu graficznego.
 
-Q: Jak zmusić model, aby ikony zachowywały spójną grubości linii przy różnych rozmiarach?
+**Q:** Jak zmusić model, aby ikony zachowywały spójną grubości linii przy różnych rozmiarach?
 
-A: Kluczem jest zdefiniowanie w prompcie parametru `vector-effect="non-scaling-stroke"` oraz operowanie na stałej siatce bazowej (np. 24x24 piksele). Dzięki temu skalowanie ikony do mniejszych formatów w CSS nie powoduje zgrubienia ani rozmycia kresek.
+**A:** Kluczem jest zdefiniowanie w prompcie parametru `vector-effect="non-scaling-stroke"` oraz operowanie na stałej siatce bazowej (np. 24x24 piksele). Dzięki temu skalowanie ikony do mniejszych formatów w CSS nie powoduje zgrubienia ani rozmycia kresek.
 
-Q: Co zrobić, gdy wygenerowany plik SVG zawiera zbędne metadane lub atrybuty edytora (np. Adobe Illustrator)?
+**Q:** Co zrobić, gdy wygenerowany plik SVG zawiera zbędne metadane lub atrybuty edytora (np. Adobe Illustrator)?
 
-A: Wystarczy dopisać na końcu promptu modyfikator: *„Oczyść wygenerowany kod SVG ze wszystkich śmieciowych komentarzy, atrybutów edytorów graficznych, zbędnych grup oraz osadzonych stylów globalnych, pozostawiając wyłącznie zoptymalizowaną strukturę DOM”*.
+**A:** Wystarczy dopisać na końcu promptu modyfikator: *„Oczyść wygenerowany kod SVG ze wszystkich śmieciowych komentarzy, atrybutów edytorów graficznych, zbędnych grup oraz osadzonych stylów globalnych, pozostawiając wyłącznie zoptymalizowaną strukturę DOM”*.

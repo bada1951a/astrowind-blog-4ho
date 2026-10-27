@@ -61,14 +61,14 @@ Untuk mendapatkan hasil visual yang konsisten dan menghindari halusinasi estetik
 
 ## 5. Pertanyaan yang Sering Diajukan (FAQ)
 
-Q: Apakah saya memerlukan akun Claude Pro berbayar untuk bisa menggunakan fitur Artifacts?
+**Q:** Apakah saya memerlukan akun Claude Pro berbayar untuk bisa menggunakan fitur Artifacts?
 
-A: Ya, saat ini fitur Claude Artifacts secara optimal tersedia pada paket langganan berbayar (Pro/Team). Namun, Anda tetap bisa meminta Claude versi gratis untuk menuliskan kode SVG mentah, meskipun Anda harus menyalin dan merendernya secara manual di browser atau software editor vektor.
+**A:** Ya, saat ini fitur Claude Artifacts secara optimal tersedia pada paket langganan berbayar (Pro/Team). Namun, Anda tetap bisa meminta Claude versi gratis untuk menuliskan kode SVG mentah, meskipun Anda harus menyalin dan merendernya secara manual di browser atau software editor vektor.
 
-Q: Bisakah kode SVG yang dihasilkan langsung dipakai untuk kebutuhan produksi aplikasi web?
+**Q:** Bisakah kode SVG yang dihasilkan langsung dipakai untuk kebutuhan produksi aplikasi web?
 
-A: Sangat bisa. Kode SVG yang dihasilkan melalui Artifacts bersifat murni, bersih, dan menggunakan standar web modern sehingga aman disematkan langsung ke dalam file HTML atau komponen React/Vue tanpa perlu modifikasi besar.
+**A:** Sangat bisa. Kode SVG yang dihasilkan melalui Artifacts bersifat murni, bersih, dan menggunakan standar web modern sehingga aman disematkan langsung ke dalam file HTML atau komponen React/Vue tanpa perlu modifikasi besar.
 
-Q: Bagaimana cara mengubah ukuran ikon SVG yang dihasilkan agar tidak pecah saat diubah ke berbagai media?
+**Q:** Bagaimana cara mengubah ukuran ikon SVG yang dihasilkan agar tidak pecah saat diubah ke berbagai media?
 
-A: Karena berbasis vektor, SVG tidak akan pernah pecah. Anda cukup menyesuaikan atribut width dan height pada tag SVG utama menjadi persentase (misalnya width="100%") atau membiarkannya fleksibel mengikuti ukuran kontainer CSS Anda di website.
+**A:** Karena berbasis vektor, SVG tidak akan pernah pecah. Anda cukup menyesuaikan atribut width dan height pada tag SVG utama menjadi persentase (misalnya width="100%") atau membiarkannya fleksibel mengikuti ukuran kontainer CSS Anda di website.

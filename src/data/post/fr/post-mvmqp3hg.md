@@ -8,7 +8,7 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Modern Minimalist Slate"
 ---
 
-## 1. [Ouverture] L'angoisse du rapport de marché à La Défense
+## 1. Situation d'urgence critique au bureau L'angoisse du rapport de marché à La Défense
 
 Il est 16h50, et la pression monte au 28e étage d'une tour de La Défense. Je dois boucler le rapport d'analyse de la concurrence pour le comex prévu à 18h00. J'ai sous les yeux un PDF brut de 60 pages rempli de communiqués de presse, de retranscriptions de conférences téléphoniques et de notes d'analystes non structurées. Je veux transformer ce chaos textuel en un tableau comparatif net (Parts de marché, Chiffre d'affaires 2025, Croissance YoY, Stratégie IA). 
 
@@ -26,16 +26,16 @@ Le résultat ? Un désastre absolu. L'IA me sort un tableau avec un air parfaite
 
 Le problème fondamental vient de la nature probabiliste des LLM. Quand vous lui balancez un texte brut sans lui donner le format exact attendu, il devance vos attentes en générant du contenu plausible mais faux. 
 
-Le **Few-Shot Prompting** (ou apprentissage par quelques exemples) consiste à donner à l'IA 1 ou 2 exemples parfaits de ce que vous voulez avant de lui soumettre la vraie source. C'est exactement comme briefer un nouvel analyste junior : au lieu de lui dire "fais de mon mieux", vous lui montrez un ancien rapport validé en lui disant "fais exactement pareil avec ces nouvelles données".
+Le **Few-Shot Prompting**(ou apprentissage par quelques exemples) consiste à donner à l'IA 1 ou 2 exemples parfaits de ce que vous voulez avant de lui soumettre la vraie source. C'est exactement comme briefer un nouvel analyste junior : au lieu de lui dire "fais de mon mieux", vous lui montrez un ancien rapport validé en lui disant "fais exactement pareil avec ces nouvelles données".
 
 Pour que cela fonctionne à tous les coups, notre structure de prompt doit intégrer :
-1. **Un rôle clair** (Expert en veille stratégique).
+1.**Un rôle clair**(Expert en veille stratégique).
 
-2. **Une règle d'or anti-hallucination** (Si le chiffre n'est pas dans le texte, écrire "Non disponible" ou "N/A", ne jamais deviner).
+2.**Une règle d'or anti-hallucination**(Si le chiffre n'est pas dans le texte, écrire "Non disponible" ou "N/A", ne jamais deviner).
 
-3. **Des exemples concrets (Few-Shot)** montrant l'entrée textuelle et la sortie tabulaire exacte.
+3.**Des exemples concrets (Few-Shot)**montrant l'entrée textuelle et la sortie tabulaire exacte.
 
-4. **La donnée cible** à analyser.
+4.**La donnée cible** à analyser.
 
 ## 3. [Template] Le Master Prompt prèt à l'emploi
 
@@ -73,8 +73,8 @@ Génère uniquement le tableau Markdown final basé sur les données cibles en r
 Pour pousser l'exercice encore plus loin selon l'outil que vous utilisez au bureau :
 
 * **Sur Claude 3.5 Sonnet :** Ce modèle excelle particulièrement dans le respect des structures tabulaires complexes. Vous pouvez lui demander de sortir directement le résultat au format CSV ou JSON en modifiant simplement la ligne du format de sortie.
-* **Sur ChatGPT (GPT-4o) :** Utilisez les **Instructions système** (Custom Instructions) pour y intégrer la règle anti-hallucination une bonne fois pour toutes, vous n'aurez plus besoin de la répéter dans chaque prompt.
-* **Paramètres de température :** Réglez la **température à 0** (si l'interface le permet, comme sur l'API ou certains playgrounds). Cela supprime la créativité de l'IA et la force à être purement déterministe et factuelle.
+* **Sur ChatGPT (GPT-4o) :**Utilisez les**Instructions système** (Custom Instructions) pour y intégrer la règle anti-hallucination une bonne fois pour toutes, vous n'aurez plus besoin de la répéter dans chaque prompt.
+* **Paramètres de température :**Réglez la**température à 0** (si l'interface le permet, comme sur l'API ou certains playgrounds). Cela supprime la créativité de l'IA et la force à être purement déterministe et factuelle.
 
 <div style="border-left: 4px solid #3b82f6; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Astuce produit :</strong> Si votre texte fait plus de 20 pages, découpez-le en sections logiques (par exemple, section par concurrent) plutôt que de tout envoyer d'un coup. Vous obtiendrez un taux de précision proche de 100 pourcent.
@@ -82,14 +82,14 @@ Pour pousser l'exercice encore plus loin selon l'outil que vous utilisez au bure
 
 ## 5. Foire Aux Questions (FAQ)
 
-Q : Que faire si l'IA oublie une colonne entière dans le tableau final malgré mes instructions ?
+**Q :** Que faire si l'IA oublie une colonne entière dans le tableau final malgré mes instructions ?
 
-A : Renforcez l'exemple de démonstration (Few-Shot) en y incluant explicitement la colonne manquante avec des données factices. L'IA imite la structure visuelle des exemples avec une efficacité redoutable.
+**A :** Renforcez l'exemple de démonstration (Few-Shot) en y incluant explicitement la colonne manquante avec des données factices. L'IA imite la structure visuelle des exemples avec une efficacité redoutable.
 
-Q : Puis-je utiliser cette méthode pour convertir du texte directement en fichier Excel (.xlsx) ?
+**Q :** Puis-je utiliser cette méthode pour convertir du texte directement en fichier Excel (.xlsx) ?
 
-A : Les LLM ne peuvent pas générer directement un fichier binaire cliquable, mais vous pouvez leur demander de formater la sortie en CSV ou en tableau Markdown. Vous n'avez ensuite qu'à copier-coller le tableau directement dans Excel, les colonnes se répartiront d'elles-mêmes.
+**A :** Les LLM ne peuvent pas générer directement un fichier binaire cliquable, mais vous pouvez leur demander de formater la sortie en CSV ou en tableau Markdown. Vous n'avez ensuite qu'à copier-coller le tableau directement dans Excel, les colonnes se répartiront d'elles-mêmes.
 
-Q : Comment éliminer définitivement les hallucinations sur les chiffres décimaux ?
+**Q :** Comment éliminer définitivement les hallucinations sur les chiffres décimaux ?
 
-A : Ajoutez une règle textuelle explicite dans votre prompt : "Conserve le format exact des chiffres trouvés dans le texte source, sans arrondir ni modifier les décimales." Couplé à une température à 0, le résultat sera infaillible.
+**A :** Ajoutez une règle textuelle explicite dans votre prompt : "Conserve le format exact des chiffres trouvés dans le texte source, sans arrondir ni modifier les décimales." Couplé à une température à 0, le résultat sera infaillible.

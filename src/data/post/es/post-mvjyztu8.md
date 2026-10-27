@@ -23,7 +23,7 @@ Para solucionar esto de forma definitiva en entornos de consultoría y estrategi
 <div style="border-left: 4px solid #a855f7; padding: 12px 16px; margin: 20px 0; background-color: rgba(168,85,247,0.08); border-radius: 4px; color: #111827;">
 <strong>Consejo del Arquitecto de I
 
-A:</strong> Nunca dejes que el modelo escriba el documento de corrido. Divide el whitepaper en 5 bloques lógicos de 1000 palabras y utiliza un archivo de metadatos o memoria de contexto en cada eslabón de la cadena para blindar el tono y los datos cuantitativos.
+**A:**</strong> Nunca dejes que el modelo escriba el documento de corrido. Divide el whitepaper en 5 bloques lógicos de 1000 palabras y utiliza un archivo de metadatos o memoria de contexto en cada eslabón de la cadena para blindar el tono y los datos cuantitativos.
 </div>
 
 Aquí tienes la plantilla maestra que utilizamos para iniciar la cadena de prompts en ChatGPT o Claude (puedes adaptarla en las [Instrucciones Personalizadas] o usarla como bloque inicial):
@@ -54,7 +54,7 @@ Continuamos con la redacción del whitepaper de 5000 palabras. Este es el Módul
 
 Antes de redactar, absorbe el siguiente resumen del Módulo 1 para mantener la continuidad conceptual y narrativ
 
-a:
+**a:**
 [Inserta aquí un resumen de 3 líneas del bloque anterior o adjunta el texto previo].
 
 Mantén exactamente el mismo tono de Director de Práctica Senior analítico y cínico frente a los mitos tecnológicos establecido en el primer bloque. Está prohibido adoptar un tono neutral o motivacional. Desarrolla los siguientes subtemas con rigor técnico...
@@ -66,14 +66,14 @@ Mantén exactamente el mismo tono de Director de Práctica Senior analítico y c
 
 ## 5. Preguntas Frecuentes (FAQ)
 
-Q1. ¿Qué hago si el modelo empieza a inventar datos o métricas financieras en medio del whitepaper?
+**Q1.** ¿Qué hago si el modelo empieza a inventar datos o métricas financieras en medio del whitepaper?
 
-A1. Esto ocurre por la falta de un anclaje de datos en los prompts intermedios. Para solucionarlo, debes incluir un bloque de restricciones en cada prompt puente que obligue al modelo a referenciar únicamente bases de datos corporativas previas o a señalar explícitamente [DATO PENDIENTE DE VALIDACIÓN] cuando no disponga de una cifra exacta, evitando así las alucinaciones numéricas.
+**A1.** Esto ocurre por la falta de un anclaje de datos en los prompts intermedios. Para solucionarlo, debes incluir un bloque de restricciones en cada prompt puente que obligue al modelo a referenciar únicamente bases de datos corporativas previas o a señalar explícitamente [DATO PENDIENTE DE VALIDACIÓN] cuando no disponga de una cifra exacta, evitando así las alucinaciones numéricas.
 
-Q2. ¿Es mejor utilizar ChatGPT Plus o Claude 3.5 Sonnet para encadenar documentos de 5000 palabras?
+**Q2.** ¿Es mejor utilizar ChatGPT Plus o Claude 3.5 Sonnet para encadenar documentos de 5000 palabras?
 
-A2. Para documentos técnicos extensos y whitepapers corporativos, Claude 3.5 Sonnet con su interfaz de Artifacts suele ofrecer un rendimiento superior debido a su capacidad para retener estructuras complejas de prosa formal y su menor tendencia a deslizarse hacia tonos conversacionales informales en comparación con ChatGPT.
+**A2.** Para documentos técnicos extensos y whitepapers corporativos, Claude 3.5 Sonnet con su interfaz de Artifacts suele ofrecer un rendimiento superior debido a su capacidad para retener estructuras complejas de prosa formal y su menor tendencia a deslizarse hacia tonos conversacionales informales en comparación con ChatGPT.
 
-Q3. ¿Cómo puedo evitar que el whitepaper final suene como si hubiera sido escrito por cinco personas diferentes debido al encadenamiento?
+**Q3.** ¿Cómo puedo evitar que el whitepaper final suene como si hubiera sido escrito por cinco personas diferentes debido al encadenamiento?
 
-A3. El secreto es crear un documento maestro de estilo (un mini-estilo de 200 palabras) que contenga reglas estrictas de vocabulario, palabras prohibidas (como "revolucionario", "sinergia", "aprovechar") y la estructura sintáctica preferida. Debes inyectar este mini-estilo obligatoriamente en el encabezado de cada uno de los prompts de la cadena.
+**A3.** El secreto es crear un documento maestro de estilo (un mini-estilo de 200 palabras) que contenga reglas estrictas de vocabulario, palabras prohibidas (como "revolucionario", "sinergia", "aprovechar") y la estructura sintáctica preferida. Debes inyectar este mini-estilo obligatoriamente en el encabezado de cada uno de los prompts de la cadena.

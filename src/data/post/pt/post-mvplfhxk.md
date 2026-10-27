@@ -20,8 +20,6 @@ O pânico se instalou rapidamente na sala quando o tempo começou a escoar pelo 
 <strong>Alerta de Incidente Crítico:</strong> Prompts vagos em tarefas híbridas que exigem processamento de linguagem natural técnica e geração de código visual (como SVG) resultam invariavelmente em desalinhamento de contexto, alucinações textuais e arquivos vetoriais corrompidos. A separação estricta de responsabilidades no prompt é obrigatória.
 </div>
 
-
-
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvplhk9i-7-b/1000/550.jpg)
 
 ## 2. Análise da causa raiz de falhas em prompts e raciocínio

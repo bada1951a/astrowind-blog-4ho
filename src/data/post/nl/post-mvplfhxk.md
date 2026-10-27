@@ -20,8 +20,6 @@ De paniek bereikt een hoogtepunt wanneer het besef indaalt dat het niet zomaar o
 <strong>Kritieke waarschuwing:</strong> Wanneer een model na een update structureel falende code levert, helpt simpelweg herhalen niet. Je moet de onderliggende instructiearchitectuur volledig herontwerpen met harde randvoorwaarden en syntaxis-guards.
 </div>
 
-
-
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvplhugd-8-b/1000/550.jpg)
 
 ## 2. Grondige analyse van mislukte prompts en denkfouten van het model
@@ -80,12 +78,12 @@ Daarnaast is het toepassen van geavanceerde chaining-technieken essentieel voor 
 
 **Q1.**Waarom genereert Claude soms onvolledige SVG-code of breekt de output halverwege af tijdens het gebruik van Artifacts?
 
-A1. Dit wordt meestal veroorzaakt doordat de maximale tokenlimiet voor de output per generatierun wordt overschreden, of doordat het model te complex ontwerpt binnen een enkele prompt. Om dit te verhelpen, kun je de complexiteit opsplitsen door te vragen om een modulaire opbouw met `<defs>` en losse componenten, of door de `max_tokens` parameter expliciet hoger in te stellen indien de interface dit toestaat.
+**A1.** Dit wordt meestal veroorzaakt doordat de maximale tokenlimiet voor de output per generatierun wordt overschreden, of doordat het model te complex ontwerpt binnen een enkele prompt. Om dit te verhelpen, kun je de complexiteit opsplitsen door te vragen om een modulaire opbouw met `<defs>` en losse componenten, of door de `max_tokens` parameter expliciet hoger in te stellen indien de interface dit toestaat.
 
 **Q2.**Hoe zorg ik ervoor dat de gegenereerde SVG-iconen naadloos aansluiten bij de huisstijl van mijn bedrijf op de Zuidas?
 
-A2. Je bereikt dit door in de `[Context]` en `[Objective]` secties van de master prompt strenge hex-kleurcodes en specifieke ontwerpregels mee te nemen. Door te verplichten dat het model alleen de opgegeven kleurtinten gebruikt en te kiezen voor een minimalistische stijlaanduiding, voorkom je dat het model eigenmachtig afwijkende of schreeuwerige kleuren toevoegt.
+**A2.** Je bereikt dit door in de `[Context]` en `[Objective]` secties van de master prompt strenge hex-kleurcodes en specifieke ontwerpregels mee te nemen. Door te verplichten dat het model alleen de opgegeven kleurtinten gebruikt en te kiezen voor een minimalistische stijlaanduiding, voorkom je dat het model eigenmachtig afwijkende of schreeuwerige kleuren toevoegt.
 
 **Q3.** Wat is de beste manier om correcties door te voeren wanneer het eerste resultaat van de SVG niet helemaal naar wens is?
 
-A3. In plaats van een vage correctie zoals "maak het mooier", dien je in de vervolgprompt exact aan te geven welke coördinaten of elementen gewijzigd moeten worden op basis van de gelaagde ID's. Verwijs altijd naar de specifieke `<g id="...">` tag en geef glasheldere instructies over de gewenste verplaatsing of stijlverandering om misverstanden bij het model te voorkomen.
+**A3.** In plaats van een vage correctie zoals "maak het mooier", dien je in de vervolgprompt exact aan te geven welke coördinaten of elementen gewijzigd moeten worden op basis van de gelaagde ID's. Verwijs altijd naar de specifieke `<g id="...">` tag en geef glasheldere instructies over de gewenste verplaatsing of stijlverandering om misverstanden bij het model te voorkomen.

@@ -41,14 +41,14 @@ Pour tirer le maximum de ce system prompt au quotidien, voici quelques bonnes pr
 En appliquant cette methode dans nos equipes de conseil a Paris, nous avons divise par quatre le temps passe a corriger du code genere par IA. La productivitée ne vient pas de la vitesse a laquelle l'IA tape du texte, mais de la fiabilite du resultat des la premiere execution.
 ## 5. Foire Aux Questions (FAQ)
 
-Q1. Est-ce que ce system prompt fonctionne aussi bien avec Claude qu'avec ChatGPT ?
+**Q1.** Est-ce que ce system prompt fonctionne aussi bien avec Claude qu'avec ChatGPT ?
 
-A1. Oui, absolument. Claude repond meme generalement mieux aux contraintes negatives et aux regles de refus strictes definies dans le system prompt grace a son entrainement axe sur la securite et l'honnetete methodologique.
+**A1.** Oui, absolument. Claude repond meme generalement mieux aux contraintes negatives et aux regles de refus strictes definies dans le system prompt grace a son entrainement axe sur la securite et l'honnetete methodologique.
 
-Q2. Comment integrer ce prompt si j'utilise l'interface web standard de ChatGPT sans acces aux system prompts API ?
+**Q2.** Comment integrer ce prompt si j'utilise l'interface web standard de ChatGPT sans acces aux system prompts API ?
 
-A2. Vous pouvez inserer ce texte au tout debut de votre session de discussion en tant que consigne initiale, ou l'enregistrer directement dans la section "Custom Instructions" (Instructions personnalisees) de votre profil ChatGPT sous le champ "How would you like ChatGPT to respond?".
+**A2.** Vous pouvez inserer ce texte au tout debut de votre session de discussion en tant que consigne initiale, ou l'enregistrer directement dans la section "Custom Instructions" (Instructions personnalisees) de votre profil ChatGPT sous le champ "How would you like ChatGPT to respond?".
 
-Q3. Est-ce que cela risque de rendre l'IA trop timide ou de bloquer des requetes legitimes ?
+**Q3.** Est-ce que cela risque de rendre l'IA trop timide ou de bloquer des requetes legitimes ?
 
-A3. Au debut, vous remarquerez peut-etre que l'IA demande plus de clarifications. C'est en realite un signe positif : cela prouve qu'elle arrete de deviner a l'aveugle. Vous gagnez du temps en evitant les faux departs et les bugs de code fantome.
+**A3.** Au debut, vous remarquerez peut-etre que l'IA demande plus de clarifications. C'est en realite un signe positif : cela prouve qu'elle arrete de deviner a l'aveugle. Vous gagnez du temps en evitant les faux departs et les bugs de code fantome.

@@ -68,16 +68,16 @@ When executing long-form prompt chains, you will inevitably run into edge cases 
 - Tone Anchoring: If you notice the vocabulary becoming too standard, add a negative constraint to your prompt: `[NEGATIVE CONSTRAINT: Ban words such as 'testament', 'delve', 'revolutionize', 'tapestry', and 'furthermore'].`
 - Token Budgeting: Break your output requests into 800-1,000 word chunks. Asking an LLM to output 2,500 words in a single response inevitably leads to quality degradation and abrupt cutoff mid-sentence.
 
-## 5. Frequently Asked Questions (FAQ) (FAQ) (FAQ)
+## 5. Frequently Asked Questions (FAQ)
 
-Q1. What should I do if the AI completely ignores the persona instructions by step three?
+**Q1.** What should I do if the AI completely ignores the persona instructions by step three?
 
-A1. This happens when the context window is saturated and the initial system prompt loses weight. Stop the chain, open a fresh chat window, feed the AI the condensed summary of all previous sections, re-declare the system prompt with bolded authority markers, and resume the chain.
+**A1.** This happens when the context window is saturated and the initial system prompt loses weight. Stop the chain, open a fresh chat window, feed the AI the condensed summary of all previous sections, re-declare the system prompt with bolded authority markers, and resume the chain.
 
-Q2. Can I automate this prompt chain using tools like Make.com or Python scripts?
+**Q2.** Can I automate this prompt chain using tools like Make.com or Python scripts?
 
-A2. Absolutely. By wrapping the master prompt template in an API call loop (using OpenAI or Anthropic endpoints), you can programmatically inject the previous output's summary into the next payload, enabling fully automated, multi-thousand-word whitepaper generation without manual copy-pasting.
+**A2.** Absolutely. By wrapping the master prompt template in an API call loop (using OpenAI or Anthropic endpoints), you can programmatically inject the previous output's summary into the next payload, enabling fully automated, multi-thousand-word whitepaper generation without manual copy-pasting.
 
-Q3. How do I prevent hallucinations when generating heavy technical whitepapers?
+**Q3.** How do I prevent hallucinations when generating heavy technical whitepapers?
 
-A3. Implement a Retrieval-Augmented Generation (RAG) step or feed verified research notes into the `[CONTEXT INFLUENCE]` block of each prompt in the chain. Restrict the model by adding the instruction: `[CONSTRAINT: Rely exclusively on the provided context notes for all statistical claims. Do not extrapolate unverified data. ]`
+**A3.** Implement a Retrieval-Augmented Generation (RAG) step or feed verified research notes into the `[CONTEXT INFLUENCE]` block of each prompt in the chain. Restrict the model by adding the instruction: `[CONSTRAINT: Rely exclusively on the provided context notes for all statistical claims. Do not extrapolate unverified data. ]`

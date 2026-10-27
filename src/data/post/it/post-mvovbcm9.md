@@ -24,15 +24,15 @@ Il motivo principale per cui i prompt tradizionali falliscono quando si richiede
 
 Per ottenere risultati professionali in ambito web design, dobbiamo sfruttare l'architettura di **Claude Artifacts**, che separa l'ambiente di visualizzazione del codice dall'interfaccia di chat. La strategia corretta si basa su tre pilastri fondamentali:
 
-1. **Definizione rigorosa del viewBox:** Fissare fin dall'inizio le coordinate (es. `viewBox="0 0 24 24"` per le icone o `viewBox="0 0 800 600"` per le illustrazioni) per evitare distorsioni responsive.
+1.**Definizione rigorosa del viewBox:**Fissare fin dall'inizio le coordinate (es. `viewBox="0 0 24 24"` per le icone o `viewBox="0 0 800 600"` per le illustrazioni) per evitare distorsioni responsive.
 
-2. **Vincoli di codice pulito:** Imporre l'uso di tag semantici (`<path>`, `<circle>`, `<g>`), vietando stili esterni e richiedendo attributi di stile inline o variabili CSS compatibili.
+2.**Vincoli di codice pulito:**Imporre l'uso di tag semantici (`<path>`, `<circle>`, `<g>`), vietando stili esterni e richiedendo attributi di stile inline o variabili CSS compatibili.
 
-3. **Controllo dello stile visivo:** Specificare con precisione la palette di colori (es. codici esadecimali mirati), lo spessore dei tratti (`stroke-width`) e la presenza o meno di sfondi trasparenti.
+3.**Controllo dello stile visivo:**Specificare con precisione la palette di colori (es. codici esadecimali mirati), lo spessore dei tratti (`stroke-width`) e la presenza o meno di sfondi trasparenti.
 
 ## 3. Template master di prompt pratico pronto all'uso
 
-Ecco il prompt definitivo testato sul campo nello studio di Milano, pronto da copiare e incollare in **Claude** attivando la funzionalità Artifacts.
+Ecco il prompt definitivo testato sul campo nello studio di Milano, pronto da copiare e incollare in**Claude** attivando la funzionalità Artifacts.
 
 ```markdown
 Sei un Senior UI/UX Designer ed esperto di grafica vettoriale SVG. Il tuo compito è creare un'icona vettoriale personalizzata (o un'illustrazione web) pulita, scalabile e moderna, sfruttando Claude Artifacts per la visualizzazione.
@@ -62,8 +62,8 @@ Sei un Senior UI/UX Designer ed esperto di grafica vettoriale SVG. Il tuo compit
 
 Quando lavori con i vettori generati dall'intelligenza artificiale, tieni a mente queste brevi linee guida per evitare errori comuni:
 
-- **Ottimizzazione del peso:** Chiedi sempre a Claude di rimuovere i metadati inutili (come attributi `xml:space` o ID superflui) per mantenere il file SVG leggero per le performance del sito web.
-- **Varianti di stato:** Puoi duplicare il prompt chiedendo una versione in stato *hover* o *active*, modificando semplicemente il parametro della palette colori nel prompt successivo.
+- **Ottimizzazione del peso:**Chiedi sempre a Claude di rimuovere i metadati inutili (come attributi `xml:space` o ID superflui) per mantenere il file SVG leggero per le performance del sito web.
+-**Varianti di stato:** Puoi duplicare il prompt chiedendo una versione in stato *hover* o *active*, modificando semplicemente il parametro della palette colori nel prompt successivo.
 - **Gestione dei gradienti:** Se l'illustrazione richiede sfumature, specifica esplicitamente l'uso di `<linearGradient>` con ID unici per evitare conflitti nel DOM se inserisci più SVG nella stessa pagina HTML.
 
 <div style="border-left: 4px solid #059669; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
@@ -72,14 +72,14 @@ Quando lavori con i vettori generati dall'intelligenza artificiale, tieni a ment
 
 ## 5. Domande Frequenti (FAQ)
 
-Q: Posso usare questo prompt anche su ChatGPT o Gemini?
+**Q:** Posso usare questo prompt anche su ChatGPT o Gemini?
 
-A: Puoi usarlo, ma l'esperienza ottimale si ha con Claude grazie ad Artifacts, che permette di visualizzare l'anteprima grafica in tempo reale e di copiare il codice con un solo clic.
+**A:** Puoi usarlo, ma l'esperienza ottimale si ha con Claude grazie ad Artifacts, che permette di visualizzare l'anteprima grafica in tempo reale e di copiare il codice con un solo clic.
 
-Q: Come posso adattare i colori generati dal prompt alla palette del mio cliente?
+**Q:** Come posso adattare i colori generati dal prompt alla palette del mio cliente?
 
-A: È sufficiente sostituire i codici esadecimali indicati nella sezione palette del master prompt con quelli ufficiali del brand del tuo cliente prima di inviare la richiesta all'IA.
+**A:** È sufficiente sostituire i codici esadecimali indicati nella sezione palette del master prompt con quelli ufficiali del brand del tuo cliente prima di inviare la richiesta all'IA.
 
-Q: Il codice SVG generato è sicuro e pronto per la produzione?
+**Q:** Il codice SVG generato è sicuro e pronto per la produzione?
 
-A: Sì, se utilizzi i vincoli di pulizia del codice presenti nel prompt. È comunque buona norma passare il codice SVG attraverso un tool di pulizia rapida come SVGO prima di caricarlo sul server di produzione.
+**A:** Sì, se utilizzi i vincoli di pulizia del codice presenti nel prompt. È comunque buona norma passare il codice SVG attraverso un tool di pulizia rapida come SVGO prima di caricarlo sul server di produzione.

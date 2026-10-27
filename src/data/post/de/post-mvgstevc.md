@@ -62,11 +62,11 @@ Im Banken- und Consultingumfeld ist Datensicherheit entscheidend. Nutzen Sie nie
 * Token-Spar-Tipp: Wenn das Transkript sehr lang ist, fügen Sie am Anfang des Prompts die Instruktion ein: *„Ignoriere Füllwörter, Wiederholungen und Begrüßungen des Creators. Konzentriere dich ausschließlich auf den argumentativen Kern.“*
 * Systemanweisungen (Custom Instructions): Wenn Sie diesen Workflow regelmäßig für Geschäftsberichte nutzen, hinterlegen Sie in den ChatGPT-Einstellungen als Person
 
-a: *„Du bist ein präziser Corporate-Copywriter, der komplexe Finanzdaten in fesselnde, verständliche Narrative übersetzt.“*
+**a:** *„Du bist ein präziser Corporate-Copywriter, der komplexe Finanzdaten in fesselnde, verständliche Narrative übersetzt.“*
 
 ---
 
-### Häufig gestellte Fragen (FAQ)
+## 5. Häufig gestellte Fragen (FAQ)
 
 1. Funktioniert dieser Prompt auch bei Claude oder nur bei ChatGPT?
 Der Prompt ist modellagnostisch und funktioniert hervorragend auf beiden Plattformen. Claude 3.5 Sonnet neigt oft zu noch präziseren, analytischen Strukturierungen bei langen Texten, während ChatGPT extrem schnell beim Extrahieren von Marketing-Hooks ist.

@@ -45,14 +45,14 @@ Warto również pamiętać o kilku dodatkowych praktykach przy codziennej pracy 
 
 FAQ
 
-Q1. Czy te instrukcje systemowe działają tak samo dobrze w ChatGPT, jak i w Claude?
+**Q1.** Czy te instrukcje systemowe działają tak samo dobrze w ChatGPT, jak i w Claude?
 
-A1. Tak, oba modele doskonale reagują na ograniczenia negatywne i zasady operacyjne, przy czym Claude ze względu na swoje silne ukierunkowanie na przestrzeganie instrukcji strukturalnych rzadziej łamie te reguły w dłuższych konwersacjach.
+**A1.** Tak, oba modele doskonale reagują na ograniczenia negatywne i zasady operacyjne, przy czym Claude ze względu na swoje silne ukierunkowanie na przestrzeganie instrukcji strukturalnych rzadziej łamie te reguły w dłuższych konwersacjach.
 
-Q2. Co zrobić, jeśli model nadal uparcie generuje stary kod mimo wdrożenia tego promptu?
+**Q2.** Co zrobić, jeśli model nadal uparcie generuje stary kod mimo wdrożenia tego promptu?
 
-A2. Najprawdopodobniej brakuje w promptcie jawnego ograniczenia czasowego bazy wiedzy. Dodaj w instrukcji systemowej zapis wymuszający korzystanie wyłącznie ze standardów ustandaryzowanych po roku 2024.
+**A2.** Najprawdopodobniej brakuje w promptcie jawnego ograniczenia czasowego bazy wiedzy. Dodaj w instrukcji systemowej zapis wymuszający korzystanie wyłącznie ze standardów ustandaryzowanych po roku 2024.
 
-Q3. Czy stosowanie tak rygorystycznych promptów spowalnia generowanie odpowiedzi przez sztuczną inteligencję?
+**Q3.** Czy stosowanie tak rygorystycznych promptów spowalnia generowanie odpowiedzi przez sztuczną inteligencję?
 
-A3. Czas generowania może nieznacznie wzrosnąć o ułamki sekund, ponieważ model musi przetworzyć dodatkowe reguły logiczne, jednak drastycznie skraca to czas całkowity projektu, eliminując godziny debugowania błędnych skryptów.
+**A3.** Czas generowania może nieznacznie wzrosnąć o ułamki sekund, ponieważ model musi przetworzyć dodatkowe reguły logiczne, jednak drastycznie skraca to czas całkowity projektu, eliminując godziny debugowania błędnych skryptów.

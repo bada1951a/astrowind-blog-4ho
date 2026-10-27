@@ -26,7 +26,7 @@ Panik melanda saat saya mencoba shortcut malas: langsung menyalin seluruh teks d
 
 Untuk menaklukkan dokumen tebal tanpa halusinasi, kita harus memperlakukan LLM seperti tim analis junior. Kita tidak bisa meminta mereka langsung menulis laporan akhir. Kita harus memecahnya ke dalam tiga tahap rantai kerj
 
-a: ekstraksi logika inti, audit kelemahan argumen, dan sintesis 반론 (argumen tandingan/counter-argument).
+**a:** ekstraksi logika inti, audit kelemahan argumen, dan sintesis 반론 (argumen tandingan/counter-argument).
 
 Perbedaan platform juga menentukan efisiensi kerja di lapangan. Claude dengan fitur Artifacts sangat unggul untuk menstrukturkan data teks panjang dalam satu panel kerja berdampingan, sementara GPT Canvas memberikan fleksibilitas tinggi dalam menyunting paragraf demi paragraf secara iteratif.
 
@@ -55,7 +55,7 @@ Setelah mendapatkan hasil dari Tahap 1, lanjutkan rantai prompt dengan memasukka
 ```markdown
 Context: Berdasarkan kerangka logika whitepaper yang telah Anda ekstrak sebelumny
 
-a:
+**a:**
 Task: Lakukan stress-test dan audit kritis terhadap argumen penulis. Cari celah, bias, dan kelemahan metodologi dengan menjawab pertanyaan berikut:
 1. Logical Fallacies (Di bagian mana argumen penulis mengalami lompatan logika atau bias konfirmasi?).
 
@@ -75,7 +75,7 @@ Struktur Briefing:
 - Posisi Kami: Sikap skeptis yang konstruktif terhadap whitepaper tersebut.
 - Argumen Tandingan Utam
 
-a: 2 poin krusial mengapa kesimpulan penulis perlu dipertanyakan ulang.
+**a:** 2 poin krusial mengapa kesimpulan penulis perlu dipertanyakan ulang.
 - Rekomendasi Tindakan: Saran alternatif apa yang harus diambil perusahaan alih-alih menelan mentah-mentah isi laporan ini.
 
 Tone: Tegas, berbasis data, profesional, dan siap dipresentasikan di depan C-level.
@@ -90,7 +90,7 @@ Saat bekerja dengan dokumen industri yang padat angka dan regulasi, risiko halus
 
 3. Validasi Silang Angk
 
-a: Jika whitepaper memuat statistik pertumbuhan industri yang masif, minta AI memberikan nomor halaman referensi dari dokumen asli agar Anda bisa melakukan verifikasi kilat.
+**a:** Jika whitepaper memuat statistik pertumbuhan industri yang masif, minta AI memberikan nomor halaman referensi dari dokumen asli agar Anda bisa melakukan verifikasi kilat.
 
 <div style="border-left: 4px solid #be123c; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Peringatan Efisiensi:</strong> Jangan pernah menggunakan prompt tunggal untuk dokumen di atas 2.000 kata. Kualitas analisis berbanding terbalik dengan panjang instruksi yang dipaksakan dalam satu kali kirim. Rantai prompt 3 tahap terbukti menghemat waktu revisi hingga 70-80 persen.
@@ -98,14 +98,14 @@ a: Jika whitepaper memuat statistik pertumbuhan industri yang masif, minta AI me
 
 ## Tanya Jawab Populer (FAQ)
 
-Q1. Apakah metode chain prompt ini bisa digunakan untuk dokumen non-teks seperti laporan keuangan berbentuk tabel kompleks?
+**Q1.** Apakah metode chain prompt ini bisa digunakan untuk dokumen non-teks seperti laporan keuangan berbentuk tabel kompleks?
 
-A1. Bisa, namun Anda harus menambahkan instruksi ekstra di Tahap 1 untuk meminta AI fokus membaca matriks finansial, mengubah tabel menjadi format Markdown terlebih dahulu di dalam memori kerjanya, sebelum melakukan analisis logika rasio keuangan.
+**A1.** Bisa, namun Anda harus menambahkan instruksi ekstra di Tahap 1 untuk meminta AI fokus membaca matriks finansial, mengubah tabel menjadi format Markdown terlebih dahulu di dalam memori kerjanya, sebelum melakukan analisis logika rasio keuangan.
 
-Q2. Mana yang lebih baik untuk analisis dokumen panjang di lingkungan korporat, ChatGPT Canvas atau Claude Artifacts?
+**Q2.** Mana yang lebih baik untuk analisis dokumen panjang di lingkungan korporat, ChatGPT Canvas atau Claude Artifacts?
 
-A2. Keduanya sangat kuat, tetapi Claude Artifacts sedikit lebih unggul untuk membaca dokumen utuh berkat jendela konteks yang stabil dan kemampuan merender hasil analisis dalam panel terpisah yang mudah dibaca ulang tanpa mengganggu alur obrolan utama.
+**A2.** Keduanya sangat kuat, tetapi Claude Artifacts sedikit lebih unggul untuk membaca dokumen utuh berkat jendela konteks yang stabil dan kemampuan merender hasil analisis dalam panel terpisah yang mudah dibaca ulang tanpa mengganggu alur obrolan utama.
 
-Q3. Bagaimana cara mengatasi batasan token (token limit) saat memproses whitepaper yang benar-benar tebal hingga 10.000 kata?
+**Q3.** Bagaimana cara mengatasi batasan token (token limit) saat memproses whitepaper yang benar-benar tebal hingga 10.000 kata?
 
-A3. Pecah dokumen menjadi dua bagian bab besar. Jalankan Rantai Tahap 1 secara terpisah untuk Bab 1-5 dan Bab 6-10, lalu gunakan prompt penggabung (synthesizer prompt) di sesi obrolan baru untuk merangkum seluruh temuan kritis menjadi satu kesatuan dokumen strategi.
+**A3.** Pecah dokumen menjadi dua bagian bab besar. Jalankan Rantai Tahap 1 secara terpisah untuk Bab 1-5 dan Bab 6-10, lalu gunakan prompt penggabung (synthesizer prompt) di sesi obrolan baru untuk merangkum seluruh temuan kritis menjadi satu kesatuan dokumen strategi.

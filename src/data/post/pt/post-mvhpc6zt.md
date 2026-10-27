@@ -17,7 +17,7 @@ Se voce ja passou por isso, sabe que o problema nao e a falta de criatividade, m
 <div style="border-left: 4px solid #ffffff; padding: 12px 16px; margin: 20px 0; background-color: rgba(255,255,255,0.08); border-radius: 4px; color: #111827;">
 <strong>Atencao pratic
 
-a:</strong> Nao adianta apenas descrever o personagem com palavras complexas. O Midjourney V6 prioriza o estilo geral da cena em detrimento de micro-detalhes faciais, a menos que voce utilize o parametro de referencia cruzada de imagem combinado com descricoes textuais estruturadas.
+**a:**</strong> Nao adianta apenas descrever o personagem com palavras complexas. O Midjourney V6 prioriza o estilo geral da cena em detrimento de micro-detalhes faciais, a menos que voce utilize o parametro de referencia cruzada de imagem combinado com descricoes textuais estruturadas.
 </div>
 
 ## O Problema Raiz: Por que prompts vagos falham na geracao sequencial
@@ -49,7 +49,7 @@ Para garantir que o seu personagem nao mude drasticamente de idade ou aparencia 
 
 - Trave a Iluminacao: Sempre inclua termos como "soft office lighting" ou "natural daylight" para evitar que mudancas drasticas de luz distorcam os traços faciais na interpretacao da I
 
-A.
+**A.**
 - Evite Misturar Estilos: Se a primeira cena for fotografica, nao insira termos como "digital art" ou "oil painting" nas cenas seguintes. Mantenha a mesma familia lexica de estilo visual.
 - Gerenciamento de Historico: Salve sempre a imagem gerada na Cena 1 em uma pasta dedicada. Se a Cena 10 comecar a derivar muito, use o link da imagem da Cena 5 como nova referencia auxiliar (--cw 100).
 

@@ -47,7 +47,7 @@ Il nostro obiettivo è scrivere un whitepaper autorevole, orientato ai dati e pr
 Primo compito: genera l'indice analitico dettagliato del whitepaper diviso in 5 macro-capitoli. 
 Per ogni capitolo, specific
 
-a:
+**a:**
 1. Titolo del capitolo
 2. Concetti chiave da trattare (minimo 3 per capitolo)
 3. Fonti di dati o metriche di riferimento da simulare o analizzare
@@ -92,7 +92,7 @@ Analizza il testo del capitolo che ti fornisco di seguito e applica una revision
 
 2. Densezza informativ
 
-a: Assicurati che ogni paragrafo contenga un'informazione utile, un dato o un'argomentazione strategica.
+**a:** Assicurati che ogni paragrafo contenga un'informazione utile, un dato o un'argomentazione strategica.
 
 3. Formattazione: Verifica che l'uso del grassetto evidenzi solo i concetti chiave e che la struttura sia leggibile su schermo.
 
@@ -104,14 +104,14 @@ Restituisci il testo corretto e ottimizzato, segnalando in un breve box finale a
 
 ### Domande Frequenti (FAQ)
 
-Q1. Come posso evitare che l'AI perda il filo conduttore tra il primo e l'ultimo capitolo del whitepaper?
+**Q1.** Come posso evitare che l'AI perda il filo conduttore tra il primo e l'ultimo capitolo del whitepaper?
 
-A1. La perdita di coerenza si combatte passando il sommario approvato (generato nello Step 1) all'inizio di ogni nuovo prompt di scrittura dei singoli capitoli. In questo modo l'AI sa sempre quale parte del documento sta sviluppando e come si collega al quadro generale.
+**A1.** La perdita di coerenza si combatte passando il sommario approvato (generato nello Step 1) all'inizio di ogni nuovo prompt di scrittura dei singoli capitoli. In questo modo l'AI sa sempre quale parte del documento sta sviluppando e come si collega al quadro generale.
 
-Q2. Posso usare questo metodo di prompt chaining sia su ChatGPT che su Claude?
+**Q2.** Posso usare questo metodo di prompt chaining sia su ChatGPT che su Claude?
 
-A2. Assolutamente sì. Anzi, l'uso di Claude (in particolare le versioni con finestre di contesto ampie) eccelle nella gestione dei passaggi intermedi, mentre ChatGPT con GPT-4o si dimostra estremamente rapido nella generazione strutturata dei dati.
+**A2.** Assolutamente sì. Anzi, l'uso di Claude (in particolare le versioni con finestre di contesto ampie) eccelle nella gestione dei passaggi intermedi, mentre ChatGPT con GPT-4o si dimostra estremamente rapido nella generazione strutturata dei dati.
 
-Q3. Come gestisco il limite di token in uscita se voglio capitoli molto lunghi?
+**Q3.** Come gestisco il limite di token in uscita se voglio capitoli molto lunghi?
 
-A3. Non cercare mai di forzare l'uscita di 2000 parole in un unico comando. Imposta sempre un target realistico di 800-1000 parole per singola chiamata e concatena più prompt sequenziali per completare la sezione. Questo garantisce una qualità di scrittura nettamente superiore e previene i tagli improvvisi del testo.
+**A3.** Non cercare mai di forzare l'uscita di 2000 parole in un unico comando. Imposta sempre un target realistico di 800-1000 parole per singola chiamata e concatena più prompt sequenziali per completare la sezione. Questo garantisce una qualità di scrittura nettamente superiore e previene i tagli improvvisi del testo.

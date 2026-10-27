@@ -26,7 +26,7 @@ Kiedy wrzucasz do Chatu całą specyfikację technologiczną i krzyczysz: "Napis
 
 ### Architektura Master Prompt
 
-a: Łańcuchowanie dla profesjonalistów
+**a:** Łańcuchowanie dla profesjonalistów
 
 Aby rozwiązać problem przepływu danych między narzędziami nocodowymi a strukturą whitepapera, wdrożyłem rygorystyczny system [Chain-Promptingu]. Poniższy szablon w stylu edytora kodu to sprawdzona sekwencja, którą wklejasz do ChatGPT lub Claude w kolejnych krokach, aby utrzymać absolutną precyzję merytoryczną i techniczną.
 
@@ -60,14 +60,14 @@ Podczas pracy nad długimi dokumentami w środowiskach biznesowych musisz stosow
 
 ### Często Zadawane Pytania (FAQ)
 
-Q1. Dlaczego podział na 5 modułów jest lepszy niż wygenerowanie całości jednym poleceniem?
+**Q1.** Dlaczego podział na 5 modułów jest lepszy niż wygenerowanie całości jednym poleceniem?
 
-A1. Modele językowe mają ograniczoną efektywną okno kontekstowe oraz tendencję do upraszczania treści przy próbie wygenerowania bardzo długich struktur na raz. Dzieląc tekst na moduły, zmuszasz AI do zachowania głębi analitycznej, bogatego słownictwa i ścisłej kontroli nad każdą sekcją z osobna.
+**A1.** Modele językowe mają ograniczoną efektywną okno kontekstowe oraz tendencję do upraszczania treści przy próbie wygenerowania bardzo długich struktur na raz. Dzieląc tekst na moduły, zmuszasz AI do zachowania głębi analitycznej, bogatego słownictwa i ścisłej kontroli nad każdą sekcją z osobna.
 
-Q2. Jak radzić sobie z sytuacją, gdy AI w trzecim kroku zapomina o konwencji nazewnictwa z pierwszego kroku?
+**Q2.** Jak radzić sobie z sytuacją, gdy AI w trzecim kroku zapomina o konwencji nazewnictwa z pierwszego kroku?
 
-A2. Musisz stosować mechanizm tzw. anchor promptingu (kotwiczenia). W każdym kolejnym module wklejasz na początku skrócony słownik pojęć oraz wyjściowy JSON Schema, traktując go jako nienaruszalny kontekst systemowy dla bieżącego zadania.
+**A2.** Musisz stosować mechanizm tzw. anchor promptingu (kotwiczenia). W każdym kolejnym module wklejasz na początku skrócony słownik pojęć oraz wyjściowy JSON Schema, traktując go jako nienaruszalny kontekst systemowy dla bieżącego zadania.
 
-Q3. Czy ta metoda łańcuchowania działa równie dobrze w Claude oraz ChatGPT?
+**Q3.** Czy ta metoda łańcuchowania działa równie dobrze w Claude oraz ChatGPT?
 
-A3. Tak, działa świetnie na obu platformach. Claude (szczególnie wersje 3.5) radzi sobie nieco lepiej z długimi, złożonymi strukturami kodu i dokumentacji technicznej, podczas gdy ChatGPT z odpowiednio skonstruowanymi instrukcjami systemowymi oferuje wyższą powtarzalność tonu biznesowego.
+**A3.** Tak, działa świetnie na obu platformach. Claude (szczególnie wersje 3.5) radzi sobie nieco lepiej z długimi, złożonymi strukturami kodu i dokumentacji technicznej, podczas gdy ChatGPT z odpowiednio skonstruowanymi instrukcjami systemowymi oferuje wyższą powtarzalność tonu biznesowego.

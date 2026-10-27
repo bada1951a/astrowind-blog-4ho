@@ -47,7 +47,7 @@ Salin templat di bawah ini dan sesuaikan variabel di dalam tanda kurung siku ses
 
 Dalam implementasinya di lapangan, Anda hanya perlu mengubah bagian awal *prompt* (deskripsi adegan) sementara bagian belakang yang memuat parameter konsistensi tetap sama persis. Berikut adalah perbandingan struktur untuk 3 skenario berbed
 
-a:
+**a:**
 
 * Adegan Pagi (Briefing):
   `Morning briefing in a boardroom, a professional Indonesian woman in her late 20s... --cref [URL] --cw 100 --v 6.0`

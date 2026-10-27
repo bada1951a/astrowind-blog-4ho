@@ -12,7 +12,7 @@ theme: "Modern Minimalist Slate"
 
 Eram exatamente 17:45 de uma terça-feira em um escritório na Avenida Paulista, em São Paulo. O prazo final para enviar uma proposta comercial robusta para um cliente internacional importante vencia em quarenta minutos. O documento técnico estava impecável, traduzido e revisado, mas havia um problema visual grave: os diagramas conceituais e os ícones de arquitetura em formato PNG enviados pela equipe de design pareciam pixelados, pesados e totalmente amadores quando inseridos no PDF corporativo. O tradutor automático e as ferramentas genéricas de IA que usamos anteriormente geravam apenas códigos estáticos cheios de erros ou imagens rasterizadas de baixa resolução que destruíam a credibilidade da nossa proposta técnica.
 
-Foi nesse momento de pressão que decidi abrir o **Claude 3.5 Sonnet** e usar o recurso de **Artifacts** para resolver o problema de uma vez por todas, gerando ilustrações vetoriais limpas diretamente no navegador.
+Foi nesse momento de pressão que decidi abrir o **Claude 3.5 Sonnet**e usar o recurso de**Artifacts** para resolver o problema de uma vez por todas, gerando ilustrações vetoriais limpas diretamente no navegador.
 
 <div style="border-left: 4px solid #3b82f6; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Dica do Arquiteto de IA:</strong> Nunca peça apenas "desenhe um ícone". O segredo para dominar o Claude Artifacts na criação de SVGs está em forçar o modelo a estruturar o código com viewBox adequado, tags semânticas limpas e paletas de cores padronizadas.
@@ -64,14 +64,14 @@ Ao trabalhar com geração de ativos visuais via LLM, alguns cuidados evitam ret
 
 ## 5. Perguntas Frequentes (FAQ)
 
-Q: Posso usar esses SVGs gerados pelo Claude diretamente em projetos comerciais de grande escala?
+**Q:** Posso usar esses SVGs gerados pelo Claude diretamente em projetos comerciais de grande escala?
 
-A: Sim, os códigos gerados são sintaticamente limpos e originais. No entanto, é sempre recomendável passar o código SVG por um otimizador como SVGO para remover metadados desnecessários antes do deploy em produção.
+**A:** Sim, os códigos gerados são sintaticamente limpos e originais. No entanto, é sempre recomendável passar o código SVG por um otimizador como SVGO para remover metadados desnecessários antes do deploy em produção.
 
-Q: Como faço para alterar rapidamente as cores dos ícones gerados sem precisar reescrever o prompt?
+**Q:** Como faço para alterar rapidamente as cores dos ícones gerados sem precisar reescrever o prompt?
 
-A: No seu prompt inicial, certifique-se de instruir o Claude a utilizar `fill="currentColor"` ou variáveis CSS. Assim, você poderá controlar todas as cores diretamente através das folhas de estilo do seu site ou documento.
+**A:** No seu prompt inicial, certifique-se de instruir o Claude a utilizar `fill="currentColor"` ou variáveis CSS. Assim, você poderá controlar todas as cores diretamente através das folhas de estilo do seu site ou documento.
 
-Q: O Claude Artifacts funciona em outras plataformas de IA além do Claude.ai?
+**Q:** O Claude Artifacts funciona em outras plataformas de IA além do Claude.ai?
 
-A: O recurso de Artifacts é exclusivo do ecossistema Anthropic (Claude). No entanto, você pode adaptar a estrutura do prompt master para obter blocos de código SVG em outras ferramentas, copiando manualmente o resultado retornado.
+**A:** O recurso de Artifacts é exclusivo do ecossistema Anthropic (Claude). No entanto, você pode adaptar a estrutura do prompt master para obter blocos de código SVG em outras ferramentas, copiando manualmente o resultado retornado.

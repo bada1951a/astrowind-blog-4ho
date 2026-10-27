@@ -59,7 +59,7 @@ When producing 20 or more sequential scenes, you will inevitably run into minor 
 - Lighting Discrepancies: Midjourney V6 can sometimes render harsh studio lighting even in outdoor scenes. Combat this by adding strict environmental lighting tags at the end of your prompts, such as `soft overcast morning window light` or `warm neon cyberpunk city glow`.
 - Aspect Ratio Locking: Always keep `--ar 16:9` or `--ar 9:16` consistent across all prompts in your storyboard. Changing aspect ratios mid-sequence forces the composition engine to recalculate facial geometry, which triggers noticeable face morphing.
 
-## 5. Frequently Asked Questions (FAQ) (FAQ) (FAQ)
+## 5. Frequently Asked Questions (FAQ)
 
 ### Can I use character reference (--cref) with multiple characters in one scene?
 No. Midjourney V6's `--cref` parameter is currently designed to track a single dominant character reference URL. If your scene requires two consistent characters, you will need to generate them separately using image-to-image workflows or composite them in post-production.

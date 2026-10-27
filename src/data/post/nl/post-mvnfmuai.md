@@ -24,11 +24,11 @@ De ontwerpers waren al naar huis en we hadden geen tijd meer om handmatig comple
 
 Wanneer je aan Claude vraagt om *“maak een icoon voor een foutmelding”*, krijg je vaak een geïmproviseerde SVG met hardcoded kleuren en missende viewBox-attributen. Dit komt doordat het model geen strakke technische beperkingen meekrijgt over de semantische opbouw van Scalable Vector Graphics. 
 
-Voor een professionele toepassing op de Zuidas of binnen een agile innovatiehub heb je schone, responsieve en toegankelijke code nodig. De oplossing ligt in het definiëren van een **Master Prompt** die Claude dwingt om te werken binnen een geïsoleerde Artifacts-omgeving, met specifieke instructies over lagen, stijlen, kleurenschema's en responsiviteit.
+Voor een professionele toepassing op de Zuidas of binnen een agile innovatiehub heb je schone, responsieve en toegankelijke code nodig. De oplossing ligt in het definiëren van een **Master Prompt**die Claude dwingt om te werken binnen een geïsoleerde Artifacts-omgeving, met specifieke instructies over lagen, stijlen, kleurenschema's en responsiviteit.
 
 ## 3. Direct bruikbare master prompt template Template
 
-Kopieer onderstaande prompt en pas de variabelen tussen de haken aan naar jouw projectbehoefte. Voer dit direct in bij **Claude** met Artifacts ingeschakeld.
+Kopieer onderstaande prompt en pas de variabelen tussen de haken aan naar jouw projectbehoefte. Voer dit direct in bij**Claude**met Artifacts ingeschakeld.
 
 ```markdown
 Acteer als een senior UI/UX designer en SVG-expert. Genereer een schaalbaar, productie-klaar SVG icoon/illustratie binnen een Claude Artifacts venster.
@@ -47,7 +47,7 @@ Lever uitsluitend de werkende code binnen een Artifacts container op, vergezeld 
 
 ## 4. Praktische Variaties en Veiligheidstips
 
-Om te voorkomen dat je tijd verspilt aan herhalingen, kun je deze extra regels toepassen in je **Systeeminstructies** of projectinstellingen:
+Om te voorkomen dat je tijd verspilt aan herhalingen, kun je deze extra regels toepassen in je**Systeeminstructies** of projectinstellingen:
 
 * **Token Besparing:** Vraag Claude om de SVG direct in een gecomprimeerd formaat te leveren zonder overbodige metadata van designprogramma's zoals Illustrator of Inkscape.
 * **Toegankelijkheid:** Voeg altijd de eis toe om `<title>` en `<desc>` tags binnen de SVG op te nemen voor optimale screenreader-compatibiliteit.
@@ -59,14 +59,14 @@ Om te voorkomen dat je tijd verspilt aan herhalingen, kun je deze extra regels t
 
 ## 5. Veelgestelde Vragen
 
-Q: Kan ik deze prompt ook gebruiken in ChatGPT of Gemini?
+**Q:** Kan ik deze prompt ook gebruiken in ChatGPT of Gemini?
 
-A: Hoewel ChatGPT en Gemini uitstekende tekst- en codegeneratoren zijn, mist het specifieke interactieve "Artifacts" venster van Claude. Je kunt de code wel genereren in andere tools, maar Claude biedt de handigste live preview ervaring voor directe visuele iteraties.
+**A:** Hoewel ChatGPT en Gemini uitstekende tekst- en codegeneratoren zijn, mist het specifieke interactieve "Artifacts" venster van Claude. Je kunt de code wel genereren in andere tools, maar Claude biedt de handigste live preview ervaring voor directe visuele iteraties.
 
-Q: Hoe zorg ik ervoor dat de gegenereerde SVG precies past bij onze merkidentiteit?
+**Q:** Hoe zorg ik ervoor dat de gegenereerde SVG precies past bij onze merkidentiteit?
 
-A: Voeg in de master prompt altijd specifieke hex-codes en stijlelementen toe (zoals "gebruik strakke hoeken en een pikteken-dikte van 2px"). Hoe specifieker je bent over de visuele regels, hoe nauwkeuriger het resultaat.
+**A:** Voeg in de master prompt altijd specifieke hex-codes en stijlelementen toe (zoals "gebruik strakke hoeken en een pikteken-dikte van 2px"). Hoe specifieker je bent over de visuele regels, hoe nauwkeuriger het resultaat.
 
-Q: Wat moet ik doen als de SVG niet goed schaalt op mobiele schermen?
+**Q:** Wat moet ik doen als de SVG niet goed schaalt op mobiele schermen?
 
-A: Controleer of de prompt expliciet vraagt om een correcte `viewBox` en vermijd hardcoded `width` en `height` attributen in pixels binnen het hoofdelement, zodat CSS de sizing kan overnemen.
+**A:** Controleer of de prompt expliciet vraagt om een correcte `viewBox` en vermijd hardcoded `width` en `height` attributen in pixels binnen het hoofdelement, zodat CSS de sizing kan overnemen.

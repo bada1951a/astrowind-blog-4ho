@@ -79,13 +79,16 @@ Pour éviter les hallucinations de code et garantir que l'Artifact s'affiche cor
 
 ---
 
-## Foire Aux Questions (FAQ)
+## 5. Foire Aux Questions (FAQ)
 
-Q1 : Quelle est la différence entre un simple bloc de code et un Artifact Claude ?
-R : Un bloc de code textuel nécessite de copier-coller le code dans un éditeur et de lancer un serveur local pour le tester. Un Artifact s'exécute directement dans un panneau visuel interactif intégré à droite de votre écran de chat, ce qui permet de tester l'application en conditions réelles en un clic.
+**Q1 :** Quelle est la différence entre un simple bloc de code et un Artifact Claude ?
 
-Q2 : Puis-je exporter le dashboard généré dans Artifacts pour l'héberger ?
-R : Oui. En haut à droite de l'Artifact, vous disposez d'un bouton de téléchargement (Download) qui vous permet de récupérer le fichier source complet (HTML, React ou autre) pour le déployer immédiatement sur Vercel, Netlify ou le confier à vos développeurs.
+**A.** Un bloc de code textuel nécessite de copier-coller le code dans un éditeur et de lancer un serveur local pour le tester. Un Artifact s'exécute directement dans un panneau visuel interactif intégré à droite de votre écran de chat, ce qui permet de tester l'application en conditions réelles en un clic.
 
-Q3 : Que faire si Claude s'arrête en plein milieu de la génération du code à cause d'une limite de tokens ?
-R : C'est un classique sur les gros projets. Tape simplement : *"Tu t'es arrêté à la ligne X. Continue exactement là où tu t'es arrêté sans réécrire le code précédent, en veillant à bien fermer toutes les balises"*.
+**Q2 :** Puis-je exporter le dashboard généré dans Artifacts pour l'héberger ?
+
+**A.** Oui. En haut à droite de l'Artifact, vous disposez d'un bouton de téléchargement (Download) qui vous permet de récupérer le fichier source complet (HTML, React ou autre) pour le déployer immédiatement sur Vercel, Netlify ou le confier à vos développeurs.
+
+**Q3 :** Que faire si Claude s'arrête en plein milieu de la génération du code à cause d'une limite de tokens ?
+
+**A.** C'est un classique sur les gros projets. Tape simplement : *"Tu t'es arrêté à la ligne X. Continue exactement là où tu t'es arrêté sans réécrire le code précédent, en veillant à bien fermer toutes les balises"*.
