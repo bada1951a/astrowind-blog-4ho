@@ -143,7 +143,7 @@ const I18N_SECTIONS = {
 };
 
 // =========================================================================
-// [최종 안정형 마크다운 정제 함수] 캡처 확인 변칙 헤더 및 박스 시인성 방어 완비
+// [완전 무결 마크다운 정제 함수]
 // =========================================================================
 function sanitizeMarkdownFormatting(content, langCode) {
   let cleaned = content;
@@ -171,20 +171,11 @@ function sanitizeMarkdownFormatting(content, langCode) {
   cleaned = cleaned.replace(/^4\.\s*\[Practical Variations.*?\]/gmi, `## ${i18n.s4}`);
   cleaned = cleaned.replace(/^5\.\s*(Frequently Asked Questions|\[Frequently Asked Questions\])/gmi, `## ${i18n.s5}`);
 
-  // 🛡️ [캡처 사진 분석 기반] 번호 없이 줄글로 튀어나온 4호기 고유 변칙 헤더 자동 승격 치환
-  // 1번 헤더 변칙
+  // 변칙 헤더 자동 승격 치환
   cleaned = cleaned.replace(/^#{0,3}\s*1\.?\s*(왜\s*단순한\s*프롬프트.*?)/gmi, `## ${i18n.s1}`);
-  
-  // 2번 원인 분석 승격 (The Root Cause: Why..., Warum herkömmliches..., なぜ従来の...)
   cleaned = cleaned.replace(/^#{0,3}\s*(The Root Cause:.*?|Warum herkömmliches Prompting.*?|なぜ(従来|単純)のプロンプト.*?|왜 단순 프롬프트는 실패하고.*?)/gmi, `## ${i18n.s2}`);
-  
-  // 3번 실전 마스터 프롬프트 승격 (The Master Prompt Template..., 実践投入！..., 30분 만에 끝내는...)
   cleaned = cleaned.replace(/^#{0,3}\s*(The Master Prompt Template.*?|Master Prompt-Vorlage|実践投入.*?|30분 만에 끝내는 마스터.*?|실전 마스터 프롬프트.*?)/gmi, `## ${i18n.s3}`);
-  
-  // 4번 실무 응용/주의사항 승격 (Practical Variations and Failure Prevention, 実務応用..., 倫理的破綻とハルシネーション...)
   cleaned = cleaned.replace(/^#{0,3}\s*(Practical Variations and Failure Prevention|Praktische Variationen.*?|倫理的破綻とハルシネーション.*?|실무 응용 및 트러블슈팅.*?|현업 적용을 위한 핵심.*?)/gmi, `## ${i18n.s4}`);
-  
-  // 5번 FAQ 승격
   cleaned = cleaned.replace(/^#{0,3}\s*(\d\.\s*)?(자주 묻는 질문|Häufig gestellte Fragen|Frequently Asked Questions|よくある(ご)?質問|Questions Fréquemment Posées|Foire [Aa]ux Questions|Preguntas [Ff]recuentes).*?$/gmi, `## ${i18n.s5}`);
 
   // 잔여 태그 도려내기
@@ -196,7 +187,7 @@ function sanitizeMarkdownFormatting(content, langCode) {
   }
   cleaned = cleaned.replace(/^(## 1\.[^\n]+)\n+(\s*1\.\s+[^\n]+)\n+/m, '$1\n\n');
 
-  // 5) [시인성 해결] HTML 인라인 박스에 글자색(#111827) 강제 주입
+  // 5) HTML 인라인 박스에 글자색(#111827) 강제 주입
   cleaned = cleaned.replace(/(<div style="[^"]*background-color:[^"]*)"/gi, (match, p1) => {
     if (!p1.includes('color:')) {
       return `${p1}; color: #111827;"`;
@@ -204,19 +195,26 @@ function sanitizeMarkdownFormatting(content, langCode) {
     return match;
   });
 
-  // 6) 소제목 헤딩(#)에 묻은 볼드 기호 정제 (### **제목** -> ### 제목)
-  cleaned = cleaned.replace(/^(#{1,6}\s*)\*\*(.*?)\*\*/gm, '$1$2');
+  // =========================================================================
+  // 🛡️ [GUKOSORA 1] Gukuraho ** zose ziri mu murongo w'imitwe (H1~H6)
+  // =========================================================================
+  cleaned = cleaned.replace(/^(#{1,6}\s+[^\n]+)$/gm, (match) => {
+    return match.replace(/\*\*/g, '');
+  });
 
-  // 7) 볼드(**) 기호 깨짐 교정
-  cleaned = cleaned.replace(/\*\*\s+([^\*]+?)\s+\*\*/g, '**$1**');
-  cleaned = cleaned.replace(/([가-힣a-zA-Z0-9])\*\*([가-힣a-zA-Z0-9])/g, '$1 **$2');
+  // =========================================================================
+  // 🛡️ [GUKOSORA 2] Gukuraho imyanya y'ubusa muri ** ituma markdown ipfa
+  // =========================================================================
+  cleaned = cleaned.replace(/\*\*\s+([^*]+?)\s+\*\*/g, '**$1**');
+  cleaned = cleaned.replace(/\*\*\s+([^*]+?)\*\*/g, '**$1**');
+  cleaned = cleaned.replace(/\*\*([^*]+?)\s+\*\*/g, '**$1**');
 
-  // 8) Q&A 줄바꿈 및 볼드 보호: Q와 A는 무조건 빈 줄 2개로 분리
+  // 7) FAQ 영역(Q/A) 줄바꿈 및 볼드 보호
   cleaned = cleaned.replace(/([^\n])\s*(\*\*?[QA][0-9]*\s*[:.]\*\*?)/gi, '$1\n\n$2');
   cleaned = cleaned.replace(/([^\n])\s+([QA][0-9]*\s*[:.])/g, '$1\n\n$2');
   cleaned = cleaned.replace(/([.!?])\s*(\*\*?[QA][0-9]*\s*[:.]\*\*?)/gi, '$1\n\n$2');
 
-  // 9) 물음표 뒤 띄어쓰기 및 과도한 개행 압축
+  // 8) 물음표 뒤 띄어쓰기 및 과도한 개행 압축
   cleaned = cleaned.replace(/\?([A-Za-z\u00C0-\u024F\u1EA0-\u1EF9가-힣])/g, '? $1');
   cleaned = cleaned.replace(/\n{3,}/g, '\n\n');
 
@@ -239,9 +237,6 @@ if (lines.length === 0) {
 const currentTopic = lines[0];
 console.log(`📌 오늘 처리할 주제 (4호기 AI Prompt Engineering): "${currentTopic}"`);
 
-// =========================================================================
-// [도입부 다양화] 4호기 AI 프롬프트 엔지니어링 현실 위기 시나리오 30개 풀
-// =========================================================================
 const PROMPT_CRISIS_SCENARIOS_30 = [
   "급작스러운 부서장 호출로 30분 뒤 신사업 전략 초안을 들고 들어가야 하는데, 챗GPT가 뜬구름 잡는 원론적인 답변만 늘어놓을 때",
   "경쟁사 시장 분석 보고서를 오늘 퇴근 전까지 제출해야 하는데, AI가 검색해도 안 나오는 가짜 수치(환각 현상)를 당당하게 지어낼 때",
@@ -326,9 +321,6 @@ const TARGET_LANGS = [
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 const fileSlug = `post-${Date.now().toString(36)}`;
 
-// =========================================================================
-// [영구 고정] gemini-3.5-flash-lite + maxOutputTokens: 8192 상한 잠금
-// =========================================================================
 async function fetchWithRetry(prompt, maxRetries = 5, delayMs = 5000) {
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
@@ -410,10 +402,10 @@ You MUST strictly follow these 5 sections using clean H2 markdown headings (## )
 
 [STRICT MARKDOWN & FORMATTING RULES]
 1. HEADINGS: Keep clean markdown headings (e.g. "## ${i18n.s2}"). NEVER put bold asterisks (**) inside headings.
-2. BOLD FORMATTING: Use bold (**) ONLY for key button clicks, prompt parameters, or essential UI terms. Always put a space before and after the bold markup if surrounded by words.
+2. BOLD FORMATTING: Use bold (**word**) STRICTLY WITHOUT SPACES inside the asterisks. Never write "** word **".
 3. COMMANDS & PROMPT BLOCKS: Always wrap prompt templates in standard 3-backtick code blocks (\`\`\`markdown or \`\`\`text).
 4. ABSOLUTE FORBIDDEN CHARACTERS:
-   - NEVER use LaTeX ($ or $$). NEVER wrap variables, keys, or prompt tags in single dollar signs like $PROMPT$. Wrap them in inline backticks like \`PROMPT\` or standard code blocks.
+   - NEVER use LaTeX ($ or $$). Wrap variables, keys, or prompt tags in inline backticks or code blocks.
    - NEVER use tilde (~) for ranges; use hyphen (-).
 ${lang.code !== 'ko' ? `- Absolutely NEVER include any Korean characters (가-힣) anywhere in non-Korean posts.` : ''}
 
@@ -468,10 +460,8 @@ theme: "${selectedTheme.name}"
       frontmatter = frontmatter.replace(/publishDate:\s*[^\n\r]+/i, `publishDate: ${pubDateIso}`);
       frontmatter = frontmatter.replace(/image:\s*["'][^"']*["']/i, `image: '${coverUrl}'`);
 
-      // 🛡️ [이중 방어] 12개국 고유 언어로 강제 치환 및 볼드 서식 완벽 정제 (사진 속 결함 반영 완료)
       body = sanitizeMarkdownFormatting(body, lang.code);
 
-      // 🛡️ [글자 수 물리적 강제 루프: 2,200자 미만 시 즉시 재작성]
       let retryCount = 0;
       while (lang.code === 'ko' && body.length < 2200 && retryCount < 2) {
         console.warn(`⚠️ [4호기 분량 부족] 현재 ${body.length}자 -> 목표 2,500자 충족을 위해 재작성 시도 (${retryCount + 1}/2)...`);
@@ -510,7 +500,6 @@ theme: "${selectedTheme.name}"
         }
       }
 
-      // 프론트매터와 본문 사이 개행을 딱 2개로 고정하여 상단 공백 원천 차단
       text = `${frontmatter}\n\n${body}\n`;
     }
 
