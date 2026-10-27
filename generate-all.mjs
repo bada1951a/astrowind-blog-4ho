@@ -196,23 +196,36 @@ function sanitizeMarkdownFormatting(content, langCode) {
   });
 
   // =========================================================================
-  // 🛡️ [GUKOSORA 1] Gukuraho ** zose ziri mu murongo w'imitwe (H1~H6)
+  // 🛡️ [핵심 보정 1] 헤딩(#) 줄 내부의 모든 ** 제거 (제목 깨짐 방지)
   // =========================================================================
   cleaned = cleaned.replace(/^(#{1,6}\s+[^\n]+)$/gm, (match) => {
     return match.replace(/\*\*/g, '');
   });
 
   // =========================================================================
-  // 🛡️ [GUKOSORA 2] Gukuraho imyanya y'ubusa muri ** ituma markdown ipfa
+  // 🛡️ [핵심 보정 2] 볼드(**) 기호 안쪽 공백 압축 (별표 노출 버그 방지)
   // =========================================================================
   cleaned = cleaned.replace(/\*\*\s+([^*]+?)\s+\*\*/g, '**$1**');
   cleaned = cleaned.replace(/\*\*\s+([^*]+?)\*\*/g, '**$1**');
   cleaned = cleaned.replace(/\*\*([^*]+?)\s+\*\*/g, '**$1**');
 
-  // 7) FAQ 영역(Q/A) 줄바꿈 및 볼드 보호
-  cleaned = cleaned.replace(/([^\n])\s*(\*\*?[QA][0-9]*\s*[:.]\*\*?)/gi, '$1\n\n$2');
-  cleaned = cleaned.replace(/([^\n])\s+([QA][0-9]*\s*[:.])/g, '$1\n\n$2');
-  cleaned = cleaned.replace(/([.!?])\s*(\*\*?[QA][0-9]*\s*[:.]\*\*?)/gi, '$1\n\n$2');
+  // =========================================================================
+  // 🛡️ [Q&A 전면 재정비] FAQ 영역 접두사 표준화 및 볼드 깨짐 원천 차단
+  // =========================================================================
+  // 1) Q na A zose zikurweho inyenyeri kugira ngo zibe inyandiko isanzwe
+  cleaned = cleaned.replace(/\*{1,4}\s*([QA][0-9]*)\s*[:.]\s*\*{1,4}/gi, '$1.');
+  cleaned = cleaned.replace(/([QA][0-9]*)\s*[:.]/gi, (match, p1) => `${p1.toUpperCase()}.`);
+
+  // 2) Gusiga imirongo ibiri y'ubusa mbere ya buri Q na A
+  cleaned = cleaned.replace(/([^\n])\s*\n*\s*(Q[0-9]*\.)/gi, '$1\n\n$2');
+  cleaned = cleaned.replace(/([^\n])\s*\n*\s*(A[0-9]*\.)/gi, '$1\n\n$2');
+
+  // 3) Gushyiraho bold nyayo ikwiye (**Q1.**, **A1.**)
+  cleaned = cleaned.replace(/^(Q[0-9]*\.)\s*(.*)$/gm, '**$1** $2');
+  cleaned = cleaned.replace(/^(A[0-9]*\.)\s*(.*)$/gm, '**$1** $2');
+
+  // 4) Gukuraho inyenyeri zisigaye z'ubusa
+  cleaned = cleaned.replace(/\*\*\s*\*\*/g, '');
 
   // 8) 물음표 뒤 띄어쓰기 및 과도한 개행 압축
   cleaned = cleaned.replace(/\?([A-Za-z\u00C0-\u024F\u1EA0-\u1EF9가-힣])/g, '? $1');
