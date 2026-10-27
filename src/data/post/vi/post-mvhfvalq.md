@@ -22,7 +22,7 @@ May man thay, toi nho ra vu khi bi mat dang nam trong tay: Claude 3.5 Sonnet va 
 
 Truoc day, khi moi dung ChatGPT hay Claude cho cac tac vu lap trinh giao dien, toi hay mac sai lam la viet nhung cau lenh kieu: *"Hay viet cho toi code HTML de lam bieu do ban hang"*. Ket qua nhan lai la gi? Mot file code dai ngoang, chua du cac loi syntax, thieu thu vien Chart.js, va khi copy ve may chay thi loi lum la, man hinh trang xo
 
-**A.** Nguyen nhan la vi mo hinh ngon ngu lon (LLM) thuong bi ao giac (hallucination) khi phai viet code nguyen man ma khong co mot khung hoat dong on dinh. 
+A. Nguyen nhan la vi mo hinh ngon ngu lon (LLM) thuong bi ao giac (hallucination) khi phai viet code nguyen man ma khong co mot khung hoat dong on dinh. 
 
 Su khac biet cua Claude 3.5 Sonnet nam o tinh nang Artifacts. Khi ban kich hoat dung cach, no se tach phan code ra khoi doan chat va render no thanh mot ung dung rieng biet. Nhiem vu cua Prompt Engineer luc nay khong phai la viet code, ma la dong vai tro Product Manager (Quan ly san pham) ra de bai chinh xac cho AI.
 
@@ -44,7 +44,7 @@ Vai tro cua ban la Senior Frontend Developer va UI/UX Expert. Toi co mot tap du 
 
 4. Giao dien (UI Style): Phong cach Dark/Light mode hien dai, mau sac chu dao la Midnight Navy (#1d4ed8), bo goc mem mai, hieu ung hover muot m
 
-**A.** [DU LIEU THO DE LAM MAU]
+A. [DU LIEU THO DE LAM MAU]
 [Dan du lieu CSV hoac bang cua ban vao day - Vi du: Ngay, KhuVuc, SanPham, DoanhThu, SoLuong]
 
 Hay dam bao ung dung hoat diong muot ma, co du du lieu gia lap neu can thiet va khong bi loi render trong Artifacts.

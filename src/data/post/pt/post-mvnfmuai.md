@@ -15,7 +15,7 @@ Estava eu em um escritório comercial na Avenida Paulista, finalizando a documen
 <div style="border-left: 4px solid #10b981; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Alerta de Produtividade:</strong> Ferramentas visuais baseadas em rasterização (como PNG ou JPG) geram arquivos pesados e perdem nitidez em telas Retin
 
-**A.** O uso correto do <strong>Claude Artifacts</strong> para gerar código SVG puro resolve o problema de escala, mantendo o design leve e totalmente editável diretamente no navegador.
+A. O uso correto do <strong>Claude Artifacts</strong> para gerar código SVG puro resolve o problema de escala, mantendo o design leve e totalmente editável diretamente no navegador.
 </div>
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvnfo9dk-7-b/1000/550.jpg)
@@ -41,7 +41,7 @@ Atue como um Engenheiro de Design Frontend sênior e especialista em vetores SVG
 - Paleta de Cores: Utilize a paleta Forest Emerald (#10b981 como cor primária, tons escuros #111827 para traços/textos, e fundos neutros).
 - Acessibilidade: Inclua tags <title> e <desc> dentro do SVG para leitores de tel
 
-**A.** # Dados do Projeto
+A. # Dados do Projeto
 - Tipo de Elemento: [Inserir: Ícone individual / Conjunto de 4 ícones / Ilustração de cabeçalho]
 - Tema Específico: [Inserir descrição do conceito, ex: Segurança de dados na nuvem com foco local]
 - Contexto Cultural/Visual: [Inserir diretrizes de tom e estilo da marca]
@@ -49,7 +49,7 @@ Atue como um Engenheiro de Design Frontend sênior e especialista em vetores SVG
 # Instrução de Saída
 Gere o código completo do SVG dentro de um bloco de código limpo e utilize o recurso de Artifacts para que eu possa visualizar o resultado imediatamente na tel
 
-**A.** ```
+A. ```
 
 ## 4. Variações Práticas e Dicas de Segurança
 
@@ -57,7 +57,7 @@ Para extrair o máximo de eficiência do seu fluxo de trabalho diário com IA, s
 
 * **Controle de Tokens:** Solicite sempre que o código SVG venha minificado ou sem comentários excessivos se você precisar injetar centenas de ícones no seu projeto React ou Vue.
 * **Iteração Visual:** Se o primeiro resultado do Artifacts não alinhar com a identidade da sua marca, use comandos curtos de ajuste como: *"Mude o raio dos cantos para arredondado e substitua a cor primária por #059669"* em vez de reescrever o prompt inteiro.
-* **Prevenção de Alucinações:**Nunca peça para a IA desenhar textos complexos dentro do SVG. Prefira vetorizar caminhos de texto (<path>) ou deixar o texto tipográfico para o HTML/CSS da sua página web.
+* Prevenção de Alucinações:Nunca peça para a IA desenhar textos complexos dentro do SVG. Prefira vetorizar caminhos de texto (<path>) ou deixar o texto tipográfico para o HTML/CSS da sua página web.
 
 <div style="border-left: 4px solid #10b981; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Dica de Ouro:</strong> Utilize o painel lateral do Claude Artifacts para inspecionar o código em tempo real. Você pode copiar o componente SVG gerado e colá-lo diretamente no seu arquivo Figma ou editor de código favorito sem perda de qualidade.
@@ -65,14 +65,14 @@ Para extrair o máximo de eficiência do seu fluxo de trabalho diário com IA, s
 
 ## 5. Perguntas Frecuentes (FAQ)
 
-**Q.** Posso usar o Claude Artifacts para gerar ilustrações complexas para landing pages?
+Q. Posso usar o Claude Artifacts para gerar ilustrações complexas para landing pages?
 
-**A.** Sim, desde que você defina dimensões maiores no viewBox (ex: 1200x800) e especifique camadas bem definidas para que a IA estruture o código de forma organizada em grupos (<g>).
+A. Sim, desde que você defina dimensões maiores no viewBox (ex: 1200x800) e especifique camadas bem definidas para que a IA estruture o código de forma organizada em grupos (<g>).
 
-**Q.** O código SVG gerado pelo Claude é compatível com frameworks como React e Tailwind CSS?
+Q. O código SVG gerado pelo Claude é compatível com frameworks como React e Tailwind CSS?
 
-**A.** Perfeitamente. Como o output é um código SVG limpo e semântico, você pode transformá-lo facilmente em um componente React personalizado ou importar os paths diretamente para classes do Tailwind.
+A. Perfeitamente. Como o output é um código SVG limpo e semântico, você pode transformá-lo facilmente em um componente React personalizado ou importar os paths diretamente para classes do Tailwind.
 
-**Q.** Como evito que a IA altere o estilo visual entre um ícone e outro em um mesmo conjunto?
+Q. Como evito que a IA altere o estilo visual entre um ícone e outro em um mesmo conjunto?
 
-**A.** A melhor prática é traçar um guia de estilo rígido na primeira linha do seu prompt, especificando o excreto peso de linha (stroke-width), o preenchimento (fill) e a paleta de cores hexadecimal exata para todos os itens da série.
+A. A melhor prática é traçar um guia de estilo rígido na primeira linha do seu prompt, especificando o excreto peso de linha (stroke-width), o preenchimento (fill) e a paleta de cores hexadecimal exata para todos os itens da série.

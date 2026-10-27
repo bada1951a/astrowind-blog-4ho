@@ -76,4 +76,4 @@ Sla de meest gelukte generatie uit scène 5 of 6 op als jouw nieuwe referentie-a
 ### 3. Kan ik dit hele proces automatiseren voor twintig scènes tegelijk?
 J
 
-**A.** Je kunt Claude of ChatGPT vragen om een JSON-tabel te genereren met daarin de twintig unieke scènes, waarbij het vaste karakter-anker en de `--cref` URL automatisch worden toegevoegd aan elke individuele prompt. Deze kopieer je vervolgens stuk voor stuk naar Discord of je Midjourney Alpha webinterface.
+A. Je kunt Claude of ChatGPT vragen om een JSON-tabel te genereren met daarin de twintig unieke scènes, waarbij het vaste karakter-anker en de `--cref` URL automatisch worden toegevoegd aan elke individuele prompt. Deze kopieer je vervolgens stuk voor stuk naar Discord of je Midjourney Alpha webinterface.

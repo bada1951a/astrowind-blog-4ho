@@ -16,7 +16,7 @@ Znamy to wszyscy. Próba ręcznego spisania skryptu, analizowania psychologii wi
 
 Wpisałem wtedy w ChatGPT klasyczne: *"Przeanalizuj ten film i napisz mi podobny skrypt"*. Efekt? Bezużyteczna ściana tekstu, która brzmiała jak wypracowanie gimnazjalisty z historii. Model całkowicie pominął timing, psychologiczne haki retoryczne (tzw. hooks) oraz architekturę zaangażowani
 
-**A.** <div style="border-left: 4px solid #3b82f6; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
+A. <div style="border-left: 4px solid #3b82f6; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Lekcja z poligonu:</strong> Modele językowe nie potrafią czytać intencji wprost. Jeśli pytasz ogólnie, dostajesz ogólne, generyczne odpowiedzi. Aby wyciągnąć ze skryptu czystą inżynierię odwrotną, musisz narzucić sztucznej inteligencji rygorystyczną rolę analityka mediów społecznościowych.
 </div>
 
@@ -25,15 +25,15 @@ Wpisałem wtedy w ChatGPT klasyczne: *"Przeanalizuj ten film i napisz mi podobny
 Większość użytkowników traktuje ChatGPT jak wyszukiwarkę Google. Wklejają link lub transkrypcję i oczekują cudu. Tymczasem kluczem do inżynierii odwrotnej (reverse engineering) jest rozbicie tekstu na warstwy:
 1. Warstwa emocjonaln
 
-**A.** W którym momencie widzik odczuwa strach, ciekawość lub ulgę?
+A. W którym momencie widzik odczuwa strach, ciekawość lub ulgę?
 
 2. Warstwa strukturaln
 
-**A.** Jak zbudowany jest wstęp (pierwsze 30 sekund)? Gdzie następuje punkt zwrotny?
+A. Jak zbudowany jest wstęp (pierwsze 30 sekund)? Gdzie następuje punkt zwrotny?
 
 3. Warstwa retoryczn
 
-**A.** Jakie techniki argumentacji zastosowano, by utrzymać retencję?
+A. Jakie techniki argumentacji zastosowano, by utrzymać retencję?
 
 Zamiast pisać poematy do AI, stworzyłem systemowy prompt szablonowy, który traktuje skrypt jak kod źródłowy aplikacji. Poniżej znajdziesz gotowy arkusz zapytań, który wdrożyłem w naszym zespole projektowym w Warszawie.
 
@@ -53,7 +53,7 @@ Przeanalizuj powyższy materiał i przygotuj raport w formacie strukturalnym, uw
 - Jaki mechanizm psychologiczny zastosowano na samym początku? (np. otwarta pętla informacyjna, szokująca statystyka, kontrintuicyjna teza).
 - Dokładna treść lub mechanika pierwszego zdani
 
-**A.** 2. SZKIELET NARRACYJNY (Timeline):
+A. 2. SZKIELET NARRACYJNY (Timeline):
 - Podziel materiał na bloki czasowe/tematyczne.
 - Dla każdego bloku określ: Cel dramatyczny, zastosowaną technikę utrzymania uwagi oraz punkt zwrotny.
 
@@ -78,7 +78,7 @@ Aby ten system działał bezbłędnie w codziennej pracy projektowej, trzymaj si
 <div style="border-left: 4px solid #3b82f6; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Wskazówka architekt
 
-**A.** </strong> Zapisz powyższy szablon w swojej firmowej bazie promptów (np. w Notion lub w systemie wewnętrznym). Zamiast pisać za każdym razem od nowa, zmieniaj jedynie zmienną tematyczną na końcu. Zaoszczędzisz średnio 45 minut pracy na każdym nowym projekcie wideo.
+A. </strong> Zapisz powyższy szablon w swojej firmowej bazie promptów (np. w Notion lub w systemie wewnętrznym). Zamiast pisać za każdym razem od nowa, zmieniaj jedynie zmienną tematyczną na końcu. Zaoszczędzisz średnio 45 minut pracy na każdym nowym projekcie wideo.
 </div>
 
 ## Często Zadawane Pytania (FAQ)

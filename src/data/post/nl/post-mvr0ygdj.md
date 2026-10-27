@@ -28,7 +28,7 @@ De paniek sloeg direct om in pure wanhoop toen we zagen hoe kostbare minuten ver
 
 De kernoorzaak van de mislukte output ligt diep verankerd in de manier waarop Large Language Models (LLMs) tokens voorspellen en reageren op dubbelzinnige invoer. Wanneer een prompt te summier is, zoals onze eerdere paniekpoging, valt het model terug op de meest generieke waarschijnlijkheidsdistributies in zijn trainingsdat
 
-**A.** Dit resulteert in clichématige, oppervlakkige antwoorden omdat de temperatuurinstelling en de aandachtsechanismen (attention mechanisms) geen sturing krijgen richting specifieke, hoogwaardige technische output zoals schone SVG-code of robuuste JavaScript-interactiviteit binnen Claude Artifacts.
+A. Dit resulteert in clichématige, oppervlakkige antwoorden omdat de temperatuurinstelling en de aandachtsechanismen (attention mechanisms) geen sturing krijgen richting specifieke, hoogwaardige technische output zoals schone SVG-code of robuuste JavaScript-interactiviteit binnen Claude Artifacts.
 
 Het ontbreken van duidelijke systeeminstructies en begrenzers (delimiters) zorgt ervoor dat het model de context compleet verkeerd interpreteert. Een LLM begrijpt niet uit zichzelf dat een onboarding-handboek voor de Zuidas een zakelijke, strakke designtaal vereist in plaats van speelse illustraties. Omdat we vergaten om strenge randvoorwaarden, semantische opmaakregels en technische validatiestappen mee te sturen, ging het model gokken. Het resultaat was een chaotische mix van platte tekst en ongeldige vectorgrafieken die elk visueel en functioneel doel misten.
 

@@ -14,7 +14,7 @@ Het was dinsdagochtend ergens rond half tien in een glazen vergaderruimte op de 
 
 Dit is het klassieke probleem waar iedere contentstrateeg tegenaan loopt bij langlopende AI-projecten. Zodra je de contextwindow vult met duizenden woorden aan input en vervolgvragen, vergeet het model zijn person
 
-**A.** Het valt terug op zijn standaard fabrieksinstellingen: neutraal, vlak en voorspelbaar. En als je een whitepaper wilt die indruk maakt op C-level executives, kun je dat soort generieke flauwekul simpelweg niet gebruiken.
+A. Het valt terug op zijn standaard fabrieksinstellingen: neutraal, vlak en voorspelbaar. En als je een whitepaper wilt die indruk maakt op C-level executives, kun je dat soort generieke flauwekul simpelweg niet gebruiken.
 
 ![How to Chain ChatGPT Prompts for 5000-Word In-Depth Industry Whitepapers Prompt Guide](https://picsum.photos/seed/prompt-mvjz21vy-8-b/1000/550.jpg)
 
@@ -39,7 +39,7 @@ Om dit te omzeilen, bouwen we een keten van opeenvolgende instructies. Elke stap
 
 Om te voorkomen dat de AI na twee berichten weer verandert in een onbeholpen robot, gebruik je de volgende geavanceerde systeeminstructie of begin-prompt in ChatGPT of Claude. Hiermee dwing je het model om zijn rol vast te houden via een vaste state-machine-logic
 
-**A.** ```markdown
+A. ```markdown
 Je bent een senior industrie-analist en hoofdauteur gespecialiseerd in [Voer Industrie in, bijv. Fintech en regelgeving]. Je hanteert een scherpe, pragmatische en analytische toon zonder holle marketingpraat of clichématige metaforen.
 
 Je werkt aan een whitepaper van in totaal 5000 woorden. Dit is stap [Voer Stapnummer in] van een serie van 5 stappen. 
@@ -71,14 +71,14 @@ Wanneer je deze kettingmethode toepast, zijn er een aantal valkuilen die je dire
 
 ## Veelgestelde Vragen
 
-**Q1.** Kan ik deze methode zowel in ChatGPT als in Claude gebruiken?
+Q1. Kan ik deze methode zowel in ChatGPT als in Claude gebruiken?
 
-**A1.** Jazeker. Claude (voornamelijk via Projects) blinkt uit in het vasthouden van grote hoeveelheden achtergrondinformatie over meerdere stappen heen, terwijl ChatGPT via Custom GPT's of strakke prompt-ketens uitstekend presteert voor de daadwerkelijke creatie van de inhoud.
+A1. Jazeker. Claude (voornamelijk via Projects) blinkt uit in het vasthouden van grote hoeveelheden achtergrondinformatie over meerdere stappen heen, terwijl ChatGPT via Custom GPT's of strakke prompt-ketens uitstekend presteert voor de daadwerkelijke creatie van de inhoud.
 
-**Q2.** Hoe voorkom ik dat de gegenereerde hoofdstukken onsamenhangend aanvoelen?
+Q2. Hoe voorkom ik dat de gegenereerde hoofdstukken onsamenhangend aanvoelen?
 
-**A2.** Zorg ervoor dat je in fase 1 een extreem gedetailleerde inhoudsopgave maakt waarin de rode draad per hoofdstuk is vastgelegd. Geef die inhoudsopgave bij elke volgende prompt opnieuw mee als context.
+A2. Zorg ervoor dat je in fase 1 een extreem gedetailleerde inhoudsopgave maakt waarin de rode draad per hoofdstuk is vastgelegd. Geef die inhoudsopgave bij elke volgende prompt opnieuw mee als context.
 
-**Q3.** Wat doe ik als de AI alsnog uit zijn rol schiet en te enthousiast reageert?
+Q3. Wat doe ik als de AI alsnog uit zijn rol schiet en te enthousiast reageert?
 
-**A3.** Onderbreek direct de conversatie en stuur een correctie-prompt: *"Stop. Je valt terug in je standaard AI-toon. Verwijder de laatste alinea, neem je persona van senior analist weer aan en herschrijf vanuit een objectief, kritisch perspectief."*
+A3. Onderbreek direct de conversatie en stuur een correctie-prompt: *"Stop. Je valt terug in je standaard AI-toon. Verwijder de laatste alinea, neem je persona van senior analist weer aan en herschrijf vanuit een objectief, kritisch perspectief."*

@@ -12,20 +12,20 @@ theme: "Solarized Amber Warm"
 
 Warszawskie centrum biznesowe na Mokotowie tętni życiem, a w nowoczesnej sali konferencyjnej panuje napięta atmosfer
 
-**A.** Za trzydzieści minut ma się rozpocząć kluczowa prezentacja dla zarządu międzynarodowej korporacji finansowej, a system wizualny aplikacji kliencie wciąż zieje pustką. Główny dyrektor artystyczny oczekuje spójnego zestawu niestandardowych ikon wektorowych oraz ilustracji interfejsu, które mają zostać wygenerowane w czasie rzeczywistym za pomocą zaawansowanego środowiska Claude Artifacts. Cała odpowiedzialność spoczywa na Tobie, a każda minuta zwłoki przybliża zespół do wizerunkowej katastrofy przed wymagającymi inwestorami.
+A. Za trzydzieści minut ma się rozpocząć kluczowa prezentacja dla zarządu międzynarodowej korporacji finansowej, a system wizualny aplikacji kliencie wciąż zieje pustką. Główny dyrektor artystyczny oczekuje spójnego zestawu niestandardowych ikon wektorowych oraz ilustracji interfejsu, które mają zostać wygenerowane w czasie rzeczywistym za pomocą zaawansowanego środowiska Claude Artifacts. Cała odpowiedzialność spoczywa na Tobie, a każda minuta zwłoki przybliża zespół do wizerunkowej katastrofy przed wymagającymi inwestorami.
 
 W pierwszych minutach pracy wszystko wydawało się przebiegać pomyślnie, ponieważ model uległ wstępnej sugestii i przyjął rolę elitarnego dyrektora kreatywnego specjalizującego się w architekturze systemów SVG. Jednak po zaledwie trzech turach konwersacji, gdy wprowadzono kolejne drobne poprawki do palety kolorów oraz struktury kodu, model nagle zatracił wypracowany styl. Zamiast unikalnych, nowoczesnych wektorów nasyconych polotem i precyzją, Claude powrócił do swojego standardowego, mechanicznego tonu, wyrzucając nudne, schematyczne znaczniki XML oraz grzeczne, pozbawione charakteru formułki pomocnicze, które zupełnie nie pasowały do luksusowego kontekstu wdrożeni
 
-**A.** Panika zaczyna narastać, ponieważ zegar bezlitośnie odlicza ostatnie minuty przed wejściem zarządu do sali, a dotychczasowe próby szybkiego skorygowania zachowania sztucznej inteligencji za pomocą zwykłych poleceń tekstowych przynoszą odwrotny skutek. Model staje się coraz bardziej uśredniony w swoich reakcjach, generując powtarzalny, niskiej jakości kod, który wymaga ręcznej naprawy w programie graficznym. Każda próba przywrócenia pierwotnej ekspresji kończy się kolejnym komunikatem błędu lub powrotem do bezpiecznych, zachowawczych szablonów, co w realiach dynamicznego rynku warszawskich fintechów oznacza dosłownie stratę lukratywnego kontraktu.
+A. Panika zaczyna narastać, ponieważ zegar bezlitośnie odlicza ostatnie minuty przed wejściem zarządu do sali, a dotychczasowe próby szybkiego skorygowania zachowania sztucznej inteligencji za pomocą zwykłych poleceń tekstowych przynoszą odwrotny skutek. Model staje się coraz bardziej uśredniony w swoich reakcjach, generując powtarzalny, niskiej jakości kod, który wymaga ręcznej naprawy w programie graficznym. Każda próba przywrócenia pierwotnej ekspresji kończy się kolejnym komunikatem błędu lub powrotem do bezpiecznych, zachowawczych szablonów, co w realiach dynamicznego rynku warszawskich fintechów oznacza dosłownie stratę lukratywnego kontraktu.
 
 Stawką w tej dramatycznej potyczce z technologią nie jest jedynie estetyka pojedynczej grafiki, lecz wiarygodność całego zespołu technologicznego przed kluczowymi partnerami biznesowymi. Jeśli system nie zostanie natychmiast ustabilizowany za pomocą rygorystycznej inżynierii kontekstu, firma straci unikalną szansę na zaprezentowanie innowacyjnego podejścia do automatyzacji procesów kreatywnych. W takich chwilach amatorskie podejście do tworzenia poleceń obnaża swoje fundamentalne słabości, zmuszając inżyniera do wdrożenia zaawansowanych mechanizmów kontroli zachowania modeli językowych na poziomie strukturalnym.
 
 <div style="border-left: 4px solid #d97706; padding: 14px 18px; margin: 24px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Notatka operacyjna inżynier
 
-**A.** </strong> Nagła utrata persony przez model w trakcie długiej sesji to bezpośredni skutek wyczerpania okna uwagi oraz silnego przyciągania tokenowego przez domyślne wagi treningowe bot
+A. </strong> Nagła utrata persony przez model w trakcie długiej sesji to bezpośredni skutek wyczerpania okna uwagi oraz silnego przyciągania tokenowego przez domyślne wagi treningowe bot
 
-**A.** Aby utrzymać unikalny głos i styl graficzny, konieczne jest zastosowanie ciągłego kotwiczenia kontekstu w każdej wiadomości.
+A. Aby utrzymać unikalny głos i styl graficzny, konieczne jest zastosowanie ciągłego kotwiczenia kontekstu w każdej wiadomości.
 </div>
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvpli5bz-9-b/1000/550.jpg)
@@ -74,14 +74,14 @@ Zaawansowane łańcuchy myślowe oraz dynamiczna iniekcja persony pozwalają na 
 
 ## 5. Najczęściej zadawane pytania (FAQ)
 
-**Q1.** Dlaczego Claude potrafi nagle porzucić nadaną mu ekspercką personę po kilku turach rozmowy i jak temu zapobiec?
+Q1. Dlaczego Claude potrafi nagle porzucić nadaną mu ekspercką personę po kilku turach rozmowy i jak temu zapobiec?
 
-**A1.** Nagła utrata persony wynika z mechanizmu uwagi oraz dominacji ogólnych wag treningowych nad początkowymi instrukcjami w miarę wydłużania się kontekstu konwersacji. Aby temu skutecznie zapobiec, należy wdrożyć powtarzalne kotwice systemowe w każdej nowej wiadomości oraz stosować twarde ograniczenia strukturalne. Dzięki temu model stale operuje na tym samym zbiorze reguł i nie ulega rozproszeniu.
+A1. Nagła utrata persony wynika z mechanizmu uwagi oraz dominacji ogólnych wag treningowych nad początkowymi instrukcjami w miarę wydłużania się kontekstu konwersacji. Aby temu skutecznie zapobiec, należy wdrożyć powtarzalne kotwice systemowe w każdej nowej wiadomości oraz stosować twarde ograniczenia strukturalne. Dzięki temu model stale operuje na tym samym zbiorze reguł i nie ulega rozproszeniu.
 
-**Q2.** Jakie są główne zalety używania środowiska Claude Artifacts do generowania kodu SVG w porównaniu do standardowego czatu?
+Q2. Jakie są główne zalety używania środowiska Claude Artifacts do generowania kodu SVG w porównaniu do standardowego czatu?
 
-**A2.** Środowisko Artifacts izoluje wygenerowany kod w dedykowanym, interaktywnym oknie podglądu, co natychmiastowo ukazuje efekty wizualne bez zasmiecania głównego nurtu konwersacji. Pozwala to na precyzyjną edycję wektorów w czasie rzeczywistym oraz sprawne wdrażanie poprawek bez utraty spójności całego projektu graficznego. Jest to absolutnie kluczowe narzędzie w profesjonalnej pracy nowoczesnych studiów projektowych.
+A2. Środowisko Artifacts izoluje wygenerowany kod w dedykowanym, interaktywnym oknie podglądu, co natychmiastowo ukazuje efekty wizualne bez zasmiecania głównego nurtu konwersacji. Pozwala to na precyzyjną edycję wektorów w czasie rzeczywistym oraz sprawne wdrażanie poprawek bez utraty spójności całego projektu graficznego. Jest to absolutnie kluczowe narzędzie w profesjonalnej pracy nowoczesnych studiów projektowych.
 
-**Q3.** W jaki sposób skutecznie wymusić na modelu przestrzeganie rygorystycznych standardów dostępności (WCAG) podczas tworzenia ikon?
+Q3. W jaki sposób skutecznie wymusić na modelu przestrzeganie rygorystycznych standardów dostępności (WCAG) podczas tworzenia ikon?
 
-**A3.** Wymuszenie standardów dostępności wymaga jawnego zdefiniowania atrybutów semantycznych, takich jak aria-label oraz odpowiednich kontrastów kolorystycznych bezpośrednio w sekcji ograniczeń promptu. Dodatkowo warto umieścić w instrukcji polecenie weryfikacyjne, które zobowiązuje model do sprawdzenia poprawności strukturalnej kodu przed jego ostatecznym sfinalizowaniem w bloku Artifact.
+A3. Wymuszenie standardów dostępności wymaga jawnego zdefiniowania atrybutów semantycznych, takich jak aria-label oraz odpowiednich kontrastów kolorystycznych bezpośrednio w sekcji ograniczeń promptu. Dodatkowo warto umieścić w instrukcji polecenie weryfikacyjne, które zobowiązuje model do sprawdzenia poprawności strukturalnej kodu przed jego ostatecznym sfinalizowaniem w bloku Artifact.

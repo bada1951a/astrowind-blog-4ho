@@ -88,7 +88,7 @@ Ao implementar fluxos de trabalho baseados em IA para a criação e refinamento 
 
 Além disso, para projetos de grande envergadura ou propostas de alto valor financeiro, a aplicação de técnicas avançadas de encadeamento de prompts (*Chain-of-Thought* e *Few-Shot Prompting*) eleva exponencialmente a qualidade do resultado. Em vez de exigir que a IA faça a reescrita em uma única etapa, divida o processo: primeiro, solicite uma análise crítica detalhada dos pontos fracos do texto original; em seguida, forneça exemplos de e-mails de sucesso anteriores da sua empresa como referência de estilo (*Few-Shot*); e por fim, execute o comando de reescrita final. Essa abordagem metodológica reduz drasticamente a taxa de erro e alinha perfeitamente a inteligência artificial ao tom de voz institucional da sua marc
 
-**A.** ## 5. Perguntas Frecuentes (FAQ)
+A. ## 5. Perguntas Frecuentes (FAQ)
 
 Q1. Por que as ferramentas de tradução automática tradicionais e os prompts simples falham ao redigir propostas comerciais em inglês?
 
