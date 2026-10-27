@@ -72,14 +72,14 @@ Daarnaast is geavanceerde chaining cruciaal voor grootschalige projecten. In pla
 
 ## 5. Veelgestelde Vragen (FAQ)
 
-**Q1.** Waarom genereert Claude soms onvolledige SVG-code of breekt de output halverwege af tijdens het maken van web illustraties?
+Q1. Waarom genereert Claude soms onvolledige SVG-code of breekt de output halverwege af tijdens het maken van web illustraties?
 
-**A1.** Dit wordt meestal veroorzaakt doordat het model de maximale outputtokenslimiet van een enkele generatierondes overschrijdt, of doordat de prompt te breed is geformuleerd waardoor het model te veel tegelijk probeert te doen. Om dit te voorkomen, kun je in de prompt expliciet opdragen om de code modulair op te bouwen of te focussen op één specifiek onderdeel per keer, en kun je de instructie geven om de code op te splitsen in logische componenten binnen het artifact.
+A1. Dit wordt meestal veroorzaakt doordat het model de maximale outputtokenslimiet van een enkele generatierondes overschrijdt, of doordat de prompt te breed is geformuleerd waardoor het model te veel tegelijk probeert te doen. Om dit te voorkomen, kun je in de prompt expliciet opdragen om de code modulair op te bouwen of te focussen op één specifiek onderdeel per keer, en kun je de instructie geven om de code op te splitsen in logische componenten binnen het artifact.
 
-**Q2.** Hoe zorg ik ervoor dat de gegenereerde SVG-iconen naadloos aansluiten bij de huisstijl van mijn bedrijf zonder handmatig alle kleuren te hoeven aanpassen?
+Q2. Hoe zorg ik ervoor dat de gegenereerde SVG-iconen naadloos aansluiten bij de huisstijl van mijn bedrijf zonder handmatig alle kleuren te hoeven aanpassen?
 
-**A2.** Je kunt dit oplossen door in het `[Constraints]` gedeelte van je master prompt gebruik te maken van CSS-variabelen of specifieke hex-codes die gekoppeld zijn aan semantische benamingen. Door het model te instrueren om `currentColor` te gebruiken voor vullingen en lijnen, erven de SVG-iconen automatisch de tekstkleur van hun omringende HTML-element, waardoor ze direct meekleuren met de desbetreffende UI-componenten.
+A2. Je kunt dit oplossen door in het `[Constraints]` gedeelte van je master prompt gebruik te maken van CSS-variabelen of specifieke hex-codes die gekoppeld zijn aan semantische benamingen. Door het model te instrueren om `currentColor` te gebruiken voor vullingen en lijnen, erven de SVG-iconen automatisch de tekstkleur van hun omringende HTML-element, waardoor ze direct meekleuren met de desbetreffende UI-componenten.
 
-**Q3.** Wat is het voordeel van het gebruik van Claude Artifacts ten opzichte van een standaard chat-interface bij het ontwerpen van interactieve webapplicaties?
+Q3. Wat is het voordeel van het gebruik van Claude Artifacts ten opzichte van een standaard chat-interface bij het ontwerpen van interactieve webapplicaties?
 
-**A3.** Claude Artifacts opent een afgescheiden, interactieve kijkvenster naast het conversatievenster waarin zelfstandige webapplicaties direct worden gerenderd en uitgevoerd in de browser. Hierdoor kun je de functionaliteit, het uiterlijk en de responsiviteit van de gegenereerde SVG-illustraties en quizcomponenten direct testen en beoordelen zonder dat je de code handmatig hoeft te kopiëren en op te slaan in externe bestanden.
+A3. Claude Artifacts opent een afgescheiden, interactieve kijkvenster naast het conversatievenster waarin zelfstandige webapplicaties direct worden gerenderd en uitgevoerd in de browser. Hierdoor kun je de functionaliteit, het uiterlijk en de responsiviteit van de gegenereerde SVG-illustraties en quizcomponenten direct testen en beoordelen zonder dat je de code handmatig hoeft te kopiëren en op te slaan in externe bestanden.

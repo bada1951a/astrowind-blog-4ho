@@ -78,14 +78,14 @@ Ein weiterer entscheidender Hebel ist der strategische Einsatz von Negative Prom
 
 ## 5. Häufig gestellte Fragen (FAQ)
 
-**Q1.** Warum greift Claude trotz klarer Anweisungen gelegentlich auf veraltete Python-Bibliotheken zurück?
+Q1. Warum greift Claude trotz klarer Anweisungen gelegentlich auf veraltete Python-Bibliotheken zurück?
 
-**A1.** Sprachmodelle basieren auf statistischen Wahrscheinlichkeiten, die stark durch das Volumen historischer Trainingsdaten in ihren Parametern verankert sind. Ältere Bibliotheken besitzen oft eine massiv höhere Präsenz im Trainingskorpus als brandneue Framework-Versionen. Wenn der Prompt nicht explizit Versionseinschränkungen und den Ausschluss von Legacy-Methoden erzwingt, gewinnt die statistische Häufigkeit der alten Syntax im neuronalen Netz.
+A1. Sprachmodelle basieren auf statistischen Wahrscheinlichkeiten, die stark durch das Volumen historischer Trainingsdaten in ihren Parametern verankert sind. Ältere Bibliotheken besitzen oft eine massiv höhere Präsenz im Trainingskorpus als brandneue Framework-Versionen. Wenn der Prompt nicht explizit Versionseinschränkungen und den Ausschluss von Legacy-Methoden erzwingt, gewinnt die statistische Häufigkeit der alten Syntax im neuronalen Netz.
 
-**Q2.** Wie verhindere ich, dass Claude Artifacts unvollständige oder abgeschnittene SVG-Dateien ausgibt?
+Q2. Wie verhindere ich, dass Claude Artifacts unvollständige oder abgeschnittene SVG-Dateien ausgibt?
 
-**A2.** Das vorzeitige Abbrechen von Ausgaben resultiert meist aus Token-Limits oder unpräzisen Strukturvorgaben im Output-Format. Sie können dies verhindern, indem Sie im Prompt explizit fordern, das SVG in logische Sektionen zu unterteilen oder die maximale Token-Generierung für das Artifact zu maximieren. Zudem hilft es, das SVG modular aufzubauen und die einzelnen `<g>`-Gruppen separat anfordern zu lassen.
+A2. Das vorzeitige Abbrechen von Ausgaben resultiert meist aus Token-Limits oder unpräzisen Strukturvorgaben im Output-Format. Sie können dies verhindern, indem Sie im Prompt explizit fordern, das SVG in logische Sektionen zu unterteilen oder die maximale Token-Generierung für das Artifact zu maximieren. Zudem hilft es, das SVG modular aufzubauen und die einzelnen `<g>`-Gruppen separat anfordern zu lassen.
 
-**Q3.** Welchen Einfluss hat das definierte Design-Theme wie "Deep Ocean Cobalt" auf die Code-Generierung?
+Q3. Welchen Einfluss hat das definierte Design-Theme wie "Deep Ocean Cobalt" auf die Code-Generierung?
 
-**A3.** Visuelle und stilistische Vorgaben wie ein bestimmtes Farbschema geben dem Modell einen semantischen Anker, der die Kreativität in geordnete Bahnen lenkt. Anstatt zufällige Hex-Codes zu wählen, orientiert sich die KI an einer konsistenten Farbpalette und baut darauf ein harmonisches, professionelles Design auf. Dies spart im Nachhinein enorm viel Zeit bei manuellen Design-Korrekturen im Frontend.
+A3. Visuelle und stilistische Vorgaben wie ein bestimmtes Farbschema geben dem Modell einen semantischen Anker, der die Kreativität in geordnete Bahnen lenkt. Anstatt zufällige Hex-Codes zu wählen, orientiert sich die KI an einer konsistenten Farbpalette und baut darauf ein harmonisches, professionelles Design auf. Dies spart im Nachhinein enorm viel Zeit bei manuellen Design-Korrekturen im Frontend.
