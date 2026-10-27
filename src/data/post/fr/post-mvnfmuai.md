@@ -74,15 +74,15 @@ Pour maximiser la productivité de votre équipe tout en évitant les déconvenu
 
 ## 5. Foire Aux Questions (FAQ)
 
-**Q:** Pourquoi utiliser Claude Artifacts plutôt qu'un générateur d'images classique comme Midjourney pour créer des illustrations web ?
+**Q.** Pourquoi utiliser Claude Artifacts plutôt qu'un générateur d'images classique comme Midjourney pour créer des illustrations web ?
 
-**A:** Midjourney génère des images matricielles (PNG/JPG) non modifiables, impossibles à intégrer proprement dans du code HTML, et souvent truffées de texte illisible. Claude Artifacts génère du code SVG pur, ce qui vous permet de modifier les couleurs, de redimensionner l'image à l'infini sans perte de qualité et d'intégrer des animations CSS.
+**A.** Midjourney génère des images matricielles (PNG/JPG) non modifiables, impossibles à intégrer proprement dans du code HTML, et souvent truffées de texte illisible. Claude Artifacts génère du code SVG pur, ce qui vous permet de modifier les couleurs, de redimensionner l'image à l'infini sans perte de qualité et d'intégrer des animations CSS.
 
-**Q:** Comment m'assurer que le texte généré à l'intérieur du SVG ne comporte pas de fautes d'orthographe ?
+**Q.** Comment m'assurer que le texte généré à l'intérieur du SVG ne comporte pas de fautes d'orthographe ?
 
-**A:** Le moyen le plus sûr est d'interdire le texte complexe à l'intérieur du SVG dans votre prompt en précisant : *"N'intègre aucun texte textuel complexe dans le SVG, utilise uniquement des pictogrammes et des formes géométriques. Place tout le contenu textuel explicatif dans la section Markdown sous l'Artifacts"*.
+**A.** Le moyen le plus sûr est d'interdire le texte complexe à l'intérieur du SVG dans votre prompt en précisant : *"N'intègre aucun texte textuel complexe dans le SVG, utilise uniquement des pictogrammes et des formes géométriques. Place tout le contenu textuel explicatif dans la section Markdown sous l'Artifacts"*.
 
-**Q:** Quelle est la limite de taille pour les illustrations SVG générées par Claude ?
+**Q.** Quelle est la limite de taille pour les illustrations SVG générées par Claude ?
 
-**A:** Claude gère très bien les fichiers SVG de taille moyenne (jusqu'à environ 100 à 150 lignes de code XML). Si vous demandez des illustrations extrêmement complexes avec des centaines de chemins vectoriels (paths), le modèle risque de couper sa génération. Il est préférable de procéder par composants modulaires (par exemple : une icône, puis un conteneur, puis un schéma de flux).
+**A.** Claude gère très bien les fichiers SVG de taille moyenne (jusqu'à environ 100 à 150 lignes de code XML). Si vous demandez des illustrations extrêmement complexes avec des centaines de chemins vectoriels (paths), le modèle risque de couper sa génération. Il est préférable de procéder par composants modulaires (par exemple : une icône, puis un conteneur, puis un schéma de flux).
 ---

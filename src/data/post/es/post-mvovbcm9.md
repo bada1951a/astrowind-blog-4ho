@@ -12,9 +12,11 @@ theme: "Dark Velvet Obsidian"
 
 Eran las siete de la tarde en nuestras oficinas corporativas en Madrid. Teníamos sobre la mesa una presentación crítica para un cliente del sector bancario y debíamos incluir diagramas de arquitectura y mockups de iconos personalizados para ilustrar los flujos de datos. El problema crítico: las estrictas normativas de seguridad y cumplimiento normativo nos prohibían tajantemente introducir nombres reales de clientes, entidades o credenciales en cualquier plataforma LLM basada en la nube. 
 
-Intenté redactar un prompt rápido en Claude pidiéndole que diseñara un conjunto de iconos SVG corporativos basados en los flujos de la banca, pero al no poder incluir los nombres reales de los sistemas, la IA generó gráficos planos, genéricos y completamente desconectados de nuestra realidad operativa. Los iconos parecían sacados de una plantilla gratuita de internet y el diseño visual no guardaba ninguna consistencia con nuestra identidad de marca ni con la complejidad técnica real que necesitábamos comunicar de forma abstracta.
+Intenté redactar un prompt rápido en Claude pidiéndole que diseñara un conjunto de iconos SVG corporativos basados en los flujos de la banca, pero al no poder incluir los nombres reales de los sistemas, la IA generó gráficos planos, genéricos y completamente desconectados de nuestra realidad operativ
 
-<div style="border-left: 4px solid #a855f7; padding: 12px 16px; margin: 20px 0; background-color: rgba(168,85,247,0.05); border-radius: 4px; color: #111827;">
+**A.** Los iconos parecían sacados de una plantilla gratuita de internet y el diseño visual no guardaba ninguna consistencia con nuestra identidad de marca ni con la complejidad técnica real que necesitábamos comunicar de forma abstract
+
+**A.** <div style="border-left: 4px solid #a855f7; padding: 12px 16px; margin: 20px 0; background-color: rgba(168,85,247,0.05); border-radius: 4px; color: #111827;">
 <strong>Lección clave del incidente:</strong> Cuando la política de seguridad te obliga a anonimizar datos, un prompt ambiguo genera gráficos inservibles. Necesitas una estructura de enmascaramiento contextual en el system prompt para que el modelo entienda la topología técnica sin ver los nombres reales.
 </div>
 
@@ -35,9 +37,9 @@ Para solucionar esto sin vulnerar la política de privacidad, implementamos una 
 
 ## 3. Plantilla maestra de prompt lista para copiar y usar Template
 
-Copia y pega la siguiente plantilla en Claude, asegurándote de rellenar las variables anonimizadas según los requerimientos de tu proyecto técnico en Madrid o Barcelona.
+Copia y pega la siguiente plantilla en Claude, asegurándote de rellenar las variables anonimizadas según los requerimientos de tu proyecto técnico en Madrid o Barcelon
 
-```markdown
+**A.** ```markdown
 Role: Actua como un Arquitecto de Interfaces y Diseñador Senior especializado en sistemas de diseño corporativo y gráficos SVG optimizados para web.
 
 Context: 
@@ -68,20 +70,23 @@ Constraints & Styling:
 
 Cuando trabajes con equipos distribuidos entre oficinas o en remoto, ten en cuenta las siguientes recomendaciones para maximizar la eficiencia y proteger la información:
 
--**Validación de Código:**Utiliza siempre la ventana de**Artifacts**de Claude para visualizar el código en tiempo real antes de exportarlo a formato .svg. Esto te permite iterar cambios visuales sin alterar la estructura interna.
--**Optimización de Tokens:**Mantén las descripciones de los flujos anonimizados concisas. Cuanto más directa sea la correlación entre la variable y su función técnica, más preciso será el resultado gráfico de Claude.
--**Consistencia de Marca:**Añade los códigos HEX exactos de tu manual de marca en la sección de**Constraints**para evitar variaciones de tono indeseadas en las presentaciones corporativas.
+-**Validación de Código:**Utiliza siempre la ventana de**Artifacts**de Claude para visualizar el código en tiempo real antes de exportarlo a formato .svg. Esto te permite iterar cambios visuales sin alterar la estructura intern
+
+**A.** -**Optimización de Tokens:**Mantén las descripciones de los flujos anonimizados concisas. Cuanto más directa sea la correlación entre la variable y su función técnica, más preciso será el resultado gráfico de Claude.
+-**Consistencia de Marc
+
+**A.Añade los códigos HEX exactos de tu manual de marca en la sección de**Constraints**para evitar variaciones de tono indeseadas en las presentaciones corporativas.
 
 ## 5. Preguntas Frecuentes (FAQ)
 
-**Q:** ¿Puedo utilizar este prompt maestro en ChatGPT o Gemini además de en Claude?
+**Q.** ¿Puedo utilizar este prompt maestro en ChatGPT o Gemini además de en Claude?
 
-**A:** Sí, puedes adaptarlo fácilmente, pero ten en cuenta que Claude cuenta con la ventaja nativa de los**Artifacts**, lo que permite renderizar y visualizar el código SVG de manera interactiva sin necesidad de abrir editores externos como Illustrator o VS Code.
+**A.** Sí, puedes adaptarlo fácilmente, pero ten en cuenta que Claude cuenta con la ventaja nativa de los**Artifacts**, lo que permite renderizar y visualizar el código SVG de manera interactiva sin necesidad de abrir editores externos como Illustrator o VS Code.
 
-**Q:** ¿Qué hago si el icono SVG generado sale cortado o desalineado en la pantalla?
+**Q.** ¿Qué hago si el icono SVG generado sale cortado o desalineado en la pantalla?
 
-**A:** Simplemente responde al chat indicando: *"Ajusta el atributo viewBox y añade un padding interno del 10% alrededor de los trazos principales para evitar recortes en los bordes"*.
+**A.** Simplemente responde al chat indicando: *"Ajusta el atributo viewBox y añade un padding interno del 10% alrededor de los trazos principales para evitar recortes en los bordes"*.
 
-**Q:** ¿Cómo garantizo que no se filtre información confidencial al usar modelos de lenguaje?
+**Q.** ¿Cómo garantizo que no se filtre información confidencial al usar modelos de lenguaje?
 
-**A:** Utiliza siempre la técnica de enmascaramiento con variables genéricas (como se muestra en la plantilla) y asegúrate de utilizar entornos corporativos con políticas de retención de datos desactivadas para entrenamiento público.
+**A.** Utiliza siempre la técnica de enmascaramiento con variables genéricas (como se muestra en la plantilla) y asegúrate de utilizar entornos corporativos con políticas de retención de datos desactivadas para entrenamiento público.

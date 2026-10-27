@@ -66,7 +66,7 @@ When working with large text inputs and complex code generation, you may occasio
 
 * **Chunking Large Manuals:** If your training manual exceeds 10,000 words, do not feed it all at once. Ask Claude to summarize and extract core learning objectives first, then pass that structured JSON into the master SVG generation prompt.
 * **Preventing SVG Rendering Glitches:** Always instruct the model to use explicit `viewBox` attributes inside every SVG tag (e.g., `viewBox="0 0 24 24"`) to ensure your custom illustrations scale perfectly across different screen sizes.
-* **State Reset Failures:** If the interactive quiz buttons stop responding after a user clicks through multiple times, add a strict rule to your prompt: "Include a comprehensive state reset function attached to a restart button."
+* **State Reset Failures:**If the interactive quiz buttons stop responding after a user clicks through multiple times, add a strict rule to your prompt: "Include a comprehensive state reset function attached to a restart button."
 
 <div style="border-left: 4px solid #ffffff; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Safety Reminder:</strong> Always test the generated Artifact directly in your browser preview before sharing the live link with your team to ensure all JavaScript event listeners bind correctly.
@@ -74,14 +74,14 @@ When working with large text inputs and complex code generation, you may occasio
 
 ## 5. Frequently Asked Questions (FAQ)
 
-**Q:** Can I use this prompt with ChatGPT or Gemini instead of Claude?
+**Q.** Can I use this prompt with ChatGPT or Gemini instead of Claude?
 
-**A:** While ChatGPT and Gemini are exceptional reasoning engines, Claude Artifacts provides a dedicated, sandboxed UI preview window that renders HTML, CSS, and SVG instantly without requiring external code-hosting tools. If you use other models, you will need to copy the code into an HTML file or a live code sandbox like CodePen.
+**A.** While ChatGPT and Gemini are exceptional reasoning engines, Claude Artifacts provides a dedicated, sandboxed UI preview window that renders HTML, CSS, and SVG instantly without requiring external code-hosting tools. If you use other models, you will need to copy the code into an HTML file or a live code sandbox like CodePen.
 
-**Q:** How do I customize the color palette of the generated SVG illustrations?
+**Q.** How do I customize the color palette of the generated SVG illustrations?
 
-**A:** You can easily modify the design theme in the prompt instructions by swapping out the color hex codes. For instance, replace the Matte Black theme instructions with your brand colors, such as deep navy backgrounds with electric blue and white accents.
+**A.** You can easily modify the design theme in the prompt instructions by swapping out the color hex codes. For instance, replace the Matte Black theme instructions with your brand colors, such as deep navy backgrounds with electric blue and white accents.
 
-**Q:** What should I do if the AI cuts off the code before finishing the application?
+**Q.** What should I do if the AI cuts off the code before finishing the application?
 
-**A:** This usually happens due to token output limits on long scripts. Simply reply to the model with the exact phrase: "Continue seamlessly from exactly where you left off, ensuring valid syntax completion," and Claude will pick up right where it stopped.
+**A.** This usually happens due to token output limits on long scripts. Simply reply to the model with the exact phrase: "Continue seamlessly from exactly where you left off, ensuring valid syntax completion," and Claude will pick up right where it stopped.

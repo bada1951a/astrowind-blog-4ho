@@ -62,18 +62,18 @@ Om te zorgen dat je prompts onder alle omstandigheden robuust blijven, kun je on
 
 * **Voor Complexe Scènes:** Verander de `viewBox` naar grotere waarden zoals `0 0 1200 800` en voeg de eis toe: *"Gebruik gelaagde `<g>` groepen met duidelijke ID-attributen zodat elementen animatie-klaar zijn voor CSS of Framer Motion."*
 * **Token Besparing:** Voeg achteraan de systeeminstructie toe: *"Genereer geen uitleg over het ontwerpproces; lever uitsluitend de geoptimaliseerde code."* Dit bespaart onnodige tokens en voorkomt dat Claude halverwege de zin stopt door limieten.
-* **Brand Consistency:** Voeg je vaste kleurenpalet toe als een lijst met hex-codes in de prompt om te voorkomen dat Claude willekeurige kleuren kiest.
+* **Brand Consistency:**Voeg je vaste kleurenpalet toe als een lijst met hex-codes in de prompt om te voorkomen dat Claude willekeurige kleuren kiest.
 
 ## 5. Veelgestelde Vragen
 
-**Q:** Waarom breekt Claude de SVG-code soms midden in een pad af?
+**Q.** Waarom breekt Claude de SVG-code soms midden in een pad af?
 
-**A:** Dit gebeurt wanneer de output-tokenlimiet van het model wordt overschreden door te complexe instructies. Vraag in dat geval in je prompt om minder gedetailleerde paden of splits de illustratie op in meerdere componenten.
+**A.** Dit gebeurt wanneer de output-tokenlimiet van het model wordt overschreden door te complexe instructies. Vraag in dat geval in je prompt om minder gedetailleerde paden of splits de illustratie op in meerdere componenten.
 
-**Q:** Kan ik deze prompt ook gebruiken in ChatGPT of Gemini?
+**Q.** Kan ik deze prompt ook gebruiken in ChatGPT of Gemini?
 
-**A:** Ja, hoewel Claude speciaal geoptimaliseerd is voor Artifacts, kun je in ChatGPT en Gemini simpelweg vragen om de output in een standaard ```xml of ```html codeblok te plaatsen.
+**A.** Ja, hoewel Claude speciaal geoptimaliseerd is voor Artifacts, kun je in ChatGPT en Gemini simpelweg vragen om de output in een standaard ```xml of ```html codeblok te plaatsen.
 
-**Q:** Hoe zorg ik ervoor dat de SVG direct responsive is op mobiele schermen?
+**Q.** Hoe zorg ik ervoor dat de SVG direct responsive is op mobiele schermen?
 
-**A:** Zorg ervoor dat de prompt expliciet vraagt om `width="100%"` en `height="100%"` in combinatie met een vaste `viewBox`, zodat de browser de schaalbaarheid automatisch afhandelt.
+**A.** Zorg ervoor dat de prompt expliciet vraagt om `width="100%"` en `height="100%"` in combinatie met een vaste `viewBox`, zodat de browser de schaalbaarheid automatisch afhandelt.

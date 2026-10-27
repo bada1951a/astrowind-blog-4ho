@@ -10,20 +10,24 @@ theme: "Dark Velvet Obsidian"
 
 ## 1. Crisis crítica de alucinación de la IA y bloqueo de tareas
 
-Eran las siete de la tarde en nuestras oficinas del Paseo de la Castellana en Madrid. Teníamos sobre la mesa el borrador preliminar de un whitepaper sobre transformación digital en el sector bancario europeo, un documento estratégico de 5000 palabras destinado a un cliente del IBEX 35. Le había asignado al modelo un rol ultraespecífico: un socio senior de una consultora Big Four, con un tono analítico, cínico frente a las modas tecnológicas y extremadamente preciso con la jerga regulatoria de la UE. Todo iba perfecto durante los primeros dos bloques. Pero al llegar a la tercera sección, el modelo sufrió una amnesia total de personalidad. De repente, abandonó el tono incisivo y empezó a responder con el clásico entusiasmo robótico de atención al cliente: ¡Claro que sí! Aquí tienes un resumen alegre sobre cómo la nube puede ayudar a tu empresa. El socio senior había muerto, reemplazado por un asistente genérico de OpenAI.
+Eran las siete de la tarde en nuestras oficinas del Paseo de la Castellana en Madrid. Teníamos sobre la mesa el borrador preliminar de un whitepaper sobre transformación digital en el sector bancario europeo, un documento estratégico de 5000 palabras destinado a un cliente del IBEX 35. Le había asignado al modelo un rol ultraespecífico: un socio senior de una consultora Big Four, con un tono analítico, cínico frente a las modas tecnológicas y extremadamente preciso con la jerga regulatoria de la UE. Todo iba perfecto durante los primeros dos bloques. Pero al llegar a la tercera sección, el modelo sufrió una amnesia total de personalidad. De repente, abandonó el tono incisivo y empezó a responder con el clásico entusiasmo robótico de atención al cliente: ¡Claro que sí! Aquí tienes un resumen alegre sobre cómo la nube puede ayudar a tu empres
+
+**A.** El socio senior había muerto, reemplazado por un asistente genérico de OpenAI.
 
 Este problema es el pan nuestro de cada día cuando intentamos redactar documentos extensos con Modelos de Lenguaje Grande (LLMs). Un whitepaper de 5000 palabras nunca se puede generar en un solo comando. Si intentas forzarlo, el modelo colapsa por limitaciones de contexto, diluye su razonamiento y recurre a clichés corporativos vacíos. 
 
 ![How to Chain ChatGPT Prompts for 5000-Word In-Depth Industry Whitepapers Prompt Guide](https://picsum.photos/seed/prompt-mvjz18s1-5-b/1000/550.jpg)
 
-La razón técnica por la que el modelo pierde su personaje a mitad de un proyecto largo se debe a la degradación de la atención en el contexto largo y al sesgo de recencia. A medida que la ventana de conversación acumula miles de tokens, las instrucciones iniciales del sistema (el system prompt donde definiste la personalidad) se van diluyendo en peso matemático frente a los turnos de diálogo recientes. Si en el turno anterior el modelo generó texto genérico, su propia salida refuerza ese patrón estándar.
+La razón técnica por la que el modelo pierde su personaje a mitad de un proyecto largo se debe a la degradación de la atención en el contexto largo y al sesgo de recenci
+
+**A.** A medida que la ventana de conversación acumula miles de tokens, las instrucciones iniciales del sistema (el system prompt donde definiste la personalidad) se van diluyendo en peso matemático frente a los turnos de diálogo recientes. Si en el turno anterior el modelo generó texto genérico, su propia salida refuerza ese patrón estándar.
 
 Para solucionar esto de forma definitiva en entornos de consultoría y estrategia, debemos aplicar una arquitectura de encadenamiento modular basada en artefactos y contextos acotados. Aquí tienes el sistema exacto que utilizamos en nuestras auditorías de IA para mantener la consistencia a lo largo de 5000 palabras.
 
 <div style="border-left: 4px solid #a855f7; padding: 12px 16px; margin: 20px 0; background-color: rgba(168,85,247,0.08); border-radius: 4px; color: #111827;">
 <strong>Consejo del Arquitecto de I
 
-**A:**</strong> Nunca dejes que el modelo escriba el documento de corrido. Divide el whitepaper en 5 bloques lógicos de 1000 palabras y utiliza un archivo de metadatos o memoria de contexto en cada eslabón de la cadena para blindar el tono y los datos cuantitativos.
+**A.** </strong> Nunca dejes que el modelo escriba el documento de corrido. Divide el whitepaper en 5 bloques lógicos de 1000 palabras y utiliza un archivo de metadatos o memoria de contexto en cada eslabón de la cadena para blindar el tono y los datos cuantitativos.
 </div>
 
 Aquí tienes la plantilla maestra que utilizamos para iniciar la cadena de prompts en ChatGPT o Claude (puedes adaptarla en las [Instrucciones Personalizadas] o usarla como bloque inicial):
@@ -54,8 +58,7 @@ Continuamos con la redacción del whitepaper de 5000 palabras. Este es el Módul
 
 Antes de redactar, absorbe el siguiente resumen del Módulo 1 para mantener la continuidad conceptual y narrativ
 
-**a:**
-[Inserta aquí un resumen de 3 líneas del bloque anterior o adjunta el texto previo].
+**A.** [Inserta aquí un resumen de 3 líneas del bloque anterior o adjunta el texto previo].
 
 Mantén exactamente el mismo tono de Director de Práctica Senior analítico y cínico frente a los mitos tecnológicos establecido en el primer bloque. Está prohibido adoptar un tono neutral o motivacional. Desarrolla los siguientes subtemas con rigor técnico...
 ```
@@ -76,4 +79,8 @@ Mantén exactamente el mismo tono de Director de Práctica Senior analítico y c
 
 **Q3.** ¿Cómo puedo evitar que el whitepaper final suene como si hubiera sido escrito por cinco personas diferentes debido al encadenamiento?
 
-**A3.** El secreto es crear un documento maestro de estilo (un mini-estilo de 200 palabras) que contenga reglas estrictas de vocabulario, palabras prohibidas (como "revolucionario", "sinergia", "aprovechar") y la estructura sintáctica preferida. Debes inyectar este mini-estilo obligatoriamente en el encabezado de cada uno de los prompts de la cadena.
+**A3.** El secreto es crear un documento maestro de estilo (un mini-estilo de 200 palabras) que contenga reglas estrictas de vocabulario, palabras prohibidas (como "revolucionario", "sinergia", "aprovechar") y la estructura sintáctica preferid
+
+**A.** Debes inyectar este mini-estilo obligatoriamente en el encabezado de cada uno de los prompts de la caden
+
+**A.**

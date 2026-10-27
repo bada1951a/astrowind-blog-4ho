@@ -61,7 +61,7 @@ Um die Qualität der generierten SVGs weiter zu maximieren und typische Fehlerqu
 
 * **Stil-Konsistenz sichern:**Wenn Sie mehrere Icons für ein Projekt benötigen, speichern Sie die Farbpalette und die gewünschte Strichstärke als**Systemanweisung** in Ihren Claude-Projekteinstellungen ab.
 * **Token-Sparsamkeit:** Verlangen Sie im Prompt explizit sauberen Code ohne unnötige Kommentare, um Token-Limits bei komplexen Pfaden (Paths) nicht zu überschreiten.
-* **Responsive Skalierung:**Achten Sie darauf, dass das Attribut**preserveAspectRatio="xMidYMid meet"** gesetzt ist, damit sich das SVG nahtlos in verschiedene UI-Container einfügt.
+* **Responsive Skalierung:**Achten Sie darauf, dass das Attribut**preserveAspectRatio="xMidYMid meet"**gesetzt ist, damit sich das SVG nahtlos in verschiedene UI-Container einfügt.
 
 <div style="border-left: 4px solid #78350f; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Sicherheitshinweis:</strong> Nutzen Sie vor dem Deployment in der Produktion immer einen SVG-Sanitizer (wie DOMPurify), um sicherzustellen, dass keine unerwünschten Skripte oder Event-Handler in den generierten Code gerutscht sind.
@@ -69,14 +69,14 @@ Um die Qualität der generierten SVGs weiter zu maximieren und typische Fehlerqu
 
 ## 5. Häufig gestellte Fragen (FAQ)
 
-**Q:** Warum nutze ich für SVG-Generierung ausgerechnet Claude Artifacts anstelle von Standard-Chat-Antworten?
+**Q.** Warum nutze ich für SVG-Generierung ausgerechnet Claude Artifacts anstelle von Standard-Chat-Antworten?
 
-**A:** Claude Artifacts öffnet ein separates Vorschaufenster, in dem der SVG-Code direkt als Grafik gerendert wird. So sehen Sie das visuelle Ergebnis sofort, ohne den Code mühsam in eine separate Datei kopieren zu müssen.
+**A.** Claude Artifacts öffnet ein separates Vorschaufenster, in dem der SVG-Code direkt als Grafik gerendert wird. So sehen Sie das visuelle Ergebnis sofort, ohne den Code mühsam in eine separate Datei kopieren zu müssen.
 
-**Q:** Wie verhindere ich, dass Claude trotz des Verbots versehentlich echte Namen in den SVG-Texten verwendet?
+**Q.** Wie verhindere ich, dass Claude trotz des Verbots versehentlich echte Namen in den SVG-Texten verwendet?
 
-**A:** Ergänzen Sie im Prompt eine explizite Negativ-Anweisung wie "Verwende keinerlei Textbeschriftungen im SVG, nutze stattdessen rein visuelle Icons und Symbole." So umgehen Sie das Risiko von Datenlecks komplett.
+**A.** Ergänzen Sie im Prompt eine explizite Negativ-Anweisung wie "Verwende keinerlei Textbeschriftungen im SVG, nutze stattdessen rein visuelle Icons und Symbole." So umgehen Sie das Risiko von Datenlecks komplett.
 
-**Q:** Kann ich bestehende Corporate-Design-Farben in den Prompt integrieren?
+**Q.** Kann ich bestehende Corporate-Design-Farben in den Prompt integrieren?
 
-**A:** Ja, übergeben Sie im Abschnitt "Technische Vorgaben" einfach eine Liste Ihrer exakten Hex-Farbcodes und definieren Sie deren semantische Verwendung (z.B. Primary, Secondary, Background).
+**A.** Ja, übergeben Sie im Abschnitt "Technische Vorgaben" einfach eine Liste Ihrer exakten Hex-Farbcodes und definieren Sie deren semantische Verwendung (z.B. Primary, Secondary, Background).

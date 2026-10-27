@@ -17,8 +17,9 @@ To klasyczny przykład halucynacji danych, z którą codziennie mierzą się pro
 ![Best System Prompts to Stop ChatGPT and Claude from Hallucinating Data Prompt Guide](https://picsum.photos/seed/prompt-mvlbiybv-9-b/1000/550.jpg)
 
 <div style="border-left: 4px solid #bd93f9; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
-Wskazówka architekta AI: Modele LLM nie myślą tak jak ludzie. Nie posiadają bazy prawdy, lecz przewidują kolejne najbardziej prawdopodobne słowo. Jeśli w ich przestrzeni treningowej przeważają stare kody ze StackOverflow, zmyślone API staje się dla nich bardziej naturalne niż aktualna dokumentacja.
-</div>
+Wskazówka architekta AI: Modele LLM nie myślą tak jak ludzie. Nie posiadają bazy prawdy, lecz przewidują kolejne najbardziej prawdopodobne słowo. Jeśli w ich przestrzeni treningowej przeważają stare kody ze StackOverflow, zmyślone API staje się dla nich bardziej naturalne niż aktualna dokumentacj
+
+**A.** </div>
 
 Dlaczego proste prompty zawodzą? Kiedy piszesz zdanie w stylu napisz mi skrypt do web scrapingu, pozwalamy modelowi na pełną swobodę twórczą. Nie definiujemy granic ani źródeł, więc algorytm sięga do najgłębszych zakamarków swojej pamięci i miksuje różne wersje technologiczne. Aby temu zapobiec, musimy zmienić filozofię pisania poleceń, wprowadzając rygorystyczne instrukcje systemowe oraz wymóg weryfikowalności.
 

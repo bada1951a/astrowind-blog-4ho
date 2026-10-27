@@ -87,18 +87,18 @@ To make this truly enterprise-ready for morning briefings or agency client pitch
 
 ####
 
-**Q1:** Does this prompt work on educational or talking-head videos, or only high-production entertainment channels?
+**Q1.** Does this prompt work on educational or talking-head videos, or only high-production entertainment channels?
 
-**A:** It works universally. Whether it is a fast-paced MrBeast style vlog or a calm 20-minute essay by Veritasium, the underlying psychology of retention (open loops, pacing, and cognitive tension) remains identical. The AI will automatically adapt its analysis to fit the genre of the transcript you provide.
-
-####
-
-**Q2:** Which AI model handles this specific reverse-engineering task best?
-
-**A:** Claude 3.5 Sonnet currently leads for marketing and copywriting nuance. However, OpenAI's GPT-4o performs exceptionally well if you append a system instruction telling it to adopt the persona of a veteran YouTube growth consultant.
+**A.** It works universally. Whether it is a fast-paced MrBeast style vlog or a calm 20-minute essay by Veritasium, the underlying psychology of retention (open loops, pacing, and cognitive tension) remains identical. The AI will automatically adapt its analysis to fit the genre of the transcript you provide.
 
 ####
 
-**Q3:** Can I feed the AI a YouTube URL directly instead of a text transcript?
+**Q2.** Which AI model handles this specific reverse-engineering task best?
 
-**A:** While some multimodal models can browse or ingest YouTube links via plugins, pulling the raw text transcript and pasting it directly yields significantly more accurate results. Direct URL scraping often misses subtle timestamps, visual cues embedded in the transcript text, or hits token/rate limits.
+**A.** Claude 3.5 Sonnet currently leads for marketing and copywriting nuance. However, OpenAI's GPT-4o performs exceptionally well if you append a system instruction telling it to adopt the persona of a veteran YouTube growth consultant.
+
+####
+
+**Q3.** Can I feed the AI a YouTube URL directly instead of a text transcript?
+
+**A.** While some multimodal models can browse or ingest YouTube links via plugins, pulling the raw text transcript and pasting it directly yields significantly more accurate results. Direct URL scraping often misses subtle timestamps, visual cues embedded in the transcript text, or hits token/rate limits.

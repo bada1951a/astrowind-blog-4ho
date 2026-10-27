@@ -29,7 +29,7 @@ Du bist ein erfahrener Chefredakteur und Branchenanalyst im Frankfurter Finanz- 
 # Input-Daten
 Them
 
-**a:** [Thema hier einfügen, z.B. Tokenisierung von illiquiden Assets]
+**A.** [Thema hier einfügen, z.B. Tokenisierung von illiquiden Assets]
 Zielgruppe: [Zielgruppe hier einfügen, z.B. C-Level-Entscheider in Banken]
 Kern-Hypothese: [Hypothese hier einfügen]
 

@@ -56,7 +56,9 @@ Du bist ein erfahrener Senior Brand Designer und SVG-Architekt für High-End-Fin
   * Accent Highlight: #d97706 (Helles Bernstein)
 
 # Task Assignment
-Erstelle eine Web-Illustration zum Thema: "[Thema hier einfügen, z.B. Blockchain-Sicherheit im Bankwesen]".
+Erstelle eine Web-Illustration zum Them
+
+**A.** "[Thema hier einfügen, z.B. Blockchain-Sicherheit im Bankwesen]".
 Die Illustration soll folgenden Ton treffen: Seriös, modern, minimalistisch und präzise.
 
 # Output Rules
@@ -81,14 +83,14 @@ Wenn Sie die Massenproduktion von Blog-Inhalten hochfahren, lauern einige klassi
 
 ## 5. Häufig gestellte Fragen (FAQ)
 
-**Q:** Warum bricht Claude manchmal Mitten im SVG-Code ab und wie verhindere ich das?
+**Q.** Warum bricht Claude manchmal Mitten im SVG-Code ab und wie verhindere ich das?
 
-**A:** Komplexe SVG-Pfade erzeugen viele Tokens. Wenn Claude stoppt, schreiben Sie einfach im nächsten Prompt: *"Setze den SVG-Code im bestehenden Artifact exakt an der Stelle fort, an der du aufgehört hast, und schließe das SVG-Tag sauber ab."* Alternativ hilft der Befehl *"Schreibe kompakteren SVG-Code"*.
+**A.** Komplexe SVG-Pfade erzeugen viele Tokens. Wenn Claude stoppt, schreiben Sie einfach im nächsten Prompt: *"Setze den SVG-Code im bestehenden Artifact exakt an der Stelle fort, an der du aufgehört hast, und schließe das SVG-Tag sauber ab."* Alternativ hilft der Befehl *"Schreibe kompakteren SVG-Code"*.
 
-**Q:** Kann ich bestehende Marken-Logos direkt als Referenz in den Prompt einbinden?
+**Q.** Kann ich bestehende Marken-Logos direkt als Referenz in den Prompt einbinden?
 
-**A:** Ja, dank der Multimodalität von Claude können Sie Screenshots oder PNG-Skizzen Ihrer Corporate Identity per Drag-and-Drop in den Chat laden und den Prompt ergänzen mit: *"Analysiere den Stil dieses Bildes und erstelle ein neues SVG im exakt gleichen visuellen Raster."*
+**A.** Ja, dank der Multimodalität von Claude können Sie Screenshots oder PNG-Skizzen Ihrer Corporate Identity per Drag-and-Drop in den Chat laden und den Prompt ergänzen mit: *"Analysiere den Stil dieses Bildes und erstelle ein neues SVG im exakt gleichen visuellen Raster."*
 
-**Q:** Wie skaliere ich diesen Prozess für fünfzig Blogbeiträge gleichzeitig?
+**Q.** Wie skaliere ich diesen Prozess für fünfzig Blogbeiträge gleichzeitig?
 
-**A:** Nutzen Sie Claude Projects, hinterlegen Sie dort den Master-Prompt als dauerhafte Systemanweisung und füttern Sie Claude anschließend tabellarisch mit Ihren Themen via CSV- oder Text-Upload. Lassen Sie sich die Ergebnisse nacheinander als saubere Artifacts ausgeben.
+**A.** Nutzen Sie Claude Projects, hinterlegen Sie dort den Master-Prompt als dauerhafte Systemanweisung und füttern Sie Claude anschließend tabellarisch mit Ihren Themen via CSV- oder Text-Upload. Lassen Sie sich die Ergebnisse nacheinander als saubere Artifacts ausgeben.

@@ -80,4 +80,6 @@ When executing long-form prompt chains, you will inevitably run into edge cases 
 
 **Q3.** How do I prevent hallucinations when generating heavy technical whitepapers?
 
-**A3.** Implement a Retrieval-Augmented Generation (RAG) step or feed verified research notes into the `[CONTEXT INFLUENCE]` block of each prompt in the chain. Restrict the model by adding the instruction: `[CONSTRAINT: Rely exclusively on the provided context notes for all statistical claims. Do not extrapolate unverified data. ]`
+**A3.** Implement a Retrieval-Augmented Generation (RAG) step or feed verified research notes into the `[CONTEXT INFLUENCE]` block of each prompt in the chain. Restrict the model by adding the instruction: `[CONSTRAINT: Rely exclusively on the provided context notes for all statistical claims. Do not extrapolate unverified dat
+
+**A.** ]`

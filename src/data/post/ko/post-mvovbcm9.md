@@ -69,18 +69,18 @@ Generate the production-ready SVG code now, ensuring zero syntax errors and imme
 
 -**아이콘 세트 연속 생성:**여러 개의 아이콘을 한 번에 만들 때는 "Create a grid of 4 icons in a single SVG canvas, separated by 24px spacing"과 같이 캔버스 분할 지시어를 추가하면 일관성 있는 스타일의 세트를 얻을 수 있다.
 -**토큰 절약 및 속도 최적화:**복잡한 일러스트를 요구할 때 AI가 중간에 코드를 끊어먹는(Truncation) 현상이 발생한다면, "Use simple geometric primitives and minimal bezier curves"라는 제약 조건을 추가하여 토큰 소모를 줄여야 한다.
--**수정 요청 패턴:** 결과물이 나온 뒤 전체를 다시 그리게 하지 말고, 특정 레이어만 타겟팅하여 수정하자. 예컨대 "Keep everything the same, but change the fill color of `<g id="background">` to `#F1F5F9`"와 같이 구체적으로 지시하는 것이 현명하다.
+-**수정 요청 패턴:**결과물이 나온 뒤 전체를 다시 그리게 하지 말고, 특정 레이어만 타겟팅하여 수정하자. 예컨대 "Keep everything the same, but change the fill color of `<g id="background">` to `#F1F5F9`"와 같이 구체적으로 지시하는 것이 현명하다.
 
 ## 5. 자주 묻는 질문 (FAQ)
 
-**Q:** Claude Artifacts 창에서 SVG가 깨지거나 아예 빈 화면으로 나오는 이유는 무엇인가요?
+**Q.** Claude Artifacts 창에서 SVG가 깨지거나 아예 빈 화면으로 나오는 이유는 무엇인가요?
 
-**A:** SVG 태그 내부에 허용되지 않는 HTML 속성이 포함되었거나, 뷰박스(`viewBox`) 값이 누락되었을 때 주로 발생합니다. 위의 마스터 프롬프트처럼 `xmlns`와 `viewBox` 규격을 엄격히 제한하는 제어문을 프롬프트에 포함하면 이 현상을 원천 차단할 수 있습니다.
+**A.** SVG 태그 내부에 허용되지 않는 HTML 속성이 포함되었거나, 뷰박스(`viewBox`) 값이 누락되었을 때 주로 발생합니다. 위의 마스터 프롬프트처럼 `xmlns`와 `viewBox` 규격을 엄격히 제한하는 제어문을 프롬프트에 포함하면 이 현상을 원천 차단할 수 있습니다.
 
-**Q:** 생성된 SVG 코드를 피그마(Figma)나 일러스트레이터로 바로 가져와서 편집할 수 있나요?
+**Q.** 생성된 SVG 코드를 피그마(Figma)나 일러스트레이터로 바로 가져와서 편집할 수 있나요?
 
-**A:** 네, 가능합니다. Claude Artifacts 우측 상단의 복사 버튼을 눌러 코드를 복사한 뒤, 확장자가 `.svg`인 파일로 저장하거나 피그마 캔버스에 직접 붙여넣기(Paste as Vector)하면 완전한 레이어 형태의 벡터 패스로 편집할 수 있습니다.
+**A.** 네, 가능합니다. Claude Artifacts 우측 상단의 복사 버튼을 눌러 코드를 복사한 뒤, 확장자가 `.svg`인 파일로 저장하거나 피그마 캔버스에 직접 붙여넣기(Paste as Vector)하면 완전한 레이어 형태의 벡터 패스로 편집할 수 있습니다.
 
-**Q:** 프롬프트에 색상 코드를 지정해주지 않으면 어떤 색상으로 출력되나요?
+**Q.** 프롬프트에 색상 코드를 지정해주지 않으면 어떤 색상으로 출력되나요?
 
-**A:** 별도의 브랜드 컬러를 지정하지 않으면 AI는 현재 지정된 디자인 테마의 기본 팔레트(예: Graphite 계열의 모던한 그레이 및 슬레이트 톤)를 임의로 조합하여 가독성이 높은 표준적인 웹 그래픽을 구성합니다. 일관된 브랜드 아이덴티티를 유지하려면 반드시 HEX 코드를 함께 입력하는 것을 권장합니다.
+**A.** 별도의 브랜드 컬러를 지정하지 않으면 AI는 현재 지정된 디자인 테마의 기본 팔레트(예: Graphite 계열의 모던한 그레이 및 슬레이트 톤)를 임의로 조합하여 가독성이 높은 표준적인 웹 그래픽을 구성합니다. 일관된 브랜드 아이덴티티를 유지하려면 반드시 HEX 코드를 함께 입력하는 것을 권장합니다.

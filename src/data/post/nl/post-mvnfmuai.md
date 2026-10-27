@@ -51,7 +51,7 @@ Om te voorkomen dat je tijd verspilt aan herhalingen, kun je deze extra regels t
 
 * **Token Besparing:** Vraag Claude om de SVG direct in een gecomprimeerd formaat te leveren zonder overbodige metadata van designprogramma's zoals Illustrator of Inkscape.
 * **Toegankelijkheid:** Voeg altijd de eis toe om `<title>` en `<desc>` tags binnen de SVG op te nemen voor optimale screenreader-compatibiliteit.
-* **Kleurconsistentie:** Definieer vooraf een beperkt kleurenpalet (bijvoorbeeld maximaal drie hex-codes) zodat de gegenereerde illustraties naadloos aansluiten bij je bestaande webapplicatie.
+* **Kleurconsistentie:**Definieer vooraf een beperkt kleurenpalet (bijvoorbeeld maximaal drie hex-codes) zodat de gegenereerde illustraties naadloos aansluiten bij je bestaande webapplicatie.
 
 <div style="border-left: 4px solid #ffffff; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Pro-Tip:</strong> Test de gegenereerde SVG altijd direct in je browser via de Artifacts preview om te controleren of paden correct sluiten en er geen ongewenste clipping optreedt.
@@ -59,14 +59,14 @@ Om te voorkomen dat je tijd verspilt aan herhalingen, kun je deze extra regels t
 
 ## 5. Veelgestelde Vragen
 
-**Q:** Kan ik deze prompt ook gebruiken in ChatGPT of Gemini?
+**Q.** Kan ik deze prompt ook gebruiken in ChatGPT of Gemini?
 
-**A:** Hoewel ChatGPT en Gemini uitstekende tekst- en codegeneratoren zijn, mist het specifieke interactieve "Artifacts" venster van Claude. Je kunt de code wel genereren in andere tools, maar Claude biedt de handigste live preview ervaring voor directe visuele iteraties.
+**A.** Hoewel ChatGPT en Gemini uitstekende tekst- en codegeneratoren zijn, mist het specifieke interactieve "Artifacts" venster van Claude. Je kunt de code wel genereren in andere tools, maar Claude biedt de handigste live preview ervaring voor directe visuele iteraties.
 
-**Q:** Hoe zorg ik ervoor dat de gegenereerde SVG precies past bij onze merkidentiteit?
+**Q.** Hoe zorg ik ervoor dat de gegenereerde SVG precies past bij onze merkidentiteit?
 
-**A:** Voeg in de master prompt altijd specifieke hex-codes en stijlelementen toe (zoals "gebruik strakke hoeken en een pikteken-dikte van 2px"). Hoe specifieker je bent over de visuele regels, hoe nauwkeuriger het resultaat.
+**A.** Voeg in de master prompt altijd specifieke hex-codes en stijlelementen toe (zoals "gebruik strakke hoeken en een pikteken-dikte van 2px"). Hoe specifieker je bent over de visuele regels, hoe nauwkeuriger het resultaat.
 
-**Q:** Wat moet ik doen als de SVG niet goed schaalt op mobiele schermen?
+**Q.** Wat moet ik doen als de SVG niet goed schaalt op mobiele schermen?
 
-**A:** Controleer of de prompt expliciet vraagt om een correcte `viewBox` en vermijd hardcoded `width` en `height` attributen in pixels binnen het hoofdelement, zodat CSS de sizing kan overnemen.
+**A.** Controleer of de prompt expliciet vraagt om een correcte `viewBox` en vermijd hardcoded `width` en `height` attributen in pixels binnen het hoofdelement, zodat CSS de sizing kan overnemen.

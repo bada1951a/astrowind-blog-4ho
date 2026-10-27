@@ -10,7 +10,9 @@ theme: "Electric Cyan Speed"
 
 ## 1. Tình huống khẩn cấp do AI trả lời ảo giác và sai lệch
 
-Buổi họp sáng thứ Hai tại tòa nhà văn phòng công nghệ cao ở Quận 1, TP. Hồ Chí Minh diễn ra trong bầu không khí khá căng thẳng. Trưởng phòng chiến lược vừa đặt xấp tài liệu lên bàn với vẻ mặt không mấy vui vẻ. Sắp tới giờ chót nộp báo cáo phân tích thị trường cho đối tác chiến lược, nhưng khi gom kết quả từ các thành viên trong team lại, sự chênh lệch chất lượng dữ liệu thực sự làm người ta hoảng hốt. Người thì dùng ChatGPT ra số liệu quá đẹp nhưng hoàn toàn không có thật, người thì dùng Claude viết văn phong quá bay bổng, không khớp với số liệu thực tế của công ty. Tình trạng này kéo dài khiến cả bộ phận mất rất nhiều thời gian kiểm tra lại từng con số, thậm chí suýt ký hợp đồng dựa trên những số liệu bị AIa tự bịa ra. Lúc này, cả phòng nhận ra việc mỗi người tự gõ một kiểu prompt ngẫu nhiên đã đẩy đội ngũ vào thế tiến thoái lưỡng nan, và chúng ta cần ngay một bộ khung system prompt chuẩn hóa toàn cục để ép các mô hình AI này phải bám sát dữ liệu thật.
+Buổi họp sáng thứ Hai tại tòa nhà văn phòng công nghệ cao ở Quận 1, TP. Hồ Chí Minh diễn ra trong bầu không khí khá căng thẳng. Trưởng phòng chiến lược vừa đặt xấp tài liệu lên bàn với vẻ mặt không mấy vui vẻ. Sắp tới giờ chót nộp báo cáo phân tích thị trường cho đối tác chiến lược, nhưng khi gom kết quả từ các thành viên trong team lại, sự chênh lệch chất lượng dữ liệu thực sự làm người ta hoảng hốt. Người thì dùng ChatGPT ra số liệu quá đẹp nhưng hoàn toàn không có thật, người thì dùng Claude viết văn phong quá bay bổng, không khớp với số liệu thực tế của công ty. Tình trạng này kéo dài khiến cả bộ phận mất rất nhiều thời gian kiểm tra lại từng con số, thậm chí suýt ký hợp đồng dựa trên những số liệu bị AIa tự bịa r
+
+**A.** Lúc này, cả phòng nhận ra việc mỗi người tự gõ một kiểu prompt ngẫu nhiên đã đẩy đội ngũ vào thế tiến thoái lưỡng nan, và chúng ta cần ngay một bộ khung system prompt chuẩn hóa toàn cục để ép các mô hình AI này phải bám sát dữ liệu thật.
 
 <div style="border-left: 4px solid #06b6d4; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 Cảnh báo kỹ thuật: AI tạo sinh như ChatGPT hay Claude được thiết kế để tạo ra nội dung có vẻ ngoài logic chứ không phải để kiểm tra sự thật. Nếu thiếu khung giới hạn ngữ cảnh và yêu cầu trích xuất nguồn, chúng sẽ tự động bịa ra số liệu để làm vừa lòng người dùng.
@@ -53,4 +55,6 @@ Mẹo tối ưu tốc độ: Khi làm việc với các văn bản dài, hãy k�
 
 **Q3.** Đoạn prompt chống ảo giác này có làm giảm tốc độ xử lý hoặc độ mượt mà của văn bản do AI tạo ra hay không?
 
-**A3.** Nó có thể khiến AI phản hồi ngắn gọn hơn và từ chối các yêu cầu lan man, nhưng điều này hoàn toàn có lợi trong môi trường doanh nghiệp. Thay vì nhận về những đoạn văn dài hoa mỹ nhưng sai sự thật, đội ngũ sẽ nhận lại các kết quả súc tích, trung thực và có độ chính xác cao, giúp tiết kiệm đáng kể thời gian biên tập và chỉnh sửa.
+**A3.** Nó có thể khiến AI phản hồi ngắn gọn hơn và từ chối các yêu cầu lan man, nhưng điều này hoàn toàn có lợi trong môi trường doanh nghiệp. Thay vì nhận về những đoạn văn dài hoa mỹ nhưng sai sự thật, đội ngũ sẽ nhận lại các kết quả súc tích, trung thực và có độ chính xác cao, giúp tiết kiệm đáng kể thời gian biên tập và chỉnh sử
+
+**A.**

@@ -68,11 +68,11 @@ Dynamische Persona-Injektion und Token-Optimierung sind die nächsten Schritte f
 
 ## 5. Häufig gestellte Fragen (FAQ)
 
-**Q1.**Warum fügt Claude trotz strikter Verbote manchmal Markdown-Codeblöcke um das JSON hinzu?
+**Q1.** Warum fügt Claude trotz strikter Verbote manchmal Markdown-Codeblöcke um das JSON hinzu?
 
 **A1.** Sprachmodelle sind in ihren Trainingsdaten massiv darauf optimiert, JSON innerhalb von Markdown-Codeblöcken darzustellen, da dies für Menschen am besten lesbar ist. Wenn Sie dieses Verhalten komplett unterbinden möchten, müssen Sie im Prompt explizit definieren, dass selbst dreifache Backticks untersagt sind und die Antwort direkt mit der geschweiften Klammer `{` beginnen muss. Ergänzend hilft es, die Systemrolle als reine API-Schnittstelle zu definieren, die keine visuellen Formatierungen für menschliche Betrachter generiert.
 
-**Q2.**Wie skaliere ich diese Prompt-Architektur für komplexe SVG-Illustrationen mit dynamischen Daten?
+**Q2.** Wie skaliere ich diese Prompt-Architektur für komplexe SVG-Illustrationen mit dynamischen Daten?
 
 **A2.** Für komplexe SVG-Illustrationen sollten Sie das JSON-Schema so erweitern, dass es modulare Koordinaten, Farbpaletten und Pfad-Definitionen trennt, anstatt den gesamten SVG-Code als unstrukturierte Monolith-Zeichenkette zu übergeben. Dadurch kann das Modell logische Teilstücke präziser berechnen und verändern. Nutzen Sie zudem Few-Shot-Beispiele mit validen, minimalistischen SVG-Pfaden, um dem Modell die exakten Designvorgaben und Viewbox-Dimensionen zu demonstrieren.
 

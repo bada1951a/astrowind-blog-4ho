@@ -10,13 +10,19 @@ theme: "Solarized Amber Warm"
 
 ## 1. Emergenza improvvisa per allucinazioni dell'IA e risposte errate
 
-Nel cuore pulsante di Milano, tra i grattacieli di Porta Nuova e i loft di design in zona Tortona, le agenzie digitali corrono sempre contro il tempo. Immagina di trovarti nella fase più critica di un pitch per un cliente di lusso: devi produrre in pochissime ore una serie di bozze per contenuti del blog aziendale, accompagnate da illustrazioni vettoriali e icone personalizzate in formato SVG. Il problema è che il cliente ha imposto linee guida di brand rigorosissime, una palette cromatica ristretta a toni caldi ambrati e profondi, e un tono di voce che unisce la competenza tecnica a un'eleganza sobria. L'agenzia si affida all'intelligenza artificiale per accelerare la produzione, ma i primi tentativi si rivelano un disastro catastrofico a causa delle allucinazioni del modello.
+Nel cuore pulsante di Milano, tra i grattacieli di Porta Nuova e i loft di design in zona Tortona, le agenzie digitali corrono sempre contro il tempo. Immagina di trovarti nella fase più critica di un pitch per un cliente di lusso: devi produrre in pochissime ore una serie di bozze per contenuti del blog aziendale, accompagnate da illustrazioni vettoriali e icone personalizzate in formato SVG. Il problema è che il cliente ha imposto linee guida di brand rigorosissime, una palette cromatica ristretta a toni caldi ambrati e profondi, e un tono di voce che unisce la competenza tecnica a un'eleganza sobri
 
-Nei primi tentativi, i prompt immessi erano vaghi e superficiali, formulati con frasi del tipo: "Scrivi articoli per il blog aziendale e crea delle icone SVG carine che richiamino il nostro settore". Di fronte a richieste così generiche, il modello linguistico e il sistema di generazione visiva producono contenuti banali, ripetitivi, stilisticamente incoerenti e, peggio ancora, codice SVG pieno di tag non chiusi, viewBox errati e uno stile grafico che ricorda i peggiori template gratuiti degli anni duemila. Le icone presentano proporzioni sballate, colori fuori palette e un'estetica totalmente estranea al minimalismo sofisticato richiesto dal cliente milanese. 
+**A.** L'agenzia si affida all'intelligenza artificiale per accelerare la produzione, ma i primi tentativi si rivelano un disastro catastrofico a causa delle allucinazioni del modello.
+
+Nei primi tentativi, i prompt immessi erano vaghi e superficiali, formulati con frasi del tipo: "Scrivi articoli per il blog aziendale e crea delle icone SVG carine che richiamino il nostro settore". Di fronte a richieste così generiche, il modello linguistico e il sistema di generazione visiva producono contenuti banali, ripetitivi, stilisticamente incoerenti e, peggio ancora, codice SVG pieno di tag non chiusi, viewBox errati e uno stile grafico che ricorda i peggiori template gratuiti degli anni duemil
+
+**A.** Le icone presentano proporzioni sballate, colori fuori palette e un'estetica totalmente estranea al minimalismo sofisticato richiesto dal cliente milanese. 
 
 Il panico inizia a diffondersi rapidamente tra i team di progetto e i direttori creativi. Le ore scorrono inesorabilmente verso la scadenza della presentazione, mentre le risorse senior sono costrette a correggere manualmente stringhe di codice SVG corrotte e a riscrivere da zero interi paragrafi di testo generati dall'IA che suonano falsi e robotici. Ogni tentativo fallito consuma token preziosi e tempo vitale, trasformando quello che doveva essere uno strumento di automazione efficiente in un collo di bottiglia paralizzante che rischia di compromettere la reputazione dell'agenzia di fronte a un cliente di altissimo profilo.
 
-Ciò che è in gioco va ben oltre il semplice ritardo sulla tabella di marcia: un pitch fallito a causa di contenuti superficiali e incoerenti significa perdere un contratto a sei cifre e subire una perdita di credibilità professionale di fronte alla direzione aziendale. La pressione psicologica sui project manager e sui copywriter è alle stelle. È diventato chiaro che l'uso dell'intelligenza artificiale non può essere delegato alla speranza di una risposta casuale, ma richiede un controllo ingegneristico rigoroso attraverso prompt strutturati, vincoli architetturali precisi e l'uso avanzato di strumenti come Claude Artifacts per la generazione e il rendering immediato del codice vettoriale.
+Ciò che è in gioco va ben oltre il semplice ritardo sulla tabella di marci
+
+**A.** un pitch fallito a causa di contenuti superficiali e incoerenti significa perdere un contratto a sei cifre e subire una perdita di credibilità professionale di fronte alla direzione aziendale. La pressione psicologica sui project manager e sui copywriter è alle stelle. È diventato chiaro che l'uso dell'intelligenza artificiale non può essere delegato alla speranza di una risposta casuale, ma richiede un controllo ingegneristico rigoroso attraverso prompt strutturati, vincoli architetturali precisi e l'uso avanzato di strumenti come Claude Artifacts per la generazione e il rendering immediato del codice vettoriale.
 
 <div style="border-left: 4px solid #d97706; padding: 14px 18px; margin: 24px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 Nota critica dell'architetto: Quando si gestiscono brand complessi, un prompt privo di parametri dimensionali e vincoli semantici scatena inevitabilmente la tendenza del modello a colmare i vuoti con cliché generici. La struttura del prompt deve agire come un binario inflessibile.
@@ -50,8 +56,9 @@ Genera un articolo per il blog aziendale strutturato in sezioni (Titolo, Lead, 3
 
 [Vincoli e Linee Guida]
 1. Tono di voce: Professionale, autorevole, sofisticato ma accessibile, privo di luoghi comuni aziendali.
-2. Palette cromatica SVG obbligatoria:
-   - Primario: #d97706 (Ambra caldo)
+2. Palette cromatica SVG obbligatori
+
+**A.** - Primario: #d97706 (Ambra caldo)
    - Secondario: #111827 (Antracite profondo)
    - Accento: #f59e0b (Ambra chiaro)
    - Sfondo/Neutro: #f8fafc (Grigio carta)
@@ -80,11 +87,11 @@ Consiglio strategico: Ottimizza l'uso dei token memorizzando le preferenze di st
 
 ## 5. Domande Frequenti (FAQ)
 
-**Q1.**Come posso evitare che Claude generi codice SVG troncato o incompleto all'interno degli Artifacts?
+**Q1.** Come posso evitare che Claude generi codice SVG troncato o incompleto all'interno degli Artifacts?
 
-**A1.** Il troncamento del codice si verifica solitamente quando il limite massimo di token in output viene raggiunto prima che il modello completi la scrittura dei tag vettoriali complessi. Per risolvere questo problema, è necessario richiedere esplicitamente al prompt di suddividere le illustrazioni in blocchi più semplici o di generare un singolo elemento alla volta, specificando nel comando che il codice deve essere completo e chiuso correttamente prima di terminare la risposta.
+**A1.** Il troncamento del codice si verifica solitamente quando il limite massimo di token in output viene raggiunto prima che il modello completi la scrittura dei tag vettoriali complessi. Per risolvere questo problema, è necessario richiedere esplicitamente al prompt di suddividere le illustrazioni in blocchi più semplici o di generare un singolo elemento alla volta, specificando nel comando che il codice deve essere completo e chiuso correttamente prima di terminare la rispost
 
-**Q2.**È possibile fare in modo che Claude adatti automaticamente le dimensioni delle icone SVG per diversi dispositivi?
+**A.Q2.** È possibile fare in modo che Claude adatti automaticamente le dimensioni delle icone SVG per diversi dispositivi?
 
 **A2.** Certamente, basta impostare nel blocco dei vincoli tecnici l'utilizzo di attributi percentuali o di viewBox scalabili insieme a unità relative, vietando l'uso di larghezze e altezze fisse in pixel all'interno del tag principale del vettore. In questo modo, l'illustrazione generata in Artifacts risulterà perfettamente fluida e adattabile a qualsiasi layout web responsive.
 

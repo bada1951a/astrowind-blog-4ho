@@ -10,10 +10,16 @@ theme: "Mint Fresh Engineering"
 
 ## 1. Emergenza improvvisa per allucinazioni dell'IA e risposte errate
 
-Erano le 17:30 in uno studio di design in zona Brera a Milano. Avevamo una scadenza critica: il cliente ci aveva appena chiesto di inserire nel nuovo portale e-commerce una serie di icone personalizzate e un'illustrazione hero in stile flat design, coerenti con la nostra palette aziendale color menta. Peccato che il nostro illustratore fosse in malattia e i classici siti di stock offrissero solo grafica trita e ritrutta che stonava con il nostro layout. Cercando una soluzione rapida, ho aperto Claude e ho chiesto un generico "disegna un'icona SVG per la spedizione". Il risultato? Un codice sporco, tag troncati a metà, e una grafica che sembrava uscita da un clipart degli anni '90. Il cliente aspettava il prototipo interattivo per la mattina dopo, e noi eravamo bloccati a debuggare codice SVG illeggibile generato a casaccio dall'intelligenza artificiale.
+Erano le 17:30 in uno studio di design in zona Brera a Milano. Avevamo una scadenza critic
+
+**A.** il cliente ci aveva appena chiesto di inserire nel nuovo portale e-commerce una serie di icone personalizzate e un'illustrazione hero in stile flat design, coerenti con la nostra palette aziendale color ment
+
+**A.** Peccato che il nostro illustratore fosse in malattia e i classici siti di stock offrissero solo grafica trita e ritrutta che stonava con il nostro layout. Cercando una soluzione rapida, ho aperto Claude e ho chiesto un generico "disegna un'icona SVG per la spedizione". Il risultato? Un codice sporco, tag troncati a metà, e una grafica che sembrava uscita da un clipart degli anni '90. Il cliente aspettava il prototipo interattivo per la mattina dopo, e noi eravamo bloccati a debuggare codice SVG illeggibile generato a casaccio dall'intelligenza artificiale.
 
 <div style="border-left: 4px solid #059669; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
-<strong>La svolta operativa:</strong> Smettere di trattare l'IA come un semplice motore di ricerca e iniziare a sfruttare <strong>Claude Artifacts</strong> insieme a un prompt strutturato per il codice vettoriale. Invece di chiedere un disegno astratto, ho impostato una struttura basata su coordinate viewBox precise, tag semantici e proprietà CSS inline, ottenendo file SVG scalabili, puliti e pronti per il web in meno di sessanta secondi.
+<strong>La svolta operativ
+
+**A.** </strong> Smettere di trattare l'IA come un semplice motore di ricerca e iniziare a sfruttare <strong>Claude Artifacts</strong> insieme a un prompt strutturato per il codice vettoriale. Invece di chiedere un disegno astratto, ho impostato una struttura basata su coordinate viewBox precise, tag semantici e proprietà CSS inline, ottenendo file SVG scalabili, puliti e pronti per il web in meno di sessanta secondi.
 </div>
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvovcj1g-6-b/1000/550.jpg)
@@ -55,8 +61,9 @@ Sei un Senior UI/UX Designer ed esperto di grafica vettoriale SVG. Il tuo compit
 
 2. Restituisci esclusivamente il codice SVG ottimizzato, privo di commenti superflui o tag HTML esterni.
 
-3. Assicurati che tutti i tracciati siano chiusi correttamente e scalabili su qualsiasi schermo Retina.
-```
+3. Assicurati che tutti i tracciati siano chiusi correttamente e scalabili su qualsiasi schermo Retin
+
+**A.** ```
 
 ## 4. Avvertenze e suggerimenti dell'architetto di prompt
 
@@ -64,7 +71,7 @@ Quando lavori con i vettori generati dall'intelligenza artificiale, tieni a ment
 
 - **Ottimizzazione del peso:**Chiedi sempre a Claude di rimuovere i metadati inutili (come attributi `xml:space` o ID superflui) per mantenere il file SVG leggero per le performance del sito web.
 -**Varianti di stato:** Puoi duplicare il prompt chiedendo una versione in stato *hover* o *active*, modificando semplicemente il parametro della palette colori nel prompt successivo.
-- **Gestione dei gradienti:** Se l'illustrazione richiede sfumature, specifica esplicitamente l'uso di `<linearGradient>` con ID unici per evitare conflitti nel DOM se inserisci più SVG nella stessa pagina HTML.
+- **Gestione dei gradienti:**Se l'illustrazione richiede sfumature, specifica esplicitamente l'uso di `<linearGradient>` con ID unici per evitare conflitti nel DOM se inserisci più SVG nella stessa pagina HTML.
 
 <div style="border-left: 4px solid #059669; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Consiglio Pro:</strong> Se noti che Claude taglia il codice a metà perché ha raggiunto il limite di token in output, scrivi semplicemente nel messaggio successivo: <em>"Riprendi esattamente dall'ultimo tag chiuso senza ripetere il codice precedente"</em>.
@@ -72,14 +79,14 @@ Quando lavori con i vettori generati dall'intelligenza artificiale, tieni a ment
 
 ## 5. Domande Frequenti (FAQ)
 
-**Q:** Posso usare questo prompt anche su ChatGPT o Gemini?
+**Q.** Posso usare questo prompt anche su ChatGPT o Gemini?
 
-**A:** Puoi usarlo, ma l'esperienza ottimale si ha con Claude grazie ad Artifacts, che permette di visualizzare l'anteprima grafica in tempo reale e di copiare il codice con un solo clic.
+**A.** Puoi usarlo, ma l'esperienza ottimale si ha con Claude grazie ad Artifacts, che permette di visualizzare l'anteprima grafica in tempo reale e di copiare il codice con un solo clic.
 
-**Q:** Come posso adattare i colori generati dal prompt alla palette del mio cliente?
+**Q.** Come posso adattare i colori generati dal prompt alla palette del mio cliente?
 
-**A:** È sufficiente sostituire i codici esadecimali indicati nella sezione palette del master prompt con quelli ufficiali del brand del tuo cliente prima di inviare la richiesta all'IA.
+**A.** È sufficiente sostituire i codici esadecimali indicati nella sezione palette del master prompt con quelli ufficiali del brand del tuo cliente prima di inviare la richiesta all'I
 
-**Q:** Il codice SVG generato è sicuro e pronto per la produzione?
+**A.Q.** Il codice SVG generato è sicuro e pronto per la produzione?
 
-**A:** Sì, se utilizzi i vincoli di pulizia del codice presenti nel prompt. È comunque buona norma passare il codice SVG attraverso un tool di pulizia rapida come SVGO prima di caricarlo sul server di produzione.
+**A.** Sì, se utilizzi i vincoli di pulizia del codice presenti nel prompt. È comunque buona norma passare il codice SVG attraverso un tool di pulizia rapida come SVGO prima di caricarlo sul server di produzione.

@@ -76,11 +76,11 @@ Daarnaast is het toepassen van geavanceerde chaining-technieken essentieel voor 
 
 ## 5. Veelgestelde Vragen (FAQ)
 
-**Q1.**Waarom genereert Claude soms onvolledige SVG-code of breekt de output halverwege af tijdens het gebruik van Artifacts?
+**Q1.** Waarom genereert Claude soms onvolledige SVG-code of breekt de output halverwege af tijdens het gebruik van Artifacts?
 
 **A1.** Dit wordt meestal veroorzaakt doordat de maximale tokenlimiet voor de output per generatierun wordt overschreden, of doordat het model te complex ontwerpt binnen een enkele prompt. Om dit te verhelpen, kun je de complexiteit opsplitsen door te vragen om een modulaire opbouw met `<defs>` en losse componenten, of door de `max_tokens` parameter expliciet hoger in te stellen indien de interface dit toestaat.
 
-**Q2.**Hoe zorg ik ervoor dat de gegenereerde SVG-iconen naadloos aansluiten bij de huisstijl van mijn bedrijf op de Zuidas?
+**Q2.** Hoe zorg ik ervoor dat de gegenereerde SVG-iconen naadloos aansluiten bij de huisstijl van mijn bedrijf op de Zuidas?
 
 **A2.** Je bereikt dit door in de `[Context]` en `[Objective]` secties van de master prompt strenge hex-kleurcodes en specifieke ontwerpregels mee te nemen. Door te verplichten dat het model alleen de opgegeven kleurtinten gebruikt en te kiezen voor een minimalistische stijlaanduiding, voorkom je dat het model eigenmachtig afwijkende of schreeuwerige kleuren toevoegt.
 

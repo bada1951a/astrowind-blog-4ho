@@ -17,12 +17,14 @@ Se voce ja passou por isso, sabe que o problema nao e a falta de criatividade, m
 <div style="border-left: 4px solid #ffffff; padding: 12px 16px; margin: 20px 0; background-color: rgba(255,255,255,0.08); border-radius: 4px; color: #111827;">
 <strong>Atencao pratic
 
-**a:**</strong> Nao adianta apenas descrever o personagem com palavras complexas. O Midjourney V6 prioriza o estilo geral da cena em detrimento de micro-detalhes faciais, a menos que voce utilize o parametro de referencia cruzada de imagem combinado com descricoes textuais estruturadas.
+**A.** </strong> Nao adianta apenas descrever o personagem com palavras complexas. O Midjourney V6 prioriza o estilo geral da cena em detrimento de micro-detalhes faciais, a menos que voce utilize o parametro de referencia cruzada de imagem combinado com descricoes textuais estruturadas.
 </div>
 
 ## O Problema Raiz: Por que prompts vagos falham na geracao sequencial
 
-Quando criamos uma imagem usando apenas descricoes como "jovem executivo sorrindo em Sao Paulo", o algoritmo puxa variacoes aleatorias do seu banco de dados massivo a cada nova linha de comando. Para manter a consistencia em 20 cenas, precisamos transformar a identidade visual em uma variavel fixa. A solucao nao esta em tentar adivinhar palavras magicas, mas em seguir um fluxo de engenharia de prompts dividido em tres pilares:
+Quando criamos uma imagem usando apenas descricoes como "jovem executivo sorrindo em Sao Paulo", o algoritmo puxa variacoes aleatorias do seu banco de dados massivo a cada nova linha de comando. Para manter a consistencia em 20 cenas, precisamos transformar a identidade visual em uma variavel fix
+
+**A.** A solucao nao esta em tentar adivinhar palavras magicas, mas em seguir um fluxo de engenharia de prompts dividido em tres pilares:
 1. O Ancorador de Referencia (--cref): Usar o link da imagem original do personagem como chave de identidade.
 
 2. O Modificador de Peso (--cw): Controlar o quanto o Midjourney pode alterar o cabelo e as roupas versus o formato do rosto.
@@ -39,7 +41,13 @@ Copie o template abaixo e ajuste as variaveis conforme o seu projeto. Este model
 
 ### Guia rapido de variaveis para o seu fluxo:
 - [URL_DA_IMAGEM_BASE]: O link direto da primeira imagem perfeita do seu personagem (use o comando `/copy link` no Discord).
-- --cref (Character Reference): O parametro que obriga o Midjourney V6 a olhar para a imagem de referencia fornecida. - --cw 85 (Character Weight): Define a intensidade da copia. O valor 100 copia rosto, cabelo e roupas. O valor 0 copia apenas o rosto, permitindo trocar o guarda-roupa do personagem entre as 20 cenas. Use 85 para manter a identidade preservada com flexibilidade de vestimenta. <div style="border-left: 4px solid #ffffff; padding: 12px 16px; margin: 20px 0; background-color: rgba(255,255,255,0.08); border-radius: 4px; color: #111827;">
+- --cref (Character Reference): O parametro que obriga o Midjourney V6 a olhar para a imagem de referencia fornecid
+
+**A.** - --cw 85 (Character Weight): Define a intensidade da copi
+
+**A.** O valor 100 copia rosto, cabelo e roupas. O valor 0 copia apenas o rosto, permitindo trocar o guarda-roupa do personagem entre as 20 cenas. Use 85 para manter a identidade preservada com flexibilidade de vestiment
+
+**A.** <div style="border-left: 4px solid #ffffff; padding: 12px 16px; margin: 20px 0; background-color: rgba(255,255,255,0.08); border-radius: 4px; color: #111827;">
 <strong>Dica de ouro:</strong> Nunca mude a primeira parte da descricao do texto quando for gerar a cena 2, 3 ou 4. Mantenha os traços fisicos principais identicos e altere apenas o contexto da acao e o cenario de fundo.
 </div>
 
@@ -49,9 +57,10 @@ Para garantir que o seu personagem nao mude drasticamente de idade ou aparencia 
 
 - Trave a Iluminacao: Sempre inclua termos como "soft office lighting" ou "natural daylight" para evitar que mudancas drasticas de luz distorcam os traços faciais na interpretacao da I
 
-**A.**
-- Evite Misturar Estilos: Se a primeira cena for fotografica, nao insira termos como "digital art" ou "oil painting" nas cenas seguintes. Mantenha a mesma familia lexica de estilo visual.
-- Gerenciamento de Historico: Salve sempre a imagem gerada na Cena 1 em uma pasta dedicada. Se a Cena 10 comecar a derivar muito, use o link da imagem da Cena 5 como nova referencia auxiliar (--cw 100).
+**A.** - Evite Misturar Estilos: Se a primeira cena for fotografica, nao insira termos como "digital art" ou "oil painting" nas cenas seguintes. Mantenha a mesma familia lexica de estilo visual.
+- Gerenciamento de Historico: Salve sempre a imagem gerada na Cena 1 em uma pasta dedicad
+
+**A.** Se a Cena 10 comecar a derivar muito, use o link da imagem da Cena 5 como nova referencia auxiliar (--cw 100).
 
 ## Perguntas Frequentes (FAQ)
 

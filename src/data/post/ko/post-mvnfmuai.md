@@ -74,14 +74,14 @@ You are an expert Senior UI/UX Illustrator and Frontend Developer specializing i
 
 ## 5. 자주 묻는 질문 (FAQ)
 
-**Q:** Claude Artifacts로 생성된 SVG 파일을 웹 개발자에게 바로 전달해도 되나요?
+**Q.** Claude Artifacts로 생성된 SVG 파일을 웹 개발자에게 바로 전달해도 되나요?
 
-**A:** 네, 그렇습니다. Artifacts 패널 우측 상단의 코드 보기(Code view)를 통해 순수 SVG 마크업 코드를 원클릭으로 복사할 수 있으며, 리액트(React) 컴포넌트나 일반 HTML 파일에 즉시 삽입할 수 있습니다.
+**A.** 네, 그렇습니다. Artifacts 패널 우측 상단의 코드 보기(Code view)를 통해 순수 SVG 마크업 코드를 원클릭으로 복사할 수 있으며, 리액트(React) 컴포넌트나 일반 HTML 파일에 즉시 삽입할 수 있습니다.
 
-**Q:** 디자인 툴(Figma나 Illustrator)로 가져가서 수정할 수도 있나요?
+**Q.** 디자인 툴(Figma나 Illustrator)로 가져가서 수정할 수도 있나요?
 
-**A:** 물론입니다. 복사한 SVG 코드를 `.svg` 파일로 저장하거나 피그마(Figma) 캔버스에 드래그 앤 드롭으로 붙여넣으면, 패스(Path) 단위로 완벽하게 분해되어 디자이너가 후가공을 할 수 있습니다.
+**A.** 물론입니다. 복사한 SVG 코드를 `.svg` 파일로 저장하거나 피그마(Figma) 캔버스에 드래그 앤 드롭으로 붙여넣으면, 패스(Path) 단위로 완벽하게 분해되어 디자이너가 후가공을 할 수 있습니다.
 
-**Q:** 무료 계정에서도 이 기능을 쓸 수 있나요?
+**Q.** 무료 계정에서도 이 기능을 쓸 수 있나요?
 
-**A:** Claude의 Artifacts 기능은 무료 플랜과 유료 플랜(Pro, Team) 모두에서 지원되나, 대용량 컨텍스트 처리 및 복잡한 벡터 연산의 속도와 안정성을 고려할 때 업무 환경에서는 Pro 플랜 이상을 권장합니다.
+**A.** Claude의 Artifacts 기능은 무료 플랜과 유료 플랜(Pro, Team) 모두에서 지원되나, 대용량 컨텍스트 처리 및 복잡한 벡터 연산의 속도와 안정성을 고려할 때 업무 환경에서는 Pro 플랜 이상을 권장합니다.

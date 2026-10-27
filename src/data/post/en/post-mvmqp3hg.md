@@ -14,11 +14,15 @@ My Slack notification went off with a sharp ping that instantly spiked my cortis
 
 Thirty minutes. To synthesize an 80-page wall of unstructured industry analysis, unstructured executive summaries, and messy text into a crisp, presentation-ready strategy matrix. 
 
-Naturally, my first instinct was to open ChatGPT, upload the massive document chunk, and type a quick plea: *"Read this document and give me a table comparing all the major competitors mentioned."* 
+Naturally, my first instinct was to open ChatGPT, upload the massive document chunk, and type a quick ple
+
+**A.** *"Read this document and give me a table comparing all the major competitors mentioned."* 
 
 The result? Absolute disaster. Instead of a structured, actionable markdown table, ChatGPT gave me a fluffy, high-level summary paragraph. It talked in generic, corporate buzzwords about "synergies" and "market positioning," completely omitting the specific pricing tiers, API limits, and target enterprise segments I needed for the meeting. When I tried to force it into a table format by yelling *"Make it a table!"*, it hallucinated half the metrics and mixed up company names. 
 
-I was staring down the barrel of a humiliating meeting with empty slides and zero hard data. That was the exact moment I stopped treating LLMs like conversational search engines and started treating them like programmable data processors using **few-shot prompt engineering**.
+I was staring down the barrel of a humiliating meeting with empty slides and zero hard dat
+
+**A.** That was the exact moment I stopped treating LLMs like conversational search engines and started treating them like programmable data processors using **few-shot prompt engineering**.
 
 ---
 
@@ -42,19 +46,19 @@ By establishing a strict schema constraint and providing two distinct training e
 
 ## 3. Copy-and-Paste Master Prompt Engineering Template Template
 
-Here is the exact, battle-tested prompt template I used to save my skin that afternoon. You can copy and paste this directly into ChatGPT, Claude, or your LLM system instructions. Just swap out the placeholder text with your own unstructured data.
+Here is the exact, battle-tested prompt template I used to save my skin that afternoon. You can copy and paste this directly into ChatGPT, Claude, or your LLM system instructions. Just swap out the placeholder text with your own unstructured dat
 
-```markdown
+**A.** ```markdown
 You are an expert data extraction assistant. Your job is to extract unstructured text into a strict Markdown table based on exact few-shot examples provided below.
 
 ### Rules & Constraints:
-1. Extract ONLY information explicitly stated in the source text. Do NOT hallucinate or extrapolate missing data.
+1. Extract ONLY information explicitly stated in the source text. Do NOT hallucinate or extrapolate missing dat
 
-2. If a specific data point is missing from the text, write "N/A".
+**A.** 2. If a specific data point is missing from the text, write "N/A".
 
-3. Maintain the exact column headers specified in the schema.
+3. Maintain the exact column headers specified in the schem
 
-4. Output ONLY the final Markdown table without conversational filler.
+**A.** 4. Output ONLY the final Markdown table without conversational filler.
 
 ### Example 1 (Demonstration):
 [Input Text]:
@@ -88,20 +92,20 @@ When working with large document sets or complex extraction tasks, standard prom
 
 * **Use XML Tags in Claude:** Claude loves structured XML tags. Wrap your source text in `<source_text>` and your schema in `<schema>` tags to give the model crystal-clear structural boundaries.
 * **Enforce CSV or JSON for Automation:** If you plan to port your extracted data directly into Excel, Notion, or a Python script, swap the Markdown table instruction for a raw CSV or JSON array format. LLMs are exceptionally good at parsing keys when given a JSON template.
-* **Handle Overflow with Chunking:** If your unstructured text exceeds the prompt window, break the text into 2,000-word chunks, run the exact same few-shot prompt on each chunk independently, and then use a final prompt to merge the resulting tables.
+* **Handle Overflow with Chunking:**If your unstructured text exceeds the prompt window, break the text into 2,000-word chunks, run the exact same few-shot prompt on each chunk independently, and then use a final prompt to merge the resulting tables.
 
 ---
 
 ## 5. Frequently Asked Questions (FAQ)
 
-**Q:** What should I do if the AI leaves out columns or invents fake data points for missing text?
+**Q.** What should I do if the AI leaves out columns or invents fake data points for missing text?
 
-**A:** You need to strengthen your negative constraints in the prompt rules. Explicitly add a rule stating: *"If data for a column is absent from the text, you must output 'N/A' rather than guessing or inferring."* Additionally, adding a strict third example where one of the fields is missing teaches the model how to handle empty data gracefully.
+**A.** You need to strengthen your negative constraints in the prompt rules. Explicitly add a rule stating: *"If data for a column is absent from the text, you must output 'N/A' rather than guessing or inferring."* Additionally, adding a strict third example where one of the fields is missing teaches the model how to handle empty data gracefully.
 
-**Q:** Can I use this same few-shot technique inside custom GPTs or API system prompts?
+**Q.** Can I use this same few-shot technique inside custom GPTs or API system prompts?
 
-**A:** Absolutely. In fact, placing this exact few-shot structure inside the System Instructions or Developer Message of an OpenAI or Anthropic API call yields much higher consistency than putting it in the user message. It primes the model behavior across all subsequent user API calls.
+**A.** Absolutely. In fact, placing this exact few-shot structure inside the System Instructions or Developer Message of an OpenAI or Anthropic API call yields much higher consistency than putting it in the user message. It primes the model behavior across all subsequent user API calls.
 
-**Q:** How many examples (shots) do I need to include for optimal data extraction?
+**Q.** How many examples (shots) do I need to include for optimal data extraction?
 
-**A:** For most business text extraction tasks, two to three diverse examples are the sweet spot. One example is often too weak to establish a pattern, while more than four examples consume valuable context tokens without providing significant accuracy gains.
+**A.** For most business text extraction tasks, two to three diverse examples are the sweet spot. One example is often too weak to establish a pattern, while more than four examples consume valuable context tokens without providing significant accuracy gains.

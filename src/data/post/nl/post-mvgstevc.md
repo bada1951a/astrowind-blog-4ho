@@ -35,8 +35,7 @@ Ik ga je een transcript of een gedetailleerde beschrijving van een virale YouTub
 
 Analyseer de input op basis van de volgende criteri
 
-**a:**
-1. De Hook (0-30 seconden): Welk psychologisch probleem of pijnpunt wordt direct aangesneden? Welke visuele of tekstuele pattern interrupt wordt gebruikt?
+**A.** 1. De Hook (0-30 seconden): Welk psychologisch probleem of pijnpunt wordt direct aangesneden? Welke visuele of tekstuele pattern interrupt wordt gebruikt?
 
 2. De Pacing & Opbouw: Hoe is de spanning verdeeld? Identificeer de transities tussen de intro, de kernpunten en de climax.
 

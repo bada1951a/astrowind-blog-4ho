@@ -10,7 +10,9 @@ theme: "Matte Black stealth"
 
 ## 1. Tình huống khẩn cấp do AI trả lời ảo giác và sai lệch
 
-Đồng hồ trên tường văn phòng ở Quận 1 điểm 11 giờ đêm, sếp đứng sau lưng thở dài giục dự án storyboard quảng cáo 20 cảnh. Mọi thứ đã chuẩn bị xong, nhưng khi ném đống prompt vào Midjourney V6 để tạo hình nhân vật chính cho chuỗi video, thảm họa xảy ra. Cảnh 1 là một cô gái tóc ngắn cá tính, sang cảnh 2 bỗng biến thành một bà cô trung niên, sang cảnh 3 lại hóa thành hot girl Hàn Quốc mắt một mí. Gương mặt nhân vật nhảy múa loạn xạ qua từng khung hình, hoàn toàn không thể dùng được cho một chiến dịch thương mại nghiêm túc.
+Đồng hồ trên tường văn phòng ở Quận 1 điểm 11 giờ đêm, sếp đứng sau lưng thở dài giục dự án storyboard quảng cáo 20 cảnh. Mọi thứ đã chuẩn bị xong, nhưng khi ném đống prompt vào Midjourney V6 để tạo hình nhân vật chính cho chuỗi video, thảm họa xảy r
+
+**A.** Cảnh 1 là một cô gái tóc ngắn cá tính, sang cảnh 2 bỗng biến thành một bà cô trung niên, sang cảnh 3 lại hóa thành hot girl Hàn Quốc mắt một mí. Gương mặt nhân vật nhảy múa loạn xạ qua từng khung hình, hoàn toàn không thể dùng được cho một chiến dịch thương mại nghiêm túc.
 
 Thực tế, nguyên nhân thất bại rất rõ ràng: Vòng đời của một prompt thông thường trong Midjourney thiếu đi sự neo giữ cấu trúc sinh học của nhân vật. Khi bạn chỉ mô tả chung chung như "a young Vietnamese woman", thuật toán Diffusion của Midjourney sẽ tự do sáng tạo lại khuôn mặt ở mỗi lần render mới (seed khác nhau), dẫn đến hiện tượng hallucination hình ảnh trầm trọng. 
 
@@ -18,12 +20,12 @@ Thực tế, nguyên nhân thất bại rất rõ ràng: Vòng đời của mộ
 
 Để giải quyết triệt để vấn đề này tại văn phòng, tôi đã xây dựng một quy trình phối hợp tự động hó
 
-**a:** sử dụng ChatGPT và Claude để chuẩn hóa từ khóa cấu trúc khuôn mặt, kết hợp với các tham số đặc tả của Midjourney V6 như `--cref` và tham số trọng số chi tiết.
+**A.** sử dụng ChatGPT và Claude để chuẩn hóa từ khóa cấu trúc khuôn mặt, kết hợp với các tham số đặc tả của Midjourney V6 như `--cref` và tham số trọng số chi tiết.
 
 <div style="border-left: 4px solid #ffffff; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Mẹo thực chiến từ chuyên gi
 
-**a:**</strong> Đừng bao giờ tạo 20 cảnh cùng lúc. Hãy tạo mẫu chuẩn (Master Image) cho nhân vật ở góc nhìn chính diện, sau đó khóa chặt URL của ảnh đó làm Character Reference cho toàn bộ các cảnh tiếp theo.
+**A.** </strong> Đừng bao giờ tạo 20 cảnh cùng lúc. Hãy tạo mẫu chuẩn (Master Image) cho nhân vật ở góc nhìn chính diện, sau đó khóa chặt URL của ảnh đó làm Character Reference cho toàn bộ các cảnh tiếp theo.
 </div>
 
 Dưới đây là cấu trúc Prompt chuẩn xác nhất được thiết kế riêng cho Midjourney V6, giúp bạn duy trì 95% độ nhận diện khuôn mặt qua 20 cảnh quay khác nhau.
@@ -58,14 +60,14 @@ Dưới đây là cấu trúc Prompt chuẩn xác nhất được thiết kế r
 
 ### Các câu hỏi thường gặp (FAQ)
 
-**Q1:** Tại sao tôi dùng --cref nhưng mặt nhân vật vẫn bị thay đổi nhẹ ở các góc chụp nghiêng?
+**Q1.** Tại sao tôi dùng --cref nhưng mặt nhân vật vẫn bị thay đổi nhẹ ở các góc chụp nghiêng?
 
-**A1:** Midjourney V6 đôi khi gặp khó khăn khi chuyển từ góc chính diện sang góc nghiêng hoàn toàn (profile view). Để khắc phục, hãy tạo thêm 2 ảnh tham chiếu phụ (một góc nghiêng 45 độ và một góc nghiêng 90 độ) rồi đưa cả 3 URL vào tham số `--cref URL1 URL2 URL3` để AI có dữ liệu không gian 3 chiều tốt hơn.
+**A1.** Midjourney V6 đôi khi gặp khó khăn khi chuyển từ góc chính diện sang góc nghiêng hoàn toàn (profile view). Để khắc phục, hãy tạo thêm 2 ảnh tham chiếu phụ (một góc nghiêng 45 độ và một góc nghiêng 90 độ) rồi đưa cả 3 URL vào tham số `--cref URL1 URL2 URL3` để AI có dữ liệu không gian 3 chiều tốt hơn.
 
-**Q2:** Tôi có thể áp dụng cách này cho phong cách hoạt hình (Anime/3D) không hay chỉ hợp với tả thực (Photorealistic)?
+**Q2.** Tôi có thể áp dụng cách này cho phong cách hoạt hình (Anime/3D) không hay chỉ hợp với tả thực (Photorealistic)?
 
-**A2:** Hoàn toàn áp dụng được cho mọi phong cách. Với phong cách hoạt hình, bạn chỉ cần thay đổi từ khóa ở phần [Camera Specs] thành các thuật ngữ phong cách như `studio ghibli style, 3d Pixar style, octane render` và giữ nguyên cấu trúc mô tả khuôn mặt chi tiết.
+**A2.** Hoàn toàn áp dụng được cho mọi phong cách. Với phong cách hoạt hình, bạn chỉ cần thay đổi từ khóa ở phần [Camera Specs] thành các thuật ngữ phong cách như `studio ghibli style, 3d Pixar style, octane render` và giữ nguyên cấu trúc mô tả khuôn mặt chi tiết.
 
-**Q3:** Tôi nên làm gì khi tham số --cw 100 làm cho nhân vật ở các cảnh sau trông quá cứng nhắc, giống hệt nhau một cách máy móc?
+**Q3.** Tôi nên làm gì khi tham số --cw 100 làm cho nhân vật ở các cảnh sau trông quá cứng nhắc, giống hệt nhau một cách máy móc?
 
-**A3:** Đây là hiện tượng "over-fitting" của tham số trọng lượng. Hãy hạ giá trị `--cw` xuống mức 75 hoặc 80. Mức này vừa đủ để giữ lại thần thái và cấu trúc xương mặt đặc trưng, vừa cho phép Midjourney V6 tự do điều chỉnh biểu cảm cơ mặt theo từng ngữ cảnh vui, buồn, ngạc nhiên của kịch bản.
+**A3.** Đây là hiện tượng "over-fitting" của tham số trọng lượng. Hãy hạ giá trị `--cw` xuống mức 75 hoặc 80. Mức này vừa đủ để giữ lại thần thái và cấu trúc xương mặt đặc trưng, vừa cho phép Midjourney V6 tự do điều chỉnh biểu cảm cơ mặt theo từng ngữ cảnh vui, buồn, ngạc nhiên của kịch bản.

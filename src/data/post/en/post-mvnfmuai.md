@@ -74,14 +74,14 @@ When scaling your asset generation pipeline, keep these optimization and safety 
 
 ## 5. Frequently Asked Questions (FAQ)
 
-**Q:** Can I export these Claude Artifact SVGs directly into Figma or React components?
+**Q.** Can I export these Claude Artifact SVGs directly into Figma or React components?
 
-**A:** Yes. Because Claude Artifacts render the code in an isolated pane, you can simply click the copy button on the raw code, paste it into an `.svg` file, drag it straight into Figma, or pipe it through an SVGR tool to generate clean React components.
+**A.** Yes. Because Claude Artifacts render the code in an isolated pane, you can simply click the copy button on the raw code, paste it into an `.svg` file, drag it straight into Figma, or pipe it through an SVGR tool to generate clean React components.
 
-**Q:** Why use Claude Artifacts instead of ChatGPT or Gemini for SVG generation?
+**Q.** Why use Claude Artifacts instead of ChatGPT or Gemini for SVG generation?
 
-**A:** Claude Artifacts provide a dedicated, persistent visual preview window right next to the chat stream. This lets you immediately inspect the rendered visual output without needing to manually paste code into an external HTML file or code editor to see if it rendered correctly.
+**A.** Claude Artifacts provide a dedicated, persistent visual preview window right next to the chat stream. This lets you immediately inspect the rendered visual output without needing to manually paste code into an external HTML file or code editor to see if it rendered correctly.
 
-**Q:** How do I maintain consistent stroke weights across a set of fifty different icons?
+**Q.** How do I maintain consistent stroke weights across a set of fifty different icons?
 
-**A:** Define your global styling rules—such as `stroke-width="1.5"`, `stroke-linecap="round"`, and specific hex color codes—directly in the system instructions of your Claude Project, then reference that project in every chat session.
+**A.** Define your global styling rules—such as `stroke-width="1.5"`, `stroke-linecap="round"`, and specific hex color codes—directly in the system instructions of your Claude Project, then reference that project in every chat session.

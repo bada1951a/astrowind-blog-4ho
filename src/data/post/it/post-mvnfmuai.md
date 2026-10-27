@@ -33,10 +33,11 @@ Per risolvere questo problema, dobbiamo strutturare il prompt secondo un'archite
 Ecco il template definitivo da copiare e incollare direttamente nelle tue**Istruzioni di sistema**o nella chat di Claude per gestire la generazione di icone e illustrazioni web senza errori.
 
 ```markdown
-Sei un esperto di design vettoriale e frontend developer specializzato in grafica SVG scalabile e pulita. 
-Il tuo compito è generare icone vettoriali o illustrazioni web basate sulle richieste dell'utente, sfruttando sempre la funzione Artifacts per mostrare il codice e l'anteprima visiva.
+Sei un esperto di design vettoriale e frontend developer specializzato in grafica SVG scalabile e pulit
 
-Segui rigorosamente queste regole tecniche:
+**A.** Il tuo compito è generare icone vettoriali o illustrazioni web basate sulle richieste dell'utente, sfruttando sempre la funzione Artifacts per mostrare il codice e l'anteprima visiv
+
+**A.** Segui rigorosamente queste regole tecniche:
 1. Utilizza sempre un attributo viewBox pulito (es. viewBox="0 0 24 24" per le icone, viewBox="0 0 800 600" per le illustrazioni).
 
 2. Evita tag superflui o attributi proprietari non standard.
@@ -67,7 +68,9 @@ Per evitare che il sistema generi codice non valido o si rifiuti di rispondere d
 
 -**Imposta limiti di complessità:** Specifica sempre il livello di dettaglio desiderato (es. *line art*, *flat design*, *duotone*).
 - **Gestione dei token:**Gli SVG troppo complessi consumano molti token di output. Chiedi a Claude di usare tracciati semplificati (`path data` compatti).
--**Validazione automatica:**Se integri Claude tramite API nel tuo flusso di lavoro aziendale, inserisci un validatore XML/SVG prima di salvare il file sul server per bloccare eventuali tag non chiusi.
+-**Validazione automatic
+
+**A.Se integri Claude tramite API nel tuo flusso di lavoro aziendale, inserisci un validatore XML/SVG prima di salvare il file sul server per bloccare eventuali tag non chiusi.
 
 <div style="border-left: 4px solid #78350f; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Consiglio Pro:</strong> Nelle impostazioni di sistema di Claude, attiva sempre la modalità di sviluppo per fare in modo che l'output restituisca direttamente il blocco di codice eseguibile nell'Artifacts.
@@ -75,14 +78,14 @@ Per evitare che il sistema generi codice non valido o si rifiuti di rispondere d
 
 ## 5. Domande Frequenti (FAQ)
 
-**Q:** Posso usare questo prompt anche su ChatGPT o solo su Claude?
+**Q.** Posso usare questo prompt anche su ChatGPT o solo su Claude?
 
-**A:** Questo prompt è ottimizzato specificamente per Claude grazie alla gestione nativa degli**Artifacts**. Su ChatGPT puoi comunque ottenere il codice SVG all'interno di un blocco di codice standard, perdendo però l'anteprima visiva interattiva immediata.
+**A.** Questo prompt è ottimizzato specificamente per Claude grazie alla gestione nativa degli**Artifacts**. Su ChatGPT puoi comunque ottenere il codice SVG all'interno di un blocco di codice standard, perdendo però l'anteprima visiva interattiva immediat
 
-**Q:** Come posso fare in modo che le icone mantengano lo stesso stile visivo in tutto il sito web?
+**A.Q.** Come posso fare in modo che le icone mantengano lo stesso stile visivo in tutto il sito web?
 
-**A:** È fondamentale inserire nel prompt una riga fissa che definisca lo stile dei tratti, ad esempio: "Usa sempre `stroke-width='2'`, angoli arrotondati e una palette cromatica basata sui codici esadecimali forniti".
+**A.** È fondamentale inserire nel prompt una riga fissa che definisca lo stile dei tratti, ad esempio: "Usa sempre `stroke-width='2'`, angoli arrotondati e una palette cromatica basata sui codici esadecimali forniti".
 
-**Q:** Cosa devo fare se il codice SVG generato viene tagliato a metà per via del limite dei token?
+**Q.** Cosa devo fare se il codice SVG generato viene tagliato a metà per via del limite dei token?
 
-**A:** Puoi aggiungere la regola "Se l'illustrazione è troppo complessa, suddividila in componenti modulari o usa tracciati ottimizzati per ridurre la lunghezza del codice". In alternativa, chiedi a Claude di continuare la generazione scrivendo semplicemente "continua dal tag precedente".
+**A.** Puoi aggiungere la regola "Se l'illustrazione è troppo complessa, suddividila in componenti modulari o usa tracciati ottimizzati per ridurre la lunghezza del codice". In alternativa, chiedi a Claude di continuare la generazione scrivendo semplicemente "continua dal tag precedente".

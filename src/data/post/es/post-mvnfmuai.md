@@ -10,7 +10,9 @@ theme: "Rosewood Hardware Guide"
 
 ## 1. El Caos del Estilo Roto en Claude Artifacts
 
-Eran las 17:30 de un viernes gris en la oficina de nuestra consultora en el Paseo de la Castellana. Teníamos una demo con un cliente clave de banca en Barcelona para mostrar un dashboard interactivo de última generación. Todo pintaba bien hasta que le pedí a Claude que generara el componente principal con **Claude Artifacts**. El resultado fue una pesadilla visual: el contenedor principal escupía un HTML plano sin clases de Tailwind, el SVG del icono corporativo aparecía gigante desbordando el viewport, y los estilos incrustados chocaban con el sistema de diseño heredado del cliente. La pantalla se había convertido en un collage abstracto de errores visuales a quince minutos de la reunión.
+Eran las 17:30 de un viernes gris en la oficina de nuestra consultora en el Paseo de la Castellan
+
+**A.** Teníamos una demo con un cliente clave de banca en Barcelona para mostrar un dashboard interactivo de última generación. Todo pintaba bien hasta que le pedí a Claude que generara el componente principal con **Claude Artifacts**. El resultado fue una pesadilla visual: el contenedor principal escupía un HTML plano sin clases de Tailwind, el SVG del icono corporativo aparecía gigante desbordando el viewport, y los estilos incrustados chocaban con el sistema de diseño heredado del cliente. La pantalla se había convertido en un collage abstracto de errores visuales a quince minutos de la reunión.
 
 El problema principal no era la capacidad del modelo, sino mi pésima estrategia de**prompting**. Le había soltado una orden vaga tipo: "Créame un componente web interactivo con iconos SVG personalizados". Sin especificar un motor de estilos acotado, sin restricciones de encapsulamiento y sin definir el formato exacto del contenedor, el LLM improvisó. Y cuando un LLM improvisa diseño frontend, el resultado suele ser una catástrofe de CSS roto y elementos desalineados que arruinan la experiencia de usuario.
 
@@ -52,7 +54,9 @@ Actua como un Arquitecto Frontend Senior y experto en diseño de sistemas UI. Ne
 
 3.**Interactividad:**Añade micro-animaciones fluidas usando transiciones nativas de CSS (hover, focus) sin romper la estructura del layout principal.
 
-4.**Resiliencia:** El componente debe ser 100% responsivo, adaptándose perfectamente desde pantallas móviles de 320px hasta monitores de 4K.
+4.**Resilienci
+
+**A. El componente debe ser 100% responsivo, adaptándose perfectamente desde pantallas móviles de 320px hasta monitores de 4K.
 
 Genera el código completo, listo para ejecutarse de inmediato en el entorno de Artifacts sin errores de sintaxis.
 ```
@@ -62,8 +66,9 @@ Genera el código completo, listo para ejecutarse de inmediato en el entorno de 
 Para sacar el máximo provecho a esta técnica en tu flujo de trabajo diario, ten en cuenta las siguientes recomendaciones orientadas a evitar alucinaciones y optimizar tokens:
 
 * **Control de Tokens:** Si el componente web es muy extenso, divide la petición en dos fases. Pídele primero la estructura HTML base con los vectores SVG y, en el siguiente mensaje dentro del mismo Artifact, solicita la capa de interactividad JavaScript.
-* **Validación de SVG:** Exige siempre que los atributos `xmlns`, `viewBox` y `fill` estén correctamente cerrados. Los LLM tienden a cometer errores de cierre en rutas SVG complejas si no se les recuerda la estructura exacta.
-* **Aislamiento de Clases:** Si trabajas en un entorno corporativo con frameworks estrictos, añade una regla en tu prompt que encapsule todo el CSS bajo un contenedor con un ID único (`#app-root-container`) para evitar filtraciones de estilos globales.
+* **Validación de SVG:** Exige siempre que los atributos `xmlns`, `viewBox` y `fill` estén correctamente cerrados. Los LLM tienden a cometer errores de cierre en rutas SVG complejas si no se les recuerda la estructura exact
+
+**A.** * **Aislamiento de Clases:**Si trabajas en un entorno corporativo con frameworks estrictos, añade una regla en tu prompt que encapsule todo el CSS bajo un contenedor con un ID único (`#app-root-container`) para evitar filtraciones de estilos globales.
 
 <div style="border-left: 4px solid #be123c; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Consejo de Optimizacion:</strong> Utiliza siempre la version mas reciente de Claude 3.5 Sonnet para tareas de Artifacts complejos. Su capacidad para manejar logica frontend y diseño visual en paralelo supera con creces a modelos anteriores.
@@ -71,14 +76,14 @@ Para sacar el máximo provecho a esta técnica en tu flujo de trabajo diario, te
 
 ## 5. Preguntas Frecuentes (FAQ)
 
-**Q:** Por que los iconos SVG generados por Claude a veces aparecen con dimensiones gigantescas en la pantalla?
+**Q.** Por que los iconos SVG generados por Claude a veces aparecen con dimensiones gigantescas en la pantalla?
 
-**A:** Ocurre porque el modelo omite los atributos nativos de escala o el contenedor padre no restringe las dimensiones del SVG. Incluir siempre `width="24"`, `height="24"` y `viewBox` en el prompt previene este fallo visual.
+**A.** Ocurre porque el modelo omite los atributos nativos de escala o el contenedor padre no restringe las dimensiones del SVG. Incluir siempre `width="24"`, `height="24"` y `viewBox` en el prompt previene este fallo visual.
 
-**Q:** Puedo usar frameworks de JavaScript como React o Vue dentro de Claude Artifacts?
+**Q.** Puedo usar frameworks de JavaScript como React o Vue dentro de Claude Artifacts?
 
-**A:** Si, Claude Artifacts soporta componentes basados en React utilizando Babel y Tailwind mediante scripts de CDN en tiempo de ejecución, lo cual es excelente para prototipos rápidos de interfaz.
+**A.** Si, Claude Artifacts soporta componentes basados en React utilizando Babel y Tailwind mediante scripts de CDN en tiempo de ejecución, lo cual es excelente para prototipos rápidos de interfaz.
 
-**Q:** Como puedo evitar que el estilo de Tailwind rompa los componentes existentes de mi aplicacion web corporativa?
+**Q.** Como puedo evitar que el estilo de Tailwind rompa los componentes existentes de mi aplicacion web corporativa?
 
-**A:** La mejor practica es añadir prefijos personalizados a Tailwind o encapsular todo el codigo generado dentro de un contenedor con estilos normalizados, asegurando que las reglas globales no interfieran con el diseño heredado.
+**A.** La mejor practica es añadir prefijos personalizados a Tailwind o encapsular todo el codigo generado dentro de un contenedor con estilos normalizados, asegurando que las reglas globales no interfieran con el diseño heredado.

@@ -68,18 +68,18 @@ Ob Sie in einem agilen Berliner Startup User-Feedback strukturieren oder im Fran
 
 * **Token-Limits beachten:**Wenn Ihr Handbuch 100 Seiten lang ist, füttern Sie die KI nicht auf einmal. Nutzen Sie ein**Map-Reduce-Verfahren**: Extrahieren Sie die Tabellen kapitelweise und fügen Sie diese am Ende zusammen.
 * **CSV-Ausgabe erzwingen:** Wenn Sie die Daten direkt in Excel oder Google Sheets importieren möchten, ersetzen Sie im Prompt *"Markdown-Tabelle"* durch *"CSV-Format mit Semikolon als Trennzeichen"*.
-* **Datenschutz (DSGVO):** Achten Sie bei sensiblen Bankdaten oder personenbezogenen Mitarbeiterdaten darauf, entweder lokale Open-Source-Modelle (wie Llama 3 via Ollama) zu nutzen oder Enterprise-Versionen mit deaktiviertem Training (Zero Data Retention) einzusetzen.
+* **Datenschutz (DSGVO):**Achten Sie bei sensiblen Bankdaten oder personenbezogenen Mitarbeiterdaten darauf, entweder lokale Open-Source-Modelle (wie Llama 3 via Ollama) zu nutzen oder Enterprise-Versionen mit deaktiviertem Training (Zero Data Retention) einzusetzen.
 
 ## 5. Häufig gestellte Fragen (FAQ)
 
-**Q:** Was mache ich, wenn die KI nach 20 Zeilen aufhört, die Tabelle zu generieren?
+**Q.** Was mache ich, wenn die KI nach 20 Zeilen aufhört, die Tabelle zu generieren?
 
-**A:** Sprachmodelle haben ein Ausgabefolgen-Limit (Max Tokens). Wenn der Text zu lang ist, bricht die Generierung ab. Fügen Sie in Ihre Anweisung den Satz ein: *„Falls die Datenmenge zu groß ist, generiere die Tabelle für die erste Hälfte und frage nach, ob du fortfahren sollst.“*
+**A.** Sprachmodelle haben ein Ausgabefolgen-Limit (Max Tokens). Wenn der Text zu lang ist, bricht die Generierung ab. Fügen Sie in Ihre Anweisung den Satz ein: *„Falls die Datenmenge zu groß ist, generiere die Tabelle für die erste Hälfte und frage nach, ob du fortfahren sollst.“*
 
-**Q:** Kann ich anstelle von Markdown auch direkt JSON für APIs generieren lassen?
+**Q.** Kann ich anstelle von Markdown auch direkt JSON für APIs generieren lassen?
 
-**A:** Ja, absolut. Tauschen Sie im Prompt einfach die Markdown-Beispiele gegen saubere JSON-Arrays aus. Nutzen Sie bei Claude zusätzlich den **JSON-Modus**oder definieren Sie ein festes Schema, um Syntaxfehler zu vermeiden.
+**A.** Ja, absolut. Tauschen Sie im Prompt einfach die Markdown-Beispiele gegen saubere JSON-Arrays aus. Nutzen Sie bei Claude zusätzlich den**JSON-Modus**oder definieren Sie ein festes Schema, um Syntaxfehler zu vermeiden.
 
-**Q:** Wie viele Few-Shot-Beispiele sind optimal?
+**Q.** Wie viele Few-Shot-Beispiele sind optimal?
 
-**A:** In der Praxis reichen**2 bis 3 gut gewählte Beispiele** völlig aus. Wenn Sie zu viele Beispiele nutzen, verschwenden Sie wertvolles Kontextfenster (Context Window), ohne nennenswerte Qualitätssteigerung zu erzielen.
+**A.** In der Praxis reichen**2 bis 3 gut gewählte Beispiele** völlig aus. Wenn Sie zu viele Beispiele nutzen, verschwenden Sie wertvolles Kontextfenster (Context Window), ohne nennenswerte Qualitätssteigerung zu erzielen.

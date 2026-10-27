@@ -42,8 +42,7 @@ Tu agis en tant qu'analyste de données senior spécialisé dans le traitement d
 # Contexte du Projet
 - Sujet du livre blanc : Transformation des méthodes de travail et climat social au
 
-**Q3.**
-- Format de sortie attendu : Un plan de classification structuré au format JSON avec métriques estimées.
+**Q3.** - Format de sortie attendu : Un plan de classification structuré au format JSON avec métriques estimées.
 
 # Tâche
 Analyse les verbatims ci-dessous. Isole les 5 thématiques majeures récurrentes. Pour chaque thématique, attribue :

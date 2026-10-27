@@ -88,7 +88,9 @@ Generiere nun das komplette, fehlerfreie Artifact mit lauffähigem Code.
 ## 5. Häufig gestellte Fragen (FAQ)
 
 1. Kann ich die Daten aus dem Claude Artifact exportieren?
-Ja. Da der Code als saubere HTML/React-Struktur vorliegt, können Sie das Artifact herunterladen, auf einem lokalen Server hosten oder den Code direkt in Ihr unternehmensinternes Repository einspielen.
+J
+
+**A.** Da der Code als saubere HTML/React-Struktur vorliegt, können Sie das Artifact herunterladen, auf einem lokalen Server hosten oder den Code direkt in Ihr unternehmensinternes Repository einspielen.
 
 2. Funktioniert dieser Prompt auch mit ChatGPT oder Google Gemini?
 Der Prompt funktioniert prinzipiell auch dort, allerdings besitzen ChatGPT (Advanced Data Analysis) und Gemini andere Ausgabemechanismen. Claude 3.5 Sonnet ist derzeit ungeschlagen darin, interaktive Frontend-Prototypen in einem isolierten, direkt nutzbaren Live-Fenster (Artifacts) zu rendern.

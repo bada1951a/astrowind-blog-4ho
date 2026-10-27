@@ -73,7 +73,7 @@ Pour aller plus loin et optimiser votre productivité au quotidien, voici quelqu
 
 * **Variation de style isométrique :** Modifiez la section *Art Direction* en remplaçant "Line Art moderne" par "Illustration isométrique en 3D plate, ombres douces, perspective axonométrique à 30 degrés".
 * **Optimisation des tokens :** Si vous avez besoin d'une seule icône complexe, demandez explicitement à Claude de ne pas inclure de texte explicatif superflu avant ou après le bloc de code. Cela réduit le temps de génération de 5 à 10 secondes.
-* **Sécurité et conformité :** Assurez-vous que les icônes générées n'utilisent pas de polices de caractères externes intégrées (`<text>`), ce qui pourrait provoquer des erreurs de rendu selon les navigateurs des clients. Privilégiez 100% de tracés vectoriels (`<path>`).
+* **Sécurité et conformité :**Assurez-vous que les icônes générées n'utilisent pas de polices de caractères externes intégrées (`<text>`), ce qui pourrait provoquer des erreurs de rendu selon les navigateurs des clients. Privilégiez 100% de tracés vectoriels (`<path>`).
 
 <div style="border-left: 4px solid #059669; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Astuce Pro :</strong> Utilisez le mode Artifacts de Claude pour tester des variations de couleurs à la volée en écrivant simplement dans le chat : <em>"Modifie la couleur principale #059669 en bleu marine #1E3A8A sur l'ensemble des icônes"</em>.
@@ -81,14 +81,14 @@ Pour aller plus loin et optimiser votre productivité au quotidien, voici quelqu
 
 ## 5. Foire Aux Questions (FAQ)
 
-**Q:** Comment intégrer directement le code SVG généré par Claude Artifacts dans un document Word ou PowerPoint pour une proposition commerciale ?
+**Q.** Comment intégrer directement le code SVG généré par Claude Artifacts dans un document Word ou PowerPoint pour une proposition commerciale ?
 
-**A:** Le format SVG natif n'est pas toujours parfaitement supporté par les anciennes versions de Microsoft Office. Le moyen le plus simple est de copier le code SVG dans un fichier texte, de l'enregistrer avec l'extension `.svg`, puis de l'ouvrir dans un navigateur ou un outil comme Inkscape pour l'exporter en PNG haute résolution ou le convertir directement au format EMF/WMF compatible Office.
+**A.** Le format SVG natif n'est pas toujours parfaitement supporté par les anciennes versions de Microsoft Office. Le moyen le plus simple est de copier le code SVG dans un fichier texte, de l'enregistrer avec l'extension `.svg`, puis de l'ouvrir dans un navigateur ou un outil comme Inkscape pour l'exporter en PNG haute résolution ou le convertir directement au format EMF/WMF compatible Office.
 
-**Q:** Pourquoi mes icônes générées apparaissent-elles parfois rognées ou déformées sur l'écran ?
+**Q.** Pourquoi mes icônes générées apparaissent-elles parfois rognées ou déformées sur l'écran ?
 
-**A:** Ce problème survient généralement lorsque l'attribut `viewBox` est absent ou mal défini dans la balise racine `<svg>`. Veillez à toujours inclure explicitement `viewBox="0 0 64 64"` dans vos contraintes techniques pour garantir une mise à l'échelle fluide et responsive.
+**A.** Ce problème survient généralement lorsque l'attribut `viewBox` est absent ou mal défini dans la balise racine `<svg>`. Veillez à toujours inclure explicitement `viewBox="0 0 64 64"` dans vos contraintes techniques pour garantir une mise à l'échelle fluide et responsive.
 
-**Q:** Puis-je utiliser ce même prompt pour générer des illustrations web complexes de type Hero Section ?
+**Q.** Puis-je utiliser ce même prompt pour générer des illustrations web complexes de type Hero Section ?
 
-**A:** Absolument, il suffit d'ajuster l'attribut `viewBox` à une taille plus grande (par exemple `viewBox="0 0 800 600"`) dans les contraintes techniques du prompt et de demander explicitement une composition paysagère comprenant plusieurs éléments interconnectés.
+**A.** Absolument, il suffit d'ajuster l'attribut `viewBox` à une taille plus grande (par exemple `viewBox="0 0 800 600"`) dans les contraintes techniques du prompt et de demander explicitement une composition paysagère comprenant plusieurs éléments interconnectés.

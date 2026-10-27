@@ -47,8 +47,7 @@ Il nostro obiettivo è scrivere un whitepaper autorevole, orientato ai dati e pr
 Primo compito: genera l'indice analitico dettagliato del whitepaper diviso in 5 macro-capitoli. 
 Per ogni capitolo, specific
 
-**a:**
-1. Titolo del capitolo
+**A.** 1. Titolo del capitolo
 2. Concetti chiave da trattare (minimo 3 per capitolo)
 3. Fonti di dati o metriche di riferimento da simulare o analizzare
 4. Numero di parole stimato per raggiungere un totale di 5000 parole.
@@ -74,7 +73,9 @@ Ecco le linee guida obbligatorie per mantenere la qualità costante:
 - Includi almeno un caso studio ipotetico o un'analisi di scenario basata su dati di mercato realistici.
 - Usa sottotitoli in markdown (h2 e h3) per suddividere i blocchi di testo.
 - Evita assolutamente le introduzioni generiche e i cappotti introduttivi retorici ("Nel mondo moderno in continua evoluzione..."). Inizia direttamente analizzando il problema economico o strutturale.
-- Mantieni la coerenza stilistica con i dati strutturati forniti in precedenza. Contenuti specifici da sviluppare in questo capitolo:
+- Mantieni la coerenza stilistica con i dati strutturati forniti in precedenz
+
+**A.** Contenuti specifici da sviluppare in questo capitolo:
 [Inserire Concetti Chiave del Capitolo]
 ```
 
@@ -92,11 +93,13 @@ Analizza il testo del capitolo che ti fornisco di seguito e applica una revision
 
 2. Densezza informativ
 
-**a:** Assicurati che ogni paragrafo contenga un'informazione utile, un dato o un'argomentazione strategica.
+**A.** Assicurati che ogni paragrafo contenga un'informazione utile, un dato o un'argomentazione strategic
 
-3. Formattazione: Verifica che l'uso del grassetto evidenzi solo i concetti chiave e che la struttura sia leggibile su schermo.
+**A.** 3. Formattazione: Verifica che l'uso del grassetto evidenzi solo i concetti chiave e che la struttura sia leggibile su schermo.
 
-Restituisci il testo corretto e ottimizzato, segnalando in un breve box finale a punti quali modifiche strutturali hai apportato per migliorare la qualità complessiva. Testo da revisionare:
+Restituisci il testo corretto e ottimizzato, segnalando in un breve box finale a punti quali modifiche strutturali hai apportato per migliorare la qualità complessiv
+
+**A.** Testo da revisionare:
 [Incollare il testo generato nello Step 2]
 ```
 
