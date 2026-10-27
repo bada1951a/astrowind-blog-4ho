@@ -1,5 +1,5 @@
 site:
-  name: '🚀 Daily Prompt Hack'
+  name: 'Daily Prompt Hack'
   site: 'https://prompt.storydailyview.com'
   base: '/'
   trailingSlash: false
