@@ -34,9 +34,9 @@ const { language, textDirection } = I18N;
 
     <!-- Google tag (gtag.js) - 4호기 전용 태그 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YT7ZQ98ZW"></script>
-    <script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(...args) { window.dataLayer.push(args); }
       gtag('js', new Date());
 
       gtag('config', 'G-7YT7ZQ98ZW');
