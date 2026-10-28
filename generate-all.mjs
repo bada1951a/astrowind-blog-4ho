@@ -1,3 +1,12 @@
+// =========================================================================
+// 📌 [고정 식별자] 이 파일은 '4호기' 전용 스크립트입니다.
+// ⚠️ [혼동 방지 경고]
+// 1. 이 파일은 '4호기 (Prompt Engineering)'입니다. 2-1호기나 다른 호기와 절대 혼동하지 말 것!
+// 2. 카테고리는 대표님의 지시 전까지 'Prompt Engineering'으로 영구 고정한다. (임의 변경 절대 금지)
+// 3. 이미지 생성 방식은 Picsum prompt- 시드 URL 방식을 영구 유지한다.
+// 4. 대표님과의 모든 설명, 질문, 대화 및 주석은 반드시 100% 한국어로만 진행한다.
+// =========================================================================
+
 import fs from 'fs';
 import path from 'path';
 import { GoogleGenAI } from '@google/genai';
@@ -35,13 +44,12 @@ function getKstPublishDateIso(index) {
   const year = kstTime.getUTCFullYear();
   const month = String(kstTime.getUTCMonth() + 1).padStart(2, '0');
   const day = String(kstTime.getUTCDate()).padStart(2, '0');
-
   const minute = String((index * 5) % 60).padStart(2, '0');
   return `${year}-${month}-${day}T03:${minute}:00.000Z`;
 }
 
 // =========================================================================
-// [4호기 전용] 12개국 100% 현지어 섹션 제목 및 치환 딕셔너리
+// [4호기 전용] 12개국 100% 현지어 섹션 제목 및 치환 딕셔너리 (영구 고정)
 // =========================================================================
 const I18N_SECTIONS = {
   ko: {
@@ -143,124 +151,62 @@ const I18N_SECTIONS = {
 };
 
 // =========================================================================
-// [Uburinzi Bukomeye bwa Markdown ku Gice cya 4]
+// 🛡️ [4호기 자가 검수 및 치유 엔진: Self-Healing Inspector]
 // =========================================================================
-function sanitizeMarkdownFormatting(content, langCode) {
-  let cleaned = content;
+function inspectAndHealMarkdown(body, langCode) {
+  let healed = body.trim();
   const i18n = I18N_SECTIONS[langCode] || I18N_SECTIONS.ko;
+  const auditLogs = [];
 
-  // 1) Gukuraho imirongo y'ubusa hejuru
-  cleaned = cleaned.replace(/^\n+/, '');
+  // 1) 헤딩 내부 볼드 제거 및 4호기 표준 소제목 강제 안착
+  healed = healed.replace(/^(#{1,6}\s+)\*\*(.*?)\*\*/gm, '$1$2');
+  healed = healed.replace(/^#{1,6}\s*1[.\s]+([^\n]+)/m, `## ${i18n.s1}`);
+  healed = healed.replace(/^#{1,6}\s*2[.\s]+([^\n]+)/m, `## ${i18n.s2}`);
+  healed = healed.replace(/^#{1,6}\s*3[.\s]+([^\n]+)/m, `## ${i18n.s3}`);
+  healed = healed.replace(/^#{1,6}\s*4[.\s]+([^\n]+)/m, `## ${i18n.s4}`);
+  healed = healed.replace(/^#{1,6}\s*5[.\s]+([^\n]+)/m, `## ${i18n.s5}`);
 
-  // 2) Gukuraho ibimenyetso by'amadolari ($) no kubishyira mu dukweto (`)
-  cleaned = cleaned.replace(/\$(?:Strg|Ctrl|Win|Shift|Alt|Esc)\s*[^$\n]*\$/gi, (match) => {
+  if (!healed.startsWith('## 1.')) {
+    healed = `## ${i18n.s1}\n\n` + healed;
+    auditLogs.push("1번 헤딩 주입");
+  }
+
+  // 2) 🛡️ Q&A 줄바꿈 뭉개짐 자동 분리 치유 (질문과 답변 사이 빈 줄 2개 보장)
+  const rawQnACount = (healed.match(/Q[1-3]\./gi) || []).length;
+  if (rawQnACount > 0) {
+    healed = healed.replace(/\s*(\*\*Q[1-3]\.\*\*|Q[1-3]\.)\s*/gi, '\n\n**$1** ');
+    healed = healed.replace(/\s*(\*\*A[1-3]\.\*\*|A[1-3]\.)\s*/gi, '\n\n**$1** ');
+    healed = healed.replace(/\*\*\s*\*\*(Q[1-3]\.|A[1-3]\.)\*\*\s*\*\*/gi, '**$1**');
+    healed = healed.replace(/\*\*(Q[1-3]\.|A[1-3]\.)\*\*/gi, '**$1**');
+    auditLogs.push("Q&A 줄바꿈 2열 분리 치유");
+  }
+
+  // 3) 볼드 기호 안쪽 공백 정돈 (** 단어 ** -> **단어**)
+  if (/\*\*\s+[^*]+?\s+\*\*/.test(healed)) {
+    healed = healed.replace(/\*\*\s+([^*]+?)\s+\*\*/g, '**$1**')
+                   .replace(/\*\*\s+([^*]+?)\*\*/g, '**$1**')
+                   .replace(/\*\*([^*]+?)\s+\*\*/g, '**$1**');
+    auditLogs.push("볼드 공백 정돈");
+  }
+
+  // 4) 특수문자 및 수식 인라인 백틱화
+  healed = healed.replace(/\$(?:Strg|Ctrl|Win|Shift|Alt|Esc)\s*[^$\n]*\$/gi, (match) => {
     return `\`${match.replace(/\$/g, '').trim()}\``;
   });
-  cleaned = cleaned.replace(/\$([A-Za-z0-9_-]+)\$/g, '`$1`');
+  healed = healed.replace(/\$([A-Za-z0-9_-]+)\$/g, '`$1`');
+  healed = healed.replace(/\\times/g, 'x')
+                 .replace(/\\circ/g, '°')
+                 .replace(/\\approx/g, '≈')
+                 .replace(/~/g, '-');
 
-  // 3) 🛡️ [UBURINZI BWA FAQ] Gutandukanya umutwe wa FAQ na Q1 mbere y'ibindi byose
-  cleaned = cleaned.replace(/([#]+[^\n]*?FAQ[^\n]*?)\s*(Q[1-9]\.|\*\*Q[1-9]\.\*\*)/gi, '$1\n\n$2');
-  cleaned = cleaned.replace(/(FAQ\)?)\s*(Q[1-9]\.|\*\*Q[1-9]\.\*\*)/gi, '$1\n\n$2');
+  // 5) 연속 빈 줄 압축
+  healed = healed.replace(/\n{3,}/g, '\n\n').trim();
 
-  // 4) Guhindura imitwe n'ibimenyetso mu rurimi rwemewe
-  cleaned = cleaned.replace(/^#{1,3}\s*1\.?\s*(\[Opening Story.*?\]|Opening Story.*?)/gmi, `## ${i18n.s1}`);
-  cleaned = cleaned.replace(/^#{1,3}\s*2\.?\s*(\[Root Cause.*?\]|Root Cause Breakdown.*?|Root Cause.*?)/gmi, `## ${i18n.s2}`);
-  cleaned = cleaned.replace(/^#{1,3}\s*3\.?\s*(\[Master Prompt.*?\]|Master Prompt.*?|\[Step-by-Step.*?\]|Step-by-Step.*?)/gmi, `## ${i18n.s3}`);
-  cleaned = cleaned.replace(/^#{1,3}\s*4\.?\s*(\[Practical Variations.*?\]|Practical Variations.*?|\[Expert.*?\]|Expert.*?)/gmi, `## ${i18n.s4}`);
-  cleaned = cleaned.replace(/^#{1,3}\s*5\.?\s*(\[Frequently Asked Questions.*?\]|Frequently Asked Questions.*?|FAQ)/gmi, `## ${i18n.s5}`);
-
-  cleaned = cleaned.replace(/^1\.\s*\[Opening Story.*?\]/gmi, `## ${i18n.s1}`);
-  cleaned = cleaned.replace(/^2\.\s*\[Root Cause.*?\]/gmi, `## ${i18n.s2}`);
-  cleaned = cleaned.replace(/^3\.\s*\[Master Prompt.*?\]/gmi, `## ${i18n.s3}`);
-  cleaned = cleaned.replace(/^4\.\s*\[Practical Variations.*?\]/gmi, `## ${i18n.s4}`);
-  cleaned = cleaned.replace(/^5\.\s*(Frequently Asked Questions|\[Frequently Asked Questions\])/gmi, `## ${i18n.s5}`);
-
-  // Guhindura imitwe niba AI itarashyizemo '#'
-  cleaned = cleaned.replace(/^#{0,3}\s*1\.?\s*(왜\s*단순한\s*프롬프트.*?)/gmi, `## ${i18n.s1}`);
-  cleaned = cleaned.replace(/^#{0,3}\s*(The Root Cause:.*?|Warum herkömmliches Prompting.*?|なぜ(従来|単純)のプロンプト.*?|왜 단순 프롬프트는 실패하고.*?)/gmi, `## ${i18n.s2}`);
-  cleaned = cleaned.replace(/^#{0,3}\s*(The Master Prompt Template.*?|Master Prompt-Vorlage|実践投入.*?|30분 만에 끝내는 마스터.*?|실전 마스터 프롬프트.*?)/gmi, `## ${i18n.s3}`);
-  cleaned = cleaned.replace(/^#{0,3}\s*(Practical Variations and Failure Prevention|Praktische Variationen.*?|倫理的破綻とハルシネーション.*?|실무 응용 및 트러블슈팅.*?|현업 적용을 위한 핵심.*?)/gmi, `## ${i18n.s4}`);
-  cleaned = cleaned.replace(/^#{0,3}\s*(\d\.\s*)?(자주 묻는 질문|Häufig gestellte Fragen|Frequently Asked Questions|よくある(ご)?質問|Questions Fréquemment Posées|Foire [Aa]ux Questions|Preguntas [Ff]recuentes).*?$/gmi, `## ${i18n.s5}`);
-
-  cleaned = cleaned.replace(/\[(Opening Story\/Problem|Root Cause \/ Architecture|Master Prompt Template|Practical Variations \/ Safety Tips)\]/gi, '');
-
-  // Gushyiraho umutwe wa 1 no gukuraho umurongo usubiyemo munsi yawo
-  if (!cleaned.startsWith('## 1.')) {
-    cleaned = `## ${i18n.s1}\n\n` + cleaned;
+  if (auditLogs.length > 0) {
+    console.log(`   🩺 [자가 치유 완료]: ${auditLogs.join(' | ')}`);
   }
-  cleaned = cleaned.replace(/^(## 1\.[^\n]+)\n+(\s*1\.\s+[^\n]+)\n+/m, '$1\n\n');
 
-  // Gushyiraho ibara ry'inyandiko mu dusanduku twa HTML
-  cleaned = cleaned.replace(/(<div style="[^"]*background-color:[^"]*)"/gi, (match, p1) => {
-    if (!p1.includes('color:')) {
-      return `${p1}; color: #111827;"`;
-    }
-    return match;
-  });
-
-  // Gukuraho ** zose ziri mu mirongo y'imitwe (H1~H6)
-  cleaned = cleaned.replace(/^(#{1,6}\s+[^\n]+)$/gm, (match) => {
-    return match.replace(/\*\*/g, '');
-  });
-
-  // Gukuraho imyanya y'ubusa muri ** ituma markdown ipfa
-  cleaned = cleaned.replace(/\*\*\s+([^*]+?)\s+\*\*/g, '**$1**');
-  cleaned = cleaned.replace(/\*\*\s+([^*]+?)\*\*/g, '**$1**');
-  cleaned = cleaned.replace(/\*\*([^*]+?)\s+\*\*/g, '**$1**');
-
-  // =========================================================================
-  // 🛡️ [GUKOSORA FAQ] Gutandukanya neza Q na A
-  // =========================================================================
-  cleaned = cleaned.replace(/\*{1,4}\s*([QA][0-9]*)\s*[:.]\s*\*{1,4}/gi, '$1.');
-  cleaned = cleaned.replace(/([QA][0-9]*)\s*[:.]/gi, (match, p1) => `${p1.toUpperCase()}.`);
-
-  // Gushyira imirongo ibiri y'ubusa mbere ya Q na A
-  cleaned = cleaned.replace(/([^\n])\s*\n*\s*(Q[0-9]*\.)/gi, '$1\n\n$2');
-  cleaned = cleaned.replace(/([^\n])\s*\n*\s*(A[0-9]*\.)/gi, '$1\n\n$2');
-  cleaned = cleaned.replace(/([.!?])\s*(Q[1-9]\.|\*\*Q[1-9]\.\*\*)/g, '$1\n\n$2');
-  cleaned = cleaned.replace(/([.!?])\s*(A[1-9]\.|\*\*A[1-9]\.\*\*)/g, '$1\n\n$2');
-
-  // Gushyiraho bold nyayo kuri Q na A
-  cleaned = cleaned.replace(/^(Q[0-9]*\.)\s*(.*)$/gm, '**$1** $2');
-  cleaned = cleaned.replace(/^(A[0-9]*\.)\s*(.*)$/gm, '**$1** $2');
-
-  cleaned = cleaned.replace(/([A-Za-z0-9가-힣]+)\.\*\*/g, '$1.');
-  cleaned = cleaned.replace(/\*\*\s*\*\*/g, '');
-  cleaned = cleaned.replace(/\?([A-Za-z\u00C0-\u024F\u1EA0-\u1EF9가-힣])/g, '? $1');
-
-  // =========================================================================
-  // 🛡️ [UBURINZI BUKOMEYE: Gukuraho imitwe yisubiramo yikurikiranya]
-  // =========================================================================
-  const lines = cleaned.split('\n');
-  const filteredLines = [];
-  let lastHeadingText = '';
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    const trimmed = line.trim();
-
-    if (/^#{1,6}\s+/.test(trimmed)) {
-      const cleanH = trimmed.replace(/^#{1,6}\s+/, '').replace(/\*\*/g, '').trim();
-      if (cleanH.length > 0 && cleanH === lastHeadingText) {
-        continue; // Gukuraho umutwe usubiyemo
-      }
-      lastHeadingText = cleanH;
-    } else if (trimmed.length > 0) {
-      lastHeadingText = '';
-    }
-    filteredLines.push(line);
-  }
-  cleaned = filteredLines.join('\n');
-
-  // =========================================================================
-  // 🛡️ [UBURINZI BUKOMEYE: Gukuraho bold yafashe interuro ndende cyane nabi]
-  // =========================================================================
-  cleaned = cleaned.replace(/\*\*([^\*]*?\n[^\*]*?){150,}\*\*/g, (match) => {
-    return match.replace(/^\*\*/, '').replace(/\*\*$/, '');
-  });
-
-  cleaned = cleaned.replace(/\n{3,}/g, '\n\n');
-  return cleaned.trim();
+  return healed;
 }
 
 if (!fs.existsSync(TOPICS_FILE)) {
@@ -277,7 +223,7 @@ if (lines.length === 0) {
 }
 
 const currentTopic = lines[0];
-console.log(`📌 오늘 처리할 주제 (4호기 AI Prompt Engineering): "${currentTopic}"`);
+console.log(`📌 오늘 처리할 주제 [4호기 AI Prompt Engineering]: "${currentTopic}"`);
 
 const PROMPT_CRISIS_SCENARIOS_30 = [
   "급작스러운 부서장 호출로 30분 뒤 신사업 전략 초안을 들고 들어가야 하는데, 챗GPT가 뜬구름 잡는 원론적인 답변만 늘어놓을 때",
@@ -317,32 +263,7 @@ const THEME_PRESETS = [
   { id: 2, name: "Modern Minimalist Slate", primaryColor: "#3b82f6", bgColor: "#f8fafc", layout: "미니멀 가이드 스타일, 여백 중심의 깔끔한 단계별 프롬프트 빌딩" },
   { id: 3, name: "Industrial Blueprint", primaryColor: "#f59e0b", bgColor: "#1e293b", layout: "엔지니어링 청사진 스타일, 프롬프트 구조 분해 및 전후 비교표 포함" },
   { id: 4, name: "Retro Monokai", primaryColor: "#a6e22e", bgColor: "#272822", layout: "개발자 에디터 스타일, 실전 프롬프트 코드 박스 중심 전개, 디버깅 팁" },
-  { id: 5, name: "Nordic Clean Ice", primaryColor: "#0284c7", bgColor: "#f0f9ff", layout: "북유럽 감성 클린 레이아웃, 인용구 중심 도입부, 실전 체크리스트" },
-  { id: 6, name: "Dark Velvet Obsidian", primaryColor: "#a855f7", bgColor: "#0f172a", layout: "고급 다크 모드, 전문가 독점 시스템 프롬프트 배너, 단계별 튜닝 타임라인" },
-  { id: 7, name: "Crimson Emergency Field", primaryColor: "#ef4444", bgColor: "#fff1f2", layout: "할루시네이션(환각) 방지 매뉴얼 스타일, 위험 경고 박스 최우선 강조" },
-  { id: 8, name: "Forest Emerald Bio", primaryColor: "#10b981", bgColor: "#f0fdf4", layout: "생산성 10배 가이드 스타일, 시간 절약 지표 박스, 친절하고 명쾌한 어조" },
-  { id: 9, name: "Solarized Amber Warm", primaryColor: "#d97706", bgColor: "#fef3c7", layout: "실무 프롬프트 공방 노트 스타일, 모델별(ChatGPT vs Claude) 비교표" },
-  { id: 10, name: "Deep Ocean Cobalt", primaryColor: "#2563eb", bgColor: "#eff6ff", layout: "표준 AI 엔지니어링 지침서, 프롬프트 파라미터 심층 설명" },
-  { id: 11, name: "Tokyo Neon Violet", primaryColor: "#8b5cf6", bgColor: "#2e1065", layout: "파워유저 아티팩츠 스타일, 웹앱 인터랙티브 코드 생성 팁" },
-  { id: 12, name: "Graphite Technical Paper", primaryColor: "#475569", bgColor: "#f1f5f9", layout: "기술 백서 스타일, Few-Shot 가설 및 검증 절차, 표준화된 템플릿" },
-  { id: 13, name: "High-Contrast Charcoal", primaryColor: "#e11d48", bgColor: "#18181b", layout: "고대비 경보 스타일, 데이터 유출 방지 수칙, 기업 보안 주의 팁" },
-  { id: 14, name: "Warm Coffee Latte", primaryColor: "#78350f", bgColor: "#fefae0", layout: "초보자를 위한 친절한 AI 입문 수필, 쉬운 비유법, 차근차근 따라하기" },
-  { id: 15, name: "Steel Silver Metallic", primaryColor: "#64748b", bgColor: "#e2e8f0", layout: "공식 벤치마크 리포트 스타일, 프롬프트 정확도 체크리스트" },
-  { id: 16, name: "Sunset Horizon Coral", primaryColor: "#f97316", bgColor: "#fff7ed", layout: "크리에이티브 프롬프트 세팅 스타일, 생성물 전후 비교표" },
-  { id: 17, name: "Mint Fresh Engineering", primaryColor: "#059669", bgColor: "#ecfdf5", layout: "가벼운 롤플레잉 프롬프트 매뉴얼, 불필요한 토큰 낭비 제거 팁" },
-  { id: 18, name: "Midnight Navy Royal", primaryColor: "#1d4ed8", bgColor: "#172554", layout: "실무 배포 로그 스타일, 복잡한 다단계 체이닝 프롬프트 극복기" },
-  { id: 19, name: "Matte Black stealth", primaryColor: "#ffffff", bgColor: "#09090b", layout: "전문 실무 가이드 스타일, 군더더기 배제, 직관적인 프롬프트 복사 블록" },
-  { id: 20, name: "Teal Matrix Digital", primaryColor: "#14b8a6", bgColor: "#042f2e", layout: "API 및 Function Calling 프롬프트 스타일, JSON 스키마 점검표" },
-  { id: 21, name: "Pastel Lavender Tech", primaryColor: "#7c3aed", bgColor: "#faf5ff", layout: "사용자 경험 중심 가이드, AI 활용 시 가장 자주 묻는 질문 5선 최상단 요약" },
-  { id: 22, name: "Bronze Artisan Workshop", primaryColor: "#b45309", bgColor: "#fffbeb", layout: "미드저니/이미지 프롬프트 가이드, 카메라 렌즈 및 스타일 파라미터 목록" },
-  { id: 23, name: "Cobalt Enterprise Lab", primaryColor: "#1e40af", bgColor: "#dbeafe", layout: "기업용 프롬프트 라이브러리 형식, 사내 도입 및 비용 절감 수치 인용" },
-  { id: 24, name: "Rosewood Hardware Guide", primaryColor: "#be123c", bgColor: "#ffe4e6", layout: "LLM 모델별 특성 비교기, Claude Artifacts vs GPT Canvas 차이점" },
-  { id: 25, name: "Deep Indigo System", primaryColor: "#4338ca", bgColor: "#e0e7ff", layout: "자동화 에이전트 프롬프트 분석 형식, 다단계 추론 체인 설계" },
-  { id: 26, name: "Acid Lime Hacker Space", primaryColor: "#84cc16", bgColor: "#14532d", layout: "무료 오픈소스 AI 툴 가이드, 로컬 LLM 시스템 프롬프트 안내" },
-  { id: 27, name: "Sandstone Desert Minimal", primaryColor: "#a16207", bgColor: "#fefce8", layout: "깔끔한 실무 매뉴얼 스타일, 소제목 하단 1줄 핵심 프롬프트 강조 배너" },
-  { id: 28, name: "Dracula Purple Dev", primaryColor: "#bd93f9", bgColor: "#282a36", layout: "전통 드라큘라 테마 스타일, 필수 역량 주입 템플릿 하이라이트" },
-  { id: 29, name: "Electric Cyan Speed", primaryColor: "#06b6d4", bgColor: "#ecfeff", layout: "초고속 1분 복붙 가이드 형식, 퀵 프롬프트 -> 심층 커스텀 2단계 분리" },
-  { id: 30, name: "Pure Titanium Clean", primaryColor: "#334155", bgColor: "#ffffff", layout: "초고화질 매뉴얼 스타일, 볼드 타이포그래피 강조, 깔끔한 구분선" }
+  { id: 5, name: "Nordic Clean Ice", primaryColor: "#0284c7", bgColor: "#f0f9ff", layout: "북유럽 감성 클린 레이아웃, 인용구 중심 도입부, 실전 체크리스트" }
 ];
 
 const TARGET_LANGS = [
@@ -363,20 +284,23 @@ const TARGET_LANGS = [
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 const fileSlug = `post-${Date.now().toString(36)}`;
 
-async function fetchWithRetry(prompt, maxRetries = 5, delayMs = 5000) {
+// =========================================================================
+// [호출 함수] maxOutputTokens: 4096 (2,500자 정량 생성 최적화)
+// =========================================================================
+async function fetchWithRetry(prompt, maxRetries = 3, delayMs = 3000) {
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
       const response = await ai.models.generateContent({
         model: 'gemini-3.5-flash-lite',
         contents: prompt,
         config: {
-          maxOutputTokens: 8192,
+          maxOutputTokens: 4096,
           temperature: 0.7,
         }
       });
       return response.text;
     } catch (error) {
-      console.warn(`⚠️ [호출 재시도] ${attempt}/${maxRetries}: ${error.message}`);
+      console.warn(`⚠️ [호출 재시도 ${attempt}/${maxRetries}]: ${error.message}`);
       if (attempt === maxRetries) throw error;
       await delay(delayMs);
     }
@@ -388,80 +312,64 @@ async function generateSinglePost(lang, index) {
   const selectedScenario = PROMPT_CRISIS_SCENARIOS_30[Math.floor(Math.random() * PROMPT_CRISIS_SCENARIOS_30.length)];
   const i18n = I18N_SECTIONS[lang.code] || I18N_SECTIONS.ko;
 
-  console.log(`\n🚀 [${index + 1}/12] ${lang.name} (${lang.code}) 4호기 프롬프트 포스팅 생성 중... (적용 테마: ${selectedTheme.name})`);
+  console.log(`\n🚀 [${index + 1}/12] ${lang.name} (${lang.code}) 4호기 애드센스 표준 생성 중... (테마: ${selectedTheme.name})`);
 
   const { coverUrl, bodyUrl } = getPostImages(currentTopic, index);
   const pubDateIso = getKstPublishDateIso(index);
 
+  // 🎯 [애드센스 승인 최적화 프롬프트: 2,400~2,600자 정량화]
   const prompt = `
 You are a ${lang.persona}.
-Write a definitive, exhaustive, highly practical AI prompt engineering guide natively in ${lang.name}.
-CRITICAL REQUIREMENT: Write 100% natively in ${lang.name}. NEVER mix English template headings or bracketed words unless writing the English post.
+Write a high-quality, practical AI prompt engineering guide natively in ${lang.name}.
+Target Culture: "${lang.localeContext}"
+Assigned Situation: "${selectedScenario}"
+Topic: "${currentTopic}"
 
-[Topic]
-${currentTopic}
+[ADSENSE QUALITY & LENGTH REQUIREMENT]
+- For Korean (ko): Write exactly around 2,400 - 2,600 characters (do NOT exceed 3,000 characters).
+- For other languages: Write exactly 900 - 1,100 words.
+- Tone: Highly informative, professional, practical workplace advice.
 
-[Workplace Incident Context]
-- Target City/Culture: "${lang.localeContext}"
-- Assigned Emergency Scenario: "${selectedScenario}"
-
-[MANDATORY TOTAL LENGTH ENFORCEMENT - ZERO CONDENSATION]
-- For Korean (ko): Total body MUST be AT LEAST 2,500 characters (공백 제외 최소 2,000자 이상). Summarizing or brief outputs are strictly prohibited.
-- For other languages: Total body MUST be AT LEAST 1,400 - 1,800 words of rich technical substance.
-
-[EXHAUSTIVE 5-SECTION STRUCTURE REQUIREMENTS]
-You MUST strictly follow these 5 sections using clean H2 markdown headings (## ):
+[STRUCTURE - STRICT 5 H2 HEADINGS]
+Use these exact H2 headings:
 
 ## ${i18n.s1}
-- Do NOT summarize. Write at least 4 long, vivid paragraphs describing:
-  1) The intense workplace emergency strictly based on: "${selectedScenario}".
-  2) The naive, vague prompt attempts that produced hallucinated or robotic garbage.
-  3) The sudden panic of wasted time and impending meeting deadlines.
-  4) The realization of what is at stake (lost client pitch, executive embarrassment).
+Write 2 detailed paragraphs describing the sudden AI output failure, hallucinated garbage, and urgent deadline crisis based on: "${selectedScenario}".
 
 ## ${i18n.s2}
-- Do NOT just write 3 quick bullets. Write an exhaustive technical analysis across at least 4 detailed paragraphs explaining:
-  1) Token probability distribution, temperature impact, and attention mechanism limits.
-  2) Why generic instructions cause LLMs to default to bland textbook responses.
-  3) The architectural role of system instructions, constraints, and delimiter formatting.
+Write 2 analytical paragraphs explaining the technical root causes (token probability distribution, temperature impact, attention limits, and lack of explicit constraints).
 
 ## ${i18n.s3}
-- Provide complete, production-ready Master Prompt Templates matching "${lang.osUi}":
-  * Provide a comprehensive, structured Master Prompt Template wrapped in a 3-backtick markdown code block.
-  * Include clear placeholders like [Context], [Role], [Objective], [Constraints], [Output Format].
-  * Explain step-by-step how to fill each parameter for maximum reasoning depth.
+Provide a complete, copy-and-paste Master Prompt Template matching "${lang.osUi}". Wrap the template in a 3-backtick markdown block with structured parameters ([Context], [Role], [Objective], [Constraints], [Output Format]).
 
 ## ${i18n.s4}
-- Write at least 2 in-depth paragraphs of professional prompt architect wisdom:
-  1) Anti-hallucination guardrails: Verification loops, citing ground truth, negative prompting.
-  2) Advanced chaining techniques: Few-shot examples, dynamic persona injection, token optimization.
+Write 2 paragraphs of practical precautions and prompt architect tips to prevent hallucinations and logic drift.
 
 ## ${i18n.s5}
-- Provide exactly 3 realistic, highly specific Q&A items:
-  * Each question must be bold (**Q1.**, **Q2.**, **Q3.**) followed by the question text.
-  * Each answer (**A1.**, **A2.**, **A3.**) MUST be a detailed, multi-sentence technical explanation (at least 3-4 sentences per answer).
-  * Put an empty blank line between every Question and Answer.
+Provide exactly 3 practical Q&A items. You MUST put an empty line between Question and Answer:
 
-[STRICT MARKDOWN & FORMATTING RULES]
-1. HEADINGS: Keep clean markdown headings (e.g. "## ${i18n.s2}"). NEVER put bold asterisks (**) inside headings.
-2. BOLD FORMATTING: Use bold (**word**) STRICTLY WITHOUT SPACES inside the asterisks. Never write "** word **".
-3. COMMANDS & PROMPT BLOCKS: Always wrap prompt templates in standard 3-backtick code blocks (\`\`\`markdown or \`\`\`text).
-4. ABSOLUTE FORBIDDEN CHARACTERS:
-   - NEVER use LaTeX ($ or $$). Wrap variables, keys, or prompt tags in inline backticks or code blocks.
-   - NEVER use tilde (~) for ranges; use hyphen (-).
-${lang.code !== 'ko' ? `- Absolutely NEVER include any Korean characters (가-힣) anywhere in non-Korean posts.` : ''}
+**Q1.** Question text
 
-[Design Theme & Layout Dynamic Rules]
-- Assigned Theme: "${selectedTheme.name}"
-- Primary Accent Color: ${selectedTheme.primaryColor}
-- Layout Characteristic: ${selectedTheme.layout}
-- Incorporate inline styled HTML callout boxes tailored to this theme (Ensure font color is dark and readable):
-  <div style="border-left: 4px solid ${selectedTheme.primaryColor}; padding: 14px 18px; margin: 24px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">...</div>
+**A1.** Detailed answer (3-4 sentences).
+
+**Q2.** Question text
+
+**A2.** Detailed answer (3-4 sentences).
+
+**Q3.** Question text
+
+**A3.** Detailed answer (3-4 sentences).
+
+[FORMATTING RULES]
+1. Never put asterisks (**) inside H2 headings.
+2. Bold keywords with strict syntax: **keyword** (no space inside asterisks).
+3. Put prompt tags, variables, or system settings in inline backticks (e.g. \`[Role]\`, \`temperature: 0.2\`).
+${lang.code !== 'ko' ? `- Absolutely NO Korean characters in non-Korean posts.` : ''}
 
 [Strict Output Format]
 Return ONLY raw Markdown starting directly with frontmatter:
 ---
-title: "Native Catchy Title in ${lang.name}"
+title: "Native Clear Title in ${lang.name}"
 description: "Native concise description in ${lang.name} under 160 characters"
 publishDate: ${pubDateIso}
 image: "${coverUrl}"
@@ -469,7 +377,6 @@ category: "Prompt Engineering"
 tags: ${JSON.stringify(i18n.tags)}
 theme: "${selectedTheme.name}"
 ---
-(Body starts directly here without H1 header)
 `;
 
   try {
@@ -478,75 +385,32 @@ theme: "${selectedTheme.name}"
     if (text.startsWith('```markdown')) text = text.replace(/^```markdown\n/, '').replace(/\n```$/, '');
     if (text.startsWith('```')) text = text.replace(/^```\n/, '').replace(/\n```$/, '');
 
-    text = text.replace(/\\times/g, 'x')
-               .replace(/\\circ/g, '°')
-               .replace(/\\approx/g, '≈');
-
-    text = text.replace(/(\S)\s*~\s*(\S)/g, '$1 - $2');
-    text = text.replace(/~/g, '-');
-
-    if (lang.code !== 'ko') {
-      text = text.replace(/(title:\s*")([^"]*)(")/g, (match, p1, p2, p3) => `${p1}${p2.replace(/[가-힣]+/g, '').trim()}${p3}`);
-      text = text.replace(/(description:\s*")([^"]*)(")/g, (match, p1, p2, p3) => `${p1}${p2.replace(/[가-힣]+/g, '').trim()}${p3}`);
-    }
-
     const fmMatch = text.match(/^---[\s\S]*?---\n*/);
     if (fmMatch) {
       let frontmatter = fmMatch[0].trim();
       let body = text.slice(fmMatch[0].length).trim();
       body = body.replace(/^#\s+[^\n]+\n+/, '');
 
-      frontmatter = frontmatter.replace(/category:\s*["'][^"']*["']/i, "category: 'Prompt Engineering'")
-                               .replace(/category:\s*[^\n\r]+/i, "category: 'Prompt Engineering'");
+      // ⚠️ 4호기 카테고리 'Prompt Engineering' 영구 보존 강제 검증
+      frontmatter = frontmatter.replace(/category:\s*["'][^"']*["']/i, 'category: "Prompt Engineering"')
+                               .replace(/category:\s*[^\n\r]+/i, 'category: "Prompt Engineering"');
 
-      frontmatter = frontmatter.replace(/publishDate:\s*[^\n\r]+/i, `publishDate: ${pubDateIso}`);
-      frontmatter = frontmatter.replace(/image:\s*["'][^"']*["']/i, `image: '${coverUrl}'`);
-
-      // 🛡️ Uburinzi bwa mbere bwo gutunganya imyandikire
-      body = sanitizeMarkdownFormatting(body, lang.code);
-
-      let retryCount = 0;
-      while (lang.code === 'ko' && body.length < 2200 && retryCount < 2) {
-        console.warn(`⚠️ [4호기 분량 부족] 현재 ${body.length}자 -> 목표 2,500자 충족을 위해 재작성 시도 (${retryCount + 1}/2)...`);
-        const retryPrompt = prompt + "\n\nCRITICAL ENFORCEMENT: The previous generated post was strictly too short. You MUST write at least 4 very long, deeply detailed paragraphs for EACH section. Elaborate on every prompt variable, LLM logic breakdown, and system instruction exhaustively to exceed 2,500 Korean characters.";
-
-        let retryRawText = await fetchWithRetry(retryPrompt);
-        let retryText = retryRawText.trim();
-        if (retryText.startsWith('```markdown')) retryText = retryText.replace(/^```markdown\n/, '').replace(/\n```$/, '');
-        if (retryText.startsWith('```')) retryText = retryText.replace(/^```\n/, '').replace(/\n```$/, '');
-
-        const newFmMatch = retryText.match(/^---[\s\S]*?---\n*/);
-        if (newFmMatch) {
-          let newBody = retryText.slice(newFmMatch[0].length).trim();
-          newBody = newBody.replace(/^#\s+[^\n]+\n+/, '');
-          body = sanitizeMarkdownFormatting(newBody, lang.code);
-        }
-        retryCount++;
-      }
+      // 🩺 [자가 검수 및 치유 엔진 가동]
+      body = inspectAndHealMarkdown(body, lang.code);
 
       if (lang.code === 'ko') {
-        console.log(`📏 [4호기 한국어 본문 최종 글자 수] ${body.length}자 (목표: 2,500자 이상)`);
+        console.log(`   📏 [4호기 본문 최종 글자 수] ${body.length}자 (애드센스 표준: 2,400~2,600자)`);
       }
 
+      // 본문 중간 이미지 배치 (2번 섹션 직전)
       const safeAlt = currentTopic.replace(/[\[\]\(\)"']/g, '').trim();
       const middleImageMarkdown = `\n\n![${safeAlt} Prompt Guide](${bodyUrl})\n\n`;
 
-      if (!body.includes(middleImageMarkdown.trim())) {
-        if (body.includes('## 2.')) {
-          body = body.replace(/(##\s*2\.[^\n]+)/, `${middleImageMarkdown}$1`);
-        } else {
-          const paragraphs = body.split('\n\n');
-          if (paragraphs.length >= 3) {
-            paragraphs.splice(2, 0, middleImageMarkdown.trim());
-            body = paragraphs.join('\n\n');
-          } else {
-            body = `${middleImageMarkdown}${body}`;
-          }
-        }
+      if (body.includes('## 2.')) {
+        body = body.replace(/(##\s*2\.[^\n]+)/, `${middleImageMarkdown}$1`);
+      } else {
+        body = `${middleImageMarkdown}${body}`;
       }
-
-      // 🛡️ Uburinzi bwa kabiri: Kumenya neza ko nta mitwe isubiramo nyuma yo gushyiramo ifoto
-      body = sanitizeMarkdownFormatting(body, lang.code);
 
       text = `${frontmatter}\n\n${body}\n`;
     }
@@ -558,31 +422,36 @@ theme: "${selectedTheme.name}"
 
     const filePath = path.join(targetDir, `${fileSlug}.md`);
     fs.writeFileSync(filePath, text, 'utf-8');
-    console.log(`✅ [저장 완료] 4호기: src/data/post/${lang.code}/${fileSlug}.md (Prompt Engineering / 테마: ${selectedTheme.name})`);
+    console.log(`   ✅ [성공] 4호기 저장 완료: src/data/post/${lang.code}/${fileSlug}.md`);
     return true;
   } catch (error) {
-    console.error(`❌ [생성 실패] ${lang.name}:`, error.message);
+    console.error(`❌ [최종 실패] ${lang.name} 생성 실패:`, error.message);
     return false;
   }
 }
 
 async function run() {
   console.log("==================================================");
-  console.log("⚡ 4호기 Prompt Engineering 12개국 최적화 고속 자동 포스팅 시작 (방패 가동)");
+  console.log("⚡ [4호기 AI Prompt Engineering] (카테고리: Prompt Engineering) 12개국 고속 자동 포스팅 시작");
   console.log("==================================================");
 
   let successCount = 0;
+
   for (let i = 0; i < TARGET_LANGS.length; i++) {
     const isSuccess = await generateSinglePost(TARGET_LANGS[i], i);
     if (isSuccess) successCount++;
-    if (i < TARGET_LANGS.length - 1) await delay(2000);
+    if (i < TARGET_LANGS.length - 1) {
+      await delay(2000);
+    }
   }
 
   if (successCount > 0) {
     lines.shift();
     fs.writeFileSync(TOPICS_FILE, lines.join('\n'), 'utf-8');
-    console.log(`\n🧹 총 ${successCount}개국 포스팅 완료. topics.txt 갱신.`);
+    console.log(`\n🧹 총 ${successCount}개국 포스팅 완료. topics.txt에서 주제를 제거했습니다.`);
+    console.log(`📊 남은 주제 수: ${lines.length}개`);
   } else {
+    console.error("\n❌ 모든 언어 생성이 실패하여 topics.txt를 보존합니다.");
     process.exit(1);
   }
 }
