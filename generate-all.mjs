@@ -3,7 +3,7 @@
 // ⚠️ [혼동 방지 경고]
 // 1. 이 파일은 '4호기 (Prompt Engineering)'입니다. 2-1호기나 다른 호기와 절대 혼동하지 말 것!
 // 2. 카테고리는 대표님의 지시 전까지 'Prompt Engineering'으로 영구 고정한다. (임의 변경 절대 금지)
-// 3. 이미지 생성 방식은 Picsum prompt- 시드 URL 방식을 영구 유지한다.
+// 3. 주제에 맞는 Pexels 이미지 2장을 표지와 본문에 사용한다.
 // 4. 대표님과의 모든 설명, 질문, 대화 및 주석은 반드시 100% 한국어로만 진행한다.
 // =========================================================================
 
@@ -12,6 +12,11 @@ import path from 'path';
 
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const PEXELS_API_KEY = process.env.PEXELS_API_KEY;
+if (!PEXELS_API_KEY) {
+  console.error('❌ PEXELS_API_KEY 환경변수가 없습니다. 글과 topics.txt를 변경하지 않고 중단합니다.');
+  process.exit(1);
+}
 if (!OPENAI_API_KEY) {
   console.error('❌ OPENAI_API_KEY 환경변수가 설정되지 않았습니다.');
   process.exit(1);
@@ -20,17 +25,22 @@ const POSTS_BASE_DIR = path.resolve('src/data/post');
 const TOPICS_FILE = path.resolve('topics.txt');
 
 // =========================================================================
-// [4호기 전용] 100% 무에러 영구 고정 Picsum 실사 CDN 매핑
+// [4호기 전용] Pexels 검색 메타데이터 기반 주제별 이미지 2장 선택
+// Pexels Photo API는 alt/페이지 URL/작가를 제공하지만 완전한 태그 목록은 제공하지 않습니다.
 // =========================================================================
-function getPostImages(topic, index) {
-  const seedBase = Date.now().toString(36);
-  const coverSeed = `prompt-${seedBase}-${index}-c`;
-  const bodySeed = `prompt-${seedBase}-${index}-b`;
-
-  return {
-    coverUrl: `https://picsum.photos/seed/${coverSeed}/1200/675.jpg`,
-    bodyUrl: `https://picsum.photos/seed/${bodySeed}/1000/550.jpg`
-  };
+async function getPostImages(topic) {
+  const query = `${topic} prompt engineering AI workplace computer`;
+  const response = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=30&orientation=landscape`, {
+    headers: { Authorization: PEXELS_API_KEY }
+  });
+  if (!response.ok) throw new Error(`Pexels 검색 실패: HTTP ${response.status}`);
+  const payload = await response.json();
+  const candidates = (payload.photos || []).filter(photo =>
+    photo?.id && photo?.alt?.trim() && /^https:\/\/images\.pexels\.com\/photos\//.test(photo?.src?.landscape || '') && /^https:\/\/www\.pexels\.com\/photo\//.test(photo?.url || '')
+  );
+  if (candidates.length < 2 || candidates[0].id === candidates[1].id) throw new Error('주제와 연결할 고유 Pexels 이미지 2장을 찾지 못했습니다.');
+  const [cover, body] = candidates;
+  return { coverUrl: cover.src.landscape, bodyUrl: body.src.landscape, coverAlt: cover.alt.trim(), bodyAlt: body.alt.trim(), attribution: [cover, body].map(p => `${p.photographer} (${p.url})`).join('; ') };
 }
 
 // =========================================================================
@@ -340,17 +350,18 @@ function validateGeneratedPost(text, langCode) {
   if ((body.match(/\*\*Q[1-3]\.\*\*/gi) || []).length < 3) errors.push('FAQ 질문 3개 미만');
   if ((body.match(/\*\*A[1-3]\.\*\*/gi) || []).length < 3) errors.push('FAQ 답변 3개 미만');
   if (langCode !== 'ko' && /[가-힣]/.test(body)) errors.push('비한국어 본문에 한글 포함');
+  if ((body.match(/^!\\[[^\\]]*\\]\\(https:\\/\\/images\\.pexels\\.com\\/photos\\//gm) || []).length !== 1) errors.push('본문 Pexels 이미지 1장 누락 또는 중복');
   return errors;
 }
 
-async function generateSinglePost(lang, index) {
+async function generateSinglePost(lang, index, imageSet) {
   const selectedTheme = THEME_PRESETS[Math.floor(Math.random() * THEME_PRESETS.length)];
   const selectedScenario = PROMPT_CRISIS_SCENARIOS_30[Math.floor(Math.random() * PROMPT_CRISIS_SCENARIOS_30.length)];
   const i18n = I18N_SECTIONS[lang.code] || I18N_SECTIONS.ko;
 
   console.log(`\n🚀 [${index + 1}/12] ${lang.name} (${lang.code}) 4호기 애드센스 표준 생성 중... (테마: ${selectedTheme.name})`);
 
-  const { coverUrl, bodyUrl } = getPostImages(currentTopic, index);
+  const { coverUrl, bodyUrl, coverAlt, bodyAlt, attribution } = imageSet;
   const pubDateIso = getKstPublishDateIso();
 
   // 🎯 [애드센스 승인 최적화 프롬프트: 2,400~2,600자 정량화]
@@ -414,6 +425,7 @@ description: "Native concise description in ${lang.name} under 160 characters"
 publishDate: ${pubDateIso}
 image: "${coverUrl}"
 category: "Prompt Engineering"
+<!-- Pexels cover alt: ${coverAlt.replace(/--/g, '—')} | photos: ${attribution} -->
 tags: ${JSON.stringify(i18n.tags)}
 theme: "${selectedTheme.name}"
 ---
@@ -443,8 +455,8 @@ theme: "${selectedTheme.name}"
       }
 
       // 본문 중간 이미지 배치 (2번 섹션 직전)
-      const safeAlt = currentTopic.replace(/[\[\]\(\)"']/g, '').trim();
-      const middleImageMarkdown = `\n\n![${safeAlt} Prompt Guide](${bodyUrl})\n\n`;
+      const safeAlt = bodyAlt.replace(/[\[\]\(\)"']/g, '').trim();
+      const middleImageMarkdown = `\n\n<!-- Pexels photo by ${attribution} -->\n![${safeAlt}](${bodyUrl})\n\n`;
 
       if (body.includes('## 2.')) {
         body = body.replace(/(##\s*2\.[^\n]+)/, `${middleImageMarkdown}$1`);
@@ -480,10 +492,18 @@ async function run() {
   console.log("==================================================");
 
   const batchStart = generatedPostFiles.length;
+  let imageSet;
+  try {
+    imageSet = await getPostImages(currentTopic);
+  } catch (error) {
+    console.error(`❌ Pexels 이미지 확보 실패: ${error.message}. 글과 topics.txt를 변경하지 않습니다.`);
+    process.exitCode = 1;
+    return;
+  }
   let successCount = 0;
 
   for (let i = 0; i < TARGET_LANGS.length; i++) {
-    const isSuccess = await generateSinglePost(TARGET_LANGS[i], i);
+    const isSuccess = await generateSinglePost(TARGET_LANGS[i], i, imageSet);
     if (isSuccess) successCount++;
     if (i < TARGET_LANGS.length - 1) {
       await delay(2000);
