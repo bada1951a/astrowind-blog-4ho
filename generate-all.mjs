@@ -350,7 +350,7 @@ function validateGeneratedPost(text, langCode) {
   if ((body.match(/\*\*Q[1-3]\.\*\*/gi) || []).length < 3) errors.push('FAQ 질문 3개 미만');
   if ((body.match(/\*\*A[1-3]\.\*\*/gi) || []).length < 3) errors.push('FAQ 답변 3개 미만');
   if (langCode !== 'ko' && /[가-힣]/.test(body)) errors.push('비한국어 본문에 한글 포함');
-  if ((body.match(/^!\\[[^\\]]*\\]\\(https:\\/\\/images\\.pexels\\.com\\/photos\\//gm) || []).length !== 1) errors.push('본문 Pexels 이미지 1장 누락 또는 중복');
+  if ((body.match(/^!\[[^\]]*\]\(https:\/\/images\.pexels\.com\/photos\//gm) || []).length !== 1) errors.push('본문 Pexels 이미지 1장 누락 또는 중복');
   return errors;
 }
 
@@ -425,7 +425,6 @@ description: "Native concise description in ${lang.name} under 160 characters"
 publishDate: ${pubDateIso}
 image: "${coverUrl}"
 category: "Prompt Engineering"
-<!-- Pexels cover alt: ${coverAlt.replace(/--/g, '—')} | photos: ${attribution} -->
 tags: ${JSON.stringify(i18n.tags)}
 theme: "${selectedTheme.name}"
 ---
