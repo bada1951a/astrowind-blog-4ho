@@ -35,8 +35,11 @@ const { language, textDirection } = I18N;
     <!-- Google tag (gtag.js) - 4호기 전용 태그 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YT7ZQ98ZW"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      const analyticsWindow = window as Window & { dataLayer?: unknown[][] };
+      analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
+      function gtag(...args: unknown[]) {
+        analyticsWindow.dataLayer?.push(args);
+      }
       gtag('js', new Date());
 
       gtag('config', 'G-7YT7ZQ98ZW');
@@ -58,7 +61,10 @@ const { language, textDirection } = I18N;
     <Analytics />
 
     <!-- Cloudflare Web Analytics -->
-    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "7b4323327ec141bf946e318a8d537f9a"}'></script>
+    <script
+      type="module"
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "7b4323327ec141bf946e318a8d537f9a"}'></script>
     <!-- End Cloudflare Web Analytics -->
 
     <link rel="preconnect" href="https://images.unsplash.com" />
