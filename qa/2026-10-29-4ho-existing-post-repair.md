@@ -143,3 +143,15 @@
 - `src/data/post/vi/post-mvplfhxk.md`
 - `src/data/post/vi/post-mvr0ygdj.md`
 - `src/data/post/vi/post-mvs0n6hy.md`
+
+
+## Codex 재검증 — 2026-10-29 KST
+
+- 콘텐츠 132개 확인, main 대비 본문 변경 130개. 허용 경로는 src/data/post 및 이 QA 문서뿐.
+- npm ci --ignore-scripts --legacy-peer-deps 후 Node 24.22.0에서 npm run build 성공: 348페이지, 약 3분 13초.
+- 생성된 dist에서 기존 132개 글 경로 모두 존재. code/pre 제외 본문 별표 쌍 0, 빈 제목 0, 한글·가나 문자권 혼입 표시 0. strong 937개 유지.
+- frontmatter 전체와 본문 이미지 URL·순서 불변. 생성 코드·워크플로·테마·이미지 파일 변경 없음.
+- 로컬 브라우저 ko/post-mvs0n6hy/ 확인: FAQ 6개 p 요소, 기존 datetime 2026-10-28T03:00:00.000Z, 강조 정상. 운영 수정 전 별표 및 FAQ 제목 결합 문제도 확인.
+- npm run check 실패: 기존 코드 TypeScript 오류 7개. 콘텐츠 전용 변경이므로 코드 수정은 섞지 않음. 일반 CI 성공으로 보고하지 않음.
+- 기존 Preview Cloudflare 실패는 NODE_VERSION=20 환경. 현재 Production은 NODE_VERSION=22, main 자동 배포 및 npm run build/dist 설정 확인. 배포 성공 여부는 병합된 SHA에서 별도 확인.
+- 기존 /privacy, /terms 중복 경로 빌드 경고 및 미래 글 공개 제한은 별도 과제. 현재 글의 발행일 변경·신규 글 생성·워크플로 수동 실행 없음.
