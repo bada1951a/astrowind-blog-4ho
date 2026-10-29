@@ -8,8 +8,6 @@ tags: ["Midjourney V6", "Prompt Engineering", "Geschäftsberichte", "Consulting"
 theme: "Acid Lime Hacker Space"
 ---
 
-## 1. Kritischer KI-Halluzinations- und Qualitätsnotfall
-
 Es ist Dienstag, exakt 21:45 Uhr im Konferenzraum eines Frankfurter Consulting-Hauses. Morgen Früh um 9:00 Uhr muss der finale Pitch-Deck-Entwurf für einen neuen Mandanten aus dem Bankensektor stehen: 20 verschiedene Szenarien, die denselben Projektleiter in unterschiedlichen Arbeitsumgebungen zeigen. Das Problem? Jedes Mal, wenn ich in Midjourney V6 einen neuen Prompt abschicke, generiert die KI eine völlig andere Person. Mal hat der Mann Vollbart und blonde Haare, im nächsten Bild trägt er Brille und hat dunkles, kurzes Haar. Für einen professionellen Geschäftsbericht ist das ein absolutes KO-Kriterium. Die Zeit sitzt mir im Nacken, und die traditionellen Ansätze wie einfaches Text-Prompting greifen hier schlichtweg zu kurz.
 
 ### Warum einfache Prompts im Banken- und Consulting-Umfeld scheitern
@@ -40,25 +38,23 @@ A professional 35-year-old German male consultant, sharp jawline, neat dark-brow
 
 ### Schritt-für-Schritt-Anleitung für alle 20 Szenen
 
-1. Das Master-Bild definieren: Generieren Sie zuerst *ein* perfektes Porträt Ihres Charakters und speichern Sie die URL dieses Bildes.
-
-2. Den Parameter `--cref` einsetzen: Fügen Sie am Ende jedes neuen Prompts die URL des Master-Bildes ein.
-
-3. Gewichtung steuern (`--cw`): 
+1. <strong>Das Master-Bild definieren:</strong> Generieren Sie zuerst *ein* perfektes Porträt Ihres Charakters und speichern Sie die URL dieses Bildes.
+2. <strong>Den Parameter `--cref` einsetzen:</strong> Fügen Sie am Ende jedes neuen Prompts die URL des Master-Bildes ein.
+3. <strong>Gewichtung steuern (`--cw`):</strong> 
    - `--cw 100` kopiert Gesicht, Haare und Kleidung.
-   - `--cw 0` kopiert nur das Gesicht und erlaubt Ihnen, in jeder Szene die Kleidung (z.B. Hemd ohne Sakko, Outdoor-Jacke) komplett zu verändern. Perfekt für narrative Geschäftsberichte!
+   - `--cw 0` kopiert <strong>nur</strong> das Gesicht und erlaubt Ihnen, in jeder Szene die Kleidung (z.B. Hemd ohne Sakko, Outdoor-Jacke) komplett zu verändern. Perfekt für narrative Geschäftsberichte!
 
 <div style="border-left: 4px solid #84cc16; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Häufige Fehlerquelle:</strong> Wenn Sie `--cw 100` verwenden, aber im Text eine andere Krawattenfarbe oder Jacke fordern, gerät Midjourney in einen Konflikt. Nutzen Sie `--cw 0` für maximale Flexibilität bei der Kleidung bei gleichbleibendem Gesicht.
 </div>
 
-## 5. Häufig gestellte Fragen (FAQ)
+### Häufig gestellte Fragen (FAQ)
 
-Frage 1: Kann ich `--cref` auch für weibliche Charaktere und diverse Teams nutzen?
+<strong>Frage 1: Kann ich `--cref` auch für weibliche Charaktere und diverse Teams nutzen?</strong>
 Ja, das Prinzip funktioniert universell. Wichtig ist lediglich, dass das zugrundeliegende Referenzbild (`--cref`) eine hohe Auflösung und eine klare frontale oder leicht gedrehte Ansicht des Gesichts zeigt.
 
-Frage 2: Was tun, wenn Midjourney V6 das Gesicht trotz `--cref` leicht verfälscht?
+<strong>Frage 2: Was tun, wenn Midjourney V6 das Gesicht trotz `--cref` leicht verfälscht?</strong>
 Erhöhen Sie die Prompt-Stabilität, indem Sie den Stil-Parameter anpassen oder das Referenzbild über `--iw` (Image Weight) in einem Multi-Image-Prompt verstärken. Nutzen Sie zudem exakte Ausdrücke wie "the same man from the reference image".
 
-Frage 3: Wie automatisiere ich diesen Prozess für 20 Szenen am effizientesten?
+<strong>Frage 3: Wie automatisiere ich diesen Prozess für 20 Szenen am effizientesten?</strong>
 Erstellen Sie sich in ChatGPT oder Claude eine Text-Matrix. Füttern Sie die KI mit den 20 gewünschten Report-Kapiteln und lassen Sie sich automatisiert die passenden Midjourney-Prompts inklusive der angepassten `--cref`-URL und veränderten `--cw`-Werten ausgeben.

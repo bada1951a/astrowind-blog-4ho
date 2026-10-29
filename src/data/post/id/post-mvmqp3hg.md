@@ -12,11 +12,11 @@ theme: "Forest Emerald Bio"
 
 Pukul 14.15 di kawasan bisnis Sudirman Central Business District (SCBD) Jakarta, ruang server kantor kami mendadak ricuh. Chatbot layanan pelanggan (CS) otomatis berbasis LLM yang baru saja kami rilis untuk klien perbankan mengalami insiden serius. Sekelompok pengguna iseng melancarkan serangan *jailbreak* tingkat lanjut, memanipulasi celah dalam *system prompt* chatbot agar memberikan diskon fiktif dan membocorkan data internal. Alih-alih merespons standar, chatbot tersebut malah memberikan jawaban ngawur dan melenceng jauh dari prosedur operasional.
 
-Panik melanda tim karena transkrip keluhan pelanggan dan laporan klaim asuransi yang masuk dalam bentuk teks bebas (*unstructured text*) berantakan total, sementara manajemen menuntut rekapitulasi data dalam bentuk tabel Excel yang bersih secepatny
+Panik melanda tim karena transkrip keluhan pelanggan dan laporan klaim asuransi yang masuk dalam bentuk teks bebas (*unstructured text*) berantakan total, sementara manajemen menuntut rekapitulasi data dalam bentuk tabel Excel yang bersih secepatnya.
 
-**A.** Instruksi awal kami kepada ChatGPT dan Claude ternyata terlalu longgar—model AI kebingungan membedakan antara instruksi pengamanan sistem dengan isi keluhan pelanggan, sehingga format tabel yang diminta hancur berantakan dan mengandung halusinasi dat
+Instruksi awal kami kepada ChatGPT dan Claude ternyata terlalu longgar—model AI kebingungan membedakan antara instruksi pengamanan sistem dengan isi keluhan pelanggan, sehingga format tabel yang diminta hancur berantakan dan mengandung halusinasi data.
 
-**A.** <div style="border-left: 4px solid #10b981; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
+<div style="border-left: 4px solid #10b981; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Metrik Efisiensi Waktu:</strong> Menggunakan teknik Few-Shot Prompting yang tepat menurunkan tingkat kesalahan ekstraksi data dari 45% menjadi kurang dari 2%, sekaligus memotong waktu rekap manual dari 3 jam menjadi hanya 15 detik per batch dokumen.
 </div>
 
@@ -26,7 +26,7 @@ Panik melanda tim karena transkrip keluhan pelanggan dan laporan klaim asuransi 
 
 Mengapa zero-shot prompt (instruksi tanpa contoh) gagal total dalam mengekstrak data tidak berstruktur? Jawabannya terletak pada cara LLM memproses konteks. Ketika dihadapkan pada paragraf panjang keluhan pelanggan yang bercampur dengan jargon industri, AI cenderung menebak-nebak struktur kolom tabel jika tidak diberikan contoh konkret (*shots*).
 
-Arsitektur **Few-Shot Prompting** bekerja dengan cara memberikan 2 sampai 3 contoh pasangan data masukan (*input*) dan keluaran (*output*) yang ideal sebelum meminta AI memproses data baru. Dengan pendekatan ini, kita mengunci perilaku model (*behavioral anchoring*). AI tidak lagi mengandalkan asumsi liar, melainkan langsung meniru pola format tabel Markdown atau JSON yang kita tentukan, sekaligus mengabaikan instruksi asing yang mencoba melakukan *jailbreak*.
+Arsitektur <strong>Few-Shot Prompting</strong> bekerja dengan cara memberikan 2 sampai 3 contoh pasangan data masukan (*input*) dan keluaran (*output*) yang ideal sebelum meminta AI memproses data baru. Dengan pendekatan ini, kita mengunci perilaku model (*behavioral anchoring*). AI tidak lagi mengandalkan asumsi liar, melainkan langsung meniru pola format tabel Markdown atau JSON yang kita tentukan, sekaligus mengabaikan instruksi asing yang mencoba melakukan *jailbreak*.
 
 ## 3. Templat Master Prompt Siap Pakai yang Sangat Efektif Template
 
@@ -49,9 +49,9 @@ Keluaran:
 | #9981 | Budi | Transaksi Gagal | Tinggi | Eskalasi Tim IT |
 
 Contoh 2:
-Masukan: "Pengaduan dari Sisk
+Masukan: "Pengaduan dari Siska.
 
-**A.** Nomor referensi TK-4421. Kartu kredit tertelan di ATM Pacific Place. Butuh blokir darurat."
+Nomor referensi TK-4421. Kartu kredit tertelan di ATM Pacific Place. Butuh blokir darurat."
 Keluaran:
 | ID Tiket | Nama Pelanggan | Kategori Kendala | Status Prioritas | Solusi Diajukan |
 | --- | --- | --- | --- | --- |
@@ -70,22 +70,22 @@ Keluaran:
 
 Untuk memaksimalkan hasil ekstraksi di lingkungan kerja harian Anda, perhatikan beberapa kiat taktis berikut:
 
-* **Batasi Batasan Token:** Jika teks masukan mencapai ribuan kata, potong menjadi beberapa bagian (*chunking*) agar LLM tidak mengalami kelelahan konteks yang memicu halusinasi baris tabel.
-* **Gunakan Delimiter Ketat:** Bungkus teks masukan menggunakan tanda pagar ganda (`###`) atau tag XML (`<text_input>...</text_input>`) untuk memisahkan instruksi utama dari teks kotor yang akan diekstrak.
-* **Pengaturan Suhu (Temperature):** Atur *temperature* ke angka `0` atau `0.1` pada pengaturan API atau *Custom Instructions* agar model AI tetap konsisten dan tidak berimajinasi menciptakan data fiktif.
+* <strong>Batasi Batasan Token:</strong> Jika teks masukan mencapai ribuan kata, potong menjadi beberapa bagian (*chunking*) agar LLM tidak mengalami kelelahan konteks yang memicu halusinasi baris tabel.
+* <strong>Gunakan Delimiter Ketat:</strong> Bungkus teks masukan menggunakan tanda pagar ganda (`###`) atau tag XML (`<text_input>...</text_input>`) untuk memisahkan instruksi utama dari teks kotor yang akan diekstrak.
+* <strong>Pengaturan Suhu (Temperature):</strong> Atur *temperature* ke angka `0` atau `0.1` pada pengaturan API atau *Custom Instructions* agar model AI tetap konsisten dan tidak berimajinasi menciptakan data fiktif.
 
 ## 5. Pertanyaan yang Sering Diajukan (FAQ)
 
-**Q.** Mengapa hasil tabel dari Claude sering lebih rapi dibanding ChatGPT untuk teks berbahasa Indonesia?
+<strong>Q.</strong> Mengapa hasil tabel dari Claude sering lebih rapi dibanding ChatGPT untuk teks berbahasa Indonesia?
 
-**A.** Claude 3.5 Sonnet memiliki pemahaman konteks token multibahasa yang sangat teliti dalam mendeteksi batas antar-kalimat, sehingga struktur baris Markdown jarang melompat atau rusak.
+A. Claude 3.5 Sonnet memiliki pemahaman konteks token multibahasa yang sangat teliti dalam mendeteksi batas antar-kalimat, sehingga struktur baris Markdown jarang melompat atau rusak.
 
-**Q.** Bagaimana jika teks masukan mengandung perintah jailbreak yang menyamar sebagai data pelanggan?
+<strong>Q.</strong> Bagaimana jika teks masukan mengandung perintah jailbreak yang menyamar sebagai data pelanggan?
 
-**A.** Gunakan teknik pemisahan peran (*delimiter isolation*) di dalam prompt, serta tambahkan aturan tegas bahwa teks di dalam blok masukan harus diperlakukan murni sebagai data statis, bukan instruksi eksekusi.
+A. Gunakan teknik pemisahan peran (*delimiter isolation*) di dalam prompt, serta tambahkan aturan tegas bahwa teks di dalam blok masukan harus diperlakukan murni sebagai data statis, bukan instruksi eksekusi.
 
-**Q.** Apakah metode ini bisa langsung diekspor ke file CSV atau Excel?
+<strong>Q.</strong> Apakah metode ini bisa langsung diekspor ke file CSV atau Excel?
 
-**A.** Y
+A. Ya.
 
-**A.** Anda cukup meminta AI untuk menghasilkan keluaran dalam format blok kode CSV, atau langsung menyalin tabel Markdown tersebut dan menempelkannya langsung ke lembar kerja Excel atau Google Sheets.
+A. Anda cukup meminta AI untuk menghasilkan keluaran dalam format blok kode CSV, atau langsung menyalin tabel Markdown tersebut dan menempelkannya langsung ke lembar kerja Excel atau Google Sheets.

@@ -68,14 +68,38 @@ Dynamische Persona-Injektion und Token-Optimierung sind die nächsten Schritte f
 
 ## 5. Häufig gestellte Fragen (FAQ)
 
-**Q1.** Warum fügt Claude trotz strikter Verbote manchmal Markdown-Codeblöcke um das JSON hinzu?
 
-**A1.** Sprachmodelle sind in ihren Trainingsdaten massiv darauf optimiert, JSON innerhalb von Markdown-Codeblöcken darzustellen, da dies für Menschen am besten lesbar ist. Wenn Sie dieses Verhalten komplett unterbinden möchten, müssen Sie im Prompt explizit definieren, dass selbst dreifache Backticks untersagt sind und die Antwort direkt mit der geschweiften Klammer `{` beginnen muss. Ergänzend hilft es, die Systemrolle als reine API-Schnittstelle zu definieren, die keine visuellen Formatierungen für menschliche Betrachter generiert.
 
-**Q2.** Wie skaliere ich diese Prompt-Architektur für komplexe SVG-Illustrationen mit dynamischen Daten?
 
-**A2.** Für komplexe SVG-Illustrationen sollten Sie das JSON-Schema so erweitern, dass es modulare Koordinaten, Farbpaletten und Pfad-Definitionen trennt, anstatt den gesamten SVG-Code als unstrukturierte Monolith-Zeichenkette zu übergeben. Dadurch kann das Modell logische Teilstücke präziser berechnen und verändern. Nutzen Sie zudem Few-Shot-Beispiele mit validen, minimalistischen SVG-Pfaden, um dem Modell die exakten Designvorgaben und Viewbox-Dimensionen zu demonstrieren.
 
-**Q3.** Welche Rolle spielt die Temperatureinstellung bei der Vermeidung von Parsing-Fehlern?
+Q1. Warum fügt Claude trotz strikter Verbote manchmal Markdown-Codeblöcke um das JSON hinzu?
 
-**A3.** Die Temperatur bestimmt die Zufälligkeit bei der Auswahl des nächsten Tokens im probabilistischen Raum des Transformers. Eine höhere Temperatur (z. B. 0.7 oder 1.0) fördert Kreativität und Variation, was bei programmatischen Aufgaben wie JSON-Generierung oder SVG-Code fatal ist, da dort absolute Syntax-Treue gefordert wird. Durch das Absenken der Temperatur auf 0.0 bis 0.1 zwingen Sie das Modell, stets den deterministisch wahrscheinlichsten und somit regelkonformsten Token-Pfad zu wählen.
+
+
+
+
+A1. Sprachmodelle sind in ihren Trainingsdaten massiv darauf optimiert, JSON innerhalb von Markdown-Codeblöcken darzustellen, da dies für Menschen am besten lesbar ist. Wenn Sie dieses Verhalten komplett unterbinden möchten, müssen Sie im Prompt explizit definieren, dass selbst dreifache Backticks untersagt sind und die Antwort direkt mit der geschweiften Klammer `{` beginnen muss. Ergänzend hilft es, die Systemrolle als reine API-Schnittstelle zu definieren, die keine visuellen Formatierungen für menschliche Betrachter generiert.
+
+
+
+
+
+Q2. Wie skaliere ich diese Prompt-Architektur für komplexe SVG-Illustrationen mit dynamischen Daten?
+
+
+
+
+
+A2. Für komplexe SVG-Illustrationen sollten Sie das JSON-Schema so erweitern, dass es modulare Koordinaten, Farbpaletten und Pfad-Definitionen trennt, anstatt den gesamten SVG-Code als unstrukturierte Monolith-Zeichenkette zu übergeben. Dadurch kann das Modell logische Teilstücke präziser berechnen und verändern. Nutzen Sie zudem Few-Shot-Beispiele mit validen, minimalistischen SVG-Pfaden, um dem Modell die exakten Designvorgaben und Viewbox-Dimensionen zu demonstrieren.
+
+
+
+
+
+Q3. Welche Rolle spielt die Temperatureinstellung bei der Vermeidung von Parsing-Fehlern?
+
+
+
+
+
+A3. Die Temperatur bestimmt die Zufälligkeit bei der Auswahl des nächsten Tokens im probabilistischen Raum des Transformers. Eine höhere Temperatur (z. B. 0.7 oder 1.0) fördert Kreativität und Variation, was bei programmatischen Aufgaben wie JSON-Generierung oder SVG-Code fatal ist, da dort absolute Syntax-Treue gefordert wird. Durch das Absenken der Temperatur auf 0.0 bis 0.1 zwingen Sie das Modell, stets den deterministisch wahrscheinlichsten und somit regelkonformsten Token-Pfad zu wählen.

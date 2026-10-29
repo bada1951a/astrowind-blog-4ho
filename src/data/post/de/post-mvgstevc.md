@@ -8,8 +8,6 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Tokyo Neon Violet"
 ---
 
-## 1. Kritischer KI-Halluzinations- und Qualitätsnotfall
-
 Es ist Dienstag, kurz vor 21:00 Uhr im Frankfurter Banken- und Consultingbereich. Draußen regnet es auf die Hochhäuser, drinnen brennt noch Licht. Auf meinem Schreibtisch stapeln sich die Anforderungen zur Automatisierung von Geschäftsberichten. Mein Chef kommt gestresst in mein Büro: „Die Vorstandspräsentation morgen Früh braucht einen komplett neuen Aufhänger. Die Leute schlafen bei unseren Zahlen ein. Schau dir mal an, wie die Top-Finanzkanäle auf YouTube komplexe Bilanzen in packende 10-Minuten-Storys verpacken. Brich mir diese Skripte sofort in eine wiederverwendbare Struktur herunter, damit wir das auf unsere Finanzdaten anwenden können!“ Kein „Guten Abend“, keine Vorwarnung. Nur die nackte Panik vor trockenen Folien.
 
 Mein erster Impuls war typisch für die alte Schule: Ich warf ChatGPT ein rohes Transkript eines extrem viralen YouTube-Finanzvideos hin mit dem Befehl: *„Analysiere dieses Skript und schreib es für Bankberichte um.“* 
@@ -55,24 +53,22 @@ Analysiere das untenstehende Transkript exakt nach folgenden Kriterien und gib d
 [HIER DAS YOUTUBE-TRANSKRIPT EINFÜGEN]
 ```
 
-## 4. Praxistipps und Warnungen vom Prompt-Architekten und Sicherheits-Tipps
+### Praktische Variationen und Sicherheits-Tipps
 
 Im Banken- und Consultingumfeld ist Datensicherheit entscheidend. Nutzen Sie niemals sensible Kundendaten oder interne Bilanzen in öffentlichen Prompts. Verwenden Sie diesen Prompt ausschließlich für die *Strukturanalyse* externer, öffentlich zugänglicher Medieninhalte. 
 
-* Token-Spar-Tipp: Wenn das Transkript sehr lang ist, fügen Sie am Anfang des Prompts die Instruktion ein: *„Ignoriere Füllwörter, Wiederholungen und Begrüßungen des Creators. Konzentriere dich ausschließlich auf den argumentativen Kern.“*
-* Systemanweisungen (Custom Instructions): Wenn Sie diesen Workflow regelmäßig für Geschäftsberichte nutzen, hinterlegen Sie in den ChatGPT-Einstellungen als Person
-
-**A.** *„Du bist ein präziser Corporate-Copywriter, der komplexe Finanzdaten in fesselnde, verständliche Narrative übersetzt.“*
+* <strong>Token-Spar-Tipp:</strong> Wenn das Transkript sehr lang ist, fügen Sie am Anfang des Prompts die Instruktion ein: *„Ignoriere Füllwörter, Wiederholungen und Begrüßungen des Creators. Konzentriere dich ausschließlich auf den argumentativen Kern.“*
+* <strong>Systemanweisungen (Custom Instructions):</strong> Wenn Sie diesen Workflow regelmäßig für Geschäftsberichte nutzen, hinterlegen Sie in den ChatGPT-Einstellungen als Persona: *„Du bist ein präziser Corporate-Copywriter, der komplexe Finanzdaten in fesselnde, verständliche Narrative übersetzt.“*
 
 ---
 
-## 5. Häufig gestellte Fragen (FAQ)
+### Häufig gestellte Fragen (FAQ)
 
-1. Funktioniert dieser Prompt auch bei Claude oder nur bei ChatGPT?
+<strong>1. Funktioniert dieser Prompt auch bei Claude oder nur bei ChatGPT?</strong>
 Der Prompt ist modellagnostisch und funktioniert hervorragend auf beiden Plattformen. Claude 3.5 Sonnet neigt oft zu noch präziseren, analytischen Strukturierungen bei langen Texten, während ChatGPT extrem schnell beim Extrahieren von Marketing-Hooks ist.
 
-2. Was mache ich, wenn das YouTube-Transkript keine Formatierung oder Zeitstempel hat?
+<strong>2. Was mache ich, wenn das YouTube-Transkript keine Formatierung oder Zeitstempel hat?</strong>
 Das ist kein Problem. Das LLM ist intelligent genug, den zeitlichen Verlauf anhand der inhaltlichen Wendepunkte und Übergänge im Text logisch zu rekonstruieren. Sie können dem Prompt einfach den rohen Textblock übergeben.
 
-3. Wie verhindere ich, dass das KI-Ergebnis zu reißerisch für den Bankensektor klingt?
+<strong>3. Wie verhindere ich, dass das KI-Ergebnis zu reißerisch für den Bankensektor klingt?</strong>
 Fügen Sie in der Rolle (im Prompt) die Einschränkung hinzu: *„Behalte die psychologische Sogwirkung bei, formuliere den Tonfall jedoch seriös, faktenbasiert und konform mit den Standards einer gehobenen Unternehmensberatung.“* So bleibt die Struktur viral, aber der Wortschatz bleibt bankentauglich.

@@ -1,0 +1,157 @@
+# 4호기 기존 글 전수 수정 — 2026-10-29
+
+132개 글/12개 언어 전수검사, 수정130개. 원문 이력 대조 및 각 글의 실제 Astro Markdown 렌더를 확인했다.
+
+- 기존 QA 표시49→0.
+- 132개 본문의 Astro 렌더 검사: 기존31개 글의 ** 노출76곳→최종0.
+- 강조 주변 단어 간 공백·FAQ 결합·빈/중복 제목·코드블록·잘린 단어 복구. 강조는 strong 태그로 유지.
+- 폴란드어 글의 한국어 회의명, 네덜란드어 뉘ances, 인도네시아어 반론 등 한글 혼입 교정.
+- 원래 title/description/publishDate/image/category/tags/theme 행과 본문 이미지 참조·순서 보존. 파일명·slug 변경 없음. 레이아웃·생성 코드·발행 워크플로·이미지파일 변경 없음.
+- 개별 본문 렌더132개 성공. 사이트 전체 SSG 빌드는 시작했으나 원격 리소스 처리로 오래 걸려 아직 진행 상태이며 이 문서에서 전체 빌드 성공을 주장하지 않는다. 배포 결과는 GitHub Cloudflare Pages 체크를 기준으로 별도 확인한다.
+- 일반 check에는 기존 Prettier 부채가 남아 있으며 CI 전체 통과로 보고하지 않는다.
+- 라틴 언어 상호 혼입·원어민 감수·모델/가격/정책 최신성·모든 기술적 주장의 사실검증·외부 HTTP/이미지 권리 검증 완료는 아니다.
+- 사장님 승인에 따라 콘텐츠 전용 PR로 배포. Luna PR#1은 별도 유지. 자동발행 중지/유료 API 금지 유지.
+
+## 수정 파일
+- `src/data/post/de/post-mvgstevc.md`
+- `src/data/post/de/post-mvhfvalq.md`
+- `src/data/post/de/post-mvhpc6zt.md`
+- `src/data/post/de/post-mvjyztu8.md`
+- `src/data/post/de/post-mvlbheai.md`
+- `src/data/post/de/post-mvmqp3hg.md`
+- `src/data/post/de/post-mvnfmuai.md`
+- `src/data/post/de/post-mvovbcm9.md`
+- `src/data/post/de/post-mvplfhxk.md`
+- `src/data/post/de/post-mvr0ygdj.md`
+- `src/data/post/de/post-mvs0n6hy.md`
+- `src/data/post/en/post-mvgstevc.md`
+- `src/data/post/en/post-mvhfvalq.md`
+- `src/data/post/en/post-mvhpc6zt.md`
+- `src/data/post/en/post-mvjyztu8.md`
+- `src/data/post/en/post-mvlbheai.md`
+- `src/data/post/en/post-mvmqp3hg.md`
+- `src/data/post/en/post-mvnfmuai.md`
+- `src/data/post/en/post-mvovbcm9.md`
+- `src/data/post/en/post-mvplfhxk.md`
+- `src/data/post/en/post-mvr0ygdj.md`
+- `src/data/post/en/post-mvs0n6hy.md`
+- `src/data/post/es/post-mvgstevc.md`
+- `src/data/post/es/post-mvhfvalq.md`
+- `src/data/post/es/post-mvhpc6zt.md`
+- `src/data/post/es/post-mvjyztu8.md`
+- `src/data/post/es/post-mvlbheai.md`
+- `src/data/post/es/post-mvmqp3hg.md`
+- `src/data/post/es/post-mvnfmuai.md`
+- `src/data/post/es/post-mvovbcm9.md`
+- `src/data/post/es/post-mvplfhxk.md`
+- `src/data/post/es/post-mvr0ygdj.md`
+- `src/data/post/es/post-mvs0n6hy.md`
+- `src/data/post/fr/post-mvgstevc.md`
+- `src/data/post/fr/post-mvhfvalq.md`
+- `src/data/post/fr/post-mvhpc6zt.md`
+- `src/data/post/fr/post-mvjyztu8.md`
+- `src/data/post/fr/post-mvlbheai.md`
+- `src/data/post/fr/post-mvmqp3hg.md`
+- `src/data/post/fr/post-mvnfmuai.md`
+- `src/data/post/fr/post-mvovbcm9.md`
+- `src/data/post/fr/post-mvplfhxk.md`
+- `src/data/post/fr/post-mvr0ygdj.md`
+- `src/data/post/fr/post-mvs0n6hy.md`
+- `src/data/post/id/post-mvgstevc.md`
+- `src/data/post/id/post-mvhfvalq.md`
+- `src/data/post/id/post-mvhpc6zt.md`
+- `src/data/post/id/post-mvjyztu8.md`
+- `src/data/post/id/post-mvlbheai.md`
+- `src/data/post/id/post-mvmqp3hg.md`
+- `src/data/post/id/post-mvnfmuai.md`
+- `src/data/post/id/post-mvovbcm9.md`
+- `src/data/post/id/post-mvplfhxk.md`
+- `src/data/post/id/post-mvr0ygdj.md`
+- `src/data/post/id/post-mvs0n6hy.md`
+- `src/data/post/it/post-mvgstevc.md`
+- `src/data/post/it/post-mvhfvalq.md`
+- `src/data/post/it/post-mvhpc6zt.md`
+- `src/data/post/it/post-mvjyztu8.md`
+- `src/data/post/it/post-mvlbheai.md`
+- `src/data/post/it/post-mvmqp3hg.md`
+- `src/data/post/it/post-mvnfmuai.md`
+- `src/data/post/it/post-mvovbcm9.md`
+- `src/data/post/it/post-mvplfhxk.md`
+- `src/data/post/it/post-mvr0ygdj.md`
+- `src/data/post/it/post-mvs0n6hy.md`
+- `src/data/post/ja/post-mvgstevc.md`
+- `src/data/post/ja/post-mvhfvalq.md`
+- `src/data/post/ja/post-mvhpc6zt.md`
+- `src/data/post/ja/post-mvjyztu8.md`
+- `src/data/post/ja/post-mvlbheai.md`
+- `src/data/post/ja/post-mvmqp3hg.md`
+- `src/data/post/ja/post-mvnfmuai.md`
+- `src/data/post/ja/post-mvovbcm9.md`
+- `src/data/post/ja/post-mvplfhxk.md`
+- `src/data/post/ja/post-mvr0ygdj.md`
+- `src/data/post/ja/post-mvs0n6hy.md`
+- `src/data/post/ko/post-mvgstevc.md`
+- `src/data/post/ko/post-mvhfvalq.md`
+- `src/data/post/ko/post-mvhpc6zt.md`
+- `src/data/post/ko/post-mvjyztu8.md`
+- `src/data/post/ko/post-mvmqp3hg.md`
+- `src/data/post/ko/post-mvnfmuai.md`
+- `src/data/post/ko/post-mvovbcm9.md`
+- `src/data/post/ko/post-mvplfhxk.md`
+- `src/data/post/ko/post-mvr0ygdj.md`
+- `src/data/post/ko/post-mvs0n6hy.md`
+- `src/data/post/nl/post-mvgstevc.md`
+- `src/data/post/nl/post-mvhfvalq.md`
+- `src/data/post/nl/post-mvhpc6zt.md`
+- `src/data/post/nl/post-mvjyztu8.md`
+- `src/data/post/nl/post-mvmqp3hg.md`
+- `src/data/post/nl/post-mvnfmuai.md`
+- `src/data/post/nl/post-mvovbcm9.md`
+- `src/data/post/nl/post-mvplfhxk.md`
+- `src/data/post/nl/post-mvr0ygdj.md`
+- `src/data/post/nl/post-mvs0n6hy.md`
+- `src/data/post/pl/post-mvgstevc.md`
+- `src/data/post/pl/post-mvhfvalq.md`
+- `src/data/post/pl/post-mvhpc6zt.md`
+- `src/data/post/pl/post-mvjyztu8.md`
+- `src/data/post/pl/post-mvlbheai.md`
+- `src/data/post/pl/post-mvmqp3hg.md`
+- `src/data/post/pl/post-mvnfmuai.md`
+- `src/data/post/pl/post-mvovbcm9.md`
+- `src/data/post/pl/post-mvplfhxk.md`
+- `src/data/post/pl/post-mvr0ygdj.md`
+- `src/data/post/pl/post-mvs0n6hy.md`
+- `src/data/post/pt/post-mvgstevc.md`
+- `src/data/post/pt/post-mvhfvalq.md`
+- `src/data/post/pt/post-mvhpc6zt.md`
+- `src/data/post/pt/post-mvjyztu8.md`
+- `src/data/post/pt/post-mvlbheai.md`
+- `src/data/post/pt/post-mvmqp3hg.md`
+- `src/data/post/pt/post-mvnfmuai.md`
+- `src/data/post/pt/post-mvovbcm9.md`
+- `src/data/post/pt/post-mvplfhxk.md`
+- `src/data/post/pt/post-mvr0ygdj.md`
+- `src/data/post/pt/post-mvs0n6hy.md`
+- `src/data/post/vi/post-mvgstevc.md`
+- `src/data/post/vi/post-mvhfvalq.md`
+- `src/data/post/vi/post-mvhpc6zt.md`
+- `src/data/post/vi/post-mvjyztu8.md`
+- `src/data/post/vi/post-mvlbheai.md`
+- `src/data/post/vi/post-mvmqp3hg.md`
+- `src/data/post/vi/post-mvnfmuai.md`
+- `src/data/post/vi/post-mvovbcm9.md`
+- `src/data/post/vi/post-mvplfhxk.md`
+- `src/data/post/vi/post-mvr0ygdj.md`
+- `src/data/post/vi/post-mvs0n6hy.md`
+
+
+## Codex 재검증 — 2026-10-29 KST
+
+- 콘텐츠 132개 확인, main 대비 본문 변경 130개. 허용 경로는 src/data/post 및 이 QA 문서뿐.
+- npm ci --ignore-scripts --legacy-peer-deps 후 Node 24.22.0에서 npm run build 성공: 348페이지, 약 3분 13초.
+- 생성된 dist에서 기존 132개 글 경로 모두 존재. code/pre 제외 본문 별표 쌍 0, 빈 제목 0, 한글·가나 문자권 혼입 표시 0. strong 937개 유지.
+- frontmatter 전체와 본문 이미지 URL·순서 불변. 생성 코드·워크플로·테마·이미지 파일 변경 없음.
+- 로컬 브라우저 ko/post-mvs0n6hy/ 확인: FAQ 6개 p 요소, 기존 datetime 2026-10-28T03:00:00.000Z, 강조 정상. 운영 수정 전 별표 및 FAQ 제목 결합 문제도 확인.
+- npm run check 실패: 기존 코드 TypeScript 오류 7개. 콘텐츠 전용 변경이므로 코드 수정은 섞지 않음. 일반 CI 성공으로 보고하지 않음.
+- 기존 Preview Cloudflare 실패는 NODE_VERSION=20 환경. 현재 Production은 NODE_VERSION=22, main 자동 배포 및 npm run build/dist 설정 확인. 배포 성공 여부는 병합된 SHA에서 별도 확인.
+- 기존 /privacy, /terms 중복 경로 빌드 경고 및 미래 글 공개 제한은 별도 과제. 현재 글의 발행일 변경·신규 글 생성·워크플로 수동 실행 없음.

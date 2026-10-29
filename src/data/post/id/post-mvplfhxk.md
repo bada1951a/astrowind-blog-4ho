@@ -10,15 +10,15 @@ theme: "Warm Coffee Latte"
 
 ## 1. Situasi Kritis Akibat Halusinasi AI dan Output Menyesatkan
 
-Suasana di kawasan bisnis Sudirman Central Business District (SCBD) Jakarta pada sore hari itu terasa sangat tegang. Para eksekutif senior dan tim produk dari sebuah perusahaan teknologi finansial terkemuka sedang bersiap menghadapi presentasi genting di hadapan para investor strategis. Namun, kepanikan mendadak melanda ruang rapat ketika pembaruan model AI terbaru yang baru saja diluncurkan mengubah seluruh dinamika kerj
+Suasana di kawasan bisnis Sudirman Central Business District (SCBD) Jakarta pada sore hari itu terasa sangat tegang. Para eksekutif senior dan tim produk dari sebuah perusahaan teknologi finansial terkemuka sedang bersiap menghadapi presentasi genting di hadapan para investor strategis. Namun, kepanikan mendadak melanda ruang rapat ketika pembaruan model AI terbaru yang baru saja diluncurkan mengubah seluruh dinamika kerja.
 
-**A.** Prompt andalan yang selama ini digunakan untuk merancang ikon SVG kustom dan ilustrasi web mendadak kehilangan presisiny
+Prompt andalan yang selama ini digunakan untuk merancang ikon SVG kustom dan ilustrasi web mendadak kehilangan presisinya.
 
-**A.** Model AI tidak lagi menghasilkan grafik vektor yang bersih, melainkan melahirkan kode yang berantakan, elemen visual yang saling tumpang tindih, dan estetika kekanak-kanakan yang jauh dari standar profesional SCBD.
+Model AI tidak lagi menghasilkan grafik vektor yang bersih, melainkan melahirkan kode yang berantakan, elemen visual yang saling tumpang tindih, dan estetika kekanak-kanakan yang jauh dari standar profesional SCBD.
 
-Upaya awal yang naif untuk memperbaiki situasi dilakukan dengan mengetik instruksi singkat yang kabur seperti, "Tolong buatkan ikon SVG yang lebih bagus dan profesional untuk aplikasi keuangan kami." Alih-alih memberikan solusi, pendekatan serampangan ini justru memicu halusinasi tingkat parah dari model bahasa besar. AI mulai mencampuradukkan berbagai gaya desain tanpa arah, menghasilkan kode SVG yang penuh dengan tag tag yang tidak valid, koordinat jalur yang rusak, serta kombinasi warna yang menyakitkan mat
+Upaya awal yang naif untuk memperbaiki situasi dilakukan dengan mengetik instruksi singkat yang kabur seperti, "Tolong buatkan ikon SVG yang lebih bagus dan profesional untuk aplikasi keuangan kami." Alih-alih memberikan solusi, pendekatan serampangan ini justru memicu halusinasi tingkat parah dari model bahasa besar. AI mulai mencampuradukkan berbagai gaya desain tanpa arah, menghasilkan kode SVG yang penuh dengan tag tag yang tidak valid, koordinat jalur yang rusak, serta kombinasi warna yang menyakitkan mata.
 
-**A.** Respons yang diberikan terasa sangat robotik dan repetitif, mengabaikan struktur semantik yang dibutuhkan oleh pengembang frontend untuk langsung mengintegrasikannya ke dalam basis kode produksi.
+Respons yang diberikan terasa sangat robotik dan repetitif, mengabaikan struktur semantik yang dibutuhkan oleh pengembang frontend untuk langsung mengintegrasikannya ke dalam basis kode produksi.
 
 Kepanikan pun mencapai puncaknya ketika jarum jam menunjukkan waktu presentasi yang semakin mendekat, sementara layar proyektor masih menampilkan ilustrasi web yang rusak dan tidak proporsional. Waktu berharga terbuang sia-sia hanya untuk bolak-balik menyalin kode yang cacat dan mencoba memperbaiki atribut `viewBox` secara manual satu persatu. Setiap kali instruksi tambahan diberikan tanpa struktur yang memadai, model AI justru semakin tersesat dalam probabilitas token yang salah, memperburuk kekacauan visual yang terpampang di hadapan seluruh tim manajemen puncak.
 
@@ -42,11 +42,11 @@ Peran instruksi sistem, batasan tegas, dan pemformatan delimiter sangat krusial 
 
 Gunakan templat master prompt profesional di bawah ini untuk mengendalikan Claude Artifacts secara presisi saat merancang ikon SVG dan ilustrasi web. Salin seluruh isi blok kode ke dalam pengaturan sistem atau prompt awal And
 
-**A.** ```markdown
+```markdown
 [Context]
-Anda berada di lingkungan pengembangan produk fintech kelas enterprise di kawasan SCBD Jakart
+Anda berada di lingkungan pengembangan produk fintech kelas enterprise di kawasan SCBD Jakarta.
 
-**A.** Tim membutuhkan aset visual SVG kustom yang memiliki skalabilitas sempurna, bersih secara semantik, dan mematuhi standar desain modern untuk integrasi web langsung.
+Tim membutuhkan aset visual SVG kustom yang memiliki skalabilitas sempurna, bersih secara semantik, dan mematuhi standar desain modern untuk integrasi web langsung.
 
 [Role]
 Bertindaklah sebagai Principal SVG & Web Illustration Engineer yang memiliki keahlian mendalam dalam desain vektor matematika, semantik DOM SVG, optimasi kurva Bezier, dan aksesibilitas web (WAI-ARIA).
@@ -75,14 +75,38 @@ Teknik perangkaian lanjutan seperti penyuntikan persona dinamis (*dynamic person
 
 ## 5. Pertanyaan yang Sering Diajukan (FAQ)
 
-**Q1.** Mengapa Claude Artifacts sangat direkomendasikan untuk pembuatan kode SVG dan ilustrasi web dibandingkan chat biasa?
 
-**A1.** Claude Artifacts memisahkan hasil keluaran kode atau dokumen dari alur percakapan utama ke dalam jendela panel terdedikasi yang interaktif. Hal ini memungkinkan pengguna untuk melihat pratinjau visual secara langsung, menyalin kode dengan satu klik, serta melakukan revisi iteratif tanpa mengotori riwayat percakapan teks utama, sehingga sangat ideal untuk aset pemrograman seperti SVG.
 
-**Q2.** Bagaimana cara mengatasi masalah di mana kode SVG yang dihasilkan AI sering kali terpotong di tengah jalan akibat batasan token keluaran?
 
-**A2.** Masalah ini dapat diatasi dengan memecah instruksi desain ilustrasi kompleks menjadi beberapa komponen modular yang lebih kecil, atau dengan menambahkan instruksi eksplisit di dalam parameter prompt agar AI memprioritaskan kelengkapan sintaksis tag penutup. Anda juga dapat menggunakan perintah lanjutan untuk meminta AI melanjutkan kode tepat dari titik terakhir jika pemotongan token tidak dapat dihindari.
 
-**Q3.** Apakah palet warna tertentu dapat diprogram secara konsisten ke dalam prompt agar sesuai dengan identitas merek perusahaan?
+Q1. Mengapa Claude Artifacts sangat direkomendasikan untuk pembuatan kode SVG dan ilustrasi web dibandingkan chat biasa?
 
-**A3.** Ya, Anda dapat mendefinisikan kode hex warna secara spesifik di dalam bagian batasan palet warna pada master prompt. Dengan mencantumkan kode warna utama dan sekunder secara eksplisit, AI akan menerapkannya secara konsisten pada atribut pengisian (*fill*) dan garis (*stroke*) di seluruh elemen SVG yang dihasilkan.
+
+
+
+
+A1. Claude Artifacts memisahkan hasil keluaran kode atau dokumen dari alur percakapan utama ke dalam jendela panel terdedikasi yang interaktif. Hal ini memungkinkan pengguna untuk melihat pratinjau visual secara langsung, menyalin kode dengan satu klik, serta melakukan revisi iteratif tanpa mengotori riwayat percakapan teks utama, sehingga sangat ideal untuk aset pemrograman seperti SVG.
+
+
+
+
+
+Q2. Bagaimana cara mengatasi masalah di mana kode SVG yang dihasilkan AI sering kali terpotong di tengah jalan akibat batasan token keluaran?
+
+
+
+
+
+A2. Masalah ini dapat diatasi dengan memecah instruksi desain ilustrasi kompleks menjadi beberapa komponen modular yang lebih kecil, atau dengan menambahkan instruksi eksplisit di dalam parameter prompt agar AI memprioritaskan kelengkapan sintaksis tag penutup. Anda juga dapat menggunakan perintah lanjutan untuk meminta AI melanjutkan kode tepat dari titik terakhir jika pemotongan token tidak dapat dihindari.
+
+
+
+
+
+Q3. Apakah palet warna tertentu dapat diprogram secara konsisten ke dalam prompt agar sesuai dengan identitas merek perusahaan?
+
+
+
+
+
+A3. Ya, Anda dapat mendefinisikan kode hex warna secara spesifik di dalam bagian batasan palet warna pada master prompt. Dengan mencantumkan kode warna utama dan sekunder secara eksplisit, AI akan menerapkannya secara konsisten pada atribut pengisian (*fill*) dan garis (*stroke*) di seluruh elemen SVG yang dihasilkan.

@@ -14,7 +14,7 @@ Il est 17h45 dans une tour de verre à Paris La Défense. Demain matin, notre ag
 
 J'ai commis l'erreur classique : lancer Claude avec un prompt paresseux du type *"Génère-moi des icônes SVG pour une proposition commerciale"*. Résultat immédiat ? Un code SVG chaotique, des balises mal imbriquées, des dimensions incohérentes et un design visuel tout droit sorti des années 2000. Le rendu visuel intégré dans le prototype HTML s'est totalement cassé, et les textes traduits manquaient cruellement de la nuance professionnelle requise pour inspirer confiance à des acheteurs internationaux.
 
-Heureusement, en tant qu'ingénieur en prompt design, je sais que le problème ne vient pas de l'IA, mais de la structure de la consigne. J'ai donc appliqué une architecture de prompt rigoureuse combinant les capacités d'exécution de code et d'affichage dynamique de **Claude Artifacts**. En 90 secondes chrono, j'ai obtenu une suite complète d'illustrations SVG vectorielles, propres, scalables et dotées d'une identité graphique irréprochable, prêtes à être intégrées dans notre proposition commerciale.
+Heureusement, en tant qu'ingénieur en prompt design, je sais que le problème ne vient pas de l'IA, mais de la structure de la consigne. J'ai donc appliqué une architecture de prompt rigoureuse combinant les capacités d'exécution de code et d'affichage dynamique de <strong>Claude Artifacts</strong>. En 90 secondes chrono, j'ai obtenu une suite complète d'illustrations SVG vectorielles, propres, scalables et dotées d'une identité graphique irréprochable, prêtes à être intégrées dans notre proposition commerciale.
 
 <div style="border-left: 4px solid #059669; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Alerte Produit :</strong> Oubliez les requêtes vagues. Pour obtenir du code SVG exploitable sans bugs de rendu, l'utilisation de Claude Artifacts est indispensable car elle isole le code dans un panneau interactif exécutable en temps réel.
@@ -29,13 +29,13 @@ Premièrement, les modèles de langage génèrent du texte brut. Sans contrainte
 Deuxièmement, les LLM manquent de contexte visuel précis si on ne leur impose pas de normes de design (système de grille, palette de couleurs hexadécimales, viewBox normalisée, sémantique des balises).
 
 Pour corriger cela, nous appliquons une architecture de prompt en 4 couches distinctes :
-1.**Rôle et Contexte (System Instruction) :**Définir l'IA comme un expert en design system et en graphisme vectoriel.
+1.<strong>Rôle et Contexte (System Instruction) :</strong> Définir l'IA comme un expert en design system et en graphisme vectoriel.
 
-2.**Contraintes Techniques (Technical Constraints) :**Imposer des règles strictes sur le code (pas de balises HTML superflues, utilisation exclusive de balises SVG pures, attributs `viewBox` obligatoires, accessibilité de base).
+2.<strong>Contraintes Techniques (Technical Constraints) :</strong> Imposer des règles strictes sur le code (pas de balises HTML superflues, utilisation exclusive de balises SVG pures, attributs `viewBox` obligatoires, accessibilité de base).
 
-3.**Spécification Visuelle (Art Direction) :**Fixer la palette de couleurs, l'épaisseur des traits (`stroke-width`), le style des coins (`stroke-linejoin`) et le style général (minimaliste, isométrique, plat).
+3.<strong>Spécification Visuelle (Art Direction) :</strong> Fixer la palette de couleurs, l'épaisseur des traits (`stroke-width`), le style des coins (`stroke-linejoin`) et le style général (minimaliste, isométrique, plat).
 
-4.**Format de Sortie (Output Format) :**Exiger un affichage via**Claude Artifacts** avec un aperçu interactif immédiat et un bloc de code propre.
+4.<strong>Format de Sortie (Output Format) :</strong> Exiger un affichage via <strong>Claude Artifacts</strong> avec un aperçu interactif immédiat et un bloc de code propre.
 
 ## 3. Modèle de prompt maître pratique prêt à l'emploi
 
@@ -71,9 +71,9 @@ Affiche le résultat directement dans un conteneur Claude Artifacts interactif p
 
 Pour aller plus loin et optimiser votre productivité au quotidien, voici quelques astuces de pro pour affiner vos générations graphiques :
 
-* **Variation de style isométrique :** Modifiez la section *Art Direction* en remplaçant "Line Art moderne" par "Illustration isométrique en 3D plate, ombres douces, perspective axonométrique à 30 degrés".
-* **Optimisation des tokens :** Si vous avez besoin d'une seule icône complexe, demandez explicitement à Claude de ne pas inclure de texte explicatif superflu avant ou après le bloc de code. Cela réduit le temps de génération de 5 à 10 secondes.
-* **Sécurité et conformité :**Assurez-vous que les icônes générées n'utilisent pas de polices de caractères externes intégrées (`<text>`), ce qui pourrait provoquer des erreurs de rendu selon les navigateurs des clients. Privilégiez 100% de tracés vectoriels (`<path>`).
+* <strong>Variation de style isométrique :</strong> Modifiez la section *Art Direction* en remplaçant "Line Art moderne" par "Illustration isométrique en 3D plate, ombres douces, perspective axonométrique à 30 degrés".
+* <strong>Optimisation des tokens :</strong> Si vous avez besoin d'une seule icône complexe, demandez explicitement à Claude de ne pas inclure de texte explicatif superflu avant ou après le bloc de code. Cela réduit le temps de génération de 5 à 10 secondes.
+* <strong>Sécurité et conformité :</strong> Assurez-vous que les icônes générées n'utilisent pas de polices de caractères externes intégrées (`<text>`), ce qui pourrait provoquer des erreurs de rendu selon les navigateurs des clients. Privilégiez 100% de tracés vectoriels (`<path>`).
 
 <div style="border-left: 4px solid #059669; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Astuce Pro :</strong> Utilisez le mode Artifacts de Claude pour tester des variations de couleurs à la volée en écrivant simplement dans le chat : <em>"Modifie la couleur principale #059669 en bleu marine #1E3A8A sur l'ensemble des icônes"</em>.
@@ -81,14 +81,14 @@ Pour aller plus loin et optimiser votre productivité au quotidien, voici quelqu
 
 ## 5. Foire Aux Questions (FAQ)
 
-**Q.** Comment intégrer directement le code SVG généré par Claude Artifacts dans un document Word ou PowerPoint pour une proposition commerciale ?
+<strong>Q.</strong> Comment intégrer directement le code SVG généré par Claude Artifacts dans un document Word ou PowerPoint pour une proposition commerciale ?
 
-**A.** Le format SVG natif n'est pas toujours parfaitement supporté par les anciennes versions de Microsoft Office. Le moyen le plus simple est de copier le code SVG dans un fichier texte, de l'enregistrer avec l'extension `.svg`, puis de l'ouvrir dans un navigateur ou un outil comme Inkscape pour l'exporter en PNG haute résolution ou le convertir directement au format EMF/WMF compatible Office.
+A. Le format SVG natif n'est pas toujours parfaitement supporté par les anciennes versions de Microsoft Office. Le moyen le plus simple est de copier le code SVG dans un fichier texte, de l'enregistrer avec l'extension `.svg`, puis de l'ouvrir dans un navigateur ou un outil comme Inkscape pour l'exporter en PNG haute résolution ou le convertir directement au format EMF/WMF compatible Office.
 
-**Q.** Pourquoi mes icônes générées apparaissent-elles parfois rognées ou déformées sur l'écran ?
+<strong>Q.</strong> Pourquoi mes icônes générées apparaissent-elles parfois rognées ou déformées sur l'écran ?
 
-**A.** Ce problème survient généralement lorsque l'attribut `viewBox` est absent ou mal défini dans la balise racine `<svg>`. Veillez à toujours inclure explicitement `viewBox="0 0 64 64"` dans vos contraintes techniques pour garantir une mise à l'échelle fluide et responsive.
+A. Ce problème survient généralement lorsque l'attribut `viewBox` est absent ou mal défini dans la balise racine `<svg>`. Veillez à toujours inclure explicitement `viewBox="0 0 64 64"` dans vos contraintes techniques pour garantir une mise à l'échelle fluide et responsive.
 
-**Q.** Puis-je utiliser ce même prompt pour générer des illustrations web complexes de type Hero Section ?
+<strong>Q.</strong> Puis-je utiliser ce même prompt pour générer des illustrations web complexes de type Hero Section ?
 
-**A.** Absolument, il suffit d'ajuster l'attribut `viewBox` à une taille plus grande (par exemple `viewBox="0 0 800 600"`) dans les contraintes techniques du prompt et de demander explicitement une composition paysagère comprenant plusieurs éléments interconnectés.
+A. Absolument, il suffit d'ajuster l'attribut `viewBox` à une taille plus grande (par exemple `viewBox="0 0 800 600"`) dans les contraintes techniques du prompt et de demander explicitement une composition paysagère comprenant plusieurs éléments interconnectés.

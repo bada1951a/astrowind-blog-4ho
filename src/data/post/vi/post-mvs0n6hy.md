@@ -20,9 +20,9 @@ Thế nhưng, kết quả trả về từ AI lại là một thảm họa thực
 
 ## 2. Phân tích nguyên nhân gốc rễ lỗi câu lệnh và logic AI
 
-Nhìn nhận dưới góc độ kỹ thuật của một **Chuyên gia thiết kế câu lệnh AI**, nguyên nhân cốt lõi khiến mô hình ngôn ngữ lớn xử lý sai lệch bắt nguồn từ việc câu lệnh ban đầu mang tính quá chung chung, không giới hạn rõ ràng ranh giới ngữ nghĩa. Khi người dùng chỉ đưa ra yêu cầu lỏng lẻo như "tóm tắt cuộc họp", AI sẽ tự động phân phối xác suất token dựa trên lượng dữ liệu huấn luyện khổng lồ về các cuộc trò chuyện thông thường, khiến nó ưu tiên giữ lại các từ ngữ mang tính giao tiếp xã hội thay vì chắt lọc thông tin chiến lược. Hơn nữa, việc không thiết lập mức độ sáng tạo thấp (`temperature: 0.2` trở xuống) khiến mô hình dễ dàng phát huy tính "sáng tạo" không mong muốn, dẫn đến hiện tượng bịa đặt thông tin để làm mượt mà đoạn văn bản đầu ra.
+Nhìn nhận dưới góc độ kỹ thuật của một <strong>Chuyên gia thiết kế câu lệnh AI</strong>, nguyên nhân cốt lõi khiến mô hình ngôn ngữ lớn xử lý sai lệch bắt nguồn từ việc câu lệnh ban đầu mang tính quá chung chung, không giới hạn rõ ràng ranh giới ngữ nghĩa. Khi người dùng chỉ đưa ra yêu cầu lỏng lẻo như "tóm tắt cuộc họp", AI sẽ tự động phân phối xác suất token dựa trên lượng dữ liệu huấn luyện khổng lồ về các cuộc trò chuyện thông thường, khiến nó ưu tiên giữ lại các từ ngữ mang tính giao tiếp xã hội thay vì chắt lọc thông tin chiến lược. Hơn nữa, việc không thiết lập mức độ sáng tạo thấp (`temperature: 0.2` trở xuống) khiến mô hình dễ dàng phát huy tính "sáng tạo" không mong muốn, dẫn đến hiện tượng bịa đặt thông tin để làm mượt mà đoạn văn bản đầu ra.
 
-Bên cạnh đó, các mô hình AI hiện nay chịu giới hạn về khả năng tập trung chú ý khi phải quét qua những tệp văn bản thô quá dài chứa nhiều tạp âm ngôn ngữ. Nếu hệ thống không được định hình rõ ràng về cấu trúc đầu ra bằng các ràng buộc cấu trúc chặt chẽ, nó sẽ phân bổ trọng số sự chú ý một cách dàn trải thay vì tập trung vào các từ khóa liên quan đến quyết định, thời hạn và phân công nhân sự. Do đó, để khắc phục triệt để tình trạng này, chúng ta bắt buộc phải xây dựng một cấu trúc**Master Prompt**đa tầng với các giới hạn nghiêm ngặt, buộc AI phải hoạt động như một thư ký hành chính cấp cao thực thụ thay vì một bộ máy tóm tắt văn bản thông thường.
+Bên cạnh đó, các mô hình AI hiện nay chịu giới hạn về khả năng tập trung chú ý khi phải quét qua những tệp văn bản thô quá dài chứa nhiều tạp âm ngôn ngữ. Nếu hệ thống không được định hình rõ ràng về cấu trúc đầu ra bằng các ràng buộc cấu trúc chặt chẽ, nó sẽ phân bổ trọng số sự chú ý một cách dàn trải thay vì tập trung vào các từ khóa liên quan đến quyết định, thời hạn và phân công nhân sự. Do đó, để khắc phục triệt để tình trạng này, chúng ta bắt buộc phải xây dựng một cấu trúc <strong>Master Prompt</strong> đa tầng với các giới hạn nghiêm ngặt, buộc AI phải hoạt động như một thư ký hành chính cấp cao thực thụ thay vì một bộ máy tóm tắt văn bản thông thường.
 
 ## 3. Mẫu câu lệnh Master Prompt thực chiến sao chép dùng ngay
 
@@ -59,4 +59,30 @@ Khi áp dụng các mẫu câu lệnh tự động hóa vào môi trường làm
 
 Một mẹo nhỏ nhưng cực kỳ hữu ích dành cho các chuyên viên tối ưu hóa là hãy luôn yêu cầu AI trích xuất kèm theo trích đoạn câu nói gốc (quote) ngắn gọn nếu có tranh chấp về mặt ý kiến giữa các bên tham gia họp. Điều này không chỉ giúp bạn dễ dàng đối chiếu, kiểm tra tính xác thực của báo cáo mà còn ngăn chặn hoàn toàn khả năng AI tự ý suy diễn sai lệch ý đồ của sếp hoặc đối tác. Hãy coi AI là một trợ lý thông minh nhưng cần được giám sát chặt chẽ bằng những bộ khung quy tắc cứng rắn để đạt hiệu suất công việc tối ưu nhất.
 
-## 5. Các câu hỏi thường gặp (FAQ)**Q1.**Tại sao AI vẫn thi thoảng giữ lại một vài câu xã giao mặc dù trong câu lệnh tôi đã yêu cầu lọc bỏ hoàn toàn?**A1.**Hiện tượng này xảy ra do mô hình ngôn ngữ đôi khi bị ảnh hưởng bởi cấu trúc ngữ pháp tự nhiên của đoạn văn bản gốc có tính liên tục cao. Để khắc phục triệt để, bạn nên bổ sung thêm một điều kiện phủ định mạnh mẽ hơn trong phần ràng buộc của câu lệnh và yêu cầu AI thực hiện thêm một bước tự kiểm tra nội bộ trước khi xuất kết quả cuối cùng ra màn hình.**Q2.**Tôi có thể sử dụng mẫu câu lệnh này cho cả ChatGPT, Claude và Gemini mà không cần chỉnh sửa gì thêm không?**A2.**Mẫu câu lệnh trên được thiết kế theo chuẩn cấu trúc đa tầng tương thích hoàn toàn với các mô hình ngôn ngữ lớn hiện nay. Tuy nhiên, nếu bạn sử dụng Claude, hiệu quả trích xuất cấu trúc bảng và tuân thủ ràng buộc logic thường sẽ đạt độ chính xác cao hơn nhờ khả năng xử lý ngữ cảnh văn bản dài vượt trội.**Q3.**Làm thế nào để xử lý trường hợp bản ghi âm cuộc họp quá dài vượt quá giới hạn xử lý token của AI?**A3.** Đối với các cuộc họp kéo dài nhiều giờ liền, bạn nên chia nhỏ tệp văn bản thành các phần tương ứng với từng nội dung chương trình họp trước khi đưa vào AI. Sau đó, hãy sử dụng một câu lệnh tổng hợp riêng để ghép nối các kết quả trích xuất Action Plan lại thành một bảng danh sách hoàn chỉnh duy nhất.
+## 5. Các câu hỏi thường gặp (FAQ)
+
+
+
+
+
+Q1. Tại sao AI vẫn thi thoảng giữ lại một vài câu xã giao mặc dù trong câu lệnh tôi đã yêu cầu lọc bỏ hoàn toàn?
+
+
+
+A1. Hiện tượng này xảy ra do mô hình ngôn ngữ đôi khi bị ảnh hưởng bởi cấu trúc ngữ pháp tự nhiên của đoạn văn bản gốc có tính liên tục cao. Để khắc phục triệt để, bạn nên bổ sung thêm một điều kiện phủ định mạnh mẽ hơn trong phần ràng buộc của câu lệnh và yêu cầu AI thực hiện thêm một bước tự kiểm tra nội bộ trước khi xuất kết quả cuối cùng ra màn hình.
+
+
+
+Q2. Tôi có thể sử dụng mẫu câu lệnh này cho cả ChatGPT, Claude và Gemini mà không cần chỉnh sửa gì thêm không?
+
+
+
+A2. Mẫu câu lệnh trên được thiết kế theo chuẩn cấu trúc đa tầng tương thích hoàn toàn với các mô hình ngôn ngữ lớn hiện nay. Tuy nhiên, nếu bạn sử dụng Claude, hiệu quả trích xuất cấu trúc bảng và tuân thủ ràng buộc logic thường sẽ đạt độ chính xác cao hơn nhờ khả năng xử lý ngữ cảnh văn bản dài vượt trội.
+
+
+
+Q3. Làm thế nào để xử lý trường hợp bản ghi âm cuộc họp quá dài vượt quá giới hạn xử lý token của AI?
+
+
+
+A3. Đối với các cuộc họp kéo dài nhiều giờ liền, bạn nên chia nhỏ tệp văn bản thành các phần tương ứng với từng nội dung chương trình họp trước khi đưa vào AI. Sau đó, hãy sử dụng một câu lệnh tổng hợp riêng để ghép nối các kết quả trích xuất Action Plan lại thành một bảng danh sách hoàn chỉnh duy nhất.

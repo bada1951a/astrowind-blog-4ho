@@ -10,37 +10,37 @@ theme: "Mint Fresh Engineering"
 
 ## 1. Situação de emergência com alucinações e erros da IA
 
-Eram exatamente 16h40 de uma terca-feira abafada em um escritório na Avenida Paulist
+Eram exatamente 16h40 de uma terca-feira abafada em um escritório na Avenida Paulista.
 
-A. Um padrão de Expressão Regular que eu precisava extrair de uma base de logs volumosa teimava em falhar, e eu passara a última hora alternando freneticamente entre o editor de código e a interface do ChatGPT para tentar consertar a lógic
+Um padrão de Expressão Regular que eu precisava extrair de uma base de logs volumosa teimava em falhar, e eu passara a última hora alternando freneticamente entre o editor de código e a interface do ChatGPT para tentar consertar a lógica.
 
-A. Pedi para o modelo gerar a regex corrigida, ele me devolveu um código com uma sintaxe bonita, testei no terminal e o resultado foi um erro estrondoso. Pedi explicações, e a IA inventou uma flag inexistente na documentação oficial, jurando de pés juntos que funcionav
+Pedi para o modelo gerar a regex corrigida, ele me devolveu um código com uma sintaxe bonita, testei no terminal e o resultado foi um erro estrondoso. Pedi explicações, e a IA inventou uma flag inexistente na documentação oficial, jurando de pés juntos que funcionava.
 
-A. Aquele momento de frustração resume bem o calcanhar de Aquiles das IAs generativas: a alucinação de dados. Quando confiamos cegamente em respostas que parecem corretas mas são pura ficção estatística, perdemos horas preciosas de trabalho produtivo.
+Aquele momento de frustração resume bem o calcanhar de Aquiles das IAs generativas: a alucinação de dados. Quando confiamos cegamente em respostas que parecem corretas mas são pura ficção estatística, perdemos horas preciosas de trabalho produtivo.
 
 <div style="border-left: 4px solid #059669; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
-Nota de Arquitetur
+Nota de Arquitetura.
 
-A. IAs baseadas em grandes modelos de linguagem priorizam a fluência textual em detrimento da veracidade factual. Se faltar contexto ou restrição estrita, o modelo prefere inventar uma resposta plausível a admitir ignorânci
+IAs baseadas em grandes modelos de linguagem priorizam a fluência textual em detrimento da veracidade factual. Se faltar contexto ou restrição estrita, o modelo prefere inventar uma resposta plausível a admitir ignorância.
 
-A. </div>
+</div>
 
 ![Best System Prompts to Stop ChatGPT and Claude from Hallucinating Data Prompt Guide](https://picsum.photos/seed/prompt-mvlbils1-7-b/1000/550.jpg)
 
-Por que os prompts simples falham miseravelmente nessa tarefa? Quando escrevemos apenas algo como "corrija este erro para mim", deixamos espaço livre para o viés de predição do modelo. Ele busca conexões estatísticas prováveis no corpus de treinamento, o que frequentemente resulta em alucinações confabuladas, especialmente em tarefas técnicas que exigem precisão cirúrgica, como código, análise financeira ou conformidade legal. Para acabar com esse comportamento, precisamos estruturar o prompt de sistema utilizando barreiras lógicas, exigência explícita de citação de fontes e a permissão formal para que o modelo declare falha caso não saiba a respost
+Por que os prompts simples falham miseravelmente nessa tarefa? Quando escrevemos apenas algo como "corrija este erro para mim", deixamos espaço livre para o viés de predição do modelo. Ele busca conexões estatísticas prováveis no corpus de treinamento, o que frequentemente resulta em alucinações confabuladas, especialmente em tarefas técnicas que exigem precisão cirúrgica, como código, análise financeira ou conformidade legal. Para acabar com esse comportamento, precisamos estruturar o prompt de sistema utilizando barreiras lógicas, exigência explícita de citação de fontes e a permissão formal para que o modelo declare falha caso não saiba a resposta.
 
-A. Abaixo está o prompt mestre testado e validado em ambientes de alta exigência para forçar o ChatGPT e o Claude a operarem estritamente dentro da realidade dos dados fornecidos, sem inventar absolutamente nad
+Abaixo está o prompt mestre testado e validado em ambientes de alta exigência para forçar o ChatGPT e o Claude a operarem estritamente dentro da realidade dos dados fornecidos, sem inventar absolutamente nad
 
-A. ```markdown
+```markdown
 ### Papel e Objetivo
 Voce e um Arquiteto de Dados e Engenheiro Sênior hiper-rigoroso. Sua unica missao e analisar os dados fornecidos abaixo e responder exclusivamente com base neles.
 
 ### Regras Absolutas contra Alucinação
 1. Nao invente funcoes, sintaxes, variaveis ou fatos que nao estejam explicitamente presentes no texto fornecido.
 
-2. Se a informacao solicitada nao estiver contida nos dados, responda obrigatoriamente com a frase exat
+2. Se a informacao solicitada nao estiver contida nos dados, responda obrigatoriamente com a frase exata.
 
-A. "DADOS INSUFICIENTES NO CONTEXTO".
+"DADOS INSUFICIENTES NO CONTEXTO".
 
 3. Proibido usar conhecimento externo ou suposicoes para preencher lacunas.
 
@@ -56,9 +56,9 @@ A. "DADOS INSUFICIENTES NO CONTEXTO".
 Para extrair o máximo de eficiência desse modelo de prompt sem desperdiçar tokens preciosos, adote algumas práticas fundamentais no seu dia a dia de desenvolvimento. Nas Configurações e Instruções Personalizadas do ChatGPT ou nos System Prompts do Claude, defina sempre o perfil de um especialista cético. Além disso, divida tarefas complexas em etapas menores usando o encadeamento de raciocínio, exigindo que a IA aponte a linha exata do contexto que justifica cada afirmação antes de entregar a conclusão final.
 
 <div style="border-left: 4px solid #059669; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
-Dica Prátic
+Dica Prática.
 
-A. Sempre inclua a instrução explícita de recusa ("DADOS INSUFICIENTES"). Liberdade para dizer "eu nao sei" e o antídoto mais eficaz contra alucinações em modelos generativos.
+Sempre inclua a instrução explícita de recusa ("DADOS INSUFICIENTES"). Liberdade para dizer "eu nao sei" e o antídoto mais eficaz contra alucinações em modelos generativos.
 </div>
 
 Q1. Por que o ChatGPT continua inventando bibliotecas mesmo com instruções restritivas?

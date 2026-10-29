@@ -26,9 +26,9 @@ De paniek sloeg direct om in pure wanhoop toen we zagen hoe kostbare minuten ver
 
 ## 2. Grondige analyse van mislukte prompts en denkfouten van het model
 
-De kernoorzaak van de mislukte output ligt diep verankerd in de manier waarop Large Language Models (LLMs) tokens voorspellen en reageren op dubbelzinnige invoer. Wanneer een prompt te summier is, zoals onze eerdere paniekpoging, valt het model terug op de meest generieke waarschijnlijkheidsdistributies in zijn trainingsdat
+De kernoorzaak van de mislukte output ligt diep verankerd in de manier waarop Large Language Models (LLMs) tokens voorspellen en reageren op dubbelzinnige invoer. Wanneer een prompt te summier is, zoals onze eerdere paniekpoging, valt het model terug op de meest generieke waarschijnlijkheidsdistributies in zijn trainingsdata.
 
-A. Dit resulteert in clichématige, oppervlakkige antwoorden omdat de temperatuurinstelling en de aandachtsechanismen (attention mechanisms) geen sturing krijgen richting specifieke, hoogwaardige technische output zoals schone SVG-code of robuuste JavaScript-interactiviteit binnen Claude Artifacts.
+Dit resulteert in clichématige, oppervlakkige antwoorden omdat de temperatuurinstelling en de aandachtsechanismen (attention mechanisms) geen sturing krijgen richting specifieke, hoogwaardige technische output zoals schone SVG-code of robuuste JavaScript-interactiviteit binnen Claude Artifacts.
 
 Het ontbreken van duidelijke systeeminstructies en begrenzers (delimiters) zorgt ervoor dat het model de context compleet verkeerd interpreteert. Een LLM begrijpt niet uit zichzelf dat een onboarding-handboek voor de Zuidas een zakelijke, strakke designtaal vereist in plaats van speelse illustraties. Omdat we vergaten om strenge randvoorwaarden, semantische opmaakregels en technische validatiestappen mee te sturen, ging het model gokken. Het resultaat was een chaotische mix van platte tekst en ongeldige vectorgrafieken die elk visueel en functioneel doel misten.
 
@@ -72,14 +72,38 @@ Daarnaast is geavanceerde chaining cruciaal voor grootschalige projecten. In pla
 
 ## 5. Veelgestelde Vragen (FAQ)
 
+
+
+
+
 Q1. Waarom genereert Claude soms onvolledige SVG-code of breekt de output halverwege af tijdens het maken van web illustraties?
+
+
+
+
 
 A1. Dit wordt meestal veroorzaakt doordat het model de maximale outputtokenslimiet van een enkele generatierondes overschrijdt, of doordat de prompt te breed is geformuleerd waardoor het model te veel tegelijk probeert te doen. Om dit te voorkomen, kun je in de prompt expliciet opdragen om de code modulair op te bouwen of te focussen op één specifiek onderdeel per keer, en kun je de instructie geven om de code op te splitsen in logische componenten binnen het artifact.
 
+
+
+
+
 Q2. Hoe zorg ik ervoor dat de gegenereerde SVG-iconen naadloos aansluiten bij de huisstijl van mijn bedrijf zonder handmatig alle kleuren te hoeven aanpassen?
+
+
+
+
 
 A2. Je kunt dit oplossen door in het `[Constraints]` gedeelte van je master prompt gebruik te maken van CSS-variabelen of specifieke hex-codes die gekoppeld zijn aan semantische benamingen. Door het model te instrueren om `currentColor` te gebruiken voor vullingen en lijnen, erven de SVG-iconen automatisch de tekstkleur van hun omringende HTML-element, waardoor ze direct meekleuren met de desbetreffende UI-componenten.
 
+
+
+
+
 Q3. Wat is het voordeel van het gebruik van Claude Artifacts ten opzichte van een standaard chat-interface bij het ontwerpen van interactieve webapplicaties?
+
+
+
+
 
 A3. Claude Artifacts opent een afgescheiden, interactieve kijkvenster naast het conversatievenster waarin zelfstandige webapplicaties direct worden gerenderd en uitgevoerd in de browser. Hierdoor kun je de functionaliteit, het uiterlijk en de responsiviteit van de gegenereerde SVG-illustraties en quizcomponenten direct testen en beoordelen zonder dat je de code handmatig hoeft te kopiëren en op te slaan in externe bestanden.

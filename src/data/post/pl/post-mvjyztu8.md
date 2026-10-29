@@ -8,17 +8,13 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips", "Whitepaper"]
 theme: "Retro Monokai"
 ---
 
-## 1. Awaryjna sytuacja związana z halucynacjami i błędami AI
-
 Siedziałem w przeszklonej sali konferencyjnej na warszawskiej Woli, patrząc na zegarek, gdy zbliżał się ostateczny termin oddania kompleksowej białej księgi dla klienta z branży fintech. Mieliśmy przygotować 5000-słowowy, dogłębny raport techniczny na temat architektury mikroserwisów opartych na zdarzeniach. W ferkucie walki próbowaliśmy połączyć zaawansowane narzędzia nocodowe z zewnętrznym webhookiem, generując sekcje raportu bezpośrednio ze zmiennych konfiguracyjnych. Katastrofa nadeszła, gdy AI kompletnie zgubiło kontekst schematów danych. Zamiast spójnego, głębokiego tekstu analitycznego, ChatGPT wypluwał genetyczny bełkot, myląc formaty JSON z polami relacyjnej bazy danych i tracąc wątek merytoryczny już w trzeciej sekcji. Limit tokenów został przekroczony, spójność argumentacji legła w gruzach, a zespół stał pod ścianą.
 
 ### Dlaczego pojedyncze prompty zawodzą przy monumentalnych tekstach
 
 ![How to Chain ChatGPT Prompts for 5000-Word In-Depth Industry Whitepapers Prompt Guide](https://picsum.photos/seed/prompt-mvjz2blo-9-b/1000/550.jpg)
 
-Problem polega na tym, że nawet najbardziej zaawansowane modele językowe cierpią na syndrom zaniku pamięci operacyjnej oraz dryf kontekstu, gdy próbujemy wygenerować dokument o objętości 5000 słów za pomocą jednego, gigantycznego poleceni
-
-A. W warszawskich realiach biznesowych, gdzie precyzja dokumentacji technicznej decyduje o milionowych kontraktach, nie możemy pozwolić sobie na halucynacje AI.
+Problem polega na tym, że nawet najbardziej zaawansowane modele językowe cierpią na syndrom zaniku pamięci operacyjnej oraz dryf kontekstu, gdy próbujemy wygenerować dokument o objętości 5000 słów za pomocą jednego, gigantycznego polecenia. W warszawskich realiach biznesowych, gdzie precyzja dokumentacji technicznej decyduje o milionowych kontraktach, nie możemy pozwolić sobie na halucynacje AI.
 
 Kiedy wrzucasz do Chatu całą specyfikację technologiczną i krzyczysz: "Napisz mi pełny whitepaper na 5000 słów", model próbuje skrócić proces inferencji. W efekcie spłaszcza strukturę, pomija kluczowe niuanse architektoniczne i generuje powtarzalne akapity. Brakowało nam twardej struktury łańcuchowej (Chain of Thought), która wymusza na sztucznej inteligencji sekwencyjne przetwarzanie danych i rygorystyczne trzymanie się zdefiniowanego schematu konwersji danych wejściowych.
 
@@ -26,11 +22,9 @@ Kiedy wrzucasz do Chatu całą specyfikację technologiczną i krzyczysz: "Napis
 <strong>Wskazówka Architekta AI:</strong> Nigdy nie proszę modelu o napisanie całego dokumentu na raz. Dzielę proces tworzenia 5000-słowowego materiału na 5 niezależnych faz (Modułów), gdzie wyjście z poprzedniego kroku staje się niezmiennym kontekstem (Context Window) dla kolejnego promptu.
 </div>
 
-### Architektura Master Prompt
+### Architektura Master Prompta: Łańcuchowanie dla profesjonalistów
 
-A. Łańcuchowanie dla profesjonalistów
-
-Aby rozwiązać problem przepływu danych między narzędziami nocodowymi a strukturą whitepapera, wdrożyłem rygorystyczny system [Chain-Promptingu]. Poniższy szablon w stylu edytora kodu to sprawdzona sekwencja, którą wklejasz do ChatGPT lub Claude w kolejnych krokach, aby utrzymać absolutną precyzję merytoryczną i techniczną.
+Aby rozwiązać problem przepływu danych między narzędziami nocodowymi a strukturą whitepapera, wdrożyłem rygorystyczny system [<strong>Chain-Promptingu</strong>]. Poniższy szablon w stylu edytora kodu to sprawdzona sekwencja, którą wklejasz do ChatGPT lub Claude w kolejnych krokach, aby utrzymać absolutną precyzję merytoryczną i techniczną.
 
 ```markdown
 SYSTEM:
@@ -54,22 +48,32 @@ Wykorzystaj podejście problem-rozwiązanie-rezultat, poparte realnymi case stud
 
 Podczas pracy nad długimi dokumentami w środowiskach biznesowych musisz stosować konkretne techniki zapobiegające degradacji jakości tekstu:
 
-1. Izolacja tokenów: Podziel 5000 słów na 5 modułów po 1000 słów. Pozwala to uniknąć zjawiska "zapominania" instrukcji początkowych przez model, które występuje przy długich wątkach.
-
-2. Walidacja schematów: Jeśli w tekście pojawiają się fragmenty kodu, konfiguracje webhooków lub struktury baz danych, w każdym kolejnym prompcie wymuszaj walidację składniową za pomocą frazy: *"Sprawdź spójność typów danych z poprzednim modułem przed wygenerowaniem treści"*.
-
-3. Strojenie temperatury: Jeśli korzystasz z API lub ustawień zaawansowanych, ustaw temperaturę na poziomie [0.2-0.4] dla części technicznych oraz [0.7] dla wstępu i podsumowania, aby zachować balans między kreatywnością a ścisłym rygorem inżynieryjnym.
+1. <strong>Izolacja tokenów:</strong> Podziel 5000 słów na 5 modułów po 1000 słów. Pozwala to uniknąć zjawiska "zapominania" instrukcji początkowych przez model, które występuje przy długich wątkach.
+2. <strong>Walidacja schematów:</strong> Jeśli w tekście pojawiają się fragmenty kodu, konfiguracje webhooków lub struktury baz danych, w każdym kolejnym prompcie wymuszaj walidację składniową za pomocą frazy: *"Sprawdź spójność typów danych z poprzednim modułem przed wygenerowaniem treści"*.
+3. <strong>Strojenie temperatury:</strong> Jeśli korzystasz z API lub ustawień zaawansowanych, ustaw temperaturę na poziomie [<strong>0.2-0.4</strong>] dla części technicznych oraz [<strong>0.7</strong>] dla wstępu i podsumowania, aby zachować balans między kreatywnością a ścisłym rygorem inżynieryjnym.
 
 ### Często Zadawane Pytania (FAQ)
 
+
+
 Q1. Dlaczego podział na 5 modułów jest lepszy niż wygenerowanie całości jednym poleceniem?
 
-A1. Modele językowe mają ograniczoną efektywną okno kontekstowe oraz tendencję do upraszczania treści przy próbie wygenerowania bardzo długich struktur na raz. Dzieląc tekst na moduły, zmuszasz AI do zachowania głębi analitycznej, bogatego słownictwa i ścisłej kontroli nad każdą sekcją z osobn
 
-A.Q2. Jak radzić sobie z sytuacją, gdy AI w trzecim kroku zapomina o konwencji nazewnictwa z pierwszego kroku?
 
-A2. Musisz stosować mechanizm tzw. anchor promptingu (kotwiczenia). W każdym kolejnym module wklejasz na początku skrócony słownik pojęć oraz wyjściowy JSON Schema, traktując go jako nienaruszalny kontekst systemowy dla bieżącego zadani
+A1. Modele językowe mają ograniczoną efektywną okno kontekstowe oraz tendencję do upraszczania treści przy próbie wygenerowania bardzo długich struktur na raz. Dzieląc tekst na moduły, zmuszasz AI do zachowania głębi analitycznej, bogatego słownictwa i ścisłej kontroli nad każdą sekcją z osobna.
 
-A.Q3. Czy ta metoda łańcuchowania działa równie dobrze w Claude oraz ChatGPT?
+
+
+Q2. Jak radzić sobie z sytuacją, gdy AI w trzecim kroku zapomina o konwencji nazewnictwa z pierwszego kroku?
+
+
+
+A2. Musisz stosować mechanizm tzw. anchor promptingu (kotwiczenia). W każdym kolejnym module wklejasz na początku skrócony słownik pojęć oraz wyjściowy JSON Schema, traktując go jako nienaruszalny kontekst systemowy dla bieżącego zadania.
+
+
+
+Q3. Czy ta metoda łańcuchowania działa równie dobrze w Claude oraz ChatGPT?
+
+
 
 A3. Tak, działa świetnie na obu platformach. Claude (szczególnie wersje 3.5) radzi sobie nieco lepiej z długimi, złożonymi strukturami kodu i dokumentacji technicznej, podczas gdy ChatGPT z odpowiednio skonstruowanymi instrukcjami systemowymi oferuje wyższą powtarzalność tonu biznesowego.
