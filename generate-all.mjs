@@ -345,39 +345,6 @@ function writeEncryptedCheckpoint(filePath, text) {
 }
 console.log(`📌 오늘 처리할 주제 [4호기 AI Prompt Engineering]: "${currentTopic}"`);
 
-const PROMPT_CRISIS_SCENARIOS_30 = [
-  "급작스러운 부서장 호출로 30분 뒤 신사업 전략 초안을 들고 들어가야 하는데, 챗GPT가 뜬구름 잡는 원론적인 답변만 늘어놓을 때",
-  "경쟁사 시장 분석 보고서를 오늘 퇴근 전까지 제출해야 하는데, AI가 검색해도 안 나오는 가짜 수치(환각 현상)를 당당하게 지어낼 때",
-  "해외 바이어에게 보낼 영문 비즈니스 제안서를 다듬어야 하는데, 번역기 특유의 어색한 문체 때문에 신뢰도가 떨어져 보일 때",
-  "점심시간 직후 진행될 팀 브레인스토밍 회의를 위해 파격적인 마케팅 카피 20개가 급히 필요한 난감한 순간",
-  "새벽 2시 홀로 남아 스타트업 투자 유치용 IR 피치덱 발표 스크립트를 작성하던 중 창의력과 체력이 완전히 고갈되었을 때",
-  "분기 성과 발표를 위해 50페이지짜리 사내 설문조사 주관식 답변을 정량적으로 분류하고 요약해야 하는 막막한 상황",
-  "클라이언트가 제시한 까다로운 브랜드 가이드라인과 톤앤매너를 지키면서 블로그 콘텐츠 초안을 대량 생산해야 할 때",
-  "월요일 아침 전사 주간 회의 직전, 주말 사이 쏟아진 산업 동향 뉴스 30편을 3줄 핵심 브리핑으로 즉시 정리해야 할 때",
-  "간단한 파이썬 데이터 크롤링 스크립트를 짜달라고 했으나 폐기된 구버전 라이브러리 문법을 추천해 오류가 쏟아질 때",
-  "복잡한 SQL 쿼리 최적화를 위해 프롬프트를 넣었으나 테이블 조인(JOIN) 논리가 꼬인 엉터리 코드를 반환했을 때",
-  "웹 프론트엔드 인터랙티브 컴포넌트를 Claude Artifacts로 뽑아내려는데 스타일 시트가 깨져 화면이 뭉개지는 순간",
-  "정규표현식(Regex) 패턴 하나가 계속 매칭에 실패해 1시간째 프롬프트와 정규식을 번갈아 수정하며 헤매던 오후",
-  "API 호출 결과를 JSON 포맷으로 깔끔하게 받아내야 하는데 자꾸 마크다운 설명글을 덧붙여 파싱 에러를 유발할 때",
-  "사내 업무 자동화 봇을 구축하면서 사용자 입력의 다양한 예외 케이스를 처리할 강력한 퓨샷(Few-shot) 예시가 부족할 때",
-  "노코드 툴과 웹훅을 연결하는 과정에서 데이터 스키마 변환 규칙을 AI에게 정확히 인지시키지 못해 병목이 생겼을 때",
-  "대용량 CSV 텍스트 데이터를 분석 창에 업로드했으나 토큰 한도 초과(Context Window Limit)로 문맥이 잘려나갈 때",
-  "법률 판례나 사내 취업규칙 관련 질문을 던졌더니 실제 법조문과 정반대되는 위험한 조언을 천연덕스럽게 생성할 때",
-  "AI에게 특정 전문가 페르소나를 부여했으나 몇 번 대화가 오가자마자 원래의 로봇 같은 중립적 어조로 되돌아갈 때",
-  "복잡한 5단계 업무 프로세스를 지시했으나 중간 3단계를 건너뛰고 결과물만 성의 없이 뱉어내는 멍청한 결과를 봤을 때",
-  "사내 보안 규정상 고객 실명을 넣지 못하는 상태에서 맥락을 잃지 않고 문서를 재구성하도록 프롬프트를 설계해야 할 때",
-  "의료/바이오 관련 전문 용어가 가득한 논문 초록을 일반인도 이해하기 쉬운 설명문으로 변환하는 데 실패했을 때",
-  "고객 응대(CS) 자동 챗봇의 시스템 프롬프트가 악의적인 탈옥(Jailbreak) 프롬프트에 뚫려 엉뚱한 답변을 내놓을 위험에 처했을 때",
-  "다국어 로컬라이징 번역을 맡겼는데 현지 문화적 맥락을 반영하지 못하고 단어를 직역해 브랜드 이미지를 깎아먹을 뻔했을 때",
-  "회의 녹음 텍스트에서 말하는 사람별 핵심 주장과 액션 플랜(To-Do)만 칼같이 추출하고 싶은데 온갖 잡담까지 다 긁어모아 줄 때",
-  "신규 입사자 교육용 방대한 매뉴얼을 10분 만에 퀴즈와 플래시 카드로 인터랙티브하게 재가공해야 하는 상황",
-  "반복되는 일일 업무 보고 작성을 위해 단 3개의 키워드만 넣으면 완벽한 양식으로 완성해 주는 전용 템플릿이 절실할 때",
-  "팀원마다 AI 결과물의 품질 편차가 너무 심해 부서 전체가 공통으로 쓸 표준 시스템 프롬프트 라이브러리가 필요할 때",
-  "소셜 미디어(인스타그램, 스레드, 링크드인) 채널별 성격에 맞게 1개의 원 소스를 3가지 다른 포맷으로 즉시 변환해야 할 때",
-  "길고 지루한 연구 리포트를 읽을 시간이 없어 저자의 핵심 논리와 한계점을 날카롭게 비판하는 반론 요약이 급할 때",
-  "AI 모델의 최신 업데이트 이후 기존에 잘 쓰던 프롬프트가 예전만큼 정교한 결과물을 내지 못해 전면 수정이 필요한 순간"
-];
-
 const THEME_PRESETS = [
   { id: 1, name: "Cyberpunk Terminal", primaryColor: "#00ffcc", bgColor: "#111827", layout: "CLI/터미널 스타일, 핵심 프롬프트 한 줄 최상단 배치" },
   { id: 2, name: "Modern Minimalist Slate", primaryColor: "#3b82f6", bgColor: "#f8fafc", layout: "미니멀 가이드 스타일, 여백 중심의 깔끔한 단계별 프롬프트 빌딩" },
@@ -474,14 +441,45 @@ function validateGeneratedPost(text, langCode) {
   for (const field of ['title', 'description', 'publishDate', 'image']) {
     if (!new RegExp('^' + field + ':\\s*\\S', 'm').test(fm[1])) errors.push(field + ' 누락');
   }
-  if (body.length < (langCode === 'ko' ? 1000 : 1800)) errors.push('본문 길이 부족 또는 잘림');
-  if ((body.match(/^##\s+/gm) || []).length < 5) errors.push('H2 섹션 5개 미만');
-  if ((body.match(/\*\*Q[1-3]\.\*\*/gi) || []).length < 3) errors.push('FAQ 질문 3개 미만');
-  if ((body.match(/\*\*A[1-3]\.\*\*/gi) || []).length < 3) errors.push('FAQ 답변 3개 미만');
-  if (langCode !== 'ko' && /[가-힣]/.test(body)) errors.push('비한국어 본문에 한글 포함');
+  const description = fm[1].match(/^description:\s*["']?([^\r\n"']*)/m)?.[1]?.trim() || '';
+  if (description.length > 160) errors.push('description 160자 초과');
+  if (!/^image:\s*["']?https?:\/\//m.test(fm[1])) errors.push('image URL 형식 오류');
+
+  const bodyWithoutCode = body.replace(/```[\s\S]*?```/g, ' ');
+  const plainBody = bodyWithoutCode
+    .replace(/!\[[^\]]*\]\([^)]+\)/g, ' ')
+    .replace(/\[[^\]]+\]\([^)]+\)/g, ' ')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/^#+\s*/gm, '')
+    .replace(/[>*_~|]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const nonSpaceLength = [...plainBody].filter((char) => !/\s/u.test(char)).length;
+  const words = [...plainBody.matchAll(/[\p{L}\p{N}]+(?:['’.-][\p{L}\p{N}]+)*/gu)].length;
+  if ((bodyWithoutCode.match(/^##\s+/gm) || []).length !== 5) errors.push('H2 섹션은 정확히 5개여야 함');
+  for (const n of [1, 2, 3]) {
+    const questionMarker = '**Q' + n + '.**';
+    const answerMarker = '**A' + n + '.**';
+    if (bodyWithoutCode.split(questionMarker).length - 1 !== 1) errors.push('FAQ 질문 Q' + n + ' 표식이 정확히 1개 필요');
+    if (bodyWithoutCode.split(answerMarker).length - 1 !== 1) errors.push('FAQ 답변 A' + n + ' 표식이 정확히 1개 필요');
+  }
+  if (langCode === 'ko' && nonSpaceLength < 1800) errors.push('한국어 본문 공백 제외 1,800자 미만');
+  if (langCode === 'ko' && nonSpaceLength > 3600) errors.push('한국어 본문 공백 제외 3,600자 초과');
+  if (langCode === 'ja' && nonSpaceLength < 900) errors.push('일본어 본문 공백 제외 900자 미만');
+  if (!['ko', 'ja'].includes(langCode) && words < 650) errors.push('본문 650단어 미만');
+  if (!['ko', 'ja'].includes(langCode) && words > 1500) errors.push('본문 1,500단어 초과');
+
+  const hangulCount = (plainBody.match(/[가-힣]/g) || []).length;
+  const kanaCount = (plainBody.match(/[\u3040-\u30ff]/g) || []).length;
+  const latinCount = (plainBody.match(/\p{Script=Latin}/gu) || []).length;
+  if (langCode === 'ko' && hangulCount < 300) errors.push('한국어 본문 한글 문자 부족');
+  if (langCode === 'ja' && kanaCount < 80) errors.push('일본어 본문 가나 문자 부족');
+  if (langCode !== 'ko' && hangulCount > 0) errors.push('비한국어 본문에 한글 포함');
+  if (langCode !== 'ja' && kanaCount > 40) errors.push('일본어 외 본문에 가나 문자 과다 포함');
+  if (!['ko', 'ja'].includes(langCode) && latinCount < words * 0.6) errors.push('본문 문자 체계가 라틴 문자 locale과 맞지 않음');
   return errors;
 }
-
 async function generateSinglePost(lang, index) {
   const checkpointPath = path.join(checkpointDir, `${lang.code}.enc`);
   if (fs.existsSync(checkpointPath)) {
@@ -502,8 +500,7 @@ async function generateSinglePost(lang, index) {
   }
 
   const selectedTheme = THEME_PRESETS[Math.floor(Math.random() * THEME_PRESETS.length)];
-  const selectedScenario = PROMPT_CRISIS_SCENARIOS_30[Math.floor(Math.random() * PROMPT_CRISIS_SCENARIOS_30.length)];
-  const i18n = I18N_SECTIONS[lang.code] || I18N_SECTIONS.ko;
+    const i18n = I18N_SECTIONS[lang.code] || I18N_SECTIONS.ko;
 
   console.log(`\n🚀 [${index + 1}/12] ${lang.name} (${lang.code}) 4호기 애드센스 표준 생성 중... (테마: ${selectedTheme.name})`);
 
@@ -512,69 +509,53 @@ async function generateSinglePost(lang, index) {
 
   // 🎯 [애드센스 승인 최적화 프롬프트: 2,400~2,600자 정량화]
   const prompt = `
-You are a ${lang.persona}.
-Write a high-quality, practical AI prompt engineering guide natively in ${lang.name}.
-Target Culture: "${lang.localeContext}"
-Assigned Situation: "${selectedScenario}"
+Write an original practical prompt-engineering guide natively in ${lang.name}, with independent wording and examples for this locale. This is a separate locale-specific article generation call, not a translation.
 Topic: "${currentTopic}"
+Audience and cultural context: "${lang.localeContext}"
+Do not force a hallucination, token, temperature, or master-prompt discussion unless it directly applies. Do not claim personal experience or credentials. Do not invent model behavior, facts, quotations, customer cases, or outcomes.
 
-[ADSENSE QUALITY & LENGTH REQUIREMENT]
-- For Korean (ko): Write exactly around 2,400 - 2,600 characters (do NOT exceed 3,000 characters).
-- For other languages: Write exactly 900 - 1,100 words.
-- Tone: Highly informative, professional, practical workplace advice.
-- Narrative voice: Write in a first-person storytelling voice ("I"/the natural first-person form in ${lang.name}) from the assigned expert persona's perspective.
-- Open with a vivid but clearly illustrative scene based on the assigned situation; use roughly 30% of the article for first-person story and transitions and 70% for verified explanations, step-by-step guidance, and safety information. Build a story arc from the urgent problem through diagnosis, safe action, and outcome.
-- Do not falsely claim that an illustrative scenario is a real customer case or the author's personal experience. Do not invent verified outcomes, quotations, or facts. Clearly frame hypothetical/composite events as illustrative.
-- Keep first-person narration throughout the opening and transitions, while making technical instructions, safety warnings, and sources precise and factual.
+Length and style:
+- Korean: about 2,400–2,600 characters, maximum 3,000 characters.
+- Other locales: about 900–1,100 words (Japanese: at least 900 non-space characters).
+- Aim for an engaging opening and transitions (about 30%) and useful, accurate explanation and actionable steps (about 70%).
+- Use first-person procedural phrasing only where natural (for example, "I would first check…"). Do not imply a real personal event.
+- Write idiomatic ${lang.name}, not translated wording. Localize examples and UI labels only when relevant.
 
-[STRUCTURE - STRICT 5 H2 HEADINGS]
-Use these exact H2 headings:
-
+Use these five localized H2 headings exactly, in this order:
 ## ${i18n.s1}
-Write 2 detailed paragraphs describing the sudden AI output failure, hallucinated garbage, and urgent deadline crisis based on: "${selectedScenario}".
-
+Introduce a recognizable situation directly connected to "${currentTopic}" without claiming an invented event happened.
 ## ${i18n.s2}
-Write 2 analytical paragraphs explaining the technical root causes (token probability distribution, temperature impact, attention limits, and lack of explicit constraints).
-
+Explain topic-specific causes, limits, and clues. Avoid generic model claims that do not apply.
 ## ${i18n.s3}
-Provide a complete, copy-and-paste Master Prompt Template matching "${lang.osUi}". Wrap the template in a 3-backtick markdown block with structured parameters ([Context], [Role], [Objective], [Constraints], [Output Format]).
-
+Give clear steps or a reusable template only if it directly helps solve this topic.
 ## ${i18n.s4}
-Write 2 paragraphs of practical precautions and prompt architect tips to prevent hallucinations and logic drift.
-
+Explain relevant precautions, common mistakes, and how to check the result.
 ## ${i18n.s5}
-Provide exactly 3 practical Q&A items. You MUST put an empty line between Question and Answer:
+Provide exactly three useful Q&A pairs with a blank line between each question and answer:
+**Q1.** Localized question
 
-**Q1.** Question text
+**A1.** Clear, useful answer.
 
-**A1.** Detailed answer (3-4 sentences).
+**Q2.** Localized question
 
-**Q2.** Question text
+**A2.** Clear, useful answer.
 
-**A2.** Detailed answer (3-4 sentences).
+**Q3.** Localized question
 
-**Q3.** Question text
+**A3.** Clear, useful answer.
 
-**A3.** Detailed answer (3-4 sentences).
+Use reliable sources for factual claims and include links only when you can identify a relevant source accurately. Do not add filler. Use Markdown, keep headings free of bold markers, and put prompt text/settings in inline code. ${lang.code !== 'ko' ? '- Do not use Korean characters.' : ''}
 
-[FORMATTING RULES]
-1. Never put asterisks (**) inside H2 headings.
-2. Bold keywords with strict syntax: **keyword** (no space inside asterisks).
-3. Put prompt tags, variables, or system settings in inline backticks (e.g. \`[Role]\`, \`temperature: 0.2\`).
-${lang.code !== 'ko' ? `- Absolutely NO Korean characters in non-Korean posts.` : ''}
-
-[Strict Output Format]
-Return ONLY raw Markdown starting directly with frontmatter:
+Return only raw Markdown with this frontmatter:
 ---
-title: "Native Clear Title in ${lang.name}"
-description: "Native concise description in ${lang.name} under 160 characters"
+title: "Native clear title in ${lang.name}"
+description: "Native concise description in ${lang.name}, maximum 160 characters"
 publishDate: ${pubDateIso}
 image: "${coverUrl}"
 category: "Prompt Engineering"
 tags: ${JSON.stringify(i18n.tags)}
 theme: "${selectedTheme.name}"
----
-`;
+---`;
 
   try {
     const normalizeGeneratedResponse = (rawText) => {
