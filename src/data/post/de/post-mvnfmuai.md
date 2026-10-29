@@ -30,15 +30,15 @@ Das Kernproblem bei der automatisierten Generierung von Vektorgrafiken ist das F
 
 Um das zu verhindern, nutzen wir eine dreistufige Prompt-Architektur, die Claude zwingt, wie ein Senior UX/UI-Designer und Frontend-Entwickler gleichzeitig zu arbeiten:
 
-1. **Rollen-Framing & Design-System:**Zuweisung einer strikten Design-Identität inklusive Farbpalette im Hex-Format.
+1. <strong>Rollen-Framing & Design-System:</strong> Zuweisung einer strikten Design-Identität inklusive Farbpalette im Hex-Format.
 
-2.**Geometrische Einschränkungen:**Vorgabe von exakten viewBox-Dimensionen, Layer-Strukturen und Barrierefreiheit (ARIA-Labels).
+2.<strong>Geometrische Einschränkungen:</strong> Vorgabe von exakten viewBox-Dimensionen, Layer-Strukturen und Barrierefreiheit (ARIA-Labels).
 
-3.**Artifacts-Ausgabe:**Trennung von Erklärung und ausführbarem Code, damit die Vorschau direkt im Browser lädt.
+3.<strong>Artifacts-Ausgabe:</strong> Trennung von Erklärung und ausführbarem Code, damit die Vorschau direkt im Browser lädt.
 
 ## 3. Sofort einsetzbare Master-Prompt-Vorlage Template
 
-Kopieren Sie dieses Template direkt in Ihre**Claude Systemanweisungen** oder in den Chat-Eingabebereich, wenn Sie mit Claude Artifacts arbeiten. Passen Sie die Platzhalter in den Klammern an Ihr aktuelles Projekt an.
+Kopieren Sie dieses Template direkt in Ihre <strong>Claude Systemanweisungen</strong> oder in den Chat-Eingabebereich, wenn Sie mit Claude Artifacts arbeiten. Passen Sie die Platzhalter in den Klammern an Ihr aktuelles Projekt an.
 
 ```markdown
 # Role and Context
@@ -56,9 +56,9 @@ Du bist ein erfahrener Senior Brand Designer und SVG-Architekt für High-End-Fin
   * Accent Highlight: #d97706 (Helles Bernstein)
 
 # Task Assignment
-Erstelle eine Web-Illustration zum Them
+Erstelle eine Web-Illustration zum Thema.
 
-**A.** "[Thema hier einfügen, z.B. Blockchain-Sicherheit im Bankwesen]".
+"[Thema hier einfügen, z.B. Blockchain-Sicherheit im Bankwesen]".
 Die Illustration soll folgenden Ton treffen: Seriös, modern, minimalistisch und präzise.
 
 # Output Rules
@@ -77,20 +77,20 @@ Die Illustration soll folgenden Ton treffen: Seriös, modern, minimalistisch und
 
 Wenn Sie die Massenproduktion von Blog-Inhalten hochfahren, lauern einige klassische Stolpersteine. Mit diesen Parametern steuern Sie nach:
 
-* **Häufige Halluzinationen stoppen:** Verlangt Claude nach CSS-Klassen, die nicht existieren, fügen Sie im Prompt den Satz hinzu: *"Verwende keine CSS-Klassen, sondern ausschliesslich direkte Style-Attribute, um Kompatibilitätsprobleme in CMS-Systemen zu vermeiden."*
-* **Token-Sparsamkeit:** Bei komplexen Illustrationen neigt das Modell dazu, unendlich viele kleine `<path>`-Punkte zu erzeugen. Begrenzen Sie die Komplexität im Prompt durch die Anweisung: *"Halte den SVG-Pfad-Code sauber und minimalistisch (unter 150 Zeilen Code)."*
-* **Barrierefreiheit (A11y):** Ergänzen Sie für produktive Webseiten immer den Befehl: *"Füge dem SVG-Tag ein passendes `role="img"` und ein aussagekräftiges `<title>`-Element für Screenreader hinzu."*
+* <strong>Häufige Halluzinationen stoppen:</strong> Verlangt Claude nach CSS-Klassen, die nicht existieren, fügen Sie im Prompt den Satz hinzu: *"Verwende keine CSS-Klassen, sondern ausschliesslich direkte Style-Attribute, um Kompatibilitätsprobleme in CMS-Systemen zu vermeiden."*
+* <strong>Token-Sparsamkeit:</strong> Bei komplexen Illustrationen neigt das Modell dazu, unendlich viele kleine `<path>`-Punkte zu erzeugen. Begrenzen Sie die Komplexität im Prompt durch die Anweisung: *"Halte den SVG-Pfad-Code sauber und minimalistisch (unter 150 Zeilen Code)."*
+* <strong>Barrierefreiheit (A11y):</strong> Ergänzen Sie für produktive Webseiten immer den Befehl: *"Füge dem SVG-Tag ein passendes `role="img"` und ein aussagekräftiges `<title>`-Element für Screenreader hinzu."*
 
 ## 5. Häufig gestellte Fragen (FAQ)
 
-**Q.** Warum bricht Claude manchmal Mitten im SVG-Code ab und wie verhindere ich das?
+<strong>Q.</strong> Warum bricht Claude manchmal Mitten im SVG-Code ab und wie verhindere ich das?
 
-**A.** Komplexe SVG-Pfade erzeugen viele Tokens. Wenn Claude stoppt, schreiben Sie einfach im nächsten Prompt: *"Setze den SVG-Code im bestehenden Artifact exakt an der Stelle fort, an der du aufgehört hast, und schließe das SVG-Tag sauber ab."* Alternativ hilft der Befehl *"Schreibe kompakteren SVG-Code"*.
+A. Komplexe SVG-Pfade erzeugen viele Tokens. Wenn Claude stoppt, schreiben Sie einfach im nächsten Prompt: *"Setze den SVG-Code im bestehenden Artifact exakt an der Stelle fort, an der du aufgehört hast, und schließe das SVG-Tag sauber ab."* Alternativ hilft der Befehl *"Schreibe kompakteren SVG-Code"*.
 
-**Q.** Kann ich bestehende Marken-Logos direkt als Referenz in den Prompt einbinden?
+<strong>Q.</strong> Kann ich bestehende Marken-Logos direkt als Referenz in den Prompt einbinden?
 
-**A.** Ja, dank der Multimodalität von Claude können Sie Screenshots oder PNG-Skizzen Ihrer Corporate Identity per Drag-and-Drop in den Chat laden und den Prompt ergänzen mit: *"Analysiere den Stil dieses Bildes und erstelle ein neues SVG im exakt gleichen visuellen Raster."*
+A. Ja, dank der Multimodalität von Claude können Sie Screenshots oder PNG-Skizzen Ihrer Corporate Identity per Drag-and-Drop in den Chat laden und den Prompt ergänzen mit: *"Analysiere den Stil dieses Bildes und erstelle ein neues SVG im exakt gleichen visuellen Raster."*
 
-**Q.** Wie skaliere ich diesen Prozess für fünfzig Blogbeiträge gleichzeitig?
+<strong>Q.</strong> Wie skaliere ich diesen Prozess für fünfzig Blogbeiträge gleichzeitig?
 
-**A.** Nutzen Sie Claude Projects, hinterlegen Sie dort den Master-Prompt als dauerhafte Systemanweisung und füttern Sie Claude anschließend tabellarisch mit Ihren Themen via CSV- oder Text-Upload. Lassen Sie sich die Ergebnisse nacheinander als saubere Artifacts ausgeben.
+A. Nutzen Sie Claude Projects, hinterlegen Sie dort den Master-Prompt als dauerhafte Systemanweisung und füttern Sie Claude anschließend tabellarisch mit Ihren Themen via CSV- oder Text-Upload. Lassen Sie sich die Ergebnisse nacheinander als saubere Artifacts ausgeben.

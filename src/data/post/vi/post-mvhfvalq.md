@@ -8,8 +8,6 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Midnight Navy Royal"
 ---
 
-## 1. Tình huống khẩn cấp do AI trả lời ảo giác và sai lệch
-
 Sang thu hai dau tuan tai van phong o Quan 1, TP.HCM, sep lon nem vao mat toi mot tap file CSV chua du lieu ban hang cua ca quy vua qua kem theo cau noi xanh ron: "Chieu nay hop voi doi tac nuoc ngoai, em lam cho anh mot cai dashboard tuong tac, keo tha loc du lieu giong may phan mem xin xo xem nao". Dong ho diem 9 gio sang, deadline la 2 gio chieu, ma toi thi khong co thoi gian ngoi code React hay PowerBI tu dau. Neu cu ngoi cat dan bieu do bang tay hay loay hoay viet code tu dau thi chac chan toi se an "gai" vao mat.
 
 May man thay, toi nho ra vu khi bi mat dang nam trong tay: Claude 3.5 Sonnet va tinh nang Artifacts. Thay vi chi nhan lai nhung doan van ban giai thich dai dong, Claude co the "phat" truc tiep mot ung dung hoan chinh, chay ngay trong khung ben phai man hinh. Va duoi day la cach toi da bien 50 dong du lieu tho thanh mot dashboard hoan hao chi trong vong chua day 10 phut nham cuu lay chiec ghe cua minh.
@@ -20,9 +18,9 @@ May man thay, toi nho ra vu khi bi mat dang nam trong tay: Claude 3.5 Sonnet va 
 
 ## Tai sao cach prompt thong thuong luon that bai voi Dashboard?
 
-Truoc day, khi moi dung ChatGPT hay Claude cho cac tac vu lap trinh giao dien, toi hay mac sai lam la viet nhung cau lenh kieu: *"Hay viet cho toi code HTML de lam bieu do ban hang"*. Ket qua nhan lai la gi? Mot file code dai ngoang, chua du cac loi syntax, thieu thu vien Chart.js, va khi copy ve may chay thi loi lum la, man hinh trang xo
+Truoc day, khi moi dung ChatGPT hay Claude cho cac tac vu lap trinh giao dien, toi hay mac sai lam la viet nhung cau lenh kieu: *"Hay viet cho toi code HTML de lam bieu do ban hang"*. Ket qua nhan lai la gi? Mot file code dai ngoang, chua du cac loi syntax, thieu thu vien Chart.js, va khi copy ve may chay thi loi lum la, man hinh trang xoa. 
 
-A. Nguyen nhan la vi mo hinh ngon ngu lon (LLM) thuong bi ao giac (hallucination) khi phai viet code nguyen man ma khong co mot khung hoat dong on dinh. 
+Nguyen nhan la vi mo hinh ngon ngu lon (LLM) thuong bi ao giac (hallucination) khi phai viet code nguyen man ma khong co mot khung hoat dong on dinh. 
 
 Su khac biet cua Claude 3.5 Sonnet nam o tinh nang Artifacts. Khi ban kich hoat dung cach, no se tach phan code ra khoi doan chat va render no thanh mot ung dung rieng biet. Nhiem vu cua Prompt Engineer luc nay khong phai la viet code, ma la dong vai tro Product Manager (Quan ly san pham) ra de bai chinh xac cho AI.
 
@@ -35,16 +33,13 @@ Vai tro cua ban la Senior Frontend Developer va UI/UX Expert. Toi co mot tap du 
 
 [DANH SACH YEU CAU GIAO DIEN]
 1. Tong quan (Summary Cards): Hien thi 4 chi so quan trong nhat gom Tong Doanh Thu, Tong Don Hang, Gia Tri Trung Binh Don, va Ty Le Tang Truong so voi thang truoc.
-
 2. Bo loc (Filters): Cho phep loc du lieu theo Khu Vuc (North, Central, South) va Thang (Thang 1 den Thang 12).
-
 3. Bieu do truc quan (Charts): 
    - Bieu do cot (Bar Chart) the hien doanh thu theo tung khu vuc.
    - Bieu do duong (Line Chart) the hien xu huong tang truong doanh thu theo thoi gian.
+4. Giao dien (UI Style): Phong cach Dark/Light mode hien dai, mau sac chu dao la Midnight Navy (#1d4ed8), bo goc mem mai, hieu ung hover muot ma.
 
-4. Giao dien (UI Style): Phong cach Dark/Light mode hien dai, mau sac chu dao la Midnight Navy (#1d4ed8), bo goc mem mai, hieu ung hover muot m
-
-A. [DU LIEU THO DE LAM MAU]
+[DU LIEU THO DE LAM MAU]
 [Dan du lieu CSV hoac bang cua ban vao day - Vi du: Ngay, KhuVuc, SanPham, DoanhThu, SoLuong]
 
 Hay dam bao ung dung hoat diong muot ma, co du du lieu gia lap neu can thiet va khong bi loi render trong Artifacts.
@@ -58,9 +53,9 @@ Hay dam bao ung dung hoat diong muot ma, co du du lieu gia lap neu can thiet va 
 
 Khi Claude tra ve ket qua ban dau trong Artifacts, dung voi thoa man. Hay thuc hien tiep cac buoc Tinh chinh nhanh (Iterative Chaining) sau day de dashboard dat do hoan thien cao nhat:
 
-- Buoc 1: Kiem tra tinh chinh xac cua du lieu. Nhap vao khung chat: *"Hay kiem tra lai cac cong thuc tinh tong doanh thu o cac the card, dam bao khong bi lech so lieu so voi bang goc toi vua cung cap."*
-- Buoc 2: Them tinh nang xuat du lieu. Nhap tiep: *"Hay them mot nut 'Export to CSV' o goc phai man hinh de nguoi dung co the tai xuong du lieu sau khi da loc."*
-- Buoc 3: Cai thien UX tren dien thoai. Nhap: *"Hay dam bao giao dien nay hoan toan tuong thich va hien thi dep tren man hinh dien thoai di dong (Responsive Design)."*
+- <strong>Buoc 1: Kiem tra tinh chinh xac cua du lieu.</strong> Nhap vao khung chat: *"Hay kiem tra lai cac cong thuc tinh tong doanh thu o cac the card, dam bao khong bi lech so lieu so voi bang goc toi vua cung cap."*
+- <strong>Buoc 2: Them tinh nang xuat du lieu.</strong> Nhap tiep: *"Hay them mot nut 'Export to CSV' o goc phai man hinh de nguoi dung co the tai xuong du lieu sau khi da loc."*
+- <strong>Buoc 3: Cai thien UX tren dien thoai.</strong> Nhap: *"Hay dam bao giao dien nay hoan toan tuong thich va hien thi dep tren man hinh dien thoai di dong (Responsive Design)."*
 
 ---
 
@@ -68,6 +63,8 @@ Khi Claude tra ve ket qua ban dau trong Artifacts, dung voi thoa man. Hay thuc h
 
 ### 1. Toi co the dung ChatGPT thay cho Claude de tao Artifacts nay khong?
 Hien tai, tinh nang Artifacts tao va chay ung dung truc tiep la dac san cua rieng Claude 3.5 Sonnet. ChatGPT co Advanced Data Analysis nhung no thien ve xu ly file Python hon la render mot giao dien web tuong tac truc quan ngay lap tuc nhu Artifacts.
+
+
 
 ![How to Use Claude 3.5 Sonnet Artifacts to Build Interactive Dashboard Prototypes Prompt Guide](https://picsum.photos/seed/prompt-mvhfy22c-11-b/1000/550.jpg)
 

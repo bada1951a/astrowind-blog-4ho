@@ -45,9 +45,9 @@ Sei un Caporedattore e Architetto di Contenuti B2B esperto nel settore [Inserire
 Il nostro obiettivo è scrivere un whitepaper autorevole, orientato ai dati e privo di retorica vuota, della lunghezza complessiva di 5000 parole.
 
 Primo compito: genera l'indice analitico dettagliato del whitepaper diviso in 5 macro-capitoli. 
-Per ogni capitolo, specific
+Per ogni capitolo, specifica.
 
-**A.** 1. Titolo del capitolo
+1. Titolo del capitolo
 2. Concetti chiave da trattare (minimo 3 per capitolo)
 3. Fonti di dati o metriche di riferimento da simulare o analizzare
 4. Numero di parole stimato per raggiungere un totale di 5000 parole.
@@ -73,9 +73,9 @@ Ecco le linee guida obbligatorie per mantenere la qualità costante:
 - Includi almeno un caso studio ipotetico o un'analisi di scenario basata su dati di mercato realistici.
 - Usa sottotitoli in markdown (h2 e h3) per suddividere i blocchi di testo.
 - Evita assolutamente le introduzioni generiche e i cappotti introduttivi retorici ("Nel mondo moderno in continua evoluzione..."). Inizia direttamente analizzando il problema economico o strutturale.
-- Mantieni la coerenza stilistica con i dati strutturati forniti in precedenz
+- Mantieni la coerenza stilistica con i dati strutturati forniti in precedenza.
 
-**A.** Contenuti specifici da sviluppare in questo capitolo:
+Contenuti specifici da sviluppare in questo capitolo:
 [Inserire Concetti Chiave del Capitolo]
 ```
 
@@ -91,15 +91,15 @@ Analizza il testo del capitolo che ti fornisco di seguito e applica una revision
 
 1. Rilevamento allucinazioni e luoghi comuni: Rimuovi qualsiasi frase vuota, aggettivo superfluo o affermazione priva di fondamento logico.
 
-2. Densezza informativ
+2. Densezza informativa.
 
-**A.** Assicurati che ogni paragrafo contenga un'informazione utile, un dato o un'argomentazione strategic
+Assicurati che ogni paragrafo contenga un'informazione utile, un dato o un'argomentazione strategica.
 
-**A.** 3. Formattazione: Verifica che l'uso del grassetto evidenzi solo i concetti chiave e che la struttura sia leggibile su schermo.
+3. Formattazione: Verifica che l'uso del grassetto evidenzi solo i concetti chiave e che la struttura sia leggibile su schermo.
 
-Restituisci il testo corretto e ottimizzato, segnalando in un breve box finale a punti quali modifiche strutturali hai apportato per migliorare la qualità complessiv
+Restituisci il testo corretto e ottimizzato, segnalando in un breve box finale a punti quali modifiche strutturali hai apportato per migliorare la qualità complessiva.
 
-**A.** Testo da revisionare:
+Testo da revisionare:
 [Incollare il testo generato nello Step 2]
 ```
 
@@ -107,14 +107,38 @@ Restituisci il testo corretto e ottimizzato, segnalando in un breve box finale a
 
 ### Domande Frequenti (FAQ)
 
-**Q1.** Come posso evitare che l'AI perda il filo conduttore tra il primo e l'ultimo capitolo del whitepaper?
 
-**A1.** La perdita di coerenza si combatte passando il sommario approvato (generato nello Step 1) all'inizio di ogni nuovo prompt di scrittura dei singoli capitoli. In questo modo l'AI sa sempre quale parte del documento sta sviluppando e come si collega al quadro generale.
 
-**Q2.** Posso usare questo metodo di prompt chaining sia su ChatGPT che su Claude?
 
-**A2.** Assolutamente sì. Anzi, l'uso di Claude (in particolare le versioni con finestre di contesto ampie) eccelle nella gestione dei passaggi intermedi, mentre ChatGPT con GPT-4o si dimostra estremamente rapido nella generazione strutturata dei dati.
 
-**Q3.** Come gestisco il limite di token in uscita se voglio capitoli molto lunghi?
+Q1. Come posso evitare che l'AI perda il filo conduttore tra il primo e l'ultimo capitolo del whitepaper?
 
-**A3.** Non cercare mai di forzare l'uscita di 2000 parole in un unico comando. Imposta sempre un target realistico di 800-1000 parole per singola chiamata e concatena più prompt sequenziali per completare la sezione. Questo garantisce una qualità di scrittura nettamente superiore e previene i tagli improvvisi del testo.
+
+
+
+
+A1. La perdita di coerenza si combatte passando il sommario approvato (generato nello Step 1) all'inizio di ogni nuovo prompt di scrittura dei singoli capitoli. In questo modo l'AI sa sempre quale parte del documento sta sviluppando e come si collega al quadro generale.
+
+
+
+
+
+Q2. Posso usare questo metodo di prompt chaining sia su ChatGPT che su Claude?
+
+
+
+
+
+A2. Assolutamente sì. Anzi, l'uso di Claude (in particolare le versioni con finestre di contesto ampie) eccelle nella gestione dei passaggi intermedi, mentre ChatGPT con GPT-4o si dimostra estremamente rapido nella generazione strutturata dei dati.
+
+
+
+
+
+Q3. Come gestisco il limite di token in uscita se voglio capitoli molto lunghi?
+
+
+
+
+
+A3. Non cercare mai di forzare l'uscita di 2000 parole in un unico comando. Imposta sempre un target realistico di 800-1000 parole per singola chiamata e concatena più prompt sequenziali per completare la sezione. Questo garantisce una qualità di scrittura nettamente superiore e previene i tagli improvvisi del testo.

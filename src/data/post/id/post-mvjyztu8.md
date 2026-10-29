@@ -10,15 +10,15 @@ theme: "Rosewood Hardware Guide"
 
 ## 1. Situasi Kritis Akibat Halusinasi AI dan Output Menyesatkan
 
-Jam menunjukkan pukul 08.15 pagi di salah satu gedung pencakar langit kawasan bisnis Sudirman Central Business District (SCBD) Jakart
+Jam menunjukkan pukul 08.15 pagi di salah satu gedung pencakar langit kawasan bisnis Sudirman Central Business District (SCBD) Jakarta.
 
-**A.** Meeting eksekutif dengan Managing Director dijadwalkan tepat pukul 09.
+Meeting eksekutif dengan Managing Director dijadwalkan tepat pukul 09.
 
 00. Masalahnya, meja saya sudah dipenuhi dokumen PDF whitepaper industri setebal 5.000 kata mengenai tren ekonomi makro digital yang baru dirilis semalam. Membaca setiap barisnya secara manual sebelum rapat adalah misi bunuh diri. Waktu saya tidak sampai 45 menit untuk memahami seluruh isi dokumen, menemukan celah logika sang penulis, dan merumuskan argumen tandingan yang tajam agar tidak terlihat kosong di depan direksi.
 
-Panik melanda saat saya mencoba shortcut malas: langsung menyalin seluruh teks dokumen ke ChatGPT versi gratis dengan perintah instan, *"Tolong rangkum whitepaper ini sekarang."* Hasilnya? Bencan
+Panik melanda saat saya mencoba shortcut malas: langsung menyalin seluruh teks dokumen ke ChatGPT versi gratis dengan perintah instan, *"Tolong rangkum whitepaper ini sekarang."* Hasilnya? Bencana.
 
-**A.** ChatGPT memberikan ringkasan generik yang membosankan, penuh dengan kalimat klise, dan sama sekali melewatkan asumsi tersembunyi serta bias metodologi yang justru menjadi titik krusial untuk mendebat laporan tersebut di ruang rapat. Batas token terlampaui separuh jalan, dan analisisnya terasa dangkal karena tidak dipecah secara sistematis.
+ChatGPT memberikan ringkasan generik yang membosankan, penuh dengan kalimat klise, dan sama sekali melewatkan asumsi tersembunyi serta bias metodologi yang justru menjadi titik krusial untuk mendebat laporan tersebut di ruang rapat. Batas token terlampaui separuh jalan, dan analisisnya terasa dangkal karena tidak dipecah secara sistematis.
 
 ![How to Chain ChatGPT Prompts for 5000-Word In-Depth Industry Whitepapers Prompt Guide](https://picsum.photos/seed/prompt-mvjz2l3c-10-b/1000/550.jpg)
 
@@ -28,9 +28,9 @@ Panik melanda saat saya mencoba shortcut malas: langsung menyalin seluruh teks d
 
 ## Arsitektur Rantai Prompt: Memecah Dokumen Raksasa Menjadi Modul Analitis
 
-Untuk menaklukkan dokumen tebal tanpa halusinasi, kita harus memperlakukan LLM seperti tim analis junior. Kita tidak bisa meminta mereka langsung menulis laporan akhir. Kita harus memecahnya ke dalam tiga tahap rantai kerj
+Untuk menaklukkan dokumen tebal tanpa halusinasi, kita harus memperlakukan LLM seperti tim analis junior. Kita tidak bisa meminta mereka langsung menulis laporan akhir. Kita harus memecahnya ke dalam tiga tahap rantai kerja.
 
-**A.** ekstraksi logika inti, audit kelemahan argumen, dan sintesis 반론 (argumen tandingan/counter-argument).
+ekstraksi logika inti, audit kelemahan argumen, dan sintesis argumen tandingan (argumen tandingan/counter-argument).
 
 Perbedaan platform juga menentukan efisiensi kerja di lapangan. Claude dengan fitur Artifacts sangat unggul untuk menstrukturkan data teks panjang dalam satu panel kerja berdampingan, sementara GPT Canvas memberikan fleksibilitas tinggi dalam menyunting paragraf demi paragraf secara iteratif.
 
@@ -57,9 +57,9 @@ Constraints: Gunakan bahasa Indonesia profesional tingkat korporat SCBD. Jangan 
 Setelah mendapatkan hasil dari Tahap 1, lanjutkan rantai prompt dengan memasukkan output sebelumnya ke dalam perintah kedua ini:
 
 ```markdown
-Context: Berdasarkan kerangka logika whitepaper yang telah Anda ekstrak sebelumny
+Context: Berdasarkan kerangka logika whitepaper yang telah Anda ekstrak sebelumnya.
 
-**A.** Task: Lakukan stress-test dan audit kritis terhadap argumen penulis. Cari celah, bias, dan kelemahan metodologi dengan menjawab pertanyaan berikut:
+Task: Lakukan stress-test dan audit kritis terhadap argumen penulis. Cari celah, bias, dan kelemahan metodologi dengan menjawab pertanyaan berikut:
 1. Logical Fallacies (Di bagian mana argumen penulis mengalami lompatan logika atau bias konfirmasi?).
 
 2. Blind Spots (Variabel makro atau tren industri apa yang dengan sengaja atau tidak sengaja diabaikan oleh penulis?).
@@ -68,7 +68,7 @@ Context: Berdasarkan kerangka logika whitepaper yang telah Anda ekstrak sebelumn
 
 Output Format: Sajikan dalam bentuk poin-poin analitis yang tajam, langsung pada sasaran, tanpa kalimat berbunga-bung
 
-**A.** ```
+```
 
 ### Tahap 3: Sintesis Argumen Tandingan (Counter-Argument Briefing)
 
@@ -78,9 +78,9 @@ Tahap penutup untuk merumuskan amunisi yang akan Anda bawa ke ruang rapat ekseku
 Task: Berdasarkan temuan celah dan kelemahan pada tahap sebelumnya, susunlah Ringkasan Eksekutif Argumen Tandingan (Counter-Argument Briefing) sepanjang 300 kata untuk saya bawa ke ruang rapat direksi.
 Struktur Briefing:
 - Posisi Kami: Sikap skeptis yang konstruktif terhadap whitepaper tersebut.
-- Argumen Tandingan Utam
+- Argumen Tandingan Utama.
 
-**A.** 2 poin krusial mengapa kesimpulan penulis perlu dipertanyakan ulang.
+2 poin krusial mengapa kesimpulan penulis perlu dipertanyakan ulang.
 - Rekomendasi Tindakan: Saran alternatif apa yang harus diambil perusahaan alih-alih menelan mentah-mentah isi laporan ini.
 
 Tone: Tegas, berbasis data, profesional, dan siap dipresentasikan di depan C-level.
@@ -89,30 +89,52 @@ Tone: Tegas, berbasis data, profesional, dan siap dipresentasikan di depan C-lev
 ## Tips Keselamatan dan Pencegahan Halusinasi
 
 Saat bekerja dengan dokumen industri yang padat angka dan regulasi, risiko halusinasi AI meningkat drastis. Terapkan aturan ketat ini:
-1. Gunakan Batasan Kontekstual: Selalu tambahkan frasa *"Jika informasi tidak tersedia secara eksplisit di dalam dokumen, nyatakan secara jujur 'Data tidak ditemukan', jangan berspekulasi."* di setiap prompt And
+1. Gunakan Batasan Kontekstual: Selalu tambahkan frasa *"Jika informasi tidak tersedia secara eksplisit di dalam dokumen, nyatakan secara jujur 'Data tidak ditemukan', jangan berspekulasi."* di setiap prompt Anda.
 
-**A.** 2. Manfaatkan Fitur Upload File: Alih-alih melakukan *copy-paste* manual yang sering merusak format tabel, unggah dokumen PDF langsung ke sistem Claude atau ChatGPT Plus untuk memastikan pemindaian teks berjalan utuh.
+2. Manfaatkan Fitur Upload File: Alih-alih melakukan *copy-paste* manual yang sering merusak format tabel, unggah dokumen PDF langsung ke sistem Claude atau ChatGPT Plus untuk memastikan pemindaian teks berjalan utuh.
 
-3. Validasi Silang Angk
+3. Validasi Silang Angka.
 
-**A.** Jika whitepaper memuat statistik pertumbuhan industri yang masif, minta AI memberikan nomor halaman referensi dari dokumen asli agar Anda bisa melakukan verifikasi kilat.
+Jika whitepaper memuat statistik pertumbuhan industri yang masif, minta AI memberikan nomor halaman referensi dari dokumen asli agar Anda bisa melakukan verifikasi kilat.
 
 <div style="border-left: 4px solid #be123c; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
-<strong>Peringatan Efisiensi:</strong> Jangan pernah menggunakan prompt tunggal untuk dokumen di atas 2.000 kat
+<strong>Peringatan Efisiensi:</strong> Jangan pernah menggunakan prompt tunggal untuk dokumen di atas 2.000 kata.
 
-**A.** Kualitas analisis berbanding terbalik dengan panjang instruksi yang dipaksakan dalam satu kali kirim. Rantai prompt 3 tahap terbukti menghemat waktu revisi hingga 70-80 persen.
+Kualitas analisis berbanding terbalik dengan panjang instruksi yang dipaksakan dalam satu kali kirim. Rantai prompt 3 tahap terbukti menghemat waktu revisi hingga 70-80 persen.
 </div>
 
 ## Tanya Jawab Populer (FAQ)
 
-**Q1.** Apakah metode chain prompt ini bisa digunakan untuk dokumen non-teks seperti laporan keuangan berbentuk tabel kompleks?
 
-**A1.** Bisa, namun Anda harus menambahkan instruksi ekstra di Tahap 1 untuk meminta AI fokus membaca matriks finansial, mengubah tabel menjadi format Markdown terlebih dahulu di dalam memori kerjanya, sebelum melakukan analisis logika rasio keuangan.
 
-**Q2.** Mana yang lebih baik untuk analisis dokumen panjang di lingkungan korporat, ChatGPT Canvas atau Claude Artifacts?
 
-**A2.** Keduanya sangat kuat, tetapi Claude Artifacts sedikit lebih unggul untuk membaca dokumen utuh berkat jendela konteks yang stabil dan kemampuan merender hasil analisis dalam panel terpisah yang mudah dibaca ulang tanpa mengganggu alur obrolan utam
 
-**A.Q3.** Bagaimana cara mengatasi batasan token (token limit) saat memproses whitepaper yang benar-benar tebal hingga 10.000 kata?
+Q1. Apakah metode chain prompt ini bisa digunakan untuk dokumen non-teks seperti laporan keuangan berbentuk tabel kompleks?
 
-**A3.** Pecah dokumen menjadi dua bagian bab besar. Jalankan Rantai Tahap 1 secara terpisah untuk Bab 1-5 dan Bab 6-10, lalu gunakan prompt penggabung (synthesizer prompt) di sesi obrolan baru untuk merangkum seluruh temuan kritis menjadi satu kesatuan dokumen strategi.
+
+
+
+
+A1. Bisa, namun Anda harus menambahkan instruksi ekstra di Tahap 1 untuk meminta AI fokus membaca matriks finansial, mengubah tabel menjadi format Markdown terlebih dahulu di dalam memori kerjanya, sebelum melakukan analisis logika rasio keuangan.
+
+
+
+
+
+Q2. Mana yang lebih baik untuk analisis dokumen panjang di lingkungan korporat, ChatGPT Canvas atau Claude Artifacts?
+
+
+
+
+
+A2. Keduanya sangat kuat, tetapi Claude Artifacts sedikit lebih unggul untuk membaca dokumen utuh berkat jendela konteks yang stabil dan kemampuan merender hasil analisis dalam panel terpisah yang mudah dibaca ulang tanpa mengganggu alur obrolan utama.
+
+
+
+Q3. Bagaimana cara mengatasi batasan token (token limit) saat memproses whitepaper yang benar-benar tebal hingga 10.000 kata?
+
+
+
+
+
+A3. Pecah dokumen menjadi dua bagian bab besar. Jalankan Rantai Tahap 1 secara terpisah untuk Bab 1-5 dan Bab 6-10, lalu gunakan prompt penggabung (synthesizer prompt) di sesi obrolan baru untuk merangkum seluruh temuan kritis menjadi satu kesatuan dokumen strategi.

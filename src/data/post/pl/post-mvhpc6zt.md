@@ -8,8 +8,6 @@ tags: ["Prompt Engineering", "Midjourney", "Sztuczna Inteligencja", "IT"]
 theme: "Mint Fresh Engineering"
 ---
 
-## 1. Awaryjna sytuacja związana z halucynacjami i błędami AI
-
 Godzina 21:40, biuro w Warszawie. Klient z sektora fintech właśnie napisał na Slacku, że koncepcja wizualna naszej nowej aplikacji mobilnej jest świetna, ale... w każdej z 20 zaprezentowanych scen główny bohater wygląda zupełnie inaczej. Na pierwszym slajdzie to 30-letni wąsaty blondyn w garniturze, na drugim 22-letni student w bluzie z kapturem, a na dziesiątym kobieta w średnim wieku. Prezentacja dla zarządu jest jutro o 9:00 rano, a nasz zespół projektowy utknął w martwym punkcie, tracąc godziny na losowe generowanie obrazów w Midjourney V6, które za każdym razem tworzyły zupełnie nową osobę.
 
 ### Dlaczego zwykłe prompty niszczą spójność postaci?
@@ -31,35 +29,29 @@ Aby rozwiązać ten problem raz na zawsze, przygotowałem dla naszego zespołu g
 ```
 
 #### Jak działa ten mechanizm w praktyce:
-- Kotwica twarzy: Zamiast imienia używamy stałego zestawu cech antropometrycznych (*sharp jawline, short messy dark brown hair, thin silver-rimmed glasses, subtle freckles*).
-- Parametr `--cref` (Character Reference): Wklejamy link do wygenerowanego w pierwszym kroku idealnego portretu bohater
-
-A. To najważniejsza funkcja w V6 wymuszająca spójność.
-- Parametr `--cw 100` (Character Weight): Ustawienie wartości 100 instruuje model, aby kopiował nie tylko twarz, ale również fryzurę i ubiór. Jeśli zmieniasz ubranie w kolejnych scenach, obniż tę wartość do 50 lub 0.
+- <strong>Kotwica twarzy:</strong> Zamiast imienia używamy stałego zestawu cech antropometrycznych (*sharp jawline, short messy dark brown hair, thin silver-rimmed glasses, subtle freckles*).
+- <strong>Parametr `--cref` (Character Reference):</strong> Wklejamy link do wygenerowanego w pierwszym kroku idealnego portretu bohatera. To najważniejsza funkcja w V6 wymuszająca spójność.
+- <strong>Parametr `--cw 100` (Character Weight):</strong> Ustawienie wartości 100 instruuje model, aby kopiował nie tylko twarz, ale również fryzurę i ubiór. Jeśli zmieniasz ubranie w kolejnych scenach, obniż tę wartość do 50 lub 0.
 
 ---
 
 ### Praktyczne Warianty i Optymalizacja Kosztów Tokenów
 
-W codziennej pracy w zespole projektowym liczy się czas i precyzj
+W codziennej pracy w zespole projektowym liczy się czas i precyzja. Oto zestawienie sprawdzonych modyfikatoriów, które możesz wdrożyć do swoich instrukcji systemowych dla sztucznej inteligencji:
 
-A. Oto zestawienie sprawdzonych modyfikatoriów, które możesz wdrożyć do swoich instrukcji systemowych dla sztucznej inteligencji:
-
-- Scena biurow
-
-A. Używaj `--cw 80`, aby zachować twarz, ale pozwolić Midjourney na zmianę profesjonalnego stroju.
-- Scena dynamiczna w ruchu: Dodaj do promptu frazę `motion blur, action shot` i obniż `--cw` do 40, zapobiegając nienaturalnym deformacjom rysów podczas generowania szybkich akcji.
-- Zbliżenia portretowe: Zwiększ wagę cech twarzy w tekście, zachowując ten sam URL w `--cref` dla zachowania 95% tożsamości postaci.
+- <strong>Scena biurowa:</strong> Używaj `--cw 80`, aby zachować twarz, ale pozwolić Midjourney na zmianę profesjonalnego stroju.
+- <strong>Scena dynamiczna w ruchu:</strong> Dodaj do promptu frazę `motion blur, action shot` i obniż `--cw` do 40, zapobiegając nienaturalnym deformacjom rysów podczas generowania szybkich akcji.
+- <strong>Zbliżenia portretowe:</strong> Zwiększ wagę cech twarzy w tekście, zachowując ten sam URL w `--cref` dla zachowania 95% tożsamości postaci.
 
 ---
 
 ### Często Zadawane Pytania (FAQ)
 
-1. Czy parametr `--cref` działa poprawnie, gdy zmieniam styl graficzny z fotografii na ilustrację 3D?
+<strong>1. Czy parametr `--cref` działa poprawnie, gdy zmieniam styl graficzny z fotografii na ilustrację 3D?</strong>
 Nie zalecamy drastycznej zmiany stylu przy użyciu tego samego `--cref`. Parametr ten najlepiej sprawdza się w obrębie tej samej konwencji wizualnej. Jeśli zmieniasz styl z foto na kreskówkę, twarz ulegnie zniekształceniu.
 
-2. Co zrobić, gdy Midjourney V6 ignoruje parametry i za każdym razem tworzy kogoś innego?
+<strong>2. Co zrobić, gdy Midjourney V6 ignoruje parametry i za każdym razem tworzy kogoś innego?</strong>
 Upewnij się, że na końcu każdego promptu umieściłeś aktualną wersję silnika (`--v 6.0`). Starsze wersje nie obsługują poprawnie zaawansowanych referencji postaci i mogą traktować parametry jako zwykły tekst.
 
-3. Jak zarządzać linkami do bazowych obrazów przy pracy w zespole?
+<strong>3. Jak zarządzać linkami do bazowych obrazów przy pracy w zespole?</strong>
 Najlepiej stworzyć dedykowany kanał na Slacku lub dokument wewnątrz zespołu IT, gdzie przypinamy "Master Image" dla danej postaci. Wszyscy członkowie zespołu powinni kopiować ten sam URL do swoich promptów, co gwarantuje pełną spójność wizualną w całym projekcie.

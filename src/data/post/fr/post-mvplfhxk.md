@@ -85,14 +85,38 @@ Pour aller plus loin, l'application de techniques de chaînage avancées, comme 
 
 ## 5. Foire Aux Questions (FAQ)
 
-**Q1.** Pourquoi mes codes SVG générés par Claude Artifacts présentent-ils parfois des coupures ou des balises non fermées lors de la prévisualisation ?
 
-**A1.** Ce phénomène survient généralement lorsque la limite de tokens de sortie est atteinte avant que le modèle n'ait achevé l'écriture de l'arbre DOM SVG. Pour y remédier, il convient de structurer votre prompt en exigeant une complexité géométrique modérée ou en demandant au modèle de générer l'illustration par blocs fonctionnels distincts. L'ajout explicite d'une consigne de concision dans les paramètres techniques permet également d'éviter ces interruptions intempestives.
 
-**Q2.** Comment puis-je forcer l'IA à respecter rigoureusement la charte de couleurs de mon entreprise au sein des illustrations vectorielles ?
 
-**A2.** La méthode la plus efficace consiste à proscrire les noms de couleurs génériques et à lister explicitement les codes hexadécimaux autorisés directement dans la section des contraintes du prompt maître. En nommant chaque variable de couleur et en précisant son usage exact dans les balises de style, vous éliminez la liberté d'interprétation chromatique du modèle et garantissez une conformité visuelle absolue.
 
-**Q3.** Est-il possible d'utiliser ce type de prompt pour générer des icônes animées en CSS ou SMIL directement via Claude Artifacts ?
+Q1. Pourquoi mes codes SVG générés par Claude Artifacts présentent-ils parfois des coupures ou des balises non fermées lors de la prévisualisation ?
 
-**A3.** Tout à fait, l'environnement Claude Artifacts prend en charge le rendu du code interactif et animé. Pour cela, il suffit d'ajouter une instruction spécifique dans le prompt exigeant l'intégration de balises d'animation SMIL ou de classes CSS avec des sélecteurs d'animation fluides, tout en maintenant les critères de légèreté et de compatibilité multi-navigateurs.
+
+
+
+
+A1. Ce phénomène survient généralement lorsque la limite de tokens de sortie est atteinte avant que le modèle n'ait achevé l'écriture de l'arbre DOM SVG. Pour y remédier, il convient de structurer votre prompt en exigeant une complexité géométrique modérée ou en demandant au modèle de générer l'illustration par blocs fonctionnels distincts. L'ajout explicite d'une consigne de concision dans les paramètres techniques permet également d'éviter ces interruptions intempestives.
+
+
+
+
+
+Q2. Comment puis-je forcer l'IA à respecter rigoureusement la charte de couleurs de mon entreprise au sein des illustrations vectorielles ?
+
+
+
+
+
+A2. La méthode la plus efficace consiste à proscrire les noms de couleurs génériques et à lister explicitement les codes hexadécimaux autorisés directement dans la section des contraintes du prompt maître. En nommant chaque variable de couleur et en précisant son usage exact dans les balises de style, vous éliminez la liberté d'interprétation chromatique du modèle et garantissez une conformité visuelle absolue.
+
+
+
+
+
+Q3. Est-il possible d'utiliser ce type de prompt pour générer des icônes animées en CSS ou SMIL directement via Claude Artifacts ?
+
+
+
+
+
+A3. Tout à fait, l'environnement Claude Artifacts prend en charge le rendu du code interactif et animé. Pour cela, il suffit d'ajouter une instruction spécifique dans le prompt exigeant l'intégration de balises d'animation SMIL ou de classes CSS avec des sélecteurs d'animation fluides, tout en maintenant les critères de légèreté et de compatibilité multi-navigateurs.

@@ -16,11 +16,11 @@ All'inizio abbiamo fatto l'errore classico: abbiamo buttato dentro a ChatGPT un 
 
 ![ChatGPT Prompt to Reverse Engineer Any Viral YouTube Script Structure Prompt Guide](https://picsum.photos/seed/prompt-mvgsv3b9-6-b/1000/550.jpg)
 
-La svolta è arrivata quando ho smesso di trattare ChatGPT come un assistente creativo generico e ho iniziato a trattarlo come un reverse engineer professionist
+La svolta è arrivata quando ho smesso di trattare ChatGPT come un assistente creativo generico e ho iniziato a trattarlo come un reverse engineer professionista.
 
-**A.** Ho smontato il problema applicando una logica di scomposizione strutturale a strati: gancio iniziale, curva del valore, transizioni psicologiche e chiamata all'azione strategic
+Ho smontato il problema applicando una logica di scomposizione strutturale a strati: gancio iniziale, curva del valore, transizioni psicologiche e chiamata all'azione strategica.
 
-**A.** In questo articolo ti mostro il prompt esatto che abbiamo blindato quella sera nel nostro studio milanese, testato sul campo e pronto per essere copiato, incollato e adattato ai tuoi progetti.
+In questo articolo ti mostro il prompt esatto che abbiamo blindato quella sera nel nostro studio milanese, testato sul campo e pronto per essere copiato, incollato e adattato ai tuoi progetti.
 
 <div style="border-left: 4px solid #ffffff; padding: 12px 16px; margin: 20px 0; background-color: rgba(255,255,255,0.05); border-radius: 4px; color: #111827;">
 <strong style="color: #ffffff;">Nota dell'Architetto:</strong> I prompt generici producono output generici perché lasciano troppo spazio alle supposizioni del modello. Per fare vero reverse engineering di uno script, devi costringere l'intelligenza artificiale a ragionare per pattern cronologici, metriche di attenzione e leve di copywriting diretto.
@@ -28,9 +28,9 @@ La svolta è arrivata quando ho smesso di trattare ChatGPT come un assistente cr
 
 ## Perché i Prompt Semplici Falliscono
 
-Quando chiedi a un LLM di analizzare un testo senza una struttura rigida, il modello attiva i suoi parametri di default focalizzandosi sul riassunto tematico anziché sulla meccanica persuasiv
+Quando chiedi a un LLM di analizzare un testo senza una struttura rigida, il modello attiva i suoi parametri di default focalizzandosi sul riassunto tematico anziché sulla meccanica persuasiva.
 
-**A.** Non vede il video come un funnel di conversione temporale; lo vede come un articolo da riassumere. 
+Non vede il video come un funnel di conversione temporale; lo vede come un articolo da riassumere. 
 
 Per ottenere un'analisi chirurgica, dobbiamo fornire al prompt una struttura di vincoli temporali e psicologici. Dobbiamo dire all'AI *dove* guardare, *cosa* misurare in termini di ritmo e *come* decodificare il gancio emotivo che ha impedito agli utenti di chiudere la scheda del browser nei primi dieci secondi.
 
@@ -55,9 +55,9 @@ Esegui l'analisi seguendo rigorosamente questa struttura in 4 sezioni:
 - Spiega la tecnica retorica usata per azzerare il tasso di abbandono iniziale.
 
 2. ARCO NARRATIVO E CURVA DEL VALORE:
-- Dividi lo script in blocchi da 3 minuti. Per ogni blocco indic
+- Dividi lo script in blocchi da 3 minuti. Per ogni blocco indica.
 
-**A.** * Obiettivo psicologico sullo spettatore.
+* Obiettivo psicologico sullo spettatore.
   * Cambiamento di tono o introduzione di un nuovo open loop (tensione irrisolta).
 
 3. STRUTTURA LINGUISTICA E COPYWRITING:
@@ -72,9 +72,9 @@ Restituisci l'output in formato strutturato, pulito e privo di introduzioni o co
 
 ## Variabili, Sicurezza e Consigli Pratici
 
-1. Gestione dei Token: Se la trascrizione del video supera le parole consentite o la finestra di contesto rischia di diluire l'analisi, dividi lo script in due parti (prima metà e seconda metà) mantenendo lo stesso prompt di sistem
+1. Gestione dei Token: Se la trascrizione del video supera le parole consentite o la finestra di contesto rischia di diluire l'analisi, dividi lo script in due parti (prima metà e seconda metà) mantenendo lo stesso prompt di sistema.
 
-**A.** 2. Prevenzione delle Allucinazioni: Specifica sempre nel prompt di non inventare dati o sezioni non presenti nella trascrizione. Se un passaggio è poco chiaro, l'AI deve segnalarlo esplicitamente invece di inventare motivazioni fantasiose.
+2. Prevenzione delle Allucinazioni: Specifica sempre nel prompt di non inventare dati o sezioni non presenti nella trascrizione. Se un passaggio è poco chiaro, l'AI deve segnalarlo esplicitamente invece di inventare motivazioni fantasiose.
 
 3. Integrazione nei Flussi di Lavoro: Puoi inserire questo prompt all'interno di una Custom GPT o di un agente su Make.com/Zapier per automatizzare l'analisi di intere playlist di competitor in pochi minuti.
 
@@ -89,6 +89,6 @@ Assolutamente sì. Anzi, per compiti di analisi testuale complessa e strutturazi
 Esistono estensioni browser e tool di trascrizione basati su API che estraggono il file SRT o TXT pulito dai video di YouTube in pochi secondi. Assicurati di rimuovere i timestamp numerici prima di incollare il testo nel prompt per evitare di sprecare token preziosi.
 
 ### Il template generato può essere utilizzato per qualsiasi nicchia di mercato?
-Sì. Il valore del reverse engineering strutturale risiede nel fatto che estrae la *scheletrica psicologica* del video (ritmo, open loop, transizioni di valore). Che tu stia parlando di finanza, fitness o tecnologia, la struttura di retention dello spettatore rimane fondamentalmente la stess
+Sì. Il valore del reverse engineering strutturale risiede nel fatto che estrae la *scheletrica psicologica* del video (ritmo, open loop, transizioni di valore). Che tu stia parlando di finanza, fitness o tecnologia, la struttura di retention dello spettatore rimane fondamentalmente la stessa.
 
-**A.**
+

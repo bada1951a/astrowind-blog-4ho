@@ -14,7 +14,6 @@ theme: "Crimson Emergency Field"
 <strong>CẢNH BÁO KHẨN CẤP:</strong> Tài liệu này áp dụng quy trình kiểm soát phản hồi ảo giác từ AI, đảm bảo chuyển đổi 1 nguồn nội dung thành 3 định dạng mạng xã hội hoàn chỉnh mà không làm sai lệch thông điệp cốt lõi.
 </div>
 
-## 1. Tình huống khẩn cấp do AI trả lời ảo giác và sai lệch
 
 <div style="border-left: 4px solid #ef4444; padding: 14px 18px; margin: 24px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Tình huống:</strong> Tại một tòa nhà văn phòng công nghệ cao tại Quận 1, TP. Hồ Chí Minh, đội ngũ marketing đang đối mặt với thời hạn chót lúc 17 giờ chiều để ra mắt chiến dịch sản phẩm mới. Yêu cầu đặt ra là phải ngay lập tức chuyển đổi 1 nguồn nội dung gốc (one source) thành 3 định dạng hoàn toàn khác biệt cho Instagram, Threads và LinkedIn mà vẫn giữ nguyên vẹn tinh thần thương hiệu.
@@ -76,10 +75,22 @@ Hãy trả kết quả dưới dạng Markdown sạch sẽ, phân chia rõ ràng
 
 Khi triển khai các hệ thống tự động hóa câu lệnh phức tạp, việc thiết lập các hàng rào chống ảo giác (anti-hallucination guardrails) là bước sống còn. Bạn nên yêu cầu AI trích dẫn trực tiếp nguồn gốc thông tin từ đoạn văn bản gốc trước khi viết lại, đồng thời áp dụng các ràng buộc phủ định mạnh mẽ như cấm sử dụng các thuật ngữ mơ hồ hoặc số liệu tự suy diễn. Kỹ thuật này buộc mô hình phải duy trì sự bám sát thực tế, loại bỏ hoàn toàn xu hướng thêu dệt thông tin vốn là điểm yếu kinh điển của các mô hình ngôn ngữ lớn.
 
-Bên cạnh đó, việc ứng dụng các kỹ thuật chuỗi nâng cao như tiêm ngữ cảnh động (dynamic persona injection) và cung cấp ít nhất một ví dụ mẫu đầu ra (few-shot examples) sẽ giúp nâng tầm chất lượng của bản thảo lên mức chuyên gi
+Bên cạnh đó, việc ứng dụng các kỹ thuật chuỗi nâng cao như tiêm ngữ cảnh động (dynamic persona injection) và cung cấp ít nhất một ví dụ mẫu đầu ra (few-shot examples) sẽ giúp nâng tầm chất lượng của bản thảo lên mức chuyên gia.
 
-A. Khi AI nhìn thấy rõ ràng cấu trúc mẫu mà bạn kỳ vọng, trọng số của nó sẽ tự động căn chỉnh để tuân thủ cấu trúc đó một cách chính xác nhất, giảm thiểu tối đa thời gian chỉnh sửa thủ công và mang lại hiệu suất công việc vượt trội trong môi trường doanh nghiệp áp lực cao.
+Khi AI nhìn thấy rõ ràng cấu trúc mẫu mà bạn kỳ vọng, trọng số của nó sẽ tự động căn chỉnh để tuân thủ cấu trúc đó một cách chính xác nhất, giảm thiểu tối đa thời gian chỉnh sửa thủ công và mang lại hiệu suất công việc vượt trội trong môi trường doanh nghiệp áp lực cao.
 
 ## 5. Các câu hỏi thường gặp (FAQ)
 
-Q1. Tại sao mã SVG do Claude Artifacts tạo ra đôi khi bị lỗi hiển thị trên một số trình duyệt? A1. Lỗi hiển thị SVG thường xuất phát từ việc mô hình sử dụng các thẻ không chuẩn hoặc thiếu thuộc tính viewBox và namespace cần thiết. Để khắc phục, bạn cần bổ sung ràng buộc kỹ thuật trong câu lệnh yêu cầu AI chỉ sử dụng cú pháp SVG tiêu chuẩn, khép kín và có viewBox rõ ràng.Q2. Làm thế nào để ngăn chặn hoàn toàn việc AI bịa đặt số liệu khi tóm tắt văn bản dài? A2. Bạn phải sử dụng kỹ thuật trích xuất dữ liệu gốc kết hợp với câu lệnh ràng buộc phủ định nghiêm ngặt. Hãy thêm câu lệnh yêu cầu mô hình chỉ được phép sử dụng các con số xuất hiện trực tiếp trong văn bản đầu vào và phải đánh dấu nguồn tham chiếu cho từng số liệu.Q3. Có thể áp dụng mẫu câu lệnh này cho các ngôn ngữ khác ngoài tiếng Việt hay không? A3. Hoàn toàn có thể, vì cấu trúc câu lệnh Master Prompt dựa trên logic phân tầng nhiệm vụ và ràng buộc hệ thống. Bạn chỉ cần thay đổi phần ngôn ngữ đích trong mục tiêu đầu ra mà không cần phải thay đổi toàn bộ kiến trúc câu lệnh cơ bản.
+
+
+Q1. Tại sao mã SVG do Claude Artifacts tạo ra đôi khi bị lỗi hiển thị trên một số trình duyệt? 
+
+A1. Lỗi hiển thị SVG thường xuất phát từ việc mô hình sử dụng các thẻ không chuẩn hoặc thiếu thuộc tính viewBox và namespace cần thiết. Để khắc phục, bạn cần bổ sung ràng buộc kỹ thuật trong câu lệnh yêu cầu AI chỉ sử dụng cú pháp SVG tiêu chuẩn, khép kín và có viewBox rõ ràng.
+
+Q2. Làm thế nào để ngăn chặn hoàn toàn việc AI bịa đặt số liệu khi tóm tắt văn bản dài? 
+
+A2. Bạn phải sử dụng kỹ thuật trích xuất dữ liệu gốc kết hợp với câu lệnh ràng buộc phủ định nghiêm ngặt. Hãy thêm câu lệnh yêu cầu mô hình chỉ được phép sử dụng các con số xuất hiện trực tiếp trong văn bản đầu vào và phải đánh dấu nguồn tham chiếu cho từng số liệu.
+
+Q3. Có thể áp dụng mẫu câu lệnh này cho các ngôn ngữ khác ngoài tiếng Việt hay không? 
+
+A3. Hoàn toàn có thể, vì cấu trúc câu lệnh Master Prompt dựa trên logic phân tầng nhiệm vụ và ràng buộc hệ thống. Bạn chỉ cần thay đổi phần ngôn ngữ đích trong mục tiêu đầu ra mà không cần phải thay đổi toàn bộ kiến trúc câu lệnh cơ bản.

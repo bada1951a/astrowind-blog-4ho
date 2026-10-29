@@ -57,14 +57,38 @@ Debugging-Tipp: Wenn Claude oder ChatGPT trotz des System-Prompts eine veraltete
 </div>
 ## 5. Häufig gestellte Fragen (FAQ)
 
-**Q1.** Funktioniert dieser System-Prompt sowohl für ChatGPT als auch für Claude gleichermaßen gut?
 
-**A1.** Ja, die Kernlogik basiert auf strukturierten Markdown-Anweisungen und Direktiven, die von beiden Modellen hervorragend interpretiert werden. Bei Claude empfiehlt es sich, die Anweisungen im System-Prompt-Feld der API oder Workbench zu hinterlegen, während bei ChatGPT die Custom Instructions oder ein GPTs ideal sind.
 
-**Q2.** Was kann ich tun, wenn die KI trotz der Regeln weiterhin Code mit veralteten Bibliotheken ausgibt?
 
-**A2.** Das liegt meist daran, dass das spezifische Nischen-Framework zu selten in den Trainingsdaten vorkommt. Erweitern Sie den System-Prompt in diesem Fall um ein konkreches Code-Beispiel oder zwingen Sie das Modell, ausschließlich Standardbibliotheken wie urllib und json zu verwenden, wenn externe Module unsicher sind.
 
-**Q3.** Verlangsamt ein so langer System-Prompt die Antwortzeit der KI spürbar?
+Q1. Funktioniert dieser System-Prompt sowohl für ChatGPT als auch für Claude gleichermaßen gut?
 
-**A3.** Die Verarbeitungszeit erhöht sich minimal im Bereich von unter einer Sekunde, da der Kontext größer ist. Dieser winzige zeitliche Mehraufwand amortisiert sich jedoch sofort, da Sie sich stundenlanges Debugging und das Suchen nach erfundenen Syntaxfehlern sparen.
+
+
+
+
+A1. Ja, die Kernlogik basiert auf strukturierten Markdown-Anweisungen und Direktiven, die von beiden Modellen hervorragend interpretiert werden. Bei Claude empfiehlt es sich, die Anweisungen im System-Prompt-Feld der API oder Workbench zu hinterlegen, während bei ChatGPT die Custom Instructions oder ein GPTs ideal sind.
+
+
+
+
+
+Q2. Was kann ich tun, wenn die KI trotz der Regeln weiterhin Code mit veralteten Bibliotheken ausgibt?
+
+
+
+
+
+A2. Das liegt meist daran, dass das spezifische Nischen-Framework zu selten in den Trainingsdaten vorkommt. Erweitern Sie den System-Prompt in diesem Fall um ein konkreches Code-Beispiel oder zwingen Sie das Modell, ausschließlich Standardbibliotheken wie urllib und json zu verwenden, wenn externe Module unsicher sind.
+
+
+
+
+
+Q3. Verlangsamt ein so langer System-Prompt die Antwortzeit der KI spürbar?
+
+
+
+
+
+A3. Die Verarbeitungszeit erhöht sich minimal im Bereich von unter einer Sekunde, da der Kontext größer ist. Dieser winzige zeitliche Mehraufwand amortisiert sich jedoch sofort, da Sie sich stundenlanges Debugging und das Suchen nach erfundenen Syntaxfehlern sparen.

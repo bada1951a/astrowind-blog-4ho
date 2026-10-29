@@ -70,16 +70,40 @@ When executing long-form prompt chains, you will inevitably run into edge cases 
 
 ## 5. Frequently Asked Questions (FAQ)
 
-**Q1.** What should I do if the AI completely ignores the persona instructions by step three?
 
-**A1.** This happens when the context window is saturated and the initial system prompt loses weight. Stop the chain, open a fresh chat window, feed the AI the condensed summary of all previous sections, re-declare the system prompt with bolded authority markers, and resume the chain.
 
-**Q2.** Can I automate this prompt chain using tools like Make.com or Python scripts?
 
-**A2.** Absolutely. By wrapping the master prompt template in an API call loop (using OpenAI or Anthropic endpoints), you can programmatically inject the previous output's summary into the next payload, enabling fully automated, multi-thousand-word whitepaper generation without manual copy-pasting.
 
-**Q3.** How do I prevent hallucinations when generating heavy technical whitepapers?
+Q1. What should I do if the AI completely ignores the persona instructions by step three?
 
-**A3.** Implement a Retrieval-Augmented Generation (RAG) step or feed verified research notes into the `[CONTEXT INFLUENCE]` block of each prompt in the chain. Restrict the model by adding the instruction: `[CONSTRAINT: Rely exclusively on the provided context notes for all statistical claims. Do not extrapolate unverified dat
 
-**A.** ]`
+
+
+
+A1. This happens when the context window is saturated and the initial system prompt loses weight. Stop the chain, open a fresh chat window, feed the AI the condensed summary of all previous sections, re-declare the system prompt with bolded authority markers, and resume the chain.
+
+
+
+
+
+Q2. Can I automate this prompt chain using tools like Make.com or Python scripts?
+
+
+
+
+
+A2. Absolutely. By wrapping the master prompt template in an API call loop (using OpenAI or Anthropic endpoints), you can programmatically inject the previous output's summary into the next payload, enabling fully automated, multi-thousand-word whitepaper generation without manual copy-pasting.
+
+
+
+
+
+Q3. How do I prevent hallucinations when generating heavy technical whitepapers?
+
+
+
+
+
+A3. Implement a Retrieval-Augmented Generation (RAG) step or feed verified research notes into the `[CONTEXT INFLUENCE]` block of each prompt in the chain. Restrict the model by adding the instruction: `[CONSTRAINT: Rely exclusively on the provided context notes for all statistical claims. Do not extrapolate unverified data.]`
+
+

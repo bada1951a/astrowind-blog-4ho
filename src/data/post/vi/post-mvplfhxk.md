@@ -14,13 +14,13 @@ Tại tòa nhà văn phòng công nghệ cao tọa lạc giữa lòng Quận 1, 
 
 Trong cơn hoảng loạn, người quản lý đã đưa ra một quyết định vội vã là sử dụng các câu lệnh cực kỳ đơn giản và mơ hồ như "Hãy dịch và sửa lại đoạn văn tiếng Anh này cho tự nhiên hơn" vào trong các mô hình ngôn ngữ lớn. Kết quả nhận lại là một thảm họa hoàn toàn: AI không những không cải thiện được chất lượng mà còn tự ý bịa đặt thêm các thuật ngữ công nghệ không có thực, thay đổi cả số liệu tài chính quan trọng và làm méo mó hoàn toàn thông điệp cốt lõi của công ty. Hiện tượng ảo giác ngữ nghĩa này xuất phát từ việc câu lệnh thiếu đi bối cảnh chuyên môn và ranh giới kiểm soát rõ ràng, đẩy đội ngũ vào tình thế tiến thoái lưỡng nan.
 
-Áp lực thời gian đè nặng lên từng phút khi chỉ còn chưa đầy hai tiếng đồng hồ nữa là đến hạn chót nộp hồ sơ thầu quốc tế trị giá hàng triệu đô l
-
-A. Mọi nỗ lực thủ công nhằm soát lỗi và biên tập lại từ đầu đều bất thành do khối lượng tài liệu quá lớn và phức tạp. Sự bất lực bao trùm khi nhận ra rằng việc phụ thuộc vào những câu lệnh lỏng lẻo không chỉ lãng phí thời gian quý báu mà còn có nguy cơ làm mất uy tín thương hiệu nghiêm trọng trước mặt đối tác nước ngoài lớn, đồng thời tạo ra áp lực tâm lý khủng khiếp cho toàn bộ ban lãnh đạo cấp cao.
+Áp lực thời gian đè nặng lên từng phút khi chỉ còn chưa đầy hai tiếng đồng hồ nữa là đến hạn chót nộp hồ sơ thầu quốc tế trị giá hàng triệu đô la. Mọi nỗ lực thủ công nhằm soát lỗi và biên tập lại từ đầu đều bất thành do khối lượng tài liệu quá lớn và phức tạp. Sự bất lực bao trùm khi nhận ra rằng việc phụ thuộc vào những câu lệnh lỏng lẻo không chỉ lãng phí thời gian quý báu mà còn có nguy cơ làm mất uy tín thương hiệu nghiêm trọng trước mặt đối tác nước ngoài lớn, đồng thời tạo ra áp lực tâm lý khủng khiếp cho toàn bộ ban lãnh đạo cấp cao.
 
 <div style="border-left: 4px solid #ef4444; padding: 14px 18px; margin: 24px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Cảnh báo khẩn cấp:</strong> Việc sử dụng câu lệnh chung chung khi xử lý tài liệu tài chính và kinh doanh quốc tế dễ dẫn đến lỗi ảo giác từ vựng của AI, gây mất uy tín thương hiệu trầm trọng trước các đối tác lớn.
 </div>
+
+
 
 ![Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations Prompt Guide](https://picsum.photos/seed/prompt-mvplipin-11-b/1000/550.jpg)
 
@@ -38,9 +38,7 @@ Dưới đây là cấu trúc mẫu câu lệnh Master Prompt hoàn chỉnh, đ�
 
 ```markdown
 [System Instruction]
-Bạn là một chuyên gia biên tập tài liệu kinh doanh quốc tế cấp cao (Senior Corporate Communications Editor) với hơn 15 năm kinh nghiệm tối ưu hóa hồ sơ gọi vốn và đề xuất thương mại cho các tập đoàn đa quốc gi
-
-A. Nhiệm vụ cốt lõi của bạn là biến đổi các bản dịch thô thành văn bản tiếng Anh thương mại chuẩn mực, tự nhiên, sắc sảo và uy tín cao, hoàn toàn loại bỏ dấu vết của dịch máy.
+Bạn là một chuyên gia biên tập tài liệu kinh doanh quốc tế cấp cao (Senior Corporate Communications Editor) với hơn 15 năm kinh nghiệm tối ưu hóa hồ sơ gọi vốn và đề xuất thương mại cho các tập đoàn đa quốc gia. Nhiệm vụ cốt lõi của bạn là biến đổi các bản dịch thô thành văn bản tiếng Anh thương mại chuẩn mực, tự nhiên, sắc sảo và uy tín cao, hoàn toàn loại bỏ dấu vết của dịch máy.
 
 [Context]
 - Ngành nghề: Công nghệ cao và Chuyển đổi số doanh nghiệp.
@@ -59,9 +57,8 @@ A. Nhiệm vụ cốt lõi của bạn là biến đổi các bản dịch thô 
 
 [Output Format]
 - Phần 1: Bản hoàn chỉnh đã được biên tập lại với chất lượng xuất bản cao nhất.
-- Phần 2: Bảng tóm tắt các điểm cải tiến chính và lý do thay đổi từ vựng quan trọng để người quản lý dễ dàng kiểm tr
-
-A. ```
+- Phần 2: Bảng tóm tắt các điểm cải tiến chính và lý do thay đổi từ vựng quan trọng để người quản lý dễ dàng kiểm tra.
+```
 
 Để khai thác tối đa sức mạnh của mẫu câu lệnh này, bạn cần điền chính xác thông tin vào trường `[Input Text]` bằng đoạn văn bản cần xử lý. Hãy đảm bảo rằng các thông số kỹ thuật hoặc số liệu đi kèm được giữ nguyên vẹn để mô hình AI tập trung hoàn toàn vào việc tinh chỉnh ngữ pháp, nhịp điệu câu chữ và sắc thái thương mại thay vì phải phỏng đoán các dữ liệu định lượng.
 
@@ -72,11 +69,23 @@ Khi triển khai các tác vụ xử lý ngôn ngữ tự nhiên đòi hỏi đ�
 Đối với các dự án lớn hoặc tài liệu có tính chất phức tạp cao, các kỹ sư prompt engineering khuyên dùng phương pháp xích câu lệnh nâng cao (advanced chaining techniques). Thay vì ép AI xử lý toàn bộ một bản đề xuất dài năm mươi trang trong một lượt gọi duy nhất, hãy chia nhỏ tài liệu thành từng phần logic theo cấu trúc chương mục: tóm tắt điều hành, phương án kỹ thuật, cấu trúc tài chính và kế hoạch triển khai. Việc kết hợp tiêm vai trò linh hoạt (dynamic persona injection) theo từng chương mục cụ thể sẽ giúp mô hình duy trì độ tập trung tối đa, đảm bảo chất lượng từ vựng đạt chuẩn mực cao nhất từ đầu đến cuối dự án.
 
 <div style="border-left: 4px solid #ef4444; padding: 14px 18px; margin: 24px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
-<strong>Mẹo chuyên gi
-
-A. </strong> Chia nhỏ tài liệu dài thành các phần độc lập và áp dụng kỹ thuật xích câu lệnh sẽ giúp loại bỏ hoàn toàn hiện tượng giảm sút chất lượng biên tập ở các đoạn cuối văn bản.
+<strong>Mẹo chuyên gia:</strong> Chia nhỏ tài liệu dài thành các phần độc lập và áp dụng kỹ thuật xích câu lệnh sẽ giúp loại bỏ hoàn toàn hiện tượng giảm sút chất lượng biên tập ở các đoạn cuối văn bản.
 </div>
 
 ## 5. Các câu hỏi thường gặp (FAQ)
 
-Q1. Tại sao các công cụ AI thông thường lại dịch sai ngữ cảnh kinh doanh dù từ vựng đơn lẻ hoàn toàn chính xác? A1. Nguyên nhân chính là do mô hình huấn luyện tổng quát của AI dựa trên dữ liệu văn bản phổ thông thay vì chuyên ngành hẹp. Khi dịch các tài liệu đề xuất kinh doanh, AI thiếu đi khả năng thấu hiểu ngầm về văn hóa đàm phán thương mại quốc tế, dẫn đến việc lựa chọn các từ đồng nghĩa kém trang trọng. Việc áp dụng Master Prompt chuyên biệt với vai trò định hình rõ ràng sẽ khắc phục triệt để hạn chế này.Q2. Làm thế nào để đảm bảo AI không tự ý thêm các tính năng công nghệ không có thực vào hồ sơ dự thầu? A2. Bạn bắt buộc phải thiết lập các ràng buộc nghiêm ngặt trong phần quy tắc của câu lệnh, ví dụ như yêu cầu tuyệt đối tuân thủ dữ liệu nguồn. Thêm vào đó, việc sử dụng các ký tự phân tách rõ ràng và yêu cầu AI xuất ra bảng giải trình thay đổi giúp người quản lý dễ dàng kiểm tra soát lỗi trước khi chính thức gửi đi.Q3. Tôi nên làm gì khi gặp thông báo lỗi giới hạn token (token limit) khi xử lý tài liệu đề xuất quá dài? A3. Khi gặp giới hạn này, tuyệt đối không cắt ngắn văn bản một cách tùy tiện vì sẽ làm mất tính mạch lạc của ngữ cảnh. Giải pháp kỹ thuật tối ưu là chia tài liệu thành các phân đoạn nhỏ từ năm trăm đến một nghìn từ, sau đó thực hiện xử lý tuần tự từng phần bằng cùng một mẫu câu lệnh Master Prompt đã được thiết lập sẵn.
+
+
+Q1. Tại sao các công cụ AI thông thường lại dịch sai ngữ cảnh kinh doanh dù từ vựng đơn lẻ hoàn toàn chính xác?
+
+A1. Nguyên nhân chính là do mô hình huấn luyện tổng quát của AI dựa trên dữ liệu văn bản phổ thông thay vì chuyên ngành hẹp. Khi dịch các tài liệu đề xuất kinh doanh, AI thiếu đi khả năng thấu hiểu ngầm về văn hóa đàm phán thương mại quốc tế, dẫn đến việc lựa chọn các từ đồng nghĩa kém trang trọng. Việc áp dụng Master Prompt chuyên biệt với vai trò định hình rõ ràng sẽ khắc phục triệt để hạn chế này.
+
+Q2. Làm thế nào để đảm bảo AI không tự ý thêm các tính năng công nghệ không có thực vào hồ sơ dự thầu?
+
+A2. Bạn bắt buộc phải thiết lập các ràng buộc nghiêm ngặt trong phần quy tắc của câu lệnh, ví dụ như yêu cầu tuyệt đối tuân thủ dữ liệu nguồn. Thêm vào đó, việc sử dụng các ký tự phân tách rõ ràng và yêu cầu AI xuất ra bảng giải trình thay đổi giúp người quản lý dễ dàng kiểm tra soát lỗi trước khi chính thức gửi đi.
+
+Q3. Tôi nên làm gì khi gặp thông báo lỗi giới hạn token (token limit) khi xử lý tài liệu đề xuất quá dài?
+
+
+
+A3. Khi gặp giới hạn này, tuyệt đối không cắt ngắn văn bản một cách tùy tiện vì sẽ làm mất tính mạch lạc của ngữ cảnh. Giải pháp kỹ thuật tối ưu là chia tài liệu thành các phân đoạn nhỏ từ năm trăm đến một nghìn từ, sau đó thực hiện xử lý tuần tự từng phần bằng cùng một mẫu câu lệnh Master Prompt đã được thiết lập sẵn.

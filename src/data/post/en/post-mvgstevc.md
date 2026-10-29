@@ -8,8 +8,6 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Pure Titanium Clean"
 ---
 
-## 1. Critical AI Hallucination & Output Collapse Crisis
-
 It is 8:45 AM on a Tuesday inside our NYC marketing agency. The executive briefing sync starts in precisely fifteen minutes, and our CMO just dropped a bombshell slack message: *"Our retention rate on mid-funnel YouTube content is tanking. Look at MrBeast, Alex Hormozi, and this random creator who just hit 2M views in 48 hours. I need a breakdown of their exact hook-to-cta script anatomy by our morning sync, or we're pausing the Q3 campaign."* 
 
 My coffee was still scalding hot, my left eyelid was twitching, and I had three tabs open with transcripts of million-view videos. Reading through 15,000 words of raw transcripts to manually map out narrative tension curves, pacing shifts, and psychological triggers was out of the question. I needed an AI automation pipeline, and I needed it right now.
@@ -30,7 +28,7 @@ What do you get back? A generic, fluffy wall of text: *"The creator uses an enga
 
 ---
 
-## 3. Copy-and-Paste Master Prompt Engineering Template
+### The Master Prompt Template
 
 Here is the exact production-grade prompt I use across ChatGPT and Claude to reverse-engineer any viral YouTube script. Copy this, paste it into your LLM of choice, and drop your transcript at the bottom.
 
@@ -71,11 +69,9 @@ Output Format: Keep it razor-sharp, structured with bullet points, and free of u
 
 To make this truly enterprise-ready for morning briefings or agency client pitches, follow this execution flow:
 
-1. Grab the Transcript: Use a reliable YouTube transcript extractor tool or YouTube's native transcript viewer to copy the raw text of the target viral video.
-
-2. Feed the LLM: Paste the Master Prompt above into Claude 3.5 Sonnet (preferred for long-form context and nuanced copywriting analysis) or ChatGPT (GPT-4o).
-
-3. Generate Production Briefs: Ask the model to convert its structural analysis into a fill-in-the-blank template for your upcoming video shoots.
+1. <strong>Grab the Transcript:</strong> Use a reliable YouTube transcript extractor tool or YouTube's native transcript viewer to copy the raw text of the target viral video.
+2. <strong>Feed the LLM:</strong> Paste the Master Prompt above into <strong>Claude 3.5 Sonnet</strong> (preferred for long-form context and nuanced copywriting analysis) or <strong>ChatGPT (GPT-4o)</strong>.
+3. <strong>Generate Production Briefs:</strong> Ask the model to convert its structural analysis into a fill-in-the-blank template for your upcoming video shoots.
 
 <div style="border-left: 4px solid #334155; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
 <strong>Pro Tip:</strong> If you are analyzing a script longer than 10,000 words, feed it to Claude using Artifacts or prompt the model to analyze it in two chunks: Part 1 (The Hook and First Half) and Part 2 (The Climax and CTA) to prevent token truncation.
@@ -83,22 +79,13 @@ To make this truly enterprise-ready for morning briefings or agency client pitch
 
 ---
 
-## 5. Frequently Asked Questions (FAQ)
+### Frequently Asked Questions
 
-####
+#### Q1: Does this prompt work on educational or talking-head videos, or only high-production entertainment channels?
+<strong>A:</strong> It works universally. Whether it is a fast-paced MrBeast style vlog or a calm 20-minute essay by Veritasium, the underlying psychology of retention (open loops, pacing, and cognitive tension) remains identical. The AI will automatically adapt its analysis to fit the genre of the transcript you provide.
 
-**Q1.** Does this prompt work on educational or talking-head videos, or only high-production entertainment channels?
+#### Q2: Which AI model handles this specific reverse-engineering task best?
+<strong>A:</strong> Claude 3.5 Sonnet currently leads for marketing and copywriting nuance. However, OpenAI's GPT-4o performs exceptionally well if you append a system instruction telling it to adopt the persona of a veteran YouTube growth consultant.
 
-**A.** It works universally. Whether it is a fast-paced MrBeast style vlog or a calm 20-minute essay by Veritasium, the underlying psychology of retention (open loops, pacing, and cognitive tension) remains identical. The AI will automatically adapt its analysis to fit the genre of the transcript you provide.
-
-####
-
-**Q2.** Which AI model handles this specific reverse-engineering task best?
-
-**A.** Claude 3.5 Sonnet currently leads for marketing and copywriting nuance. However, OpenAI's GPT-4o performs exceptionally well if you append a system instruction telling it to adopt the persona of a veteran YouTube growth consultant.
-
-####
-
-**Q3.** Can I feed the AI a YouTube URL directly instead of a text transcript?
-
-**A.** While some multimodal models can browse or ingest YouTube links via plugins, pulling the raw text transcript and pasting it directly yields significantly more accurate results. Direct URL scraping often misses subtle timestamps, visual cues embedded in the transcript text, or hits token/rate limits.
+#### Q3: Can I feed the AI a YouTube URL directly instead of a text transcript?
+<strong>A:</strong> While some multimodal models can browse or ingest YouTube links via plugins, pulling the raw text transcript and pasting it directly yields significantly more accurate results. Direct URL scraping often misses subtle timestamps, visual cues embedded in the transcript text, or hits token/rate limits.

@@ -8,8 +8,6 @@ tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tips"]
 theme: "Midnight Navy Royal"
 ---
 
-## 1. Tình huống khẩn cấp do AI trả lời ảo giác và sai lệch
-
 Ngồi đi, để tôi kể nghe vụ hú vía chiều thứ Sáu tuần rồi tại văn phòng ở TP.HCM. Sếp sầm sập bước vào bàn,ném một đường link video YouTube đang đạt mốc 2 triệu view về ngách tài chính cá nhân và phán một câu xanh rờn: "Sáng thứ Hai tuần sau, đội mình phải ra một video cấu trúc y chang vậy nhưng đổi sang chủ đề đầu tư bất động sản, phải thật cuốn hút và giữ chân người xem từ giây đầu tiên". 
 
 Nhìn thời hạn chưa đầy 48 tiếng mà kịch bản thì trắng tinh, cả team được một phen “toát mồ hôi hột”. 
@@ -22,10 +20,10 @@ Ban đầu, tôi hí hửng copy nguyên cái transcript dài ngoằn ngoèo c�
 
 ## Vì sao cách prompt thông thường lại thất bại thảm hại?
 
-Lý do đơn giản là các video triệu view không thu hút người xem bằng từ ngữ thông thường, mà chúng vận hành dựa trên các khuôn mẫu tâm lý học hành vi và nhịp độ cấu trúc (pacing) đã được tính toán kỹ lưỡng từng giây:
-- Hook (Móc câu): 5 giây đầu tiên giải quyết nỗi đau gì?
-- Retention Loop (Vòng lặp giữ chân): Cứ mỗi 45 giây có một thông tin gây sốc hoặc câu hỏi mở nào được tung ra?
-- Climax (Cao trào): Nút thắt được tháo gỡ ở phút thứ mấy để kích thích người xem bấm nút đăng ký (subscribe) hoặc bình luận?
+Lý do đơn giản là các video triệu view không thu hút người xem bằng từ ngữ thông thường, mà chúng vận hành dựa trên các <strong>khuôn mẫu tâm lý học hành vi</strong> và <strong>nhịp độ cấu trúc (pacing)</strong> đã được tính toán kỹ lưỡng từng giây:
+- <strong>Hook (Móc câu):</strong> 5 giây đầu tiên giải quyết nỗi đau gì?
+- <strong>Retention Loop (Vòng lặp giữ chân):</strong> Cứ mỗi 45 giây có một thông tin gây sốc hoặc câu hỏi mở nào được tung ra?
+- <strong>Climax (Cao trào):</strong> Nút thắt được tháo gỡ ở phút thứ mấy để kích thích người xem bấm nút đăng ký (subscribe) hoặc bình luận?
 
 Khi bạn chỉ đưa transcript và bảo AI viết lại, nó chỉ nhìn thấy chữ nghĩa mà bỏ qua hoàn toàn kiến trúc ngầm bên dưới. Đó là lúc chúng ta cần đến một hệ thống prompt chuyên sâu, đóng vai trò như một kỹ sư trưởng phân tích dữ liệu kịch bản.
 
@@ -63,9 +61,7 @@ Hãy bắt đầu bằng việc hiển thị kết quả phân tích Bước 1 v
 ```
 
 <div style="border-left: 4px solid #1d4ed8; padding: 12px 16px; margin: 20px 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; color: #111827;">
-<strong>Mẹo tối ưu từ chuyên gi
-
-A. </strong> Nếu transcript quá dài (trên 5.000 từ), hãy dùng Claude thay vì ChatGPT vì dung lượng cửa sổ ngữ cảnh (context window) của Claude lớn hơn, giúp nó đọc trọn vẹn toàn bộ ý nghĩa mạch lạc của bài mà không bị cắt cụt giữa chừng.
+<strong>Mẹo tối ưu từ chuyên gia:</strong> Nếu transcript quá dài (trên 5.000 từ), hãy dùng Claude thay vì ChatGPT vì dung lượng cửa sổ ngữ cảnh (context window) của Claude lớn hơn, giúp nó đọc trọn vẹn toàn bộ ý nghĩa mạch lạc của bài mà không bị cắt cụt giữa chừng.
 </div>
 
 ---
@@ -74,8 +70,8 @@ A. </strong> Nếu transcript quá dài (trên 5.000 từ), hãy dùng Claude th
 
 Để công việc hàng ngày tại văn phòng mượt mà hơn, bạn có thể biến hóa prompt trên tùy theo mục đích cụ thể:
 
-- Biến thể dạng Video Ngắn (Shorts/Reels): Thay vì phân tích video dài 15 phút, hãy điều chỉnh lại đoạn mô tả nhiệm vụ: *"Tập trung mổ xẻ tốc độ chuyển cảnh và cách tạo cú sốc nhận thức trong 3 giây đầu tiên của video ngắn dưới 60 giây"*.
-- Chống lỗi ảo giác (Hallucination): Đôi khi AI sẽ tự bịa ra những số liệu hoặc dẫn chứng không có thật để lấp đầy kịch bản. Hãy thêm câu lệnh phụ vào cuối prompt: *"Tuyệt đối không tự bịa đặt các số liệu thống kê hay case study. Nếu cần số liệu, hãy để trống chỗ dạng [Chờ điền số liệu thực tế] để tôi tự bổ sung"*.
+- <strong>Biến thể dạng Video Ngắn (Shorts/Reels):</strong> Thay vì phân tích video dài 15 phút, hãy điều chỉnh lại đoạn mô tả nhiệm vụ: *"Tập trung mổ xẻ tốc độ chuyển cảnh và cách tạo cú sốc nhận thức trong 3 giây đầu tiên của video ngắn dưới 60 giây"*.
+- <strong>Chống lỗi ảo giác (Hallucination):</strong> Đôi khi AI sẽ tự bịa ra những số liệu hoặc dẫn chứng không có thật để lấp đầy kịch bản. Hãy thêm câu lệnh phụ vào cuối prompt: *"Tuyệt đối không tự bịa đặt các số liệu thống kê hay case study. Nếu cần số liệu, hãy để trống chỗ dạng [Chờ điền số liệu thực tế] để tôi tự bổ sung"*.
 
 ---
 
@@ -83,6 +79,8 @@ A. </strong> Nếu transcript quá dài (trên 5.000 từ), hãy dùng Claude th
 
 ### 1. Tôi nên lấy transcript của video YouTube bằng cách nào nhanh nhất?
 Bạn có thể sử dụng các tiện ích mở rộng (extensions) trên trình duyệt Chrome chuyên trích xuất phụ đề YouTube, hoặc copy trực tiếp phần "Show transcript" ngay dưới video trên máy tính, sau đó xóa các mốc thời gian thừa trước khi ném vào AI.
+
+
 
 ![ChatGPT Prompt to Reverse Engineer Any Viral YouTube Script Structure Prompt Guide](https://picsum.photos/seed/prompt-mvgswe5g-11-b/1000/550.jpg)
 
