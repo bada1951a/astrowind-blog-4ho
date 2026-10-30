@@ -10,6 +10,7 @@
 import fs from 'fs';
 import path from 'path';
 import { createHash, createCipheriv, createDecipheriv, randomBytes } from 'node:crypto';
+import { normalizeBoldWhitespace, validateFaqStructure } from './generation-markdown.mjs';
 import { createCheckpointKey, createTopicFileSlug, decidePublishLocales } from './generation-identity.mjs';
 
 const GENERATION_PROMPT_VERSION = '2026-10-30-first-person-story-v3';
@@ -191,12 +192,10 @@ function inspectAndHealMarkdown(body, langCode) {
     auditLogs.push('Q&A 줄바꿈 2열 분리 치유');
   }
 
-  // 3) 볼드 기호 안쪽 공백 정돈 (** 단어 ** -> **단어**)
-  if (/\*\*\s+[^*]+?\s+\*\*/.test(healed)) {
-    healed = healed
-      .replace(/\*\*\s+([^*]+?)\s+\*\*/g, '**$1**')
-      .replace(/\*\*\s+([^*]+?)\*\*/g, '**$1**')
-      .replace(/\*\*([^*]+?)\s+\*\*/g, '**$1**');
+  // 3) 줄바꿈을 넘지 않도록 한 Markdown 굵게 표식 안의 공백만 정돈한다.
+  const normalizedBoldWhitespace = normalizeBoldWhitespace(healed);
+  if (normalizedBoldWhitespace !== healed) {
+    healed = normalizedBoldWhitespace;
     auditLogs.push('볼드 공백 정돈');
   }
 
@@ -485,13 +484,7 @@ function validateGeneratedPost(text, langCode) {
   const nonSpaceLength = [...plainBody].filter((char) => !/\s/u.test(char)).length;
   const words = [...plainBody.matchAll(/[\p{L}\p{N}]+(?:['’.-][\p{L}\p{N}]+)*/gu)].length;
   if ((bodyWithoutCode.match(/^##\s+/gm) || []).length !== 5) errors.push('H2 섹션은 정확히 5개여야 함');
-  for (const n of [1, 2, 3]) {
-    const questionMarker = '**Q' + n + '.**';
-    const answerMarker = '**A' + n + '.**';
-    if (bodyWithoutCode.split(questionMarker).length - 1 !== 1)
-      errors.push('FAQ 질문 Q' + n + ' 표식이 정확히 1개 필요');
-    if (bodyWithoutCode.split(answerMarker).length - 1 !== 1) errors.push('FAQ 답변 A' + n + ' 표식이 정확히 1개 필요');
-  }
+  errors.push(...validateFaqStructure(bodyWithoutCode));
   if (langCode === 'ko' && nonSpaceLength < 1800) errors.push('한국어 본문 공백 제외 1,800자 미만');
   if (langCode === 'ko' && nonSpaceLength > 3600) errors.push('한국어 본문 공백 제외 3,600자 초과');
   if (langCode === 'ja' && nonSpaceLength < 900) errors.push('일본어 본문 공백 제외 900자 미만');
