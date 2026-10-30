@@ -2,7 +2,7 @@ Claude Artifacts Prompt to Create Custom SVG Icons and Web Illustrations
 ChatGPT Prompt Template to De-escalate Difficult Client Emails Politely
 How to Use Perplexity Pro Search Prompts for Deep Patent and Academic Research
 Midjourney Architecture Prompts: Photorealistic Modern Interior Lighting Settings
-How to Prompt Gemini 1.5 Pro to Analyze 2-Hour Video Footage and Timecode Key Events
+How to Find Key Moments and Timestamps in a Long Video with Gemini
 ChatGPT Role-Based Prompt to Act as a Ruthless Senior Code Reviewer
 How to Prompt Claude to Write Non-Generic Corporate Mission and Positioning Copy
 Stable Diffusion SDXL Negative Prompts to Eliminate Extra Fingers and Distorted Limbs
@@ -21,7 +21,7 @@ Midjourney Cinematic Lighting Prompts: Volumetric Fog, Anamorphic Lens, and Gold
 How to Use ChatGPT to Roleplay Tough Salary Negotiations and Counter-Offers
 Claude Prompt Template to Generate Standard Operating Procedures from Voice Recordings
 ChatGPT Prompt to Reformat Raw Unstructured Logs into Structured JSON Schemas
-How to Prompt Gemini 1.5 Flash to Summarize 50 Customer Support Tickets Simultaneously
+How to Group and Summarize Customer Support Tickets with Gemini
 Midjourney Isometric 3D Room Prompts for Game Assets and Website Hero Illustrations
 ChatGPT Prompt to Find Subtle Logical Fallacies in Persuasive Opinion Essays
 How to Prompt Claude to Structure Multi-Chapter Technical Documentation Guides
@@ -314,14 +314,14 @@ ChatGPT Roleplay Prompt to Practice Negotiating Equity and Stock Option Packages
 Claude Prompt to Identify Redundant Steps in Complex Multi-Stage Enterprise Workflows
 ChatGPT Mega-Prompt to Build Complete Cold Outreach Follow-Up Funnels Across 5 Touchpoints
 ChatGPT Prompt to Auto-Generate Interactive Customer Journey Maps
-How to Use Claude 3.5 Sonnet to Create Dynamic Financial Model Spreadsheets
+How to Build and Check a Financial Spreadsheet with Claude
 Midjourney V6 Prompt Guide for Isometric Architectural Floor Plans with Warm Lighting
 Best System Prompts to Force ChatGPT to Output Strict Clean JSON Without Markdown
 How to Prompt Claude to Audit Smart Contracts for Reentrancy and Logic Vulnerabilities
 ChatGPT Prompt Framework to Reverse Engineer High-Converting Competitor Landing Pages
 How to Write Chain-of-Thought Prompts for Solving Complex Algorithmic Logic Puzzles
 Midjourney Photorealistic Food Photography Prompts: Rustic Table, Steam, and Macro Texture
-How to Prompt Gemini 1.5 Pro to Analyze Long PDF Contracts and Flag Hidden Liabilities
+How to Review a Long Contract with Gemini and Flag Clauses for Human Review
 ChatGPT Roleplay Prompt to Practice Negotiating Vendor Service Level Agreements (SLAs)
 Claude Artifacts Prompt to Build Interactive Loan Amortization Schedules with Charts
 How to Prompt AI to Generate Unit Test Suites for Legacy Monolithic Codebases
