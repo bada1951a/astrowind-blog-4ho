@@ -13,7 +13,7 @@ import { createHash, createCipheriv, createDecipheriv, randomBytes } from 'node:
 import { normalizeBoldWhitespace, validateFaqStructure } from './generation-markdown.mjs';
 import { createCheckpointKey, createTopicFileSlug, decidePublishLocales } from './generation-identity.mjs';
 
-const GENERATION_PROMPT_VERSION = '2026-10-30-topic-specific-headings-v1';
+const GENERATION_PROMPT_VERSION = '2026-10-30-generic-grounded-scenarios-v1';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 if (!OPENAI_API_KEY) {
   console.error('❌ OPENAI_API_KEY 환경변수가 설정되지 않았습니다.');
@@ -329,7 +329,7 @@ const TARGET_LANGS = [
     name: 'German',
     persona: 'Erfahrener Prompt-Architekt und Berater für generative KI-Systeme',
     osUi: 'ChatGPT, Claude, Gemini, Systemanweisungen, Einstellungen',
-    localeContext: 'Frankfurter Bankenviertel und Berliner Tech-Szene',
+    localeContext: 'German-language readers in everyday work and personal settings',
   },
   {
     code: 'fr',
@@ -542,12 +542,12 @@ Length and style:
 - Other locales: about 900–1,100 words (Japanese: at least 900 non-space characters).
 - Aim for an engaging opening and transitions (about 30%) and useful, accurate explanation and actionable steps (about 70%).
 - Carry a natural first-person storytelling voice through the article. Aim for roughly 30% narrator reasoning, decisions, and transitions and 70% practical explanations, verifiable steps, and safety information. Use first person to explain what the guide would check and why; do not claim real personal events, credentials, customer cases, or results.
-- In the opening paragraph, naturally present a specific situation the reader may recognize and the key unresolved question. Answer it in useful stages, using first-person reasoning and brief transitions to give readers a reason to continue. Avoid clickbait, exaggeration, fabricated personal or customer experiences, hypothetical-scene disclaimers, and rigid opening formulas; phrase this naturally for the locale.
+- In the opening paragraph, present a generic, recognizable situation directly related to the topic and the key unresolved question. Describe it generally or conditionally; do not frame it as a particular event that happened. Never invent named people, places/cities, companies, or customers. Do not invent customer stories/quotes or specific first-hand events unless supported by the topic or reliable source material. Generic recognizable situations may refer to a role without identifying anyone. Answer in useful stages, using first-person reasoning and brief transitions to give readers a reason to continue. Avoid clickbait, exaggeration, fabricated personal or customer experiences, hypothetical-scene disclaimers, and rigid opening formulas; phrase this naturally for the locale.
 - Write idiomatic ${lang.name}, not translated wording. Localize examples and UI labels only when relevant.
 
 Write exactly five numbered H2 headings in ${lang.name}, numbered 1 through 5. Write concise headings in the target language that fit ${currentTopic} and each section's content. Do not use generic boilerplate, promise guaranteed resolution times or outcomes, or imply unverified professional credentials. The bracketed descriptions below are instructions; never copy their brackets or placeholder text into the article.
 ## 1. [topic-specific opening heading]
-Introduce a recognizable situation directly connected to "${currentTopic}" without claiming an invented event happened.
+Introduce a generic, recognizable situation directly connected to "${currentTopic}". Describe it generally or conditionally, not as a specific event that happened. Never invent named people, places/cities, companies, or customers. Do not invent customer stories/quotes or specific first-hand events unless supported by the topic or reliable source material. Generic situations may refer to a role without identifying anyone.
 ## 2. [topic-specific heading in ${lang.name}]
 Explain topic-specific causes, limits, and clues. Avoid generic model claims that do not apply.
 ## 3. [topic-specific heading in ${lang.name}]
@@ -636,7 +636,7 @@ theme: "${selectedTheme.name}"
       console.warn(
         `⚠️ ${lang.code} 검수 실패(${validationErrors.join(', ')}). 해당 언어 correction ${correctionAttempt}/2 요청합니다.`
       );
-      const repairPrompt = `You are correcting one generated ${lang.name} article for "${currentTopic}".\n\nFailed validation checks: ${validationErrors.join(', ')}. Return the complete Markdown including original frontmatter. Preserve existing useful content and factual meaning. Correct only the listed failures. If H2 headings are missing or malformed, add five concise numbered headings in ${lang.name} that fit the topic and existing content. Avoid generic boilerplate, unsupported credentials, and guaranteed time or outcome claims. Reorganize relevant existing content without adding filler, unsupported facts, invented first-person experiences, or customer anecdotes. Preserve required FAQ markers and language. Return raw Markdown only.\n\nOriginal article:\n${text}`;
+      const repairPrompt = `You are correcting one generated ${lang.name} article for "${currentTopic}".\n\nFailed validation checks: ${validationErrors.join(', ')}. Return the complete Markdown including original frontmatter. Preserve existing useful content and factual meaning. Correct only the listed failures. If H2 headings are missing or malformed, add five concise numbered headings in ${lang.name} that fit the topic and existing content. Avoid generic boilerplate, unsupported credentials, and guaranteed time or outcome claims. Reorganize relevant existing content without adding filler, unsupported facts, invented first-person experiences, or unsupported customer cases. Never invent named people, places/cities, companies, or customers; do not invent customer stories/quotes or specific first-hand events unless supported by the topic or reliable source material. Keep any scenario generic or conditional, and allow generic roles without identifying details. Preserve required FAQ markers and language. Return raw Markdown only.\n\nOriginal article:\n${text}`;
       text = normalizeGeneratedResponse(await fetchWithRetry(repairPrompt));
       validationErrors = validateGeneratedPost(text, lang.code);
     }
