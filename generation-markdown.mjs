@@ -10,25 +10,26 @@ export function validateFaqStructure(markdown) {
   const markerSequence = [];
   const questionLines = new Map();
   const answerLines = new Map();
+  const questionMatches = [...text.matchAll(/^\*\*Q([1-3])\.\*\*[ \t]+([^\r\n]+?)[ \t]*$/gm)];
+  const answerMatches = [...text.matchAll(/^\*\*A([1-3])\.\*\*[ \t]+([^\r\n]+?)[ \t]*$/gm)];
 
   for (const number of [1, 2, 3]) {
     const questionMarker = '**Q' + number + '.**';
     const answerMarker = '**A' + number + '.**';
     const questionCount = text.split(questionMarker).length - 1;
     const answerCount = text.split(answerMarker).length - 1;
+    const question = questionMatches.filter((match) => match[1] === String(number));
+    const answer = answerMatches.filter((match) => match[1] === String(number));
 
     if (questionCount !== 1) errors.push('FAQ 질문 Q' + number + ' 표식이 정확히 1개 필요');
     if (answerCount !== 1) errors.push('FAQ 답변 A' + number + ' 표식이 정확히 1개 필요');
-
-    const question = [...text.matchAll(new RegExp('^\\\\*\\\\*Q' + number + '\\\\.\\\\*\\\\*[ \\\\t]+([^\\\\r\\\\n]+?)[ \\\\t]*$', 'gm'))];
-    const answer = [...text.matchAll(new RegExp('^\\\\*\\\\*A' + number + '\\\\.\\\\*\\\\*[ \\\\t]+([^\\\\r\\\\n]+?)[ \\\\t]*$', 'gm'))];
 
     if (questionCount === 1 && question.length !== 1) {
       errors.push('FAQ 질문 Q' + number + '은 별도 줄에 있어야 함');
     } else if (question.length === 1) {
       questionLines.set(number, question[0]);
       markerSequence.push({ label: 'Q' + number, index: question[0].index });
-      if (/\\*\\*[QA][1-3]\\.\\*\\*/.test(question[0][1])) {
+      if (/\*\*[QA][1-3]\.\*\*/.test(question[0][2])) {
         errors.push('FAQ 질문 Q' + number + '과 답변 표식은 한 줄에 함께 있을 수 없음');
       }
     }
@@ -58,7 +59,7 @@ export function validateFaqStructure(markdown) {
         errors.push('FAQ 질문 Q' + number + '은 답변보다 먼저 나와야 함');
       } else {
         const between = text.slice(question.index + question[0].length, answer.index);
-        if (!/^\\r?\\n[ \\\\t]*\\r?\\n$/.test(between)) {
+        if (!/^\r?\n[ \t]*\r?\n$/.test(between)) {
           errors.push('FAQ 질문 Q' + number + '과 답변 A' + number + ' 사이에 빈 줄이 필요함');
         }
       }
