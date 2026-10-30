@@ -10,7 +10,7 @@
 import fs from 'fs';
 import path from 'path';
 import { createHash, createCipheriv, createDecipheriv, randomBytes } from 'node:crypto';
-import { normalizeBoldWhitespace, validateFaqStructure } from './generation-markdown.mjs';
+import { normalizeBoldWhitespace, normalizeFaqArtifacts, validateFaqStructure } from './generation-markdown.mjs';
 import { createCheckpointKey, createTopicFileSlug, decidePublishLocales } from './generation-identity.mjs';
 
 const GENERATION_PROMPT_VERSION = '2026-10-30-generic-grounded-scenarios-v1';
@@ -186,6 +186,10 @@ function inspectAndHealMarkdown(body, langCode) {
     healed = healed.replace(/\*\*(Q[1-3]\.|A[1-3]\.)\*\*/gi, '**$1**');
     auditLogs.push('Q&A 줄바꿈 2열 분리 치유');
   }
+
+  const faqNormalized = normalizeFaqArtifacts(healed);
+  if (faqNormalized !== healed) auditLogs.push('FAQ의 독립 볼드 표식 및 여분 종료 표식 정돈');
+  healed = faqNormalized;
 
   // 3) 줄바꿈을 넘지 않도록 한 Markdown 굵게 표식 안의 공백만 정돈한다.
   const normalizedBoldWhitespace = normalizeBoldWhitespace(healed);
