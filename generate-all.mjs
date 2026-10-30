@@ -166,6 +166,7 @@ const I18N_SECTIONS = {
 // =========================================================================
 function inspectAndHealMarkdown(body, langCode) {
   let healed = body.trim();
+  void langCode;
   const auditLogs = [];
 
   // 1) 헤딩 내부 볼드 제거 및 4호기 표준 소제목 강제 안착
