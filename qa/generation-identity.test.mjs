@@ -1,9 +1,14 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { readFileSync } from 'node:fs';
-import { normalizeBoldWhitespace, validateFaqStructure } from '../generation-markdown.mjs';
+import { normalizeBoldWhitespace, normalizeFaqArtifacts, validateFaqStructure } from '../generation-markdown.mjs';
 
-import { createCheckpointKey, createTopicFileSlug, decidePublishLocales } from '../generation-identity.mjs';
+import {
+  createCheckpointKey,
+  createLegacyCheckpointKey,
+  createTopicFileSlug,
+  decidePublishLocales,
+} from '../generation-identity.mjs';
 
 test('a prompt update invalidates cached drafts but the same version can resume', () => {
   const topics = ['Assigned topic', 'Next topic'];
@@ -21,6 +26,34 @@ test('the topic slug is stable when later queue rows change', () => {
   assert.equal(createTopicFileSlug('Assigned topic'), slug);
   assert.equal(createTopicFileSlug('Assigned topic').startsWith('post-'), true);
   assert.notEqual(createTopicFileSlug('Different topic'), slug);
+});
+
+test('checkpoint identity follows the current topic and prompt version, not later queue rows', () => {
+  const topics = ['Assigned topic', 'Next topic'];
+  const key = createCheckpointKey(topics, 'prompt-v1');
+
+  assert.equal(createCheckpointKey(['Assigned topic', 'Edited next topic'], 'prompt-v1'), key);
+  assert.equal(createCheckpointKey(['Assigned topic', 'Next topic', 'Added topic'], 'prompt-v1'), key);
+  assert.notEqual(createCheckpointKey(['Different topic', 'Next topic'], 'prompt-v1'), key);
+  assert.notEqual(createCheckpointKey(topics, 'prompt-v2'), key);
+});
+
+test('legacy checkpoint key preserves the full topic queue identity for safe migration', () => {
+  const topics = ['Assigned topic', 'Next topic'];
+  const key = createLegacyCheckpointKey(topics, 'prompt-v1');
+
+  assert.equal(createLegacyCheckpointKey([...topics], 'prompt-v1'), key);
+  assert.notEqual(createLegacyCheckpointKey(['Assigned topic', 'Edited next topic'], 'prompt-v1'), key);
+});
+
+test('generator migrates an exact-queue legacy cache before removing other keys', () => {
+  const source = readFileSync(new URL('../generate-all.mjs', import.meta.url), 'utf8');
+
+  assert.match(source, /const legacyCheckpointDir = path\.join\(checkpointRoot, legacyCheckpointKey\)/);
+  assert.match(
+    source,
+    /fs\.existsSync\(legacyCheckpointDir\)[\s\S]*?fs\.renameSync\(legacyCheckpointDir, checkpointDir\)/
+  );
 });
 
 const publicationTargets = ['ko', 'en', 'ja', 'de', 'fr', 'es', 'it', 'pt', 'nl', 'pl', 'id', 'vi'].map((code) => ({
@@ -179,4 +212,45 @@ test('locale personas avoid unsupported credentials or experience claims', () =>
     );
     assert.ok(persona.length > 0);
   }
+});
+
+test('FAQ cleanup is bounded by section headings, preserves fenced examples, then validates', () => {
+  const source = readFileSync(new URL('../generate-all.mjs', import.meta.url), 'utf8');
+  assert.ok(source.includes('normalizeFaqArtifacts(healed)'));
+  const malformedFaq = [
+    '## 4. Notes',
+    '**',
+    'A note with **bold** text.',
+    '## 5. Frequently Asked Questions (FAQ)',
+    '',
+    '**',
+    '**Q1.** Question one?**',
+    '**',
+    '**A1.** Answer one.**',
+    '',
+    '**Q2.** Question two?**',
+    '**',
+    '**A2.** Answer two.**',
+    '',
+    '**Q3.** Question three?**',
+    '**',
+    '**A3.** Answer three.**',
+    '```markdown',
+    '**',
+    '**Literal example**',
+    '```',
+    '## Sources',
+    '**',
+    'A source note with **bold** text.',
+  ].join('\n');
+
+  const normalized = normalizeFaqArtifacts(malformedFaq);
+  assert.ok(normalized.includes('## 4. Notes\n**\nA note with **bold** text.'));
+  assert.ok(normalized.includes('```markdown\n**\n**Literal example**\n```'));
+  assert.ok(normalized.includes('## Sources\n**\nA source note with **bold** text.'));
+  assert.equal(normalized.includes('## 5. Frequently Asked Questions (FAQ)\n\n**\n'), false);
+  assert.match(normalized, /\*\*Q1\.\*\* Question one\?\n\n\*\*A1\.\*\* Answer one\./);
+  assert.match(normalized, /\*\*Q2\.\*\* Question two\?\n\n\*\*A2\.\*\* Answer two\./);
+  assert.match(normalized, /\*\*Q3\.\*\* Question three\?\n\n\*\*A3\.\*\* Answer three\./);
+  assert.ok(normalized.includes('**A3.** Answer three.\n```markdown'));
 });

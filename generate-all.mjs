@@ -10,8 +10,13 @@
 import fs from 'fs';
 import path from 'path';
 import { createHash, createCipheriv, createDecipheriv, randomBytes } from 'node:crypto';
-import { normalizeBoldWhitespace, validateFaqStructure } from './generation-markdown.mjs';
-import { createCheckpointKey, createTopicFileSlug, decidePublishLocales } from './generation-identity.mjs';
+import { normalizeBoldWhitespace, normalizeFaqArtifacts, validateFaqStructure } from './generation-markdown.mjs';
+import {
+  createCheckpointKey,
+  createLegacyCheckpointKey,
+  createTopicFileSlug,
+  decidePublishLocales,
+} from './generation-identity.mjs';
 
 const GENERATION_PROMPT_VERSION = '2026-10-30-neutral-narrator-v3';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
@@ -187,6 +192,11 @@ function inspectAndHealMarkdown(body, langCode) {
     auditLogs.push('Q&A 줄바꿈 2열 분리 치유');
   }
 
+  // FAQ 구역 안의 단독/짝 없는 볼드 표식만 정돈하고 FAQ 밖과 코드펜스는 보존한다.
+  const faqNormalized = normalizeFaqArtifacts(healed);
+  if (faqNormalized !== healed) auditLogs.push('FAQ의 독립 볼드 표식 및 여분 종료 표식 정돈');
+  healed = faqNormalized;
+
   // 3) 줄바꿈을 넘지 않도록 한 Markdown 굵게 표식 안의 공백만 정돈한다.
   const normalizedBoldWhitespace = normalizeBoldWhitespace(healed);
   if (normalizedBoldWhitespace !== healed) {
@@ -235,6 +245,14 @@ const currentTopic = lines[0];
 const topicKey = createCheckpointKey(lines, GENERATION_PROMPT_VERSION);
 const checkpointRoot = path.resolve('.generation-checkpoints');
 const checkpointDir = path.join(checkpointRoot, topicKey);
+const legacyCheckpointKey = createLegacyCheckpointKey(lines, GENERATION_PROMPT_VERSION);
+const legacyCheckpointDir = path.join(checkpointRoot, legacyCheckpointKey);
+
+// Migrate a pre-fix cache only when the full topic queue still matches exactly.
+if (legacyCheckpointKey !== topicKey && fs.existsSync(legacyCheckpointDir) && !fs.existsSync(checkpointDir)) {
+  fs.renameSync(legacyCheckpointDir, checkpointDir);
+  console.log('♻️ 기존 전체 topic 목록 기준 locale 체크포인트를 현재 주제 키로 이전합니다.');
+}
 const checkpointEncryptionKey = createHash('sha256')
   .update('blog-locale-checkpoint-v1\0', 'utf8')
   .update(OPENAI_API_KEY, 'utf8')
