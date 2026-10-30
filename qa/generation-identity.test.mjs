@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { readFileSync } from 'node:fs';
-import { normalizeBoldWhitespace, validateFaqStructure } from '../generation-markdown.mjs';
+import { normalizeBoldWhitespace, normalizeFaqArtifacts, validateFaqStructure } from '../generation-markdown.mjs';
 
 import { createCheckpointKey, createTopicFileSlug, decidePublishLocales } from '../generation-identity.mjs';
 
@@ -179,4 +179,45 @@ test('locale personas avoid unsupported credentials or experience claims', () =>
     );
     assert.ok(persona.length > 0);
   }
+});
+
+test('FAQ cleanup is bounded by section headings, preserves fenced examples, then validates', () => {
+  const source = readFileSync(new URL('../generate-all.mjs', import.meta.url), 'utf8');
+  assert.ok(source.includes('normalizeFaqArtifacts(healed)'));
+  const malformedFaq = [
+    '## 4. Notes',
+    '**',
+    'A note with **bold** text.',
+    '## 5. Frequently Asked Questions (FAQ)',
+    '',
+    '**',
+    '**Q1.** Question one?**',
+    '**',
+    '**A1.** Answer one.**',
+    '',
+    '**Q2.** Question two?**',
+    '**',
+    '**A2.** Answer two.**',
+    '',
+    '**Q3.** Question three?**',
+    '**',
+    '**A3.** Answer three.**',
+    '```markdown',
+    '**',
+    '**Literal example**',
+    '```',
+    '## Sources',
+    '**',
+    'A source note with **bold** text.',
+  ].join('\n');
+
+  const normalized = normalizeFaqArtifacts(malformedFaq);
+  assert.ok(normalized.includes('## 4. Notes\n**\nA note with **bold** text.'));
+  assert.ok(normalized.includes('```markdown\n**\n**Literal example**\n```'));
+  assert.ok(normalized.includes('## Sources\n**\nA source note with **bold** text.'));
+  assert.equal(normalized.includes('## 5. Frequently Asked Questions (FAQ)\n\n**\n'), false);
+  assert.match(normalized, /\*\*Q1\.\*\* Question one\?\n\n\*\*A1\.\*\* Answer one\./);
+  assert.match(normalized, /\*\*Q2\.\*\* Question two\?\n\n\*\*A2\.\*\* Answer two\./);
+  assert.match(normalized, /\*\*Q3\.\*\* Question three\?\n\n\*\*A3\.\*\* Answer three\./);
+  assert.ok(normalized.includes('**A3.** Answer three.\n```markdown'));
 });
