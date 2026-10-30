@@ -106,4 +106,10 @@ test('FAQ cleanup preserves separate Q/A lines, blank lines, and rejects collaps
 
   assert.ok(errors.some((error) => error.includes('별도 줄')));
   assert.ok(errors.some((error) => error.includes('한 줄에 함께')));
+
+  const missingBlankLineFaq = validFaq.replace(
+    '**Q1.** What does the prompt change?\\n\\n**A1.**',
+    '**Q1.** What does the prompt change?\\n**A1.**'
+  );
+  assert.ok(validateFaqStructure(missingBlankLineFaq).some((error) => error.includes('빈 줄')));
 });
