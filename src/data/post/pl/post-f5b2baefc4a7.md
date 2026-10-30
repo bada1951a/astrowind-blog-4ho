@@ -55,20 +55,17 @@ Dobra wiadomość deeskalująca nie musi być przesadnie ciepła. Powinna pokaza
 
 ## 5. Najczęściej zadawane pytania (FAQ)
 
-**
 
-**Q1.** Czy ChatGPT powinien przepraszać w imieniu firmy?**
+**Q1.** Czy ChatGPT powinien przepraszać w imieniu firmy?
 
 **A1.** Może przygotować neutralne wyrażenie ubolewania, jeśli pasuje do sytuacji, ale nie powinien samodzielnie przyznawać odpowiedzialności. Zdecyduj, czy takie sformułowanie jest zgodne z faktami i zasadami firmy.
 
-**
 
-**Q2.** Co zrobić, gdy brakuje potwierdzonego terminu rozwiązania problemu?**
+**Q2.** Co zrobić, gdy brakuje potwierdzonego terminu rozwiązania problemu?
 
 **A2.** Nie wpisuj daty na próbę. Poproś o krótką odpowiedź potwierdzającą, co jest już sprawdzane i kiedy można przekazać kolejną aktualizację — tylko jeśli taki termin aktualizacji został zatwierdzony.
 
-**
 
-**Q3.** Czy można użyć tego samego szablonu do każdej reklamacji?**
+**Q3.** Czy można użyć tego samego szablonu do każdej reklamacji?
 
 **A3.** Można zachować jego strukturę, ale za każdym razem trzeba zmienić cel, potwierdzone fakty i dozwolone działania. Inne informacje są potrzebne przy awarii, sporze o fakturę i pytaniu o zakres umowy.
