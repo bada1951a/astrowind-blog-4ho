@@ -131,8 +131,11 @@ test('FAQ cleanup preserves separate Q/A lines, blank lines, and rejects collaps
   assert.ok(validateFaqStructure(missingBlankLineFaq).some((error) => error.includes('빈 줄')));
 });
 
-test('FAQ cleanup removes standalone bold lines and orphan trailing markers before validation', () => {
+test('FAQ cleanup is bounded by section headings, preserves fenced examples, then validates', () => {
   const malformedFaq = [
+    '## 4. Notes',
+    '**',
+    'A note with **bold** text.',
     '## 5. Frequently Asked Questions (FAQ)',
     '',
     '**',
@@ -147,20 +150,24 @@ test('FAQ cleanup removes standalone bold lines and orphan trailing markers befo
     '**Q3.** Question three?**',
     '**',
     '**A3.** Answer three.**',
+    '```markdown',
+    '**',
+    '**Literal example**',
+    '```',
+    '## Sources',
+    '**',
+    'A source note with **bold** text.',
   ].join('\n');
 
   const normalized = normalizeFaqArtifacts(malformedFaq);
   const validated = normalizeBoldWhitespace(normalized);
 
-  assert.equal(normalized.includes('\n**\n'), false);
+  assert.ok(normalized.includes('## 4. Notes\n**\nA note with **bold** text.'));
+  assert.ok(normalized.includes('```markdown\n**\n**Literal example**\n```'));
+  assert.ok(normalized.includes('## Sources\n**\nA source note with **bold** text.'));
+  assert.equal(normalized.includes('## 5. Frequently Asked Questions (FAQ)\n\n**\n'), false);
   assert.match(normalized, /\*\*Q1\.\*\* Question one\?\n\n\*\*A1\.\*\* Answer one\./);
   assert.match(normalized, /\*\*Q2\.\*\* Question two\?\n\n\*\*A2\.\*\* Answer two\./);
   assert.match(normalized, /\*\*Q3\.\*\* Question three\?\n\n\*\*A3\.\*\* Answer three\./);
   assert.equal(validateFaqStructure(validated).length, 0);
-
-  const preserved = normalizeFaqArtifacts(
-    '## 4. Notes\n\n**Keep this emphasis**\n\n## 5. FAQ\n\n**Q1.** Q?**\n\n**A1.** A.**'
-  );
-  assert.ok(preserved.includes('**Keep this emphasis**'));
-  assert.ok(preserved.includes('**Q1.** Q?\n\n**A1.** A.'));
 });
