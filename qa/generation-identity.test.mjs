@@ -93,7 +93,7 @@ test('generator prompt keeps recognizable scenarios generic and source-grounded'
   assert.ok(source.includes("localeContext: 'German-language readers in everyday work and personal settings'"));
   assert.ok(!source.includes('Frankfurter Bankenviertel'));
   assert.ok(!source.includes('Berliner Tech-Szene'));
-  assert.ok(source.includes("GENERATION_PROMPT_VERSION = '2026-10-30-generic-grounded-scenarios-v1'"));
+  assert.ok(source.includes("GENERATION_PROMPT_VERSION = '2026-10-30-neutral-narrator-v2'"));
 });
 
 test('FAQ cleanup preserves separate Q/A lines, blank lines, and rejects collapsed pairs', () => {
@@ -130,3 +130,20 @@ test('FAQ cleanup preserves separate Q/A lines, blank lines, and rejects collaps
   const missingBlankLineFaq = validFaq.replace(/\n\n\*\*A1\./, '\n**A1.');
   assert.ok(validateFaqStructure(missingBlankLineFaq).some((error) => error.includes('빈 줄')));
 });
+
+test('locale personas avoid unsupported credentials or experience claims', () => {
+  const source = readFileSync(new URL('../generate-all.mjs', import.meta.url), 'utf8');
+  const personas = [...source.matchAll(/persona:\s*(['"])(.*?)\1/g)].map((match) => match[2].toLowerCase());
+  assert.equal(personas.length, 12);
+  const unsupportedClaim =
+    /(experienced|senior|expert|engineer|technician|specialist|professional|consultant|architect|現役|経験|専門家|エンジニア|기술자|전문가|경력|수리 기사|실무 경험|técnico|experto|especialista|technicien|ingénieur|esperto|experiente|techniker|ingenieur|serwisant|inżynier|chuyên gia|kỹ sư|teknisi senior)/i;
+  for (const persona of personas) {
+    assert.equal(
+      unsupportedClaim.test(persona),
+      false,
+      'Persona must not imply credentials or personal experience: ' + persona
+    );
+    assert.ok(persona.length > 0);
+  }
+});
+
