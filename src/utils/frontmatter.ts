@@ -36,7 +36,6 @@ export const responsiveTablesRehypePlugin: RehypePlugin = () => {
   };
 };
 
-
 /**
  * Picsum URLs already declare their intrinsic dimensions in the path (for
  * example `/1000/550.jpg`). Supply those dimensions before Astro's built-in
