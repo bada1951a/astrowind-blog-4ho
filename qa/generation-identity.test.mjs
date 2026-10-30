@@ -71,8 +71,29 @@ test('generator uses the tested publication plan to gate and select written loca
 
 test('generator prompt specifies a topic-fit first-person narrative and practical balance', () => {
   const source = readFileSync(new URL('../generate-all.mjs', import.meta.url), 'utf8');
+  assert.ok(source.includes('Write concise headings in the target language that fit ${currentTopic}'));
+  assert.ok(source.includes('Do not use generic boilerplate, promise guaranteed resolution times or outcomes'));
+  assert.ok(source.includes('never copy their brackets or placeholder text'));
   assert.ok(source.includes('roughly 30% narrator reasoning'));
   assert.ok(source.includes('70% practical explanations'));
+});
+
+test('generator prompt keeps recognizable scenarios generic and source-grounded', () => {
+  const source = readFileSync(new URL('../generate-all.mjs', import.meta.url), 'utf8');
+  assert.ok(source.includes('generic, recognizable situation'));
+  assert.ok(source.includes('do not frame it as a particular event that happened'));
+  assert.ok(source.includes('Never invent named people, places/cities, companies, or customers'));
+  assert.ok(
+    source.includes(
+      'Do not invent customer stories/quotes or specific first-hand events unless supported by the topic or reliable source material'
+    )
+  );
+  assert.ok(source.includes('Generic recognizable situations may refer to a role without identifying anyone'));
+  assert.ok(source.includes('allow generic roles without identifying details'));
+  assert.ok(source.includes("localeContext: 'German-language readers in everyday work and personal settings'"));
+  assert.ok(!source.includes('Frankfurter Bankenviertel'));
+  assert.ok(!source.includes('Berliner Tech-Szene'));
+  assert.ok(source.includes("GENERATION_PROMPT_VERSION = '2026-10-30-generic-grounded-scenarios-v1'"));
 });
 
 test('FAQ cleanup preserves separate Q/A lines, blank lines, and rejects collapsed pairs', () => {
