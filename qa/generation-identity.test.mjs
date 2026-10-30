@@ -75,7 +75,6 @@ test('generator prompt specifies a topic-fit first-person narrative and practica
   assert.ok(source.includes('70% practical explanations'));
 });
 
-
 test('FAQ cleanup preserves separate Q/A lines, blank lines, and rejects collapsed pairs', () => {
   const validFaq = [
     '**Q1.** What does the prompt change?',
