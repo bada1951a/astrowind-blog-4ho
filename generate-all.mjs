@@ -13,7 +13,7 @@ import { createHash, createCipheriv, createDecipheriv, randomBytes } from 'node:
 import { normalizeBoldWhitespace, validateFaqStructure } from './generation-markdown.mjs';
 import { createCheckpointKey, createTopicFileSlug, decidePublishLocales } from './generation-identity.mjs';
 
-const GENERATION_PROMPT_VERSION = '2026-10-30-generic-grounded-scenarios-v1';
+const GENERATION_PROMPT_VERSION = '2026-10-30-neutral-narrator-v3';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 if (!OPENAI_API_KEY) {
   console.error('❌ OPENAI_API_KEY 환경변수가 설정되지 않았습니다.');
@@ -306,86 +306,86 @@ const TARGET_LANGS = [
   {
     code: 'ko',
     name: 'Korean',
-    persona: '친절하고 실무 경험이 많은 AI 프롬프트 아키텍트 및 생산성 컨설턴트',
+    persona: '실용적인 AI 프롬프트와 생산성 안내를 쉽게 풀어 쓰는 글쓴이',
     osUi: 'ChatGPT, Claude, Gemini, 프롬프트 입력창, 시스템 프롬프트 설정',
-    localeContext: '서울/판교 IT 오피스 및 기업 전략 기획 부서',
+    localeContext: 'Korean-language readers in South Korea across everyday work and personal settings',
   },
   {
     code: 'en',
     name: 'English',
-    persona: 'Senior AI prompt engineer and LLM automation specialist',
+    persona: 'Practical guide writer explaining AI prompts and productivity clearly',
     osUi: 'ChatGPT, Claude, Gemini, System Instructions, Artifacts',
-    localeContext: 'Silicon Valley tech startup / New York creative & marketing agency',
+    localeContext: 'English-language readers in the United States across everyday work and personal settings',
   },
   {
     code: 'ja',
     name: 'Japanese',
-    persona: 'プロンプトエンジニアリングと生成AI活用を分かりやすく教える現役AIアーキテクト',
+    persona: 'AIプロンプトと生産性向上を分かりやすく案内する実用ガイドの書き手',
     osUi: 'ChatGPT, Claude, Gemini, システムプロンプト, アーティファクト',
-    localeContext: '東京・丸の内および渋谷のITビジネスオフィス',
+    localeContext: 'Japanese-language readers in Japan across everyday work and personal settings',
   },
   {
     code: 'de',
     name: 'German',
-    persona: 'Erfahrener Prompt-Architekt und Berater für generative KI-Systeme',
+    persona: 'Praktischer Ratgeberautor für verständliche KI-Prompts und Produktivität',
     osUi: 'ChatGPT, Claude, Gemini, Systemanweisungen, Einstellungen',
     localeContext: 'German-language readers in everyday work and personal settings',
   },
   {
     code: 'fr',
     name: 'French',
-    persona: "Ingénieur en prompt design et spécialiste de la productivité par l'IA",
+    persona: 'Rédacteur de guides pratiques sur les prompts IA et la productivité',
     osUi: 'ChatGPT, Claude, Gemini, Instructions système, Paramètres',
-    localeContext: "Agences de conseil et sièges d'entreprise à Paris La Défense",
+    localeContext: 'Lecteurs francophones en France dans leur vie quotidienne et professionnelle',
   },
   {
     code: 'es',
     name: 'Spanish',
-    persona: 'Especialista en ingeniería de prompts y optimización con modelos LLM',
+    persona: 'Redactor de guías prácticas sobre prompts de IA y productividad',
     osUi: 'ChatGPT, Claude, Gemini, Instrucciones personalizadas, Artifacts',
-    localeContext: 'Oficinas corporativas y consultoras en Madrid y Barcelona',
+    localeContext: 'Lectores hispanohablantes en España en su vida cotidiana y profesional',
   },
   {
     code: 'it',
     name: 'Italian',
-    persona: "Architetto di prompt esperto nell'automazione aziendale con intelligenza artificiale",
+    persona: 'Autore di guide pratiche su prompt IA e produttività',
     osUi: 'ChatGPT, Claude, Gemini, Istruzioni di sistema, Impostazioni',
-    localeContext: 'Studi professionali e agenzie digitali a Milano',
+    localeContext: 'Lettori italofoni in Italia nella vita quotidiana e professionale',
   },
   {
     code: 'pt',
     name: 'Portuguese',
-    persona: 'Especialista em engenharia de prompts e automação prática com IA generativa',
+    persona: 'Redator de guias práticos sobre prompts de IA e produtividade',
     osUi: 'ChatGPT, Claude, Gemini, Instruções personalizadas, Configurações',
-    localeContext: 'Polos de inovação e empresas na Avenida Paulista em São Paulo',
+    localeContext: 'Leitores de língua portuguesa no Brasil em contextos cotidianos e profissionais',
   },
   {
     code: 'nl',
     name: 'Dutch',
-    persona: 'Nederlandse prompt engineer en specialist in generatieve AI-tools',
+    persona: 'Praktische gidsenschrijver over AI-prompts en productiviteit',
     osUi: 'ChatGPT, Claude, Gemini, Systeeminstructies, Instellingen',
-    localeContext: 'Zuidas en innovatiehubs in Amsterdam',
+    localeContext: 'Nederlandstalige lezers in Nederland in alledaagse en professionele situaties',
   },
   {
     code: 'pl',
     name: 'Polish',
-    persona: 'Architekt promptów i praktyk narzędzi generatywnej sztucznej inteligencji',
+    persona: 'Autor praktycznych poradników o promptach AI i produktywności',
     osUi: 'ChatGPT, Claude, Gemini, Instrukcje systemowe, Ustawienia',
-    localeContext: 'Warszawski sektor IT i nowoczesne centra biznesowe',
+    localeContext: 'Polskojęzyczni czytelnicy w Polsce w codziennych i zawodowych sytuacjach',
   },
   {
     code: 'id',
     name: 'Indonesian',
-    persona: 'Praktisi AI prompt engineering dan otomatisasi workflow digital',
+    persona: 'Penulis panduan praktis tentang prompt AI dan produktivitas',
     osUi: 'ChatGPT, Claude, Gemini, Instruksi kustom, Pengaturan',
-    localeContext: 'Kawasan bisnis Sudirman Central Business District (SCBD) Jakarta',
+    localeContext: 'Pembaca berbahasa Indonesia di Indonesia dalam keseharian dan pekerjaan',
   },
   {
     code: 'vi',
     name: 'Vietnamese',
-    persona: 'Chuyên gia thiết kế câu lệnh AI (Prompt Engineer) và tự động hóa công việc',
+    persona: 'Người viết hướng dẫn thực tế về câu lệnh AI và năng suất',
     osUi: 'ChatGPT, Claude, Gemini, Hướng dẫn hệ thống, Cài đặt',
-    localeContext: 'Tòa nhà văn phòng công nghệ cao tại Quận 1, TP. Hồ Chí Minh',
+    localeContext: 'Độc giả tiếng Việt tại Việt Nam trong đời sống và công việc hằng ngày',
   },
 ];
 
