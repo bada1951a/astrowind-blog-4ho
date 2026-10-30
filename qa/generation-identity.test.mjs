@@ -3,7 +3,7 @@ import test from 'node:test';
 import { readFileSync } from 'node:fs';
 import { normalizeBoldWhitespace, validateFaqStructure } from '../generation-markdown.mjs';
 
-import { createCheckpointKey, createTopicFileSlug, decidePublishLocales } from '../generation-identity.mjs';
+import { createCheckpointKey, createLegacyCheckpointKey, createTopicFileSlug, decidePublishLocales } from '../generation-identity.mjs';
 
 test('checkpoint identity follows the current topic and prompt version, not later queue rows', () => {
   const topics = ['Assigned topic', 'Next topic'];
@@ -27,6 +27,22 @@ test('the topic slug is stable when later queue rows change', () => {
   assert.equal(createTopicFileSlug('Assigned topic'), slug);
   assert.equal(createTopicFileSlug('Assigned topic').startsWith('post-'), true);
   assert.notEqual(createTopicFileSlug('Different topic'), slug);
+});
+
+test('legacy full-queue checkpoints remain identifiable only for an unchanged queue', () => {
+  const topics = ['Assigned topic', 'Next topic'];
+  const legacy = createLegacyCheckpointKey(topics, 'prompt-v1');
+
+  assert.equal(createLegacyCheckpointKey([...topics], 'prompt-v1'), legacy);
+  assert.notEqual(createLegacyCheckpointKey(['Assigned topic', 'Edited next topic'], 'prompt-v1'), legacy);
+  assert.notEqual(createLegacyCheckpointKey(['Different topic', 'Next topic'], 'prompt-v1'), legacy);
+});
+
+test('generator migrates an exact-queue legacy cache before removing other keys', () => {
+  const source = readFileSync(new URL('../generate-all.mjs', import.meta.url), 'utf8');
+
+  assert.match(source, /const legacyCheckpointDir = path\.join\(checkpointRoot, legacyCheckpointKey\)/);
+  assert.match(source, /fs\.existsSync\(legacyCheckpointDir\)[\s\S]*?fs\.renameSync\(legacyCheckpointDir, checkpointDir\)/);
 });
 
 const publicationTargets = ['ko', 'en', 'ja', 'de', 'fr', 'es', 'it', 'pt', 'nl', 'pl', 'id', 'vi'].map((code) => ({
