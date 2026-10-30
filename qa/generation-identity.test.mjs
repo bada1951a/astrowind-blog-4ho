@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { readFileSync } from 'node:fs';
-import { normalizeBoldWhitespace, validateFaqStructure } from '../generation-markdown.mjs';
+import { normalizeBoldWhitespace, normalizeFaqArtifacts, validateFaqStructure } from '../generation-markdown.mjs';
 
 import { createCheckpointKey, createTopicFileSlug, decidePublishLocales } from '../generation-identity.mjs';
 
@@ -129,4 +129,38 @@ test('FAQ cleanup preserves separate Q/A lines, blank lines, and rejects collaps
 
   const missingBlankLineFaq = validFaq.replace(/\n\n\*\*A1\./, '\n**A1.');
   assert.ok(validateFaqStructure(missingBlankLineFaq).some((error) => error.includes('빈 줄')));
+});
+
+test('FAQ cleanup removes standalone bold lines and orphan trailing markers before validation', () => {
+  const malformedFaq = [
+    '## 5. Frequently Asked Questions (FAQ)',
+    '',
+    '**',
+    '**Q1.** Question one?**',
+    '**',
+    '**A1.** Answer one.**',
+    '',
+    '**Q2.** Question two?**',
+    '**',
+    '**A2.** Answer two.**',
+    '',
+    '**Q3.** Question three?**',
+    '**',
+    '**A3.** Answer three.**',
+  ].join('\n');
+
+  const normalized = normalizeFaqArtifacts(malformedFaq);
+  const validated = normalizeBoldWhitespace(normalized);
+
+  assert.equal(normalized.includes('\n**\n'), false);
+  assert.match(normalized, /\*\*Q1\.\*\* Question one\?\n\n\*\*A1\.\*\* Answer one\./);
+  assert.match(normalized, /\*\*Q2\.\*\* Question two\?\n\n\*\*A2\.\*\* Answer two\./);
+  assert.match(normalized, /\*\*Q3\.\*\* Question three\?\n\n\*\*A3\.\*\* Answer three\./);
+  assert.equal(validateFaqStructure(validated).length, 0);
+
+  const preserved = normalizeFaqArtifacts(
+    '## 4. Notes\n\n**Keep this emphasis**\n\n## 5. FAQ\n\n**Q1.** Q?**\n\n**A1.** A.**'
+  );
+  assert.ok(preserved.includes('**Keep this emphasis**'));
+  assert.ok(preserved.includes('**Q1.** Q?\n\n**A1.** A.'));
 });
