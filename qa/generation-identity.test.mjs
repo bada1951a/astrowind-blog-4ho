@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { readFileSync } from 'node:fs';
+import { normalizeBoldWhitespace, validateFaqStructure } from '../generation-markdown.mjs';
 
 import { createCheckpointKey, createTopicFileSlug, decidePublishLocales } from '../generation-identity.mjs';
 
@@ -72,4 +73,37 @@ test('generator prompt specifies a topic-fit first-person narrative and practica
   const source = readFileSync(new URL('../generate-all.mjs', import.meta.url), 'utf8');
   assert.ok(source.includes('roughly 30% narrator reasoning'));
   assert.ok(source.includes('70% practical explanations'));
+});
+
+
+test('FAQ cleanup preserves separate Q/A lines, blank lines, and rejects collapsed pairs', () => {
+  const validFaq = [
+    '**Q1.** What does the prompt change?',
+    '',
+    '**A1.** It changes the instruction context.',
+    '',
+    '**Q2.** Should I use one prompt for every task?',
+    '',
+    '**A2.** No. Match the instruction to the task.',
+    '',
+    '**Q3.** How can I check the result?',
+    '',
+    '**A3.** Compare the output against the requested format.',
+  ].join('\n');
+  const normalized = normalizeBoldWhitespace(validFaq);
+
+  assert.equal(validateFaqStructure(normalized).length, 0);
+  assert.match(normalized, /\*\*Q1\.\*\* What does the prompt change\?\n\n\*\*A1\.\*\*/);
+  assert.match(normalized, /\*\*Q2\.\*\* Should I use one prompt for every task\?\n\n\*\*A2\.\*\*/);
+  assert.match(normalized, /\*\*Q3\.\*\* How can I check the result\?\n\n\*\*A3\.\*\*/);
+
+  const collapsedFaq = [
+    '**Q1.** What does the prompt change? **A1.** It changes the instruction context.',
+    '**Q2.** Should I use one prompt for every task? **A2.** No. Match the instruction to the task.',
+    '**Q3.** How can I check the result? **A3.** Compare the output against the requested format.',
+  ].join('\n');
+  const errors = validateFaqStructure(normalizeBoldWhitespace(collapsedFaq));
+
+  assert.ok(errors.some((error) => error.includes('별도 줄')));
+  assert.ok(errors.some((error) => error.includes('한 줄에 함께')));
 });
