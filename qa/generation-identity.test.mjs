@@ -70,6 +70,8 @@ test('generator uses the tested publication plan to gate and select written loca
 });
 
 test('generator prompt specifies a topic-fit first-person narrative and practical balance', () => {
+  assert.ok(source.includes('Write concise headings in the target language that fit ${currentTopic}'));
+  assert.ok(source.includes('Do not use generic boilerplate, promise guaranteed resolution times or outcomes'));
   const source = readFileSync(new URL('../generate-all.mjs', import.meta.url), 'utf8');
   assert.ok(source.includes('roughly 30% narrator reasoning'));
   assert.ok(source.includes('70% practical explanations'));
