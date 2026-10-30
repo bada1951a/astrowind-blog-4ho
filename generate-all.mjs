@@ -3,14 +3,16 @@
 // ⚠️ [혼동 방지 경고]
 // 1. 이 파일은 '4호기 (Prompt Engineering)'입니다. 2-1호기나 다른 호기와 절대 혼동하지 말 것!
 // 2. 카테고리는 대표님의 지시 전까지 'Prompt Engineering'으로 영구 고정한다. (임의 변경 절대 금지)
-// 3. 이미지 생성 방식은 Picsum prompt- 시드 URL 방식을 영구 유지한다.
+// 3. 이미지 경로는 main의 Picsum 시드 선택 로직을 유지한다.
 // 4. 대표님과의 모든 설명, 질문, 대화 및 주석은 반드시 100% 한국어로만 진행한다.
 // =========================================================================
 
 import fs from 'fs';
 import path from 'path';
+import { createHash, createCipheriv, createDecipheriv, randomBytes } from 'node:crypto';
+import { createCheckpointKey, createTopicFileSlug, decidePublishLocales } from './generation-identity.mjs';
 
-
+const GENERATION_PROMPT_VERSION = '2026-10-30-first-person-story-v3';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 if (!OPENAI_API_KEY) {
   console.error('❌ OPENAI_API_KEY 환경변수가 설정되지 않았습니다.');
@@ -29,7 +31,7 @@ function getPostImages(topic, index) {
 
   return {
     coverUrl: `https://picsum.photos/seed/${coverSeed}/1200/675.jpg`,
-    bodyUrl: `https://picsum.photos/seed/${bodySeed}/1000/550.jpg`
+    bodyUrl: `https://picsum.photos/seed/${bodySeed}/1000/550.jpg`,
   };
 }
 
@@ -50,101 +52,101 @@ function getKstPublishDateIso() {
 // =========================================================================
 const I18N_SECTIONS = {
   ko: {
-    s1: "1. AI 답변 퀄리티 붕괴와 업무 멘붕의 순간",
-    s2: "2. 프롬프트 실패와 AI 환각(Hallucination)의 핵심 원인",
-    s3: "3. 바로 복사해 쓰는 실전 마스터 프롬프트 템플릿",
-    s4: "4. 현직 프롬프트 엔지니어가 전하는 실무 팁 및 주의사항",
-    s5: "5. 자주 묻는 질문 (FAQ)",
-    tags: ["프롬프트엔지니어링", "ChatGPT", "Claude", "생성형AI"]
+    s1: '1. AI 답변 퀄리티 붕괴와 업무 멘붕의 순간',
+    s2: '2. 프롬프트 실패와 AI 환각(Hallucination)의 핵심 원인',
+    s3: '3. 바로 복사해 쓰는 실전 마스터 프롬프트 템플릿',
+    s4: '4. 현직 프롬프트 엔지니어가 전하는 실무 팁 및 주의사항',
+    s5: '5. 자주 묻는 질문 (FAQ)',
+    tags: ['프롬프트엔지니어링', 'ChatGPT', 'Claude', '생성형AI'],
   },
   en: {
-    s1: "1. Critical AI Hallucination & Output Collapse Crisis",
-    s2: "2. Root Cause Breakdown of Prompt Failures and Logic Flaws",
-    s3: "3. Copy-and-Paste Master Prompt Engineering Template",
-    s4: "4. Professional Prompt Architect Precautions & Tips",
-    s5: "5. Frequently Asked Questions (FAQ)",
-    tags: ["Prompt Engineering", "ChatGPT", "Claude", "Generative AI"]
+    s1: '1. Critical AI Hallucination & Output Collapse Crisis',
+    s2: '2. Root Cause Breakdown of Prompt Failures and Logic Flaws',
+    s3: '3. Copy-and-Paste Master Prompt Engineering Template',
+    s4: '4. Professional Prompt Architect Precautions & Tips',
+    s5: '5. Frequently Asked Questions (FAQ)',
+    tags: ['Prompt Engineering', 'ChatGPT', 'Claude', 'Generative AI'],
   },
   ja: {
-    s1: "1. AIの回答精度崩壊と業務停滞の緊急事態",
-    s2: "2. プロンプト失敗とハルシネーションの根本原因",
-    s3: "3. すぐに使える実践マスタープロンプトテンプレート",
-    s4: "4. 現役AIプロンプト専門家が教える注意点とコツ",
-    s5: "5. よくある質問 (FAQ)",
-    tags: ["プロンプトエンジニアリング", "ChatGPT", "Claude", "生成AI"]
+    s1: '1. AIの回答精度崩壊と業務停滞の緊急事態',
+    s2: '2. プロンプト失敗とハルシネーションの根本原因',
+    s3: '3. すぐに使える実践マスタープロンプトテンプレート',
+    s4: '4. 現役AIプロンプト専門家が教える注意点とコツ',
+    s5: '5. よくある質問 (FAQ)',
+    tags: ['プロンプトエンジニアリング', 'ChatGPT', 'Claude', '生成AI'],
   },
   de: {
-    s1: "1. Kritischer KI-Halluzinations- und Qualitätsnotfall",
-    s2: "2. Detaillierte Ursachenanalyse von Prompt- und Logikfehlern",
-    s3: "3. Sofort einsetzbare Master-Prompt-Vorlage",
-    s4: "4. Praxistipps und Warnungen vom Prompt-Architekten",
-    s5: "5. Häufig gestellte Fragen (FAQ)",
-    tags: ["Prompt-Engineering", "ChatGPT", "Claude", "Generative KI"]
+    s1: '1. Kritischer KI-Halluzinations- und Qualitätsnotfall',
+    s2: '2. Detaillierte Ursachenanalyse von Prompt- und Logikfehlern',
+    s3: '3. Sofort einsetzbare Master-Prompt-Vorlage',
+    s4: '4. Praxistipps und Warnungen vom Prompt-Architekten',
+    s5: '5. Häufig gestellte Fragen (FAQ)',
+    tags: ['Prompt-Engineering', 'ChatGPT', 'Claude', 'Generative KI'],
   },
   fr: {
     s1: "1. Crise d'hallucination de l'IA et panne de productivité",
-    s2: "2. Analyse approfondie des échecs de prompt et failles logiques",
+    s2: '2. Analyse approfondie des échecs de prompt et failles logiques',
     s3: "3. Modèle de prompt maître pratique prêt à l'emploi",
     s4: "4. Conseils et précautions d'un ingénieur de prompt",
-    s5: "5. Foire Aux Questions (FAQ)",
-    tags: ["Prompt Engineering", "ChatGPT", "Claude", "IA Générative"]
+    s5: '5. Foire Aux Questions (FAQ)',
+    tags: ['Prompt Engineering', 'ChatGPT', 'Claude', 'IA Générative'],
   },
   es: {
-    s1: "1. Crisis crítica de alucinación de la IA y bloqueo de tareas",
-    s2: "2. Análisis de causas raíz de errores de prompt y lógica",
-    s3: "3. Plantilla maestra de prompt lista para copiar y usar",
-    s4: "4. Consejos y advertencias de un arquitecto de prompts",
-    s5: "5. Preguntas Frecuentes (FAQ)",
-    tags: ["Ingeniería de Prompts", "ChatGPT", "Claude", "IA Generativa"]
+    s1: '1. Crisis crítica de alucinación de la IA y bloqueo de tareas',
+    s2: '2. Análisis de causas raíz de errores de prompt y lógica',
+    s3: '3. Plantilla maestra de prompt lista para copiar y usar',
+    s4: '4. Consejos y advertencias de un arquitecto de prompts',
+    s5: '5. Preguntas Frecuentes (FAQ)',
+    tags: ['Ingeniería de Prompts', 'ChatGPT', 'Claude', 'IA Generativa'],
   },
   it: {
     s1: "1. Emergenza improvvisa per allucinazioni dell'IA e risposte errate",
-    s2: "2. Analisi approfondita dei fallimenti di prompt e logica",
+    s2: '2. Analisi approfondita dei fallimenti di prompt e logica',
     s3: "3. Template master di prompt pratico pronto all'uso",
     s4: "4. Avvertenze e suggerimenti dell'architetto di prompt",
-    s5: "5. Domande Frequenti (FAQ)",
-    tags: ["Ingegneria dei Prompt", "ChatGPT", "Claude", "IA Generativa"]
+    s5: '5. Domande Frequenti (FAQ)',
+    tags: ['Ingegneria dei Prompt', 'ChatGPT', 'Claude', 'IA Generativa'],
   },
   pt: {
-    s1: "1. Situação de emergência com alucinações e erros da IA",
-    s2: "2. Análise da causa raiz de falhas em prompts e raciocínio",
-    s3: "3. Template mestre de prompt pronto para copiar e colar",
-    s4: "4. Recomendações e alertas de especialistas em prompt",
-    s5: "5. Perguntas Frequentes (FAQ)",
-    tags: ["Engenharia de Prompt", "ChatGPT", "Claude", "IA Generativa"]
+    s1: '1. Situação de emergência com alucinações e erros da IA',
+    s2: '2. Análise da causa raiz de falhas em prompts e raciocínio',
+    s3: '3. Template mestre de prompt pronto para copiar e colar',
+    s4: '4. Recomendações e alertas de especialistas em prompt',
+    s5: '5. Perguntas Frequentes (FAQ)',
+    tags: ['Engenharia de Prompt', 'ChatGPT', 'Claude', 'IA Generativa'],
   },
   nl: {
-    s1: "1. Noodsituatie door AI-hallucinaties en onbruikbare output",
-    s2: "2. Grondige analyse van mislukte prompts en denkfouten van het model",
-    s3: "3. Direct bruikbare master prompt template",
-    s4: "4. Belangrijke adviezen van professionele prompt engineers",
-    s5: "5. Veelgestelde Vragen (FAQ)",
-    tags: ["Prompt Engineering", "ChatGPT", "Claude", "Generatieve AI"]
+    s1: '1. Noodsituatie door AI-hallucinaties en onbruikbare output',
+    s2: '2. Grondige analyse van mislukte prompts en denkfouten van het model',
+    s3: '3. Direct bruikbare master prompt template',
+    s4: '4. Belangrijke adviezen van professionele prompt engineers',
+    s5: '5. Veelgestelde Vragen (FAQ)',
+    tags: ['Prompt Engineering', 'ChatGPT', 'Claude', 'Generatieve AI'],
   },
   pl: {
-    s1: "1. Awaryjna sytuacja związana z halucynacjami i błędami AI",
-    s2: "2. Szczegółowa analiza przyczyn nieudanych promptów i luk w logice",
-    s3: "3. Gotowy szablon master promptu do natychmiastowego użycia",
-    s4: "4. Wskazówki i ostrzeżenia profesjonalnego inżyniera promptów",
-    s5: "5. Najczęściej zadawane pytania (FAQ)",
-    tags: ["Inżynieria Promptów", "ChatGPT", "Claude", "Generatywna AI"]
+    s1: '1. Awaryjna sytuacja związana z halucynacjami i błędami AI',
+    s2: '2. Szczegółowa analiza przyczyn nieudanych promptów i luk w logice',
+    s3: '3. Gotowy szablon master promptu do natychmiastowego użycia',
+    s4: '4. Wskazówki i ostrzeżenia profesjonalnego inżyniera promptów',
+    s5: '5. Najczęściej zadawane pytania (FAQ)',
+    tags: ['Inżynieria Promptów', 'ChatGPT', 'Claude', 'Generatywna AI'],
   },
   id: {
-    s1: "1. Situasi Kritis Akibat Halusinasi AI dan Output Menyesatkan",
-    s2: "2. Analisis Mendalam Kegagalan Prompt dan Kerusakan Logika",
-    s3: "3. Templat Master Prompt Siap Pakai yang Sangat Efektif",
-    s4: "4. Tips & Peringatan Penting Pakar Prompt Engineering",
-    s5: "5. Pertanyaan yang Sering Diajukan (FAQ)",
-    tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Generatif"]
+    s1: '1. Situasi Kritis Akibat Halusinasi AI dan Output Menyesatkan',
+    s2: '2. Analisis Mendalam Kegagalan Prompt dan Kerusakan Logika',
+    s3: '3. Templat Master Prompt Siap Pakai yang Sangat Efektif',
+    s4: '4. Tips & Peringatan Penting Pakar Prompt Engineering',
+    s5: '5. Pertanyaan yang Sering Diajukan (FAQ)',
+    tags: ['Prompt Engineering', 'ChatGPT', 'Claude', 'AI Generatif'],
   },
   vi: {
-    s1: "1. Tình huống khẩn cấp do AI trả lời ảo giác và sai lệch",
-    s2: "2. Phân tích nguyên nhân gốc rễ lỗi câu lệnh và logic AI",
-    s3: "3. Mẫu câu lệnh Master Prompt thực chiến sao chép dùng ngay",
-    s4: "4. Lời khuyên và lưu ý quan trọng từ kỹ sư thiết kế câu lệnh",
-    s5: "5. Các câu hỏi thường gặp (FAQ)",
-    tags: ["Prompt Engineering", "ChatGPT", "Claude", "AI Tạo Sinh"]
-  }
+    s1: '1. Tình huống khẩn cấp do AI trả lời ảo giác và sai lệch',
+    s2: '2. Phân tích nguyên nhân gốc rễ lỗi câu lệnh và logic AI',
+    s3: '3. Mẫu câu lệnh Master Prompt thực chiến sao chép dùng ngay',
+    s4: '4. Lời khuyên và lưu ý quan trọng từ kỹ sư thiết kế câu lệnh',
+    s5: '5. Các câu hỏi thường gặp (FAQ)',
+    tags: ['Prompt Engineering', 'ChatGPT', 'Claude', 'AI Tạo Sinh'],
+  },
 };
 
 // =========================================================================
@@ -165,7 +167,7 @@ function inspectAndHealMarkdown(body, langCode) {
 
   if (!healed.startsWith('## 1.')) {
     healed = `## ${i18n.s1}\n\n` + healed;
-    auditLogs.push("1번 헤딩 주입");
+    auditLogs.push('1번 헤딩 주입');
   }
 
   // 2) 🛡️ Q&A 줄바꿈 뭉개짐 자동 분리 치유 (질문과 답변 사이 빈 줄 2개 보장)
@@ -175,15 +177,16 @@ function inspectAndHealMarkdown(body, langCode) {
     healed = healed.replace(/\s*(\*\*A[1-3]\.\*\*|A[1-3]\.)\s*/gi, '\n\n**$1** ');
     healed = healed.replace(/\*\*\s*\*\*(Q[1-3]\.|A[1-3]\.)\*\*\s*\*\*/gi, '**$1**');
     healed = healed.replace(/\*\*(Q[1-3]\.|A[1-3]\.)\*\*/gi, '**$1**');
-    auditLogs.push("Q&A 줄바꿈 2열 분리 치유");
+    auditLogs.push('Q&A 줄바꿈 2열 분리 치유');
   }
 
   // 3) 볼드 기호 안쪽 공백 정돈 (** 단어 ** -> **단어**)
   if (/\*\*\s+[^*]+?\s+\*\*/.test(healed)) {
-    healed = healed.replace(/\*\*\s+([^*]+?)\s+\*\*/g, '**$1**')
-                   .replace(/\*\*\s+([^*]+?)\*\*/g, '**$1**')
-                   .replace(/\*\*([^*]+?)\s+\*\*/g, '**$1**');
-    auditLogs.push("볼드 공백 정돈");
+    healed = healed
+      .replace(/\*\*\s+([^*]+?)\s+\*\*/g, '**$1**')
+      .replace(/\*\*\s+([^*]+?)\*\*/g, '**$1**')
+      .replace(/\*\*([^*]+?)\s+\*\*/g, '**$1**');
+    auditLogs.push('볼드 공백 정돈');
   }
 
   // 4) 특수문자 및 수식 인라인 백틱화
@@ -191,10 +194,11 @@ function inspectAndHealMarkdown(body, langCode) {
     return `\`${match.replace(/\$/g, '').trim()}\``;
   });
   healed = healed.replace(/\$([A-Za-z0-9_-]+)\$/g, '`$1`');
-  healed = healed.replace(/\\times/g, 'x')
-                 .replace(/\\circ/g, '°')
-                 .replace(/\\approx/g, '≈')
-                 .replace(/~/g, '-');
+  healed = healed
+    .replace(/\\times/g, 'x')
+    .replace(/\\circ/g, '°')
+    .replace(/\\approx/g, '≈')
+    .replace(/~/g, '-');
 
   // 5) 연속 빈 줄 압축
   healed = healed.replace(/\n{3,}/g, '\n\n').trim();
@@ -207,81 +211,199 @@ function inspectAndHealMarkdown(body, langCode) {
 }
 
 if (!fs.existsSync(TOPICS_FILE)) {
-  console.error("❌ topics.txt 파일이 존재하지 않습니다.");
+  console.error('❌ topics.txt 파일이 존재하지 않습니다.');
   process.exit(1);
 }
 
 const fileContent = fs.readFileSync(TOPICS_FILE, 'utf-8');
-const lines = fileContent.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+const lines = fileContent
+  .split('\n')
+  .map((l) => l.trim())
+  .filter((l) => l.length > 0);
 
 if (lines.length === 0) {
-  console.log("⚠️ topics.txt에 남은 주제가 없습니다. 생성을 건너뜁니다.");
+  console.log('⚠️ topics.txt에 남은 주제가 없습니다. 생성을 건너뜁니다.');
   process.exit(0);
 }
 
 const currentTopic = lines[0];
+const topicKey = createCheckpointKey(lines, GENERATION_PROMPT_VERSION);
+const checkpointRoot = path.resolve('.generation-checkpoints');
+const checkpointDir = path.join(checkpointRoot, topicKey);
+const checkpointEncryptionKey = createHash('sha256')
+  .update('blog-locale-checkpoint-v1\0', 'utf8')
+  .update(OPENAI_API_KEY, 'utf8')
+  .digest();
+
+function readEncryptedCheckpoint(filePath) {
+  const envelope = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  if (envelope.version !== 1) throw new Error('체크포인트 형식 버전이 다릅니다.');
+  const decipher = createDecipheriv('aes-256-gcm', checkpointEncryptionKey, Buffer.from(envelope.iv, 'base64'));
+  decipher.setAuthTag(Buffer.from(envelope.authTag, 'base64'));
+  return Buffer.concat([decipher.update(Buffer.from(envelope.ciphertext, 'base64')), decipher.final()]).toString(
+    'utf8'
+  );
+}
+
+function writeEncryptedCheckpoint(filePath, text) {
+  const iv = randomBytes(12);
+  const cipher = createCipheriv('aes-256-gcm', checkpointEncryptionKey, iv);
+  const ciphertext = Buffer.concat([cipher.update(text, 'utf8'), cipher.final()]);
+  const envelope = {
+    version: 1,
+    iv: iv.toString('base64'),
+    authTag: cipher.getAuthTag().toString('base64'),
+    ciphertext: ciphertext.toString('base64'),
+  };
+  fs.writeFileSync(filePath, JSON.stringify(envelope), 'utf8');
+}
 console.log(`📌 오늘 처리할 주제 [4호기 AI Prompt Engineering]: "${currentTopic}"`);
 
-const PROMPT_CRISIS_SCENARIOS_30 = [
-  "급작스러운 부서장 호출로 30분 뒤 신사업 전략 초안을 들고 들어가야 하는데, 챗GPT가 뜬구름 잡는 원론적인 답변만 늘어놓을 때",
-  "경쟁사 시장 분석 보고서를 오늘 퇴근 전까지 제출해야 하는데, AI가 검색해도 안 나오는 가짜 수치(환각 현상)를 당당하게 지어낼 때",
-  "해외 바이어에게 보낼 영문 비즈니스 제안서를 다듬어야 하는데, 번역기 특유의 어색한 문체 때문에 신뢰도가 떨어져 보일 때",
-  "점심시간 직후 진행될 팀 브레인스토밍 회의를 위해 파격적인 마케팅 카피 20개가 급히 필요한 난감한 순간",
-  "새벽 2시 홀로 남아 스타트업 투자 유치용 IR 피치덱 발표 스크립트를 작성하던 중 창의력과 체력이 완전히 고갈되었을 때",
-  "분기 성과 발표를 위해 50페이지짜리 사내 설문조사 주관식 답변을 정량적으로 분류하고 요약해야 하는 막막한 상황",
-  "클라이언트가 제시한 까다로운 브랜드 가이드라인과 톤앤매너를 지키면서 블로그 콘텐츠 초안을 대량 생산해야 할 때",
-  "월요일 아침 전사 주간 회의 직전, 주말 사이 쏟아진 산업 동향 뉴스 30편을 3줄 핵심 브리핑으로 즉시 정리해야 할 때",
-  "간단한 파이썬 데이터 크롤링 스크립트를 짜달라고 했으나 폐기된 구버전 라이브러리 문법을 추천해 오류가 쏟아질 때",
-  "복잡한 SQL 쿼리 최적화를 위해 프롬프트를 넣었으나 테이블 조인(JOIN) 논리가 꼬인 엉터리 코드를 반환했을 때",
-  "웹 프론트엔드 인터랙티브 컴포넌트를 Claude Artifacts로 뽑아내려는데 스타일 시트가 깨져 화면이 뭉개지는 순간",
-  "정규표현식(Regex) 패턴 하나가 계속 매칭에 실패해 1시간째 프롬프트와 정규식을 번갈아 수정하며 헤매던 오후",
-  "API 호출 결과를 JSON 포맷으로 깔끔하게 받아내야 하는데 자꾸 마크다운 설명글을 덧붙여 파싱 에러를 유발할 때",
-  "사내 업무 자동화 봇을 구축하면서 사용자 입력의 다양한 예외 케이스를 처리할 강력한 퓨샷(Few-shot) 예시가 부족할 때",
-  "노코드 툴과 웹훅을 연결하는 과정에서 데이터 스키마 변환 규칙을 AI에게 정확히 인지시키지 못해 병목이 생겼을 때",
-  "대용량 CSV 텍스트 데이터를 분석 창에 업로드했으나 토큰 한도 초과(Context Window Limit)로 문맥이 잘려나갈 때",
-  "법률 판례나 사내 취업규칙 관련 질문을 던졌더니 실제 법조문과 정반대되는 위험한 조언을 천연덕스럽게 생성할 때",
-  "AI에게 특정 전문가 페르소나를 부여했으나 몇 번 대화가 오가자마자 원래의 로봇 같은 중립적 어조로 되돌아갈 때",
-  "복잡한 5단계 업무 프로세스를 지시했으나 중간 3단계를 건너뛰고 결과물만 성의 없이 뱉어내는 멍청한 결과를 봤을 때",
-  "사내 보안 규정상 고객 실명을 넣지 못하는 상태에서 맥락을 잃지 않고 문서를 재구성하도록 프롬프트를 설계해야 할 때",
-  "의료/바이오 관련 전문 용어가 가득한 논문 초록을 일반인도 이해하기 쉬운 설명문으로 변환하는 데 실패했을 때",
-  "고객 응대(CS) 자동 챗봇의 시스템 프롬프트가 악의적인 탈옥(Jailbreak) 프롬프트에 뚫려 엉뚱한 답변을 내놓을 위험에 처했을 때",
-  "다국어 로컬라이징 번역을 맡겼는데 현지 문화적 맥락을 반영하지 못하고 단어를 직역해 브랜드 이미지를 깎아먹을 뻔했을 때",
-  "회의 녹음 텍스트에서 말하는 사람별 핵심 주장과 액션 플랜(To-Do)만 칼같이 추출하고 싶은데 온갖 잡담까지 다 긁어모아 줄 때",
-  "신규 입사자 교육용 방대한 매뉴얼을 10분 만에 퀴즈와 플래시 카드로 인터랙티브하게 재가공해야 하는 상황",
-  "반복되는 일일 업무 보고 작성을 위해 단 3개의 키워드만 넣으면 완벽한 양식으로 완성해 주는 전용 템플릿이 절실할 때",
-  "팀원마다 AI 결과물의 품질 편차가 너무 심해 부서 전체가 공통으로 쓸 표준 시스템 프롬프트 라이브러리가 필요할 때",
-  "소셜 미디어(인스타그램, 스레드, 링크드인) 채널별 성격에 맞게 1개의 원 소스를 3가지 다른 포맷으로 즉시 변환해야 할 때",
-  "길고 지루한 연구 리포트를 읽을 시간이 없어 저자의 핵심 논리와 한계점을 날카롭게 비판하는 반론 요약이 급할 때",
-  "AI 모델의 최신 업데이트 이후 기존에 잘 쓰던 프롬프트가 예전만큼 정교한 결과물을 내지 못해 전면 수정이 필요한 순간"
-];
-
 const THEME_PRESETS = [
-  { id: 1, name: "Cyberpunk Terminal", primaryColor: "#00ffcc", bgColor: "#111827", layout: "CLI/터미널 스타일, 핵심 프롬프트 한 줄 최상단 배치" },
-  { id: 2, name: "Modern Minimalist Slate", primaryColor: "#3b82f6", bgColor: "#f8fafc", layout: "미니멀 가이드 스타일, 여백 중심의 깔끔한 단계별 프롬프트 빌딩" },
-  { id: 3, name: "Industrial Blueprint", primaryColor: "#f59e0b", bgColor: "#1e293b", layout: "엔지니어링 청사진 스타일, 프롬프트 구조 분해 및 전후 비교표 포함" },
-  { id: 4, name: "Retro Monokai", primaryColor: "#a6e22e", bgColor: "#272822", layout: "개발자 에디터 스타일, 실전 프롬프트 코드 박스 중심 전개, 디버깅 팁" },
-  { id: 5, name: "Nordic Clean Ice", primaryColor: "#0284c7", bgColor: "#f0f9ff", layout: "북유럽 감성 클린 레이아웃, 인용구 중심 도입부, 실전 체크리스트" }
+  {
+    id: 1,
+    name: 'Cyberpunk Terminal',
+    primaryColor: '#00ffcc',
+    bgColor: '#111827',
+    layout: 'CLI/터미널 스타일, 핵심 프롬프트 한 줄 최상단 배치',
+  },
+  {
+    id: 2,
+    name: 'Modern Minimalist Slate',
+    primaryColor: '#3b82f6',
+    bgColor: '#f8fafc',
+    layout: '미니멀 가이드 스타일, 여백 중심의 깔끔한 단계별 프롬프트 빌딩',
+  },
+  {
+    id: 3,
+    name: 'Industrial Blueprint',
+    primaryColor: '#f59e0b',
+    bgColor: '#1e293b',
+    layout: '엔지니어링 청사진 스타일, 프롬프트 구조 분해 및 전후 비교표 포함',
+  },
+  {
+    id: 4,
+    name: 'Retro Monokai',
+    primaryColor: '#a6e22e',
+    bgColor: '#272822',
+    layout: '개발자 에디터 스타일, 실전 프롬프트 코드 박스 중심 전개, 디버깅 팁',
+  },
+  {
+    id: 5,
+    name: 'Nordic Clean Ice',
+    primaryColor: '#0284c7',
+    bgColor: '#f0f9ff',
+    layout: '북유럽 감성 클린 레이아웃, 인용구 중심 도입부, 실전 체크리스트',
+  },
 ];
 
 const TARGET_LANGS = [
-  { code: 'ko', name: 'Korean', persona: '친절하고 실무 경험이 많은 AI 프롬프트 아키텍트 및 생산성 컨설턴트', osUi: 'ChatGPT, Claude, Gemini, 프롬프트 입력창, 시스템 프롬프트 설정', localeContext: '서울/판교 IT 오피스 및 기업 전략 기획 부서' },
-  { code: 'en', name: 'English', persona: 'Senior AI prompt engineer and LLM automation specialist', osUi: 'ChatGPT, Claude, Gemini, System Instructions, Artifacts', localeContext: 'Silicon Valley tech startup / New York creative & marketing agency' },
-  { code: 'ja', name: 'Japanese', persona: 'プロンプトエンジニアリングと生成AI活用を分かりやすく教える現役AIアーキテクト', osUi: 'ChatGPT, Claude, Gemini, システムプロンプト, アーティファクト', localeContext: '東京・丸の内および渋谷のITビジネスオフィス' },
-  { code: 'de', name: 'German', persona: 'Erfahrener Prompt-Architekt und Berater für generative KI-Systeme', osUi: 'ChatGPT, Claude, Gemini, Systemanweisungen, Einstellungen', localeContext: 'Frankfurter Bankenviertel und Berliner Tech-Szene' },
-  { code: 'fr', name: 'French', persona: 'Ingénieur en prompt design et spécialiste de la productivité par l\'IA', osUi: 'ChatGPT, Claude, Gemini, Instructions système, Paramètres', localeContext: 'Agences de conseil et sièges d\'entreprise à Paris La Défense' },
-  { code: 'es', name: 'Spanish', persona: 'Especialista en ingeniería de prompts y optimización con modelos LLM', osUi: 'ChatGPT, Claude, Gemini, Instrucciones personalizadas, Artifacts', localeContext: 'Oficinas corporativas y consultoras en Madrid y Barcelona' },
-  { code: 'it', name: 'Italian', persona: 'Architetto di prompt esperto nell\'automazione aziendale con intelligenza artificiale', osUi: 'ChatGPT, Claude, Gemini, Istruzioni di sistema, Impostazioni', localeContext: 'Studi professionali e agenzie digitali a Milano' },
-  { code: 'pt', name: 'Portuguese', persona: 'Especialista em engenharia de prompts e automação prática com IA generativa', osUi: 'ChatGPT, Claude, Gemini, Instruções personalizadas, Configurações', localeContext: 'Polos de inovação e empresas na Avenida Paulista em São Paulo' },
-  { code: 'nl', name: 'Dutch', persona: 'Nederlandse prompt engineer en specialist in generatieve AI-tools', osUi: 'ChatGPT, Claude, Gemini, Systeeminstructies, Instellingen', localeContext: 'Zuidas en innovatiehubs in Amsterdam' },
-  { code: 'pl', name: 'Polish', persona: 'Architekt promptów i praktyk narzędzi generatywnej sztucznej inteligencji', osUi: 'ChatGPT, Claude, Gemini, Instrukcje systemowe, Ustawienia', localeContext: 'Warszawski sektor IT i nowoczesne centra biznesowe' },
-  { code: 'id', name: 'Indonesian', persona: 'Praktisi AI prompt engineering dan otomatisasi workflow digital', osUi: 'ChatGPT, Claude, Gemini, Instruksi kustom, Pengaturan', localeContext: 'Kawasan bisnis Sudirman Central Business District (SCBD) Jakarta' },
-  { code: 'vi', name: 'Vietnamese', persona: 'Chuyên gia thiết kế câu lệnh AI (Prompt Engineer) và tự động hóa công việc', osUi: 'ChatGPT, Claude, Gemini, Hướng dẫn hệ thống, Cài đặt', localeContext: 'Tòa nhà văn phòng công nghệ cao tại Quận 1, TP. Hồ Chí Minh' }
+  {
+    code: 'ko',
+    name: 'Korean',
+    persona: '친절하고 실무 경험이 많은 AI 프롬프트 아키텍트 및 생산성 컨설턴트',
+    osUi: 'ChatGPT, Claude, Gemini, 프롬프트 입력창, 시스템 프롬프트 설정',
+    localeContext: '서울/판교 IT 오피스 및 기업 전략 기획 부서',
+  },
+  {
+    code: 'en',
+    name: 'English',
+    persona: 'Senior AI prompt engineer and LLM automation specialist',
+    osUi: 'ChatGPT, Claude, Gemini, System Instructions, Artifacts',
+    localeContext: 'Silicon Valley tech startup / New York creative & marketing agency',
+  },
+  {
+    code: 'ja',
+    name: 'Japanese',
+    persona: 'プロンプトエンジニアリングと生成AI活用を分かりやすく教える現役AIアーキテクト',
+    osUi: 'ChatGPT, Claude, Gemini, システムプロンプト, アーティファクト',
+    localeContext: '東京・丸の内および渋谷のITビジネスオフィス',
+  },
+  {
+    code: 'de',
+    name: 'German',
+    persona: 'Erfahrener Prompt-Architekt und Berater für generative KI-Systeme',
+    osUi: 'ChatGPT, Claude, Gemini, Systemanweisungen, Einstellungen',
+    localeContext: 'Frankfurter Bankenviertel und Berliner Tech-Szene',
+  },
+  {
+    code: 'fr',
+    name: 'French',
+    persona: "Ingénieur en prompt design et spécialiste de la productivité par l'IA",
+    osUi: 'ChatGPT, Claude, Gemini, Instructions système, Paramètres',
+    localeContext: "Agences de conseil et sièges d'entreprise à Paris La Défense",
+  },
+  {
+    code: 'es',
+    name: 'Spanish',
+    persona: 'Especialista en ingeniería de prompts y optimización con modelos LLM',
+    osUi: 'ChatGPT, Claude, Gemini, Instrucciones personalizadas, Artifacts',
+    localeContext: 'Oficinas corporativas y consultoras en Madrid y Barcelona',
+  },
+  {
+    code: 'it',
+    name: 'Italian',
+    persona: "Architetto di prompt esperto nell'automazione aziendale con intelligenza artificiale",
+    osUi: 'ChatGPT, Claude, Gemini, Istruzioni di sistema, Impostazioni',
+    localeContext: 'Studi professionali e agenzie digitali a Milano',
+  },
+  {
+    code: 'pt',
+    name: 'Portuguese',
+    persona: 'Especialista em engenharia de prompts e automação prática com IA generativa',
+    osUi: 'ChatGPT, Claude, Gemini, Instruções personalizadas, Configurações',
+    localeContext: 'Polos de inovação e empresas na Avenida Paulista em São Paulo',
+  },
+  {
+    code: 'nl',
+    name: 'Dutch',
+    persona: 'Nederlandse prompt engineer en specialist in generatieve AI-tools',
+    osUi: 'ChatGPT, Claude, Gemini, Systeeminstructies, Instellingen',
+    localeContext: 'Zuidas en innovatiehubs in Amsterdam',
+  },
+  {
+    code: 'pl',
+    name: 'Polish',
+    persona: 'Architekt promptów i praktyk narzędzi generatywnej sztucznej inteligencji',
+    osUi: 'ChatGPT, Claude, Gemini, Instrukcje systemowe, Ustawienia',
+    localeContext: 'Warszawski sektor IT i nowoczesne centra biznesowe',
+  },
+  {
+    code: 'id',
+    name: 'Indonesian',
+    persona: 'Praktisi AI prompt engineering dan otomatisasi workflow digital',
+    osUi: 'ChatGPT, Claude, Gemini, Instruksi kustom, Pengaturan',
+    localeContext: 'Kawasan bisnis Sudirman Central Business District (SCBD) Jakarta',
+  },
+  {
+    code: 'vi',
+    name: 'Vietnamese',
+    persona: 'Chuyên gia thiết kế câu lệnh AI (Prompt Engineer) và tự động hóa công việc',
+    osUi: 'ChatGPT, Claude, Gemini, Hướng dẫn hệ thống, Cài đặt',
+    localeContext: 'Tòa nhà văn phòng công nghệ cao tại Quận 1, TP. Hồ Chí Minh',
+  },
 ];
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
-const fileSlug = `post-${Date.now().toString(36)}`;
+const fileSlug = createTopicFileSlug(currentTopic);
+const generatedPostContents = new Map();
 
-const generatedPostFiles = [];
+// 이전 주제 체크포인트를 정리하고, 같은 topics 큐의 검증된 언어 원고는 실패 뒤 재사용합니다.
+if (fs.existsSync(checkpointRoot)) {
+  for (const entry of fs.readdirSync(checkpointRoot, { withFileTypes: true })) {
+    if (entry.isDirectory() && entry.name !== topicKey) {
+      fs.rmSync(path.join(checkpointRoot, entry.name), { recursive: true, force: true });
+    }
+  }
+}
+
+if (fs.existsSync(checkpointDir)) {
+  for (const fileName of fs.readdirSync(checkpointDir)) {
+    if (fileName.endsWith('.md')) {
+      fs.unlinkSync(path.join(checkpointDir, fileName));
+    }
+  }
+}
 
 // =========================================================================
 // [호출 함수] maxOutputTokens: 8192 (2,500자 정량 생성 최적화)
@@ -335,138 +457,194 @@ function validateGeneratedPost(text, langCode) {
   for (const field of ['title', 'description', 'publishDate', 'image']) {
     if (!new RegExp('^' + field + ':\\s*\\S', 'm').test(fm[1])) errors.push(field + ' 누락');
   }
-  if (body.length < (langCode === 'ko' ? 1000 : 1800)) errors.push('본문 길이 부족 또는 잘림');
-  if ((body.match(/^##\s+/gm) || []).length < 5) errors.push('H2 섹션 5개 미만');
-  if ((body.match(/\*\*Q[1-3]\.\*\*/gi) || []).length < 3) errors.push('FAQ 질문 3개 미만');
-  if ((body.match(/\*\*A[1-3]\.\*\*/gi) || []).length < 3) errors.push('FAQ 답변 3개 미만');
-  if (langCode !== 'ko' && /[가-힣]/.test(body)) errors.push('비한국어 본문에 한글 포함');
+  const description = fm[1].match(/^description:\s*["']?([^\r\n"']*)/m)?.[1]?.trim() || '';
+  if (description.length > 160) errors.push('description 160자 초과');
+  if (!/^image:\s*["']?https?:\/\//m.test(fm[1])) errors.push('image URL 형식 오류');
+
+  const bodyWithoutCode = body.replace(/```[\s\S]*?```/g, ' ');
+  const plainBody = bodyWithoutCode
+    .replace(/!\[[^\]]*\]\([^)]+\)/g, ' ')
+    .replace(/\[[^\]]+\]\([^)]+\)/g, ' ')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/^#+\s*/gm, '')
+    .replace(/[>*_~|]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const nonSpaceLength = [...plainBody].filter((char) => !/\s/u.test(char)).length;
+  const words = [...plainBody.matchAll(/[\p{L}\p{N}]+(?:['’.-][\p{L}\p{N}]+)*/gu)].length;
+  if ((bodyWithoutCode.match(/^##\s+/gm) || []).length !== 5) errors.push('H2 섹션은 정확히 5개여야 함');
+  for (const n of [1, 2, 3]) {
+    const questionMarker = '**Q' + n + '.**';
+    const answerMarker = '**A' + n + '.**';
+    if (bodyWithoutCode.split(questionMarker).length - 1 !== 1)
+      errors.push('FAQ 질문 Q' + n + ' 표식이 정확히 1개 필요');
+    if (bodyWithoutCode.split(answerMarker).length - 1 !== 1) errors.push('FAQ 답변 A' + n + ' 표식이 정확히 1개 필요');
+  }
+  if (langCode === 'ko' && nonSpaceLength < 1800) errors.push('한국어 본문 공백 제외 1,800자 미만');
+  if (langCode === 'ko' && nonSpaceLength > 3600) errors.push('한국어 본문 공백 제외 3,600자 초과');
+  if (langCode === 'ja' && nonSpaceLength < 900) errors.push('일본어 본문 공백 제외 900자 미만');
+  if (!['ko', 'ja'].includes(langCode) && words < 650) errors.push('본문 650단어 미만');
+  if (!['ko', 'ja'].includes(langCode) && words > 1500) errors.push('본문 1,500단어 초과');
+
+  const hangulCount = (plainBody.match(/[가-힣]/g) || []).length;
+  const kanaCount = (plainBody.match(/[\u3040-\u30ff]/g) || []).length;
+  const latinCount = (plainBody.match(/\p{Script=Latin}/gu) || []).length;
+  if (langCode === 'ko' && hangulCount < 300) errors.push('한국어 본문 한글 문자 부족');
+  if (langCode === 'ja' && kanaCount < 80) errors.push('일본어 본문 가나 문자 부족');
+  if (langCode !== 'ko' && hangulCount > 0) errors.push('비한국어 본문에 한글 포함');
+  if (langCode !== 'ja' && kanaCount > 40) errors.push('일본어 외 본문에 가나 문자 과다 포함');
+  if (!['ko', 'ja'].includes(langCode) && latinCount < words * 0.6)
+    errors.push('본문 문자 체계가 라틴 문자 locale과 맞지 않음');
   return errors;
 }
-
 async function generateSinglePost(lang, index) {
+  const checkpointPath = path.join(checkpointDir, `${lang.code}.enc`);
+  if (fs.existsSync(checkpointPath)) {
+    try {
+      const cachedText = readEncryptedCheckpoint(checkpointPath);
+      const cachedErrors = validateGeneratedPost(cachedText, lang.code);
+      if (cachedErrors.length === 0) {
+        generatedPostContents.set(lang.code, cachedText);
+        console.log(`\n♻️ [${index + 1}/12] ${lang.name} (${lang.code}) 암호화된 검증 원고 재사용`);
+        return true;
+      }
+      fs.unlinkSync(checkpointPath);
+      console.warn(`⚠️ ${lang.code} 체크포인트 검수 실패로 다시 생성합니다: ${cachedErrors.join(', ')}`);
+    } catch {
+      fs.unlinkSync(checkpointPath);
+      console.warn(`⚠️ ${lang.code} 암호화 체크포인트를 읽을 수 없어 다시 생성합니다.`);
+    }
+  }
+
   const selectedTheme = THEME_PRESETS[Math.floor(Math.random() * THEME_PRESETS.length)];
-  const selectedScenario = PROMPT_CRISIS_SCENARIOS_30[Math.floor(Math.random() * PROMPT_CRISIS_SCENARIOS_30.length)];
   const i18n = I18N_SECTIONS[lang.code] || I18N_SECTIONS.ko;
 
-  console.log(`\n🚀 [${index + 1}/12] ${lang.name} (${lang.code}) 4호기 애드센스 표준 생성 중... (테마: ${selectedTheme.name})`);
+  console.log(
+    `\n🚀 [${index + 1}/12] ${lang.name} (${lang.code}) 4호기 애드센스 표준 생성 중... (테마: ${selectedTheme.name})`
+  );
 
   const { coverUrl, bodyUrl } = getPostImages(currentTopic, index);
   const pubDateIso = getKstPublishDateIso();
 
   // 🎯 [애드센스 승인 최적화 프롬프트: 2,400~2,600자 정량화]
   const prompt = `
-You are a ${lang.persona}.
-Write a high-quality, practical AI prompt engineering guide natively in ${lang.name}.
-Target Culture: "${lang.localeContext}"
-Assigned Situation: "${selectedScenario}"
+Write an original practical prompt-engineering guide natively in ${lang.name}, with independent wording and examples for this locale. This is a separate locale-specific article generation call, not a translation.
 Topic: "${currentTopic}"
+Audience and cultural context: "${lang.localeContext}"
+Do not force a hallucination, token, temperature, or master-prompt discussion unless it directly applies. Do not claim personal experience or credentials. Do not invent model behavior, facts, quotations, customer cases, or outcomes.
 
-[ADSENSE QUALITY & LENGTH REQUIREMENT]
-- For Korean (ko): Write exactly around 2,400 - 2,600 characters (do NOT exceed 3,000 characters).
-- For other languages: Write exactly 900 - 1,100 words.
-- Tone: Highly informative, professional, practical workplace advice.
-- Narrative voice: Write in a first-person storytelling voice ("I"/the natural first-person form in ${lang.name}) from the assigned expert persona's perspective.
-- Open with a vivid but clearly illustrative scene based on the assigned situation; use roughly 30% of the article for first-person story and transitions and 70% for verified explanations, step-by-step guidance, and safety information. Build a story arc from the urgent problem through diagnosis, safe action, and outcome.
-- Do not falsely claim that an illustrative scenario is a real customer case or the author's personal experience. Do not invent verified outcomes, quotations, or facts. Clearly frame hypothetical/composite events as illustrative.
-- Keep first-person narration throughout the opening and transitions, while making technical instructions, safety warnings, and sources precise and factual.
+Length and style:
+- Korean: about 2,400–2,600 characters, maximum 3,000 characters.
+- Other locales: about 900–1,100 words (Japanese: at least 900 non-space characters).
+- Aim for an engaging opening and transitions (about 30%) and useful, accurate explanation and actionable steps (about 70%).
+- Carry a natural first-person storytelling voice through the article. Aim for roughly 30% narrator reasoning, decisions, and transitions and 70% practical explanations, verifiable steps, and safety information. Use first person to explain what the guide would check and why; do not claim real personal events, credentials, customer cases, or results.
+- In the opening paragraph, naturally present a specific situation the reader may recognize and the key unresolved question. Answer it in useful stages, using first-person reasoning and brief transitions to give readers a reason to continue. Avoid clickbait, exaggeration, fabricated personal or customer experiences, hypothetical-scene disclaimers, and rigid opening formulas; phrase this naturally for the locale.
+- Write idiomatic ${lang.name}, not translated wording. Localize examples and UI labels only when relevant.
 
-[STRUCTURE - STRICT 5 H2 HEADINGS]
-Use these exact H2 headings:
-
+Use these five localized H2 headings exactly, in this order:
 ## ${i18n.s1}
-Write 2 detailed paragraphs describing the sudden AI output failure, hallucinated garbage, and urgent deadline crisis based on: "${selectedScenario}".
-
+Introduce a recognizable situation directly connected to "${currentTopic}" without claiming an invented event happened.
 ## ${i18n.s2}
-Write 2 analytical paragraphs explaining the technical root causes (token probability distribution, temperature impact, attention limits, and lack of explicit constraints).
-
+Explain topic-specific causes, limits, and clues. Avoid generic model claims that do not apply.
 ## ${i18n.s3}
-Provide a complete, copy-and-paste Master Prompt Template matching "${lang.osUi}". Wrap the template in a 3-backtick markdown block with structured parameters ([Context], [Role], [Objective], [Constraints], [Output Format]).
-
+Give clear steps or a reusable template only if it directly helps solve this topic.
 ## ${i18n.s4}
-Write 2 paragraphs of practical precautions and prompt architect tips to prevent hallucinations and logic drift.
-
+Explain relevant precautions, common mistakes, and how to check the result.
 ## ${i18n.s5}
-Provide exactly 3 practical Q&A items. You MUST put an empty line between Question and Answer:
+Provide exactly three useful Q&A pairs with a blank line between each question and answer:
+**Q1.** Localized question
 
-**Q1.** Question text
+**A1.** Clear, useful answer.
 
-**A1.** Detailed answer (3-4 sentences).
+**Q2.** Localized question
 
-**Q2.** Question text
+**A2.** Clear, useful answer.
 
-**A2.** Detailed answer (3-4 sentences).
+**Q3.** Localized question
 
-**Q3.** Question text
+**A3.** Clear, useful answer.
 
-**A3.** Detailed answer (3-4 sentences).
+Use reliable sources for factual claims and include links only when you can identify a relevant source accurately. Do not add filler. Use Markdown, keep headings free of bold markers, and put prompt text/settings in inline code. ${lang.code !== 'ko' ? '- Do not use Korean characters.' : ''}
 
-[FORMATTING RULES]
-1. Never put asterisks (**) inside H2 headings.
-2. Bold keywords with strict syntax: **keyword** (no space inside asterisks).
-3. Put prompt tags, variables, or system settings in inline backticks (e.g. \`[Role]\`, \`temperature: 0.2\`).
-${lang.code !== 'ko' ? `- Absolutely NO Korean characters in non-Korean posts.` : ''}
-
-[Strict Output Format]
-Return ONLY raw Markdown starting directly with frontmatter:
+Return only raw Markdown with this frontmatter:
 ---
-title: "Native Clear Title in ${lang.name}"
-description: "Native concise description in ${lang.name} under 160 characters"
+title: "Native clear title in ${lang.name}"
+description: "Native concise description in ${lang.name}, maximum 160 characters"
 publishDate: ${pubDateIso}
 image: "${coverUrl}"
 category: "Prompt Engineering"
 tags: ${JSON.stringify(i18n.tags)}
 theme: "${selectedTheme.name}"
----
-`;
+---`;
 
   try {
-    let rawText = await fetchWithRetry(prompt);
-    let text = rawText.trim();
-    if (text.startsWith('```markdown')) text = text.replace(/^```markdown\n/, '').replace(/\n```$/, '');
-    if (text.startsWith('```')) text = text.replace(/^```\n/, '').replace(/\n```$/, '');
+    const normalizeGeneratedResponse = (rawText) => {
+      let text = rawText.trim();
+      if (text.startsWith('```markdown')) text = text.replace(/^```markdown\n/, '').replace(/\n```$/, '');
+      if (text.startsWith('```')) text = text.replace(/^```\n/, '').replace(/\n```$/, '');
 
-    const fmMatch = text.match(/^---[\s\S]*?---\n*/);
-    if (fmMatch) {
-      let frontmatter = fmMatch[0].trim();
-      let body = text.slice(fmMatch[0].length).trim();
-      body = body.replace(/^#\s+[^\n]+\n+/, '');
+      const fmMatch = text.match(/^---[\s\S]*?---\n*/);
+      if (fmMatch) {
+        let frontmatter = fmMatch[0].trim();
+        let body = text.slice(fmMatch[0].length).trim();
+        body = body.replace(/^#\s+[^\n]+\n+/, '');
 
-      // ⚠️ 4호기 카테고리 'Prompt Engineering' 영구 보존 강제 검증
-      frontmatter = frontmatter.replace(/category:\s*["'][^"']*["']/i, 'category: "Prompt Engineering"')
-                               .replace(/category:\s*[^\n\r]+/i, 'category: "Prompt Engineering"');
+        // ⚠️ 4호기 카테고리 'Prompt Engineering' 영구 보존 강제 검증
+        frontmatter = frontmatter
+          .replace(/category:\s*["'][^"']*["']/i, 'category: "Prompt Engineering"')
+          .replace(/category:\s*[^\n\r]+/i, 'category: "Prompt Engineering"');
 
-      // 🩺 [자가 검수 및 치유 엔진 가동]
-      body = inspectAndHealMarkdown(body, lang.code);
+        // 🩺 [자가 검수 및 치유 엔진 가동]
+        body = inspectAndHealMarkdown(body, lang.code);
 
-      if (lang.code === 'ko') {
-        console.log(`   📏 [4호기 본문 최종 글자 수] ${body.length}자 (애드센스 표준: 2,400~2,600자)`);
+        if (lang.code === 'ko') {
+          console.log(`   📏 [4호기 본문 최종 글자 수] ${body.length}자 (애드센스 표준: 2,400~2,600자)`);
+        }
+
+        // 본문 중간 이미지 배치 (2번 섹션 직전)
+        const safeAlt = currentTopic
+          .replaceAll('[', '')
+          .replaceAll(']', '')
+          .replaceAll('(', '')
+          .replaceAll(')', '')
+          .replaceAll('"', '')
+          .replaceAll("'", '')
+          .trim();
+        const middleImageMarkdown = `\n\n![${safeAlt} Prompt Guide](${bodyUrl})\n\n`;
+
+        if (!body.includes(bodyUrl)) {
+          if (body.includes('## 2.')) {
+            body = body.replace(/(##\s*2\.[^\n]+)/, `${middleImageMarkdown}$1`);
+          } else {
+            body = `${middleImageMarkdown}${body}`;
+          }
+        }
+
+        text = `${frontmatter}\n\n${body}\n`;
       }
 
-      // 본문 중간 이미지 배치 (2번 섹션 직전)
-      const safeAlt = currentTopic.replace(/[\[\]\(\)"']/g, '').trim();
-      const middleImageMarkdown = `\n\n![${safeAlt} Prompt Guide](${bodyUrl})\n\n`;
+      return text;
+    };
 
-      if (body.includes('## 2.')) {
-        body = body.replace(/(##\s*2\.[^\n]+)/, `${middleImageMarkdown}$1`);
-      } else {
-        body = `${middleImageMarkdown}${body}`;
-      }
-
-      text = `${frontmatter}\n\n${body}\n`;
+    let text = normalizeGeneratedResponse(await fetchWithRetry(prompt));
+    let validationErrors = validateGeneratedPost(text, lang.code);
+    for (let correctionAttempt = 1; validationErrors.length > 0 && correctionAttempt <= 2; correctionAttempt++) {
+      console.warn(
+        `⚠️ ${lang.code} 검수 실패(${validationErrors.join(', ')}). 해당 언어 correction ${correctionAttempt}/2 요청합니다.`
+      );
+      const repairPrompt = `You are correcting one generated ${lang.name} article for "${currentTopic}".\n\nFailed validation checks: ${validationErrors.join(', ')}. Return the complete Markdown including original frontmatter. Preserve existing useful content and factual meaning. Correct only the listed failures. If H2 headings are missing, use exactly these localized headings: ${[i18n.s1, i18n.s2, i18n.s3, i18n.s4, i18n.s5].map((heading) => '## ' + heading).join(' | ')}. Reorganize relevant existing content without adding filler, unsupported facts, invented first-person experiences, or customer anecdotes. Preserve required FAQ markers and language. Return raw Markdown only.\n\nOriginal article:\n${text}`;
+      text = normalizeGeneratedResponse(await fetchWithRetry(repairPrompt));
+      validationErrors = validateGeneratedPost(text, lang.code);
+    }
+    if (validationErrors.length > 0) {
+      throw new Error('발행 전 검수 실패(보정 2회 후): ' + validationErrors.join(', '));
     }
 
-    const targetDir = path.join(POSTS_BASE_DIR, lang.code);
-    if (!fs.existsSync(targetDir)) {
-      fs.mkdirSync(targetDir, { recursive: true });
-    }
-
-    const validationErrors = validateGeneratedPost(text, lang.code);
-    if (validationErrors.length) throw new Error('발행 전 검수 실패: ' + validationErrors.join(', '));
-
-    const filePath = path.join(targetDir, `${fileSlug}.md`);
-    fs.writeFileSync(filePath, text, 'utf-8');
-    generatedPostFiles.push(filePath);
-    console.log(`   ✅ [성공] 4호기 저장 완료: src/data/post/${lang.code}/${fileSlug}.md`);
+    fs.mkdirSync(checkpointDir, { recursive: true });
+    writeEncryptedCheckpoint(checkpointPath, text);
+    generatedPostContents.set(lang.code, text);
+    console.log(`   ✅ [검증 완료] ${lang.code} 원고를 재실행 복구용 체크포인트로 보존했습니다.`);
     return true;
   } catch (error) {
     console.error(`❌ [최종 실패] ${lang.name} 생성 실패:`, error.message);
@@ -475,33 +653,45 @@ theme: "${selectedTheme.name}"
 }
 
 async function run() {
-  console.log("==================================================");
-  console.log("⚡ [4호기 AI Prompt Engineering] (카테고리: Prompt Engineering) 12개국 고속 자동 포스팅 시작");
-  console.log("==================================================");
-
-  const batchStart = generatedPostFiles.length;
-  let successCount = 0;
+  console.log('==================================================');
+  console.log('⚡ [4호기 AI Prompt Engineering] 12개 언어 원고 검증 및 게시 시작 (최소 10개 통과)');
+  console.log('==================================================');
 
   for (let i = 0; i < TARGET_LANGS.length; i++) {
-    const isSuccess = await generateSinglePost(TARGET_LANGS[i], i);
-    if (isSuccess) successCount++;
-    if (i < TARGET_LANGS.length - 1) {
-      await delay(2000);
-    }
+    await generateSinglePost(TARGET_LANGS[i], i);
+    if (i < TARGET_LANGS.length - 1) await delay(2000);
   }
 
-  if (successCount === TARGET_LANGS.length) {
-    lines.shift();
-    fs.writeFileSync(TOPICS_FILE, lines.join('\n'), 'utf-8');
-    console.log(`\n🧹 총 ${successCount}개국 포스팅 완료. topics.txt에서 주제를 제거했습니다.`);
-    console.log(`📊 남은 주제 수: ${lines.length}개`);
-  } else {
-    for (const filePath of generatedPostFiles.slice(batchStart)) {
-      if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
-    }
-    console.error(`12개 언어 세트 검수 실패 (${successCount}/${TARGET_LANGS.length}). 생성된 이번 세트 파일을 되돌리고 topics.txt의 주제를 보존합니다.`);
+  const publication = decidePublishLocales(TARGET_LANGS, [...generatedPostContents.keys()], 10);
+  const successCount = publication.passingCodes.length;
+  const failedCodes = publication.failedCodes;
+  if (!publication.canPublish) {
+    console.error(
+      `세트 중단: 검증 통과 ${successCount}/12개로 최소 기준 10개 미만입니다. 실패 언어: ${failedCodes.join(', ')}. 공개 글과 topics.txt는 그대로 두고 암호화 체크포인트를 보존합니다.`
+    );
     process.exit(1);
   }
+
+  // 유효한 locale만 게시 직전 재검증하고 기록합니다.
+  for (const lang of publication.passingLocales) {
+    const text = generatedPostContents.get(lang.code);
+    if (typeof text !== 'string') throw new Error(`Missing validated locale checkpoint: ${lang.code}`);
+    const errors = validateGeneratedPost(text, lang.code);
+    if (errors.length) throw new Error(`${lang.code} 게시 직전 검증 실패: ${errors.join(', ')}`);
+  }
+  for (const lang of publication.passingLocales) {
+    const text = generatedPostContents.get(lang.code);
+    if (typeof text !== 'string') throw new Error(`Missing validated locale checkpoint: ${lang.code}`);
+    const targetDir = path.join(POSTS_BASE_DIR, lang.code);
+    fs.mkdirSync(targetDir, { recursive: true });
+    fs.writeFileSync(path.join(targetDir, `${fileSlug}.md`), text, 'utf-8');
+  }
+
+  lines.shift();
+  fs.writeFileSync(TOPICS_FILE, lines.join('\n'), 'utf-8');
+  console.log(`\n🧹 ${successCount}/12개 언어를 게시하고 topics.txt에서 주제를 소비했습니다.`);
+  if (failedCodes.length > 0) console.warn(`⚠️ 이번 세트에서 제외된 언어: ${failedCodes.join(', ')}`);
+  console.log(`📊 남은 주제 수: ${lines.length}개`);
 }
 
 run();

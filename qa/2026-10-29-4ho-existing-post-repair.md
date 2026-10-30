@@ -13,6 +13,7 @@
 - 사장님 승인에 따라 콘텐츠 전용 PR로 배포. Luna PR#1은 별도 유지. 자동발행 중지/유료 API 금지 유지.
 
 ## 수정 파일
+
 - `src/data/post/de/post-mvgstevc.md`
 - `src/data/post/de/post-mvhfvalq.md`
 - `src/data/post/de/post-mvhpc6zt.md`
@@ -143,7 +144,6 @@
 - `src/data/post/vi/post-mvplfhxk.md`
 - `src/data/post/vi/post-mvr0ygdj.md`
 - `src/data/post/vi/post-mvs0n6hy.md`
-
 
 ## Codex 재검증 — 2026-10-29 KST
 
