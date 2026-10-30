@@ -13,7 +13,7 @@ import { createHash, createCipheriv, createDecipheriv, randomBytes } from 'node:
 import { normalizeBoldWhitespace, validateFaqStructure } from './generation-markdown.mjs';
 import { createCheckpointKey, createTopicFileSlug, decidePublishLocales } from './generation-identity.mjs';
 
-const GENERATION_PROMPT_VERSION = '2026-10-30-neutral-narrator-v2';
+const GENERATION_PROMPT_VERSION = '2026-10-30-neutral-narrator-v3';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 if (!OPENAI_API_KEY) {
   console.error('❌ OPENAI_API_KEY 환경변수가 설정되지 않았습니다.');
@@ -308,21 +308,21 @@ const TARGET_LANGS = [
     name: 'Korean',
     persona: '실용적인 AI 프롬프트와 생산성 안내를 쉽게 풀어 쓰는 글쓴이',
     osUi: 'ChatGPT, Claude, Gemini, 프롬프트 입력창, 시스템 프롬프트 설정',
-    localeContext: '서울/판교 IT 오피스 및 기업 전략 기획 부서',
+    localeContext: 'Korean-language readers in South Korea across everyday work and personal settings',
   },
   {
     code: 'en',
     name: 'English',
     persona: 'Practical guide writer explaining AI prompts and productivity clearly',
     osUi: 'ChatGPT, Claude, Gemini, System Instructions, Artifacts',
-    localeContext: 'Silicon Valley tech startup / New York creative & marketing agency',
+    localeContext: 'English-language readers in the United States across everyday work and personal settings',
   },
   {
     code: 'ja',
     name: 'Japanese',
     persona: 'AIプロンプトと生産性向上を分かりやすく案内する実用ガイドの書き手',
     osUi: 'ChatGPT, Claude, Gemini, システムプロンプト, アーティファクト',
-    localeContext: '東京・丸の内および渋谷のITビジネスオフィス',
+    localeContext: 'Japanese-language readers in Japan across everyday work and personal settings',
   },
   {
     code: 'de',
@@ -336,56 +336,56 @@ const TARGET_LANGS = [
     name: 'French',
     persona: 'Rédacteur de guides pratiques sur les prompts IA et la productivité',
     osUi: 'ChatGPT, Claude, Gemini, Instructions système, Paramètres',
-    localeContext: "Agences de conseil et sièges d'entreprise à Paris La Défense",
+    localeContext: 'Lecteurs francophones en France dans leur vie quotidienne et professionnelle',
   },
   {
     code: 'es',
     name: 'Spanish',
     persona: 'Redactor de guías prácticas sobre prompts de IA y productividad',
     osUi: 'ChatGPT, Claude, Gemini, Instrucciones personalizadas, Artifacts',
-    localeContext: 'Oficinas corporativas y consultoras en Madrid y Barcelona',
+    localeContext: 'Lectores hispanohablantes en España en su vida cotidiana y profesional',
   },
   {
     code: 'it',
     name: 'Italian',
     persona: 'Autore di guide pratiche su prompt IA e produttività',
     osUi: 'ChatGPT, Claude, Gemini, Istruzioni di sistema, Impostazioni',
-    localeContext: 'Studi professionali e agenzie digitali a Milano',
+    localeContext: 'Lettori italofoni in Italia nella vita quotidiana e professionale',
   },
   {
     code: 'pt',
     name: 'Portuguese',
     persona: 'Redator de guias práticos sobre prompts de IA e produtividade',
     osUi: 'ChatGPT, Claude, Gemini, Instruções personalizadas, Configurações',
-    localeContext: 'Polos de inovação e empresas na Avenida Paulista em São Paulo',
+    localeContext: 'Leitores de língua portuguesa no Brasil em contextos cotidianos e profissionais',
   },
   {
     code: 'nl',
     name: 'Dutch',
     persona: 'Praktische gidsenschrijver over AI-prompts en productiviteit',
     osUi: 'ChatGPT, Claude, Gemini, Systeeminstructies, Instellingen',
-    localeContext: 'Zuidas en innovatiehubs in Amsterdam',
+    localeContext: 'Nederlandstalige lezers in Nederland in alledaagse en professionele situaties',
   },
   {
     code: 'pl',
     name: 'Polish',
     persona: 'Autor praktycznych poradników o promptach AI i produktywności',
     osUi: 'ChatGPT, Claude, Gemini, Instrukcje systemowe, Ustawienia',
-    localeContext: 'Warszawski sektor IT i nowoczesne centra biznesowe',
+    localeContext: 'Polskojęzyczni czytelnicy w Polsce w codziennych i zawodowych sytuacjach',
   },
   {
     code: 'id',
     name: 'Indonesian',
     persona: 'Penulis panduan praktis tentang prompt AI dan produktivitas',
     osUi: 'ChatGPT, Claude, Gemini, Instruksi kustom, Pengaturan',
-    localeContext: 'Kawasan bisnis Sudirman Central Business District (SCBD) Jakarta',
+    localeContext: 'Pembaca berbahasa Indonesia di Indonesia dalam keseharian dan pekerjaan',
   },
   {
     code: 'vi',
     name: 'Vietnamese',
     persona: 'Người viết hướng dẫn thực tế về câu lệnh AI và năng suất',
     osUi: 'ChatGPT, Claude, Gemini, Hướng dẫn hệ thống, Cài đặt',
-    localeContext: 'Tòa nhà văn phòng công nghệ cao tại Quận 1, TP. Hồ Chí Minh',
+    localeContext: 'Độc giả tiếng Việt tại Việt Nam trong đời sống và công việc hằng ngày',
   },
 ];
 
