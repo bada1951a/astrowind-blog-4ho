@@ -90,10 +90,44 @@ test('generator prompt keeps recognizable scenarios generic and source-grounded'
   );
   assert.ok(source.includes('Generic recognizable situations may refer to a role without identifying anyone'));
   assert.ok(source.includes('allow generic roles without identifying details'));
-  assert.ok(source.includes("localeContext: 'German-language readers in everyday work and personal settings'"));
-  assert.ok(!source.includes('Frankfurter Bankenviertel'));
-  assert.ok(!source.includes('Berliner Tech-Szene'));
-  assert.ok(source.includes("GENERATION_PROMPT_VERSION = '2026-10-30-neutral-narrator-v2'"));
+  const localeStart = source.indexOf('const TARGET_LANGS = [');
+  const localeEnd = source.indexOf('const delay =', localeStart);
+  const localeContexts = source
+    .slice(localeStart, localeEnd)
+    .split('\n')
+    .filter((line) => line.includes('localeContext:'))
+    .join('\n')
+    .toLowerCase();
+  for (const place of [
+    'seoul',
+    'pangyo',
+    'silicon valley',
+    'new york',
+    'tokyo',
+    'marunouchi',
+    'shibuya',
+    'paris la défense',
+    'madrid',
+    'barcelona',
+    'milano',
+    'avenida paulista',
+    'são paulo',
+    'zuidas',
+    'amsterdam',
+    'warszawa',
+    'sudirman central business district',
+    'jakarta',
+    'quận 1',
+    'hồ chí minh',
+  ]) {
+    assert.equal(
+      localeContexts.includes(place),
+      false,
+      'locale context must not seed a city or office scene: ' + place
+    );
+  }
+  assert.equal(localeContexts.match(/localecontext:/g)?.length, 12);
+  assert.ok(source.includes("GENERATION_PROMPT_VERSION = '2026-10-30-neutral-narrator-v3'"));
 });
 
 test('FAQ cleanup preserves separate Q/A lines, blank lines, and rejects collapsed pairs', () => {
