@@ -157,7 +157,7 @@ test('generator prompt keeps recognizable scenarios generic and source-grounded'
     );
   }
   assert.equal(localeContexts.match(/localecontext:/g)?.length, 12);
-  assert.ok(source.includes("GENERATION_PROMPT_VERSION = '2026-10-30-neutral-narrator-v3'"));
+  assert.ok(source.includes("GENERATION_PROMPT_VERSION = '2026-10-31-topic-first-person-story-v4'"));
 });
 
 test('FAQ cleanup preserves separate Q/A lines, blank lines, and rejects collapsed pairs', () => {
