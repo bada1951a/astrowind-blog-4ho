@@ -117,7 +117,7 @@ test('generator prompt keeps recognizable scenarios generic and source-grounded'
   assert.ok(source.includes('A short illustrative example is optional'));
   assert.ok(source.includes('without a canned hypothetical-scene disclaimer'));
   assert.ok(source.includes('Never present an invented example as the narrator’s or a customer’s real experience'));
-  assert.ok(source.includes('Never invent named people, places, or companies'));
+  assert.ok(source.includes('do not invent named people, places, companies, quotations, or outcomes'));
   assert.ok(source.includes('instead of flattening the article into neutral exposition'));
   assert.ok(source.includes('allow generic roles without identifying details'));
   const localeStart = source.indexOf('const TARGET_LANGS = [');
