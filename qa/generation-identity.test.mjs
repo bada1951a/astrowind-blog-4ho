@@ -107,21 +107,18 @@ test('generator prompt specifies a topic-fit first-person narrative and practica
   assert.ok(source.includes('Write concise headings in the target language that fit ${currentTopic}'));
   assert.ok(source.includes('Do not use generic boilerplate, promise guaranteed resolution times or outcomes'));
   assert.ok(source.includes('never copy their brackets or placeholder text'));
-  assert.ok(source.includes('roughly 30% narrator reasoning'));
-  assert.ok(source.includes('70% practical explanations'));
+  assert.ok(source.includes('roughly 30% engaging narration and transitions'));
+  assert.ok(source.includes('70% accurate explanations'));
 });
 
 test('generator prompt keeps recognizable scenarios generic and source-grounded', () => {
   const source = readFileSync(new URL('../generate-all.mjs', import.meta.url), 'utf8');
-  assert.ok(source.includes('generic, recognizable situation'));
-  assert.ok(source.includes('do not frame it as a particular event that happened'));
-  assert.ok(source.includes('Never invent named people, places/cities, companies, or customers'));
-  assert.ok(
-    source.includes(
-      'Do not invent customer stories/quotes or specific first-hand events unless supported by the topic or reliable source material'
-    )
-  );
-  assert.ok(source.includes('Generic recognizable situations may refer to a role without identifying anyone'));
+  assert.ok(source.includes('Open at a concrete, topic-specific symptom, decision, or question'));
+  assert.ok(source.includes('A short illustrative example is optional'));
+  assert.ok(source.includes('without a canned hypothetical-scene disclaimer'));
+  assert.ok(source.includes('Never present an invented example as the narrator’s or a customer’s real experience'));
+  assert.ok(source.includes('Never invent named people, places, or companies'));
+  assert.ok(source.includes('instead of flattening the article into neutral exposition'));
   assert.ok(source.includes('allow generic roles without identifying details'));
   const localeStart = source.indexOf('const TARGET_LANGS = [');
   const localeEnd = source.indexOf('const delay =', localeStart);
