@@ -18,7 +18,7 @@ import {
   decidePublishLocales,
 } from './generation-identity.mjs';
 
-const GENERATION_PROMPT_VERSION = '2026-10-30-neutral-narrator-v3';
+const GENERATION_PROMPT_VERSION = '2026-10-31-topic-first-person-story-v4';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 if (!OPENAI_API_KEY) {
   console.error('❌ OPENAI_API_KEY 환경변수가 설정되지 않았습니다.');
@@ -553,19 +553,19 @@ async function generateSinglePost(lang, index) {
 Write an original practical prompt-engineering guide natively in ${lang.name}, with independent wording and examples for this locale. This is a separate locale-specific article generation call, not a translation.
 Topic: "${currentTopic}"
 Audience and cultural context: "${lang.localeContext}"
-Do not force a hallucination, token, temperature, or master-prompt discussion unless it directly applies. Do not claim personal experience or credentials. Do not invent model behavior, facts, quotations, customer cases, or outcomes.
+Do not force a hallucination, token, temperature, or master-prompt discussion unless it directly applies. Use a clear guide narrator’s present-tense first-person reasoning without implying real personal experience or credentials. Do not invent model behavior, facts, quotations, customer cases, or outcomes.
 
 Length and style:
 - Korean: about 2,400–2,600 characters, maximum 3,000 characters.
 - Other locales: about 900–1,100 words (Japanese: at least 900 non-space characters).
 - Aim for an engaging opening and transitions (about 30%) and useful, accurate explanation and actionable steps (about 70%).
-- Carry a natural first-person storytelling voice through the article. Aim for roughly 30% narrator reasoning, decisions, and transitions and 70% practical explanations, verifiable steps, and safety information. Use first person to explain what the guide would check and why; do not claim real personal events, credentials, customer cases, or results.
-- In the opening paragraph, present a generic, recognizable situation directly related to the topic and the key unresolved question. Describe it generally or conditionally; do not frame it as a particular event that happened. Never invent named people, places/cities, companies, or customers. Do not invent customer stories/quotes or specific first-hand events unless supported by the topic or reliable source material. Generic recognizable situations may refer to a role without identifying anyone. Answer in useful stages, using first-person reasoning and brief transitions to give readers a reason to continue. Avoid clickbait, exaggeration, fabricated personal or customer experiences, hypothetical-scene disclaimers, and rigid opening formulas; phrase this naturally for the locale.
+- Let the guide narrator’s first-person reasoning and decisions carry a natural, topic-fit story across the whole article. Aim for roughly 30% engaging narration and transitions and 70% accurate explanations, practical steps, and safety information. Show why the narrator chooses each next step and how a result changes the reasoning; do not force first person into every sentence or every section.
+- Open at a concrete, topic-specific symptom, decision, or question that makes the reader want to know what to check next. Let the narrator explain the first choice and its reason in the target locale. A short illustrative example is optional; if useful, introduce it naturally as an example, without a canned hypothetical-scene disclaimer. Never present an invented example as the narrator’s or a customer’s real experience, and do not invent named people, places, companies, quotations, or outcomes. Keep the narrative progression specific to this topic and vary it naturally across locales.
 - Write idiomatic ${lang.name}, not translated wording. Localize examples and UI labels only when relevant.
 
 Write exactly five numbered H2 headings in ${lang.name}, numbered 1 through 5. Write concise headings in the target language that fit ${currentTopic} and each section's content. Do not use generic boilerplate, promise guaranteed resolution times or outcomes, or imply unverified professional credentials. The bracketed descriptions below are instructions; never copy their brackets or placeholder text into the article.
 ## 1. [topic-specific opening heading]
-Introduce a generic, recognizable situation directly connected to "${currentTopic}". Describe it generally or conditionally, not as a specific event that happened. Never invent named people, places/cities, companies, or customers. Do not invent customer stories/quotes or specific first-hand events unless supported by the topic or reliable source material. Generic situations may refer to a role without identifying anyone.
+Start with a concrete decision or symptom tied to "${currentTopic}". In the narrator’s voice, explain what I would check first and why, then leave a clear question for the next step. Use an illustrative example only if it helps; introduce it naturally as an example, without a disclaimer or invented real-world experience.
 ## 2. [topic-specific heading in ${lang.name}]
 Explain topic-specific causes, limits, and clues. Avoid generic model claims that do not apply.
 ## 3. [topic-specific heading in ${lang.name}]
@@ -654,7 +654,7 @@ theme: "${selectedTheme.name}"
       console.warn(
         `⚠️ ${lang.code} 검수 실패(${validationErrors.join(', ')}). 해당 언어 correction ${correctionAttempt}/2 요청합니다.`
       );
-      const repairPrompt = `You are correcting one generated ${lang.name} article for "${currentTopic}".\n\nFailed validation checks: ${validationErrors.join(', ')}. Return the complete Markdown including original frontmatter. Preserve existing useful content and factual meaning. Correct only the listed failures. If H2 headings are missing or malformed, add five concise numbered headings in ${lang.name} that fit the topic and existing content. Avoid generic boilerplate, unsupported credentials, and guaranteed time or outcome claims. Reorganize relevant existing content without adding filler, unsupported facts, invented first-person experiences, or unsupported customer cases. Never invent named people, places/cities, companies, or customers; do not invent customer stories/quotes or specific first-hand events unless supported by the topic or reliable source material. Keep any scenario generic or conditional, and allow generic roles without identifying details. Preserve required FAQ markers and language. Return raw Markdown only.\n\nOriginal article:\n${text}`;
+      const repairPrompt = `You are correcting one generated ${lang.name} article for "${currentTopic}".\n\nFailed validation checks: ${validationErrors.join(', ')}. Return the complete Markdown including original frontmatter. Preserve existing useful content and factual meaning. Correct only the listed failures. If H2 headings are missing or malformed, add five concise numbered headings in ${lang.name} that fit the topic and existing content. Avoid generic boilerplate, unsupported credentials, and guaranteed time or outcome claims. Reorganize relevant existing content without adding filler, unsupported facts, invented first-person experiences, or unsupported customer cases. Preserve or restore the topic-fit first-person narrator’s reasoning and natural story transitions instead of flattening the article into neutral exposition. Never invent named people, places/cities, companies, or customers; do not invent customer stories/quotes or specific first-hand events unless supported by the topic or reliable source material. Keep any scenario generic or conditional, and allow generic roles without identifying details. Preserve required FAQ markers and language. Return raw Markdown only.\n\nOriginal article:\n${text}`;
       text = normalizeGeneratedResponse(await fetchWithRetry(repairPrompt));
       validationErrors = validateGeneratedPost(text, lang.code);
     }
